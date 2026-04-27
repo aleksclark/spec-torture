@@ -541,16 +541,17 @@ test_cases:
             code: -32602
             message: "*"
 
-  - id: missing-message-id
-    name: Missing MessageId Returns Error
+  - id: optional-message-id
+    name: SendMessage Without MessageId Succeeds
     description: >
-      SendMessage without messageId in the message returns a validation error.
+      SendMessage without messageId in the message succeeds — messageId is
+      optional in A2A v1.0. The server generates one if omitted.
     severity: required
-    category: error-handling
-    timeout: 10s
+    category: messaging
+    timeout: 60s
     tags:
-      - errors
-      - jsonrpc
+      - messaging
+      - lifecycle
     steps:
       - action: send
         payload:
@@ -562,14 +563,13 @@ test_cases:
               role: "user"
               parts:
                 - kind: "text"
-                  text: "No message ID."
+                  text: "No message ID provided."
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 1
-          error:
-            code: "*"
-            message: "*"
+          result:
+            kind: "*"
 
   # ---------------------------------------------------------------------------
   # Category: push-notifications
