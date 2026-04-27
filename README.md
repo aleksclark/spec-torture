@@ -11,6 +11,13 @@ spec-torture is a Go + Docker test harness that validates whether agent runtimes
 - Executes test cases (send/expect/assert steps) against the runtime
 - Records results to SQLite and generates reports
 
+## Available Specs
+
+| Spec | Transport | Tests | Description |
+|------|-----------|-------|-------------|
+| [MCP](specs/mcp/) | jsonrpc-stdio | 3 | Model Context Protocol conformance |
+| [ACP](specs/acp/) | http-rest | 34 | Crush Agent Communication Protocol conformance |
+
 ## Quick Start
 
 ```bash
@@ -19,9 +26,11 @@ make build
 
 # Validate a spec file
 ./bin/spec-torture validate specs/mcp/spec.yaml
+./bin/spec-torture validate specs/acp/spec.yaml
 
 # Run tests against a runtime
 ./bin/spec-torture run specs/mcp/spec.yaml --runtime my-agent --image my-agent:latest
+./bin/spec-torture run specs/acp/spec.yaml --runtime crush --image crush-acp:latest
 
 # List loaded specs
 ./bin/spec-torture list
