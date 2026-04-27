@@ -1,9 +1,9 @@
-# Test Run: 766b12fc-58aa-4afe-accd-1782b7fd6312
+# Test Run: 66f0b4ca-7862-4832-aaf0-9cf94d390d94
 
 **Spec:** a2a-v1  
 **Runtime:** a2a-rs-helloworld   
-**Started:** 2026-04-27 16:31:06  
-**Completed:** 2026-04-27 16:31:06  
+**Started:** 2026-04-27 16:50:58  
+**Completed:** 2026-04-27 16:50:59  
 
 ## Summary
 
@@ -21,23 +21,23 @@
 
 | Test Case | Status | Duration | Error |
 |-----------|--------|----------|-------|
-| agent-card-well-known | PASS pass | 988.7µs |  |
-| agent-card-content-type | PASS pass | 229.554µs |  |
-| agent-card-optional-fields | PASS pass | 138.122µs |  |
-| agent-card-skills | PASS pass | 142.269µs |  |
-| agent-card-interfaces | PASS pass | 135.827µs |  |
-| send-message-basic | PASS pass | 472.503µs |  |
-| send-message-response-shape | PASS pass | 329.654µs |  |
-| get-task | PASS pass | 444.601µs |  |
-| get-task-not-found | PASS pass | 167.146µs |  |
-| cancel-task | PASS pass | 485.218µs |  |
-| message-text-part | PASS pass | 270.241µs |  |
-| message-with-context | PASS pass | 586.039µs |  |
-| optional-message-id | PASS pass | 273.357µs |  |
-| streaming-send | PASS pass | 40.396405ms |  |
-| streaming-events | PASS pass | 41.024403ms |  |
-| jsonrpc-parse-error | FAIL fail | 218.694µs | expected JSON-RPC response but got none |
-| jsonrpc-invalid-request | FAIL fail | 221.509µs | expected JSON-RPC response but got none |
-| jsonrpc-method-not-found | PASS pass | 195.45µs |  |
-| missing-required-params | FAIL fail | 378.947µs | JSON-RPC match failed: missing key at error |
-| push-notification-not-supported | PASS pass | 729.329µs |  |
+| agent-card-well-known | PASS pass | 795.692µs |  |
+| agent-card-content-type | PASS pass | 193.385µs |  |
+| agent-card-optional-fields | PASS pass | 151.476µs |  |
+| agent-card-skills | PASS pass | 129.654µs |  |
+| agent-card-interfaces | PASS pass | 129.074µs |  |
+| send-message-basic | PASS pass | 580.616µs |  |
+| send-message-response-shape | PASS pass | 307.09µs |  |
+| get-task | PASS pass | 479.275µs |  |
+| get-task-not-found | PASS pass | 162.176µs |  |
+| cancel-task | PASS pass | 443.257µs |  |
+| message-text-part | PASS pass | 267.435µs |  |
+| message-with-context | PASS pass | 549.968µs |  |
+| optional-message-id | PASS pass | 268.377µs |  |
+| streaming-send | PASS pass | 41.485146ms |  |
+| streaming-events | PASS pass | 41.025919ms |  |
+| jsonrpc-parse-error | FAIL fail | 422.888µs | expected JSON-RPC response but got none |
+| jsonrpc-invalid-request | FAIL fail | 157.036µs | expected JSON-RPC response but got none |
+| jsonrpc-method-not-found | PASS pass | 175.572µs |  |
+| missing-required-params | FAIL fail | 381.511µs | JSON-RPC match failed: missing key at error |
+| push-notification-not-supported | PASS pass | 532.976µs |  |

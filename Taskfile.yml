@@ -1,0 +1,63 @@
+version: '3'
+
+vars:
+  SPEC: specs/a2a/spec.yaml
+  REPORTS: reports/a2a
+
+tasks:
+  build:
+    desc: Build spec-torture binary
+    cmds:
+      - go build -o bin/spec-torture ./cmd/spec-torture
+    sources:
+      - cmd/**/*.go
+      - internal/**/*.go
+      - go.mod
+      - go.sum
+    generates:
+      - bin/spec-torture
+
+  validate:
+    desc: Validate all spec files
+    deps: [build]
+    cmds:
+      - ./bin/spec-torture validate specs/a2a/spec.yaml
+      - ./bin/spec-torture validate specs/acp/spec.yaml
+
+  # ---------------------------------------------------------------------------
+  # A2A agent torture tasks
+  # ---------------------------------------------------------------------------
+
+  torture:crush-a2a:
+    desc: Run A2A v1.0 suite against crush-a2a (Crush native protocol)
+    deps: [build]
+    cmds:
+      - agents/crush-a2a/run.sh {{.SPEC}} {{.REPORTS}} ./bin/spec-torture
+
+  torture:a2a-go:
+    desc: Run A2A v1.0 suite against the official Go SDK helloworld agent
+    deps: [build]
+    cmds:
+      - agents/a2a-go/run.sh {{.SPEC}} {{.REPORTS}} ./bin/spec-torture
+
+  torture:a2a-rs:
+    desc: Run A2A v1.0 suite against the official Rust SDK helloworld agent
+    deps: [build]
+    cmds:
+      - agents/a2a-rs/run.sh {{.SPEC}} {{.REPORTS}} ./bin/spec-torture
+
+  torture:all:
+    desc: Run A2A v1.0 suite against all agents
+    deps: [build]
+    cmds:
+      - task: torture:crush-a2a
+      - task: torture:a2a-go
+      - task: torture:a2a-rs
+
+  clean:
+    desc: Remove build artifacts and cloned agent sources
+    cmds:
+      - rm -rf bin/
+      - rm -rf agents/crush-a2a/.build
+      - rm -rf agents/a2a-go/.build
+      - rm -rf agents/a2a-rs/.build
