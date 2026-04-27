@@ -164,12 +164,16 @@ func matchExpect(eval *Evaluator, resp *TransportResponse, expect map[string]any
 
 	// Check SSE events
 	if expSSE, ok := expect["sse_event"]; ok {
-		expMap, ok := expSSE.(map[string]any)
-		if !ok {
-			return fmt.Errorf("expected sse_event must be a map")
-		}
 		if len(resp.SSEEvents) == 0 {
 			return fmt.Errorf("expected SSE events but got none")
+		}
+		// Wildcard "*" just checks that at least one event was received
+		if s, ok := expSSE.(string); ok && s == "*" {
+			return nil
+		}
+		expMap, ok := expSSE.(map[string]any)
+		if !ok {
+			return fmt.Errorf("expected sse_event must be a map or \"*\" wildcard")
 		}
 		// Check if any SSE event matches
 		var lastErr error

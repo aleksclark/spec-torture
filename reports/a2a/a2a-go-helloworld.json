@@ -1,34 +1,34 @@
 {
-  "id": "880613fb-ac5a-4260-9912-b5f6f7880f54",
+  "id": "09855544-64f4-4c82-b612-7e91d45350a6",
   "spec_id": "a2a-v1",
   "runtime": "a2a-go-helloworld",
   "runtime_version": "",
-  "started_at": "2026-04-27T16:18:25.198250917-05:00",
-  "completed_at": "2026-04-27T16:18:25.200843983-05:00",
+  "started_at": "2026-04-27T16:31:06.266956654-05:00",
+  "completed_at": "2026-04-27T16:31:06.269956177-05:00",
   "results": [
     {
-      "id": "e523449a-e34d-4618-bcff-e469253c17ad",
+      "id": "9061a222-5299-402b-8ca1-8503f7dcfde7",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-well-known",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 547947,
-      "started_at": "2026-04-27T16:18:25.198297044-05:00",
-      "completed_at": "2026-04-27T16:18:25.198844991-05:00",
+      "duration": 489245,
+      "started_at": "2026-04-27T16:31:06.266995347-05:00",
+      "completed_at": "2026-04-27T16:31:06.267484592-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 539300,
+          "duration": 481901,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "436",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -72,7 +72,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 891,
+          "duration": 1062,
           "expected": {
             "body": {
               "name": "*",
@@ -88,7 +88,7 @@
               "access-control-allow-origin": "*",
               "content-length": "436",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -131,28 +131,28 @@
       ]
     },
     {
-      "id": "20fddf18-786d-4138-849a-6c56d7f3ffd1",
+      "id": "8ebc7a5a-8474-4104-a065-31c1d862495b",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-content-type",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 79591,
-      "started_at": "2026-04-27T16:18:25.198848527-05:00",
-      "completed_at": "2026-04-27T16:18:25.198928128-05:00",
+      "duration": 109857,
+      "started_at": "2026-04-27T16:31:06.267486456-05:00",
+      "completed_at": "2026-04-27T16:31:06.267596303-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 69762,
+          "duration": 101683,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "436",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -196,7 +196,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1022,
+          "duration": 2014,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -209,7 +209,7 @@
               "access-control-allow-origin": "*",
               "content-length": "436",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -252,28 +252,28 @@
       ]
     },
     {
-      "id": "0a37d000-5807-4de6-86da-02ed1d235841",
+      "id": "4870f23d-39f8-4b6d-99c2-4b5d05f8b1ca",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-optional-fields",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 70023,
-      "started_at": "2026-04-27T16:18:25.19892925-05:00",
-      "completed_at": "2026-04-27T16:18:25.198999283-05:00",
+      "duration": 85251,
+      "started_at": "2026-04-27T16:31:06.267599059-05:00",
+      "completed_at": "2026-04-27T16:31:06.26768432-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 61196,
+          "duration": 76054,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "436",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -317,7 +317,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 591,
+          "duration": 541,
           "expected": {
             "body": {
               "capabilities": "*",
@@ -332,7 +332,7 @@
               "access-control-allow-origin": "*",
               "content-length": "436",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -375,28 +375,28 @@
       ]
     },
     {
-      "id": "443fbd86-ebaa-4a2f-b586-b57cd16eb5f8",
+      "id": "96a4476a-2ea3-40c5-a3d1-5d01bf0b5a24",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-skills",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 82015,
-      "started_at": "2026-04-27T16:18:25.199001337-05:00",
-      "completed_at": "2026-04-27T16:18:25.199083352-05:00",
+      "duration": 68159,
+      "started_at": "2026-04-27T16:31:06.267685462-05:00",
+      "completed_at": "2026-04-27T16:31:06.267753621-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 75663,
+          "duration": 61948,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "436",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -440,7 +440,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 471,
+          "duration": 461,
           "expected": {
             "body": {
               "skills": "*"
@@ -453,7 +453,7 @@
               "access-control-allow-origin": "*",
               "content-length": "436",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -496,28 +496,28 @@
       ]
     },
     {
-      "id": "c848fbf2-e4cf-4fff-b0ef-a993b888611c",
+      "id": "d3823b72-3a0e-4675-8266-4e005f433e59",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-interfaces",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 51667,
-      "started_at": "2026-04-27T16:18:25.199083853-05:00",
-      "completed_at": "2026-04-27T16:18:25.19913553-05:00",
+      "duration": 71896,
+      "started_at": "2026-04-27T16:31:06.267754513-05:00",
+      "completed_at": "2026-04-27T16:31:06.267826409-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 47400,
+          "duration": 65795,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "436",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -561,7 +561,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 611,
+          "duration": 691,
           "expected": {
             "body": {
               "capabilities": "*",
@@ -577,7 +577,7 @@
               "access-control-allow-origin": "*",
               "content-length": "436",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -620,35 +620,35 @@
       ]
     },
     {
-      "id": "c35cb00a-e297-48fa-be4e-90705a264e14",
+      "id": "b2536f61-6ca0-447b-bdd1-804626662092",
       "spec_id": "a2a-v1",
       "test_case_id": "send-message-basic",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 166395,
-      "started_at": "2026-04-27T16:18:25.199136332-05:00",
-      "completed_at": "2026-04-27T16:18:25.199302737-05:00",
+      "duration": 197424,
+      "started_at": "2026-04-27T16:31:06.267828322-05:00",
+      "completed_at": "2026-04-27T16:31:06.268025756-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 161365,
+          "duration": 191453,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-73d0-8366-53336377b085\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629b-7e91-a457-ac46140f197b\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5af-73d0-8366-53336377b085",
+                  "messageId": "019dd0da-629b-7e91-a457-ac46140f197b",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -664,7 +664,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1283,
+          "duration": 811,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -675,15 +675,15 @@
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-73d0-8366-53336377b085\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629b-7e91-a457-ac46140f197b\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5af-73d0-8366-53336377b085",
+                  "messageId": "019dd0da-629b-7e91-a457-ac46140f197b",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -698,35 +698,35 @@
       ]
     },
     {
-      "id": "f94abcce-31e8-4509-b438-e230b6c556b6",
+      "id": "9d7788e7-de12-4096-bee1-51b7216b8871",
       "spec_id": "a2a-v1",
       "test_case_id": "send-message-response-shape",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 108966,
-      "started_at": "2026-04-27T16:18:25.199303158-05:00",
-      "completed_at": "2026-04-27T16:18:25.199412124-05:00",
+      "duration": 128773,
+      "started_at": "2026-04-27T16:31:06.268026227-05:00",
+      "completed_at": "2026-04-27T16:31:06.268155-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 105220,
+          "duration": 124145,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-75b6-b300-d0f06911d76a\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-718c-b394-64b6b99bf0b1\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5af-75b6-b300-d0f06911d76a",
+                  "messageId": "019dd0da-629c-718c-b394-64b6b99bf0b1",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -742,7 +742,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 862,
+          "duration": 942,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -753,15 +753,15 @@
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-75b6-b300-d0f06911d76a\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-718c-b394-64b6b99bf0b1\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5af-75b6-b300-d0f06911d76a",
+                  "messageId": "019dd0da-629c-718c-b394-64b6b99bf0b1",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -776,35 +776,35 @@
       ]
     },
     {
-      "id": "80a19891-8626-4b53-b75c-1a5092e6697d",
+      "id": "2a9081e1-64f4-40ce-a89b-9aafe9f83bac",
       "spec_id": "a2a-v1",
       "test_case_id": "get-task",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 190160,
-      "started_at": "2026-04-27T16:18:25.199412615-05:00",
-      "completed_at": "2026-04-27T16:18:25.199602865-05:00",
+      "duration": 194247,
+      "started_at": "2026-04-27T16:31:06.268155762-05:00",
+      "completed_at": "2026-04-27T16:31:06.268350019-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 101702,
+          "duration": 104107,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-7747-8e54-799cb17a866f\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-7384-b316-a3e6b73d86f8\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5af-7747-8e54-799cb17a866f",
+                  "messageId": "019dd0da-629c-7384-b316-a3e6b73d86f8",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -820,7 +820,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 972,
+          "duration": 471,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -831,15 +831,15 @@
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-7747-8e54-799cb17a866f\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-7384-b316-a3e6b73d86f8\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5af-7747-8e54-799cb17a866f",
+                  "messageId": "019dd0da-629c-7384-b316-a3e6b73d86f8",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -855,13 +855,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 82566,
+          "duration": 83558,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "130",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
             "jsonrpc_resp": {
@@ -869,213 +869,6 @@
                 "code": -32001,
                 "data": {
                   "error": "failed to get task: task not found"
-                },
-                "message": "task not found"
-              },
-              "id": 2,
-              "jsonrpc": "2.0"
-            }
-          }
-        },
-        {
-          "step_index": 3,
-          "action": "expect",
-          "status": "pass",
-          "duration": 862,
-          "expected": {
-            "id": 2,
-            "jsonrpc": "2.0"
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "130",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32001,
-                "data": {
-                  "error": "failed to get task: task not found"
-                },
-                "message": "task not found"
-              },
-              "id": 2,
-              "jsonrpc": "2.0"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "0f52e160-c5f2-4bb1-9600-2a17a6c539e5",
-      "spec_id": "a2a-v1",
-      "test_case_id": "get-task-not-found",
-      "runtime": "a2a-go-helloworld",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 71185,
-      "started_at": "2026-04-27T16:18:25.199603626-05:00",
-      "completed_at": "2026-04-27T16:18:25.199674811-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 64773,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "130",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32001,
-                "data": {
-                  "error": "failed to get task: task not found"
-                },
-                "message": "task not found"
-              },
-              "id": 1,
-              "jsonrpc": "2.0"
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 782,
-          "expected": {
-            "error": {
-              "code": "*",
-              "message": "*"
-            },
-            "id": 1,
-            "jsonrpc": "2.0"
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "130",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32001,
-                "data": {
-                  "error": "failed to get task: task not found"
-                },
-                "message": "task not found"
-              },
-              "id": 1,
-              "jsonrpc": "2.0"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "2b5944a5-99c3-4426-8cd4-12cb5a6ceae7",
-      "spec_id": "a2a-v1",
-      "test_case_id": "cancel-task",
-      "runtime": "a2a-go-helloworld",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 180051,
-      "started_at": "2026-04-27T16:18:25.199675462-05:00",
-      "completed_at": "2026-04-27T16:18:25.199855513-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 83138,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "154",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-7b2a-ad70-89f642d6665b\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
-            "jsonrpc_resp": {
-              "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "message": {
-                  "messageId": "019dd0ce-c5af-7b2a-ad70-89f642d6665b",
-                  "parts": [
-                    {
-                      "text": "Hello, world!"
-                    }
-                  ],
-                  "role": "ROLE_AGENT"
-                }
-              }
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 992,
-          "expected": {
-            "id": 1,
-            "jsonrpc": "2.0",
-            "result": "*"
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "154",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-7b2a-ad70-89f642d6665b\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
-            "jsonrpc_resp": {
-              "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "message": {
-                  "messageId": "019dd0ce-c5af-7b2a-ad70-89f642d6665b",
-                  "parts": [
-                    {
-                      "text": "Hello, world!"
-                    }
-                  ],
-                  "role": "ROLE_AGENT"
-                }
-              }
-            }
-          }
-        },
-        {
-          "step_index": 2,
-          "action": "send",
-          "status": "pass",
-          "duration": 91262,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "194",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to cancel: cancelation failed: canceler setup failed: failed to load a task: task not found\"}}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32001,
-                "data": {
-                  "error": "failed to cancel: cancelation failed: canceler setup failed: failed to load a task: task not found"
                 },
                 "message": "task not found"
               },
@@ -1096,9 +889,216 @@
           "actual": {
             "http_status": 200,
             "headers": {
+              "content-length": "130",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to get task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "ef9c22de-5bfc-442e-b5d0-d9482cea57a9",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task-not-found",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 75173,
+      "started_at": "2026-04-27T16:31:06.26835081-05:00",
+      "completed_at": "2026-04-27T16:31:06.268425983-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 68600,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "130",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to get task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1192,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "130",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to get task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "46dcfc23-4766-40b0-aacb-5fc3fb69e146",
+      "spec_id": "a2a-v1",
+      "test_case_id": "cancel-task",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 182284,
+      "started_at": "2026-04-27T16:31:06.268427055-05:00",
+      "completed_at": "2026-04-27T16:31:06.268609339-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 92786,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-7782-9da3-64292889911b\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd0da-629c-7782-9da3-64292889911b",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 481,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-7782-9da3-64292889911b\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd0da-629c-7782-9da3-64292889911b",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 82927,
+          "actual": {
+            "http_status": 200,
+            "headers": {
               "content-length": "194",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to cancel: cancelation failed: canceler setup failed: failed to load a task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to cancel: cancelation failed: canceler setup failed: failed to load a task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 571,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "194",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to cancel: cancelation failed: canceler setup failed: failed to load a task: task not found\"}}}\n",
             "jsonrpc_resp": {
@@ -1117,35 +1117,35 @@
       ]
     },
     {
-      "id": "218a337b-21ae-40ae-9f58-2f7dc9a2b526",
+      "id": "e2cd3be4-00e9-419a-b0e4-636b11a976a3",
       "spec_id": "a2a-v1",
       "test_case_id": "message-text-part",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 94959,
-      "started_at": "2026-04-27T16:18:25.199856414-05:00",
-      "completed_at": "2026-04-27T16:18:25.199951374-05:00",
+      "duration": 87476,
+      "started_at": "2026-04-27T16:31:06.26860982-05:00",
+      "completed_at": "2026-04-27T16:31:06.268697296-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 89710,
+          "duration": 83388,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-7e0f-9fe4-a238da0df33c\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-7a0c-9def-e09c8d943394\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5af-7e0f-9fe4-a238da0df33c",
+                  "messageId": "019dd0da-629c-7a0c-9def-e09c8d943394",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -1161,7 +1161,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 521,
+          "duration": 892,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -1172,15 +1172,15 @@
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-7e0f-9fe4-a238da0df33c\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-7a0c-9def-e09c8d943394\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5af-7e0f-9fe4-a238da0df33c",
+                  "messageId": "019dd0da-629c-7a0c-9def-e09c8d943394",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -1195,35 +1195,35 @@
       ]
     },
     {
-      "id": "8c2267d4-0ae9-4eb6-b0e3-0b8d4862122d",
+      "id": "a31b581f-9934-4484-a30b-79bea5e8329a",
       "spec_id": "a2a-v1",
       "test_case_id": "message-with-context",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 179079,
-      "started_at": "2026-04-27T16:18:25.199951895-05:00",
-      "completed_at": "2026-04-27T16:18:25.200130964-05:00",
+      "duration": 170593,
+      "started_at": "2026-04-27T16:31:06.268698107-05:00",
+      "completed_at": "2026-04-27T16:31:06.2688687-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 74151,
+          "duration": 83788,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-7f34-af7c-970ab5837c81\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-7b8c-bbf0-95091342a8a6\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5af-7f34-af7c-970ab5837c81",
+                  "messageId": "019dd0da-629c-7b8c-bbf0-95091342a8a6",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -1239,7 +1239,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 701,
+          "duration": 391,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -1250,15 +1250,15 @@
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5af-7f34-af7c-970ab5837c81\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-7b8c-bbf0-95091342a8a6\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5af-7f34-af7c-970ab5837c81",
+                  "messageId": "019dd0da-629c-7b8c-bbf0-95091342a8a6",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -1274,21 +1274,21 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 100029,
+          "duration": 81074,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5b0-7160-b6fa-d7f414dd5c9f\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-7cb7-8af2-32a83940fcad\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 2,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5b0-7160-b6fa-d7f414dd5c9f",
+                  "messageId": "019dd0da-629c-7cb7-8af2-32a83940fcad",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -1304,7 +1304,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "pass",
-          "duration": 752,
+          "duration": 491,
           "expected": {
             "id": 2,
             "jsonrpc": "2.0",
@@ -1315,15 +1315,15 @@
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5b0-7160-b6fa-d7f414dd5c9f\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"message\":{\"messageId\":\"019dd0da-629c-7cb7-8af2-32a83940fcad\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 2,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5b0-7160-b6fa-d7f414dd5c9f",
+                  "messageId": "019dd0da-629c-7cb7-8af2-32a83940fcad",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -1338,27 +1338,27 @@
       ]
     },
     {
-      "id": "1e84072d-1039-468a-a3b7-d9a8fc16c08d",
+      "id": "171c0a67-0d83-4e20-a3ae-3df352538759",
       "spec_id": "a2a-v1",
       "test_case_id": "optional-message-id",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "fail",
-      "duration": 67658,
-      "started_at": "2026-04-27T16:18:25.200131655-05:00",
-      "completed_at": "2026-04-27T16:18:25.200199323-05:00",
+      "duration": 70062,
+      "started_at": "2026-04-27T16:31:06.268869161-05:00",
+      "completed_at": "2026-04-27T16:31:06.268939223-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 57379,
+          "duration": 61296,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "134",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message ID is required: invalid params\"}}}\n",
             "jsonrpc_resp": {
@@ -1378,7 +1378,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 5791,
+          "duration": 5661,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -1389,7 +1389,7 @@
             "headers": {
               "content-length": "134",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message ID is required: invalid params\"}}}\n",
             "jsonrpc_resp": {
@@ -1410,28 +1410,28 @@
       "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "ddc2fd14-d899-42fb-8842-6b005820444e",
+      "id": "7a1ae7cd-b13a-4d5d-8edd-afa5af5f68bb",
       "spec_id": "a2a-v1",
       "test_case_id": "streaming-send",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 133352,
-      "started_at": "2026-04-27T16:18:25.200199804-05:00",
-      "completed_at": "2026-04-27T16:18:25.200333166-05:00",
+      "duration": 160894,
+      "started_at": "2026-04-27T16:31:06.268939955-05:00",
+      "completed_at": "2026-04-27T16:31:06.269100839-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 129314,
+          "duration": 155303,
           "actual": {
             "http_status": 200,
             "headers": {
               "cache-control": "no-cache",
               "connection": "keep-alive",
               "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT",
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT",
               "x-accel-buffering": "no"
             },
             "sse_events": [
@@ -1440,7 +1440,7 @@
                 "jsonrpc": "2.0",
                 "result": {
                   "message": {
-                    "messageId": "019dd0ce-c5b0-73e0-8bf8-402673f533ba",
+                    "messageId": "019dd0da-629d-703e-903f-74c081225560",
                     "parts": [
                       {
                         "text": "Hello, world!"
@@ -1456,7 +1456,7 @@
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5b0-73e0-8bf8-402673f533ba",
+                  "messageId": "019dd0da-629d-703e-903f-74c081225560",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -1472,7 +1472,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 701,
+          "duration": 641,
           "expected": {
             "headers": {
               "content-type": "text/event-stream"
@@ -1485,7 +1485,7 @@
               "cache-control": "no-cache",
               "connection": "keep-alive",
               "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT",
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT",
               "x-accel-buffering": "no"
             },
             "sse_events": [
@@ -1494,7 +1494,7 @@
                 "jsonrpc": "2.0",
                 "result": {
                   "message": {
-                    "messageId": "019dd0ce-c5b0-73e0-8bf8-402673f533ba",
+                    "messageId": "019dd0da-629d-703e-903f-74c081225560",
                     "parts": [
                       {
                         "text": "Hello, world!"
@@ -1510,7 +1510,7 @@
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5b0-73e0-8bf8-402673f533ba",
+                  "messageId": "019dd0da-629d-703e-903f-74c081225560",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -1525,28 +1525,28 @@
       ]
     },
     {
-      "id": "a7c6b232-97d8-4f35-8812-be14d5175c6a",
+      "id": "569a6f8d-9b41-4198-a8cc-6998930b68a1",
       "spec_id": "a2a-v1",
       "test_case_id": "streaming-events",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 138232,
-      "started_at": "2026-04-27T16:18:25.200333968-05:00",
-      "completed_at": "2026-04-27T16:18:25.2004722-05:00",
+      "status": "pass",
+      "duration": 280260,
+      "started_at": "2026-04-27T16:31:06.26910148-05:00",
+      "completed_at": "2026-04-27T16:31:06.26938174-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 132371,
+          "duration": 274208,
           "actual": {
             "http_status": 200,
             "headers": {
               "cache-control": "no-cache",
               "connection": "keep-alive",
               "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT",
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT",
               "x-accel-buffering": "no"
             },
             "sse_events": [
@@ -1555,7 +1555,7 @@
                 "jsonrpc": "2.0",
                 "result": {
                   "message": {
-                    "messageId": "019dd0ce-c5b0-7627-b22e-1bcca2af8648",
+                    "messageId": "019dd0da-629d-730e-a852-7e1e065d8b68",
                     "parts": [
                       {
                         "text": "Hello, world!"
@@ -1571,7 +1571,7 @@
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5b0-7627-b22e-1bcca2af8648",
+                  "messageId": "019dd0da-629d-730e-a852-7e1e065d8b68",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -1586,8 +1586,8 @@
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 731,
+          "status": "pass",
+          "duration": 1292,
           "expected": {
             "sse_event": "*"
           },
@@ -1597,7 +1597,7 @@
               "cache-control": "no-cache",
               "connection": "keep-alive",
               "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT",
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT",
               "x-accel-buffering": "no"
             },
             "sse_events": [
@@ -1606,7 +1606,7 @@
                 "jsonrpc": "2.0",
                 "result": {
                   "message": {
-                    "messageId": "019dd0ce-c5b0-7627-b22e-1bcca2af8648",
+                    "messageId": "019dd0da-629d-730e-a852-7e1e065d8b68",
                     "parts": [
                       {
                         "text": "Hello, world!"
@@ -1622,7 +1622,7 @@
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5b0-7627-b22e-1bcca2af8648",
+                  "messageId": "019dd0da-629d-730e-a852-7e1e065d8b68",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -1632,34 +1632,32 @@
                 }
               }
             }
-          },
-          "error": "expected sse_event must be a map"
+          }
         }
-      ],
-      "error_message": "expected sse_event must be a map"
+      ]
     },
     {
-      "id": "39b4754b-515e-4be5-922c-e6a111cf3020",
+      "id": "0d190b19-d92a-4002-8b40-3c20444aa93c",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-parse-error",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 55595,
-      "started_at": "2026-04-27T16:18:25.200473011-05:00",
-      "completed_at": "2026-04-27T16:18:25.200528686-05:00",
+      "duration": 140686,
+      "started_at": "2026-04-27T16:31:06.269384155-05:00",
+      "completed_at": "2026-04-27T16:31:06.269525031-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 49964,
+          "duration": 126850,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "173",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"parse error\",\"data\":{\"error\":\"parse error: invalid character 'i' looking for beginning of object key string\"}}}\n",
             "jsonrpc_resp": {
@@ -1679,7 +1677,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 821,
+          "duration": 1974,
           "expected": {
             "error": {
               "code": -32700,
@@ -1692,7 +1690,7 @@
             "headers": {
               "content-length": "173",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"parse error\",\"data\":{\"error\":\"parse error: invalid character 'i' looking for beginning of object key string\"}}}\n",
             "jsonrpc_resp": {
@@ -1711,27 +1709,27 @@
       ]
     },
     {
-      "id": "9e9e5fcf-5f84-4028-9a20-76a5fff4ae9c",
+      "id": "44c19ac0-bd2d-42b9-9c02-997f9d93b087",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-invalid-request",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 47310,
-      "started_at": "2026-04-27T16:18:25.200529167-05:00",
-      "completed_at": "2026-04-27T16:18:25.200576477-05:00",
+      "duration": 80632,
+      "started_at": "2026-04-27T16:31:06.269526254-05:00",
+      "completed_at": "2026-04-27T16:31:06.269606886-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 43432,
+          "duration": 73259,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "112",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"invalid request\",\"data\":{\"error\":\"invalid request\"}}}\n",
             "jsonrpc_resp": {
@@ -1751,7 +1749,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 692,
+          "duration": 1032,
           "expected": {
             "error": {
               "code": -32600,
@@ -1764,7 +1762,7 @@
             "headers": {
               "content-length": "112",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"invalid request\",\"data\":{\"error\":\"invalid request\"}}}\n",
             "jsonrpc_resp": {
@@ -1783,27 +1781,27 @@
       ]
     },
     {
-      "id": "736fcb2b-54d9-48ea-937e-edf32094487d",
+      "id": "fc128ebf-503b-442d-8002-baa1c7495554",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-method-not-found",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 56788,
-      "started_at": "2026-04-27T16:18:25.200577859-05:00",
-      "completed_at": "2026-04-27T16:18:25.200634577-05:00",
+      "duration": 74140,
+      "started_at": "2026-04-27T16:31:06.26960913-05:00",
+      "completed_at": "2026-04-27T16:31:06.269683281-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 53051,
+          "duration": 68861,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "114",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found\",\"data\":{\"error\":\"method not found\"}}}\n",
             "jsonrpc_resp": {
@@ -1823,7 +1821,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 912,
+          "duration": 1343,
           "expected": {
             "error": {
               "code": -32601,
@@ -1837,7 +1835,7 @@
             "headers": {
               "content-length": "114",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found\",\"data\":{\"error\":\"method not found\"}}}\n",
             "jsonrpc_resp": {
@@ -1856,27 +1854,27 @@
       ]
     },
     {
-      "id": "a2abab4a-5f02-48d2-8327-0b9050ea1a0c",
+      "id": "a3085a6a-2b9b-43ef-a28d-e698b5abfaaa",
       "spec_id": "a2a-v1",
       "test_case_id": "missing-required-params",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 66075,
-      "started_at": "2026-04-27T16:18:25.200635178-05:00",
-      "completed_at": "2026-04-27T16:18:25.200701243-05:00",
+      "duration": 84600,
+      "started_at": "2026-04-27T16:31:06.269684313-05:00",
+      "completed_at": "2026-04-27T16:31:06.269768973-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 61356,
+          "duration": 77827,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "131",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message is required: invalid params\"}}}\n",
             "jsonrpc_resp": {
@@ -1896,7 +1894,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1083,
+          "duration": 1473,
           "expected": {
             "error": {
               "code": -32602,
@@ -1910,7 +1908,7 @@
             "headers": {
               "content-length": "131",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message is required: invalid params\"}}}\n",
             "jsonrpc_resp": {
@@ -1929,35 +1927,35 @@
       ]
     },
     {
-      "id": "3a5282bb-1cb0-4358-8876-7125e7ec9358",
+      "id": "4d2602a3-44a0-4330-9508-516fa8f8145a",
       "spec_id": "a2a-v1",
       "test_case_id": "push-notification-not-supported",
       "runtime": "a2a-go-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 141798,
-      "started_at": "2026-04-27T16:18:25.200701944-05:00",
-      "completed_at": "2026-04-27T16:18:25.200843742-05:00",
+      "duration": 185641,
+      "started_at": "2026-04-27T16:31:06.269770015-05:00",
+      "completed_at": "2026-04-27T16:31:06.269955696-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 76315,
+          "duration": 100510,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5b0-7b7f-9898-89bc93428849\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629d-7cd5-ace7-b9213f3f268c\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5b0-7b7f-9898-89bc93428849",
+                  "messageId": "019dd0da-629d-7cd5-ace7-b9213f3f268c",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -1973,7 +1971,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 501,
+          "duration": 652,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -1984,15 +1982,15 @@
             "headers": {
               "content-length": "154",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0ce-c5b0-7b7f-9898-89bc93428849\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd0da-629d-7cd5-ace7-b9213f3f268c\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "message": {
-                  "messageId": "019dd0ce-c5b0-7b7f-9898-89bc93428849",
+                  "messageId": "019dd0da-629d-7cd5-ace7-b9213f3f268c",
                   "parts": [
                     {
                       "text": "Hello, world!"
@@ -2008,13 +2006,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 59052,
+          "duration": 77106,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "144",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32003,\"message\":\"push notification not supported\",\"data\":{\"error\":\"push notification not supported\"}}}\n",
             "jsonrpc_resp": {
@@ -2034,7 +2032,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "pass",
-          "duration": 711,
+          "duration": 1232,
           "expected": {
             "error": {
               "code": "*",
@@ -2048,7 +2046,7 @@
             "headers": {
               "content-length": "144",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32003,\"message\":\"push notification not supported\",\"data\":{\"error\":\"push notification not supported\"}}}\n",
             "jsonrpc_resp": {
@@ -2069,11 +2067,11 @@
   ],
   "summary": {
     "total": 20,
-    "passed": 18,
-    "failed": 2,
+    "passed": 19,
+    "failed": 1,
     "errors": 0,
     "skipped": 0,
     "timeouts": 0,
-    "compliance": 90
+    "compliance": 95
   }
 }

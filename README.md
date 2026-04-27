@@ -17,7 +17,7 @@ spec-torture is a conformance test harness for AI agent protocols. It validates 
 
 | Spec | Version | Transport | Tests | Description |
 |------|---------|-----------|-------|-------------|
-| [A2A](specs/a2a/) | v1.0 | `jsonrpc-http` | 19 | [Agent-to-Agent Protocol](https://a2a-protocol.org/latest/) — Google's open protocol for agent interop. Tests discovery (`.well-known/agent-card.json`), task lifecycle, messaging (text/file/data parts), SSE streaming, and JSON-RPC error handling. |
+| [A2A](specs/a2a/) | v1.0 | `jsonrpc-http` | 20 | [Agent-to-Agent Protocol](https://a2a-protocol.org/latest/) — conformance tests derived from the canonical [a2a.proto](https://github.com/a2aproject/A2A/blob/main/specification/a2a.proto). Tests discovery (`supportedInterfaces`), SendMessage (Task or Message response), GetTask, CancelTask, streaming (SSE), JSON-RPC error codes, and push notifications. Parts use v1.0 member-based polymorphism (no `kind` discriminator). |
 | [ACP](specs/acp/) | v0.1 | `http-rest` | 34 | [Crush Agent Communication Protocol](https://github.com/charmbracelet/crush) — HTTP REST protocol for agent runs. Tests health, agent discovery, sync/async/streaming run modes, NDJSON event streams, session management, input validation, and cancellation. |
 | [MCP](specs/mcp/) | v0.1 | `jsonrpc-stdio` | 3 | [Model Context Protocol](https://modelcontextprotocol.io/) — skeleton spec for stdio-based tool servers. |
 
@@ -25,21 +25,19 @@ spec-torture is a conformance test harness for AI agent protocols. It validates 
 
 ### A2A v1.0 — Agent-to-Agent Protocol
 
-Tested against five A2A runtimes — four official SDK sample agents (Go, Rust, Python, JS) and crush-a2a (Crush native protocol):
+Spec derived from the canonical [a2a.proto](https://github.com/a2aproject/A2A/blob/main/specification/a2a.proto) (package `lf.a2a.v1`). Tested against three v1.0-capable runtimes:
 
 | Runtime | SDK/Backend | Compliance | Passed | Failed | Notes |
 |---------|------------|-----------|--------|--------|-------|
-| [crush-a2a](reports/a2a/crush-a2a.md) | Crush native | **47.4%** | 9/19 | 10 | Protocol layer correct (discovery + error handling). Lifecycle tests fail due to Crush backend unavailable. Previously 100% with live backend. |
-| [a2a-go-helloworld](reports/a2a/a2a-go-helloworld.md) | a2a-go v2.x | **47.4%** | 9/19 | 10 | Supports v1.0 methods, SSE streaming works. Returns `result.message` instead of Task wrapper. |
-| [a2a-python-helloworld](reports/a2a/a2a-python-helloworld.md) | a2a-sdk v1.0.1 | **42.1%** | 8/19 | 11 | Discovery and JSON-RPC error handling pass. SDK only recognizes v0.3 method names despite v1.0 release. |
-| [a2a-js-sample](reports/a2a/a2a-js-sample.md) | @a2a-js/sdk v0.3.13 | **42.1%** | 8/19 | 11 | Same v0.3-only failure pattern as Python. `SendMessage`/`GetTask` return method-not-found. |
-| [a2a-rs-helloworld](reports/a2a/a2a-rs-helloworld.md) | a2a-rs (Rust) | **26.3%** | 5/19 | 14 | Rejects `kind` field in parts (protobuf naming). Returns HTTP 400/422 instead of JSON-RPC errors for malformed input. |
+| [crush-a2a](reports/a2a/crush-a2a.md) | Crush native | **100.0%** | 20/20 | 0 | Full v1.0 compliance. All discovery, lifecycle, messaging, streaming, error handling, and push notification tests pass. |
+| [a2a-go-helloworld](reports/a2a/a2a-go-helloworld.md) | a2a-go v2.x | **95.0%** | 19/20 | 1 | Near-complete compliance. Returns Message (not Task) from SendMessage — valid per proto oneof. Fails `optional-message-id` (rejects missing messageId as REQUIRED). |
+| [a2a-rs-helloworld](reports/a2a/a2a-rs-helloworld.md) | a2a-rs (Rust) | **85.0%** | 17/20 | 3 | Strong compliance. Returns Task from SendMessage. Fails: returns HTTP errors instead of JSON-RPC error objects for parse/invalid-request, doesn't return -32602 for missing params. |
 
 **Key findings:**
-- **Response envelope fragmentation:** The three v1.0-capable runtimes (crush-a2a, Go, Rust) each return different response structures for `SendMessage` — no two agree on whether the result is a Task, a Message, or a `task`-wrapped object.
-- **Protocol version split:** Python v1.0.1 and JS v0.3.13 SDKs only recognize v0.3 slash-separated method names (`message/send`), not v1.0 PascalCase names (`SendMessage`).
-- **Part schema divergence:** The Rust SDK rejects the `kind` field in message parts, using protobuf-derived field names instead of the v1.0 JSON schema.
-- **Error handling:** 4 of 5 runtimes correctly return JSON-RPC error objects for malformed input; the Rust SDK returns HTTP-level errors with plaintext bodies.
+- **Response polymorphism works:** The v1.0 proto defines `SendMessageResponse` as `oneof { Task, Message }`. Go returns `{result: {message: {...}}}`, Rust returns `{result: {task: {...}}}`, crush-a2a returns `{result: {task: {...}}}` — all valid.
+- **Parts without `kind`:** All three runtimes correctly implement v1.0 member-based polymorphism (`{text: "..."}` not `{kind: "text", text: "..."}`).
+- **Agent card:** All use `supportedInterfaces` (not legacy `url`).
+- **JSON-RPC error handling:** Go and crush-a2a return proper JSON-RPC error objects; Rust returns HTTP-level errors for some malformed inputs.
 
 Full analysis: [reports/a2a/README.md](reports/a2a/README.md)
 

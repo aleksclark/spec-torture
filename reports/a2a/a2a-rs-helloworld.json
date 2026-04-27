@@ -1,34 +1,34 @@
 {
-  "id": "67e60aef-3228-4bee-be6b-c62fa7afcb9e",
+  "id": "ef2ada14-0a2b-46dd-8cc1-f27966a44a12",
   "spec_id": "a2a-v1",
   "runtime": "a2a-rs-helloworld",
   "runtime_version": "",
-  "started_at": "2026-04-27T16:18:25.555424772-05:00",
-  "completed_at": "2026-04-27T16:18:25.643313789-05:00",
+  "started_at": "2026-04-27T16:31:06.613819755-05:00",
+  "completed_at": "2026-04-27T16:31:06.703299415-05:00",
   "results": [
     {
-      "id": "6163df7c-edf8-4547-adff-d42674a2f415",
+      "id": "5aea411e-7d65-48b7-9e12-74a7d4103048",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-well-known",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 994872,
-      "started_at": "2026-04-27T16:18:25.555474446-05:00",
-      "completed_at": "2026-04-27T16:18:25.556469258-05:00",
+      "duration": 935049,
+      "started_at": "2026-04-27T16:31:06.613857987-05:00",
+      "completed_at": "2026-04-27T16:31:06.614793046-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 981978,
+          "duration": 927735,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -78,7 +78,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1964,
+          "duration": 851,
           "expected": {
             "body": {
               "name": "*",
@@ -94,7 +94,7 @@
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -143,28 +143,28 @@
       ]
     },
     {
-      "id": "b1fca217-34df-4e94-b4c2-534426719d6f",
+      "id": "94c9d27f-4bfa-4918-8ba6-4cca5c73658d",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-content-type",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 186673,
-      "started_at": "2026-04-27T16:18:25.556472865-05:00",
-      "completed_at": "2026-04-27T16:18:25.556659608-05:00",
+      "duration": 170422,
+      "started_at": "2026-04-27T16:31:06.614794709-05:00",
+      "completed_at": "2026-04-27T16:31:06.614965121-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 172346,
+          "duration": 162778,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -214,7 +214,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1152,
+          "duration": 1042,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -227,7 +227,7 @@
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -276,28 +276,28 @@
       ]
     },
     {
-      "id": "feb810a9-94e9-4b83-bbf3-71ecde8b969d",
+      "id": "f4d69972-5a28-4efa-8730-068c7ed75d9f",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-optional-fields",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 133813,
-      "started_at": "2026-04-27T16:18:25.556661041-05:00",
-      "completed_at": "2026-04-27T16:18:25.556794904-05:00",
+      "duration": 163509,
+      "started_at": "2026-04-27T16:31:06.614966654-05:00",
+      "completed_at": "2026-04-27T16:31:06.615130163-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 128613,
+          "duration": 157718,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -347,7 +347,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 491,
+          "duration": 551,
           "expected": {
             "body": {
               "capabilities": "*",
@@ -362,7 +362,7 @@
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -411,28 +411,28 @@
       ]
     },
     {
-      "id": "04895625-6db2-474a-9c3f-c27ab74ce638",
+      "id": "efa40316-d814-4b61-8f8c-9e9bca8a0bbb",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-skills",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 136889,
-      "started_at": "2026-04-27T16:18:25.556795866-05:00",
-      "completed_at": "2026-04-27T16:18:25.556932765-05:00",
+      "duration": 142650,
+      "started_at": "2026-04-27T16:31:06.615132007-05:00",
+      "completed_at": "2026-04-27T16:31:06.615274657-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 132591,
+          "duration": 136217,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -482,7 +482,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 661,
+          "duration": 411,
           "expected": {
             "body": {
               "skills": "*"
@@ -495,7 +495,7 @@
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -544,28 +544,28 @@
       ]
     },
     {
-      "id": "80c8e3d1-e321-47a1-8c7b-0d055228250c",
+      "id": "9b34f45f-605d-4be9-bab2-428193919092",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-interfaces",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 150504,
-      "started_at": "2026-04-27T16:18:25.556934068-05:00",
-      "completed_at": "2026-04-27T16:18:25.557084512-05:00",
+      "duration": 128172,
+      "started_at": "2026-04-27T16:31:06.615275218-05:00",
+      "completed_at": "2026-04-27T16:31:06.6154034-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 142520,
+          "duration": 123744,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -615,7 +615,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 481,
+          "duration": 400,
           "expected": {
             "body": {
               "capabilities": "*",
@@ -631,7 +631,7 @@
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "body": {
               "capabilities": {
@@ -680,50 +680,50 @@
       ]
     },
     {
-      "id": "36ef3512-07a1-424f-b7f8-081af2ce4b8a",
+      "id": "614356d7-0a5c-4708-8efc-4acf062eaef8",
       "spec_id": "a2a-v1",
       "test_case_id": "send-message-basic",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 508422,
-      "started_at": "2026-04-27T16:18:25.557085564-05:00",
-      "completed_at": "2026-04-27T16:18:25.557593996-05:00",
+      "duration": 658205,
+      "started_at": "2026-04-27T16:31:06.615404452-05:00",
+      "completed_at": "2026-04-27T16:31:06.616062717-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 502070,
+          "duration": 648406,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "464",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f51cdbbab543\",\"id\":\"019dd0ce-c715-72f2-a3d1-f50ad0cd67bc\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f51cdbbab543\",\"messageId\":\"019dd0ce-c715-72f2-a3d1-f52961e74cb0\",\"parts\":[{\"text\":\"Echo: Hello, what can you do?\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c715-72f2-a3d1-f50ad0cd67bc\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.557416551+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63f7-7860-aaa9-b4bb36a599a0\",\"id\":\"019dd0da-63f7-7860-aaa9-b4a8a6231ec8\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63f7-7860-aaa9-b4bb36a599a0\",\"messageId\":\"019dd0da-63f7-7860-aaa9-b4c743750bcd\",\"parts\":[{\"text\":\"Echo: Hello, what can you do?\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63f7-7860-aaa9-b4a8a6231ec8\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.615706153+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c715-72f2-a3d1-f51cdbbab543",
-                  "id": "019dd0ce-c715-72f2-a3d1-f50ad0cd67bc",
+                  "contextId": "019dd0da-63f7-7860-aaa9-b4bb36a599a0",
+                  "id": "019dd0da-63f7-7860-aaa9-b4a8a6231ec8",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c715-72f2-a3d1-f51cdbbab543",
-                      "messageId": "019dd0ce-c715-72f2-a3d1-f52961e74cb0",
+                      "contextId": "019dd0da-63f7-7860-aaa9-b4bb36a599a0",
+                      "messageId": "019dd0da-63f7-7860-aaa9-b4c743750bcd",
                       "parts": [
                         {
                           "text": "Echo: Hello, what can you do?"
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c715-72f2-a3d1-f50ad0cd67bc"
+                      "taskId": "019dd0da-63f7-7860-aaa9-b4a8a6231ec8"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.557416551+00:00"
+                    "timestamp": "2026-04-27T21:31:06.615706153+00:00"
                   }
                 }
               }
@@ -734,7 +734,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1723,
+          "duration": 2865,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -745,30 +745,30 @@
             "headers": {
               "content-length": "464",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f51cdbbab543\",\"id\":\"019dd0ce-c715-72f2-a3d1-f50ad0cd67bc\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f51cdbbab543\",\"messageId\":\"019dd0ce-c715-72f2-a3d1-f52961e74cb0\",\"parts\":[{\"text\":\"Echo: Hello, what can you do?\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c715-72f2-a3d1-f50ad0cd67bc\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.557416551+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63f7-7860-aaa9-b4bb36a599a0\",\"id\":\"019dd0da-63f7-7860-aaa9-b4a8a6231ec8\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63f7-7860-aaa9-b4bb36a599a0\",\"messageId\":\"019dd0da-63f7-7860-aaa9-b4c743750bcd\",\"parts\":[{\"text\":\"Echo: Hello, what can you do?\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63f7-7860-aaa9-b4a8a6231ec8\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.615706153+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c715-72f2-a3d1-f51cdbbab543",
-                  "id": "019dd0ce-c715-72f2-a3d1-f50ad0cd67bc",
+                  "contextId": "019dd0da-63f7-7860-aaa9-b4bb36a599a0",
+                  "id": "019dd0da-63f7-7860-aaa9-b4a8a6231ec8",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c715-72f2-a3d1-f51cdbbab543",
-                      "messageId": "019dd0ce-c715-72f2-a3d1-f52961e74cb0",
+                      "contextId": "019dd0da-63f7-7860-aaa9-b4bb36a599a0",
+                      "messageId": "019dd0da-63f7-7860-aaa9-b4c743750bcd",
                       "parts": [
                         {
                           "text": "Echo: Hello, what can you do?"
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c715-72f2-a3d1-f50ad0cd67bc"
+                      "taskId": "019dd0da-63f7-7860-aaa9-b4a8a6231ec8"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.557416551+00:00"
+                    "timestamp": "2026-04-27T21:31:06.615706153+00:00"
                   }
                 }
               }
@@ -778,50 +778,50 @@
       ]
     },
     {
-      "id": "f1b113ba-1857-4668-9c4c-44d0795285c7",
+      "id": "931244cd-f4b2-4afa-9707-f837805a152d",
       "spec_id": "a2a-v1",
       "test_case_id": "send-message-response-shape",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 363508,
-      "started_at": "2026-04-27T16:18:25.557594898-05:00",
-      "completed_at": "2026-04-27T16:18:25.557958406-05:00",
+      "duration": 464920,
+      "started_at": "2026-04-27T16:31:06.616065462-05:00",
+      "completed_at": "2026-04-27T16:31:06.616530432-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 357136,
+          "duration": 451053,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "459",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f54e9165e08c\",\"id\":\"019dd0ce-c715-72f2-a3d1-f53e480f3a4b\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f54e9165e08c\",\"messageId\":\"019dd0ce-c715-72f2-a3d1-f55cc0bdbff6\",\"parts\":[{\"text\":\"Echo: Tell me something.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c715-72f2-a3d1-f53e480f3a4b\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.557836024+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63f8-7871-b0e2-2992d6cabe95\",\"id\":\"019dd0da-63f8-7871-b0e2-298ecb4e89f8\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63f8-7871-b0e2-2992d6cabe95\",\"messageId\":\"019dd0da-63f8-7871-b0e2-29a7b2b6b871\",\"parts\":[{\"text\":\"Echo: Tell me something.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63f8-7871-b0e2-298ecb4e89f8\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.616392511+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c715-72f2-a3d1-f54e9165e08c",
-                  "id": "019dd0ce-c715-72f2-a3d1-f53e480f3a4b",
+                  "contextId": "019dd0da-63f8-7871-b0e2-2992d6cabe95",
+                  "id": "019dd0da-63f8-7871-b0e2-298ecb4e89f8",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c715-72f2-a3d1-f54e9165e08c",
-                      "messageId": "019dd0ce-c715-72f2-a3d1-f55cc0bdbff6",
+                      "contextId": "019dd0da-63f8-7871-b0e2-2992d6cabe95",
+                      "messageId": "019dd0da-63f8-7871-b0e2-29a7b2b6b871",
                       "parts": [
                         {
                           "text": "Echo: Tell me something."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c715-72f2-a3d1-f53e480f3a4b"
+                      "taskId": "019dd0da-63f8-7871-b0e2-298ecb4e89f8"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.557836024+00:00"
+                    "timestamp": "2026-04-27T21:31:06.616392511+00:00"
                   }
                 }
               }
@@ -832,7 +832,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 682,
+          "duration": 1162,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -843,30 +843,30 @@
             "headers": {
               "content-length": "459",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f54e9165e08c\",\"id\":\"019dd0ce-c715-72f2-a3d1-f53e480f3a4b\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f54e9165e08c\",\"messageId\":\"019dd0ce-c715-72f2-a3d1-f55cc0bdbff6\",\"parts\":[{\"text\":\"Echo: Tell me something.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c715-72f2-a3d1-f53e480f3a4b\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.557836024+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63f8-7871-b0e2-2992d6cabe95\",\"id\":\"019dd0da-63f8-7871-b0e2-298ecb4e89f8\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63f8-7871-b0e2-2992d6cabe95\",\"messageId\":\"019dd0da-63f8-7871-b0e2-29a7b2b6b871\",\"parts\":[{\"text\":\"Echo: Tell me something.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63f8-7871-b0e2-298ecb4e89f8\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.616392511+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c715-72f2-a3d1-f54e9165e08c",
-                  "id": "019dd0ce-c715-72f2-a3d1-f53e480f3a4b",
+                  "contextId": "019dd0da-63f8-7871-b0e2-2992d6cabe95",
+                  "id": "019dd0da-63f8-7871-b0e2-298ecb4e89f8",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c715-72f2-a3d1-f54e9165e08c",
-                      "messageId": "019dd0ce-c715-72f2-a3d1-f55cc0bdbff6",
+                      "contextId": "019dd0da-63f8-7871-b0e2-2992d6cabe95",
+                      "messageId": "019dd0da-63f8-7871-b0e2-29a7b2b6b871",
                       "parts": [
                         {
                           "text": "Echo: Tell me something."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c715-72f2-a3d1-f53e480f3a4b"
+                      "taskId": "019dd0da-63f8-7871-b0e2-298ecb4e89f8"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.557836024+00:00"
+                    "timestamp": "2026-04-27T21:31:06.616392511+00:00"
                   }
                 }
               }
@@ -876,50 +876,50 @@
       ]
     },
     {
-      "id": "fd464139-c410-45ca-b534-556870235077",
+      "id": "37cafb29-0610-4a3c-a1ea-8c1d243a5e55",
       "spec_id": "a2a-v1",
       "test_case_id": "get-task",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 698221,
-      "started_at": "2026-04-27T16:18:25.557959217-05:00",
-      "completed_at": "2026-04-27T16:18:25.558657428-05:00",
+      "duration": 580067,
+      "started_at": "2026-04-27T16:31:06.616531584-05:00",
+      "completed_at": "2026-04-27T16:31:06.617111701-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 468196,
+          "duration": 360983,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "476",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d0f4efd2de21\",\"id\":\"019dd0ce-c716-7a81-92f4-d0e2cb414546\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d0f4efd2de21\",\"messageId\":\"019dd0ce-c716-7a81-92f4-d1065e125727\",\"parts\":[{\"text\":\"Echo: Create a task so I can retrieve it.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c716-7a81-92f4-d0e2cb414546\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.558221544+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63f8-7871-b0e2-29ce5c73ca63\",\"id\":\"019dd0da-63f8-7871-b0e2-29b19700cd88\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63f8-7871-b0e2-29ce5c73ca63\",\"messageId\":\"019dd0da-63f8-7871-b0e2-29d6447e0b10\",\"parts\":[{\"text\":\"Echo: Create a task so I can retrieve it.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63f8-7871-b0e2-29b19700cd88\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.616739667+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c716-7a81-92f4-d0f4efd2de21",
-                  "id": "019dd0ce-c716-7a81-92f4-d0e2cb414546",
+                  "contextId": "019dd0da-63f8-7871-b0e2-29ce5c73ca63",
+                  "id": "019dd0da-63f8-7871-b0e2-29b19700cd88",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c716-7a81-92f4-d0f4efd2de21",
-                      "messageId": "019dd0ce-c716-7a81-92f4-d1065e125727",
+                      "contextId": "019dd0da-63f8-7871-b0e2-29ce5c73ca63",
+                      "messageId": "019dd0da-63f8-7871-b0e2-29d6447e0b10",
                       "parts": [
                         {
                           "text": "Echo: Create a task so I can retrieve it."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c716-7a81-92f4-d0e2cb414546"
+                      "taskId": "019dd0da-63f8-7871-b0e2-29b19700cd88"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.558221544+00:00"
+                    "timestamp": "2026-04-27T21:31:06.616739667+00:00"
                   }
                 }
               }
@@ -930,7 +930,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1613,
+          "duration": 1162,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -941,30 +941,30 @@
             "headers": {
               "content-length": "476",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d0f4efd2de21\",\"id\":\"019dd0ce-c716-7a81-92f4-d0e2cb414546\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d0f4efd2de21\",\"messageId\":\"019dd0ce-c716-7a81-92f4-d1065e125727\",\"parts\":[{\"text\":\"Echo: Create a task so I can retrieve it.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c716-7a81-92f4-d0e2cb414546\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.558221544+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63f8-7871-b0e2-29ce5c73ca63\",\"id\":\"019dd0da-63f8-7871-b0e2-29b19700cd88\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63f8-7871-b0e2-29ce5c73ca63\",\"messageId\":\"019dd0da-63f8-7871-b0e2-29d6447e0b10\",\"parts\":[{\"text\":\"Echo: Create a task so I can retrieve it.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63f8-7871-b0e2-29b19700cd88\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.616739667+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c716-7a81-92f4-d0f4efd2de21",
-                  "id": "019dd0ce-c716-7a81-92f4-d0e2cb414546",
+                  "contextId": "019dd0da-63f8-7871-b0e2-29ce5c73ca63",
+                  "id": "019dd0da-63f8-7871-b0e2-29b19700cd88",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c716-7a81-92f4-d0f4efd2de21",
-                      "messageId": "019dd0ce-c716-7a81-92f4-d1065e125727",
+                      "contextId": "019dd0da-63f8-7871-b0e2-29ce5c73ca63",
+                      "messageId": "019dd0da-63f8-7871-b0e2-29d6447e0b10",
                       "parts": [
                         {
                           "text": "Echo: Create a task so I can retrieve it."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c716-7a81-92f4-d0e2cb414546"
+                      "taskId": "019dd0da-63f8-7871-b0e2-29b19700cd88"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.558221544+00:00"
+                    "timestamp": "2026-04-27T21:31:06.616739667+00:00"
                   }
                 }
               }
@@ -975,13 +975,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 222601,
+          "duration": 210147,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "82",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found: \u003cnil\u003e\"}}",
             "jsonrpc_resp": {
@@ -998,7 +998,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "pass",
-          "duration": 942,
+          "duration": 1052,
           "expected": {
             "id": 2,
             "jsonrpc": "2.0"
@@ -1008,7 +1008,7 @@
             "headers": {
               "content-length": "82",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found: \u003cnil\u003e\"}}",
             "jsonrpc_resp": {
@@ -1024,27 +1024,27 @@
       ]
     },
     {
-      "id": "62b97a2a-a167-4aec-942a-8aeced373eab",
+      "id": "ebf9288c-b1c0-4293-873b-8fc8a716ca64",
       "spec_id": "a2a-v1",
       "test_case_id": "get-task-not-found",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 163649,
-      "started_at": "2026-04-27T16:18:25.55865824-05:00",
-      "completed_at": "2026-04-27T16:18:25.558821879-05:00",
+      "duration": 167557,
+      "started_at": "2026-04-27T16:31:06.617113024-05:00",
+      "completed_at": "2026-04-27T16:31:06.617280571-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 157127,
+          "duration": 158199,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "105",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found: nonexistent-task-id-00000000\"}}",
             "jsonrpc_resp": {
@@ -1061,7 +1061,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 911,
+          "duration": 1322,
           "expected": {
             "error": {
               "code": "*",
@@ -1075,7 +1075,7 @@
             "headers": {
               "content-length": "105",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found: nonexistent-task-id-00000000\"}}",
             "jsonrpc_resp": {
@@ -1091,50 +1091,50 @@
       ]
     },
     {
-      "id": "f90e77f4-14b4-4844-bc0e-6c885b784dcd",
+      "id": "6bcebae0-994f-4da0-ad85-75d85d678c8f",
       "spec_id": "a2a-v1",
       "test_case_id": "cancel-task",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 472885,
-      "started_at": "2026-04-27T16:18:25.558823302-05:00",
-      "completed_at": "2026-04-27T16:18:25.559296187-05:00",
+      "duration": 487732,
+      "started_at": "2026-04-27T16:31:06.617282695-05:00",
+      "completed_at": "2026-04-27T16:31:06.617770437-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 317681,
+          "duration": 306489,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "472",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d12c90584f54\",\"id\":\"019dd0ce-c716-7a81-92f4-d1184ba6dcd3\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d12c90584f54\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8d469bfc8326\",\"parts\":[{\"text\":\"Echo: Start a task that I can cancel.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c716-7a81-92f4-d1184ba6dcd3\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559013161+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63f9-7d41-870b-19d2264638e7\",\"id\":\"019dd0da-63f9-7d41-870b-19c5583c8a35\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63f9-7d41-870b-19d2264638e7\",\"messageId\":\"019dd0da-63f9-7d41-870b-19e591f1e1a0\",\"parts\":[{\"text\":\"Echo: Start a task that I can cancel.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63f9-7d41-870b-19c5583c8a35\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.617478555+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c716-7a81-92f4-d12c90584f54",
-                  "id": "019dd0ce-c716-7a81-92f4-d1184ba6dcd3",
+                  "contextId": "019dd0da-63f9-7d41-870b-19d2264638e7",
+                  "id": "019dd0da-63f9-7d41-870b-19c5583c8a35",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c716-7a81-92f4-d12c90584f54",
-                      "messageId": "019dd0ce-c717-72a2-b5d4-8d469bfc8326",
+                      "contextId": "019dd0da-63f9-7d41-870b-19d2264638e7",
+                      "messageId": "019dd0da-63f9-7d41-870b-19e591f1e1a0",
                       "parts": [
                         {
                           "text": "Echo: Start a task that I can cancel."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c716-7a81-92f4-d1184ba6dcd3"
+                      "taskId": "019dd0da-63f9-7d41-870b-19c5583c8a35"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.559013161+00:00"
+                    "timestamp": "2026-04-27T21:31:06.617478555+00:00"
                   }
                 }
               }
@@ -1145,7 +1145,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 751,
+          "duration": 481,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -1156,30 +1156,30 @@
             "headers": {
               "content-length": "472",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d12c90584f54\",\"id\":\"019dd0ce-c716-7a81-92f4-d1184ba6dcd3\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d12c90584f54\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8d469bfc8326\",\"parts\":[{\"text\":\"Echo: Start a task that I can cancel.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c716-7a81-92f4-d1184ba6dcd3\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559013161+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63f9-7d41-870b-19d2264638e7\",\"id\":\"019dd0da-63f9-7d41-870b-19c5583c8a35\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63f9-7d41-870b-19d2264638e7\",\"messageId\":\"019dd0da-63f9-7d41-870b-19e591f1e1a0\",\"parts\":[{\"text\":\"Echo: Start a task that I can cancel.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63f9-7d41-870b-19c5583c8a35\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.617478555+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c716-7a81-92f4-d12c90584f54",
-                  "id": "019dd0ce-c716-7a81-92f4-d1184ba6dcd3",
+                  "contextId": "019dd0da-63f9-7d41-870b-19d2264638e7",
+                  "id": "019dd0da-63f9-7d41-870b-19c5583c8a35",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c716-7a81-92f4-d12c90584f54",
-                      "messageId": "019dd0ce-c717-72a2-b5d4-8d469bfc8326",
+                      "contextId": "019dd0da-63f9-7d41-870b-19d2264638e7",
+                      "messageId": "019dd0da-63f9-7d41-870b-19e591f1e1a0",
                       "parts": [
                         {
                           "text": "Echo: Start a task that I can cancel."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c716-7a81-92f4-d1184ba6dcd3"
+                      "taskId": "019dd0da-63f9-7d41-870b-19c5583c8a35"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.559013161+00:00"
+                    "timestamp": "2026-04-27T21:31:06.617478555+00:00"
                   }
                 }
               }
@@ -1190,13 +1190,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 149372,
+          "duration": 173598,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "82",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found: \u003cnil\u003e\"}}",
             "jsonrpc_resp": {
@@ -1213,7 +1213,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "pass",
-          "duration": 732,
+          "duration": 551,
           "expected": {
             "id": 2,
             "jsonrpc": "2.0"
@@ -1223,7 +1223,7 @@
             "headers": {
               "content-length": "82",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found: \u003cnil\u003e\"}}",
             "jsonrpc_resp": {
@@ -1239,50 +1239,50 @@
       ]
     },
     {
-      "id": "401fd226-1484-4bb6-ac2c-31deb814ae83",
+      "id": "e943738e-61e0-41a8-8021-69b4b2c03000",
       "spec_id": "a2a-v1",
       "test_case_id": "message-text-part",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 286101,
-      "started_at": "2026-04-27T16:18:25.559297099-05:00",
-      "completed_at": "2026-04-27T16:18:25.55958317-05:00",
+      "duration": 310207,
+      "started_at": "2026-04-27T16:31:06.617771048-05:00",
+      "completed_at": "2026-04-27T16:31:06.618081255-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 279559,
+          "duration": 305478,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "470",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d6888457bdb\",\"id\":\"019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d6888457bdb\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8d7b9071f957\",\"parts\":[{\"text\":\"Echo: This is a plain text message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559462271+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63f9-7d41-870b-1a07ef330ed8\",\"id\":\"019dd0da-63f9-7d41-870b-19f77e18a947\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63f9-7d41-870b-1a07ef330ed8\",\"messageId\":\"019dd0da-63f9-7d41-870b-1a1564f0d947\",\"parts\":[{\"text\":\"Echo: This is a plain text message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63f9-7d41-870b-19f77e18a947\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.617942593+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c717-72a2-b5d4-8d6888457bdb",
-                  "id": "019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be",
+                  "contextId": "019dd0da-63f9-7d41-870b-1a07ef330ed8",
+                  "id": "019dd0da-63f9-7d41-870b-19f77e18a947",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c717-72a2-b5d4-8d6888457bdb",
-                      "messageId": "019dd0ce-c717-72a2-b5d4-8d7b9071f957",
+                      "contextId": "019dd0da-63f9-7d41-870b-1a07ef330ed8",
+                      "messageId": "019dd0da-63f9-7d41-870b-1a1564f0d947",
                       "parts": [
                         {
                           "text": "Echo: This is a plain text message."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be"
+                      "taskId": "019dd0da-63f9-7d41-870b-19f77e18a947"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.559462271+00:00"
+                    "timestamp": "2026-04-27T21:31:06.617942593+00:00"
                   }
                 }
               }
@@ -1293,7 +1293,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 762,
+          "duration": 1012,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -1304,30 +1304,30 @@
             "headers": {
               "content-length": "470",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d6888457bdb\",\"id\":\"019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d6888457bdb\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8d7b9071f957\",\"parts\":[{\"text\":\"Echo: This is a plain text message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559462271+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63f9-7d41-870b-1a07ef330ed8\",\"id\":\"019dd0da-63f9-7d41-870b-19f77e18a947\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63f9-7d41-870b-1a07ef330ed8\",\"messageId\":\"019dd0da-63f9-7d41-870b-1a1564f0d947\",\"parts\":[{\"text\":\"Echo: This is a plain text message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63f9-7d41-870b-19f77e18a947\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.617942593+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c717-72a2-b5d4-8d6888457bdb",
-                  "id": "019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be",
+                  "contextId": "019dd0da-63f9-7d41-870b-1a07ef330ed8",
+                  "id": "019dd0da-63f9-7d41-870b-19f77e18a947",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c717-72a2-b5d4-8d6888457bdb",
-                      "messageId": "019dd0ce-c717-72a2-b5d4-8d7b9071f957",
+                      "contextId": "019dd0da-63f9-7d41-870b-1a07ef330ed8",
+                      "messageId": "019dd0da-63f9-7d41-870b-1a1564f0d947",
                       "parts": [
                         {
                           "text": "Echo: This is a plain text message."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be"
+                      "taskId": "019dd0da-63f9-7d41-870b-19f77e18a947"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.559462271+00:00"
+                    "timestamp": "2026-04-27T21:31:06.617942593+00:00"
                   }
                 }
               }
@@ -1337,50 +1337,50 @@
       ]
     },
     {
-      "id": "b778b477-c243-492e-ad64-b66daf627297",
+      "id": "6989680f-f675-47db-8040-1ed195f4668a",
       "spec_id": "a2a-v1",
       "test_case_id": "message-with-context",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 665299,
-      "started_at": "2026-04-27T16:18:25.559583631-05:00",
-      "completed_at": "2026-04-27T16:18:25.560248919-05:00",
+      "duration": 554168,
+      "started_at": "2026-04-27T16:31:06.618082227-05:00",
+      "completed_at": "2026-04-27T16:31:06.618636385-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 302251,
+          "duration": 271944,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "465",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d9f53f40539\",\"id\":\"019dd0ce-c717-72a2-b5d4-8d81ceecce7d\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d9f53f40539\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8da616b1bd22\",\"parts\":[{\"text\":\"Echo: Hello from context test.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c717-72a2-b5d4-8d81ceecce7d\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559770053+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63fa-79d2-b446-c33f88d3d96a\",\"id\":\"019dd0da-63fa-79d2-b446-c320e0352f1f\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63fa-79d2-b446-c33f88d3d96a\",\"messageId\":\"019dd0da-63fa-79d2-b446-c34556c24aca\",\"parts\":[{\"text\":\"Echo: Hello from context test.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63fa-79d2-b446-c320e0352f1f\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.618242069+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c717-72a2-b5d4-8d9f53f40539",
-                  "id": "019dd0ce-c717-72a2-b5d4-8d81ceecce7d",
+                  "contextId": "019dd0da-63fa-79d2-b446-c33f88d3d96a",
+                  "id": "019dd0da-63fa-79d2-b446-c320e0352f1f",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c717-72a2-b5d4-8d9f53f40539",
-                      "messageId": "019dd0ce-c717-72a2-b5d4-8da616b1bd22",
+                      "contextId": "019dd0da-63fa-79d2-b446-c33f88d3d96a",
+                      "messageId": "019dd0da-63fa-79d2-b446-c34556c24aca",
                       "parts": [
                         {
                           "text": "Echo: Hello from context test."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c717-72a2-b5d4-8d81ceecce7d"
+                      "taskId": "019dd0da-63fa-79d2-b446-c320e0352f1f"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.559770053+00:00"
+                    "timestamp": "2026-04-27T21:31:06.618242069+00:00"
                   }
                 }
               }
@@ -1391,7 +1391,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 742,
+          "duration": 851,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -1402,30 +1402,30 @@
             "headers": {
               "content-length": "465",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d9f53f40539\",\"id\":\"019dd0ce-c717-72a2-b5d4-8d81ceecce7d\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d9f53f40539\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8da616b1bd22\",\"parts\":[{\"text\":\"Echo: Hello from context test.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c717-72a2-b5d4-8d81ceecce7d\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559770053+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63fa-79d2-b446-c33f88d3d96a\",\"id\":\"019dd0da-63fa-79d2-b446-c320e0352f1f\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63fa-79d2-b446-c33f88d3d96a\",\"messageId\":\"019dd0da-63fa-79d2-b446-c34556c24aca\",\"parts\":[{\"text\":\"Echo: Hello from context test.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63fa-79d2-b446-c320e0352f1f\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.618242069+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c717-72a2-b5d4-8d9f53f40539",
-                  "id": "019dd0ce-c717-72a2-b5d4-8d81ceecce7d",
+                  "contextId": "019dd0da-63fa-79d2-b446-c33f88d3d96a",
+                  "id": "019dd0da-63fa-79d2-b446-c320e0352f1f",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c717-72a2-b5d4-8d9f53f40539",
-                      "messageId": "019dd0ce-c717-72a2-b5d4-8da616b1bd22",
+                      "contextId": "019dd0da-63fa-79d2-b446-c33f88d3d96a",
+                      "messageId": "019dd0da-63fa-79d2-b446-c34556c24aca",
                       "parts": [
                         {
                           "text": "Echo: Hello from context test."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c717-72a2-b5d4-8d81ceecce7d"
+                      "taskId": "019dd0da-63fa-79d2-b446-c320e0352f1f"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.559770053+00:00"
+                    "timestamp": "2026-04-27T21:31:06.618242069+00:00"
                   }
                 }
               }
@@ -1436,36 +1436,36 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 357576,
+          "duration": 274729,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "397",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"task\":{\"contextId\":\"\u003cnil\u003e\",\"id\":\"019dd0ce-c718-7920-ad22-166ed977260a\",\"status\":{\"message\":{\"contextId\":\"\u003cnil\u003e\",\"messageId\":\"019dd0ce-c718-7920-ad22-1671bb38546e\",\"parts\":[{\"text\":\"Echo: Follow up message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c718-7920-ad22-166ed977260a\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.560124815+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"task\":{\"contextId\":\"\u003cnil\u003e\",\"id\":\"019dd0da-63fa-79d2-b446-c357e71921e7\",\"status\":{\"message\":{\"contextId\":\"\u003cnil\u003e\",\"messageId\":\"019dd0da-63fa-79d2-b446-c3666059ff5f\",\"parts\":[{\"text\":\"Echo: Follow up message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63fa-79d2-b446-c357e71921e7\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.618522660+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 2,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
                   "contextId": "\u003cnil\u003e",
-                  "id": "019dd0ce-c718-7920-ad22-166ed977260a",
+                  "id": "019dd0da-63fa-79d2-b446-c357e71921e7",
                   "status": {
                     "message": {
                       "contextId": "\u003cnil\u003e",
-                      "messageId": "019dd0ce-c718-7920-ad22-1671bb38546e",
+                      "messageId": "019dd0da-63fa-79d2-b446-c3666059ff5f",
                       "parts": [
                         {
                           "text": "Echo: Follow up message."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c718-7920-ad22-166ed977260a"
+                      "taskId": "019dd0da-63fa-79d2-b446-c357e71921e7"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.560124815+00:00"
+                    "timestamp": "2026-04-27T21:31:06.618522660+00:00"
                   }
                 }
               }
@@ -1476,7 +1476,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "pass",
-          "duration": 901,
+          "duration": 661,
           "expected": {
             "id": 2,
             "jsonrpc": "2.0",
@@ -1487,30 +1487,30 @@
             "headers": {
               "content-length": "397",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"task\":{\"contextId\":\"\u003cnil\u003e\",\"id\":\"019dd0ce-c718-7920-ad22-166ed977260a\",\"status\":{\"message\":{\"contextId\":\"\u003cnil\u003e\",\"messageId\":\"019dd0ce-c718-7920-ad22-1671bb38546e\",\"parts\":[{\"text\":\"Echo: Follow up message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c718-7920-ad22-166ed977260a\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.560124815+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"task\":{\"contextId\":\"\u003cnil\u003e\",\"id\":\"019dd0da-63fa-79d2-b446-c357e71921e7\",\"status\":{\"message\":{\"contextId\":\"\u003cnil\u003e\",\"messageId\":\"019dd0da-63fa-79d2-b446-c3666059ff5f\",\"parts\":[{\"text\":\"Echo: Follow up message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63fa-79d2-b446-c357e71921e7\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.618522660+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 2,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
                   "contextId": "\u003cnil\u003e",
-                  "id": "019dd0ce-c718-7920-ad22-166ed977260a",
+                  "id": "019dd0da-63fa-79d2-b446-c357e71921e7",
                   "status": {
                     "message": {
                       "contextId": "\u003cnil\u003e",
-                      "messageId": "019dd0ce-c718-7920-ad22-1671bb38546e",
+                      "messageId": "019dd0da-63fa-79d2-b446-c3666059ff5f",
                       "parts": [
                         {
                           "text": "Echo: Follow up message."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c718-7920-ad22-166ed977260a"
+                      "taskId": "019dd0da-63fa-79d2-b446-c357e71921e7"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.560124815+00:00"
+                    "timestamp": "2026-04-27T21:31:06.618522660+00:00"
                   }
                 }
               }
@@ -1520,50 +1520,50 @@
       ]
     },
     {
-      "id": "1ed9a4d8-09d3-4288-bcca-c49b89607fb7",
+      "id": "c8fa2b8b-fd0d-487f-8b64-470fdcebe44c",
       "spec_id": "a2a-v1",
       "test_case_id": "optional-message-id",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 276172,
-      "started_at": "2026-04-27T16:18:25.560249591-05:00",
-      "completed_at": "2026-04-27T16:18:25.560525763-05:00",
+      "duration": 295128,
+      "started_at": "2026-04-27T16:31:06.618636916-05:00",
+      "completed_at": "2026-04-27T16:31:06.618932044-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 270932,
+          "duration": 290570,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "464",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c718-7920-ad22-169d853eaa06\",\"id\":\"019dd0ce-c718-7920-ad22-1687c718bb86\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c718-7920-ad22-169d853eaa06\",\"messageId\":\"019dd0ce-c718-7920-ad22-16a07d1cd46f\",\"parts\":[{\"text\":\"Echo: No message ID provided.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c718-7920-ad22-1687c718bb86\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.560406237+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63fa-79d2-b446-c38559dd0505\",\"id\":\"019dd0da-63fa-79d2-b446-c37c23142a68\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63fa-79d2-b446-c38559dd0505\",\"messageId\":\"019dd0da-63fa-79d2-b446-c391c06e37a2\",\"parts\":[{\"text\":\"Echo: No message ID provided.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63fa-79d2-b446-c37c23142a68\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.618803040+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c718-7920-ad22-169d853eaa06",
-                  "id": "019dd0ce-c718-7920-ad22-1687c718bb86",
+                  "contextId": "019dd0da-63fa-79d2-b446-c38559dd0505",
+                  "id": "019dd0da-63fa-79d2-b446-c37c23142a68",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c718-7920-ad22-169d853eaa06",
-                      "messageId": "019dd0ce-c718-7920-ad22-16a07d1cd46f",
+                      "contextId": "019dd0da-63fa-79d2-b446-c38559dd0505",
+                      "messageId": "019dd0da-63fa-79d2-b446-c391c06e37a2",
                       "parts": [
                         {
                           "text": "Echo: No message ID provided."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c718-7920-ad22-1687c718bb86"
+                      "taskId": "019dd0da-63fa-79d2-b446-c37c23142a68"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.560406237+00:00"
+                    "timestamp": "2026-04-27T21:31:06.618803040+00:00"
                   }
                 }
               }
@@ -1574,7 +1574,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 731,
+          "duration": 611,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -1585,30 +1585,30 @@
             "headers": {
               "content-length": "464",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c718-7920-ad22-169d853eaa06\",\"id\":\"019dd0ce-c718-7920-ad22-1687c718bb86\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c718-7920-ad22-169d853eaa06\",\"messageId\":\"019dd0ce-c718-7920-ad22-16a07d1cd46f\",\"parts\":[{\"text\":\"Echo: No message ID provided.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c718-7920-ad22-1687c718bb86\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.560406237+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-63fa-79d2-b446-c38559dd0505\",\"id\":\"019dd0da-63fa-79d2-b446-c37c23142a68\",\"status\":{\"message\":{\"contextId\":\"019dd0da-63fa-79d2-b446-c38559dd0505\",\"messageId\":\"019dd0da-63fa-79d2-b446-c391c06e37a2\",\"parts\":[{\"text\":\"Echo: No message ID provided.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-63fa-79d2-b446-c37c23142a68\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.618803040+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c718-7920-ad22-169d853eaa06",
-                  "id": "019dd0ce-c718-7920-ad22-1687c718bb86",
+                  "contextId": "019dd0da-63fa-79d2-b446-c38559dd0505",
+                  "id": "019dd0da-63fa-79d2-b446-c37c23142a68",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c718-7920-ad22-169d853eaa06",
-                      "messageId": "019dd0ce-c718-7920-ad22-16a07d1cd46f",
+                      "contextId": "019dd0da-63fa-79d2-b446-c38559dd0505",
+                      "messageId": "019dd0da-63fa-79d2-b446-c391c06e37a2",
                       "parts": [
                         {
                           "text": "Echo: No message ID provided."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c718-7920-ad22-1687c718bb86"
+                      "taskId": "019dd0da-63fa-79d2-b446-c37c23142a68"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.560406237+00:00"
+                    "timestamp": "2026-04-27T21:31:06.618803040+00:00"
                   }
                 }
               }
@@ -1618,27 +1618,27 @@
       ]
     },
     {
-      "id": "164c892e-579b-4c30-8663-88319200021c",
+      "id": "726c954d-46fb-4baa-91ca-852b1b2e7bd4",
       "spec_id": "a2a-v1",
       "test_case_id": "streaming-send",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 40590598,
-      "started_at": "2026-04-27T16:18:25.560526214-05:00",
-      "completed_at": "2026-04-27T16:18:25.601116812-05:00",
+      "duration": 41162474,
+      "started_at": "2026-04-27T16:31:06.618932866-05:00",
+      "completed_at": "2026-04-27T16:31:06.66009534-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 40584776,
+          "duration": 41155450,
           "actual": {
             "http_status": 200,
             "headers": {
               "cache-control": "no-cache",
               "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "sse_events": [
               {
@@ -1646,22 +1646,22 @@
                 "jsonrpc": "2.0",
                 "result": {
                   "task": {
-                    "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
-                    "id": "019dd0ce-c718-7920-ad22-16bc3918b215",
+                    "contextId": "019dd0da-63fb-71f2-bd4d-2d62fe1b93cc",
+                    "id": "019dd0da-63fb-71f2-bd4d-2d53d145ed55",
                     "status": {
                       "message": {
-                        "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
-                        "messageId": "019dd0ce-c718-7920-ad22-16d93f06297b",
+                        "contextId": "019dd0da-63fb-71f2-bd4d-2d62fe1b93cc",
+                        "messageId": "019dd0da-63fb-71f2-bd4d-2d7fa58f4960",
                         "parts": [
                           {
                             "text": "Echo: Stream your response to me."
                           }
                         ],
                         "role": "ROLE_AGENT",
-                        "taskId": "019dd0ce-c718-7920-ad22-16bc3918b215"
+                        "taskId": "019dd0da-63fb-71f2-bd4d-2d53d145ed55"
                       },
                       "state": "TASK_STATE_COMPLETED",
-                      "timestamp": "2026-04-27T21:18:25.560687159+00:00"
+                      "timestamp": "2026-04-27T21:31:06.619099922+00:00"
                     }
                   }
                 }
@@ -1672,22 +1672,22 @@
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
-                  "id": "019dd0ce-c718-7920-ad22-16bc3918b215",
+                  "contextId": "019dd0da-63fb-71f2-bd4d-2d62fe1b93cc",
+                  "id": "019dd0da-63fb-71f2-bd4d-2d53d145ed55",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
-                      "messageId": "019dd0ce-c718-7920-ad22-16d93f06297b",
+                      "contextId": "019dd0da-63fb-71f2-bd4d-2d62fe1b93cc",
+                      "messageId": "019dd0da-63fb-71f2-bd4d-2d7fa58f4960",
                       "parts": [
                         {
                           "text": "Echo: Stream your response to me."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c718-7920-ad22-16bc3918b215"
+                      "taskId": "019dd0da-63fb-71f2-bd4d-2d53d145ed55"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.560687159+00:00"
+                    "timestamp": "2026-04-27T21:31:06.619099922+00:00"
                   }
                 }
               }
@@ -1698,7 +1698,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 2184,
+          "duration": 2785,
           "expected": {
             "headers": {
               "content-type": "text/event-stream"
@@ -1710,7 +1710,7 @@
             "headers": {
               "cache-control": "no-cache",
               "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "sse_events": [
               {
@@ -1718,22 +1718,22 @@
                 "jsonrpc": "2.0",
                 "result": {
                   "task": {
-                    "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
-                    "id": "019dd0ce-c718-7920-ad22-16bc3918b215",
+                    "contextId": "019dd0da-63fb-71f2-bd4d-2d62fe1b93cc",
+                    "id": "019dd0da-63fb-71f2-bd4d-2d53d145ed55",
                     "status": {
                       "message": {
-                        "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
-                        "messageId": "019dd0ce-c718-7920-ad22-16d93f06297b",
+                        "contextId": "019dd0da-63fb-71f2-bd4d-2d62fe1b93cc",
+                        "messageId": "019dd0da-63fb-71f2-bd4d-2d7fa58f4960",
                         "parts": [
                           {
                             "text": "Echo: Stream your response to me."
                           }
                         ],
                         "role": "ROLE_AGENT",
-                        "taskId": "019dd0ce-c718-7920-ad22-16bc3918b215"
+                        "taskId": "019dd0da-63fb-71f2-bd4d-2d53d145ed55"
                       },
                       "state": "TASK_STATE_COMPLETED",
-                      "timestamp": "2026-04-27T21:18:25.560687159+00:00"
+                      "timestamp": "2026-04-27T21:31:06.619099922+00:00"
                     }
                   }
                 }
@@ -1744,22 +1744,22 @@
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
-                  "id": "019dd0ce-c718-7920-ad22-16bc3918b215",
+                  "contextId": "019dd0da-63fb-71f2-bd4d-2d62fe1b93cc",
+                  "id": "019dd0da-63fb-71f2-bd4d-2d53d145ed55",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
-                      "messageId": "019dd0ce-c718-7920-ad22-16d93f06297b",
+                      "contextId": "019dd0da-63fb-71f2-bd4d-2d62fe1b93cc",
+                      "messageId": "019dd0da-63fb-71f2-bd4d-2d7fa58f4960",
                       "parts": [
                         {
                           "text": "Echo: Stream your response to me."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c718-7920-ad22-16bc3918b215"
+                      "taskId": "019dd0da-63fb-71f2-bd4d-2d53d145ed55"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.560687159+00:00"
+                    "timestamp": "2026-04-27T21:31:06.619099922+00:00"
                   }
                 }
               }
@@ -1769,27 +1769,27 @@
       ]
     },
     {
-      "id": "e7c0bc1f-fb77-4569-9361-61d1493280e7",
+      "id": "ebe417af-2876-416f-b69d-6a454a32f505",
       "spec_id": "a2a-v1",
       "test_case_id": "streaming-events",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 40947614,
-      "started_at": "2026-04-27T16:18:25.601118224-05:00",
-      "completed_at": "2026-04-27T16:18:25.642065848-05:00",
+      "status": "pass",
+      "duration": 41965242,
+      "started_at": "2026-04-27T16:31:06.660097023-05:00",
+      "completed_at": "2026-04-27T16:31:06.702062275-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 40938316,
+          "duration": 41955624,
           "actual": {
             "http_status": 200,
             "headers": {
               "cache-control": "no-cache",
               "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "sse_events": [
               {
@@ -1797,22 +1797,22 @@
                 "jsonrpc": "2.0",
                 "result": {
                   "task": {
-                    "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
-                    "id": "019dd0ce-c741-7841-b856-51b5151c8813",
+                    "contextId": "019dd0da-6424-7023-9ec4-81f15662d195",
+                    "id": "019dd0da-6424-7023-9ec4-81edcefa9ae7",
                     "status": {
                       "message": {
-                        "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
-                        "messageId": "019dd0ce-c741-7841-b856-51d8cde705c2",
+                        "contextId": "019dd0da-6424-7023-9ec4-81f15662d195",
+                        "messageId": "019dd0da-6424-7023-9ec4-8200bc159829",
                         "parts": [
                           {
                             "text": "Echo: Stream a response with status updates."
                           }
                         ],
                         "role": "ROLE_AGENT",
-                        "taskId": "019dd0ce-c741-7841-b856-51b5151c8813"
+                        "taskId": "019dd0da-6424-7023-9ec4-81edcefa9ae7"
                       },
                       "state": "TASK_STATE_COMPLETED",
-                      "timestamp": "2026-04-27T21:18:25.601335285+00:00"
+                      "timestamp": "2026-04-27T21:31:06.660388845+00:00"
                     }
                   }
                 }
@@ -1823,22 +1823,22 @@
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
-                  "id": "019dd0ce-c741-7841-b856-51b5151c8813",
+                  "contextId": "019dd0da-6424-7023-9ec4-81f15662d195",
+                  "id": "019dd0da-6424-7023-9ec4-81edcefa9ae7",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
-                      "messageId": "019dd0ce-c741-7841-b856-51d8cde705c2",
+                      "contextId": "019dd0da-6424-7023-9ec4-81f15662d195",
+                      "messageId": "019dd0da-6424-7023-9ec4-8200bc159829",
                       "parts": [
                         {
                           "text": "Echo: Stream a response with status updates."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c741-7841-b856-51b5151c8813"
+                      "taskId": "019dd0da-6424-7023-9ec4-81edcefa9ae7"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.601335285+00:00"
+                    "timestamp": "2026-04-27T21:31:06.660388845+00:00"
                   }
                 }
               }
@@ -1848,8 +1848,8 @@
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 781,
+          "status": "pass",
+          "duration": 601,
           "expected": {
             "sse_event": "*"
           },
@@ -1858,7 +1858,7 @@
             "headers": {
               "cache-control": "no-cache",
               "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "sse_events": [
               {
@@ -1866,22 +1866,22 @@
                 "jsonrpc": "2.0",
                 "result": {
                   "task": {
-                    "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
-                    "id": "019dd0ce-c741-7841-b856-51b5151c8813",
+                    "contextId": "019dd0da-6424-7023-9ec4-81f15662d195",
+                    "id": "019dd0da-6424-7023-9ec4-81edcefa9ae7",
                     "status": {
                       "message": {
-                        "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
-                        "messageId": "019dd0ce-c741-7841-b856-51d8cde705c2",
+                        "contextId": "019dd0da-6424-7023-9ec4-81f15662d195",
+                        "messageId": "019dd0da-6424-7023-9ec4-8200bc159829",
                         "parts": [
                           {
                             "text": "Echo: Stream a response with status updates."
                           }
                         ],
                         "role": "ROLE_AGENT",
-                        "taskId": "019dd0ce-c741-7841-b856-51b5151c8813"
+                        "taskId": "019dd0da-6424-7023-9ec4-81edcefa9ae7"
                       },
                       "state": "TASK_STATE_COMPLETED",
-                      "timestamp": "2026-04-27T21:18:25.601335285+00:00"
+                      "timestamp": "2026-04-27T21:31:06.660388845+00:00"
                     }
                   }
                 }
@@ -1892,54 +1892,52 @@
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
-                  "id": "019dd0ce-c741-7841-b856-51b5151c8813",
+                  "contextId": "019dd0da-6424-7023-9ec4-81f15662d195",
+                  "id": "019dd0da-6424-7023-9ec4-81edcefa9ae7",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
-                      "messageId": "019dd0ce-c741-7841-b856-51d8cde705c2",
+                      "contextId": "019dd0da-6424-7023-9ec4-81f15662d195",
+                      "messageId": "019dd0da-6424-7023-9ec4-8200bc159829",
                       "parts": [
                         {
                           "text": "Echo: Stream a response with status updates."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c741-7841-b856-51b5151c8813"
+                      "taskId": "019dd0da-6424-7023-9ec4-81edcefa9ae7"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.601335285+00:00"
+                    "timestamp": "2026-04-27T21:31:06.660388845+00:00"
                   }
                 }
               }
             }
-          },
-          "error": "expected sse_event must be a map"
+          }
         }
-      ],
-      "error_message": "expected sse_event must be a map"
+      ]
     },
     {
-      "id": "9dec7bfe-1a3e-455d-bf57-77cb05b3e481",
+      "id": "976389c9-afc6-445d-9d95-76befd560849",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-parse-error",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "fail",
-      "duration": 185321,
-      "started_at": "2026-04-27T16:18:25.64206729-05:00",
-      "completed_at": "2026-04-27T16:18:25.642252611-05:00",
+      "duration": 171123,
+      "started_at": "2026-04-27T16:31:06.702063528-05:00",
+      "completed_at": "2026-04-27T16:31:06.702234651-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 178197,
+          "duration": 161986,
           "actual": {
             "http_status": 400,
             "headers": {
               "content-length": "81",
               "content-type": "text/plain; charset=utf-8",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "Failed to parse the request body as JSON: key must be a string at line 1 column 2"
           }
@@ -1948,7 +1946,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 751,
+          "duration": 601,
           "expected": {
             "error": {
               "code": -32700,
@@ -1961,7 +1959,7 @@
             "headers": {
               "content-length": "81",
               "content-type": "text/plain; charset=utf-8",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "Failed to parse the request body as JSON: key must be a string at line 1 column 2"
           },
@@ -1971,27 +1969,27 @@
       "error_message": "expected JSON-RPC response but got none"
     },
     {
-      "id": "e85194bc-23e1-4a44-887d-5bd3b9f6df2e",
+      "id": "39aa0c9e-048e-4200-b636-f29b01ebb90a",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-invalid-request",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "fail",
-      "duration": 162488,
-      "started_at": "2026-04-27T16:18:25.642253873-05:00",
-      "completed_at": "2026-04-27T16:18:25.642416431-05:00",
+      "duration": 152669,
+      "started_at": "2026-04-27T16:31:06.702236004-05:00",
+      "completed_at": "2026-04-27T16:31:06.702388623-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 153170,
+          "duration": 146467,
           "actual": {
             "http_status": 422,
             "headers": {
               "content-length": "101",
               "content-type": "text/plain; charset=utf-8",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "Failed to deserialize the JSON body into the target type: missing field `jsonrpc` at line 1 column 48"
           }
@@ -2000,7 +1998,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 521,
+          "duration": 501,
           "expected": {
             "error": {
               "code": -32600,
@@ -2013,7 +2011,7 @@
             "headers": {
               "content-length": "101",
               "content-type": "text/plain; charset=utf-8",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "Failed to deserialize the JSON body into the target type: missing field `jsonrpc` at line 1 column 48"
           },
@@ -2023,27 +2021,27 @@
       "error_message": "expected JSON-RPC response but got none"
     },
     {
-      "id": "4d2209f3-c69c-4dc3-a7fb-802a9a119844",
+      "id": "8cad444c-16c3-4375-a2e5-3998f8f54d27",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-method-not-found",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 156877,
-      "started_at": "2026-04-27T16:18:25.642419276-05:00",
-      "completed_at": "2026-04-27T16:18:25.642576143-05:00",
+      "duration": 159952,
+      "started_at": "2026-04-27T16:31:06.702393001-05:00",
+      "completed_at": "2026-04-27T16:31:06.702552943-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 149813,
+          "duration": 153030,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "96",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found: NonExistentMethod\"}}",
             "jsonrpc_resp": {
@@ -2060,7 +2058,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1042,
+          "duration": 1182,
           "expected": {
             "error": {
               "code": -32601,
@@ -2074,7 +2072,7 @@
             "headers": {
               "content-length": "96",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found: NonExistentMethod\"}}",
             "jsonrpc_resp": {
@@ -2090,50 +2088,50 @@
       ]
     },
     {
-      "id": "b809136c-ea58-41eb-95da-49fa557ee71e",
+      "id": "eea30fec-1faa-4387-830d-bcfc337d248b",
       "spec_id": "a2a-v1",
       "test_case_id": "missing-required-params",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "fail",
-      "duration": 263719,
-      "started_at": "2026-04-27T16:18:25.642576714-05:00",
-      "completed_at": "2026-04-27T16:18:25.642840433-05:00",
+      "duration": 269059,
+      "started_at": "2026-04-27T16:31:06.702553484-05:00",
+      "completed_at": "2026-04-27T16:31:06.702822533-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 258129,
+          "duration": 260022,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "441",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1c89867e13f\",\"id\":\"019dd0ce-c76a-7373-b633-c1b9e9c0241c\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1c89867e13f\",\"messageId\":\"019dd0ce-c76a-7373-b633-c1d5538b056e\",\"parts\":[{\"text\":\"Echo: \"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c76a-7373-b633-c1b9e9c0241c\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.642716478+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-644e-7312-b12a-9d43fcaaa19b\",\"id\":\"019dd0da-644e-7312-b12a-9d36426cd207\",\"status\":{\"message\":{\"contextId\":\"019dd0da-644e-7312-b12a-9d43fcaaa19b\",\"messageId\":\"019dd0da-644e-7312-b12a-9d5a3d9e87a4\",\"parts\":[{\"text\":\"Echo: \"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-644e-7312-b12a-9d36426cd207\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.702681416+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c76a-7373-b633-c1c89867e13f",
-                  "id": "019dd0ce-c76a-7373-b633-c1b9e9c0241c",
+                  "contextId": "019dd0da-644e-7312-b12a-9d43fcaaa19b",
+                  "id": "019dd0da-644e-7312-b12a-9d36426cd207",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c76a-7373-b633-c1c89867e13f",
-                      "messageId": "019dd0ce-c76a-7373-b633-c1d5538b056e",
+                      "contextId": "019dd0da-644e-7312-b12a-9d43fcaaa19b",
+                      "messageId": "019dd0da-644e-7312-b12a-9d5a3d9e87a4",
                       "parts": [
                         {
                           "text": "Echo: "
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c76a-7373-b633-c1b9e9c0241c"
+                      "taskId": "019dd0da-644e-7312-b12a-9d36426cd207"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.642716478+00:00"
+                    "timestamp": "2026-04-27T21:31:06.702681416+00:00"
                   }
                 }
               }
@@ -2144,7 +2142,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 1924,
+          "duration": 5530,
           "expected": {
             "error": {
               "code": -32602,
@@ -2158,30 +2156,30 @@
             "headers": {
               "content-length": "441",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1c89867e13f\",\"id\":\"019dd0ce-c76a-7373-b633-c1b9e9c0241c\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1c89867e13f\",\"messageId\":\"019dd0ce-c76a-7373-b633-c1d5538b056e\",\"parts\":[{\"text\":\"Echo: \"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c76a-7373-b633-c1b9e9c0241c\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.642716478+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-644e-7312-b12a-9d43fcaaa19b\",\"id\":\"019dd0da-644e-7312-b12a-9d36426cd207\",\"status\":{\"message\":{\"contextId\":\"019dd0da-644e-7312-b12a-9d43fcaaa19b\",\"messageId\":\"019dd0da-644e-7312-b12a-9d5a3d9e87a4\",\"parts\":[{\"text\":\"Echo: \"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-644e-7312-b12a-9d36426cd207\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.702681416+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c76a-7373-b633-c1c89867e13f",
-                  "id": "019dd0ce-c76a-7373-b633-c1b9e9c0241c",
+                  "contextId": "019dd0da-644e-7312-b12a-9d43fcaaa19b",
+                  "id": "019dd0da-644e-7312-b12a-9d36426cd207",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c76a-7373-b633-c1c89867e13f",
-                      "messageId": "019dd0ce-c76a-7373-b633-c1d5538b056e",
+                      "contextId": "019dd0da-644e-7312-b12a-9d43fcaaa19b",
+                      "messageId": "019dd0da-644e-7312-b12a-9d5a3d9e87a4",
                       "parts": [
                         {
                           "text": "Echo: "
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c76a-7373-b633-c1b9e9c0241c"
+                      "taskId": "019dd0da-644e-7312-b12a-9d36426cd207"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.642716478+00:00"
+                    "timestamp": "2026-04-27T21:31:06.702681416+00:00"
                   }
                 }
               }
@@ -2193,50 +2191,50 @@
       "error_message": "JSON-RPC match failed: missing key at error"
     },
     {
-      "id": "8f97f0d5-bb85-45d6-aee8-27249913e295",
+      "id": "26e45be4-ae0e-4222-9f36-06fdeed45670",
       "spec_id": "a2a-v1",
       "test_case_id": "push-notification-not-supported",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 472334,
-      "started_at": "2026-04-27T16:18:25.642841074-05:00",
-      "completed_at": "2026-04-27T16:18:25.643313398-05:00",
+      "duration": 475820,
+      "started_at": "2026-04-27T16:31:06.702823235-05:00",
+      "completed_at": "2026-04-27T16:31:06.703299044-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 290890,
+          "duration": 299686,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "456",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1f9bd89077e\",\"id\":\"019dd0ce-c76a-7373-b633-c1ee3f6382b5\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1f9bd89077e\",\"messageId\":\"019dd0ce-c76b-7cf2-8f1c-f6e8bb4e5ccc\",\"parts\":[{\"text\":\"Echo: Perform a task.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c76a-7373-b633-c1ee3f6382b5\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.643006697+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-644e-7312-b12a-9d71f683a7a0\",\"id\":\"019dd0da-644e-7312-b12a-9d6af496a000\",\"status\":{\"message\":{\"contextId\":\"019dd0da-644e-7312-b12a-9d71f683a7a0\",\"messageId\":\"019dd0da-644e-7312-b12a-9d873db47398\",\"parts\":[{\"text\":\"Echo: Perform a task.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-644e-7312-b12a-9d6af496a000\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.702981835+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c76a-7373-b633-c1f9bd89077e",
-                  "id": "019dd0ce-c76a-7373-b633-c1ee3f6382b5",
+                  "contextId": "019dd0da-644e-7312-b12a-9d71f683a7a0",
+                  "id": "019dd0da-644e-7312-b12a-9d6af496a000",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c76a-7373-b633-c1f9bd89077e",
-                      "messageId": "019dd0ce-c76b-7cf2-8f1c-f6e8bb4e5ccc",
+                      "contextId": "019dd0da-644e-7312-b12a-9d71f683a7a0",
+                      "messageId": "019dd0da-644e-7312-b12a-9d873db47398",
                       "parts": [
                         {
                           "text": "Echo: Perform a task."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c76a-7373-b633-c1ee3f6382b5"
+                      "taskId": "019dd0da-644e-7312-b12a-9d6af496a000"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.643006697+00:00"
+                    "timestamp": "2026-04-27T21:31:06.702981835+00:00"
                   }
                 }
               }
@@ -2247,7 +2245,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 852,
+          "duration": 932,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -2258,30 +2256,30 @@
             "headers": {
               "content-length": "456",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1f9bd89077e\",\"id\":\"019dd0ce-c76a-7373-b633-c1ee3f6382b5\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1f9bd89077e\",\"messageId\":\"019dd0ce-c76b-7cf2-8f1c-f6e8bb4e5ccc\",\"parts\":[{\"text\":\"Echo: Perform a task.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c76a-7373-b633-c1ee3f6382b5\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.643006697+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0da-644e-7312-b12a-9d71f683a7a0\",\"id\":\"019dd0da-644e-7312-b12a-9d6af496a000\",\"status\":{\"message\":{\"contextId\":\"019dd0da-644e-7312-b12a-9d71f683a7a0\",\"messageId\":\"019dd0da-644e-7312-b12a-9d873db47398\",\"parts\":[{\"text\":\"Echo: Perform a task.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0da-644e-7312-b12a-9d6af496a000\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:31:06.702981835+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd0ce-c76a-7373-b633-c1f9bd89077e",
-                  "id": "019dd0ce-c76a-7373-b633-c1ee3f6382b5",
+                  "contextId": "019dd0da-644e-7312-b12a-9d71f683a7a0",
+                  "id": "019dd0da-644e-7312-b12a-9d6af496a000",
                   "status": {
                     "message": {
-                      "contextId": "019dd0ce-c76a-7373-b633-c1f9bd89077e",
-                      "messageId": "019dd0ce-c76b-7cf2-8f1c-f6e8bb4e5ccc",
+                      "contextId": "019dd0da-644e-7312-b12a-9d71f683a7a0",
+                      "messageId": "019dd0da-644e-7312-b12a-9d873db47398",
                       "parts": [
                         {
                           "text": "Echo: Perform a task."
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd0ce-c76a-7373-b633-c1ee3f6382b5"
+                      "taskId": "019dd0da-644e-7312-b12a-9d6af496a000"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T21:18:25.643006697+00:00"
+                    "timestamp": "2026-04-27T21:31:06.702981835+00:00"
                   }
                 }
               }
@@ -2292,13 +2290,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 174250,
+          "duration": 169591,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "272",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `pushNotificationConfig`, expected one of `tenant`, `id`, `task_id`, `taskId`, `url`, `token`, `authentication`; nested request parse failed: missing field `config`\"}}",
             "jsonrpc_resp": {
@@ -2315,7 +2313,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "pass",
-          "duration": 1343,
+          "duration": 1162,
           "expected": {
             "error": {
               "code": "*",
@@ -2329,7 +2327,7 @@
             "headers": {
               "content-length": "272",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+              "date": "Mon, 27 Apr 2026 21:31:06 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `pushNotificationConfig`, expected one of `tenant`, `id`, `task_id`, `taskId`, `url`, `token`, `authentication`; nested request parse failed: missing field `config`\"}}",
             "jsonrpc_resp": {
@@ -2347,11 +2345,11 @@
   ],
   "summary": {
     "total": 20,
-    "passed": 16,
-    "failed": 4,
+    "passed": 17,
+    "failed": 3,
     "errors": 0,
     "skipped": 0,
     "timeouts": 0,
-    "compliance": 80
+    "compliance": 85
   }
 }
