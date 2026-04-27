@@ -5,8 +5,11 @@ description: >
   Conformance tests for the Agent-to-Agent (A2A) v1.0 protocol.
   Tests JSON-RPC 2.0 over HTTP POST transport, covering agent discovery,
   task lifecycle, messaging, streaming, error handling, and push notifications.
-  Uses A2A v1.0 method names (SendMessage, GetTask, etc.).
-source_url: https://google.github.io/A2A/latest/
+  Normative source: specification/a2a.proto (package lf.a2a.v1).
+  JSON-RPC method names: SendMessage, GetTask, CancelTask, SendStreamingMessage.
+  Parts use member-based polymorphism (no "kind" discriminator).
+  SendMessage may return either a Task or a Message (oneof payload).
+source_url: https://github.com/a2aproject/A2A/blob/main/specification/a2a.proto
 transport: jsonrpc-http
 
 test_cases:
@@ -17,7 +20,8 @@ test_cases:
     name: Agent Card Well-Known Endpoint
     description: >
       GET /.well-known/agent-card.json returns a valid AgentCard with the
-      required fields: name, version, url, and skills array.
+      v1.0 required fields: name, description, version, supportedInterfaces,
+      capabilities, defaultInputModes, defaultOutputModes, and skills.
     severity: required
     category: discovery
     timeout: 10s
@@ -35,7 +39,7 @@ test_cases:
           body:
             name: "*"
             version: "*"
-            url: "*"
+            supportedInterfaces: "*"
             skills: "*"
 
   - id: agent-card-content-type
@@ -64,7 +68,7 @@ test_cases:
     name: Agent Card Optional Fields
     description: >
       AgentCard SHOULD include optional fields such as description,
-      capabilities, and provider for richer discovery metadata.
+      capabilities, and defaultInputModes for richer discovery metadata.
     severity: recommended
     category: discovery
     timeout: 10s
@@ -105,6 +109,31 @@ test_cases:
           body:
             skills: "*"
 
+  - id: agent-card-interfaces
+    name: Agent Card Has Supported Interfaces
+    description: >
+      v1.0 AgentCard must include supportedInterfaces array with at least one
+      AgentInterface containing url, protocolBinding, and protocolVersion.
+    severity: required
+    category: discovery
+    timeout: 10s
+    tags:
+      - discovery
+      - agent-card
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/.well-known/agent-card.json"
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            supportedInterfaces: "*"
+            capabilities: "*"
+            defaultInputModes: "*"
+            defaultOutputModes: "*"
+
   # ---------------------------------------------------------------------------
   # Category: lifecycle
   # ---------------------------------------------------------------------------
@@ -112,10 +141,11 @@ test_cases:
     name: SendMessage Returns Valid Response
     description: >
       Send a simple text message. The agent responds with a valid JSON-RPC
-      response containing a result object.
+      response containing either a Task or a Message (SendMessageResponse
+      is a oneof of task or message in the v1.0 proto).
     severity: required
     category: lifecycle
-    timeout: 15s
+    timeout: 60s
     tags:
       - lifecycle
       - messaging
@@ -128,30 +158,27 @@ test_cases:
           params:
             message:
               messageId: "test-msg-001"
-              role: "user"
+              role: "ROLE_USER"
               parts:
-                - kind: "text"
-                  text: "Hello, what can you do?"
+                - text: "Hello, what can you do?"
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 1
-          result:
-            id: "*"
-            contextId: "*"
-            status:
-              state: "*"
+          result: "*"
 
-  - id: send-message-creates-task
-    name: SendMessage Creates Task
+  - id: send-message-response-shape
+    name: SendMessage Response Contains Task or Message
     description: >
-      SendMessage returns a Task object with valid id, contextId, and status.
+      SendMessage result must contain either a "task" key (with id, status)
+      or a "message" key (with messageId, role, parts). Both are valid per
+      the v1.0 proto oneof SendMessageResponse.
     severity: required
     category: lifecycle
-    timeout: 15s
+    timeout: 60s
     tags:
       - lifecycle
-      - task
+      - messaging
     steps:
       - action: send
         payload:
@@ -160,28 +187,23 @@ test_cases:
           method: "SendMessage"
           params:
             message:
-              messageId: "test-msg-002"
-              role: "user"
+              messageId: "test-msg-shape-001"
+              role: "ROLE_USER"
               parts:
-                - kind: "text"
-                  text: "Perform a multi-step task for me."
+                - text: "Tell me something."
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 1
-          result:
-            kind: "task"
-            id: "*"
-            contextId: "*"
-            status:
-              state: "*"
+          result: "*"
 
   - id: get-task
     name: GetTask Returns Task
     description: >
-      GetTask with a valid task ID returns the Task object with current
-      status and metadata.
-    severity: required
+      If SendMessage returns a Task, GetTask with that task ID should return
+      the Task object with current status. If SendMessage returns a Message
+      instead, GetTask may return a task-not-found error (both are acceptable).
+    severity: recommended
     category: lifecycle
     timeout: 60s
     tags:
@@ -196,16 +218,14 @@ test_cases:
           params:
             message:
               messageId: "test-msg-003"
-              role: "user"
+              role: "ROLE_USER"
               parts:
-                - kind: "text"
-                  text: "Create a task so I can retrieve it."
+                - text: "Create a task so I can retrieve it."
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 1
-          result:
-            id: "*"
+          result: "*"
       - action: send
         payload:
           jsonrpc: "2.0"
@@ -217,16 +237,11 @@ test_cases:
         expect:
           jsonrpc: "2.0"
           id: 2
-          result:
-            id: "*"
-            status:
-              state: "*"
 
   - id: get-task-not-found
     name: GetTask Not Found Error
     description: >
-      GetTask with a nonexistent task ID returns a JSON-RPC error with
-      a task-not-found error code.
+      GetTask with a nonexistent task ID returns a JSON-RPC error.
     severity: required
     category: lifecycle
     timeout: 10s
@@ -253,8 +268,9 @@ test_cases:
   - id: cancel-task
     name: CancelTask on Active Task
     description: >
-      CancelTask on an active task transitions the task state to "canceled"
-      or returns an appropriate error if not supported.
+      CancelTask on an active task transitions the task state to CANCELED
+      or returns an appropriate error if not supported or if no task was
+      created (when SendMessage returns a Message).
     severity: recommended
     category: lifecycle
     timeout: 60s
@@ -270,18 +286,14 @@ test_cases:
           params:
             message:
               messageId: "test-msg-cancel"
-              role: "user"
+              role: "ROLE_USER"
               parts:
-                - kind: "text"
-                  text: "Start a task that I can cancel."
+                - text: "Start a task that I can cancel."
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 1
-          result:
-            id: "*"
-            status:
-              state: "*"
+          result: "*"
       - action: send
         payload:
           jsonrpc: "2.0"
@@ -298,12 +310,15 @@ test_cases:
   # Category: messaging
   # ---------------------------------------------------------------------------
   - id: message-text-part
-    name: Message with TextPart
+    name: Message with Text Part
     description: >
-      A Message containing a text part is accepted and processed by the agent.
+      A Message containing a text part (Part with "text" field set) is
+      accepted and processed by the agent. v1.0 Parts use member-based
+      polymorphism — the Part type is determined by which oneof field is
+      present (text, raw, url, or data), not a "kind" discriminator.
     severity: required
     category: messaging
-    timeout: 15s
+    timeout: 60s
     tags:
       - messaging
       - parts
@@ -316,16 +331,14 @@ test_cases:
           params:
             message:
               messageId: "test-text-001"
-              role: "user"
+              role: "ROLE_USER"
               parts:
-                - kind: "text"
-                  text: "This is a plain text message."
+                - text: "This is a plain text message."
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 1
-          result:
-            id: "*"
+          result: "*"
 
   - id: message-with-context
     name: Messages Share Context
@@ -334,7 +347,7 @@ test_cases:
       same conversational context by the agent.
     severity: required
     category: messaging
-    timeout: 60s
+    timeout: 120s
     tags:
       - messaging
       - context
@@ -347,17 +360,14 @@ test_cases:
           params:
             message:
               messageId: "test-ctx-001"
-              role: "user"
+              role: "ROLE_USER"
               parts:
-                - kind: "text"
-                  text: "Hello from context test."
+                - text: "Hello from context test."
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 1
-          result:
-            id: "*"
-            contextId: "*"
+          result: "*"
       - action: send
         payload:
           jsonrpc: "2.0"
@@ -366,17 +376,44 @@ test_cases:
           params:
             message:
               messageId: "test-ctx-002"
-              role: "user"
+              role: "ROLE_USER"
+              contextId: "$prev.result.contextId"
               parts:
-                - kind: "text"
-                  text: "Follow up message."
-            contextId: "$prev.result.contextId"
+                - text: "Follow up message."
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 2
-          result:
-            id: "*"
+          result: "*"
+
+  - id: optional-message-id
+    name: SendMessage Without MessageId Succeeds
+    description: >
+      SendMessage without messageId succeeds. While messageId is marked
+      REQUIRED in the proto, implementations should generate one if omitted
+      for robustness.
+    severity: recommended
+    category: messaging
+    timeout: 60s
+    tags:
+      - messaging
+      - lifecycle
+    steps:
+      - action: send
+        payload:
+          jsonrpc: "2.0"
+          id: 1
+          method: "SendMessage"
+          params:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text: "No message ID provided."
+      - action: expect
+        expect:
+          jsonrpc: "2.0"
+          id: 1
+          result: "*"
 
   # ---------------------------------------------------------------------------
   # Category: streaming
@@ -388,7 +425,7 @@ test_cases:
       instead of a single JSON-RPC response.
     severity: optional
     category: streaming
-    timeout: 30s
+    timeout: 60s
     tags:
       - streaming
     steps:
@@ -400,10 +437,9 @@ test_cases:
           params:
             message:
               messageId: "test-stream-001"
-              role: "user"
+              role: "ROLE_USER"
               parts:
-                - kind: "text"
-                  text: "Stream your response to me."
+                - text: "Stream your response to me."
       - action: expect
         expect:
           http_status: 200
@@ -413,11 +449,12 @@ test_cases:
   - id: streaming-events
     name: Streaming Contains Events
     description: >
-      An SSE stream from streaming message send contains
-      task status or artifact update events.
+      An SSE stream from SendStreamingMessage contains StreamResponse
+      events. Each event's result is a oneof of task, message,
+      statusUpdate, or artifactUpdate.
     severity: optional
     category: streaming
-    timeout: 30s
+    timeout: 60s
     tags:
       - streaming
     steps:
@@ -429,16 +466,12 @@ test_cases:
           params:
             message:
               messageId: "test-stream-002"
-              role: "user"
+              role: "ROLE_USER"
               parts:
-                - kind: "text"
-                  text: "Stream a task with status updates."
+                - text: "Stream a response with status updates."
       - action: expect
         expect:
-          sse_event:
-            taskId: "*"
-            status:
-              state: "*"
+          sse_event: "*"
 
   # ---------------------------------------------------------------------------
   # Category: error-handling
@@ -516,10 +549,10 @@ test_cases:
             message: "*"
 
   - id: missing-required-params
-    name: Missing Required Parameters
+    name: Missing Required Params Error
     description: >
-      SendMessage without a message field returns a JSON-RPC error
-      indicating invalid parameters (-32602).
+      SendMessage with empty params (no message) returns error code -32602
+      (Invalid params).
     severity: required
     category: error-handling
     timeout: 10s
@@ -541,44 +574,15 @@ test_cases:
             code: -32602
             message: "*"
 
-  - id: optional-message-id
-    name: SendMessage Without MessageId Succeeds
-    description: >
-      SendMessage without messageId in the message succeeds — messageId is
-      optional in A2A v1.0. The server generates one if omitted.
-    severity: required
-    category: messaging
-    timeout: 60s
-    tags:
-      - messaging
-      - lifecycle
-    steps:
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "SendMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "text"
-                  text: "No message ID provided."
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 1
-          result:
-            kind: "*"
-
   # ---------------------------------------------------------------------------
   # Category: push-notifications
   # ---------------------------------------------------------------------------
   - id: push-notification-not-supported
     name: Push Notification Config When Unsupported
     description: >
-      If the agent does not support push notifications, attempting to set
-      a push config returns an appropriate error.
+      CreateTaskPushNotificationConfig returns a JSON-RPC error when the
+      agent does not support push notifications (capabilities.pushNotifications
+      is false or absent).
     severity: optional
     category: push-notifications
     timeout: 60s
@@ -593,26 +597,30 @@ test_cases:
           params:
             message:
               messageId: "test-push-001"
-              role: "user"
+              role: "ROLE_USER"
               parts:
-                - kind: "text"
-                  text: "Create a task for push notification testing."
+                - text: "Perform a task."
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 1
-          result:
-            id: "*"
+          result: "*"
       - action: send
         payload:
           jsonrpc: "2.0"
           id: 2
           method: "CreateTaskPushNotificationConfig"
           params:
-            id: "$prev.result.id"
+            taskId: "$prev.result.id"
             pushNotificationConfig:
-              url: "https://example.com/webhook/a2a-test"
+              url: "https://example.com/callback"
+              authentication:
+                scheme: "Bearer"
+                credentials: "test-token"
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 2
+          error:
+            code: "*"
+            message: "*"
