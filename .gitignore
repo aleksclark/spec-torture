@@ -1,0 +1,16 @@
+# Binaries
+bin/
+/spec-torture
+*.exe
+
+# Database
+*.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

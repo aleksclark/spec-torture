@@ -1,0 +1,142 @@
+id: mcp-v1
+name: Model Context Protocol
+version: 0.1.0
+description: >
+  Conformance tests for the Model Context Protocol (MCP).
+  Tests the JSON-RPC over stdio transport, covering lifecycle,
+  tool discovery, and error handling.
+source_url: https://spec.modelcontextprotocol.io
+transport: jsonrpc-stdio
+
+test_cases:
+  - id: initialize-handshake
+    name: Initialize Handshake
+    description: >
+      Send an initialize request and verify the server responds with
+      valid capabilities and protocol version.
+    severity: required
+    category: lifecycle
+    timeout: 10s
+    tags:
+      - lifecycle
+      - handshake
+    steps:
+      - action: send
+        payload:
+          jsonrpc: "2.0"
+          id: 1
+          method: initialize
+          params:
+            protocolVersion: "2025-03-26"
+            capabilities: {}
+            clientInfo:
+              name: spec-torture
+              version: "0.1.0"
+      - action: expect
+        expect:
+          jsonrpc: "2.0"
+          id: 1
+          result:
+            protocolVersion: "*"
+            capabilities: "*"
+            serverInfo:
+              name: "*"
+        timeout: 5s
+      - action: send
+        payload:
+          jsonrpc: "2.0"
+          method: notifications/initialized
+
+  - id: tool-list
+    name: List Tools
+    description: >
+      After initialization, send tools/list and verify the server
+      returns an array of tool definitions.
+    severity: required
+    category: tool-calling
+    timeout: 10s
+    tags:
+      - tools
+      - discovery
+    steps:
+      - action: send
+        payload:
+          jsonrpc: "2.0"
+          id: 1
+          method: initialize
+          params:
+            protocolVersion: "2025-03-26"
+            capabilities: {}
+            clientInfo:
+              name: spec-torture
+              version: "0.1.0"
+      - action: expect
+        expect:
+          jsonrpc: "2.0"
+          id: 1
+          result:
+            protocolVersion: "*"
+        timeout: 5s
+      - action: send
+        payload:
+          jsonrpc: "2.0"
+          method: notifications/initialized
+      - action: send
+        payload:
+          jsonrpc: "2.0"
+          id: 2
+          method: tools/list
+      - action: expect
+        expect:
+          jsonrpc: "2.0"
+          id: 2
+          result:
+            tools: "*"
+        timeout: 5s
+
+  - id: invalid-method
+    name: Invalid Method Error
+    description: >
+      Send a request with a nonexistent method and verify the server
+      returns a JSON-RPC error response with code -32601 (Method not found).
+    severity: required
+    category: error-handling
+    timeout: 10s
+    tags:
+      - errors
+      - negative
+    steps:
+      - action: send
+        payload:
+          jsonrpc: "2.0"
+          id: 1
+          method: initialize
+          params:
+            protocolVersion: "2025-03-26"
+            capabilities: {}
+            clientInfo:
+              name: spec-torture
+              version: "0.1.0"
+      - action: expect
+        expect:
+          jsonrpc: "2.0"
+          id: 1
+          result:
+            protocolVersion: "*"
+        timeout: 5s
+      - action: send
+        payload:
+          jsonrpc: "2.0"
+          method: notifications/initialized
+      - action: send
+        payload:
+          jsonrpc: "2.0"
+          id: 99
+          method: nonexistent/garbage_method_that_should_not_exist
+      - action: expect
+        expect:
+          jsonrpc: "2.0"
+          id: 99
+          error:
+            code: -32601
+        timeout: 5s

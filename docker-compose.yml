@@ -1,0 +1,10 @@
+services:
+  # Example: MCP-compatible runtime under test
+  mcp-runtime:
+    image: "${RUNTIME_IMAGE:-alpine:latest}"
+    stdin_open: true
+    environment:
+      - LOG_LEVEL=debug
+    labels:
+      spec-torture.role: "runtime"
+      spec-torture.transport: "jsonrpc-stdio"
