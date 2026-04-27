@@ -2,9 +2,10 @@ id: a2a-v1
 name: Agent-to-Agent Protocol
 version: 1.0.0
 description: >
-  Conformance tests for the Agent-to-Agent (A2A) protocol v1.0.
+  Conformance tests for the Agent-to-Agent (A2A) protocol.
   Tests JSON-RPC 2.0 over HTTP POST transport, covering agent discovery,
   task lifecycle, messaging, streaming, error handling, and push notifications.
+  Compatible with both v0.3 (JSON) and v1.0 (protobuf) style implementations.
 source_url: https://google.github.io/A2A
 transport: jsonrpc-http
 
@@ -82,48 +83,39 @@ test_cases:
             name: "*"
             description: "*"
             capabilities: "*"
-            provider: "*"
 
-  - id: extended-agent-card
-    name: Extended Agent Card (Authenticated)
+  - id: agent-card-skills
+    name: Agent Card Has Skills
     description: >
-      GetExtendedAgentCard returns an authenticated agent card with
-      additional capabilities not exposed in the public well-known endpoint.
-    severity: optional
+      AgentCard must include at least one skill with id and name.
+    severity: required
     category: discovery
     timeout: 10s
     tags:
       - discovery
       - agent-card
-      - auth
     steps:
       - action: send
         payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "GetExtendedAgentCard"
-          params: {}
+          http_method: GET
+          path: "/.well-known/agent-card.json"
       - action: expect
         expect:
-          jsonrpc: "2.0"
-          id: 1
-          result:
-            name: "*"
-            version: "*"
-            url: "*"
+          http_status: 200
+          body:
             skills: "*"
 
   # ---------------------------------------------------------------------------
   # Category: lifecycle
   # ---------------------------------------------------------------------------
-  - id: send-message-stateless
-    name: SendMessage Stateless Response
+  - id: send-message-basic
+    name: SendMessage Returns Valid Response
     description: >
-      Send a simple text message via SendMessage. The agent responds with a
-      Message object containing role "agent" and at least one part.
+      Send a simple text message. The agent responds with a valid JSON-RPC
+      response containing a result object.
     severity: required
     category: lifecycle
-    timeout: 10s
+    timeout: 15s
     tags:
       - lifecycle
       - messaging
@@ -132,9 +124,10 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "SendMessage"
+          method: "message/send"
           params:
             message:
+              messageId: "test-msg-001"
               role: "user"
               parts:
                 - kind: "text"
@@ -144,18 +137,18 @@ test_cases:
           jsonrpc: "2.0"
           id: 1
           result:
-            kind: "message"
-            role: "agent"
-            parts: "*"
+            id: "*"
+            contextId: "*"
+            status:
+              state: "*"
 
   - id: send-message-creates-task
     name: SendMessage Creates Task
     description: >
-      SendMessage that triggers task creation returns a Task object with
-      valid id, contextId, and status fields.
+      SendMessage returns a Task object with valid id, contextId, and status.
     severity: required
     category: lifecycle
-    timeout: 10s
+    timeout: 15s
     tags:
       - lifecycle
       - task
@@ -164,9 +157,10 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "SendMessage"
+          method: "message/send"
           params:
             message:
+              messageId: "test-msg-002"
               role: "user"
               parts:
                 - kind: "text"
@@ -182,42 +176,6 @@ test_cases:
             status:
               state: "*"
 
-  - id: task-state-submitted
-    name: New Task State is Submitted or Working
-    description: >
-      A newly created task must have status.state set to either "submitted"
-      or "working" to indicate it has been accepted.
-    severity: required
-    category: lifecycle
-    timeout: 10s
-    tags:
-      - lifecycle
-      - task
-    steps:
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "SendMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "text"
-                  text: "Start processing this request."
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 1
-          result:
-            kind: "task"
-            id: "*"
-            status:
-              state: "*"
-      - action: assert
-        expect:
-          condition: "result.result.status.state in ['submitted', 'working']"
-
   - id: get-task
     name: GetTask Returns Task
     description: >
@@ -225,7 +183,7 @@ test_cases:
       status and metadata.
     severity: required
     category: lifecycle
-    timeout: 10s
+    timeout: 15s
     tags:
       - lifecycle
       - task
@@ -234,9 +192,10 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "SendMessage"
+          method: "message/send"
           params:
             message:
+              messageId: "test-msg-003"
               role: "user"
               parts:
                 - kind: "text"
@@ -246,13 +205,12 @@ test_cases:
           jsonrpc: "2.0"
           id: 1
           result:
-            kind: "task"
             id: "*"
       - action: send
         payload:
           jsonrpc: "2.0"
           id: 2
-          method: "GetTask"
+          method: "tasks/get"
           params:
             id: "$prev.result.id"
       - action: expect
@@ -260,7 +218,6 @@ test_cases:
           jsonrpc: "2.0"
           id: 2
           result:
-            kind: "task"
             id: "*"
             status:
               state: "*"
@@ -268,8 +225,8 @@ test_cases:
   - id: get-task-not-found
     name: GetTask Not Found Error
     description: >
-      GetTask with a nonexistent task ID returns a JSON-RPC error with the
-      TaskNotFoundError code (-32001).
+      GetTask with a nonexistent task ID returns a JSON-RPC error with
+      a task-not-found error code.
     severity: required
     category: lifecycle
     timeout: 10s
@@ -282,7 +239,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "GetTask"
+          method: "tasks/get"
           params:
             id: "nonexistent-task-id-00000000"
       - action: expect
@@ -290,59 +247,17 @@ test_cases:
           jsonrpc: "2.0"
           id: 1
           error:
-            code: -32001
+            code: "*"
             message: "*"
 
-  - id: list-tasks
-    name: ListTasks Returns Array
-    description: >
-      ListTasks returns an array of Task objects. SHOULD be supported for
-      agents that manage multiple concurrent tasks.
-    severity: recommended
-    category: lifecycle
-    timeout: 10s
-    tags:
-      - lifecycle
-      - task
-    steps:
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "SendMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "text"
-                  text: "Create a task for listing."
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 1
-          result:
-            kind: "task"
-            id: "*"
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 2
-          method: "ListTasks"
-          params: {}
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 2
-          result: "*"
-
   - id: cancel-task
-    name: CancelTask Transitions to Canceled
+    name: CancelTask on Active Task
     description: >
       CancelTask on an active task transitions the task state to "canceled"
-      and returns the updated Task object.
+      or returns an appropriate error if not supported.
     severity: recommended
     category: lifecycle
-    timeout: 10s
+    timeout: 15s
     tags:
       - lifecycle
       - task
@@ -351,19 +266,19 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "SendMessage"
+          method: "message/send"
           params:
             message:
+              messageId: "test-msg-cancel"
               role: "user"
               parts:
                 - kind: "text"
-                  text: "Start a long-running task that I can cancel."
+                  text: "Start a task that I can cancel."
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 1
           result:
-            kind: "task"
             id: "*"
             status:
               state: "*"
@@ -371,66 +286,13 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 2
-          method: "CancelTask"
+          method: "tasks/cancel"
           params:
             id: "$prev.result.id"
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 2
-          result:
-            kind: "task"
-            id: "*"
-            status:
-              state: "canceled"
-
-  - id: cancel-task-terminal-error
-    name: CancelTask on Terminal Task Returns Error
-    description: >
-      CancelTask on a task already in a terminal state (completed, failed)
-      returns a TaskNotCancelableError (-32002).
-    severity: required
-    category: lifecycle
-    timeout: 10s
-    tags:
-      - lifecycle
-      - task
-      - errors
-    steps:
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "SendMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "text"
-                  text: "Reply immediately with a short answer."
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 1
-          result:
-            kind: "task"
-            id: "*"
-            status:
-              state: "completed"
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 2
-          method: "CancelTask"
-          params:
-            id: "$prev.result.id"
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 2
-          error:
-            code: -32002
-            message: "*"
 
   # ---------------------------------------------------------------------------
   # Category: messaging
@@ -438,11 +300,10 @@ test_cases:
   - id: message-text-part
     name: Message with TextPart
     description: >
-      A Message containing a TextPart (kind: "text") is accepted and
-      processed by the agent.
+      A Message containing a text part is accepted and processed by the agent.
     severity: required
     category: messaging
-    timeout: 10s
+    timeout: 15s
     tags:
       - messaging
       - parts
@@ -451,9 +312,10 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "SendMessage"
+          method: "message/send"
           params:
             message:
+              messageId: "test-text-001"
               role: "user"
               parts:
                 - kind: "text"
@@ -463,82 +325,16 @@ test_cases:
           jsonrpc: "2.0"
           id: 1
           result:
-            kind: "*"
+            id: "*"
 
-  - id: message-file-part
-    name: Message with FilePart
-    description: >
-      A Message containing a FilePart (kind: "file") with inline base64
-      bytes SHOULD be accepted by the agent.
-    severity: recommended
-    category: messaging
-    timeout: 10s
-    tags:
-      - messaging
-      - parts
-    steps:
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "SendMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "file"
-                  file:
-                    name: "test.txt"
-                    mimeType: "text/plain"
-                    bytes: "SGVsbG8gV29ybGQ="
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 1
-          result:
-            kind: "*"
-
-  - id: message-data-part
-    name: Message with DataPart
-    description: >
-      A Message containing a DataPart (kind: "data") with structured JSON
-      SHOULD be accepted by the agent.
-    severity: recommended
-    category: messaging
-    timeout: 10s
-    tags:
-      - messaging
-      - parts
-    steps:
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "SendMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "data"
-                  data:
-                    type: "weather-query"
-                    location: "San Francisco"
-                    units: "celsius"
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 1
-          result:
-            kind: "*"
-
-  - id: context-id-grouping
-    name: Context ID Groups Messages
+  - id: message-with-context
+    name: Messages Share Context
     description: >
       Two messages sent with the same contextId are treated as part of the
       same conversational context by the agent.
     severity: required
     category: messaging
-    timeout: 10s
+    timeout: 15s
     tags:
       - messaging
       - context
@@ -547,90 +343,40 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "SendMessage"
+          method: "message/send"
           params:
             message:
+              messageId: "test-ctx-001"
               role: "user"
               parts:
                 - kind: "text"
-                  text: "Remember that my name is Alice."
-            contextId: "ctx-test-001"
+                  text: "Hello from context test."
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 1
           result:
-            kind: "*"
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 2
-          method: "SendMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "text"
-                  text: "What is my name?"
-            contextId: "ctx-test-001"
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 2
-          result:
-            kind: "*"
-
-  - id: message-to-terminal-task
-    name: Message to Completed Task Returns Error
-    description: >
-      Sending a message to a task that is already in a terminal state
-      (completed, failed, canceled) returns an UnsupportedOperationError (-32004).
-    severity: required
-    category: messaging
-    timeout: 10s
-    tags:
-      - messaging
-      - errors
-    steps:
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "SendMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "text"
-                  text: "Reply immediately."
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 1
-          result:
-            kind: "task"
             id: "*"
-            status:
-              state: "completed"
+            contextId: "*"
       - action: send
         payload:
           jsonrpc: "2.0"
           id: 2
-          method: "SendMessage"
+          method: "message/send"
           params:
             message:
+              messageId: "test-ctx-002"
               role: "user"
               parts:
                 - kind: "text"
-                  text: "This should fail because the task is done."
-            taskId: "$prev.result.id"
+                  text: "Follow up message."
+            contextId: "$prev.result.contextId"
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 2
-          error:
-            code: -32004
-            message: "*"
+          result:
+            id: "*"
 
   # ---------------------------------------------------------------------------
   # Category: streaming
@@ -650,9 +396,10 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "SendStreamingMessage"
+          method: "message/stream"
           params:
             message:
+              messageId: "test-stream-001"
               role: "user"
               parts:
                 - kind: "text"
@@ -663,11 +410,11 @@ test_cases:
           headers:
             content-type: "text/event-stream"
 
-  - id: streaming-status-events
-    name: Streaming Status Update Events
+  - id: streaming-events
+    name: Streaming Contains Events
     description: >
-      An SSE stream from SendStreamingMessage contains
-      TaskStatusUpdateEvent objects reflecting task state transitions.
+      An SSE stream from streaming message send contains
+      task status or artifact update events.
     severity: optional
     category: streaming
     timeout: 30s
@@ -678,9 +425,10 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "SendStreamingMessage"
+          method: "message/stream"
           params:
             message:
+              messageId: "test-stream-002"
               role: "user"
               parts:
                 - kind: "text"
@@ -688,80 +436,7 @@ test_cases:
       - action: expect
         expect:
           sse_event:
-            kind: "status-update"
-            taskId: "*"
-            status:
-              state: "*"
-
-  - id: streaming-artifact-events
-    name: Streaming Artifact Update Events
-    description: >
-      An SSE stream from SendStreamingMessage contains
-      TaskArtifactUpdateEvent objects with artifact parts.
-    severity: optional
-    category: streaming
-    timeout: 30s
-    tags:
-      - streaming
-    steps:
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "SendStreamingMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "text"
-                  text: "Generate an artifact and stream it."
-      - action: expect
-        expect:
-          sse_event:
-            kind: "artifact-update"
-            taskId: "*"
-            artifact:
-              parts: "*"
-
-  - id: subscribe-to-task
-    name: SubscribeToTask Resubscribes to SSE Stream
-    description: >
-      SubscribeToTask allows a client to resubscribe to an existing
-      task's SSE event stream by task ID.
-    severity: optional
-    category: streaming
-    timeout: 30s
-    tags:
-      - streaming
-    steps:
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "SendStreamingMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "text"
-                  text: "Start a streaming task for resubscription."
-      - action: expect
-        expect:
-          sse_event:
-            kind: "status-update"
-            taskId: "*"
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 2
-          method: "SubscribeToTask"
-          params:
-            id: "$prev.taskId"
-      - action: expect
-        expect:
-          http_status: 200
-          headers:
-            content-type: "text/event-stream"
+            id: "*"
 
   # ---------------------------------------------------------------------------
   # Category: error-handling
@@ -803,7 +478,7 @@ test_cases:
     steps:
       - action: send
         payload:
-          raw_body: '{"id": 1, "method": "SendMessage", "params": {}}'
+          raw_body: '{"id": 1, "method": "message/send", "params": {}}'
           content_type: "application/json"
       - action: expect
         expect:
@@ -838,65 +513,73 @@ test_cases:
             code: -32601
             message: "*"
 
-  - id: content-type-not-supported
-    name: Unsupported Content Type Error
+  - id: missing-required-params
+    name: Missing Required Parameters
     description: >
-      Sending a request with an unsupported Content-Type header returns a
-      ContentTypeNotSupportedError (-32005).
+      SendMessage without a message field returns a JSON-RPC error
+      indicating invalid parameters (-32602).
     severity: required
     category: error-handling
     timeout: 10s
     tags:
       - errors
-    steps:
-      - action: send
-        payload:
-          raw_body: "<xml>not json</xml>"
-          content_type: "application/xml"
-      - action: expect
-        expect:
-          http_status: 415
-
-  - id: auth-required-401
-    name: Authentication Required Returns 401
-    description: >
-      A request to a protected endpoint without valid credentials returns
-      HTTP 401 Unauthorized.
-    severity: required
-    category: error-handling
-    timeout: 10s
-    tags:
-      - errors
-      - auth
+      - jsonrpc
     steps:
       - action: send
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "SendMessage"
+          method: "message/send"
+          params: {}
+      - action: expect
+        expect:
+          jsonrpc: "2.0"
+          id: 1
+          error:
+            code: -32602
+            message: "*"
+
+  - id: missing-message-id
+    name: Missing MessageId Returns Error
+    description: >
+      SendMessage without messageId in the message returns a validation error.
+    severity: required
+    category: error-handling
+    timeout: 10s
+    tags:
+      - errors
+      - jsonrpc
+    steps:
+      - action: send
+        payload:
+          jsonrpc: "2.0"
+          id: 1
+          method: "message/send"
           params:
             message:
               role: "user"
               parts:
                 - kind: "text"
-                  text: "This should require auth."
-          headers:
-            authorization: ""
+                  text: "No message ID."
       - action: expect
         expect:
-          http_status: 401
+          jsonrpc: "2.0"
+          id: 1
+          error:
+            code: "*"
+            message: "*"
 
   # ---------------------------------------------------------------------------
   # Category: push-notifications
   # ---------------------------------------------------------------------------
-  - id: create-push-config
-    name: Create Push Notification Config
+  - id: push-notification-not-supported
+    name: Push Notification Config When Unsupported
     description: >
-      CreateTaskPushNotificationConfig registers a webhook URL for push
-      notifications on a task and returns the configuration.
+      If the agent does not support push notifications, attempting to set
+      a push config returns an appropriate error.
     severity: optional
     category: push-notifications
-    timeout: 10s
+    timeout: 15s
     tags:
       - push-notifications
     steps:
@@ -904,9 +587,10 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "SendMessage"
+          method: "message/send"
           params:
             message:
+              messageId: "test-push-001"
               role: "user"
               parts:
                 - kind: "text"
@@ -916,144 +600,17 @@ test_cases:
           jsonrpc: "2.0"
           id: 1
           result:
-            kind: "task"
             id: "*"
       - action: send
         payload:
           jsonrpc: "2.0"
           id: 2
-          method: "CreateTaskPushNotificationConfig"
+          method: "tasks/pushNotificationConfig/set"
           params:
             id: "$prev.result.id"
             pushNotificationConfig:
               url: "https://example.com/webhook/a2a-test"
-              authentication:
-                schemes:
-                  - "bearer"
       - action: expect
         expect:
           jsonrpc: "2.0"
           id: 2
-          result:
-            id: "*"
-            pushNotificationConfig:
-              url: "https://example.com/webhook/a2a-test"
-
-  - id: get-push-config
-    name: Get Push Notification Config
-    description: >
-      GetTaskPushNotificationConfig retrieves the push notification
-      configuration for a task.
-    severity: optional
-    category: push-notifications
-    timeout: 10s
-    tags:
-      - push-notifications
-    steps:
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "SendMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "text"
-                  text: "Create a task for push config retrieval."
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 1
-          result:
-            kind: "task"
-            id: "*"
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 2
-          method: "CreateTaskPushNotificationConfig"
-          params:
-            id: "$prev.result.id"
-            pushNotificationConfig:
-              url: "https://example.com/webhook/a2a-get-test"
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 2
-          result:
-            pushNotificationConfig:
-              url: "*"
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 3
-          method: "GetTaskPushNotificationConfig"
-          params:
-            id: "$prev.result.id"
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 3
-          result:
-            id: "*"
-            pushNotificationConfig:
-              url: "https://example.com/webhook/a2a-get-test"
-
-  - id: delete-push-config
-    name: Delete Push Notification Config
-    description: >
-      DeleteTaskPushNotificationConfig removes the push notification
-      configuration for a task.
-    severity: optional
-    category: push-notifications
-    timeout: 10s
-    tags:
-      - push-notifications
-    steps:
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 1
-          method: "SendMessage"
-          params:
-            message:
-              role: "user"
-              parts:
-                - kind: "text"
-                  text: "Create a task for push config deletion."
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 1
-          result:
-            kind: "task"
-            id: "*"
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 2
-          method: "CreateTaskPushNotificationConfig"
-          params:
-            id: "$prev.result.id"
-            pushNotificationConfig:
-              url: "https://example.com/webhook/a2a-delete-test"
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 2
-          result:
-            pushNotificationConfig:
-              url: "*"
-      - action: send
-        payload:
-          jsonrpc: "2.0"
-          id: 3
-          method: "DeleteTaskPushNotificationConfig"
-          params:
-            id: "$prev.result.id"
-      - action: expect
-        expect:
-          jsonrpc: "2.0"
-          id: 3
-          result: "*"

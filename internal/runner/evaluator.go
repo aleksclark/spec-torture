@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log/slog"
+	"math"
 	"reflect"
 )
 
@@ -76,16 +77,49 @@ func matchValues(path string, expected, actual any) error {
 		}
 
 	case json.Number:
-		if !reflect.DeepEqual(expected, actual) {
+		if !numericEqual(expected, actual) {
 			return fmt.Errorf("mismatch at %s: expected %v, got %v", path, expected, actual)
 		}
 
 	default:
 		if !reflect.DeepEqual(expected, actual) {
+			if numericEqual(expected, actual) {
+				return nil
+			}
 			return fmt.Errorf("mismatch at %s: expected %v (%T), got %v (%T)",
 				path, expected, expected, actual, actual)
 		}
 	}
 
 	return nil
+}
+
+// numericEqual compares two values numerically, handling int/float64/json.Number mismatches.
+func numericEqual(a, b any) bool {
+	af, aOk := toFloat64(a)
+	bf, bOk := toFloat64(b)
+	if aOk && bOk {
+		return math.Abs(af-bf) < 1e-9
+	}
+	return false
+}
+
+func toFloat64(v any) (float64, bool) {
+	switch val := v.(type) {
+	case float64:
+		return val, true
+	case float32:
+		return float64(val), true
+	case int:
+		return float64(val), true
+	case int64:
+		return float64(val), true
+	case int32:
+		return float64(val), true
+	case json.Number:
+		f, err := val.Float64()
+		return f, err == nil
+	default:
+		return 0, false
+	}
 }

@@ -1,0 +1,1596 @@
+{
+  "id": "0804028c-415f-430c-b57a-bc5305a60624",
+  "spec_id": "a2a-v1",
+  "runtime": "a2a-python-helloworld",
+  "runtime_version": "",
+  "started_at": "2026-04-27T10:27:01.94366366-05:00",
+  "completed_at": "2026-04-27T10:27:01.948942493-05:00",
+  "results": [
+    {
+      "id": "d005023b-6b55-46fc-8d07-88e6fad9834d",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-well-known",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 850657,
+      "started_at": "2026-04-27T10:27:01.943706691-05:00",
+      "completed_at": "2026-04-27T10:27:01.944557348-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 842742,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "584",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "body": {
+              "capabilities": {
+                "extendedAgentCard": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "preferredTransport": "JSONRPC",
+              "protocolVersion": "0.3",
+              "skills": [
+                {
+                  "description": "just returns hello world",
+                  "examples": [
+                    "hi",
+                    "hello world"
+                  ],
+                  "id": "hello_world",
+                  "name": "Returns hello world",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "url": "http://127.0.0.1:9999"
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": true,
+              "url": "http://127.0.0.1:9999",
+              "version": "0.0.1"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"Just a hello world agent\",\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:9999\",\"protocolBinding\":\"JSONRPC\"}],\"version\":\"0.0.1\",\"capabilities\":{\"streaming\":true,\"extendedAgentCard\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"hello_world\",\"name\":\"Returns hello world\",\"description\":\"just returns hello world\",\"tags\":[\"hello world\"],\"examples\":[\"hi\",\"hello world\"]}],\"preferredTransport\":\"JSONRPC\",\"protocolVersion\":\"0.3\",\"supportsAuthenticatedExtendedCard\":true,\"url\":\"http://127.0.0.1:9999\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1644,
+          "expected": {
+            "body": {
+              "name": "*",
+              "skills": "*",
+              "url": "*",
+              "version": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "584",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "body": {
+              "capabilities": {
+                "extendedAgentCard": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "preferredTransport": "JSONRPC",
+              "protocolVersion": "0.3",
+              "skills": [
+                {
+                  "description": "just returns hello world",
+                  "examples": [
+                    "hi",
+                    "hello world"
+                  ],
+                  "id": "hello_world",
+                  "name": "Returns hello world",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "url": "http://127.0.0.1:9999"
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": true,
+              "url": "http://127.0.0.1:9999",
+              "version": "0.0.1"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"Just a hello world agent\",\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:9999\",\"protocolBinding\":\"JSONRPC\"}],\"version\":\"0.0.1\",\"capabilities\":{\"streaming\":true,\"extendedAgentCard\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"hello_world\",\"name\":\"Returns hello world\",\"description\":\"just returns hello world\",\"tags\":[\"hello world\"],\"examples\":[\"hi\",\"hello world\"]}],\"preferredTransport\":\"JSONRPC\",\"protocolVersion\":\"0.3\",\"supportsAuthenticatedExtendedCard\":true,\"url\":\"http://127.0.0.1:9999\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "558042c5-b0ef-4a20-b64c-e20d5e298adc",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-content-type",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 275390,
+      "started_at": "2026-04-27T10:27:01.944559282-05:00",
+      "completed_at": "2026-04-27T10:27:01.944834672-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 268798,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "584",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "body": {
+              "capabilities": {
+                "extendedAgentCard": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "preferredTransport": "JSONRPC",
+              "protocolVersion": "0.3",
+              "skills": [
+                {
+                  "description": "just returns hello world",
+                  "examples": [
+                    "hi",
+                    "hello world"
+                  ],
+                  "id": "hello_world",
+                  "name": "Returns hello world",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "url": "http://127.0.0.1:9999"
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": true,
+              "url": "http://127.0.0.1:9999",
+              "version": "0.0.1"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"Just a hello world agent\",\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:9999\",\"protocolBinding\":\"JSONRPC\"}],\"version\":\"0.0.1\",\"capabilities\":{\"streaming\":true,\"extendedAgentCard\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"hello_world\",\"name\":\"Returns hello world\",\"description\":\"just returns hello world\",\"tags\":[\"hello world\"],\"examples\":[\"hi\",\"hello world\"]}],\"preferredTransport\":\"JSONRPC\",\"protocolVersion\":\"0.3\",\"supportsAuthenticatedExtendedCard\":true,\"url\":\"http://127.0.0.1:9999\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1192,
+          "expected": {
+            "headers": {
+              "content-type": "application/json"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "584",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "body": {
+              "capabilities": {
+                "extendedAgentCard": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "preferredTransport": "JSONRPC",
+              "protocolVersion": "0.3",
+              "skills": [
+                {
+                  "description": "just returns hello world",
+                  "examples": [
+                    "hi",
+                    "hello world"
+                  ],
+                  "id": "hello_world",
+                  "name": "Returns hello world",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "url": "http://127.0.0.1:9999"
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": true,
+              "url": "http://127.0.0.1:9999",
+              "version": "0.0.1"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"Just a hello world agent\",\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:9999\",\"protocolBinding\":\"JSONRPC\"}],\"version\":\"0.0.1\",\"capabilities\":{\"streaming\":true,\"extendedAgentCard\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"hello_world\",\"name\":\"Returns hello world\",\"description\":\"just returns hello world\",\"tags\":[\"hello world\"],\"examples\":[\"hi\",\"hello world\"]}],\"preferredTransport\":\"JSONRPC\",\"protocolVersion\":\"0.3\",\"supportsAuthenticatedExtendedCard\":true,\"url\":\"http://127.0.0.1:9999\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dcf33616-cad5-47a6-b363-2e3d67bb0046",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-optional-fields",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 245564,
+      "started_at": "2026-04-27T10:27:01.944835764-05:00",
+      "completed_at": "2026-04-27T10:27:01.945081318-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 239493,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "584",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "body": {
+              "capabilities": {
+                "extendedAgentCard": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "preferredTransport": "JSONRPC",
+              "protocolVersion": "0.3",
+              "skills": [
+                {
+                  "description": "just returns hello world",
+                  "examples": [
+                    "hi",
+                    "hello world"
+                  ],
+                  "id": "hello_world",
+                  "name": "Returns hello world",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "url": "http://127.0.0.1:9999"
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": true,
+              "url": "http://127.0.0.1:9999",
+              "version": "0.0.1"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"Just a hello world agent\",\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:9999\",\"protocolBinding\":\"JSONRPC\"}],\"version\":\"0.0.1\",\"capabilities\":{\"streaming\":true,\"extendedAgentCard\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"hello_world\",\"name\":\"Returns hello world\",\"description\":\"just returns hello world\",\"tags\":[\"hello world\"],\"examples\":[\"hi\",\"hello world\"]}],\"preferredTransport\":\"JSONRPC\",\"protocolVersion\":\"0.3\",\"supportsAuthenticatedExtendedCard\":true,\"url\":\"http://127.0.0.1:9999\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 772,
+          "expected": {
+            "body": {
+              "capabilities": "*",
+              "description": "*",
+              "name": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "584",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "body": {
+              "capabilities": {
+                "extendedAgentCard": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "preferredTransport": "JSONRPC",
+              "protocolVersion": "0.3",
+              "skills": [
+                {
+                  "description": "just returns hello world",
+                  "examples": [
+                    "hi",
+                    "hello world"
+                  ],
+                  "id": "hello_world",
+                  "name": "Returns hello world",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "url": "http://127.0.0.1:9999"
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": true,
+              "url": "http://127.0.0.1:9999",
+              "version": "0.0.1"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"Just a hello world agent\",\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:9999\",\"protocolBinding\":\"JSONRPC\"}],\"version\":\"0.0.1\",\"capabilities\":{\"streaming\":true,\"extendedAgentCard\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"hello_world\",\"name\":\"Returns hello world\",\"description\":\"just returns hello world\",\"tags\":[\"hello world\"],\"examples\":[\"hi\",\"hello world\"]}],\"preferredTransport\":\"JSONRPC\",\"protocolVersion\":\"0.3\",\"supportsAuthenticatedExtendedCard\":true,\"url\":\"http://127.0.0.1:9999\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fb77b054-c2ee-4019-bd06-03bec9495105",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-skills",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 222891,
+      "started_at": "2026-04-27T10:27:01.945082099-05:00",
+      "completed_at": "2026-04-27T10:27:01.94530499-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 218784,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "584",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "body": {
+              "capabilities": {
+                "extendedAgentCard": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "preferredTransport": "JSONRPC",
+              "protocolVersion": "0.3",
+              "skills": [
+                {
+                  "description": "just returns hello world",
+                  "examples": [
+                    "hi",
+                    "hello world"
+                  ],
+                  "id": "hello_world",
+                  "name": "Returns hello world",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "url": "http://127.0.0.1:9999"
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": true,
+              "url": "http://127.0.0.1:9999",
+              "version": "0.0.1"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"Just a hello world agent\",\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:9999\",\"protocolBinding\":\"JSONRPC\"}],\"version\":\"0.0.1\",\"capabilities\":{\"streaming\":true,\"extendedAgentCard\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"hello_world\",\"name\":\"Returns hello world\",\"description\":\"just returns hello world\",\"tags\":[\"hello world\"],\"examples\":[\"hi\",\"hello world\"]}],\"preferredTransport\":\"JSONRPC\",\"protocolVersion\":\"0.3\",\"supportsAuthenticatedExtendedCard\":true,\"url\":\"http://127.0.0.1:9999\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 481,
+          "expected": {
+            "body": {
+              "skills": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "584",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "body": {
+              "capabilities": {
+                "extendedAgentCard": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "preferredTransport": "JSONRPC",
+              "protocolVersion": "0.3",
+              "skills": [
+                {
+                  "description": "just returns hello world",
+                  "examples": [
+                    "hi",
+                    "hello world"
+                  ],
+                  "id": "hello_world",
+                  "name": "Returns hello world",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "url": "http://127.0.0.1:9999"
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": true,
+              "url": "http://127.0.0.1:9999",
+              "version": "0.0.1"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"Just a hello world agent\",\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:9999\",\"protocolBinding\":\"JSONRPC\"}],\"version\":\"0.0.1\",\"capabilities\":{\"streaming\":true,\"extendedAgentCard\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"hello_world\",\"name\":\"Returns hello world\",\"description\":\"just returns hello world\",\"tags\":[\"hello world\"],\"examples\":[\"hi\",\"hello world\"]}],\"preferredTransport\":\"JSONRPC\",\"protocolVersion\":\"0.3\",\"supportsAuthenticatedExtendedCard\":true,\"url\":\"http://127.0.0.1:9999\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "777df37a-f647-4e27-8643-242fb004e4ab",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-basic",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 298333,
+      "started_at": "2026-04-27T10:27:01.945306704-05:00",
+      "completed_at": "2026-04-27T10:27:01.945605037-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 286862,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 6011,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "21f892c8-1b28-4215-8890-a7e67f196aa4",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-creates-task",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 213393,
+      "started_at": "2026-04-27T10:27:01.945605999-05:00",
+      "completed_at": "2026-04-27T10:27:01.945819392-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 207883,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1553,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*",
+              "kind": "task",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "f23ce5d0-2146-49bf-b271-90a3ad5e1db4",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 199968,
+      "started_at": "2026-04-27T10:27:01.945820003-05:00",
+      "completed_at": "2026-04-27T10:27:01.946019971-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 195790,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1102,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "98c59c98-d148-40db-af4c-ad11799feeab",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task-not-found",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 194086,
+      "started_at": "2026-04-27T10:27:01.946020713-05:00",
+      "completed_at": "2026-04-27T10:27:01.946214799-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 187344,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1322,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "deb4c0fc-56c5-4870-8898-c1a64db45f64",
+      "spec_id": "a2a-v1",
+      "test_case_id": "cancel-task",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 189127,
+      "started_at": "2026-04-27T10:27:01.946215501-05:00",
+      "completed_at": "2026-04-27T10:27:01.946404628-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 184258,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1293,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "7daa34fb-3595-472b-9c63-6a7a25ad7fb5",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-text-part",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 192504,
+      "started_at": "2026-04-27T10:27:01.94640577-05:00",
+      "completed_at": "2026-04-27T10:27:01.946598274-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 187995,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1133,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "4a19b6ef-4e1a-4091-9bd0-f2ea84fe32f1",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-with-context",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 179840,
+      "started_at": "2026-04-27T10:27:01.946598835-05:00",
+      "completed_at": "2026-04-27T10:27:01.946778675-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 175742,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1072,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "3943680b-b955-4ba4-9a1f-d01b6fe575c6",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-send",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 202743,
+      "started_at": "2026-04-27T10:27:01.946779246-05:00",
+      "completed_at": "2026-04-27T10:27:01.946981989-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 198235,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1273,
+          "expected": {
+            "headers": {
+              "content-type": "text/event-stream"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "header content-type: expected \"text/event-stream\", got \"application/json\""
+        }
+      ],
+      "error_message": "header content-type: expected \"text/event-stream\", got \"application/json\""
+    },
+    {
+      "id": "33ef7699-f6b8-4a21-817a-486b5da0459a",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-events",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 188576,
+      "started_at": "2026-04-27T10:27:01.94698271-05:00",
+      "completed_at": "2026-04-27T10:27:01.947171286-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 185420,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 361,
+          "expected": {
+            "sse_event": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "expected SSE events but got none"
+        }
+      ],
+      "error_message": "expected SSE events but got none"
+    },
+    {
+      "id": "0626bc9c-743c-430f-a502-23f1d079d1f3",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-parse-error",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 572993,
+      "started_at": "2026-04-27T10:27:01.947171877-05:00",
+      "completed_at": "2026-04-27T10:27:01.94774486-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 566821,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "139",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32700,\"message\":\"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"},\"id\":null,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 2134,
+          "expected": {
+            "error": {
+              "code": -32700,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "139",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32700,\"message\":\"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"},\"id\":null,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "9ffa0185-e811-4df6-9ba5-11df3234b335",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-invalid-request",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 410906,
+      "started_at": "2026-04-27T10:27:01.947747365-05:00",
+      "completed_at": "2026-04-27T10:27:01.948158271-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 402460,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "150",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"Invalid request. Extra fields: set(), Missed fields: {'jsonrpc'}\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "data": "Invalid request. Extra fields: set(), Missed fields: {'jsonrpc'}",
+                "message": "Invalid Request"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1072,
+          "expected": {
+            "error": {
+              "code": -32600,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "150",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"Invalid request. Extra fields: set(), Missed fields: {'jsonrpc'}\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "data": "Invalid request. Extra fields: set(), Missed fields: {'jsonrpc'}",
+                "message": "Invalid Request"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "6e1736cc-15e7-46d4-9a66-3a0372d7e3f0",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-method-not-found",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 214295,
+      "started_at": "2026-04-27T10:27:01.948159012-05:00",
+      "completed_at": "2026-04-27T10:27:01.948373307-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 209777,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1022,
+          "expected": {
+            "error": {
+              "code": -32601,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "98c6c923-82ce-49f6-bb63-61eded75db9d",
+      "spec_id": "a2a-v1",
+      "test_case_id": "missing-required-params",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 197232,
+      "started_at": "2026-04-27T10:27:01.948374129-05:00",
+      "completed_at": "2026-04-27T10:27:01.948571361-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 188346,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 5220,
+          "expected": {
+            "error": {
+              "code": -32602,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: mismatch at error.code: expected -32602 (int), got -32601 (float64)"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: mismatch at error.code: expected -32602 (int), got -32601 (float64)"
+    },
+    {
+      "id": "d539709a-681d-4107-960a-b539fdcac07a",
+      "spec_id": "a2a-v1",
+      "test_case_id": "missing-message-id",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 188065,
+      "started_at": "2026-04-27T10:27:01.948572674-05:00",
+      "completed_at": "2026-04-27T10:27:01.948760739-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 183787,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 872,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "b2347a75-2a63-465f-835b-cbbcab6bf38c",
+      "spec_id": "a2a-v1",
+      "test_case_id": "push-notification-not-supported",
+      "runtime": "a2a-python-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 181002,
+      "started_at": "2026-04-27T10:27:01.94876129-05:00",
+      "completed_at": "2026-04-27T10:27:01.948942292-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 176603,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1212,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "77",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 15:27:01 GMT",
+              "server": "uvicorn"
+            },
+            "raw_body": "{\"error\":{\"code\":-32601,\"message\":\"Method not found\"},\"id\":1,\"jsonrpc\":\"2.0\"}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    }
+  ],
+  "summary": {
+    "total": 19,
+    "passed": 9,
+    "failed": 10,
+    "errors": 0,
+    "skipped": 0,
+    "timeouts": 0,
+    "compliance": 47.368421052631575
+  }
+}
