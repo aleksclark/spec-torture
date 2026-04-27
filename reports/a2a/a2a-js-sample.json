@@ -1,0 +1,3133 @@
+{
+  "id": "e75b5e3d-6d9c-4c1d-9d29-35eb73a32f97",
+  "spec_id": "a2a-v1",
+  "runtime": "a2a-js-sample",
+  "runtime_version": "",
+  "started_at": "2026-04-27T10:26:32.356447833-05:00",
+  "completed_at": "2026-04-27T10:26:42.371430795-05:00",
+  "results": [
+    {
+      "id": "e9c64f25-470a-4716-8a24-f0d4fc7fdf3b",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-well-known",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1062207,
+      "started_at": "2026-04-27T10:26:32.356501614-05:00",
+      "completed_at": "2026-04-27T10:26:32.357563831-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1053660,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "743",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:32 GMT",
+              "etag": "W/\"2e7-++PhNy3vNpKvxQDVPs32b2p5ag0\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text",
+                "task-status"
+              ],
+              "description": "A sample agent to test the stream functionality and simulate the flow of tasks statuses.",
+              "name": "Sample Agent",
+              "protocolVersion": "0.3.0",
+              "provider": {
+                "organization": "A2A Samples",
+                "url": "https://example.com/a2a-samples"
+              },
+              "skills": [
+                {
+                  "description": "Simulate the general flow of a streaming agent.",
+                  "examples": [
+                    "hi",
+                    "hello world",
+                    "how are you",
+                    "goodbye"
+                  ],
+                  "id": "sample_agent",
+                  "inputModes": [
+                    "text"
+                  ],
+                  "name": "Sample Agent",
+                  "outputModes": [
+                    "text",
+                    "task-status"
+                  ],
+                  "tags": [
+                    "sample"
+                  ]
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": false,
+              "url": "http://localhost:41241/",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"Sample Agent\",\"description\":\"A sample agent to test the stream functionality and simulate the flow of tasks statuses.\",\"url\":\"http://localhost:41241/\",\"provider\":{\"organization\":\"A2A Samples\",\"url\":\"https://example.com/a2a-samples\"},\"version\":\"1.0.0\",\"protocolVersion\":\"0.3.0\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\",\"task-status\"],\"skills\":[{\"id\":\"sample_agent\",\"name\":\"Sample Agent\",\"description\":\"Simulate the general flow of a streaming agent.\",\"tags\":[\"sample\"],\"examples\":[\"hi\",\"hello world\",\"how are you\",\"goodbye\"],\"inputModes\":[\"text\"],\"outputModes\":[\"text\",\"task-status\"]}],\"supportsAuthenticatedExtendedCard\":false}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1243,
+          "expected": {
+            "body": {
+              "name": "*",
+              "skills": "*",
+              "url": "*",
+              "version": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "743",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:32 GMT",
+              "etag": "W/\"2e7-++PhNy3vNpKvxQDVPs32b2p5ag0\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text",
+                "task-status"
+              ],
+              "description": "A sample agent to test the stream functionality and simulate the flow of tasks statuses.",
+              "name": "Sample Agent",
+              "protocolVersion": "0.3.0",
+              "provider": {
+                "organization": "A2A Samples",
+                "url": "https://example.com/a2a-samples"
+              },
+              "skills": [
+                {
+                  "description": "Simulate the general flow of a streaming agent.",
+                  "examples": [
+                    "hi",
+                    "hello world",
+                    "how are you",
+                    "goodbye"
+                  ],
+                  "id": "sample_agent",
+                  "inputModes": [
+                    "text"
+                  ],
+                  "name": "Sample Agent",
+                  "outputModes": [
+                    "text",
+                    "task-status"
+                  ],
+                  "tags": [
+                    "sample"
+                  ]
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": false,
+              "url": "http://localhost:41241/",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"Sample Agent\",\"description\":\"A sample agent to test the stream functionality and simulate the flow of tasks statuses.\",\"url\":\"http://localhost:41241/\",\"provider\":{\"organization\":\"A2A Samples\",\"url\":\"https://example.com/a2a-samples\"},\"version\":\"1.0.0\",\"protocolVersion\":\"0.3.0\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\",\"task-status\"],\"skills\":[{\"id\":\"sample_agent\",\"name\":\"Sample Agent\",\"description\":\"Simulate the general flow of a streaming agent.\",\"tags\":[\"sample\"],\"examples\":[\"hi\",\"hello world\",\"how are you\",\"goodbye\"],\"inputModes\":[\"text\"],\"outputModes\":[\"text\",\"task-status\"]}],\"supportsAuthenticatedExtendedCard\":false}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "a33babc2-330f-4a7e-8dcf-15d873b5275e",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-content-type",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 197654,
+      "started_at": "2026-04-27T10:26:32.357565103-05:00",
+      "completed_at": "2026-04-27T10:26:32.357762767-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 190890,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "743",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:32 GMT",
+              "etag": "W/\"2e7-++PhNy3vNpKvxQDVPs32b2p5ag0\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text",
+                "task-status"
+              ],
+              "description": "A sample agent to test the stream functionality and simulate the flow of tasks statuses.",
+              "name": "Sample Agent",
+              "protocolVersion": "0.3.0",
+              "provider": {
+                "organization": "A2A Samples",
+                "url": "https://example.com/a2a-samples"
+              },
+              "skills": [
+                {
+                  "description": "Simulate the general flow of a streaming agent.",
+                  "examples": [
+                    "hi",
+                    "hello world",
+                    "how are you",
+                    "goodbye"
+                  ],
+                  "id": "sample_agent",
+                  "inputModes": [
+                    "text"
+                  ],
+                  "name": "Sample Agent",
+                  "outputModes": [
+                    "text",
+                    "task-status"
+                  ],
+                  "tags": [
+                    "sample"
+                  ]
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": false,
+              "url": "http://localhost:41241/",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"Sample Agent\",\"description\":\"A sample agent to test the stream functionality and simulate the flow of tasks statuses.\",\"url\":\"http://localhost:41241/\",\"provider\":{\"organization\":\"A2A Samples\",\"url\":\"https://example.com/a2a-samples\"},\"version\":\"1.0.0\",\"protocolVersion\":\"0.3.0\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\",\"task-status\"],\"skills\":[{\"id\":\"sample_agent\",\"name\":\"Sample Agent\",\"description\":\"Simulate the general flow of a streaming agent.\",\"tags\":[\"sample\"],\"examples\":[\"hi\",\"hello world\",\"how are you\",\"goodbye\"],\"inputModes\":[\"text\"],\"outputModes\":[\"text\",\"task-status\"]}],\"supportsAuthenticatedExtendedCard\":false}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1243,
+          "expected": {
+            "headers": {
+              "content-type": "application/json"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "743",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:32 GMT",
+              "etag": "W/\"2e7-++PhNy3vNpKvxQDVPs32b2p5ag0\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text",
+                "task-status"
+              ],
+              "description": "A sample agent to test the stream functionality and simulate the flow of tasks statuses.",
+              "name": "Sample Agent",
+              "protocolVersion": "0.3.0",
+              "provider": {
+                "organization": "A2A Samples",
+                "url": "https://example.com/a2a-samples"
+              },
+              "skills": [
+                {
+                  "description": "Simulate the general flow of a streaming agent.",
+                  "examples": [
+                    "hi",
+                    "hello world",
+                    "how are you",
+                    "goodbye"
+                  ],
+                  "id": "sample_agent",
+                  "inputModes": [
+                    "text"
+                  ],
+                  "name": "Sample Agent",
+                  "outputModes": [
+                    "text",
+                    "task-status"
+                  ],
+                  "tags": [
+                    "sample"
+                  ]
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": false,
+              "url": "http://localhost:41241/",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"Sample Agent\",\"description\":\"A sample agent to test the stream functionality and simulate the flow of tasks statuses.\",\"url\":\"http://localhost:41241/\",\"provider\":{\"organization\":\"A2A Samples\",\"url\":\"https://example.com/a2a-samples\"},\"version\":\"1.0.0\",\"protocolVersion\":\"0.3.0\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\",\"task-status\"],\"skills\":[{\"id\":\"sample_agent\",\"name\":\"Sample Agent\",\"description\":\"Simulate the general flow of a streaming agent.\",\"tags\":[\"sample\"],\"examples\":[\"hi\",\"hello world\",\"how are you\",\"goodbye\"],\"inputModes\":[\"text\"],\"outputModes\":[\"text\",\"task-status\"]}],\"supportsAuthenticatedExtendedCard\":false}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6e5f9476-a3c7-4e48-bbd9-32d75736a91c",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-optional-fields",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 169260,
+      "started_at": "2026-04-27T10:26:32.35776458-05:00",
+      "completed_at": "2026-04-27T10:26:32.35793383-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 164611,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "743",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:32 GMT",
+              "etag": "W/\"2e7-++PhNy3vNpKvxQDVPs32b2p5ag0\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text",
+                "task-status"
+              ],
+              "description": "A sample agent to test the stream functionality and simulate the flow of tasks statuses.",
+              "name": "Sample Agent",
+              "protocolVersion": "0.3.0",
+              "provider": {
+                "organization": "A2A Samples",
+                "url": "https://example.com/a2a-samples"
+              },
+              "skills": [
+                {
+                  "description": "Simulate the general flow of a streaming agent.",
+                  "examples": [
+                    "hi",
+                    "hello world",
+                    "how are you",
+                    "goodbye"
+                  ],
+                  "id": "sample_agent",
+                  "inputModes": [
+                    "text"
+                  ],
+                  "name": "Sample Agent",
+                  "outputModes": [
+                    "text",
+                    "task-status"
+                  ],
+                  "tags": [
+                    "sample"
+                  ]
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": false,
+              "url": "http://localhost:41241/",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"Sample Agent\",\"description\":\"A sample agent to test the stream functionality and simulate the flow of tasks statuses.\",\"url\":\"http://localhost:41241/\",\"provider\":{\"organization\":\"A2A Samples\",\"url\":\"https://example.com/a2a-samples\"},\"version\":\"1.0.0\",\"protocolVersion\":\"0.3.0\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\",\"task-status\"],\"skills\":[{\"id\":\"sample_agent\",\"name\":\"Sample Agent\",\"description\":\"Simulate the general flow of a streaming agent.\",\"tags\":[\"sample\"],\"examples\":[\"hi\",\"hello world\",\"how are you\",\"goodbye\"],\"inputModes\":[\"text\"],\"outputModes\":[\"text\",\"task-status\"]}],\"supportsAuthenticatedExtendedCard\":false}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 321,
+          "expected": {
+            "body": {
+              "capabilities": "*",
+              "description": "*",
+              "name": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "743",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:32 GMT",
+              "etag": "W/\"2e7-++PhNy3vNpKvxQDVPs32b2p5ag0\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text",
+                "task-status"
+              ],
+              "description": "A sample agent to test the stream functionality and simulate the flow of tasks statuses.",
+              "name": "Sample Agent",
+              "protocolVersion": "0.3.0",
+              "provider": {
+                "organization": "A2A Samples",
+                "url": "https://example.com/a2a-samples"
+              },
+              "skills": [
+                {
+                  "description": "Simulate the general flow of a streaming agent.",
+                  "examples": [
+                    "hi",
+                    "hello world",
+                    "how are you",
+                    "goodbye"
+                  ],
+                  "id": "sample_agent",
+                  "inputModes": [
+                    "text"
+                  ],
+                  "name": "Sample Agent",
+                  "outputModes": [
+                    "text",
+                    "task-status"
+                  ],
+                  "tags": [
+                    "sample"
+                  ]
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": false,
+              "url": "http://localhost:41241/",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"Sample Agent\",\"description\":\"A sample agent to test the stream functionality and simulate the flow of tasks statuses.\",\"url\":\"http://localhost:41241/\",\"provider\":{\"organization\":\"A2A Samples\",\"url\":\"https://example.com/a2a-samples\"},\"version\":\"1.0.0\",\"protocolVersion\":\"0.3.0\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\",\"task-status\"],\"skills\":[{\"id\":\"sample_agent\",\"name\":\"Sample Agent\",\"description\":\"Simulate the general flow of a streaming agent.\",\"tags\":[\"sample\"],\"examples\":[\"hi\",\"hello world\",\"how are you\",\"goodbye\"],\"inputModes\":[\"text\"],\"outputModes\":[\"text\",\"task-status\"]}],\"supportsAuthenticatedExtendedCard\":false}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2c409c8c-e396-4951-b331-201091197a69",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-skills",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 206961,
+      "started_at": "2026-04-27T10:26:32.357935784-05:00",
+      "completed_at": "2026-04-27T10:26:32.358142745-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 202693,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "743",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:32 GMT",
+              "etag": "W/\"2e7-++PhNy3vNpKvxQDVPs32b2p5ag0\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text",
+                "task-status"
+              ],
+              "description": "A sample agent to test the stream functionality and simulate the flow of tasks statuses.",
+              "name": "Sample Agent",
+              "protocolVersion": "0.3.0",
+              "provider": {
+                "organization": "A2A Samples",
+                "url": "https://example.com/a2a-samples"
+              },
+              "skills": [
+                {
+                  "description": "Simulate the general flow of a streaming agent.",
+                  "examples": [
+                    "hi",
+                    "hello world",
+                    "how are you",
+                    "goodbye"
+                  ],
+                  "id": "sample_agent",
+                  "inputModes": [
+                    "text"
+                  ],
+                  "name": "Sample Agent",
+                  "outputModes": [
+                    "text",
+                    "task-status"
+                  ],
+                  "tags": [
+                    "sample"
+                  ]
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": false,
+              "url": "http://localhost:41241/",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"Sample Agent\",\"description\":\"A sample agent to test the stream functionality and simulate the flow of tasks statuses.\",\"url\":\"http://localhost:41241/\",\"provider\":{\"organization\":\"A2A Samples\",\"url\":\"https://example.com/a2a-samples\"},\"version\":\"1.0.0\",\"protocolVersion\":\"0.3.0\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\",\"task-status\"],\"skills\":[{\"id\":\"sample_agent\",\"name\":\"Sample Agent\",\"description\":\"Simulate the general flow of a streaming agent.\",\"tags\":[\"sample\"],\"examples\":[\"hi\",\"hello world\",\"how are you\",\"goodbye\"],\"inputModes\":[\"text\"],\"outputModes\":[\"text\",\"task-status\"]}],\"supportsAuthenticatedExtendedCard\":false}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 841,
+          "expected": {
+            "body": {
+              "skills": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "743",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:32 GMT",
+              "etag": "W/\"2e7-++PhNy3vNpKvxQDVPs32b2p5ag0\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": true,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text",
+                "task-status"
+              ],
+              "description": "A sample agent to test the stream functionality and simulate the flow of tasks statuses.",
+              "name": "Sample Agent",
+              "protocolVersion": "0.3.0",
+              "provider": {
+                "organization": "A2A Samples",
+                "url": "https://example.com/a2a-samples"
+              },
+              "skills": [
+                {
+                  "description": "Simulate the general flow of a streaming agent.",
+                  "examples": [
+                    "hi",
+                    "hello world",
+                    "how are you",
+                    "goodbye"
+                  ],
+                  "id": "sample_agent",
+                  "inputModes": [
+                    "text"
+                  ],
+                  "name": "Sample Agent",
+                  "outputModes": [
+                    "text",
+                    "task-status"
+                  ],
+                  "tags": [
+                    "sample"
+                  ]
+                }
+              ],
+              "supportsAuthenticatedExtendedCard": false,
+              "url": "http://localhost:41241/",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"Sample Agent\",\"description\":\"A sample agent to test the stream functionality and simulate the flow of tasks statuses.\",\"url\":\"http://localhost:41241/\",\"provider\":{\"organization\":\"A2A Samples\",\"url\":\"https://example.com/a2a-samples\"},\"version\":\"1.0.0\",\"protocolVersion\":\"0.3.0\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\",\"task-status\"],\"skills\":[{\"id\":\"sample_agent\",\"name\":\"Sample Agent\",\"description\":\"Simulate the general flow of a streaming agent.\",\"tags\":[\"sample\"],\"examples\":[\"hi\",\"hello world\",\"how are you\",\"goodbye\"],\"inputModes\":[\"text\"],\"outputModes\":[\"text\",\"task-status\"]}],\"supportsAuthenticatedExtendedCard\":false}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "51f4e9fa-f7f7-47d8-b7a4-780b89c7e1d3",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-basic",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1000803487,
+      "started_at": "2026-04-27T10:26:32.358144228-05:00",
+      "completed_at": "2026-04-27T10:26:33.358947715-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1000790162,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "870",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:33 GMT",
+              "etag": "W/\"366-uEMTi4SK5iFp86jBTgVrGprsl7A\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"4253e778-53ee-4a81-a9bb-e1e2daacd8ba\",\"contextId\":\"94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:33.358Z\"},\"history\":[{\"messageId\":\"test-msg-001\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello, what can you do?\"}],\"role\":\"user\",\"contextId\":\"94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae\",\"taskId\":\"4253e778-53ee-4a81-a9bb-e1e2daacd8ba\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"1f28a300-2853-4d80-994c-3d1c43919197\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"4253e778-53ee-4a81-a9bb-e1e2daacd8ba\",\"contextId\":\"94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae\"}],\"artifacts\":[{\"artifactId\":\"6ea25d00-544d-4113-b629-faf3390af677\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! Nice to meet you!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "6ea25d00-544d-4113-b629-faf3390af677",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! Nice to meet you!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae",
+                "history": [
+                  {
+                    "contextId": "94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae",
+                    "messageId": "test-msg-001",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello, what can you do?"
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "4253e778-53ee-4a81-a9bb-e1e2daacd8ba"
+                  },
+                  {
+                    "contextId": "94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae",
+                    "kind": "message",
+                    "messageId": "1f28a300-2853-4d80-994c-3d1c43919197",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "4253e778-53ee-4a81-a9bb-e1e2daacd8ba"
+                  }
+                ],
+                "id": "4253e778-53ee-4a81-a9bb-e1e2daacd8ba",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:33.358Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 5460,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "870",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:33 GMT",
+              "etag": "W/\"366-uEMTi4SK5iFp86jBTgVrGprsl7A\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"4253e778-53ee-4a81-a9bb-e1e2daacd8ba\",\"contextId\":\"94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:33.358Z\"},\"history\":[{\"messageId\":\"test-msg-001\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello, what can you do?\"}],\"role\":\"user\",\"contextId\":\"94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae\",\"taskId\":\"4253e778-53ee-4a81-a9bb-e1e2daacd8ba\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"1f28a300-2853-4d80-994c-3d1c43919197\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"4253e778-53ee-4a81-a9bb-e1e2daacd8ba\",\"contextId\":\"94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae\"}],\"artifacts\":[{\"artifactId\":\"6ea25d00-544d-4113-b629-faf3390af677\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! Nice to meet you!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "6ea25d00-544d-4113-b629-faf3390af677",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! Nice to meet you!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae",
+                "history": [
+                  {
+                    "contextId": "94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae",
+                    "messageId": "test-msg-001",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello, what can you do?"
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "4253e778-53ee-4a81-a9bb-e1e2daacd8ba"
+                  },
+                  {
+                    "contextId": "94a5b1b5-f2fa-4d47-9d1e-b7d4f3fb5bae",
+                    "kind": "message",
+                    "messageId": "1f28a300-2853-4d80-994c-3d1c43919197",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "4253e778-53ee-4a81-a9bb-e1e2daacd8ba"
+                  }
+                ],
+                "id": "4253e778-53ee-4a81-a9bb-e1e2daacd8ba",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:33.358Z"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "7ebc9a10-5b3c-49f8-b4f8-066674ab06d6",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-creates-task",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1001001412,
+      "started_at": "2026-04-27T10:26:33.358952384-05:00",
+      "completed_at": "2026-04-27T10:26:34.359953816-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1000978920,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "934",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:34 GMT",
+              "etag": "W/\"3a6-yTcQXd7f2CByyoPOhFY8ac7JmgM\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"cde50055-4f15-4a53-a545-edcca7d0307f\",\"contextId\":\"84a33a12-1b29-4890-b0ca-78e1632f7287\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:34.359Z\"},\"history\":[{\"messageId\":\"test-msg-002\",\"parts\":[{\"kind\":\"text\",\"text\":\"Perform a multi-step task for me.\"}],\"role\":\"user\",\"contextId\":\"84a33a12-1b29-4890-b0ca-78e1632f7287\",\"taskId\":\"cde50055-4f15-4a53-a545-edcca7d0307f\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"c7507098-8109-46bd-8efb-1baebc50c91a\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"cde50055-4f15-4a53-a545-edcca7d0307f\",\"contextId\":\"84a33a12-1b29-4890-b0ca-78e1632f7287\"}],\"artifacts\":[{\"artifactId\":\"31e03e81-ef96-4e72-a72b-57107b0a476c\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Perform a multi-step task for me.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "31e03e81-ef96-4e72-a72b-57107b0a476c",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Perform a multi-step task for me.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "84a33a12-1b29-4890-b0ca-78e1632f7287",
+                "history": [
+                  {
+                    "contextId": "84a33a12-1b29-4890-b0ca-78e1632f7287",
+                    "messageId": "test-msg-002",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Perform a multi-step task for me."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "cde50055-4f15-4a53-a545-edcca7d0307f"
+                  },
+                  {
+                    "contextId": "84a33a12-1b29-4890-b0ca-78e1632f7287",
+                    "kind": "message",
+                    "messageId": "c7507098-8109-46bd-8efb-1baebc50c91a",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "cde50055-4f15-4a53-a545-edcca7d0307f"
+                  }
+                ],
+                "id": "cde50055-4f15-4a53-a545-edcca7d0307f",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:34.359Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4860,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*",
+              "kind": "task",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "934",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:34 GMT",
+              "etag": "W/\"3a6-yTcQXd7f2CByyoPOhFY8ac7JmgM\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"cde50055-4f15-4a53-a545-edcca7d0307f\",\"contextId\":\"84a33a12-1b29-4890-b0ca-78e1632f7287\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:34.359Z\"},\"history\":[{\"messageId\":\"test-msg-002\",\"parts\":[{\"kind\":\"text\",\"text\":\"Perform a multi-step task for me.\"}],\"role\":\"user\",\"contextId\":\"84a33a12-1b29-4890-b0ca-78e1632f7287\",\"taskId\":\"cde50055-4f15-4a53-a545-edcca7d0307f\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"c7507098-8109-46bd-8efb-1baebc50c91a\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"cde50055-4f15-4a53-a545-edcca7d0307f\",\"contextId\":\"84a33a12-1b29-4890-b0ca-78e1632f7287\"}],\"artifacts\":[{\"artifactId\":\"31e03e81-ef96-4e72-a72b-57107b0a476c\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Perform a multi-step task for me.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "31e03e81-ef96-4e72-a72b-57107b0a476c",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Perform a multi-step task for me.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "84a33a12-1b29-4890-b0ca-78e1632f7287",
+                "history": [
+                  {
+                    "contextId": "84a33a12-1b29-4890-b0ca-78e1632f7287",
+                    "messageId": "test-msg-002",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Perform a multi-step task for me."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "cde50055-4f15-4a53-a545-edcca7d0307f"
+                  },
+                  {
+                    "contextId": "84a33a12-1b29-4890-b0ca-78e1632f7287",
+                    "kind": "message",
+                    "messageId": "c7507098-8109-46bd-8efb-1baebc50c91a",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "cde50055-4f15-4a53-a545-edcca7d0307f"
+                  }
+                ],
+                "id": "cde50055-4f15-4a53-a545-edcca7d0307f",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:34.359Z"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "33469daa-fbb9-4bc1-ba53-7ec4b56f5262",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1001637965,
+      "started_at": "2026-04-27T10:26:34.359957052-05:00",
+      "completed_at": "2026-04-27T10:26:35.361595007-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1001082024,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "938",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:35 GMT",
+              "etag": "W/\"3aa-BOLH9PBw1Rw+tgMLGF+x3XXkzXo\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"2a141153-2583-47b9-be08-69d03e60b838\",\"contextId\":\"4eda7ee1-2f89-4248-b48f-e7ce2d2c1613\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:35.360Z\"},\"history\":[{\"messageId\":\"test-msg-003\",\"parts\":[{\"kind\":\"text\",\"text\":\"Create a task so I can retrieve it.\"}],\"role\":\"user\",\"contextId\":\"4eda7ee1-2f89-4248-b48f-e7ce2d2c1613\",\"taskId\":\"2a141153-2583-47b9-be08-69d03e60b838\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"d5b4bb03-c5f0-464a-b7e2-f64d7535a99e\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"2a141153-2583-47b9-be08-69d03e60b838\",\"contextId\":\"4eda7ee1-2f89-4248-b48f-e7ce2d2c1613\"}],\"artifacts\":[{\"artifactId\":\"772c39e6-0509-4e8c-bfa5-982c8c537412\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Create a task so I can retrieve it.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "772c39e6-0509-4e8c-bfa5-982c8c537412",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Create a task so I can retrieve it.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "4eda7ee1-2f89-4248-b48f-e7ce2d2c1613",
+                "history": [
+                  {
+                    "contextId": "4eda7ee1-2f89-4248-b48f-e7ce2d2c1613",
+                    "messageId": "test-msg-003",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Create a task so I can retrieve it."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "2a141153-2583-47b9-be08-69d03e60b838"
+                  },
+                  {
+                    "contextId": "4eda7ee1-2f89-4248-b48f-e7ce2d2c1613",
+                    "kind": "message",
+                    "messageId": "d5b4bb03-c5f0-464a-b7e2-f64d7535a99e",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "2a141153-2583-47b9-be08-69d03e60b838"
+                  }
+                ],
+                "id": "2a141153-2583-47b9-be08-69d03e60b838",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:35.360Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4087,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "938",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:35 GMT",
+              "etag": "W/\"3aa-BOLH9PBw1Rw+tgMLGF+x3XXkzXo\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"2a141153-2583-47b9-be08-69d03e60b838\",\"contextId\":\"4eda7ee1-2f89-4248-b48f-e7ce2d2c1613\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:35.360Z\"},\"history\":[{\"messageId\":\"test-msg-003\",\"parts\":[{\"kind\":\"text\",\"text\":\"Create a task so I can retrieve it.\"}],\"role\":\"user\",\"contextId\":\"4eda7ee1-2f89-4248-b48f-e7ce2d2c1613\",\"taskId\":\"2a141153-2583-47b9-be08-69d03e60b838\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"d5b4bb03-c5f0-464a-b7e2-f64d7535a99e\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"2a141153-2583-47b9-be08-69d03e60b838\",\"contextId\":\"4eda7ee1-2f89-4248-b48f-e7ce2d2c1613\"}],\"artifacts\":[{\"artifactId\":\"772c39e6-0509-4e8c-bfa5-982c8c537412\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Create a task so I can retrieve it.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "772c39e6-0509-4e8c-bfa5-982c8c537412",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Create a task so I can retrieve it.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "4eda7ee1-2f89-4248-b48f-e7ce2d2c1613",
+                "history": [
+                  {
+                    "contextId": "4eda7ee1-2f89-4248-b48f-e7ce2d2c1613",
+                    "messageId": "test-msg-003",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Create a task so I can retrieve it."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "2a141153-2583-47b9-be08-69d03e60b838"
+                  },
+                  {
+                    "contextId": "4eda7ee1-2f89-4248-b48f-e7ce2d2c1613",
+                    "kind": "message",
+                    "messageId": "d5b4bb03-c5f0-464a-b7e2-f64d7535a99e",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "2a141153-2583-47b9-be08-69d03e60b838"
+                  }
+                ],
+                "id": "2a141153-2583-47b9-be08-69d03e60b838",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:35.360Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 533027,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "482",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:35 GMT",
+              "etag": "W/\"1e2-woKJA8j9VCytw8oZbSFmYVndDc8\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"kind\":\"task\",\"id\":\"2a141153-2583-47b9-be08-69d03e60b838\",\"contextId\":\"4eda7ee1-2f89-4248-b48f-e7ce2d2c1613\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:35.360Z\"},\"history\":[],\"artifacts\":[{\"artifactId\":\"772c39e6-0509-4e8c-bfa5-982c8c537412\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Create a task so I can retrieve it.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "772c39e6-0509-4e8c-bfa5-982c8c537412",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Create a task so I can retrieve it.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "4eda7ee1-2f89-4248-b48f-e7ce2d2c1613",
+                "history": [],
+                "id": "2a141153-2583-47b9-be08-69d03e60b838",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:35.360Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 3036,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "482",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:35 GMT",
+              "etag": "W/\"1e2-woKJA8j9VCytw8oZbSFmYVndDc8\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"kind\":\"task\",\"id\":\"2a141153-2583-47b9-be08-69d03e60b838\",\"contextId\":\"4eda7ee1-2f89-4248-b48f-e7ce2d2c1613\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:35.360Z\"},\"history\":[],\"artifacts\":[{\"artifactId\":\"772c39e6-0509-4e8c-bfa5-982c8c537412\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Create a task so I can retrieve it.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "772c39e6-0509-4e8c-bfa5-982c8c537412",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Create a task so I can retrieve it.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "4eda7ee1-2f89-4248-b48f-e7ce2d2c1613",
+                "history": [],
+                "id": "2a141153-2583-47b9-be08-69d03e60b838",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:35.360Z"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "9c135118-aef3-4cd3-86c5-e73bc6f67394",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task-not-found",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 334902,
+      "started_at": "2026-04-27T10:26:35.361600157-05:00",
+      "completed_at": "2026-04-27T10:26:35.361935079-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 306149,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "105",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:35 GMT",
+              "etag": "W/\"69-jVB6NgyE+YschdFMFxRUjCGhYbw\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"Task not found: nonexistent-task-id-00000000\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "message": "Task not found: nonexistent-task-id-00000000"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4147,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "105",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:35 GMT",
+              "etag": "W/\"69-jVB6NgyE+YschdFMFxRUjCGhYbw\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"Task not found: nonexistent-task-id-00000000\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "message": "Task not found: nonexistent-task-id-00000000"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "d381cf29-a3cd-472a-883a-f2eab0efc2a5",
+      "spec_id": "a2a-v1",
+      "test_case_id": "cancel-task",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1002042428,
+      "started_at": "2026-04-27T10:26:35.361936272-05:00",
+      "completed_at": "2026-04-27T10:26:36.3639787-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1001520864,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "933",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:36 GMT",
+              "etag": "W/\"3a5-XiVx6YBgY5p02/y7oNpZhGVkwZs\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"3ed1b9f7-0a67-4e37-88bd-35a9242a9581\",\"contextId\":\"ad2d0a9d-639d-4d63-8023-3530770aa69b\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:36.362Z\"},\"history\":[{\"messageId\":\"test-msg-cancel\",\"parts\":[{\"kind\":\"text\",\"text\":\"Start a task that I can cancel.\"}],\"role\":\"user\",\"contextId\":\"ad2d0a9d-639d-4d63-8023-3530770aa69b\",\"taskId\":\"3ed1b9f7-0a67-4e37-88bd-35a9242a9581\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"adab057e-ad13-4c17-bdbb-364f0338a716\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"3ed1b9f7-0a67-4e37-88bd-35a9242a9581\",\"contextId\":\"ad2d0a9d-639d-4d63-8023-3530770aa69b\"}],\"artifacts\":[{\"artifactId\":\"0baa8c06-27dc-4f0e-8ad1-d743cd791db4\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Start a task that I can cancel.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "0baa8c06-27dc-4f0e-8ad1-d743cd791db4",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Start a task that I can cancel.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "ad2d0a9d-639d-4d63-8023-3530770aa69b",
+                "history": [
+                  {
+                    "contextId": "ad2d0a9d-639d-4d63-8023-3530770aa69b",
+                    "messageId": "test-msg-cancel",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Start a task that I can cancel."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "3ed1b9f7-0a67-4e37-88bd-35a9242a9581"
+                  },
+                  {
+                    "contextId": "ad2d0a9d-639d-4d63-8023-3530770aa69b",
+                    "kind": "message",
+                    "messageId": "adab057e-ad13-4c17-bdbb-364f0338a716",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "3ed1b9f7-0a67-4e37-88bd-35a9242a9581"
+                  }
+                ],
+                "id": "3ed1b9f7-0a67-4e37-88bd-35a9242a9581",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:36.362Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 5791,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "933",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:36 GMT",
+              "etag": "W/\"3a5-XiVx6YBgY5p02/y7oNpZhGVkwZs\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"3ed1b9f7-0a67-4e37-88bd-35a9242a9581\",\"contextId\":\"ad2d0a9d-639d-4d63-8023-3530770aa69b\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:36.362Z\"},\"history\":[{\"messageId\":\"test-msg-cancel\",\"parts\":[{\"kind\":\"text\",\"text\":\"Start a task that I can cancel.\"}],\"role\":\"user\",\"contextId\":\"ad2d0a9d-639d-4d63-8023-3530770aa69b\",\"taskId\":\"3ed1b9f7-0a67-4e37-88bd-35a9242a9581\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"adab057e-ad13-4c17-bdbb-364f0338a716\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"3ed1b9f7-0a67-4e37-88bd-35a9242a9581\",\"contextId\":\"ad2d0a9d-639d-4d63-8023-3530770aa69b\"}],\"artifacts\":[{\"artifactId\":\"0baa8c06-27dc-4f0e-8ad1-d743cd791db4\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Start a task that I can cancel.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "0baa8c06-27dc-4f0e-8ad1-d743cd791db4",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Start a task that I can cancel.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "ad2d0a9d-639d-4d63-8023-3530770aa69b",
+                "history": [
+                  {
+                    "contextId": "ad2d0a9d-639d-4d63-8023-3530770aa69b",
+                    "messageId": "test-msg-cancel",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Start a task that I can cancel."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "3ed1b9f7-0a67-4e37-88bd-35a9242a9581"
+                  },
+                  {
+                    "contextId": "ad2d0a9d-639d-4d63-8023-3530770aa69b",
+                    "kind": "message",
+                    "messageId": "adab057e-ad13-4c17-bdbb-364f0338a716",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "3ed1b9f7-0a67-4e37-88bd-35a9242a9581"
+                  }
+                ],
+                "id": "3ed1b9f7-0a67-4e37-88bd-35a9242a9581",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:36.362Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 503952,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "118",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:36 GMT",
+              "etag": "W/\"76-IzK5ohwJQfI43Br25MRTCIMPpFE\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32002,\"message\":\"Task not cancelable: 3ed1b9f7-0a67-4e37-88bd-35a9242a9581\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32002,
+                "message": "Task not cancelable: 3ed1b9f7-0a67-4e37-88bd-35a9242a9581"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1252,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "118",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:36 GMT",
+              "etag": "W/\"76-IzK5ohwJQfI43Br25MRTCIMPpFE\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32002,\"message\":\"Task not cancelable: 3ed1b9f7-0a67-4e37-88bd-35a9242a9581\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32002,
+                "message": "Task not cancelable: 3ed1b9f7-0a67-4e37-88bd-35a9242a9581"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "6c9eddef-f6da-4a81-b074-9ff274e3f3c7",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-text-part",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1000995642,
+      "started_at": "2026-04-27T10:26:36.363982848-05:00",
+      "completed_at": "2026-04-27T10:26:37.36497849-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1000976516,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "877",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:37 GMT",
+              "etag": "W/\"36d-LIe3qN74ry6xJ5SdjoCdpNGmYYc\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"a8b0fd11-187a-40b1-9755-3e6542b4333c\",\"contextId\":\"a00f0fae-7e75-44f9-a508-f46cc575cf4e\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:37.364Z\"},\"history\":[{\"messageId\":\"test-text-001\",\"parts\":[{\"kind\":\"text\",\"text\":\"This is a plain text message.\"}],\"role\":\"user\",\"contextId\":\"a00f0fae-7e75-44f9-a508-f46cc575cf4e\",\"taskId\":\"a8b0fd11-187a-40b1-9755-3e6542b4333c\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"2cdb6663-e5bc-415e-b13b-30ca26755c8e\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"a8b0fd11-187a-40b1-9755-3e6542b4333c\",\"contextId\":\"a00f0fae-7e75-44f9-a508-f46cc575cf4e\"}],\"artifacts\":[{\"artifactId\":\"d864794d-d56a-4f01-9cba-9f86ceab382e\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! Nice to meet you!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "d864794d-d56a-4f01-9cba-9f86ceab382e",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! Nice to meet you!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "a00f0fae-7e75-44f9-a508-f46cc575cf4e",
+                "history": [
+                  {
+                    "contextId": "a00f0fae-7e75-44f9-a508-f46cc575cf4e",
+                    "messageId": "test-text-001",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "This is a plain text message."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "a8b0fd11-187a-40b1-9755-3e6542b4333c"
+                  },
+                  {
+                    "contextId": "a00f0fae-7e75-44f9-a508-f46cc575cf4e",
+                    "kind": "message",
+                    "messageId": "2cdb6663-e5bc-415e-b13b-30ca26755c8e",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "a8b0fd11-187a-40b1-9755-3e6542b4333c"
+                  }
+                ],
+                "id": "a8b0fd11-187a-40b1-9755-3e6542b4333c",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:37.364Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4999,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "877",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:37 GMT",
+              "etag": "W/\"36d-LIe3qN74ry6xJ5SdjoCdpNGmYYc\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"a8b0fd11-187a-40b1-9755-3e6542b4333c\",\"contextId\":\"a00f0fae-7e75-44f9-a508-f46cc575cf4e\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:37.364Z\"},\"history\":[{\"messageId\":\"test-text-001\",\"parts\":[{\"kind\":\"text\",\"text\":\"This is a plain text message.\"}],\"role\":\"user\",\"contextId\":\"a00f0fae-7e75-44f9-a508-f46cc575cf4e\",\"taskId\":\"a8b0fd11-187a-40b1-9755-3e6542b4333c\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"2cdb6663-e5bc-415e-b13b-30ca26755c8e\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"a8b0fd11-187a-40b1-9755-3e6542b4333c\",\"contextId\":\"a00f0fae-7e75-44f9-a508-f46cc575cf4e\"}],\"artifacts\":[{\"artifactId\":\"d864794d-d56a-4f01-9cba-9f86ceab382e\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! Nice to meet you!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "d864794d-d56a-4f01-9cba-9f86ceab382e",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! Nice to meet you!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "a00f0fae-7e75-44f9-a508-f46cc575cf4e",
+                "history": [
+                  {
+                    "contextId": "a00f0fae-7e75-44f9-a508-f46cc575cf4e",
+                    "messageId": "test-text-001",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "This is a plain text message."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "a8b0fd11-187a-40b1-9755-3e6542b4333c"
+                  },
+                  {
+                    "contextId": "a00f0fae-7e75-44f9-a508-f46cc575cf4e",
+                    "kind": "message",
+                    "messageId": "2cdb6663-e5bc-415e-b13b-30ca26755c8e",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "a8b0fd11-187a-40b1-9755-3e6542b4333c"
+                  }
+                ],
+                "id": "a8b0fd11-187a-40b1-9755-3e6542b4333c",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:37.364Z"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "44f35845-6687-4848-a500-fb71ee548301",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-with-context",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 2002359389,
+      "started_at": "2026-04-27T10:26:37.364981605-05:00",
+      "completed_at": "2026-04-27T10:26:39.367340985-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1001130276,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "871",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:38 GMT",
+              "etag": "W/\"367-ATSHeuVXWfvhjvP59oB2AE+nAbo\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"c051951f-a8c7-4d6f-8459-04713578cd8d\",\"contextId\":\"86134b41-02e5-4501-81e7-0827e1b8fa03\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:38.365Z\"},\"history\":[{\"messageId\":\"test-ctx-001\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello from context test.\"}],\"role\":\"user\",\"contextId\":\"86134b41-02e5-4501-81e7-0827e1b8fa03\",\"taskId\":\"c051951f-a8c7-4d6f-8459-04713578cd8d\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"7ef0eccb-f9cf-4ae0-9eb0-f1d431bd118c\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"c051951f-a8c7-4d6f-8459-04713578cd8d\",\"contextId\":\"86134b41-02e5-4501-81e7-0827e1b8fa03\"}],\"artifacts\":[{\"artifactId\":\"2c6e87c1-e6d2-47e6-97fd-f1ff2dc0af10\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! Nice to meet you!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "2c6e87c1-e6d2-47e6-97fd-f1ff2dc0af10",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! Nice to meet you!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "86134b41-02e5-4501-81e7-0827e1b8fa03",
+                "history": [
+                  {
+                    "contextId": "86134b41-02e5-4501-81e7-0827e1b8fa03",
+                    "messageId": "test-ctx-001",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello from context test."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "c051951f-a8c7-4d6f-8459-04713578cd8d"
+                  },
+                  {
+                    "contextId": "86134b41-02e5-4501-81e7-0827e1b8fa03",
+                    "kind": "message",
+                    "messageId": "7ef0eccb-f9cf-4ae0-9eb0-f1d431bd118c",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "c051951f-a8c7-4d6f-8459-04713578cd8d"
+                  }
+                ],
+                "id": "c051951f-a8c7-4d6f-8459-04713578cd8d",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:38.365Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 5390,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "871",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:38 GMT",
+              "etag": "W/\"367-ATSHeuVXWfvhjvP59oB2AE+nAbo\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"c051951f-a8c7-4d6f-8459-04713578cd8d\",\"contextId\":\"86134b41-02e5-4501-81e7-0827e1b8fa03\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:38.365Z\"},\"history\":[{\"messageId\":\"test-ctx-001\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello from context test.\"}],\"role\":\"user\",\"contextId\":\"86134b41-02e5-4501-81e7-0827e1b8fa03\",\"taskId\":\"c051951f-a8c7-4d6f-8459-04713578cd8d\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"7ef0eccb-f9cf-4ae0-9eb0-f1d431bd118c\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"c051951f-a8c7-4d6f-8459-04713578cd8d\",\"contextId\":\"86134b41-02e5-4501-81e7-0827e1b8fa03\"}],\"artifacts\":[{\"artifactId\":\"2c6e87c1-e6d2-47e6-97fd-f1ff2dc0af10\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! Nice to meet you!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "2c6e87c1-e6d2-47e6-97fd-f1ff2dc0af10",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! Nice to meet you!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "86134b41-02e5-4501-81e7-0827e1b8fa03",
+                "history": [
+                  {
+                    "contextId": "86134b41-02e5-4501-81e7-0827e1b8fa03",
+                    "messageId": "test-ctx-001",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello from context test."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "c051951f-a8c7-4d6f-8459-04713578cd8d"
+                  },
+                  {
+                    "contextId": "86134b41-02e5-4501-81e7-0827e1b8fa03",
+                    "kind": "message",
+                    "messageId": "7ef0eccb-f9cf-4ae0-9eb0-f1d431bd118c",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "c051951f-a8c7-4d6f-8459-04713578cd8d"
+                  }
+                ],
+                "id": "c051951f-a8c7-4d6f-8459-04713578cd8d",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:38.365Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 1001203144,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "904",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:39 GMT",
+              "etag": "W/\"388-oFMDNj4oUaCh3P+lmIQAb12F9ek\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"kind\":\"task\",\"id\":\"d69cc0a2-7154-4d28-b090-4ed27ff437c8\",\"contextId\":\"80fefd1a-2708-4879-885f-0e79d20ccac1\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:39.366Z\"},\"history\":[{\"messageId\":\"test-ctx-002\",\"parts\":[{\"kind\":\"text\",\"text\":\"Follow up message.\"}],\"role\":\"user\",\"contextId\":\"80fefd1a-2708-4879-885f-0e79d20ccac1\",\"taskId\":\"d69cc0a2-7154-4d28-b090-4ed27ff437c8\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"37769d95-cd2f-4842-a502-adf23c6f7d26\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"d69cc0a2-7154-4d28-b090-4ed27ff437c8\",\"contextId\":\"80fefd1a-2708-4879-885f-0e79d20ccac1\"}],\"artifacts\":[{\"artifactId\":\"ac8b8faf-a038-42ce-b373-21062121e7f3\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Follow up message.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "ac8b8faf-a038-42ce-b373-21062121e7f3",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Follow up message.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "80fefd1a-2708-4879-885f-0e79d20ccac1",
+                "history": [
+                  {
+                    "contextId": "80fefd1a-2708-4879-885f-0e79d20ccac1",
+                    "messageId": "test-ctx-002",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Follow up message."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "d69cc0a2-7154-4d28-b090-4ed27ff437c8"
+                  },
+                  {
+                    "contextId": "80fefd1a-2708-4879-885f-0e79d20ccac1",
+                    "kind": "message",
+                    "messageId": "37769d95-cd2f-4842-a502-adf23c6f7d26",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "d69cc0a2-7154-4d28-b090-4ed27ff437c8"
+                  }
+                ],
+                "id": "d69cc0a2-7154-4d28-b090-4ed27ff437c8",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:39.366Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 5280,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "904",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:39 GMT",
+              "etag": "W/\"388-oFMDNj4oUaCh3P+lmIQAb12F9ek\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"kind\":\"task\",\"id\":\"d69cc0a2-7154-4d28-b090-4ed27ff437c8\",\"contextId\":\"80fefd1a-2708-4879-885f-0e79d20ccac1\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:39.366Z\"},\"history\":[{\"messageId\":\"test-ctx-002\",\"parts\":[{\"kind\":\"text\",\"text\":\"Follow up message.\"}],\"role\":\"user\",\"contextId\":\"80fefd1a-2708-4879-885f-0e79d20ccac1\",\"taskId\":\"d69cc0a2-7154-4d28-b090-4ed27ff437c8\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"37769d95-cd2f-4842-a502-adf23c6f7d26\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"d69cc0a2-7154-4d28-b090-4ed27ff437c8\",\"contextId\":\"80fefd1a-2708-4879-885f-0e79d20ccac1\"}],\"artifacts\":[{\"artifactId\":\"ac8b8faf-a038-42ce-b373-21062121e7f3\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Follow up message.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "ac8b8faf-a038-42ce-b373-21062121e7f3",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Follow up message.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "80fefd1a-2708-4879-885f-0e79d20ccac1",
+                "history": [
+                  {
+                    "contextId": "80fefd1a-2708-4879-885f-0e79d20ccac1",
+                    "messageId": "test-ctx-002",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Follow up message."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "d69cc0a2-7154-4d28-b090-4ed27ff437c8"
+                  },
+                  {
+                    "contextId": "80fefd1a-2708-4879-885f-0e79d20ccac1",
+                    "kind": "message",
+                    "messageId": "37769d95-cd2f-4842-a502-adf23c6f7d26",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "d69cc0a2-7154-4d28-b090-4ed27ff437c8"
+                  }
+                ],
+                "id": "d69cc0a2-7154-4d28-b090-4ed27ff437c8",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:39.366Z"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "84c3fff9-f47e-4d30-b9c5-404536f94696",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-send",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1000725382,
+      "started_at": "2026-04-27T10:26:39.367344942-05:00",
+      "completed_at": "2026-04-27T10:26:40.368070324-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1000703671,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 15:26:39 GMT",
+              "x-accel-buffering": "no",
+              "x-powered-by": "Express"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                  "history": [
+                    {
+                      "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                      "messageId": "test-stream-001",
+                      "parts": [
+                        {
+                          "kind": "text",
+                          "text": "Stream your response to me."
+                        }
+                      ],
+                      "role": "user",
+                      "taskId": "800437a7-25e8-4062-9482-810da0824059"
+                    }
+                  ],
+                  "id": "800437a7-25e8-4062-9482-810da0824059",
+                  "kind": "task",
+                  "status": {
+                    "state": "submitted",
+                    "timestamp": "2026-04-27T15:26:39.367Z"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                  "final": false,
+                  "kind": "status-update",
+                  "status": {
+                    "message": {
+                      "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                      "kind": "message",
+                      "messageId": "d2219f18-2e78-4d3b-9408-9f1224f45cc3",
+                      "parts": [
+                        {
+                          "kind": "text",
+                          "text": "Processing your question"
+                        }
+                      ],
+                      "role": "agent",
+                      "taskId": "800437a7-25e8-4062-9482-810da0824059"
+                    },
+                    "state": "working",
+                    "timestamp": "2026-04-27T15:26:39.367Z"
+                  },
+                  "taskId": "800437a7-25e8-4062-9482-810da0824059"
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifact": {
+                    "artifactId": "fb39d5d9-b1e9-44ae-93ef-171bfda3c8ce",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Stream your response to me.'. Thanks for your message!"
+                      }
+                    ]
+                  },
+                  "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                  "kind": "artifact-update",
+                  "lastChunk": true,
+                  "taskId": "800437a7-25e8-4062-9482-810da0824059"
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                  "final": true,
+                  "kind": "status-update",
+                  "status": {
+                    "state": "completed",
+                    "timestamp": "2026-04-27T15:26:40.367Z"
+                  },
+                  "taskId": "800437a7-25e8-4062-9482-810da0824059"
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                "final": true,
+                "kind": "status-update",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:40.367Z"
+                },
+                "taskId": "800437a7-25e8-4062-9482-810da0824059"
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4949,
+          "expected": {
+            "headers": {
+              "content-type": "text/event-stream"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 15:26:39 GMT",
+              "x-accel-buffering": "no",
+              "x-powered-by": "Express"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                  "history": [
+                    {
+                      "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                      "messageId": "test-stream-001",
+                      "parts": [
+                        {
+                          "kind": "text",
+                          "text": "Stream your response to me."
+                        }
+                      ],
+                      "role": "user",
+                      "taskId": "800437a7-25e8-4062-9482-810da0824059"
+                    }
+                  ],
+                  "id": "800437a7-25e8-4062-9482-810da0824059",
+                  "kind": "task",
+                  "status": {
+                    "state": "submitted",
+                    "timestamp": "2026-04-27T15:26:39.367Z"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                  "final": false,
+                  "kind": "status-update",
+                  "status": {
+                    "message": {
+                      "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                      "kind": "message",
+                      "messageId": "d2219f18-2e78-4d3b-9408-9f1224f45cc3",
+                      "parts": [
+                        {
+                          "kind": "text",
+                          "text": "Processing your question"
+                        }
+                      ],
+                      "role": "agent",
+                      "taskId": "800437a7-25e8-4062-9482-810da0824059"
+                    },
+                    "state": "working",
+                    "timestamp": "2026-04-27T15:26:39.367Z"
+                  },
+                  "taskId": "800437a7-25e8-4062-9482-810da0824059"
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifact": {
+                    "artifactId": "fb39d5d9-b1e9-44ae-93ef-171bfda3c8ce",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Stream your response to me.'. Thanks for your message!"
+                      }
+                    ]
+                  },
+                  "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                  "kind": "artifact-update",
+                  "lastChunk": true,
+                  "taskId": "800437a7-25e8-4062-9482-810da0824059"
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                  "final": true,
+                  "kind": "status-update",
+                  "status": {
+                    "state": "completed",
+                    "timestamp": "2026-04-27T15:26:40.367Z"
+                  },
+                  "taskId": "800437a7-25e8-4062-9482-810da0824059"
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "contextId": "5d8b7ad3-d495-40e9-a8f8-e3129110f947",
+                "final": true,
+                "kind": "status-update",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:40.367Z"
+                },
+                "taskId": "800437a7-25e8-4062-9482-810da0824059"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "5cc57205-14d6-41f4-a826-1b46b8e41a3e",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-events",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1000799612,
+      "started_at": "2026-04-27T10:26:40.368074271-05:00",
+      "completed_at": "2026-04-27T10:26:41.368873883-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1000781298,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 15:26:40 GMT",
+              "x-accel-buffering": "no",
+              "x-powered-by": "Express"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                  "history": [
+                    {
+                      "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                      "messageId": "test-stream-002",
+                      "parts": [
+                        {
+                          "kind": "text",
+                          "text": "Stream a task with status updates."
+                        }
+                      ],
+                      "role": "user",
+                      "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+                    }
+                  ],
+                  "id": "a2810fcb-a455-4799-88e0-b08882b9d834",
+                  "kind": "task",
+                  "status": {
+                    "state": "submitted",
+                    "timestamp": "2026-04-27T15:26:40.368Z"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                  "final": false,
+                  "kind": "status-update",
+                  "status": {
+                    "message": {
+                      "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                      "kind": "message",
+                      "messageId": "ec82d625-a005-4a77-9437-386ef20e09b1",
+                      "parts": [
+                        {
+                          "kind": "text",
+                          "text": "Processing your question"
+                        }
+                      ],
+                      "role": "agent",
+                      "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+                    },
+                    "state": "working",
+                    "timestamp": "2026-04-27T15:26:40.368Z"
+                  },
+                  "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifact": {
+                    "artifactId": "cd77ddee-e51e-47bb-b07a-9757c0addce2",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Stream a task with status updates.'. Thanks for your message!"
+                      }
+                    ]
+                  },
+                  "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                  "kind": "artifact-update",
+                  "lastChunk": true,
+                  "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                  "final": true,
+                  "kind": "status-update",
+                  "status": {
+                    "state": "completed",
+                    "timestamp": "2026-04-27T15:26:41.368Z"
+                  },
+                  "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                "final": true,
+                "kind": "status-update",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:41.368Z"
+                },
+                "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 2795,
+          "expected": {
+            "sse_event": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 15:26:40 GMT",
+              "x-accel-buffering": "no",
+              "x-powered-by": "Express"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                  "history": [
+                    {
+                      "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                      "messageId": "test-stream-002",
+                      "parts": [
+                        {
+                          "kind": "text",
+                          "text": "Stream a task with status updates."
+                        }
+                      ],
+                      "role": "user",
+                      "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+                    }
+                  ],
+                  "id": "a2810fcb-a455-4799-88e0-b08882b9d834",
+                  "kind": "task",
+                  "status": {
+                    "state": "submitted",
+                    "timestamp": "2026-04-27T15:26:40.368Z"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                  "final": false,
+                  "kind": "status-update",
+                  "status": {
+                    "message": {
+                      "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                      "kind": "message",
+                      "messageId": "ec82d625-a005-4a77-9437-386ef20e09b1",
+                      "parts": [
+                        {
+                          "kind": "text",
+                          "text": "Processing your question"
+                        }
+                      ],
+                      "role": "agent",
+                      "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+                    },
+                    "state": "working",
+                    "timestamp": "2026-04-27T15:26:40.368Z"
+                  },
+                  "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifact": {
+                    "artifactId": "cd77ddee-e51e-47bb-b07a-9757c0addce2",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Stream a task with status updates.'. Thanks for your message!"
+                      }
+                    ]
+                  },
+                  "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                  "kind": "artifact-update",
+                  "lastChunk": true,
+                  "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                  "final": true,
+                  "kind": "status-update",
+                  "status": {
+                    "state": "completed",
+                    "timestamp": "2026-04-27T15:26:41.368Z"
+                  },
+                  "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "contextId": "e00036f9-66d4-4d56-a9df-f2dfc13d4067",
+                "final": true,
+                "kind": "status-update",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:41.368Z"
+                },
+                "taskId": "a2810fcb-a455-4799-88e0-b08882b9d834"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "900702be-4522-410f-a1a8-b5697f839318",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-parse-error",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 693300,
+      "started_at": "2026-04-27T10:26:41.36887747-05:00",
+      "completed_at": "2026-04-27T10:26:41.36957077-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 676418,
+          "actual": {
+            "http_status": 400,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "85",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:41 GMT",
+              "etag": "W/\"55-PLpnwzB+1acnpOy19fYBt3jwigY\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Invalid JSON payload.\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "Invalid JSON payload."
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 2114,
+          "expected": {
+            "error": {
+              "code": -32700,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 400,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "85",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:41 GMT",
+              "etag": "W/\"55-PLpnwzB+1acnpOy19fYBt3jwigY\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Invalid JSON payload.\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "Invalid JSON payload."
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "d8839d1b-1ed3-4662-818f-f5aa104a34c7",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-invalid-request",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 281101,
+      "started_at": "2026-04-27T10:26:41.369571771-05:00",
+      "completed_at": "2026-04-27T10:26:41.369852863-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 272204,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "86",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:41 GMT",
+              "etag": "W/\"56-wKMx7Ej3aPgolpU8yB168S5p/fk\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid JSON-RPC Request.\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "message": "Invalid JSON-RPC Request."
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 2875,
+          "expected": {
+            "error": {
+              "code": -32600,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "86",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:41 GMT",
+              "etag": "W/\"56-wKMx7Ej3aPgolpU8yB168S5p/fk\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid JSON-RPC Request.\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "message": "Invalid JSON-RPC Request."
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "05481647-4d36-4870-8adf-c11095177a6b",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-method-not-found",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 268668,
+      "started_at": "2026-04-27T10:26:41.369854415-05:00",
+      "completed_at": "2026-04-27T10:26:41.370123083-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 259400,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "96",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:41 GMT",
+              "etag": "W/\"60-2q9byJBuW+aWTIyfwBz1wKCnQ4k\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found: NonExistentMethod\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found: NonExistentMethod"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1533,
+          "expected": {
+            "error": {
+              "code": -32601,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "96",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:41 GMT",
+              "etag": "W/\"60-2q9byJBuW+aWTIyfwBz1wKCnQ4k\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found: NonExistentMethod\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "Method not found: NonExistentMethod"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "a0f2b18f-2200-439a-8615-84f2b2b8030b",
+      "spec_id": "a2a-v1",
+      "test_case_id": "missing-required-params",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 328100,
+      "started_at": "2026-04-27T10:26:41.370124155-05:00",
+      "completed_at": "2026-04-27T10:26:41.370452245-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 317489,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "118",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:41 GMT",
+              "etag": "W/\"76-2CSaQepB1q14+aY5fP8I60Hi76o\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Cannot read properties of undefined (reading 'messageId')\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "message": "Cannot read properties of undefined (reading 'messageId')"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 5701,
+          "expected": {
+            "error": {
+              "code": -32602,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "118",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:41 GMT",
+              "etag": "W/\"76-2CSaQepB1q14+aY5fP8I60Hi76o\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Cannot read properties of undefined (reading 'messageId')\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "message": "Cannot read properties of undefined (reading 'messageId')"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: mismatch at error.code: expected -32602 (int), got -32603 (float64)"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: mismatch at error.code: expected -32602 (int), got -32603 (float64)"
+    },
+    {
+      "id": "ecd5eae2-6de9-4c9f-957e-14ae1e9ff762",
+      "spec_id": "a2a-v1",
+      "test_case_id": "missing-message-id",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 220367,
+      "started_at": "2026-04-27T10:26:41.370453998-05:00",
+      "completed_at": "2026-04-27T10:26:41.370674364-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 215888,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "91",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:41 GMT",
+              "etag": "W/\"5b-/4TwQgSNPyS0vhnUN23QGQ7sIHs\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"message.messageId is required.\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "message": "message.messageId is required."
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1182,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "91",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:41 GMT",
+              "etag": "W/\"5b-/4TwQgSNPyS0vhnUN23QGQ7sIHs\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"message.messageId is required.\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "message": "message.messageId is required."
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "08581160-9755-4503-834f-0de18bcaa2d1",
+      "spec_id": "a2a-v1",
+      "test_case_id": "push-notification-not-supported",
+      "runtime": "a2a-js-sample",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1000754196,
+      "started_at": "2026-04-27T10:26:41.370675086-05:00",
+      "completed_at": "2026-04-27T10:26:42.371429282-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1000293606,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "957",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:42 GMT",
+              "etag": "W/\"3bd-C9d2plEXBpEy/UjiX6d7wL7pIb8\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"79543187-7b27-4c16-87c1-13c7c76cdd1f\",\"contextId\":\"c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:42.370Z\"},\"history\":[{\"messageId\":\"test-push-001\",\"parts\":[{\"kind\":\"text\",\"text\":\"Create a task for push notification testing.\"}],\"role\":\"user\",\"contextId\":\"c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28\",\"taskId\":\"79543187-7b27-4c16-87c1-13c7c76cdd1f\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"d90cf18d-b6a3-47b9-8d34-bead105c2adb\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"79543187-7b27-4c16-87c1-13c7c76cdd1f\",\"contextId\":\"c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28\"}],\"artifacts\":[{\"artifactId\":\"67c8b386-7c1c-4195-840a-a4d019cd21b0\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Create a task for push notification testing.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "67c8b386-7c1c-4195-840a-a4d019cd21b0",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Create a task for push notification testing.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28",
+                "history": [
+                  {
+                    "contextId": "c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28",
+                    "messageId": "test-push-001",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Create a task for push notification testing."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "79543187-7b27-4c16-87c1-13c7c76cdd1f"
+                  },
+                  {
+                    "contextId": "c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28",
+                    "kind": "message",
+                    "messageId": "d90cf18d-b6a3-47b9-8d34-bead105c2adb",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "79543187-7b27-4c16-87c1-13c7c76cdd1f"
+                  }
+                ],
+                "id": "79543187-7b27-4c16-87c1-13c7c76cdd1f",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:42.370Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4418,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "957",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:42 GMT",
+              "etag": "W/\"3bd-C9d2plEXBpEy/UjiX6d7wL7pIb8\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"79543187-7b27-4c16-87c1-13c7c76cdd1f\",\"contextId\":\"c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T15:26:42.370Z\"},\"history\":[{\"messageId\":\"test-push-001\",\"parts\":[{\"kind\":\"text\",\"text\":\"Create a task for push notification testing.\"}],\"role\":\"user\",\"contextId\":\"c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28\",\"taskId\":\"79543187-7b27-4c16-87c1-13c7c76cdd1f\"},{\"kind\":\"message\",\"role\":\"agent\",\"messageId\":\"d90cf18d-b6a3-47b9-8d34-bead105c2adb\",\"parts\":[{\"kind\":\"text\",\"text\":\"Processing your question\"}],\"taskId\":\"79543187-7b27-4c16-87c1-13c7c76cdd1f\",\"contextId\":\"c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28\"}],\"artifacts\":[{\"artifactId\":\"67c8b386-7c1c-4195-840a-a4d019cd21b0\",\"name\":\"Result\",\"description\":\"The final result from the agent.\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello World! You said: 'Create a task for push notification testing.'. Thanks for your message!\"}]}]}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "67c8b386-7c1c-4195-840a-a4d019cd21b0",
+                    "description": "The final result from the agent.",
+                    "name": "Result",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello World! You said: 'Create a task for push notification testing.'. Thanks for your message!"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28",
+                "history": [
+                  {
+                    "contextId": "c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28",
+                    "messageId": "test-push-001",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Create a task for push notification testing."
+                      }
+                    ],
+                    "role": "user",
+                    "taskId": "79543187-7b27-4c16-87c1-13c7c76cdd1f"
+                  },
+                  {
+                    "contextId": "c0d9ab9b-7bbc-4f92-8f8d-2403cbdd0a28",
+                    "kind": "message",
+                    "messageId": "d90cf18d-b6a3-47b9-8d34-bead105c2adb",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Processing your question"
+                      }
+                    ],
+                    "role": "agent",
+                    "taskId": "79543187-7b27-4c16-87c1-13c7c76cdd1f"
+                  }
+                ],
+                "id": "79543187-7b27-4c16-87c1-13c7c76cdd1f",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T15:26:42.370Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 450401,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "95",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:42 GMT",
+              "etag": "W/\"5f-npUNplDo7ftyI9XkNA9oXahtFTw\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32003,\"message\":\"Push Notification is not supported\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32003,
+                "message": "Push Notification is not supported"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1202,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "connection": "keep-alive",
+              "content-length": "95",
+              "content-type": "application/json; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 15:26:42 GMT",
+              "etag": "W/\"5f-npUNplDo7ftyI9XkNA9oXahtFTw\"",
+              "keep-alive": "timeout=5",
+              "x-powered-by": "Express"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32003,\"message\":\"Push Notification is not supported\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32003,
+                "message": "Push Notification is not supported"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total": 19,
+    "passed": 18,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "timeouts": 0,
+    "compliance": 94.73684210526315
+  }
+}

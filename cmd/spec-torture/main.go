@@ -15,8 +15,8 @@ import (
 )
 
 var (
-	dbPath  string
-	logger  *slog.Logger
+	dbPath string
+	logger *slog.Logger
 )
 
 func main() {
@@ -52,8 +52,8 @@ func runCmd() *cobra.Command {
 		runtimeVersion string
 		image          string
 		baseURL        string
-		format         string
 		tags           []string
+		format         string
 	)
 
 	cmd := &cobra.Command{
@@ -63,14 +63,13 @@ func runCmd() *cobra.Command {
 		RunE: func(cmd *cobra.Command, args []string) error {
 			specFile := args[0]
 
+			if image == "" && baseURL == "" {
+				return fmt.Errorf("either --image or --url must be provided")
+			}
+
 			spec, err := loadSpec(specFile)
 			if err != nil {
 				return fmt.Errorf("loading spec: %w", err)
-			}
-
-			// Validate: require either --url or --image
-			if baseURL == "" && image == "" {
-				return fmt.Errorf("either --url or --image must be specified")
 			}
 
 			st, err := openStore()
@@ -119,9 +118,9 @@ func runCmd() *cobra.Command {
 	cmd.Flags().StringVar(&runtimeName, "runtime", "", "runtime identifier (e.g., 'claude-code-v1.2')")
 	cmd.Flags().StringVar(&runtimeVersion, "runtime-version", "", "runtime version")
 	cmd.Flags().StringVar(&image, "image", "", "Docker image to test against")
-	cmd.Flags().StringVar(&baseURL, "url", "", "base URL of the runtime under test (for http-rest transport)")
-	cmd.Flags().StringVar(&format, "format", "markdown", "output format (markdown, json)")
+	cmd.Flags().StringVar(&baseURL, "url", "", "base URL of the runtime under test (for http-rest or jsonrpc-http transport)")
 	cmd.Flags().StringSliceVar(&tags, "tags", nil, "filter test cases by tags")
+	cmd.Flags().StringVar(&format, "format", "markdown", "output format (markdown, json)")
 	_ = cmd.MarkFlagRequired("runtime")
 
 	return cmd
