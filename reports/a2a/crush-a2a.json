@@ -1,0 +1,1458 @@
+{
+  "id": "d95319d0-764e-4997-bac5-5b7eef01a73d",
+  "spec_id": "a2a-v1",
+  "runtime": "crush-a2a",
+  "runtime_version": "",
+  "started_at": "2026-04-27T11:35:12.1786756-05:00",
+  "completed_at": "2026-04-27T11:35:12.180674237-05:00",
+  "results": [
+    {
+      "id": "04fd4fcb-9b4f-47e4-be69-4b257a984152",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-well-known",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 553666,
+      "started_at": "2026-04-27T11:35:12.178718632-05:00",
+      "completed_at": "2026-04-27T11:35:12.179272298-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 546894,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "378",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": false,
+                "streaming": true
+              },
+              "description": "Crush AI assistant exposed via A2A v1.0 protocol",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "General-purpose AI assistant powered by Crush",
+                  "id": "general",
+                  "name": "General Assistant",
+                  "tags": [
+                    "general",
+                    "coding",
+                    "assistant"
+                  ]
+                }
+              ],
+              "url": "http://localhost:8200",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"crush\",\"version\":\"1.0.0\",\"url\":\"http://localhost:8200\",\"description\":\"Crush AI assistant exposed via A2A v1.0 protocol\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":false},\"skills\":[{\"id\":\"general\",\"name\":\"General Assistant\",\"description\":\"General-purpose AI assistant powered by Crush\",\"tags\":[\"general\",\"coding\",\"assistant\"]}]}\n"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1152,
+          "expected": {
+            "body": {
+              "name": "*",
+              "skills": "*",
+              "url": "*",
+              "version": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "378",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": false,
+                "streaming": true
+              },
+              "description": "Crush AI assistant exposed via A2A v1.0 protocol",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "General-purpose AI assistant powered by Crush",
+                  "id": "general",
+                  "name": "General Assistant",
+                  "tags": [
+                    "general",
+                    "coding",
+                    "assistant"
+                  ]
+                }
+              ],
+              "url": "http://localhost:8200",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"crush\",\"version\":\"1.0.0\",\"url\":\"http://localhost:8200\",\"description\":\"Crush AI assistant exposed via A2A v1.0 protocol\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":false},\"skills\":[{\"id\":\"general\",\"name\":\"General Assistant\",\"description\":\"General-purpose AI assistant powered by Crush\",\"tags\":[\"general\",\"coding\",\"assistant\"]}]}\n"
+          }
+        }
+      ]
+    },
+    {
+      "id": "8f124d05-6403-4239-9b18-918d5ae66f4e",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-content-type",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 97665,
+      "started_at": "2026-04-27T11:35:12.179275594-05:00",
+      "completed_at": "2026-04-27T11:35:12.179373249-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 90802,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "378",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": false,
+                "streaming": true
+              },
+              "description": "Crush AI assistant exposed via A2A v1.0 protocol",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "General-purpose AI assistant powered by Crush",
+                  "id": "general",
+                  "name": "General Assistant",
+                  "tags": [
+                    "general",
+                    "coding",
+                    "assistant"
+                  ]
+                }
+              ],
+              "url": "http://localhost:8200",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"crush\",\"version\":\"1.0.0\",\"url\":\"http://localhost:8200\",\"description\":\"Crush AI assistant exposed via A2A v1.0 protocol\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":false},\"skills\":[{\"id\":\"general\",\"name\":\"General Assistant\",\"description\":\"General-purpose AI assistant powered by Crush\",\"tags\":[\"general\",\"coding\",\"assistant\"]}]}\n"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 871,
+          "expected": {
+            "headers": {
+              "content-type": "application/json"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "378",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": false,
+                "streaming": true
+              },
+              "description": "Crush AI assistant exposed via A2A v1.0 protocol",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "General-purpose AI assistant powered by Crush",
+                  "id": "general",
+                  "name": "General Assistant",
+                  "tags": [
+                    "general",
+                    "coding",
+                    "assistant"
+                  ]
+                }
+              ],
+              "url": "http://localhost:8200",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"crush\",\"version\":\"1.0.0\",\"url\":\"http://localhost:8200\",\"description\":\"Crush AI assistant exposed via A2A v1.0 protocol\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":false},\"skills\":[{\"id\":\"general\",\"name\":\"General Assistant\",\"description\":\"General-purpose AI assistant powered by Crush\",\"tags\":[\"general\",\"coding\",\"assistant\"]}]}\n"
+          }
+        }
+      ]
+    },
+    {
+      "id": "4f1f67eb-d49f-4270-abdd-580b66f88585",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-optional-fields",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 81354,
+      "started_at": "2026-04-27T11:35:12.17937394-05:00",
+      "completed_at": "2026-04-27T11:35:12.179455284-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 76574,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "378",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": false,
+                "streaming": true
+              },
+              "description": "Crush AI assistant exposed via A2A v1.0 protocol",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "General-purpose AI assistant powered by Crush",
+                  "id": "general",
+                  "name": "General Assistant",
+                  "tags": [
+                    "general",
+                    "coding",
+                    "assistant"
+                  ]
+                }
+              ],
+              "url": "http://localhost:8200",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"crush\",\"version\":\"1.0.0\",\"url\":\"http://localhost:8200\",\"description\":\"Crush AI assistant exposed via A2A v1.0 protocol\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":false},\"skills\":[{\"id\":\"general\",\"name\":\"General Assistant\",\"description\":\"General-purpose AI assistant powered by Crush\",\"tags\":[\"general\",\"coding\",\"assistant\"]}]}\n"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 811,
+          "expected": {
+            "body": {
+              "capabilities": "*",
+              "description": "*",
+              "name": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "378",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": false,
+                "streaming": true
+              },
+              "description": "Crush AI assistant exposed via A2A v1.0 protocol",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "General-purpose AI assistant powered by Crush",
+                  "id": "general",
+                  "name": "General Assistant",
+                  "tags": [
+                    "general",
+                    "coding",
+                    "assistant"
+                  ]
+                }
+              ],
+              "url": "http://localhost:8200",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"crush\",\"version\":\"1.0.0\",\"url\":\"http://localhost:8200\",\"description\":\"Crush AI assistant exposed via A2A v1.0 protocol\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":false},\"skills\":[{\"id\":\"general\",\"name\":\"General Assistant\",\"description\":\"General-purpose AI assistant powered by Crush\",\"tags\":[\"general\",\"coding\",\"assistant\"]}]}\n"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e983c61b-785d-4a4e-8240-ffc07d34dffc",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-skills",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 98426,
+      "started_at": "2026-04-27T11:35:12.179458089-05:00",
+      "completed_at": "2026-04-27T11:35:12.179556505-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 88748,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "378",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": false,
+                "streaming": true
+              },
+              "description": "Crush AI assistant exposed via A2A v1.0 protocol",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "General-purpose AI assistant powered by Crush",
+                  "id": "general",
+                  "name": "General Assistant",
+                  "tags": [
+                    "general",
+                    "coding",
+                    "assistant"
+                  ]
+                }
+              ],
+              "url": "http://localhost:8200",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"crush\",\"version\":\"1.0.0\",\"url\":\"http://localhost:8200\",\"description\":\"Crush AI assistant exposed via A2A v1.0 protocol\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":false},\"skills\":[{\"id\":\"general\",\"name\":\"General Assistant\",\"description\":\"General-purpose AI assistant powered by Crush\",\"tags\":[\"general\",\"coding\",\"assistant\"]}]}\n"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 692,
+          "expected": {
+            "body": {
+              "skills": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "378",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": false,
+                "streaming": true
+              },
+              "description": "Crush AI assistant exposed via A2A v1.0 protocol",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "General-purpose AI assistant powered by Crush",
+                  "id": "general",
+                  "name": "General Assistant",
+                  "tags": [
+                    "general",
+                    "coding",
+                    "assistant"
+                  ]
+                }
+              ],
+              "url": "http://localhost:8200",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"crush\",\"version\":\"1.0.0\",\"url\":\"http://localhost:8200\",\"description\":\"Crush AI assistant exposed via A2A v1.0 protocol\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":false},\"skills\":[{\"id\":\"general\",\"name\":\"General Assistant\",\"description\":\"General-purpose AI assistant powered by Crush\",\"tags\":[\"general\",\"coding\",\"assistant\"]}]}\n"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c0fd8caf-b1b1-44d5-9fed-b41476a2b3ff",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-basic",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 138031,
+      "started_at": "2026-04-27T11:35:12.179558869-05:00",
+      "completed_at": "2026-04-27T11:35:12.17969692-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 122842,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 6713,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "72fa2f0e-72fa-421c-91e8-f9373713e8e7",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-creates-task",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 69591,
+      "started_at": "2026-04-27T11:35:12.179697852-05:00",
+      "completed_at": "2026-04-27T11:35:12.179767433-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 63340,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 2244,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*",
+              "kind": "task",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "954e0a84-abca-4591-a135-cf4b72e32b03",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 70604,
+      "started_at": "2026-04-27T11:35:12.179767974-05:00",
+      "completed_at": "2026-04-27T11:35:12.179838578-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 64552,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1553,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "086da7b9-cb9b-4379-9f87-32e96e40594d",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task-not-found",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 69331,
+      "started_at": "2026-04-27T11:35:12.17983952-05:00",
+      "completed_at": "2026-04-27T11:35:12.179908841-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 62408,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "97",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"tasks/get\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "tasks/get",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 751,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "97",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"tasks/get\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "tasks/get",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "6ac51021-ad51-4206-8e5a-5cb52e6ba570",
+      "spec_id": "a2a-v1",
+      "test_case_id": "cancel-task",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 49975,
+      "started_at": "2026-04-27T11:35:12.179909301-05:00",
+      "completed_at": "2026-04-27T11:35:12.179959266-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 45967,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 822,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "50ee2f73-d85c-4e1c-856c-aa2188a33333",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-text-part",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 89770,
+      "started_at": "2026-04-27T11:35:12.179960388-05:00",
+      "completed_at": "2026-04-27T11:35:12.180050158-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 84740,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1402,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "c1f54562-b3d9-40c6-aafa-e7a70df8f534",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-with-context",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 81434,
+      "started_at": "2026-04-27T11:35:12.180050969-05:00",
+      "completed_at": "2026-04-27T11:35:12.180132393-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 75352,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1192,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "f1f24725-a467-48f7-baa0-e7d52381fb0a",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-send",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 61086,
+      "started_at": "2026-04-27T11:35:12.180132924-05:00",
+      "completed_at": "2026-04-27T11:35:12.180194019-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 56377,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "102",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/stream\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/stream",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1513,
+          "expected": {
+            "headers": {
+              "content-type": "text/event-stream"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "102",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/stream\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/stream",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "header content-type: expected \"text/event-stream\", got \"application/json\""
+        }
+      ],
+      "error_message": "header content-type: expected \"text/event-stream\", got \"application/json\""
+    },
+    {
+      "id": "cfafee13-4c24-465f-a273-432cc79fe32e",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-events",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 80702,
+      "started_at": "2026-04-27T11:35:12.180194661-05:00",
+      "completed_at": "2026-04-27T11:35:12.180275363-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 76595,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "102",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/stream\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/stream",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 321,
+          "expected": {
+            "sse_event": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "102",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/stream\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/stream",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "expected SSE events but got none"
+        }
+      ],
+      "error_message": "expected SSE events but got none"
+    },
+    {
+      "id": "4e063603-ba67-4500-8348-c8779a3acfa8",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-parse-error",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 65945,
+      "started_at": "2026-04-27T11:35:12.180275864-05:00",
+      "completed_at": "2026-04-27T11:35:12.180341819-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 61536,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "150",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Parse error\",\"data\":\"invalid character 'i' looking for beginning of object key string\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "data": "invalid character 'i' looking for beginning of object key string",
+                "message": "Parse error"
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1112,
+          "expected": {
+            "error": {
+              "code": -32700,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "150",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Parse error\",\"data\":\"invalid character 'i' looking for beginning of object key string\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "data": "invalid character 'i' looking for beginning of object key string",
+                "message": "Parse error"
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "c3be36a1-d9f2-44d4-9c78-5dfd9b37edca",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-invalid-request",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 61015,
+      "started_at": "2026-04-27T11:35:12.18034251-05:00",
+      "completed_at": "2026-04-27T11:35:12.180403535-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 55836,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "110",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"jsonrpc must be \\\"2.0\\\"\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "data": "jsonrpc must be \"2.0\"",
+                "message": "Invalid Request"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 681,
+          "expected": {
+            "error": {
+              "code": -32600,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "110",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"jsonrpc must be \\\"2.0\\\"\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "data": "jsonrpc must be \"2.0\"",
+                "message": "Invalid Request"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "d761d34e-37e2-4b6c-aa48-d246dbc2f8da",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-method-not-found",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 48091,
+      "started_at": "2026-04-27T11:35:12.180404046-05:00",
+      "completed_at": "2026-04-27T11:35:12.180452137-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 43883,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "105",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"NonExistentMethod\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "NonExistentMethod",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1012,
+          "expected": {
+            "error": {
+              "code": -32601,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "105",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"NonExistentMethod\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "NonExistentMethod",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "4e01586a-1aa4-4573-8de8-76caab07f314",
+      "spec_id": "a2a-v1",
+      "test_case_id": "missing-required-params",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 66575,
+      "started_at": "2026-04-27T11:35:12.180452778-05:00",
+      "completed_at": "2026-04-27T11:35:12.180519354-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 59372,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 3547,
+          "expected": {
+            "error": {
+              "code": -32602,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: mismatch at error.code: expected -32602 (int), got -32601 (float64)"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: mismatch at error.code: expected -32602 (int), got -32601 (float64)"
+    },
+    {
+      "id": "f16ded63-30c0-4c04-a0bc-21df8cd7886f",
+      "spec_id": "a2a-v1",
+      "test_case_id": "missing-message-id",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 71445,
+      "started_at": "2026-04-27T11:35:12.180520997-05:00",
+      "completed_at": "2026-04-27T11:35:12.180592442-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 65654,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 962,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "5e04215d-d798-4006-ac8f-b33a7eaf07ac",
+      "spec_id": "a2a-v1",
+      "test_case_id": "push-notification-not-supported",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 80782,
+      "started_at": "2026-04-27T11:35:12.180593154-05:00",
+      "completed_at": "2026-04-27T11:35:12.180673926-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 75583,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1072,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "100",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "message/send",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    }
+  ],
+  "summary": {
+    "total": 19,
+    "passed": 9,
+    "failed": 10,
+    "errors": 0,
+    "skipped": 0,
+    "timeouts": 0,
+    "compliance": 47.368421052631575
+  }
+}

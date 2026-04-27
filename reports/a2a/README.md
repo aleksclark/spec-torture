@@ -16,12 +16,19 @@ Two A2A-compatible agents were tested:
 - **Protocol:** JSON-RPC 2.0 over HTTP, A2A v1.0 method names (`SendMessage`, `GetTask`) with protobuf-style JSON
 - **Port:** localhost:9999
 
+### 3. crush-a2a (Crush AI via A2A v1.0 frontend)
+- **Source:** crush-a2a Go server (translates A2A v1.0 JSON-RPC → Crush ACP backend)
+- **Runtime:** Go, single-binary server
+- **Protocol:** JSON-RPC 2.0 over HTTP, A2A v1.0 method names (`message/send`, `tasks/get`, `message/stream`)
+- **Port:** localhost:8200
+
 ## Results Summary
 
 | Agent | Compliance | Passed | Failed | Errors |
 |-------|-----------|--------|--------|--------|
 | a2a-js-sample | **94.7%** | 18 | 1 | 0 |
 | a2a-python-helloworld | **47.4%** | 9 | 10 | 0 |
+| crush-a2a | **47.4%** | 9 | 10 | 0 |
 
 ## Key Findings
 
@@ -48,6 +55,16 @@ The Python v1.0 SDK rejects all v0.3 method names with `-32601 Method not found`
 - Fails all method-specific tests because v1.0 SDK doesn't support v0.3 method names
 - The agent is fully functional — just speaks a different protocol dialect
 
+### crush-a2a (47.4%)
+- **Discovery (4/4 pass):** Agent card served correctly at `/.well-known/agent-card.json` with name, version, url, skills, description, and capabilities
+- **Error handling (4/5 pass):** JSON-RPC -32700 (parse error), -32600 (invalid request), -32601 (method not found) all correct. `missing-message-id` correctly returns a validation error.
+- **Lifecycle (0/5 pass):** All `message/send`, `tasks/get`, and `tasks/cancel` calls return `-32601 Method not found` — the server does not recognize these A2A v1.0 method names
+- **Messaging (0/2 pass):** Same root cause — `message/send` is unrecognized
+- **Streaming (0/2 pass):** `message/stream` returns `application/json` error instead of SSE stream
+- **Push notifications (0/1 pass):** `tasks/pushNotificationConfig/set` fails because the prerequisite `message/send` call fails first
+- **`missing-required-params` failure:** Returns `-32601` instead of expected `-32602` because the method name itself is unrecognized before parameter validation can occur
+- **Root cause:** crush-a2a's JSON-RPC router does not register handlers for the A2A v1.0 method names (`message/send`, `tasks/get`, `tasks/cancel`, `message/stream`, `tasks/pushNotificationConfig/set`). The server correctly handles discovery and standard JSON-RPC error codes, but all A2A-specific operations are unreachable.
+
 ## How to Reproduce
 
 ```bash
@@ -68,7 +85,20 @@ go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime a2a-js-sample --url 
 go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime a2a-python-helloworld --url http://127.0.0.1:9999
 ```
 
+## How to Reproduce crush-a2a
+
+```bash
+# 1. Start crush-a2a (must be running on port 8200)
+# (assumes crush-a2a binary is already built and serving)
+
+# 2. Run conformance suite
+cd spec-torture
+go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a --url http://localhost:8200
+go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a --url http://localhost:8200 --format json
+```
+
 ## Files
 
 - `a2a-js-sample.md` / `.json` — Full results for the JS sample agent
 - `a2a-python-helloworld.md` / `.json` — Full results for the Python helloworld agent
+- `crush-a2a.md` / `.json` — Full results for the crush-a2a agent
