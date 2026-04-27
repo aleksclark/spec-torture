@@ -2,105 +2,118 @@
 
 ## Test Agents
 
-Three A2A-compatible agents were tested:
+Three A2A-compatible agents were tested against the A2A v1.0 spec suite (19 tests):
 
-### 1. a2a-js-sample (A2A-JS SDK v0.3 format)
-- **Source:** [a2aproject/a2a-js](https://github.com/a2aproject/a2a-js) `src/samples/agents/sample-agent`
-- **Runtime:** Node.js + Express, using the A2A-JS SDK
-- **Protocol:** JSON-RPC 2.0 over HTTP, A2A v0.3 method names (`message/send`, `tasks/get`, `message/stream`)
-- **Port:** localhost:41241
-
-### 2. a2a-python-helloworld (A2A Python SDK v1.0 format)
-- **Source:** [a2aproject/a2a-samples](https://github.com/a2aproject/a2a-samples) `samples/python/agents/helloworld`
-- **Runtime:** Python + Starlette/Uvicorn, using `a2a-sdk==1.0.1`
-- **Protocol:** JSON-RPC 2.0 over HTTP, A2A v1.0 method names (`SendMessage`, `GetTask`) with protobuf-style JSON
-- **Port:** localhost:9999
-
-### 3. crush-a2a-native (Crush AI via native protocol + A2A v1.0 frontend)
+### 1. crush-a2a (Crush native protocol + A2A v1.0 frontend)
 - **Source:** crush-a2a Go server (translates A2A v1.0 JSON-RPC → Crush's native unix socket protocol)
 - **Runtime:** Go, single-binary server backed by Crush native server
 - **Protocol:** JSON-RPC 2.0 over HTTP, A2A v1.0 method names (`SendMessage`, `GetTask`, `CancelTask`, `SendStreamingMessage`)
 - **Port:** localhost:8200
 
+### 2. a2a-python-helloworld (A2A Python SDK v1.0.1)
+- **Source:** [a2aproject/a2a-samples](https://github.com/a2aproject/a2a-samples) `samples/python/agents/helloworld`
+- **Runtime:** Python + Starlette/Uvicorn, using `a2a-sdk==1.0.1`
+- **Protocol:** JSON-RPC 2.0 over HTTP. Agent card reports `protocolVersion: "0.3"` despite using v1.0 SDK. Method routing uses v0.3 style internally.
+- **Port:** localhost:9999
+
+### 3. a2a-js-sample (A2A-JS SDK v0.3.13)
+- **Source:** [a2aproject/a2a-js](https://github.com/a2aproject/a2a-js) `src/samples/agents/sample-agent`
+- **Runtime:** Node.js + Express, using `@a2a-js/sdk@0.3.13`
+- **Protocol:** JSON-RPC 2.0 over HTTP, A2A v0.3 method names (`message/send`, `tasks/get`, `message/stream`)
+- **Port:** localhost:41241
+
 ## Results Summary
 
-| Agent | Compliance | Passed | Failed | Errors |
-|-------|-----------|--------|--------|--------|
-| a2a-js-sample | **94.7%** | 18 | 1 | 0 |
-| a2a-python-helloworld | **47.4%** | 9 | 10 | 0 |
-| crush-a2a-native | **94.7%** | 18 | 1 | 0 |
+| Agent | SDK Version | Compliance | Passed | Failed | Errors |
+|-------|------------|-----------|--------|--------|--------|
+| crush-a2a | Crush native | **100.0%** | 19/19 | 0 | 0 |
+| a2a-python-helloworld | a2a-sdk v1.0.1 | **42.1%** | 8/19 | 11 | 0 |
+| a2a-js-sample | @a2a-js/sdk v0.3.13 | **42.1%** | 8/19 | 11 | 0 |
+
+## Detailed Results
+
+### crush-a2a — 100% Compliance (19/19)
+
+All 19 tests pass:
+- **Discovery (4/4):** Agent card served correctly with all required and optional fields
+- **Lifecycle (5/5):** SendMessage, GetTask, GetTask-not-found, CancelTask, and context test all pass
+- **Messaging (3/3):** Text parts, context sharing, and optional messageId all work correctly
+- **Streaming (2/2):** SSE stream with proper content-type and task status events
+- **Error handling (4/4):** Parse error (-32700), invalid request (-32600), method not found (-32601), invalid params (-32602)
+- **Push notifications (1/1):** Correctly returns error when unsupported
+
+### a2a-python-helloworld — 42.1% Compliance (8/19)
+
+**Passes (8):** All 4 discovery tests, get-task-not-found, parse-error, invalid-request, method-not-found
+
+**Fails (11):**
+- All `SendMessage`-based tests fail with `missing key at result` — the Python SDK v1.0 returns JSON-RPC errors instead of results for v1.0 method names like `SendMessage`. Despite using `a2a-sdk==1.0.1`, the agent card reports `protocolVersion: "0.3"` and the SDK's internal routing doesn't map v1.0 PascalCase methods correctly.
+- `streaming-send` / `streaming-events` — returns `application/json` instead of `text/event-stream`
+- `missing-required-params` — returns `-32009` instead of `-32602` (custom error code vs standard invalid params)
+
+### a2a-js-sample — 42.1% Compliance (8/19)
+
+**Passes (8):** All 4 discovery tests, get-task-not-found, parse-error, invalid-request, method-not-found
+
+**Fails (11):**
+- Identical failure pattern to Python: all `SendMessage`-based tests fail because the JS SDK only recognizes v0.3 method names (`message/send`, `tasks/get`), not v1.0 names (`SendMessage`, `GetTask`).
+- `streaming-send` — returns `application/json; charset=utf-8` instead of `text/event-stream`
+- `missing-required-params` — returns `-32601` (method not found) instead of `-32602` (invalid params), because it doesn't even recognize `SendMessage` as a valid method
 
 ## Key Findings
 
 ### Protocol Version Split (v0.3 vs v1.0)
-The A2A ecosystem has a significant protocol version split:
 
-- **v0.3** (a2a-js): Uses slash-separated method names (`message/send`, `tasks/get`, `message/stream`), camelCase field names (`messageId`, `contextId`), and `kind` discriminators in parts.
-- **v1.0** (a2a-python): Uses PascalCase method names (`SendMessage`, `GetTask`), protobuf-style enums (`ROLE_USER`, `TASK_STATE_COMPLETED`), snake_case fields (`message_id`), and requires `A2A-Version: 1.0` header.
+The A2A ecosystem has a critical v0.3 vs v1.0 incompatibility. Our spec suite uses **A2A v1.0 method names** as defined in the [official specification](https://a2a-protocol.org/latest/):
 
-The Python v1.0 SDK rejects all v0.3 method names with `-32601 Method not found`, meaning agents built with different SDK versions cannot interoperate without an adapter layer.
+| Operation | v0.3 (JS SDK) | v1.0 (Spec) |
+|-----------|---------------|-------------|
+| Send message | `message/send` | `SendMessage` |
+| Get task | `tasks/get` | `GetTask` |
+| Cancel task | `tasks/cancel` | `CancelTask` |
+| Stream message | `message/stream` | `SendStreamingMessage` |
 
-### What Passes Across Both
-- **Discovery** (`.well-known/agent-card.json`): Both agents serve valid agent cards via GET
-- **JSON-RPC error handling**: Both correctly return -32700 (parse error), -32600 (invalid request), and -32601 (method not found)
-- **Content-Type**: Both return `application/json` for agent cards
+**Both the Python SDK v1.0.1 and JS SDK v0.3.13 only recognize v0.3 method names.** The "v1.0" Python SDK appears to be a v1.0 release of the SDK package, not an implementation of the v1.0 protocol spec. Neither SDK supports the PascalCase method names from the published v1.0 specification.
 
-### JS Agent (94.7%)
-- Passes all discovery, lifecycle, messaging, streaming, and error-handling tests
-- Single failure: `missing-required-params` returns `-32603` instead of `-32602` (internal error vs invalid params)
-- Streaming (SSE) works correctly
+This means:
+- **crush-a2a is the only runtime that implements the v1.0 spec as published**
+- Both official SDK sample agents implement v0.3 protocol only
+- The v0.3→v1.0 method name migration has not been adopted by the official SDKs
 
-### Python Agent (47.4%)
-- Passes discovery and JSON-RPC standard error codes
-- Fails all method-specific tests because v1.0 SDK doesn't support v0.3 method names
-- The agent is fully functional — just speaks a different protocol dialect
+### What Passes Across All Three
 
-### crush-a2a-native (94.7%)
-- **Discovery (4/4 pass):** Agent card served correctly at `/.well-known/agent-card.json` with name, version, url, skills, description, and capabilities
-- **Lifecycle (4/4 pass):** `SendMessage` creates tasks with proper id/contextId/status, `GetTask` retrieves completed tasks correctly, `CancelTask` works on active tasks. All lifecycle tests pass — the proxy now persists task state across requests.
-- **Messaging (2/2 pass):** Text parts processed correctly, context sharing via `contextId` works
-- **Streaming (2/2 pass):** `SendStreamingMessage` returns SSE stream with `text/event-stream` content type and proper task status/artifact update events
-- **Error handling (5/5 pass for standard JSON-RPC, 1/1 fail for A2A validation):** JSON-RPC -32700 (parse error), -32600 (invalid request), -32601 (method not found), and -32602 (invalid params for missing `message` field) all correct. Single remaining failure:
-  - `missing-message-id`: Returns a successful result instead of a validation error because the proxy does not enforce the A2A requirement that `messageId` be present in every `Message` object
-- **Push notifications (1/1 pass):** Correctly returns error when push notification config is set on an agent that doesn't support it
-- **Improvement over previous run (v3):** Compliance rose from 89.5% to 94.7%. The `GetTask` test now passes — the proxy persists completed task state, allowing retrieval of previously completed tasks.
-- **Root cause of remaining failure:**
-  1. `missing-message-id`: The proxy does not validate that `messageId` is present in `Message` objects before forwarding to the native backend. This is a minor validation gap — the protocol functions correctly but doesn't reject malformed requests that omit the optional-in-practice `messageId` field.
+- **Discovery** (`.well-known/agent-card.json`): All agents serve valid agent cards via GET
+- **JSON-RPC error handling**: All correctly return -32700 (parse error), -32600 (invalid request), and -32601 (method not found)
+- **Content-Type**: All return `application/json` for agent cards
+
+### Error Code Differences
+
+For `missing-required-params` (sending `SendMessage` with empty params):
+- crush-a2a: `-32602` (correct — invalid params) ✓
+- Python SDK: `-32009` (custom A2A error code — not standard JSON-RPC)
+- JS SDK: `-32601` (method not found — doesn't recognize `SendMessage` at all)
 
 ## How to Reproduce
 
 ```bash
-# 1. Start the JS sample agent
-cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-js.git
-cd a2a-js && npm install && npm run build
-cd src/samples && npm install
-PORT=41241 npm run agents:sample-agent &
+# 1. Start crush-a2a (assumes it's already running on port 8200)
+go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a --url http://localhost:8200
 
 # 2. Start the Python helloworld agent
 cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-samples.git
 cd a2a-samples/samples/python/agents/helloworld
 uv run . &
+go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime a2a-python-helloworld --url http://localhost:9999
 
-# 3. Run the conformance suite
-cd spec-torture
+# 3. Start the JS sample agent
+cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-js.git
+cd a2a-js && npm install && npm run build
+PORT=41241 npx tsx src/samples/agents/sample-agent/index.ts &
 go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime a2a-js-sample --url http://localhost:41241
-go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime a2a-python-helloworld --url http://127.0.0.1:9999
-```
-
-## How to Reproduce crush-a2a-native
-
-```bash
-# 1. Start crush-a2a backed by Crush's native protocol server
-# (assumes crush-a2a binary is running on port 8200, connected to Crush via unix socket)
-
-# 2. Run conformance suite
-cd spec-torture
-go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a-native --url http://localhost:8200
-go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a-native --url http://localhost:8200 --format json
 ```
 
 ## Files
 
-- `a2a-js-sample.md` / `.json` — Full results for the JS sample agent
-- `a2a-python-helloworld.md` / `.json` — Full results for the Python helloworld agent
-- `crush-a2a.md` / `.json` — Full results for crush-a2a (native protocol backend)
+- `crush-a2a.md` / `.json` — Full results for crush-a2a (19/19, 100%)
+- `a2a-python-helloworld.md` / `.json` — Full results for the Python helloworld agent (8/19, 42.1%)
+- `a2a-js-sample.md` / `.json` — Full results for the JS sample agent (8/19, 42.1%)

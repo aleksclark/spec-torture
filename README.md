@@ -27,13 +27,13 @@ spec-torture is a conformance test harness for AI agent protocols. It validates 
 
 Tested against three A2A runtimes — two official SDK sample agents and crush-a2a (Crush native protocol):
 
-| Runtime | SDK | Compliance | Passed | Failed | Notes |
-|---------|-----|-----------|--------|--------|-------|
-| [a2a-js-sample](reports/a2a/a2a-js-sample.md) | a2a-js v0.3 | **94.7%** | 18/19 | 1 | Near-complete compliance. Single failure: returns `-32603` instead of `-32602` for invalid params. Streaming (SSE) works correctly. |
-| [a2a-python-helloworld](reports/a2a/a2a-python-helloworld.md) | a2a-sdk v1.0.1 | **47.4%** | 9/19 | 10 | Discovery and JSON-RPC error handling pass. Method-specific tests fail due to v0.3→v1.0 method name changes. |
-| [crush-a2a-native](reports/a2a/crush-a2a.md) | Crush native | **94.7%** | 18/19 | 1 | Near-complete A2A v1.0 compliance. Translates A2A JSON-RPC to Crush's native unix socket protocol. Single failure: `missing-message-id` validation not enforced. |
+| Runtime | SDK/Backend | Compliance | Passed | Failed | Notes |
+|---------|------------|-----------|--------|--------|-------|
+| [crush-a2a](reports/a2a/crush-a2a.md) | Crush native | **100.0%** | 19/19 | 0 | Full v1.0 compliance. All discovery, lifecycle, messaging, streaming, error handling, and push notification tests pass. |
+| [a2a-python-helloworld](reports/a2a/a2a-python-helloworld.md) | a2a-sdk v1.0.1 | **42.1%** | 8/19 | 11 | Discovery and JSON-RPC error handling pass. All method-specific tests fail — SDK only recognizes v0.3 method names despite being v1.0 release. |
+| [a2a-js-sample](reports/a2a/a2a-js-sample.md) | @a2a-js/sdk v0.3.13 | **42.1%** | 8/19 | 11 | Same failure pattern as Python. Discovery passes, but `SendMessage`/`GetTask` return method-not-found. |
 
-**Key finding — protocol version split:** The A2A ecosystem has a significant v0.3 vs v1.0 incompatibility. The v0.3 JS SDK uses slash-separated method names (`message/send`, `tasks/get`) while the v1.0 Python SDK uses PascalCase (`SendMessage`, `GetTask`) with protobuf-style enums. Agents built with different SDK versions cannot interoperate without an adapter layer. Both implementations pass discovery — the `.well-known/agent-card.json` endpoint is stable across versions.
+**Key finding — protocol version split:** The A2A ecosystem has a critical v0.3 vs v1.0 incompatibility. The spec suite uses v1.0 PascalCase method names (`SendMessage`, `GetTask`) as published in the [official A2A v1.0 specification](https://a2a-protocol.org/latest/). Both official SDKs (Python v1.0.1 and JS v0.3.13) only recognize the older v0.3 slash-separated names (`message/send`, `tasks/get`). crush-a2a is the only runtime that implements the v1.0 spec as published. Discovery (`.well-known/agent-card.json`) is stable across all versions.
 
 Full analysis: [reports/a2a/README.md](reports/a2a/README.md)
 
