@@ -18,15 +18,24 @@ import (
 // JSONRPCTransport implements the Transport interface for JSON-RPC over HTTP.
 type JSONRPCTransport struct {
 	baseURL  string
+	rpcURL   string
 	client   *http.Client
 	logger   *slog.Logger
 	lastResp *TransportResponse
 }
 
 // NewJSONRPCTransport creates a new JSON-RPC HTTP transport.
-func NewJSONRPCTransport(baseURL string, logger *slog.Logger) *JSONRPCTransport {
+// rpcPath is an optional subpath for JSON-RPC POST requests (e.g., "/invoke", "/jsonrpc").
+// If empty, JSON-RPC requests are sent to baseURL directly.
+func NewJSONRPCTransport(baseURL, rpcPath string, logger *slog.Logger) *JSONRPCTransport {
+	base := strings.TrimRight(baseURL, "/")
+	rpcURL := base
+	if rpcPath != "" {
+		rpcURL = base + "/" + strings.TrimLeft(rpcPath, "/")
+	}
 	return &JSONRPCTransport{
-		baseURL: strings.TrimRight(baseURL, "/"),
+		baseURL: base,
+		rpcURL:  rpcURL,
 		client: &http.Client{
 			Timeout: 60 * time.Second,
 		},
@@ -112,7 +121,7 @@ func (t *JSONRPCTransport) sendRaw(ctx context.Context, payload map[string]any) 
 		contentType = fmt.Sprintf("%v", ct)
 	}
 
-	url := t.baseURL
+	url := t.rpcURL
 	t.logger.Debug("sending raw request", "url", url, "content_type", contentType)
 
 	req, err := http.NewRequestWithContext(ctx, "POST", url, strings.NewReader(rawBody))
@@ -180,7 +189,7 @@ func (t *JSONRPCTransport) sendJSONRPC(ctx context.Context, payload map[string]a
 		return nil, fmt.Errorf("marshaling JSON-RPC request: %w", err)
 	}
 
-	url := t.baseURL
+	url := t.rpcURL
 	t.logger.Debug("sending JSON-RPC request", "method", method, "url", url)
 
 	req, err := http.NewRequestWithContext(ctx, "POST", url, bytes.NewReader(bodyBytes))
@@ -246,7 +255,7 @@ func (t *JSONRPCTransport) sendJSONRPCStreaming(ctx context.Context, payload map
 		return nil, fmt.Errorf("marshaling streaming request: %w", err)
 	}
 
-	url := t.baseURL
+	url := t.rpcURL
 	t.logger.Debug("sending streaming JSON-RPC request", "url", url)
 
 	req, err := http.NewRequestWithContext(ctx, "POST", url, bytes.NewReader(bodyBytes))

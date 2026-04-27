@@ -17,6 +17,7 @@ type Config struct {
 	RuntimeVersion string
 	Image          string
 	BaseURL        string
+	RPCPath        string
 	Tags           []string
 	Timeout        time.Duration
 }
@@ -125,7 +126,7 @@ func (r *Runner) runTestCaseHTTP(ctx context.Context, spec *schema.Spec, tc *sch
 
 	r.logger.Info("running test case", "test_case", tc.ID, "category", tc.Category)
 
-	transport := r.createTransport(spec.Transport, cfg.BaseURL)
+	transport := r.createTransport(spec.Transport, cfg.BaseURL, cfg.RPCPath)
 	if transport == nil {
 		result.Status = schema.StatusError
 		result.ErrorMessage = fmt.Sprintf("unsupported transport: %s", spec.Transport)
@@ -225,10 +226,10 @@ func (r *Runner) runTestCaseDocker(ctx context.Context, spec *schema.Spec, tc *s
 	return result
 }
 
-func (r *Runner) createTransport(transport schema.Transport, baseURL string) Transport {
+func (r *Runner) createTransport(transport schema.Transport, baseURL, rpcPath string) Transport {
 	switch transport {
 	case schema.TransportJSONRPCHTTP:
-		return NewJSONRPCTransport(baseURL, r.logger)
+		return NewJSONRPCTransport(baseURL, rpcPath, r.logger)
 	case schema.TransportHTTPREST:
 		return NewHTTPTransport(baseURL, r.logger)
 	default:

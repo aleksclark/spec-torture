@@ -1,33 +1,33 @@
 {
-  "id": "a23c36c4-1fe3-471a-b4b9-e5c853fa10c9",
+  "id": "0c9e65ce-bad3-4218-ad1a-a5803cb8d0bd",
   "spec_id": "a2a-v1",
   "runtime": "crush-a2a",
   "runtime_version": "",
-  "started_at": "2026-04-27T13:40:41.237055815-05:00",
-  "completed_at": "2026-04-27T13:42:05.133202869-05:00",
+  "started_at": "2026-04-27T15:09:31.904890182-05:00",
+  "completed_at": "2026-04-27T15:09:31.929978695-05:00",
   "results": [
     {
-      "id": "2672fa94-978d-4c55-83fa-feee44f62662",
+      "id": "157c3977-7fe2-4b53-879d-e2931d698a22",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-well-known",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 525984,
-      "started_at": "2026-04-27T13:40:41.237103004-05:00",
-      "completed_at": "2026-04-27T13:40:41.237628998-05:00",
+      "duration": 634260,
+      "started_at": "2026-04-27T15:09:31.904942601-05:00",
+      "completed_at": "2026-04-27T15:09:31.905576861-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 519011,
+          "duration": 623149,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:41 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -59,7 +59,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1082,
+          "duration": 1413,
           "expected": {
             "body": {
               "name": "*",
@@ -74,7 +74,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:41 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -105,27 +105,27 @@
       ]
     },
     {
-      "id": "f9976521-3925-434f-bbe1-d39d810ecc80",
+      "id": "c0bb877f-7528-43b5-8ee1-6969528f9d52",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-content-type",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 101301,
-      "started_at": "2026-04-27T13:40:41.237630872-05:00",
-      "completed_at": "2026-04-27T13:40:41.237732183-05:00",
+      "duration": 116921,
+      "started_at": "2026-04-27T15:09:31.90558153-05:00",
+      "completed_at": "2026-04-27T15:09:31.905698561-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 92305,
+          "duration": 100250,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:41 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -157,7 +157,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1042,
+          "duration": 1132,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -169,7 +169,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:41 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -200,27 +200,27 @@
       ]
     },
     {
-      "id": "2b8fc9f8-d6c5-4078-9063-6af22c2759e2",
+      "id": "181abd70-0776-4760-867f-b8e4ef4da6de",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-optional-fields",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 66486,
-      "started_at": "2026-04-27T13:40:41.237733135-05:00",
-      "completed_at": "2026-04-27T13:40:41.237799621-05:00",
+      "duration": 78479,
+      "started_at": "2026-04-27T15:09:31.905700845-05:00",
+      "completed_at": "2026-04-27T15:09:31.905779334-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 60665,
+          "duration": 71906,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:41 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -252,7 +252,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 561,
+          "duration": 892,
           "expected": {
             "body": {
               "capabilities": "*",
@@ -266,7 +266,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:41 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -297,27 +297,27 @@
       ]
     },
     {
-      "id": "e6205964-2a19-46d1-8a1e-b2c8dec62a02",
+      "id": "fd254b52-9bee-4e5d-bfbd-1c12bb82512f",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-skills",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 59091,
-      "started_at": "2026-04-27T13:40:41.237802186-05:00",
-      "completed_at": "2026-04-27T13:40:41.237861287-05:00",
+      "duration": 54352,
+      "started_at": "2026-04-27T15:09:31.905784434-05:00",
+      "completed_at": "2026-04-27T15:09:31.905838786-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 52209,
+          "duration": 47570,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:41 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -349,7 +349,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 591,
+          "duration": 851,
           "expected": {
             "body": {
               "skills": "*"
@@ -361,7 +361,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:41 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -392,60 +392,45 @@
       ]
     },
     {
-      "id": "e00d4105-0960-42fe-b90b-d5e7eda6ab07",
+      "id": "b0cd0caa-84e5-424a-8535-4fd6ea5cf52b",
       "spec_id": "a2a-v1",
       "test_case_id": "send-message-basic",
       "runtime": "crush-a2a",
       "runtime_version": "",
-      "status": "pass",
-      "duration": 9057093025,
-      "started_at": "2026-04-27T13:40:41.237862169-05:00",
-      "completed_at": "2026-04-27T13:40:50.294955194-05:00",
+      "status": "fail",
+      "duration": 2467899,
+      "started_at": "2026-04-27T15:09:31.905839267-05:00",
+      "completed_at": "2026-04-27T15:09:31.908307176-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 9057081613,
+          "duration": 2461416,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "1306",
+              "content-length": "217",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:50 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"fc7e2f43-3fdb-4aa0-a79f-0aa1037d0800\",\"contextId\":\"9a6de885-a73c-43af-bba6-1acc0a407f59\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:40:50Z\"},\"artifacts\":[{\"artifactId\":\"489fb79d-e4c3-48f4-a9bb-aa959c6bad80\",\"parts\":[{\"kind\":\"text\",\"text\":\"I'm a CLI-based AI assistant. Here's what I can do:\\n\\n## Core Capabilities\\n\\n- **Code** — Read, write, edit, debug, and refactor code across languages\\n- **Search** — Find files, grep contents, search GitHub via Sourcegraph\\n- **Shell** — Run build commands, tests, linters, git operations\\n- **Web** — Fetch URLs, search the web for documentation or answers\\n- **Files** — Create, edit, move, and manage files and directories\\n\\n## Integrations (via MCP/Switchboard)\\n\\n- **GitHub** — Issues, PRs, repos, code review\\n- **Slack, Linear, Sentry, Datadog** — and other connected services (depends on config)\\n\\n## Specialized Agents\\n\\n- **Go development**, **datasheet parsing**, **spec normalization/verification**, and general dev subagents\\n- **Remote ACP agents** if configured\\n\\n## Workflows\\n\\n- Multi-file refactors, feature implementation end-to-end, test writing, PR creation, git commits, code review, debugging, and project scaffolding\\n\\nWhat are you working on?\"}]}]}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
             "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
               "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "489fb79d-e4c3-48f4-a9bb-aa959c6bad80",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "I'm a CLI-based AI assistant. Here's what I can do:\n\n## Core Capabilities\n\n- **Code** — Read, write, edit, debug, and refactor code across languages\n- **Search** — Find files, grep contents, search GitHub via Sourcegraph\n- **Shell** — Run build commands, tests, linters, git operations\n- **Web** — Fetch URLs, search the web for documentation or answers\n- **Files** — Create, edit, move, and manage files and directories\n\n## Integrations (via MCP/Switchboard)\n\n- **GitHub** — Issues, PRs, repos, code review\n- **Slack, Linear, Sentry, Datadog** — and other connected services (depends on config)\n\n## Specialized Agents\n\n- **Go development**, **datasheet parsing**, **spec normalization/verification**, and general dev subagents\n- **Remote ACP agents** if configured\n\n## Workflows\n\n- Multi-file refactors, feature implementation end-to-end, test writing, PR creation, git commits, code review, debugging, and project scaffolding\n\nWhat are you working on?"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "9a6de885-a73c-43af-bba6-1acc0a407f59",
-                "id": "fc7e2f43-3fdb-4aa0-a79f-0aa1037d0800",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:40:50Z"
-                }
-              }
+              "jsonrpc": "2.0"
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "pass",
-          "duration": 5070,
+          "status": "fail",
+          "duration": 2715,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -460,94 +445,66 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "1306",
+              "content-length": "217",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:50 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"fc7e2f43-3fdb-4aa0-a79f-0aa1037d0800\",\"contextId\":\"9a6de885-a73c-43af-bba6-1acc0a407f59\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:40:50Z\"},\"artifacts\":[{\"artifactId\":\"489fb79d-e4c3-48f4-a9bb-aa959c6bad80\",\"parts\":[{\"kind\":\"text\",\"text\":\"I'm a CLI-based AI assistant. Here's what I can do:\\n\\n## Core Capabilities\\n\\n- **Code** — Read, write, edit, debug, and refactor code across languages\\n- **Search** — Find files, grep contents, search GitHub via Sourcegraph\\n- **Shell** — Run build commands, tests, linters, git operations\\n- **Web** — Fetch URLs, search the web for documentation or answers\\n- **Files** — Create, edit, move, and manage files and directories\\n\\n## Integrations (via MCP/Switchboard)\\n\\n- **GitHub** — Issues, PRs, repos, code review\\n- **Slack, Linear, Sentry, Datadog** — and other connected services (depends on config)\\n\\n## Specialized Agents\\n\\n- **Go development**, **datasheet parsing**, **spec normalization/verification**, and general dev subagents\\n- **Remote ACP agents** if configured\\n\\n## Workflows\\n\\n- Multi-file refactors, feature implementation end-to-end, test writing, PR creation, git commits, code review, debugging, and project scaffolding\\n\\nWhat are you working on?\"}]}]}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
             "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
               "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "489fb79d-e4c3-48f4-a9bb-aa959c6bad80",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "I'm a CLI-based AI assistant. Here's what I can do:\n\n## Core Capabilities\n\n- **Code** — Read, write, edit, debug, and refactor code across languages\n- **Search** — Find files, grep contents, search GitHub via Sourcegraph\n- **Shell** — Run build commands, tests, linters, git operations\n- **Web** — Fetch URLs, search the web for documentation or answers\n- **Files** — Create, edit, move, and manage files and directories\n\n## Integrations (via MCP/Switchboard)\n\n- **GitHub** — Issues, PRs, repos, code review\n- **Slack, Linear, Sentry, Datadog** — and other connected services (depends on config)\n\n## Specialized Agents\n\n- **Go development**, **datasheet parsing**, **spec normalization/verification**, and general dev subagents\n- **Remote ACP agents** if configured\n\n## Workflows\n\n- Multi-file refactors, feature implementation end-to-end, test writing, PR creation, git commits, code review, debugging, and project scaffolding\n\nWhat are you working on?"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "9a6de885-a73c-43af-bba6-1acc0a407f59",
-                "id": "fc7e2f43-3fdb-4aa0-a79f-0aa1037d0800",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:40:50Z"
-                }
-              }
+              "jsonrpc": "2.0"
             }
-          }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
         }
-      ]
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "973b3f5d-2288-48b2-a275-123931cb5f1c",
+      "id": "9266b907-1c74-4313-8bd8-9c843dd7466c",
       "spec_id": "a2a-v1",
       "test_case_id": "send-message-creates-task",
       "runtime": "crush-a2a",
       "runtime_version": "",
-      "status": "pass",
-      "duration": 2090368281,
-      "started_at": "2026-04-27T13:40:50.294959603-05:00",
-      "completed_at": "2026-04-27T13:40:52.385327884-05:00",
+      "status": "fail",
+      "duration": 2074916,
+      "started_at": "2026-04-27T15:09:31.908308248-05:00",
+      "completed_at": "2026-04-27T15:09:31.910383224-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 2090348584,
+          "duration": 2065638,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "339",
+              "content-length": "217",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:52 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"7cf49626-06be-4d41-8377-f05454ad2714\",\"contextId\":\"482e0fba-a2de-4e87-9864-4a966d113f58\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:40:52Z\"},\"artifacts\":[{\"artifactId\":\"f0566314-6d6e-4354-950f-e55c4046d99b\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nWhat do you need done?\"}]}]}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
             "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
               "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "f0566314-6d6e-4354-950f-e55c4046d99b",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "\nWhat do you need done?"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "482e0fba-a2de-4e87-9864-4a966d113f58",
-                "id": "7cf49626-06be-4d41-8377-f05454ad2714",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:40:52Z"
-                }
-              }
+              "jsonrpc": "2.0"
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "pass",
-          "duration": 4739,
+          "status": "fail",
+          "duration": 3176,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -563,130 +520,66 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "339",
+              "content-length": "217",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:40:52 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"7cf49626-06be-4d41-8377-f05454ad2714\",\"contextId\":\"482e0fba-a2de-4e87-9864-4a966d113f58\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:40:52Z\"},\"artifacts\":[{\"artifactId\":\"f0566314-6d6e-4354-950f-e55c4046d99b\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nWhat do you need done?\"}]}]}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
             "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
               "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "f0566314-6d6e-4354-950f-e55c4046d99b",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "\nWhat do you need done?"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "482e0fba-a2de-4e87-9864-4a966d113f58",
-                "id": "7cf49626-06be-4d41-8377-f05454ad2714",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:40:52Z"
-                }
-              }
+              "jsonrpc": "2.0"
             }
-          }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
         }
-      ]
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "21990acd-6a39-46cd-bcf2-0839cc3a029d",
+      "id": "b1d2f589-a3c3-41ff-bd61-99045b4e0ce2",
       "spec_id": "a2a-v1",
       "test_case_id": "get-task",
       "runtime": "crush-a2a",
       "runtime_version": "",
-      "status": "pass",
-      "duration": 27289562517,
-      "started_at": "2026-04-27T13:40:52.385332773-05:00",
-      "completed_at": "2026-04-27T13:41:19.6748953-05:00",
+      "status": "fail",
+      "duration": 2410650,
+      "started_at": "2026-04-27T15:09:31.910384797-05:00",
+      "completed_at": "2026-04-27T15:09:31.912795507-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 27289393317,
+          "duration": 2398618,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "1140",
+              "content-length": "217",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:19 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"3a66e21c-4324-4584-a930-f90221629f80\",\"contextId\":\"c9bb314c-bd6f-422e-b6cd-3affc493c4b4\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:19Z\"},\"artifacts\":[{\"artifactId\":\"e6e2c655-f189-42ef-af25-5d291adc102f\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nLet me first check what agents and tools are available for task management.\"}]},{\"artifactId\":\"851a184a-f44a-46fd-a7ac-6d8be1ac8ca1\",\"parts\":[{\"kind\":\"text\",\"text\":\"I see Linear is available. Let me check the teams first.\"}]},{\"artifactId\":\"5e08fa86-8286-486a-85fd-a5903b11d010\",\"parts\":[{\"kind\":\"text\",\"text\":\"The Linear teams query is hitting a complexity limit. Let me try creating the issue directly with a team name, or try a different approach.\"}]},{\"artifactId\":\"60eba604-c823-45bd-af1a-16b487a3fb63\",\"parts\":[{\"kind\":\"text\",\"text\":\"I can see team key \\\"DRM\\\". Let me create a task for you.\"}]},{\"artifactId\":\"a0941ba1-23e3-4d13-afec-5e98004d0497\",\"parts\":[{\"kind\":\"text\",\"text\":\"Created **DRM-524** — \\\"Retrievable task\\\" in Triage state on the DRM team.\\n\\nhttps://linear.app/curri/issue/DRM-524/retrievable-task\"}]}]}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
             "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
               "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "e6e2c655-f189-42ef-af25-5d291adc102f",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "\nLet me first check what agents and tools are available for task management."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "851a184a-f44a-46fd-a7ac-6d8be1ac8ca1",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "I see Linear is available. Let me check the teams first."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "5e08fa86-8286-486a-85fd-a5903b11d010",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "The Linear teams query is hitting a complexity limit. Let me try creating the issue directly with a team name, or try a different approach."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "60eba604-c823-45bd-af1a-16b487a3fb63",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "I can see team key \"DRM\". Let me create a task for you."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "a0941ba1-23e3-4d13-afec-5e98004d0497",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "Created **DRM-524** — \"Retrievable task\" in Triage state on the DRM team.\n\nhttps://linear.app/curri/issue/DRM-524/retrievable-task"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "c9bb314c-bd6f-422e-b6cd-3affc493c4b4",
-                "id": "3a66e21c-4324-4584-a930-f90221629f80",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:19Z"
-                }
-              }
+              "jsonrpc": "2.0"
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "pass",
-          "duration": 3637,
+          "status": "fail",
+          "duration": 2284,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -697,257 +590,48 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "1140",
+              "content-length": "217",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:19 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"3a66e21c-4324-4584-a930-f90221629f80\",\"contextId\":\"c9bb314c-bd6f-422e-b6cd-3affc493c4b4\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:19Z\"},\"artifacts\":[{\"artifactId\":\"e6e2c655-f189-42ef-af25-5d291adc102f\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nLet me first check what agents and tools are available for task management.\"}]},{\"artifactId\":\"851a184a-f44a-46fd-a7ac-6d8be1ac8ca1\",\"parts\":[{\"kind\":\"text\",\"text\":\"I see Linear is available. Let me check the teams first.\"}]},{\"artifactId\":\"5e08fa86-8286-486a-85fd-a5903b11d010\",\"parts\":[{\"kind\":\"text\",\"text\":\"The Linear teams query is hitting a complexity limit. Let me try creating the issue directly with a team name, or try a different approach.\"}]},{\"artifactId\":\"60eba604-c823-45bd-af1a-16b487a3fb63\",\"parts\":[{\"kind\":\"text\",\"text\":\"I can see team key \\\"DRM\\\". Let me create a task for you.\"}]},{\"artifactId\":\"a0941ba1-23e3-4d13-afec-5e98004d0497\",\"parts\":[{\"kind\":\"text\",\"text\":\"Created **DRM-524** — \\\"Retrievable task\\\" in Triage state on the DRM team.\\n\\nhttps://linear.app/curri/issue/DRM-524/retrievable-task\"}]}]}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
             "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
               "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "e6e2c655-f189-42ef-af25-5d291adc102f",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "\nLet me first check what agents and tools are available for task management."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "851a184a-f44a-46fd-a7ac-6d8be1ac8ca1",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "I see Linear is available. Let me check the teams first."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "5e08fa86-8286-486a-85fd-a5903b11d010",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "The Linear teams query is hitting a complexity limit. Let me try creating the issue directly with a team name, or try a different approach."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "60eba604-c823-45bd-af1a-16b487a3fb63",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "I can see team key \"DRM\". Let me create a task for you."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "a0941ba1-23e3-4d13-afec-5e98004d0497",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "Created **DRM-524** — \"Retrievable task\" in Triage state on the DRM team.\n\nhttps://linear.app/curri/issue/DRM-524/retrievable-task"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "c9bb314c-bd6f-422e-b6cd-3affc493c4b4",
-                "id": "3a66e21c-4324-4584-a930-f90221629f80",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:19Z"
-                }
-              }
-            }
-          }
-        },
-        {
-          "step_index": 2,
-          "action": "send",
-          "status": "pass",
-          "duration": 147199,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "1140",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:19 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"kind\":\"task\",\"id\":\"3a66e21c-4324-4584-a930-f90221629f80\",\"contextId\":\"c9bb314c-bd6f-422e-b6cd-3affc493c4b4\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:19Z\"},\"artifacts\":[{\"artifactId\":\"e6e2c655-f189-42ef-af25-5d291adc102f\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nLet me first check what agents and tools are available for task management.\"}]},{\"artifactId\":\"851a184a-f44a-46fd-a7ac-6d8be1ac8ca1\",\"parts\":[{\"kind\":\"text\",\"text\":\"I see Linear is available. Let me check the teams first.\"}]},{\"artifactId\":\"5e08fa86-8286-486a-85fd-a5903b11d010\",\"parts\":[{\"kind\":\"text\",\"text\":\"The Linear teams query is hitting a complexity limit. Let me try creating the issue directly with a team name, or try a different approach.\"}]},{\"artifactId\":\"60eba604-c823-45bd-af1a-16b487a3fb63\",\"parts\":[{\"kind\":\"text\",\"text\":\"I can see team key \\\"DRM\\\". Let me create a task for you.\"}]},{\"artifactId\":\"a0941ba1-23e3-4d13-afec-5e98004d0497\",\"parts\":[{\"kind\":\"text\",\"text\":\"Created **DRM-524** — \\\"Retrievable task\\\" in Triage state on the DRM team.\\n\\nhttps://linear.app/curri/issue/DRM-524/retrievable-task\"}]}]}}\n",
-            "jsonrpc_resp": {
-              "id": 2,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "e6e2c655-f189-42ef-af25-5d291adc102f",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "\nLet me first check what agents and tools are available for task management."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "851a184a-f44a-46fd-a7ac-6d8be1ac8ca1",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "I see Linear is available. Let me check the teams first."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "5e08fa86-8286-486a-85fd-a5903b11d010",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "The Linear teams query is hitting a complexity limit. Let me try creating the issue directly with a team name, or try a different approach."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "60eba604-c823-45bd-af1a-16b487a3fb63",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "I can see team key \"DRM\". Let me create a task for you."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "a0941ba1-23e3-4d13-afec-5e98004d0497",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "Created **DRM-524** — \"Retrievable task\" in Triage state on the DRM team.\n\nhttps://linear.app/curri/issue/DRM-524/retrievable-task"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "c9bb314c-bd6f-422e-b6cd-3affc493c4b4",
-                "id": "3a66e21c-4324-4584-a930-f90221629f80",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:19Z"
-                }
-              }
-            }
-          }
-        },
-        {
-          "step_index": 3,
-          "action": "expect",
-          "status": "pass",
-          "duration": 2264,
-          "expected": {
-            "id": 2,
-            "jsonrpc": "2.0",
-            "result": {
-              "id": "*",
-              "status": {
-                "state": "*"
-              }
+              "jsonrpc": "2.0"
             }
           },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "1140",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:19 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"kind\":\"task\",\"id\":\"3a66e21c-4324-4584-a930-f90221629f80\",\"contextId\":\"c9bb314c-bd6f-422e-b6cd-3affc493c4b4\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:19Z\"},\"artifacts\":[{\"artifactId\":\"e6e2c655-f189-42ef-af25-5d291adc102f\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nLet me first check what agents and tools are available for task management.\"}]},{\"artifactId\":\"851a184a-f44a-46fd-a7ac-6d8be1ac8ca1\",\"parts\":[{\"kind\":\"text\",\"text\":\"I see Linear is available. Let me check the teams first.\"}]},{\"artifactId\":\"5e08fa86-8286-486a-85fd-a5903b11d010\",\"parts\":[{\"kind\":\"text\",\"text\":\"The Linear teams query is hitting a complexity limit. Let me try creating the issue directly with a team name, or try a different approach.\"}]},{\"artifactId\":\"60eba604-c823-45bd-af1a-16b487a3fb63\",\"parts\":[{\"kind\":\"text\",\"text\":\"I can see team key \\\"DRM\\\". Let me create a task for you.\"}]},{\"artifactId\":\"a0941ba1-23e3-4d13-afec-5e98004d0497\",\"parts\":[{\"kind\":\"text\",\"text\":\"Created **DRM-524** — \\\"Retrievable task\\\" in Triage state on the DRM team.\\n\\nhttps://linear.app/curri/issue/DRM-524/retrievable-task\"}]}]}}\n",
-            "jsonrpc_resp": {
-              "id": 2,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "e6e2c655-f189-42ef-af25-5d291adc102f",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "\nLet me first check what agents and tools are available for task management."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "851a184a-f44a-46fd-a7ac-6d8be1ac8ca1",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "I see Linear is available. Let me check the teams first."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "5e08fa86-8286-486a-85fd-a5903b11d010",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "The Linear teams query is hitting a complexity limit. Let me try creating the issue directly with a team name, or try a different approach."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "60eba604-c823-45bd-af1a-16b487a3fb63",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "I can see team key \"DRM\". Let me create a task for you."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "a0941ba1-23e3-4d13-afec-5e98004d0497",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "Created **DRM-524** — \"Retrievable task\" in Triage state on the DRM team.\n\nhttps://linear.app/curri/issue/DRM-524/retrievable-task"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "c9bb314c-bd6f-422e-b6cd-3affc493c4b4",
-                "id": "3a66e21c-4324-4584-a930-f90221629f80",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:19Z"
-                }
-              }
-            }
-          }
+          "error": "JSON-RPC match failed: missing key at result"
         }
-      ]
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "6ce24e75-e910-4226-951b-4a1a5d6a2e67",
+      "id": "4ed4b68c-2a03-4e33-8d92-3fa0679d2df0",
       "spec_id": "a2a-v1",
       "test_case_id": "get-task-not-found",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 107654,
-      "started_at": "2026-04-27T13:41:19.674898696-05:00",
-      "completed_at": "2026-04-27T13:41:19.67500635-05:00",
+      "duration": 111632,
+      "started_at": "2026-04-27T15:09:31.91279706-05:00",
+      "completed_at": "2026-04-27T15:09:31.912908742-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 89579,
+          "duration": 99207,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "114",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:19 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"Task not found\",\"data\":\"nonexistent-task-id-00000000\"}}\n",
             "jsonrpc_resp": {
@@ -955,2428 +639,6 @@
                 "code": -32001,
                 "data": "nonexistent-task-id-00000000",
                 "message": "Task not found"
-              },
-              "id": 1,
-              "jsonrpc": "2.0"
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 2104,
-          "expected": {
-            "error": {
-              "code": "*",
-              "message": "*"
-            },
-            "id": 1,
-            "jsonrpc": "2.0"
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "114",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:19 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"Task not found\",\"data\":\"nonexistent-task-id-00000000\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32001,
-                "data": "nonexistent-task-id-00000000",
-                "message": "Task not found"
-              },
-              "id": 1,
-              "jsonrpc": "2.0"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "6363317d-1889-48b1-b747-cb60d634308c",
-      "spec_id": "a2a-v1",
-      "test_case_id": "cancel-task",
-      "runtime": "crush-a2a",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 7340101049,
-      "started_at": "2026-04-27T13:41:19.675007843-05:00",
-      "completed_at": "2026-04-27T13:41:27.015108892-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 7339917203,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "597",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:27 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"ae097fc7-b8ad-41b5-ac00-2e578644e2c3\",\"contextId\":\"39242c96-64c2-4b15-b82e-d80c007d0af1\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:27Z\"},\"artifacts\":[{\"artifactId\":\"cb76d568-02c2-4f50-af70-57c2b50601ce\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nStarting a long-running task — counting to infinity.\"}]},{\"artifactId\":\"a011d5ad-1599-4d77-8c6c-979cc6651421\",\"parts\":[{\"kind\":\"text\",\"text\":\"Counting is running in the background (shell ID: `004`). You can cancel it anytime — just say \\\"stop\\\" or \\\"cancel\\\" and I'll kill it.\"}]}]}}\n",
-            "jsonrpc_resp": {
-              "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "cb76d568-02c2-4f50-af70-57c2b50601ce",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "\nStarting a long-running task — counting to infinity."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "a011d5ad-1599-4d77-8c6c-979cc6651421",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "Counting is running in the background (shell ID: `004`). You can cancel it anytime — just say \"stop\" or \"cancel\" and I'll kill it."
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "39242c96-64c2-4b15-b82e-d80c007d0af1",
-                "id": "ae097fc7-b8ad-41b5-ac00-2e578644e2c3",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:27Z"
-                }
-              }
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 4870,
-          "expected": {
-            "id": 1,
-            "jsonrpc": "2.0",
-            "result": {
-              "id": "*",
-              "status": {
-                "state": "*"
-              }
-            }
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "597",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:27 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"ae097fc7-b8ad-41b5-ac00-2e578644e2c3\",\"contextId\":\"39242c96-64c2-4b15-b82e-d80c007d0af1\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:27Z\"},\"artifacts\":[{\"artifactId\":\"cb76d568-02c2-4f50-af70-57c2b50601ce\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nStarting a long-running task — counting to infinity.\"}]},{\"artifactId\":\"a011d5ad-1599-4d77-8c6c-979cc6651421\",\"parts\":[{\"kind\":\"text\",\"text\":\"Counting is running in the background (shell ID: `004`). You can cancel it anytime — just say \\\"stop\\\" or \\\"cancel\\\" and I'll kill it.\"}]}]}}\n",
-            "jsonrpc_resp": {
-              "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "cb76d568-02c2-4f50-af70-57c2b50601ce",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "\nStarting a long-running task — counting to infinity."
-                      }
-                    ]
-                  },
-                  {
-                    "artifactId": "a011d5ad-1599-4d77-8c6c-979cc6651421",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "Counting is running in the background (shell ID: `004`). You can cancel it anytime — just say \"stop\" or \"cancel\" and I'll kill it."
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "39242c96-64c2-4b15-b82e-d80c007d0af1",
-                "id": "ae097fc7-b8ad-41b5-ac00-2e578644e2c3",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:27Z"
-                }
-              }
-            }
-          }
-        },
-        {
-          "step_index": 2,
-          "action": "send",
-          "status": "pass",
-          "duration": 163299,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "127",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:27 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32002,\"message\":\"Task not cancelable\",\"data\":\"ae097fc7-b8ad-41b5-ac00-2e578644e2c3\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32002,
-                "data": "ae097fc7-b8ad-41b5-ac00-2e578644e2c3",
-                "message": "Task not cancelable"
-              },
-              "id": 2,
-              "jsonrpc": "2.0"
-            }
-          }
-        },
-        {
-          "step_index": 3,
-          "action": "expect",
-          "status": "pass",
-          "duration": 1432,
-          "expected": {
-            "id": 2,
-            "jsonrpc": "2.0"
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "127",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:27 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32002,\"message\":\"Task not cancelable\",\"data\":\"ae097fc7-b8ad-41b5-ac00-2e578644e2c3\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32002,
-                "data": "ae097fc7-b8ad-41b5-ac00-2e578644e2c3",
-                "message": "Task not cancelable"
-              },
-              "id": 2,
-              "jsonrpc": "2.0"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "02a97b10-f364-4b97-bc57-04670c0bf0be",
-      "spec_id": "a2a-v1",
-      "test_case_id": "message-text-part",
-      "runtime": "crush-a2a",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 1737916844,
-      "started_at": "2026-04-27T13:41:27.015112219-05:00",
-      "completed_at": "2026-04-27T13:41:28.753029073-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 1737897057,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "342",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:28 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"33d0a6fd-e347-4669-aaba-cb2ea30769ef\",\"contextId\":\"cf0bea72-abe8-418c-bf70-7f06076d006e\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:28Z\"},\"artifacts\":[{\"artifactId\":\"49ec1577-ed7a-4923-b51e-f3cce448c431\",\"parts\":[{\"kind\":\"text\",\"text\":\"Got it. How can I help you?\"}]}]}}\n",
-            "jsonrpc_resp": {
-              "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "49ec1577-ed7a-4923-b51e-f3cce448c431",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "Got it. How can I help you?"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "cf0bea72-abe8-418c-bf70-7f06076d006e",
-                "id": "33d0a6fd-e347-4669-aaba-cb2ea30769ef",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:28Z"
-                }
-              }
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 5220,
-          "expected": {
-            "id": 1,
-            "jsonrpc": "2.0",
-            "result": {
-              "id": "*"
-            }
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "342",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:28 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"33d0a6fd-e347-4669-aaba-cb2ea30769ef\",\"contextId\":\"cf0bea72-abe8-418c-bf70-7f06076d006e\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:28Z\"},\"artifacts\":[{\"artifactId\":\"49ec1577-ed7a-4923-b51e-f3cce448c431\",\"parts\":[{\"kind\":\"text\",\"text\":\"Got it. How can I help you?\"}]}]}}\n",
-            "jsonrpc_resp": {
-              "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "49ec1577-ed7a-4923-b51e-f3cce448c431",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "Got it. How can I help you?"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "cf0bea72-abe8-418c-bf70-7f06076d006e",
-                "id": "33d0a6fd-e347-4669-aaba-cb2ea30769ef",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:28Z"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "25ec1ae1-9051-469d-90e5-3347f133564a",
-      "spec_id": "a2a-v1",
-      "test_case_id": "message-with-context",
-      "runtime": "crush-a2a",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 3552047957,
-      "started_at": "2026-04-27T13:41:28.75303232-05:00",
-      "completed_at": "2026-04-27T13:41:32.305080277-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 1686321301,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "321",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:30 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"20213191-5117-4085-b011-113d71b2bb11\",\"contextId\":\"a241d0a9-4cfd-493c-98dd-0216464d1b2f\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:30Z\"},\"artifacts\":[{\"artifactId\":\"23d6ecd2-2641-49f7-8c58-0308c8dc6dd1\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello!\"}]}]}}\n",
-            "jsonrpc_resp": {
-              "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "23d6ecd2-2641-49f7-8c58-0308c8dc6dd1",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "Hello!"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "a241d0a9-4cfd-493c-98dd-0216464d1b2f",
-                "id": "20213191-5117-4085-b011-113d71b2bb11",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:30Z"
-                }
-              }
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 4739,
-          "expected": {
-            "id": 1,
-            "jsonrpc": "2.0",
-            "result": {
-              "contextId": "*",
-              "id": "*"
-            }
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "321",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:30 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"20213191-5117-4085-b011-113d71b2bb11\",\"contextId\":\"a241d0a9-4cfd-493c-98dd-0216464d1b2f\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:30Z\"},\"artifacts\":[{\"artifactId\":\"23d6ecd2-2641-49f7-8c58-0308c8dc6dd1\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello!\"}]}]}}\n",
-            "jsonrpc_resp": {
-              "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "23d6ecd2-2641-49f7-8c58-0308c8dc6dd1",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "Hello!"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "a241d0a9-4cfd-493c-98dd-0216464d1b2f",
-                "id": "20213191-5117-4085-b011-113d71b2bb11",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:30Z"
-                }
-              }
-            }
-          }
-        },
-        {
-          "step_index": 2,
-          "action": "send",
-          "status": "pass",
-          "duration": 1865699405,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "340",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:32 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"kind\":\"task\",\"id\":\"f9c626ef-6f2a-45c6-933e-b3b4cc52b87d\",\"contextId\":\"e6e12f7f-c843-4637-a9f6-0dd3129c657e\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:32Z\"},\"artifacts\":[{\"artifactId\":\"b3ddd8e1-17c2-42dd-8210-b75c14e5c91a\",\"parts\":[{\"kind\":\"text\",\"text\":\"What can I help you with?\"}]}]}}\n",
-            "jsonrpc_resp": {
-              "id": 2,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "b3ddd8e1-17c2-42dd-8210-b75c14e5c91a",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "What can I help you with?"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "e6e12f7f-c843-4637-a9f6-0dd3129c657e",
-                "id": "f9c626ef-6f2a-45c6-933e-b3b4cc52b87d",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:32Z"
-                }
-              }
-            }
-          }
-        },
-        {
-          "step_index": 3,
-          "action": "expect",
-          "status": "pass",
-          "duration": 5040,
-          "expected": {
-            "id": 2,
-            "jsonrpc": "2.0",
-            "result": {
-              "id": "*"
-            }
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "340",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:32 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"kind\":\"task\",\"id\":\"f9c626ef-6f2a-45c6-933e-b3b4cc52b87d\",\"contextId\":\"e6e12f7f-c843-4637-a9f6-0dd3129c657e\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:41:32Z\"},\"artifacts\":[{\"artifactId\":\"b3ddd8e1-17c2-42dd-8210-b75c14e5c91a\",\"parts\":[{\"kind\":\"text\",\"text\":\"What can I help you with?\"}]}]}}\n",
-            "jsonrpc_resp": {
-              "id": 2,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "b3ddd8e1-17c2-42dd-8210-b75c14e5c91a",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "What can I help you with?"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "e6e12f7f-c843-4637-a9f6-0dd3129c657e",
-                "id": "f9c626ef-6f2a-45c6-933e-b3b4cc52b87d",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:32Z"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "f3606176-3e4c-4a04-9aa2-a2ac7b338998",
-      "spec_id": "a2a-v1",
-      "test_case_id": "streaming-send",
-      "runtime": "crush-a2a",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 11953105586,
-      "started_at": "2026-04-27T13:41:32.305084565-05:00",
-      "completed_at": "2026-04-27T13:41:44.258190151-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 11952946666,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "cache-control": "no-cache",
-              "connection": "keep-alive",
-              "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 18:41:34 GMT"
-            },
-            "sse_events": [
-              {
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "status-update",
-                "status": {
-                  "state": "working",
-                  "timestamp": "2026-04-27T18:41:34Z"
-                },
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "daf7c16b-4a8c-465d-9610-9d86267359b8",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "877f4253-6d1e-4f08-ad18-a6cc95875153",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure —"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "52039abd-5b85-4867-bbc9-960ea24bc5d4",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure — what"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "d06c78b1-446a-4c88-94fe-4dc9da5f2c1c",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure — what would you like me"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "69d8cac4-3b4c-4acf-bc36-e2feade8eb99",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure — what would you like me to help with"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "1460e322-78a7-4334-a0a6-4e7f50e462db",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure — what would you like me to help with?"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "74f7b77c-84fb-4463-983f-8a01300d135e",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure — what would you like me to help with?"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "final": true,
-                "kind": "status-update",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:34Z"
-                },
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              }
-            ],
-            "parsed": {
-              "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-              "final": true,
-              "kind": "status-update",
-              "status": {
-                "state": "completed",
-                "timestamp": "2026-04-27T18:41:34Z"
-              },
-              "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 11762,
-          "expected": {
-            "headers": {
-              "content-type": "text/event-stream"
-            },
-            "http_status": 200
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "cache-control": "no-cache",
-              "connection": "keep-alive",
-              "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 18:41:34 GMT"
-            },
-            "sse_events": [
-              {
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "status-update",
-                "status": {
-                  "state": "working",
-                  "timestamp": "2026-04-27T18:41:34Z"
-                },
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "daf7c16b-4a8c-465d-9610-9d86267359b8",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "877f4253-6d1e-4f08-ad18-a6cc95875153",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure —"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "52039abd-5b85-4867-bbc9-960ea24bc5d4",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure — what"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "d06c78b1-446a-4c88-94fe-4dc9da5f2c1c",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure — what would you like me"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "69d8cac4-3b4c-4acf-bc36-e2feade8eb99",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure — what would you like me to help with"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "1460e322-78a7-4334-a0a6-4e7f50e462db",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure — what would you like me to help with?"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "artifact": {
-                  "artifactId": "74f7b77c-84fb-4463-983f-8a01300d135e",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "Sure — what would you like me to help with?"
-                    }
-                  ]
-                },
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "kind": "artifact-update",
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              },
-              {
-                "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-                "final": true,
-                "kind": "status-update",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:34Z"
-                },
-                "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-              }
-            ],
-            "parsed": {
-              "contextId": "a768092f-eb67-436b-b521-f7d739138e76",
-              "final": true,
-              "kind": "status-update",
-              "status": {
-                "state": "completed",
-                "timestamp": "2026-04-27T18:41:34Z"
-              },
-              "taskId": "84c5aa36-f0d4-48f6-b379-2d2fa3b7d04b"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "3c58f3c9-6d80-4ffb-8ace-685a20e2bbe4",
-      "spec_id": "a2a-v1",
-      "test_case_id": "streaming-events",
-      "runtime": "crush-a2a",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 14244939547,
-      "started_at": "2026-04-27T13:41:44.258196774-05:00",
-      "completed_at": "2026-04-27T13:41:58.503136311-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 14244906535,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "cache-control": "no-cache",
-              "connection": "keep-alive",
-              "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 18:41:48 GMT"
-            },
-            "sse_events": [
-              {
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "status-update",
-                "status": {
-                  "state": "working",
-                  "timestamp": "2026-04-27T18:41:48Z"
-                },
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "df2daa35-7c19-4e39-91a6-52ca06901950",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "6cab38b7-14ee-4a08-b95c-668cb51ceb1b",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clar"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "0296e01a-fa59-4d9e-aa41-45e425ad401f",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "fc7ea20d-6d4d-4657-be36-10cfc35caddb",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean?"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "ccfc0c69-3c9e-414d-94ed-24b818e060e3",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "609589f6-2c07-4b46-aab3-65172788bc71",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpret"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "7efe1412-5d1d-48e7-b24c-d51dacbe3abc",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n-"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "fe033415-6bd6-4d98-b0a7-c7a9786f2995",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "40dcee60-3872-45e4-9cfc-3c06dcfd14bf",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "d7fba13e-0867-4754-a3be-f8d444899300",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "bae88f79-5179-428e-9c0d-728d6a2d944d",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "53e88fb9-41fd-42e1-9888-e8656233a4a7",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** —"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "dfccfcd6-9e59-45b0-8e1f-28f156d7ff7b",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "a85dd296-89db-4d92-b001-40b29e105b36",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "74b4f7fb-e907-4b40-8175-e535dea5c09e",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "c0756237-9869-4841-9215-877a61ef0d00",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "11fce679-7aac-45e2-813b-3c0abf67cc05",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "7dc11506-d8ef-438c-a9a6-5e2721158683",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "d2cd39d2-7e85-4664-9712-624fa5a6acc4",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "38c927c0-be40-4d28-a1b2-15181d34df6d",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "8ca3cb01-469e-4a00-a37e-32951a19ecfb",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "0c5b6cd7-20dd-4ddd-9da3-3b212466157c",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "4a7b3c95-c718-4781-9792-a4add0c3d923",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "27adbaaa-f6bc-48f5-9dc7-6936d3847143",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "31645ecc-b5ed-41b3-8533-45c9e86edf97",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "9cdfd54f-5130-4967-a394-55b1a9a09b83",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "2dc790c5-e238-47bc-ab0b-74765ebba837",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "7c5c70cd-3f43-4d6e-abb8-a874715e18a0",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "970b44fd-54f2-47d6-a955-3899969aad28",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output —"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "faa5a8ab-f291-477b-b519-961636d865f5",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "c6502318-58c1-4e4e-ae4d-6c225e120519",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "6e49070b-040e-4a35-b50d-0b2c889c35d6",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "a72c8e53-fbbe-4357-924f-dd8803fa91b6",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "63aec506-26b5-45da-a0a0-fb6115c2d3f0",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "474cb0d4-d976-41dc-895e-77010d0e3efe",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "382e35dd-4d67-49f7-aed8-cb2d574435bf",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "bd258400-65e3-4b88-853d-6d6a5b64e009",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "bb2f9357-a548-41b2-81a1-204e19a2c786",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "386d0538-a063-4db0-9df4-5de43a415fa3",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "324ff3b3-b775-4ee8-8ab2-e7258513f7ef",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "2dacbda0-83e7-43f0-b15b-7a974b1c69f2",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "18bd682a-96f6-40b6-992f-f987997f5ce6",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "2d786ef2-8eca-47fc-94a2-f4a5d7afa729",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "aaee2d35-032e-476a-8107-bb3bcf9f8fdf",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi-step task\n\nWhat"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "cc870cd4-ba48-49bf-81bb-8755abc29458",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi-step task\n\nWhat task"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "c708e20f-5806-40f0-b5c9-256cbcdc0df9",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi-step task\n\nWhat task would you like me to work"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "6fd2c47c-70b5-4ccd-bdbe-351d21002a5e",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi-step task\n\nWhat task would you like me to work on?"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "4f9f5895-a1ef-4823-a728-4b5f19fc43ca",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi-step task\n\nWhat task would you like me to work on?"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "final": true,
-                "kind": "status-update",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:48Z"
-                },
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              }
-            ],
-            "parsed": {
-              "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-              "final": true,
-              "kind": "status-update",
-              "status": {
-                "state": "completed",
-                "timestamp": "2026-04-27T18:41:48Z"
-              },
-              "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 4488,
-          "expected": {
-            "sse_event": {
-              "status": {
-                "state": "*"
-              },
-              "taskId": "*"
-            }
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "cache-control": "no-cache",
-              "connection": "keep-alive",
-              "content-type": "text/event-stream",
-              "date": "Mon, 27 Apr 2026 18:41:48 GMT"
-            },
-            "sse_events": [
-              {
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "status-update",
-                "status": {
-                  "state": "working",
-                  "timestamp": "2026-04-27T18:41:48Z"
-                },
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "df2daa35-7c19-4e39-91a6-52ca06901950",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "6cab38b7-14ee-4a08-b95c-668cb51ceb1b",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clar"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "0296e01a-fa59-4d9e-aa41-45e425ad401f",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "fc7ea20d-6d4d-4657-be36-10cfc35caddb",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean?"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "ccfc0c69-3c9e-414d-94ed-24b818e060e3",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "609589f6-2c07-4b46-aab3-65172788bc71",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpret"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "7efe1412-5d1d-48e7-b24c-d51dacbe3abc",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n-"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "fe033415-6bd6-4d98-b0a7-c7a9786f2995",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "40dcee60-3872-45e4-9cfc-3c06dcfd14bf",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "d7fba13e-0867-4754-a3be-f8d444899300",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "bae88f79-5179-428e-9c0d-728d6a2d944d",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "53e88fb9-41fd-42e1-9888-e8656233a4a7",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** —"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "dfccfcd6-9e59-45b0-8e1f-28f156d7ff7b",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "a85dd296-89db-4d92-b001-40b29e105b36",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "74b4f7fb-e907-4b40-8175-e535dea5c09e",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "c0756237-9869-4841-9215-877a61ef0d00",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "11fce679-7aac-45e2-813b-3c0abf67cc05",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "7dc11506-d8ef-438c-a9a6-5e2721158683",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "d2cd39d2-7e85-4664-9712-624fa5a6acc4",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "38c927c0-be40-4d28-a1b2-15181d34df6d",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "8ca3cb01-469e-4a00-a37e-32951a19ecfb",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "0c5b6cd7-20dd-4ddd-9da3-3b212466157c",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "4a7b3c95-c718-4781-9792-a4add0c3d923",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "27adbaaa-f6bc-48f5-9dc7-6936d3847143",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "31645ecc-b5ed-41b3-8533-45c9e86edf97",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "9cdfd54f-5130-4967-a394-55b1a9a09b83",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "2dc790c5-e238-47bc-ab0b-74765ebba837",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "7c5c70cd-3f43-4d6e-abb8-a874715e18a0",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "970b44fd-54f2-47d6-a955-3899969aad28",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output —"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "faa5a8ab-f291-477b-b519-961636d865f5",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "c6502318-58c1-4e4e-ae4d-6c225e120519",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "6e49070b-040e-4a35-b50d-0b2c889c35d6",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "a72c8e53-fbbe-4357-924f-dd8803fa91b6",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "63aec506-26b5-45da-a0a0-fb6115c2d3f0",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "474cb0d4-d976-41dc-895e-77010d0e3efe",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "382e35dd-4d67-49f7-aed8-cb2d574435bf",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "bd258400-65e3-4b88-853d-6d6a5b64e009",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "bb2f9357-a548-41b2-81a1-204e19a2c786",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "386d0538-a063-4db0-9df4-5de43a415fa3",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "324ff3b3-b775-4ee8-8ab2-e7258513f7ef",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "2dacbda0-83e7-43f0-b15b-7a974b1c69f2",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "18bd682a-96f6-40b6-992f-f987997f5ce6",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "2d786ef2-8eca-47fc-94a2-f4a5d7afa729",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "aaee2d35-032e-476a-8107-bb3bcf9f8fdf",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi-step task\n\nWhat"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "cc870cd4-ba48-49bf-81bb-8755abc29458",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi-step task\n\nWhat task"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "c708e20f-5806-40f0-b5c9-256cbcdc0df9",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi-step task\n\nWhat task would you like me to work"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "6fd2c47c-70b5-4ccd-bdbe-351d21002a5e",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi-step task\n\nWhat task would you like me to work on?"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "artifact": {
-                  "artifactId": "4f9f5895-a1ef-4823-a728-4b5f19fc43ca",
-                  "parts": [
-                    {
-                      "kind": "text",
-                      "text": "\nCould you clarify what you mean? Here are a few interpretations:\n\n- **Track a task with a todo list** — I can create a structured task list and update status as I work through steps\n- **Run a long-running background process** and stream its output — I can launch a command and poll for results\n- **Demo the todo/progress system** — I can show how status updates work on a sample multi-step task\n\nWhat task would you like me to work on?"
-                    }
-                  ]
-                },
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "kind": "artifact-update",
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              },
-              {
-                "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-                "final": true,
-                "kind": "status-update",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:41:48Z"
-                },
-                "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-              }
-            ],
-            "parsed": {
-              "contextId": "c2cc696f-97db-456d-8b9b-0eb7b6622c12",
-              "final": true,
-              "kind": "status-update",
-              "status": {
-                "state": "completed",
-                "timestamp": "2026-04-27T18:41:48Z"
-              },
-              "taskId": "f6e538e9-8cb8-4e26-9a5d-68e7bd270e2e"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "e9b32756-c72e-4e75-a285-c4e9b4b13f27",
-      "spec_id": "a2a-v1",
-      "test_case_id": "jsonrpc-parse-error",
-      "runtime": "crush-a2a",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 442497,
-      "started_at": "2026-04-27T13:41:58.503140559-05:00",
-      "completed_at": "2026-04-27T13:41:58.503583045-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 421647,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "150",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:58 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Parse error\",\"data\":\"invalid character 'i' looking for beginning of object key string\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "data": "invalid character 'i' looking for beginning of object key string",
-                "message": "Parse error"
-              },
-              "id": null,
-              "jsonrpc": "2.0"
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 1733,
-          "expected": {
-            "error": {
-              "code": -32700,
-              "message": "*"
-            },
-            "jsonrpc": "2.0"
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "150",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:58 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Parse error\",\"data\":\"invalid character 'i' looking for beginning of object key string\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "data": "invalid character 'i' looking for beginning of object key string",
-                "message": "Parse error"
-              },
-              "id": null,
-              "jsonrpc": "2.0"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "13ec5b41-f5b8-4582-a8bb-b098c5c18729",
-      "spec_id": "a2a-v1",
-      "test_case_id": "jsonrpc-invalid-request",
-      "runtime": "crush-a2a",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 111872,
-      "started_at": "2026-04-27T13:41:58.503583997-05:00",
-      "completed_at": "2026-04-27T13:41:58.503695879-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 104017,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "110",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:58 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"jsonrpc must be \\\"2.0\\\"\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32600,
-                "data": "jsonrpc must be \"2.0\"",
-                "message": "Invalid Request"
-              },
-              "id": 1,
-              "jsonrpc": "2.0"
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 2274,
-          "expected": {
-            "error": {
-              "code": -32600,
-              "message": "*"
-            },
-            "jsonrpc": "2.0"
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "110",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:58 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"jsonrpc must be \\\"2.0\\\"\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32600,
-                "data": "jsonrpc must be \"2.0\"",
-                "message": "Invalid Request"
-              },
-              "id": 1,
-              "jsonrpc": "2.0"
-            }
-          }
-        }
-      ]
-    },
-    {
-      "id": "71efa789-0182-400e-83dd-e6ff0f6090da",
-      "spec_id": "a2a-v1",
-      "test_case_id": "jsonrpc-method-not-found",
-      "runtime": "crush-a2a",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 92134,
-      "started_at": "2026-04-27T13:41:58.503698213-05:00",
-      "completed_at": "2026-04-27T13:41:58.503790357-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 83127,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "105",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:58 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"NonExistentMethod\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "NonExistentMethod",
-                "message": "Method not found"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -3390,6 +652,565 @@
           "duration": 1242,
           "expected": {
             "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "114",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"Task not found\",\"data\":\"nonexistent-task-id-00000000\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": "nonexistent-task-id-00000000",
+                "message": "Task not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1b0a03a0-2da2-4087-a4a5-5fc1883a9d4e",
+      "spec_id": "a2a-v1",
+      "test_case_id": "cancel-task",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 2245168,
+      "started_at": "2026-04-27T15:09:31.912909573-05:00",
+      "completed_at": "2026-04-27T15:09:31.915154781-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 2237824,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "217",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 2033,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "217",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "6097cfa6-865c-4aa2-8b69-1901aca47f06",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-text-part",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 2784468,
+      "started_at": "2026-04-27T15:09:31.915161113-05:00",
+      "completed_at": "2026-04-27T15:09:31.917945631-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 2775671,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "217",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 2695,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "217",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "6cf66862-81de-4245-adad-7d163d2ec303",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-with-context",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 2166308,
+      "started_at": "2026-04-27T15:09:31.917947334-05:00",
+      "completed_at": "2026-04-27T15:09:31.920113642-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 2156950,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "217",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 2405,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "217",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "26c90b75-babb-44b5-82fa-aa56949359ff",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-send",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 2244246,
+      "started_at": "2026-04-27T15:09:31.920114975-05:00",
+      "completed_at": "2026-04-27T15:09:31.922359291-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 2231582,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "217",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 2615,
+          "expected": {
+            "headers": {
+              "content-type": "text/event-stream"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "217",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "header content-type: expected \"text/event-stream\", got \"application/json\""
+        }
+      ],
+      "error_message": "header content-type: expected \"text/event-stream\", got \"application/json\""
+    },
+    {
+      "id": "5aed0fe7-4469-4065-9281-92198ae11f97",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-events",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 2135901,
+      "started_at": "2026-04-27T15:09:31.922360262-05:00",
+      "completed_at": "2026-04-27T15:09:31.924496173-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 2129158,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "217",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 942,
+          "expected": {
+            "sse_event": {
+              "status": {
+                "state": "*"
+              },
+              "taskId": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "217",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "expected SSE events but got none"
+        }
+      ],
+      "error_message": "expected SSE events but got none"
+    },
+    {
+      "id": "1a6b1564-3720-424f-9a44-8c2b9f3da5cf",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-parse-error",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 93196,
+      "started_at": "2026-04-27T15:09:31.924497426-05:00",
+      "completed_at": "2026-04-27T15:09:31.924590672-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 85722,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "150",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Parse error\",\"data\":\"invalid character 'i' looking for beginning of object key string\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "data": "invalid character 'i' looking for beginning of object key string",
+                "message": "Parse error"
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1172,
+          "expected": {
+            "error": {
+              "code": -32700,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "150",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Parse error\",\"data\":\"invalid character 'i' looking for beginning of object key string\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "data": "invalid character 'i' looking for beginning of object key string",
+                "message": "Parse error"
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "697523c2-a0c8-4e8f-aa73-9651f211c2dc",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-invalid-request",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 53652,
+      "started_at": "2026-04-27T15:09:31.924591243-05:00",
+      "completed_at": "2026-04-27T15:09:31.924644955-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 48752,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "110",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"jsonrpc must be \\\"2.0\\\"\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "data": "jsonrpc must be \"2.0\"",
+                "message": "Invalid Request"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 781,
+          "expected": {
+            "error": {
+              "code": -32600,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "110",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"jsonrpc must be \\\"2.0\\\"\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "data": "jsonrpc must be \"2.0\"",
+                "message": "Invalid Request"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "c79e2392-c160-4068-b97f-74ef3a5368b5",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-method-not-found",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 62408,
+      "started_at": "2026-04-27T15:09:31.924645476-05:00",
+      "completed_at": "2026-04-27T15:09:31.924707874-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 58501,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "105",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"NonExistentMethod\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "NonExistentMethod",
+                "message": "Method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 772,
+          "expected": {
+            "error": {
               "code": -32601,
               "message": "*"
             },
@@ -3401,7 +1222,7 @@
             "headers": {
               "content-length": "105",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:58 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"NonExistentMethod\"}}\n",
             "jsonrpc_resp": {
@@ -3418,27 +1239,27 @@
       ]
     },
     {
-      "id": "8e2b790c-e19c-446c-adb2-dc88a5357dee",
+      "id": "2e67134d-7dda-4238-98b8-aea1b5ff4e3f",
       "spec_id": "a2a-v1",
       "test_case_id": "missing-required-params",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 60374,
-      "started_at": "2026-04-27T13:41:58.50379174-05:00",
-      "completed_at": "2026-04-27T13:41:58.503852114-05:00",
+      "duration": 73769,
+      "started_at": "2026-04-27T15:09:31.924708415-05:00",
+      "completed_at": "2026-04-27T15:09:31.924782184-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 55114,
+          "duration": 69361,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:58 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
@@ -3456,7 +1277,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 942,
+          "duration": 781,
           "expected": {
             "error": {
               "code": -32602,
@@ -3470,7 +1291,7 @@
             "headers": {
               "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:41:58 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
@@ -3487,60 +1308,45 @@
       ]
     },
     {
-      "id": "6c4379b7-8b65-439b-865a-026c760767c9",
+      "id": "c7708edc-e723-4ead-a02f-3261d1be886a",
       "spec_id": "a2a-v1",
       "test_case_id": "optional-message-id",
       "runtime": "crush-a2a",
       "runtime_version": "",
-      "status": "pass",
-      "duration": 2489940488,
-      "started_at": "2026-04-27T13:41:58.503854609-05:00",
-      "completed_at": "2026-04-27T13:42:00.993795097-05:00",
+      "status": "fail",
+      "duration": 2221523,
+      "started_at": "2026-04-27T15:09:31.924785851-05:00",
+      "completed_at": "2026-04-27T15:09:31.927007374-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 2489932062,
+          "duration": 2215982,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "387",
+              "content-length": "217",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:42:00 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"e6cc7fda-8320-4d02-83d1-18a430b527cd\",\"contextId\":\"de815e41-779c-40a4-b31a-57f4da5fcad0\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:42:00Z\"},\"artifacts\":[{\"artifactId\":\"4d812d43-bd93-4019-8f61-eca21474b46a\",\"parts\":[{\"kind\":\"text\",\"text\":\"It looks like your message came through empty. What can I help you with?\"}]}]}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
             "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
               "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "4d812d43-bd93-4019-8f61-eca21474b46a",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "It looks like your message came through empty. What can I help you with?"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "de815e41-779c-40a4-b31a-57f4da5fcad0",
-                "id": "e6cc7fda-8320-4d02-83d1-18a430b527cd",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:42:00Z"
-                }
-              }
+              "jsonrpc": "2.0"
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "pass",
-          "duration": 3957,
+          "status": "fail",
+          "duration": 2134,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -3551,94 +1357,66 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "387",
+              "content-length": "217",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:42:00 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"e6cc7fda-8320-4d02-83d1-18a430b527cd\",\"contextId\":\"de815e41-779c-40a4-b31a-57f4da5fcad0\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:42:00Z\"},\"artifacts\":[{\"artifactId\":\"4d812d43-bd93-4019-8f61-eca21474b46a\",\"parts\":[{\"kind\":\"text\",\"text\":\"It looks like your message came through empty. What can I help you with?\"}]}]}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
             "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
               "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "4d812d43-bd93-4019-8f61-eca21474b46a",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "It looks like your message came through empty. What can I help you with?"
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "de815e41-779c-40a4-b31a-57f4da5fcad0",
-                "id": "e6cc7fda-8320-4d02-83d1-18a430b527cd",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:42:00Z"
-                }
-              }
+              "jsonrpc": "2.0"
             }
-          }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
         }
-      ]
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "56bf56cc-6805-4725-83eb-02e91a16ffd9",
+      "id": "083f52e3-379d-4975-afca-9c3a96d1568b",
       "spec_id": "a2a-v1",
       "test_case_id": "push-notification-not-supported",
       "runtime": "crush-a2a",
       "runtime_version": "",
-      "status": "pass",
-      "duration": 4139402653,
-      "started_at": "2026-04-27T13:42:00.993798954-05:00",
-      "completed_at": "2026-04-27T13:42:05.133201617-05:00",
+      "status": "fail",
+      "duration": 2969618,
+      "started_at": "2026-04-27T15:09:31.927008466-05:00",
+      "completed_at": "2026-04-27T15:09:31.929978074-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 4139233784,
+          "duration": 2954860,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "687",
+              "content-length": "217",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:42:05 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"bc84bf46-efa7-45b2-81b0-4b1fab31efe5\",\"contextId\":\"d0d1498b-cb08-44b1-89b8-24728db84b1d\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:42:05Z\"},\"artifacts\":[{\"artifactId\":\"65216b8a-16db-40f2-ad66-71871e93a5ab\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nI need a bit more context to help effectively. Could you clarify:\\n\\n- **Where** should this task be created? (e.g., GitHub issue, Linear ticket, a local TODO file, or just a todo list in this session?)\\n- **What details** should it include? (e.g., specific platforms like iOS/Android, test scenarios, acceptance criteria?)\\n\\nLet me know and I'll create it immediately.\"}]}]}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
             "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
               "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "65216b8a-16db-40f2-ad66-71871e93a5ab",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "\nI need a bit more context to help effectively. Could you clarify:\n\n- **Where** should this task be created? (e.g., GitHub issue, Linear ticket, a local TODO file, or just a todo list in this session?)\n- **What details** should it include? (e.g., specific platforms like iOS/Android, test scenarios, acceptance criteria?)\n\nLet me know and I'll create it immediately."
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "d0d1498b-cb08-44b1-89b8-24728db84b1d",
-                "id": "bc84bf46-efa7-45b2-81b0-4b1fab31efe5",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:42:05Z"
-                }
-              }
+              "jsonrpc": "2.0"
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "pass",
-          "duration": 4969,
+          "status": "fail",
+          "duration": 2144,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -3649,99 +1427,34 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "687",
+              "content-length": "217",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:42:05 GMT"
+              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"bc84bf46-efa7-45b2-81b0-4b1fab31efe5\",\"contextId\":\"d0d1498b-cb08-44b1-89b8-24728db84b1d\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T18:42:05Z\"},\"artifacts\":[{\"artifactId\":\"65216b8a-16db-40f2-ad66-71871e93a5ab\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nI need a bit more context to help effectively. Could you clarify:\\n\\n- **Where** should this task be created? (e.g., GitHub issue, Linear ticket, a local TODO file, or just a todo list in this session?)\\n- **What details** should it include? (e.g., specific platforms like iOS/Android, test scenarios, acceptance criteria?)\\n\\nLet me know and I'll create it immediately.\"}]}]}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
             "jsonrpc_resp": {
+              "error": {
+                "code": -32603,
+                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
+                "message": "Internal error"
+              },
               "id": 1,
-              "jsonrpc": "2.0",
-              "result": {
-                "artifacts": [
-                  {
-                    "artifactId": "65216b8a-16db-40f2-ad66-71871e93a5ab",
-                    "parts": [
-                      {
-                        "kind": "text",
-                        "text": "\nI need a bit more context to help effectively. Could you clarify:\n\n- **Where** should this task be created? (e.g., GitHub issue, Linear ticket, a local TODO file, or just a todo list in this session?)\n- **What details** should it include? (e.g., specific platforms like iOS/Android, test scenarios, acceptance criteria?)\n\nLet me know and I'll create it immediately."
-                      }
-                    ]
-                  }
-                ],
-                "contextId": "d0d1498b-cb08-44b1-89b8-24728db84b1d",
-                "id": "bc84bf46-efa7-45b2-81b0-4b1fab31efe5",
-                "kind": "task",
-                "status": {
-                  "state": "completed",
-                  "timestamp": "2026-04-27T18:42:05Z"
-                }
-              }
-            }
-          }
-        },
-        {
-          "step_index": 2,
-          "action": "send",
-          "status": "pass",
-          "duration": 142890,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "120",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:42:05 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"CreateTaskPushNotificationConfig\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "CreateTaskPushNotificationConfig",
-                "message": "Method not found"
-              },
-              "id": 2,
               "jsonrpc": "2.0"
             }
-          }
-        },
-        {
-          "step_index": 3,
-          "action": "expect",
-          "status": "pass",
-          "duration": 1413,
-          "expected": {
-            "id": 2,
-            "jsonrpc": "2.0"
           },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "120",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 18:42:05 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"CreateTaskPushNotificationConfig\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "CreateTaskPushNotificationConfig",
-                "message": "Method not found"
-              },
-              "id": 2,
-              "jsonrpc": "2.0"
-            }
-          }
+          "error": "JSON-RPC match failed: missing key at result"
         }
-      ]
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
     }
   ],
   "summary": {
     "total": 19,
-    "passed": 19,
-    "failed": 0,
+    "passed": 9,
+    "failed": 10,
     "errors": 0,
     "skipped": 0,
     "timeouts": 0,
-    "compliance": 100
+    "compliance": 47.368421052631575
   }
 }

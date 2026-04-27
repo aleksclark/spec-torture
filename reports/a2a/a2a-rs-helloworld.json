@@ -1,0 +1,1592 @@
+{
+  "id": "7fed8bc9-b296-4454-88da-37e74e56d5ca",
+  "spec_id": "a2a-v1",
+  "runtime": "a2a-rs-helloworld",
+  "runtime_version": "",
+  "started_at": "2026-04-27T15:08:07.999450716-05:00",
+  "completed_at": "2026-04-27T15:08:08.004268672-05:00",
+  "results": [
+    {
+      "id": "7c4d73bb-3223-4cde-a3c7-61f1c2334822",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-well-known",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 1051199,
+      "started_at": "2026-04-27T15:08:07.999501813-05:00",
+      "completed_at": "2026-04-27T15:08:08.000553012-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1036712,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 5851,
+          "expected": {
+            "body": {
+              "name": "*",
+              "skills": "*",
+              "url": "*",
+              "version": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          },
+          "error": "body match failed: missing key at url"
+        }
+      ],
+      "error_message": "body match failed: missing key at url"
+    },
+    {
+      "id": "65733808-9d8c-4afd-8069-27524985405f",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-content-type",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 224615,
+      "started_at": "2026-04-27T15:08:08.000554915-05:00",
+      "completed_at": "2026-04-27T15:08:08.00077953-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 210248,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1042,
+          "expected": {
+            "headers": {
+              "content-type": "application/json"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "29cc1bea-509d-4c70-8256-9add73129429",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-optional-fields",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 143662,
+      "started_at": "2026-04-27T15:08:08.000781374-05:00",
+      "completed_at": "2026-04-27T15:08:08.000925045-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 136268,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 841,
+          "expected": {
+            "body": {
+              "capabilities": "*",
+              "description": "*",
+              "name": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c83737ac-9d0b-42ee-963d-266568fdeb8c",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-skills",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 130307,
+      "started_at": "2026-04-27T15:08:08.000928211-05:00",
+      "completed_at": "2026-04-27T15:08:08.001058508-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 125407,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 621,
+          "expected": {
+            "body": {
+              "skills": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b2836257-5a54-4fbf-b2e5-ac9177004a11",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-basic",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 278266,
+      "started_at": "2026-04-27T15:08:08.001058949-05:00",
+      "completed_at": "2026-04-27T15:08:08.001337215-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 272856,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1623,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "b293a2d6-a5ea-4eb4-8ff8-edccfb2d04ab",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-creates-task",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 188907,
+      "started_at": "2026-04-27T15:08:08.001338588-05:00",
+      "completed_at": "2026-04-27T15:08:08.001527235-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 182555,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1192,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*",
+              "kind": "task",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "eb0a4f55-af12-4027-b796-0021dcc1e95e",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 167186,
+      "started_at": "2026-04-27T15:08:08.001528087-05:00",
+      "completed_at": "2026-04-27T15:08:08.001695263-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 161946,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1483,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "3864f943-dcee-43e5-be3e-591917727908",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task-not-found",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 190931,
+      "started_at": "2026-04-27T15:08:08.001695904-05:00",
+      "completed_at": "2026-04-27T15:08:08.001886845-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 185150,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "105",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found: nonexistent-task-id-00000000\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "message": "task not found: nonexistent-task-id-00000000"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1162,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "105",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found: nonexistent-task-id-00000000\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "message": "task not found: nonexistent-task-id-00000000"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "a1df8c6d-1dac-445c-927e-bf70c36f4169",
+      "spec_id": "a2a-v1",
+      "test_case_id": "cancel-task",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 162227,
+      "started_at": "2026-04-27T15:08:08.001887467-05:00",
+      "completed_at": "2026-04-27T15:08:08.002049683-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 157478,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1112,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "bc5aa5d6-d66d-4740-92ab-b234cbc6e406",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-text-part",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 165123,
+      "started_at": "2026-04-27T15:08:08.002053761-05:00",
+      "completed_at": "2026-04-27T15:08:08.002218844-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 158079,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1673,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "25aaea91-bef6-49e4-9498-b54834265252",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-with-context",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 175572,
+      "started_at": "2026-04-27T15:08:08.002219515-05:00",
+      "completed_at": "2026-04-27T15:08:08.002395097-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 170693,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1162,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "167a1fc2-b22b-4c15-9dd2-a0fc9602805c",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-send",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 279890,
+      "started_at": "2026-04-27T15:08:08.002395648-05:00",
+      "completed_at": "2026-04-27T15:08:08.002675548-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 252237,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 16391,
+          "expected": {
+            "headers": {
+              "content-type": "text/event-stream"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "header content-type: expected \"text/event-stream\", got \"application/json\""
+        }
+      ],
+      "error_message": "header content-type: expected \"text/event-stream\", got \"application/json\""
+    },
+    {
+      "id": "207657aa-b7e5-4cc9-8e8e-58c4ab2a2161",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-events",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 211279,
+      "started_at": "2026-04-27T15:08:08.00267658-05:00",
+      "completed_at": "2026-04-27T15:08:08.002887809-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 199457,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 701,
+          "expected": {
+            "sse_event": {
+              "status": {
+                "state": "*"
+              },
+              "taskId": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "expected SSE events but got none"
+        }
+      ],
+      "error_message": "expected SSE events but got none"
+    },
+    {
+      "id": "918a9b03-3f12-4feb-8d80-d8e6a3a0fce9",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-parse-error",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 176294,
+      "started_at": "2026-04-27T15:08:08.002888891-05:00",
+      "completed_at": "2026-04-27T15:08:08.003065235-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 170813,
+          "actual": {
+            "http_status": 400,
+            "headers": {
+              "content-length": "81",
+              "content-type": "text/plain; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "Failed to parse the request body as JSON: key must be a string at line 1 column 2"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 912,
+          "expected": {
+            "error": {
+              "code": -32700,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 400,
+            "headers": {
+              "content-length": "81",
+              "content-type": "text/plain; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "Failed to parse the request body as JSON: key must be a string at line 1 column 2"
+          },
+          "error": "expected JSON-RPC response but got none"
+        }
+      ],
+      "error_message": "expected JSON-RPC response but got none"
+    },
+    {
+      "id": "2f806fcc-9e69-4016-84cf-914fcf87f6c4",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-invalid-request",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 146117,
+      "started_at": "2026-04-27T15:08:08.003065816-05:00",
+      "completed_at": "2026-04-27T15:08:08.003211943-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 140075,
+          "actual": {
+            "http_status": 422,
+            "headers": {
+              "content-length": "101",
+              "content-type": "text/plain; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "Failed to deserialize the JSON body into the target type: missing field `jsonrpc` at line 1 column 48"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 751,
+          "expected": {
+            "error": {
+              "code": -32600,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 422,
+            "headers": {
+              "content-length": "101",
+              "content-type": "text/plain; charset=utf-8",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "Failed to deserialize the JSON body into the target type: missing field `jsonrpc` at line 1 column 48"
+          },
+          "error": "expected JSON-RPC response but got none"
+        }
+      ],
+      "error_message": "expected JSON-RPC response but got none"
+    },
+    {
+      "id": "b201a423-d940-42e4-978e-3ef0de0b98fd",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-method-not-found",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 154713,
+      "started_at": "2026-04-27T15:08:08.003213105-05:00",
+      "completed_at": "2026-04-27T15:08:08.003367818-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 146928,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "96",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found: NonExistentMethod\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "method not found: NonExistentMethod"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1242,
+          "expected": {
+            "error": {
+              "code": -32601,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "96",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found: NonExistentMethod\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "message": "method not found: NonExistentMethod"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "a182ac6c-e752-4494-a561-592d474047d8",
+      "spec_id": "a2a-v1",
+      "test_case_id": "missing-required-params",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 490508,
+      "started_at": "2026-04-27T15:08:08.003368429-05:00",
+      "completed_at": "2026-04-27T15:08:08.003858947-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 484737,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "441",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd08e-6c43-73a1-aacc-1b6a72d19eae\",\"id\":\"019dd08e-6c43-73a1-aacc-1b520e09fdef\",\"status\":{\"message\":{\"contextId\":\"019dd08e-6c43-73a1-aacc-1b6a72d19eae\",\"messageId\":\"019dd08e-6c43-73a1-aacc-1b7951bd4148\",\"parts\":[{\"text\":\"Echo: \"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd08e-6c43-73a1-aacc-1b520e09fdef\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T20:08:08.003584898+00:00\"}}}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd08e-6c43-73a1-aacc-1b6a72d19eae",
+                  "id": "019dd08e-6c43-73a1-aacc-1b520e09fdef",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd08e-6c43-73a1-aacc-1b6a72d19eae",
+                      "messageId": "019dd08e-6c43-73a1-aacc-1b7951bd4148",
+                      "parts": [
+                        {
+                          "text": "Echo: "
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd08e-6c43-73a1-aacc-1b520e09fdef"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T20:08:08.003584898+00:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1824,
+          "expected": {
+            "error": {
+              "code": -32602,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "441",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd08e-6c43-73a1-aacc-1b6a72d19eae\",\"id\":\"019dd08e-6c43-73a1-aacc-1b520e09fdef\",\"status\":{\"message\":{\"contextId\":\"019dd08e-6c43-73a1-aacc-1b6a72d19eae\",\"messageId\":\"019dd08e-6c43-73a1-aacc-1b7951bd4148\",\"parts\":[{\"text\":\"Echo: \"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd08e-6c43-73a1-aacc-1b520e09fdef\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T20:08:08.003584898+00:00\"}}}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd08e-6c43-73a1-aacc-1b6a72d19eae",
+                  "id": "019dd08e-6c43-73a1-aacc-1b520e09fdef",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd08e-6c43-73a1-aacc-1b6a72d19eae",
+                      "messageId": "019dd08e-6c43-73a1-aacc-1b7951bd4148",
+                      "parts": [
+                        {
+                          "text": "Echo: "
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd08e-6c43-73a1-aacc-1b520e09fdef"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T20:08:08.003584898+00:00"
+                  }
+                }
+              }
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at error"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at error"
+    },
+    {
+      "id": "13f4b764-b5ec-4e59-9df2-2b63fe168d91",
+      "spec_id": "a2a-v1",
+      "test_case_id": "optional-message-id",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 193146,
+      "started_at": "2026-04-27T15:08:08.003861782-05:00",
+      "completed_at": "2026-04-27T15:08:08.004054928-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 185852,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1532,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "kind": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "19c26753-a4cc-4a4f-b004-6ece3eca9750",
+      "spec_id": "a2a-v1",
+      "test_case_id": "push-notification-not-supported",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 212311,
+      "started_at": "2026-04-27T15:08:08.00405597-05:00",
+      "completed_at": "2026-04-27T15:08:08.004268281-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 203075,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1713,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "211",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    }
+  ],
+  "summary": {
+    "total": 19,
+    "passed": 5,
+    "failed": 14,
+    "errors": 0,
+    "skipped": 0,
+    "timeouts": 0,
+    "compliance": 26.31578947368421
+  }
+}

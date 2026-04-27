@@ -52,6 +52,7 @@ func runCmd() *cobra.Command {
 		runtimeVersion string
 		image          string
 		baseURL        string
+		rpcPath        string
 		tags           []string
 		format         string
 	)
@@ -88,6 +89,7 @@ func runCmd() *cobra.Command {
 				RuntimeVersion: runtimeVersion,
 				Image:          image,
 				BaseURL:        baseURL,
+				RPCPath:        rpcPath,
 				Tags:           tags,
 			}
 
@@ -119,6 +121,7 @@ func runCmd() *cobra.Command {
 	cmd.Flags().StringVar(&runtimeVersion, "runtime-version", "", "runtime version")
 	cmd.Flags().StringVar(&image, "image", "", "Docker image to test against")
 	cmd.Flags().StringVar(&baseURL, "url", "", "base URL of the runtime under test (for http-rest or jsonrpc-http transport)")
+	cmd.Flags().StringVar(&rpcPath, "rpc-path", "", "subpath for JSON-RPC POST requests (e.g., /invoke, /jsonrpc)")
 	cmd.Flags().StringSliceVar(&tags, "tags", nil, "filter test cases by tags")
 	cmd.Flags().StringVar(&format, "format", "markdown", "output format (markdown, json)")
 	_ = cmd.MarkFlagRequired("runtime")

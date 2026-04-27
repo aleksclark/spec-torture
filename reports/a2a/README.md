@@ -2,7 +2,7 @@
 
 ## Test Agents
 
-Three A2A-compatible agents were tested against the A2A v1.0 spec suite (19 tests):
+Five A2A-compatible agents tested against the A2A v1.0 spec suite (19 tests):
 
 ### 1. crush-a2a (Crush native protocol + A2A v1.0 frontend)
 - **Source:** crush-a2a Go server (translates A2A v1.0 JSON-RPC → Crush's native unix socket protocol)
@@ -10,13 +10,25 @@ Three A2A-compatible agents were tested against the A2A v1.0 spec suite (19 test
 - **Protocol:** JSON-RPC 2.0 over HTTP, A2A v1.0 method names (`SendMessage`, `GetTask`, `CancelTask`, `SendStreamingMessage`)
 - **Port:** localhost:8200
 
-### 2. a2a-python-helloworld (A2A Python SDK v1.0.1)
+### 2. a2a-go-helloworld (a2a-go SDK v2.x)
+- **Source:** [a2aproject/a2a-go](https://github.com/a2aproject/a2a-go) `examples/helloworld/server/jsonrpc`
+- **Runtime:** Go, using `a2a-go/v2` SDK
+- **Protocol:** JSON-RPC 2.0 over HTTP at `/invoke`, A2A v1.0 PascalCase method names
+- **Port:** localhost:8201
+
+### 3. a2a-rs-helloworld (a2a-rs SDK)
+- **Source:** [a2aproject/a2a-rs](https://github.com/a2aproject/a2a-rs) `examples/helloworld`
+- **Runtime:** Rust + Axum + Tokio, using `a2a` and `a2a-server` crates
+- **Protocol:** JSON-RPC 2.0 over HTTP at `/jsonrpc`, A2A v1.0 PascalCase method names
+- **Port:** localhost:8202
+
+### 4. a2a-python-helloworld (A2A Python SDK v1.0.1)
 - **Source:** [a2aproject/a2a-samples](https://github.com/a2aproject/a2a-samples) `samples/python/agents/helloworld`
 - **Runtime:** Python + Starlette/Uvicorn, using `a2a-sdk==1.0.1`
 - **Protocol:** JSON-RPC 2.0 over HTTP. Agent card reports `protocolVersion: "0.3"` despite using v1.0 SDK. Method routing uses v0.3 style internally.
 - **Port:** localhost:9999
 
-### 3. a2a-js-sample (A2A-JS SDK v0.3.13)
+### 5. a2a-js-sample (A2A-JS SDK v0.3.13)
 - **Source:** [a2aproject/a2a-js](https://github.com/a2aproject/a2a-js) `src/samples/agents/sample-agent`
 - **Runtime:** Node.js + Express, using `@a2a-js/sdk@0.3.13`
 - **Protocol:** JSON-RPC 2.0 over HTTP, A2A v0.3 method names (`message/send`, `tasks/get`, `message/stream`)
@@ -24,23 +36,73 @@ Three A2A-compatible agents were tested against the A2A v1.0 spec suite (19 test
 
 ## Results Summary
 
-| Agent | SDK Version | Compliance | Passed | Failed | Errors |
-|-------|------------|-----------|--------|--------|--------|
-| crush-a2a | Crush native | **100.0%** | 19/19 | 0 | 0 |
-| a2a-python-helloworld | a2a-sdk v1.0.1 | **42.1%** | 8/19 | 11 | 0 |
-| a2a-js-sample | @a2a-js/sdk v0.3.13 | **42.1%** | 8/19 | 11 | 0 |
+| Agent | SDK Version | Compliance | Passed | Failed | Errors | Notes |
+|-------|------------|-----------|--------|--------|--------|-------|
+| crush-a2a | Crush native | **47.4%** | 9/19 | 10 | 0 | Protocol layer correct; lifecycle tests fail due to Crush backend unavailable |
+| a2a-go-helloworld | a2a-go v2.x | **47.4%** | 9/19 | 10 | 0 | Good v1.0 method support; response envelope differs from spec expectations |
+| a2a-rs-helloworld | a2a-rs (Rust) | **26.3%** | 5/19 | 14 | 0 | Rejects `kind` field in parts; HTTP errors for malformed JSON instead of JSON-RPC errors |
+| a2a-python-helloworld | a2a-sdk v1.0.1 | **42.1%** | 8/19 | 11 | 0 | Discovery and JSON-RPC error handling pass; v0.3 method names only |
+| a2a-js-sample | @a2a-js/sdk v0.3.13 | **42.1%** | 8/19 | 11 | 0 | Same v0.3-only failure pattern as Python |
 
 ## Detailed Results
 
-### crush-a2a — 100% Compliance (19/19)
+### crush-a2a — 47.4% Compliance (9/19)
 
-All 19 tests pass:
-- **Discovery (4/4):** Agent card served correctly with all required and optional fields
-- **Lifecycle (5/5):** SendMessage, GetTask, GetTask-not-found, CancelTask, and context test all pass
-- **Messaging (3/3):** Text parts, context sharing, and optional messageId all work correctly
-- **Streaming (2/2):** SSE stream with proper content-type and task status events
-- **Error handling (4/4):** Parse error (-32700), invalid request (-32600), method not found (-32601), invalid params (-32602)
-- **Push notifications (1/1):** Correctly returns error when unsupported
+**Passes (9):** All 4 discovery tests, get-task-not-found, and all 4 JSON-RPC error handling tests (parse-error, invalid-request, method-not-found, missing-required-params).
+
+**Fails (10):** All lifecycle, messaging, streaming, and push notification tests return `-32603 Internal error` because the Crush backend server was not reachable — the workspace directory's `.crush` directory couldn't be created. This is a deployment/infrastructure issue, not a protocol compliance bug. The A2A protocol layer (method routing, error codes, discovery) is correctly implemented.
+
+**Note:** In a previous test run with a properly configured Crush backend, crush-a2a achieved 100% compliance (19/19). The failures here are entirely due to the missing backend, not protocol issues.
+
+### a2a-go-helloworld — 47.4% Compliance (9/19)
+
+**Passes (9):** agent-card-content-type, agent-card-optional-fields, agent-card-skills, get-task-not-found, streaming-send (SSE content-type correct), and all 4 JSON-RPC error handling tests.
+
+**Fails (10):**
+
+| Test | Error | Analysis |
+|------|-------|----------|
+| agent-card-well-known | `missing key at url` | Agent card uses `supportedInterfaces[].url` per v1.0 spec, but test checks for top-level `url` field |
+| send-message-basic | `missing key at result.id` | Response is `result.message{...}` — no Task wrapper with `id`/`contextId` |
+| send-message-creates-task | `missing key at result.kind` | Same: returns Message directly, not a Task object |
+| get-task | `missing key at result.id` | GetTask depends on successful SendMessage first (cascading failure) |
+| cancel-task | `missing key at result.id` | Same cascading dependency issue |
+| message-text-part | `missing key at result.id` | Response lacks Task wrapper |
+| message-with-context | `missing key at result.id` | Response lacks Task wrapper |
+| streaming-events | `no SSE event matched: missing key at taskId` | SSE events don't contain `taskId` at the expected path |
+| optional-message-id | `missing key at result` | Message without `messageId` returns different response structure |
+| push-notification-not-supported | `missing key at result.id` | Response structure differs |
+
+**Key finding:** The Go SDK v2 returns `result.message` directly from `SendMessage` instead of wrapping it in a `Task` object with `id`, `contextId`, and `status`. The spec expects the full Task lifecycle model. The Go SDK also uses `ROLE_AGENT` enum strings instead of the expected `"agent"` string for the role field.
+
+### a2a-rs-helloworld — 26.3% Compliance (5/19)
+
+**Passes (5):** agent-card-content-type, agent-card-optional-fields, agent-card-skills, get-task-not-found, jsonrpc-method-not-found.
+
+**Fails (14):**
+
+| Test | Error | Analysis |
+|------|-------|----------|
+| agent-card-well-known | `missing key at url` | Same as Go: uses `supportedInterfaces` not top-level `url` |
+| send-message-basic | `missing key at result` | Returns error: `unknown field 'kind'` — rejects `kind` in message parts |
+| send-message-creates-task | `missing key at result` | Same `kind` field rejection |
+| get-task | `missing key at result` | Cascading from SendMessage failure |
+| cancel-task | `missing key at result` | Same cascading failure |
+| message-text-part | `missing key at result` | Same `kind` field rejection |
+| message-with-context | `missing key at result` | Same `kind` field rejection |
+| streaming-send | `content-type: expected "text/event-stream", got "application/json"` | Same `kind` rejection prevents streaming |
+| streaming-events | `expected SSE events but got none` | Same root cause |
+| jsonrpc-parse-error | `expected JSON-RPC response but got none` | Returns HTTP 400 with plaintext instead of JSON-RPC error |
+| jsonrpc-invalid-request | `expected JSON-RPC response but got none` | Returns HTTP 422 with plaintext instead of JSON-RPC error |
+| missing-required-params | `missing key at error` | Accepts empty params and returns success instead of error |
+| optional-message-id | `missing key at result` | Same `kind` rejection |
+| push-notification-not-supported | `missing key at result` | Same `kind` rejection |
+
+**Key findings:**
+1. **Part field naming:** The Rust SDK uses protobuf-style field names and rejects `kind` — expects `text`, `raw`, `url`, `data`, etc. as direct fields. The spec's test payloads use `kind: "text"` + `text: "..."` which is the v1.0 JSON representation.
+2. **HTTP errors for JSON-RPC:** Malformed JSON returns HTTP 400/422 with plaintext body instead of a JSON-RPC `-32700` error response. The JSON-RPC 2.0 spec requires errors to be returned as JSON-RPC error objects.
+3. **Missing params handling:** The Rust SDK accepts `SendMessage` with empty params and processes it (returns a task echoing `(no message)`) instead of returning `-32602 Invalid params`.
+4. **Response wrapping:** When it does succeed, the Rust SDK wraps responses as `result.task{...}` instead of `result{id, contextId, status, ...}`.
 
 ### a2a-python-helloworld — 42.1% Compliance (8/19)
 
@@ -49,7 +111,7 @@ All 19 tests pass:
 **Fails (11):**
 - All `SendMessage`-based tests fail with `missing key at result` — the Python SDK v1.0 returns JSON-RPC errors instead of results for v1.0 method names like `SendMessage`. Despite using `a2a-sdk==1.0.1`, the agent card reports `protocolVersion: "0.3"` and the SDK's internal routing doesn't map v1.0 PascalCase methods correctly.
 - `streaming-send` / `streaming-events` — returns `application/json` instead of `text/event-stream`
-- `missing-required-params` — returns `-32009` instead of `-32602` (custom error code vs standard invalid params)
+- `missing-required-params` — returns `-32009` instead of `-32602` (custom error code vs standard JSON-RPC)
 
 ### a2a-js-sample — 42.1% Compliance (8/19)
 
@@ -60,60 +122,83 @@ All 19 tests pass:
 - `streaming-send` — returns `application/json; charset=utf-8` instead of `text/event-stream`
 - `missing-required-params` — returns `-32601` (method not found) instead of `-32602` (invalid params), because it doesn't even recognize `SendMessage` as a valid method
 
-## Key Findings
+## Cross-Runtime Analysis
 
-### Protocol Version Split (v0.3 vs v1.0)
+### Protocol Version Adoption
 
-The A2A ecosystem has a critical v0.3 vs v1.0 incompatibility. Our spec suite uses **A2A v1.0 method names** as defined in the [official specification](https://a2a-protocol.org/latest/):
+| Feature | crush-a2a | Go SDK v2 | Rust SDK | Python SDK v1.0.1 | JS SDK v0.3.13 |
+|---------|-----------|-----------|----------|-------------------|----------------|
+| v1.0 PascalCase methods | ✅ | ✅ | ✅ | ❌ (v0.3 only) | ❌ (v0.3 only) |
+| `supportedInterfaces` in agent card | ✅ (+ `url`) | ✅ (no `url`) | ✅ (no `url`) | ✅ (+ `url`) | ✅ (+ `url`) |
+| Task wrapper in response | ✅ | ❌ (Message only) | ✅ (as `result.task`) | N/A | N/A |
+| JSON-RPC error for malformed input | ✅ | ✅ | ❌ (HTTP errors) | ✅ | ✅ |
+| SSE streaming support | ❌ (backend needed) | ✅ | ❌ (field error) | ❌ | ❌ |
+| `kind` field in message parts | ✅ | ✅ | ❌ (rejects) | N/A | N/A |
 
-| Operation | v0.3 (JS SDK) | v1.0 (Spec) |
-|-----------|---------------|-------------|
-| Send message | `message/send` | `SendMessage` |
-| Get task | `tasks/get` | `GetTask` |
-| Cancel task | `tasks/cancel` | `CancelTask` |
-| Stream message | `message/stream` | `SendStreamingMessage` |
+### What Passes Across All Five Runtimes
 
-**Both the Python SDK v1.0.1 and JS SDK v0.3.13 only recognize v0.3 method names.** The "v1.0" Python SDK appears to be a v1.0 release of the SDK package, not an implementation of the v1.0 protocol spec. Neither SDK supports the PascalCase method names from the published v1.0 specification.
+- **Agent card content-type and optional fields** — all serve valid agent cards via GET at `/.well-known/agent-card.json`
+- **Agent card skills** — all include at least one skill with `id` and `name`
+- **get-task-not-found** — all return proper JSON-RPC error for unknown task IDs
 
-This means:
-- **crush-a2a is the only runtime that implements the v1.0 spec as published**
-- Both official SDK sample agents implement v0.3 protocol only
-- The v0.3→v1.0 method name migration has not been adopted by the official SDKs
+### Response Envelope Differences (v1.0 SDKs)
 
-### What Passes Across All Three
+The three v1.0-capable runtimes return different response structures for `SendMessage`:
 
-- **Discovery** (`.well-known/agent-card.json`): All agents serve valid agent cards via GET
-- **JSON-RPC error handling**: All correctly return -32700 (parse error), -32600 (invalid request), and -32601 (method not found)
-- **Content-Type**: All return `application/json` for agent cards
+```
+crush-a2a:   result: { id, contextId, status: { state, message: { ... } } }  (Task object)
+a2a-go v2:   result: { message: { messageId, parts, role: "ROLE_AGENT" } }   (Message only)
+a2a-rs:      result: { task: { id, contextId, status: { message: { ... } } } } (Task in wrapper)
+```
 
-### Error Code Differences
+None of the three agree on the response structure, highlighting that the v1.0 specification's response format is interpreted differently by each SDK.
 
-For `missing-required-params` (sending `SendMessage` with empty params):
-- crush-a2a: `-32602` (correct — invalid params) ✓
-- Python SDK: `-32009` (custom A2A error code — not standard JSON-RPC)
-- JS SDK: `-32601` (method not found — doesn't recognize `SendMessage` at all)
+### Error Handling Spectrum
+
+For malformed JSON input (`{invalid json`):
+- crush-a2a: `-32700` JSON-RPC error ✅
+- Go SDK: `-32700` JSON-RPC error ✅
+- Rust SDK: HTTP 400 plaintext ❌
+- Python SDK: `-32700` JSON-RPC error ✅
+- JS SDK: `-32700` JSON-RPC error ✅
 
 ## How to Reproduce
 
 ```bash
-# 1. Start crush-a2a (assumes it's already running on port 8200)
+# 1. crush-a2a (requires running Crush backend)
+crush-a2a -port 8200 &
 go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a --url http://localhost:8200
 
-# 2. Start the Python helloworld agent
-cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-samples.git
-cd a2a-samples/samples/python/agents/helloworld
-uv run . &
-go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime a2a-python-helloworld --url http://localhost:9999
+# 2. a2a-go helloworld (JSON-RPC at /invoke)
+cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-go.git
+cd a2a-go && go run ./examples/helloworld/server/jsonrpc --port 8201 &
+go run ./cmd/spec-torture run specs/a2a/spec.yaml \
+  --runtime a2a-go-helloworld --url http://localhost:8201 --rpc-path /invoke
 
-# 3. Start the JS sample agent
+# 3. a2a-rs helloworld (JSON-RPC at /jsonrpc, default port 3000)
+cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-rs.git
+cd a2a-rs && cargo run -p helloworld &
+go run ./cmd/spec-torture run specs/a2a/spec.yaml \
+  --runtime a2a-rs-helloworld --url http://localhost:3000 --rpc-path /jsonrpc
+
+# 4. Python helloworld
+cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-samples.git
+cd a2a-samples/samples/python/agents/helloworld && uv run . &
+go run ./cmd/spec-torture run specs/a2a/spec.yaml \
+  --runtime a2a-python-helloworld --url http://localhost:9999
+
+# 5. JS sample agent
 cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-js.git
 cd a2a-js && npm install && npm run build
 PORT=41241 npx tsx src/samples/agents/sample-agent/index.ts &
-go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime a2a-js-sample --url http://localhost:41241
+go run ./cmd/spec-torture run specs/a2a/spec.yaml \
+  --runtime a2a-js-sample --url http://localhost:41241
 ```
 
 ## Files
 
-- `crush-a2a.md` / `.json` — Full results for crush-a2a (19/19, 100%)
-- `a2a-python-helloworld.md` / `.json` — Full results for the Python helloworld agent (8/19, 42.1%)
-- `a2a-js-sample.md` / `.json` — Full results for the JS sample agent (8/19, 42.1%)
+- `crush-a2a.md` / `.json` — crush-a2a results (9/19, 47.4%)
+- `a2a-go-helloworld.md` / `.json` — Go SDK v2 helloworld results (9/19, 47.4%)
+- `a2a-rs-helloworld.md` / `.json` — Rust SDK helloworld results (5/19, 26.3%)
+- `a2a-python-helloworld.md` / `.json` — Python SDK v1.0.1 helloworld results (8/19, 42.1%)
+- `a2a-js-sample.md` / `.json` — JS SDK v0.3.13 sample agent results (8/19, 42.1%)

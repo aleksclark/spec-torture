@@ -1,0 +1,1768 @@
+{
+  "id": "cf5ad73d-3697-4766-8ad7-ee086e0ee88d",
+  "spec_id": "a2a-v1",
+  "runtime": "a2a-go-helloworld",
+  "runtime_version": "",
+  "started_at": "2026-04-27T15:08:07.784374899-05:00",
+  "completed_at": "2026-04-27T15:08:07.787007891-05:00",
+  "results": [
+    {
+      "id": "6e5846a2-a044-4860-9a5c-ef15de04adba",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-well-known",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 572774,
+      "started_at": "2026-04-27T15:08:07.784421026-05:00",
+      "completed_at": "2026-04-27T15:08:07.7849938-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 548978,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "436",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "skills": [
+                {
+                  "description": "Returns a 'Hello, world!'",
+                  "examples": [
+                    "hi",
+                    "hello"
+                  ],
+                  "id": "hello_world",
+                  "name": "Hello, world!",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8201/invoke"
+                }
+              ],
+              "version": ""
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8201/invoke\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\"],\"description\":\"Just a hello world agent\",\"name\":\"Hello World Agent\",\"skills\":[{\"description\":\"Returns a 'Hello, world!'\",\"examples\":[\"hi\",\"hello\"],\"id\":\"hello_world\",\"name\":\"Hello, world!\",\"tags\":[\"hello world\"]}],\"version\":\"\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 10089,
+          "expected": {
+            "body": {
+              "name": "*",
+              "skills": "*",
+              "url": "*",
+              "version": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "436",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "skills": [
+                {
+                  "description": "Returns a 'Hello, world!'",
+                  "examples": [
+                    "hi",
+                    "hello"
+                  ],
+                  "id": "hello_world",
+                  "name": "Hello, world!",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8201/invoke"
+                }
+              ],
+              "version": ""
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8201/invoke\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\"],\"description\":\"Just a hello world agent\",\"name\":\"Hello World Agent\",\"skills\":[{\"description\":\"Returns a 'Hello, world!'\",\"examples\":[\"hi\",\"hello\"],\"id\":\"hello_world\",\"name\":\"Hello, world!\",\"tags\":[\"hello world\"]}],\"version\":\"\"}"
+          },
+          "error": "body match failed: missing key at url"
+        }
+      ],
+      "error_message": "body match failed: missing key at url"
+    },
+    {
+      "id": "2449c855-4f43-41fa-bd24-be6c69e40f13",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-content-type",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 125758,
+      "started_at": "2026-04-27T15:08:07.784995653-05:00",
+      "completed_at": "2026-04-27T15:08:07.785121391-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 114296,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "436",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "skills": [
+                {
+                  "description": "Returns a 'Hello, world!'",
+                  "examples": [
+                    "hi",
+                    "hello"
+                  ],
+                  "id": "hello_world",
+                  "name": "Hello, world!",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8201/invoke"
+                }
+              ],
+              "version": ""
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8201/invoke\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\"],\"description\":\"Just a hello world agent\",\"name\":\"Hello World Agent\",\"skills\":[{\"description\":\"Returns a 'Hello, world!'\",\"examples\":[\"hi\",\"hello\"],\"id\":\"hello_world\",\"name\":\"Hello, world!\",\"tags\":[\"hello world\"]}],\"version\":\"\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 2064,
+          "expected": {
+            "headers": {
+              "content-type": "application/json"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "436",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "skills": [
+                {
+                  "description": "Returns a 'Hello, world!'",
+                  "examples": [
+                    "hi",
+                    "hello"
+                  ],
+                  "id": "hello_world",
+                  "name": "Hello, world!",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8201/invoke"
+                }
+              ],
+              "version": ""
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8201/invoke\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\"],\"description\":\"Just a hello world agent\",\"name\":\"Hello World Agent\",\"skills\":[{\"description\":\"Returns a 'Hello, world!'\",\"examples\":[\"hi\",\"hello\"],\"id\":\"hello_world\",\"name\":\"Hello, world!\",\"tags\":[\"hello world\"]}],\"version\":\"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b169b714-6759-4ec7-84ff-748f8cfd113b",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-optional-fields",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 73849,
+      "started_at": "2026-04-27T15:08:07.785123155-05:00",
+      "completed_at": "2026-04-27T15:08:07.785197014-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 66155,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "436",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "skills": [
+                {
+                  "description": "Returns a 'Hello, world!'",
+                  "examples": [
+                    "hi",
+                    "hello"
+                  ],
+                  "id": "hello_world",
+                  "name": "Hello, world!",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8201/invoke"
+                }
+              ],
+              "version": ""
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8201/invoke\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\"],\"description\":\"Just a hello world agent\",\"name\":\"Hello World Agent\",\"skills\":[{\"description\":\"Returns a 'Hello, world!'\",\"examples\":[\"hi\",\"hello\"],\"id\":\"hello_world\",\"name\":\"Hello, world!\",\"tags\":[\"hello world\"]}],\"version\":\"\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 581,
+          "expected": {
+            "body": {
+              "capabilities": "*",
+              "description": "*",
+              "name": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "436",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "skills": [
+                {
+                  "description": "Returns a 'Hello, world!'",
+                  "examples": [
+                    "hi",
+                    "hello"
+                  ],
+                  "id": "hello_world",
+                  "name": "Hello, world!",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8201/invoke"
+                }
+              ],
+              "version": ""
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8201/invoke\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\"],\"description\":\"Just a hello world agent\",\"name\":\"Hello World Agent\",\"skills\":[{\"description\":\"Returns a 'Hello, world!'\",\"examples\":[\"hi\",\"hello\"],\"id\":\"hello_world\",\"name\":\"Hello, world!\",\"tags\":[\"hello world\"]}],\"version\":\"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "02d97280-d22f-4818-8068-58297900b593",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-skills",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 50946,
+      "started_at": "2026-04-27T15:08:07.785200872-05:00",
+      "completed_at": "2026-04-27T15:08:07.785251808-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 44895,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "436",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "skills": [
+                {
+                  "description": "Returns a 'Hello, world!'",
+                  "examples": [
+                    "hi",
+                    "hello"
+                  ],
+                  "id": "hello_world",
+                  "name": "Hello, world!",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8201/invoke"
+                }
+              ],
+              "version": ""
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8201/invoke\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\"],\"description\":\"Just a hello world agent\",\"name\":\"Hello World Agent\",\"skills\":[{\"description\":\"Returns a 'Hello, world!'\",\"examples\":[\"hi\",\"hello\"],\"id\":\"hello_world\",\"name\":\"Hello, world!\",\"tags\":[\"hello world\"]}],\"version\":\"\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 241,
+          "expected": {
+            "body": {
+              "skills": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "436",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text"
+              ],
+              "defaultOutputModes": [
+                "text"
+              ],
+              "description": "Just a hello world agent",
+              "name": "Hello World Agent",
+              "skills": [
+                {
+                  "description": "Returns a 'Hello, world!'",
+                  "examples": [
+                    "hi",
+                    "hello"
+                  ],
+                  "id": "hello_world",
+                  "name": "Hello, world!",
+                  "tags": [
+                    "hello world"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8201/invoke"
+                }
+              ],
+              "version": ""
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8201/invoke\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text\"],\"defaultOutputModes\":[\"text\"],\"description\":\"Just a hello world agent\",\"name\":\"Hello World Agent\",\"skills\":[{\"description\":\"Returns a 'Hello, world!'\",\"examples\":[\"hi\",\"hello\"],\"id\":\"hello_world\",\"name\":\"Hello, world!\",\"tags\":[\"hello world\"]}],\"version\":\"\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "39121cc9-8446-4ef8-9dec-db1960c0a80f",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-basic",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 209166,
+      "started_at": "2026-04-27T15:08:07.785252289-05:00",
+      "completed_at": "2026-04-27T15:08:07.785461445-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 203375,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b69-75ec-8ef2-0909f51ac181\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b69-75ec-8ef2-0909f51ac181",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 2384,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b69-75ec-8ef2-0909f51ac181\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b69-75ec-8ef2-0909f51ac181",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result.id"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result.id"
+    },
+    {
+      "id": "d85e1f7d-938a-4831-b306-819cbc238c29",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-creates-task",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 139595,
+      "started_at": "2026-04-27T15:08:07.785464971-05:00",
+      "completed_at": "2026-04-27T15:08:07.785604555-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 132251,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b69-7878-87c8-76eac3679df9\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b69-7878-87c8-76eac3679df9",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1843,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*",
+              "kind": "task",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b69-7878-87c8-76eac3679df9\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b69-7878-87c8-76eac3679df9",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result.kind"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result.kind"
+    },
+    {
+      "id": "091acb06-a9c0-47af-bd0c-97b13e7051d3",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 207112,
+      "started_at": "2026-04-27T15:08:07.785605407-05:00",
+      "completed_at": "2026-04-27T15:08:07.785812519-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 200189,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b69-7b9e-ac59-c0887593937f\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b69-7b9e-ac59-c0887593937f",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1443,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b69-7b9e-ac59-c0887593937f\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b69-7b9e-ac59-c0887593937f",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result.id"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result.id"
+    },
+    {
+      "id": "623ced3a-ee44-4e5b-88fb-3da0a0e79d17",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task-not-found",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 81434,
+      "started_at": "2026-04-27T15:08:07.78581307-05:00",
+      "completed_at": "2026-04-27T15:08:07.785894504-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 77026,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "130",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to get task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 802,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "130",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to get task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "916c6452-64c1-46ce-9369-67bb4ccb0a44",
+      "spec_id": "a2a-v1",
+      "test_case_id": "cancel-task",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 87826,
+      "started_at": "2026-04-27T15:08:07.785894945-05:00",
+      "completed_at": "2026-04-27T15:08:07.785982771-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 83477,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b69-7e68-9b2c-5a72b5b8dfe0\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b69-7e68-9b2c-5a72b5b8dfe0",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1092,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b69-7e68-9b2c-5a72b5b8dfe0\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b69-7e68-9b2c-5a72b5b8dfe0",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result.id"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result.id"
+    },
+    {
+      "id": "81ceb6fd-4733-4ecc-ac51-be34ab7f8c11",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-text-part",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 84670,
+      "started_at": "2026-04-27T15:08:07.785984735-05:00",
+      "completed_at": "2026-04-27T15:08:07.786069405-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 79701,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b6a-7096-947e-af096e311acb\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b6a-7096-947e-af096e311acb",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1012,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b6a-7096-947e-af096e311acb\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b6a-7096-947e-af096e311acb",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result.id"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result.id"
+    },
+    {
+      "id": "ec85bb92-1d7d-4b7f-9222-e1bd1ec2cc26",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-with-context",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 75052,
+      "started_at": "2026-04-27T15:08:07.786069836-05:00",
+      "completed_at": "2026-04-27T15:08:07.786144898-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 70293,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b6a-71bd-bc94-00798d8464bb\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b6a-71bd-bc94-00798d8464bb",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1062,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "contextId": "*",
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b6a-71bd-bc94-00798d8464bb\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b6a-71bd-bc94-00798d8464bb",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result.id"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result.id"
+    },
+    {
+      "id": "d89c1b82-9956-41c0-ae2c-51e980eb9ba4",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-send",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 220858,
+      "started_at": "2026-04-27T15:08:07.786145339-05:00",
+      "completed_at": "2026-04-27T15:08:07.786366187-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 210359,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT",
+              "x-accel-buffering": "no"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "message": {
+                    "messageId": "019dd08e-6b6a-7326-98a7-a898d30bcb3a",
+                    "parts": [
+                      {
+                        "text": "Hello, world!"
+                      }
+                    ],
+                    "role": "ROLE_AGENT"
+                  }
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b6a-7326-98a7-a898d30bcb3a",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4278,
+          "expected": {
+            "headers": {
+              "content-type": "text/event-stream"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT",
+              "x-accel-buffering": "no"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "message": {
+                    "messageId": "019dd08e-6b6a-7326-98a7-a898d30bcb3a",
+                    "parts": [
+                      {
+                        "text": "Hello, world!"
+                      }
+                    ],
+                    "role": "ROLE_AGENT"
+                  }
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b6a-7326-98a7-a898d30bcb3a",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "31259c27-0cc1-4c2f-a100-c3975cce67a0",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-events",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 188737,
+      "started_at": "2026-04-27T15:08:07.786366968-05:00",
+      "completed_at": "2026-04-27T15:08:07.786555705-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 178699,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT",
+              "x-accel-buffering": "no"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "message": {
+                    "messageId": "019dd08e-6b6a-772f-b7f7-f60f4af3286e",
+                    "parts": [
+                      {
+                        "text": "Hello, world!"
+                      }
+                    ],
+                    "role": "ROLE_AGENT"
+                  }
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b6a-772f-b7f7-f60f4af3286e",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1162,
+          "expected": {
+            "sse_event": {
+              "status": {
+                "state": "*"
+              },
+              "taskId": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT",
+              "x-accel-buffering": "no"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "message": {
+                    "messageId": "019dd08e-6b6a-772f-b7f7-f60f4af3286e",
+                    "parts": [
+                      {
+                        "text": "Hello, world!"
+                      }
+                    ],
+                    "role": "ROLE_AGENT"
+                  }
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b6a-772f-b7f7-f60f4af3286e",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          },
+          "error": "no SSE event matched: missing key at taskId"
+        }
+      ],
+      "error_message": "no SSE event matched: missing key at taskId"
+    },
+    {
+      "id": "a334e64e-2d88-4130-bd23-e02166bfea7e",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-parse-error",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 71826,
+      "started_at": "2026-04-27T15:08:07.786556296-05:00",
+      "completed_at": "2026-04-27T15:08:07.786628122-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 67006,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "173",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"parse error\",\"data\":{\"error\":\"parse error: invalid character 'i' looking for beginning of object key string\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "data": {
+                  "error": "parse error: invalid character 'i' looking for beginning of object key string"
+                },
+                "message": "parse error"
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 801,
+          "expected": {
+            "error": {
+              "code": -32700,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "173",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"parse error\",\"data\":{\"error\":\"parse error: invalid character 'i' looking for beginning of object key string\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "data": {
+                  "error": "parse error: invalid character 'i' looking for beginning of object key string"
+                },
+                "message": "parse error"
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "e8a266eb-7dbe-4614-93fd-b63794944f11",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-invalid-request",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 54724,
+      "started_at": "2026-04-27T15:08:07.786628703-05:00",
+      "completed_at": "2026-04-27T15:08:07.786683437-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 50035,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "112",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"invalid request\",\"data\":{\"error\":\"invalid request\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "data": {
+                  "error": "invalid request"
+                },
+                "message": "invalid request"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1423,
+          "expected": {
+            "error": {
+              "code": -32600,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "112",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"invalid request\",\"data\":{\"error\":\"invalid request\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "data": {
+                  "error": "invalid request"
+                },
+                "message": "invalid request"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "04b074b1-d6c9-4f72-8eba-886cc45312db",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-method-not-found",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 73770,
+      "started_at": "2026-04-27T15:08:07.786684539-05:00",
+      "completed_at": "2026-04-27T15:08:07.786758299-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 67568,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "114",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found\",\"data\":{\"error\":\"method not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": {
+                  "error": "method not found"
+                },
+                "message": "method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 741,
+          "expected": {
+            "error": {
+              "code": -32601,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "114",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found\",\"data\":{\"error\":\"method not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": {
+                  "error": "method not found"
+                },
+                "message": "method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "ccc38a7f-6841-496b-9cc5-e56734de4c49",
+      "spec_id": "a2a-v1",
+      "test_case_id": "missing-required-params",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 81685,
+      "started_at": "2026-04-27T15:08:07.78675903-05:00",
+      "completed_at": "2026-04-27T15:08:07.786840725-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 77296,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "131",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message is required: invalid params\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "data": {
+                  "error": "message is required: invalid params"
+                },
+                "message": "invalid params"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 931,
+          "expected": {
+            "error": {
+              "code": -32602,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "131",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message is required: invalid params\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "data": {
+                  "error": "message is required: invalid params"
+                },
+                "message": "invalid params"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "f2fed891-6f4d-41ae-a5e5-ef4e646f119d",
+      "spec_id": "a2a-v1",
+      "test_case_id": "optional-message-id",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 81003,
+      "started_at": "2026-04-27T15:08:07.786842818-05:00",
+      "completed_at": "2026-04-27T15:08:07.786923832-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 72488,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "134",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message ID is required: invalid params\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "data": {
+                  "error": "message ID is required: invalid params"
+                },
+                "message": "invalid params"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1573,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "kind": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "134",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message ID is required: invalid params\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "data": {
+                  "error": "message ID is required: invalid params"
+                },
+                "message": "invalid params"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "41c6ed2c-24da-49d3-a168-58942fb21288",
+      "spec_id": "a2a-v1",
+      "test_case_id": "push-notification-not-supported",
+      "runtime": "a2a-go-helloworld",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 83107,
+      "started_at": "2026-04-27T15:08:07.786924583-05:00",
+      "completed_at": "2026-04-27T15:08:07.78700769-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 77146,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b6a-7eea-97f5-2ad87ef5b695\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b6a-7eea-97f5-2ad87ef5b695",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1032,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "154",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 20:08:07 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"message\":{\"messageId\":\"019dd08e-6b6a-7eea-97f5-2ad87ef5b695\",\"parts\":[{\"text\":\"Hello, world!\"}],\"role\":\"ROLE_AGENT\"}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "message": {
+                  "messageId": "019dd08e-6b6a-7eea-97f5-2ad87ef5b695",
+                  "parts": [
+                    {
+                      "text": "Hello, world!"
+                    }
+                  ],
+                  "role": "ROLE_AGENT"
+                }
+              }
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result.id"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result.id"
+    }
+  ],
+  "summary": {
+    "total": 19,
+    "passed": 9,
+    "failed": 10,
+    "errors": 0,
+    "skipped": 0,
+    "timeouts": 0,
+    "compliance": 47.368421052631575
+  }
+}
