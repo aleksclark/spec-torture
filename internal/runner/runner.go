@@ -15,29 +15,37 @@ type Config struct {
 	Runtime        string
 	RuntimeVersion string
 	Image          string
+	BaseURL        string
 	Tags           []string
 	Timeout        time.Duration
 }
 
-// Runner executes specs against a runtime in Docker containers.
+// Runner executes specs against a runtime.
 type Runner struct {
 	docker *DockerManager
 	eval   *Evaluator
 	logger *slog.Logger
+	config Config
 }
 
-// New creates a new Runner instance.
-func New(logger *slog.Logger) (*Runner, error) {
-	dm, err := NewDockerManager(logger)
-	if err != nil {
-		return nil, fmt.Errorf("creating docker manager: %w", err)
-	}
-
-	return &Runner{
-		docker: dm,
+// New creates a new Runner instance. Docker is only initialized if needed.
+func New(logger *slog.Logger, cfg Config) (*Runner, error) {
+	r := &Runner{
 		eval:   NewEvaluator(logger),
 		logger: logger,
-	}, nil
+		config: cfg,
+	}
+
+	// Only initialize Docker if we don't have a base URL (i.e., not http-rest against external server)
+	if cfg.BaseURL == "" {
+		dm, err := NewDockerManager(logger)
+		if err != nil {
+			return nil, fmt.Errorf("creating docker manager: %w", err)
+		}
+		r.docker = dm
+	}
+
+	return r, nil
 }
 
 // Run executes all test cases in a spec against the configured runtime.
@@ -54,6 +62,7 @@ func (r *Runner) Run(ctx context.Context, spec *schema.Spec, cfg Config) (*schem
 		"run_id", run.ID,
 		"spec", spec.ID,
 		"runtime", cfg.Runtime,
+		"transport", spec.Transport,
 	)
 
 	for _, tc := range spec.TestCases {
@@ -68,7 +77,12 @@ func (r *Runner) Run(ctx context.Context, spec *schema.Spec, cfg Config) (*schem
 			continue
 		}
 
-		result := r.runTestCase(ctx, spec, &tc, cfg)
+		var result schema.TestResult
+		if spec.Transport == schema.TransportHTTPREST && cfg.BaseURL != "" {
+			result = r.runHTTPTestCase(ctx, spec, &tc, cfg)
+		} else {
+			result = r.runDockerTestCase(ctx, spec, &tc, cfg)
+		}
 		run.Results = append(run.Results, result)
 	}
 
@@ -86,7 +100,8 @@ func (r *Runner) Run(ctx context.Context, spec *schema.Spec, cfg Config) (*schem
 	return run, nil
 }
 
-func (r *Runner) runTestCase(ctx context.Context, spec *schema.Spec, tc *schema.TestCase, cfg Config) schema.TestResult {
+// runHTTPTestCase runs a test case against an external HTTP server.
+func (r *Runner) runHTTPTestCase(ctx context.Context, spec *schema.Spec, tc *schema.TestCase, cfg Config) schema.TestResult {
 	result := schema.TestResult{
 		ID:             uuid.New().String(),
 		SpecID:         spec.ID,
@@ -108,6 +123,60 @@ func (r *Runner) runTestCase(ctx context.Context, spec *schema.Spec, tc *schema.
 	defer cancel()
 
 	r.logger.Info("running test case", "test_case", tc.ID, "category", tc.Category)
+
+	ht := NewHTTPTransport(cfg.BaseURL, r.eval, r.logger)
+
+	for i, step := range tc.Steps {
+		stepResult := ht.ExecuteStep(testCtx, &step, i)
+		result.Steps = append(result.Steps, stepResult)
+
+		if stepResult.Status != schema.StatusPass {
+			result.Status = stepResult.Status
+			result.ErrorMessage = stepResult.Error
+			break
+		}
+	}
+
+	if result.Status == "" {
+		result.Status = schema.StatusPass
+	}
+
+	result.CompletedAt = time.Now()
+	result.Duration = result.CompletedAt.Sub(result.StartedAt)
+	return result
+}
+
+// runDockerTestCase runs a test case in a Docker container (original behavior).
+func (r *Runner) runDockerTestCase(ctx context.Context, spec *schema.Spec, tc *schema.TestCase, cfg Config) schema.TestResult {
+	result := schema.TestResult{
+		ID:             uuid.New().String(),
+		SpecID:         spec.ID,
+		TestCaseID:     tc.ID,
+		Runtime:        cfg.Runtime,
+		RuntimeVersion: cfg.RuntimeVersion,
+		StartedAt:      time.Now(),
+	}
+
+	timeout := tc.Timeout
+	if timeout == 0 {
+		timeout = cfg.Timeout
+	}
+	if timeout == 0 {
+		timeout = 30 * time.Second
+	}
+
+	testCtx, cancel := context.WithTimeout(ctx, timeout)
+	defer cancel()
+
+	r.logger.Info("running test case", "test_case", tc.ID, "category", tc.Category)
+
+	if r.docker == nil {
+		result.Status = schema.StatusError
+		result.ErrorMessage = "Docker not available and no base URL configured"
+		result.CompletedAt = time.Now()
+		result.Duration = result.CompletedAt.Sub(result.StartedAt)
+		return result
+	}
 
 	image := cfg.Image
 	if tc.Setup != nil && tc.Setup.Image != "" {
@@ -157,8 +226,6 @@ func (r *Runner) executeStep(ctx context.Context, containerID string, transport 
 
 	r.logger.Debug("executing step", "index", index, "action", step.Action)
 
-	// TODO: implement actual step execution per transport type
-	// For now, all steps return an error indicating unimplemented.
 	switch step.Action {
 	case schema.ActionSend:
 		sr.Status = schema.StatusError
@@ -199,5 +266,8 @@ func matchesTags(testTags, filterTags []string) bool {
 
 // Close releases resources held by the runner.
 func (r *Runner) Close() error {
-	return r.docker.Close()
+	if r.docker != nil {
+		return r.docker.Close()
+	}
+	return nil
 }

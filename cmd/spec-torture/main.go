@@ -51,6 +51,8 @@ func runCmd() *cobra.Command {
 		runtimeName    string
 		runtimeVersion string
 		image          string
+		baseURL        string
+		format         string
 		tags           []string
 	)
 
@@ -66,6 +68,11 @@ func runCmd() *cobra.Command {
 				return fmt.Errorf("loading spec: %w", err)
 			}
 
+			// Validate: require either --url or --image
+			if baseURL == "" && image == "" {
+				return fmt.Errorf("either --url or --image must be specified")
+			}
+
 			st, err := openStore()
 			if err != nil {
 				return fmt.Errorf("opening store: %w", err)
@@ -77,18 +84,19 @@ func runCmd() *cobra.Command {
 				return fmt.Errorf("saving spec: %w", err)
 			}
 
-			r, err := runner.New(logger)
-			if err != nil {
-				return fmt.Errorf("creating runner: %w", err)
-			}
-			defer r.Close()
-
 			cfg := runner.Config{
 				Runtime:        runtimeName,
 				RuntimeVersion: runtimeVersion,
 				Image:          image,
+				BaseURL:        baseURL,
 				Tags:           tags,
 			}
+
+			r, err := runner.New(logger, cfg)
+			if err != nil {
+				return fmt.Errorf("creating runner: %w", err)
+			}
+			defer r.Close()
 
 			result, err := r.Run(cmd.Context(), spec, cfg)
 			if err != nil {
@@ -99,16 +107,22 @@ func runCmd() *cobra.Command {
 				return fmt.Errorf("saving results: %w", err)
 			}
 
-			return report.Write(os.Stdout, result, report.FormatMarkdown)
+			f := report.FormatMarkdown
+			if format == "json" {
+				f = report.FormatJSON
+			}
+
+			return report.Write(os.Stdout, result, f)
 		},
 	}
 
 	cmd.Flags().StringVar(&runtimeName, "runtime", "", "runtime identifier (e.g., 'claude-code-v1.2')")
 	cmd.Flags().StringVar(&runtimeVersion, "runtime-version", "", "runtime version")
 	cmd.Flags().StringVar(&image, "image", "", "Docker image to test against")
+	cmd.Flags().StringVar(&baseURL, "url", "", "base URL of the runtime under test (for http-rest transport)")
+	cmd.Flags().StringVar(&format, "format", "markdown", "output format (markdown, json)")
 	cmd.Flags().StringSliceVar(&tags, "tags", nil, "filter test cases by tags")
 	_ = cmd.MarkFlagRequired("runtime")
-	_ = cmd.MarkFlagRequired("image")
 
 	return cmd
 }
