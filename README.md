@@ -80,6 +80,13 @@ test_cases:
 | `assert` | Check a condition against accumulated state |
 | `exec` | Run a command inside the container |
 
+## Available Specs
+
+| Spec | Protocol | Transport | Test Cases |
+|------|----------|-----------|------------|
+| [MCP](specs/mcp/) | Model Context Protocol | `jsonrpc-stdio` | 3 |
+| [A2A](specs/a2a/) | Agent-to-Agent Protocol v1.0 | `jsonrpc-http` | 29 |
+
 ## Architecture
 
 ```
