@@ -1,33 +1,33 @@
 {
-  "id": "d95319d0-764e-4997-bac5-5b7eef01a73d",
+  "id": "4d6dfcb4-b068-4e22-9c65-b21d6cbd988b",
   "spec_id": "a2a-v1",
-  "runtime": "crush-a2a",
+  "runtime": "crush-a2a-v2",
   "runtime_version": "",
-  "started_at": "2026-04-27T11:35:12.1786756-05:00",
-  "completed_at": "2026-04-27T11:35:12.180674237-05:00",
+  "started_at": "2026-04-27T12:04:16.574896152-05:00",
+  "completed_at": "2026-04-27T12:04:48.534324479-05:00",
   "results": [
     {
-      "id": "04fd4fcb-9b4f-47e4-be69-4b257a984152",
+      "id": "e488866a-ea69-4b81-8ba0-81c39ba24a1d",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-well-known",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
       "status": "pass",
-      "duration": 553666,
-      "started_at": "2026-04-27T11:35:12.178718632-05:00",
-      "completed_at": "2026-04-27T11:35:12.179272298-05:00",
+      "duration": 649878,
+      "started_at": "2026-04-27T12:04:16.574948792-05:00",
+      "completed_at": "2026-04-27T12:04:16.57559867-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 546894,
+          "duration": 642304,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:16 GMT"
             },
             "body": {
               "capabilities": {
@@ -59,7 +59,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1152,
+          "duration": 1282,
           "expected": {
             "body": {
               "name": "*",
@@ -74,7 +74,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:16 GMT"
             },
             "body": {
               "capabilities": {
@@ -105,27 +105,27 @@
       ]
     },
     {
-      "id": "8f124d05-6403-4239-9b18-918d5ae66f4e",
+      "id": "ee06fd29-46b5-43a6-a708-ebc2088e8cfd",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-content-type",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
       "status": "pass",
-      "duration": 97665,
-      "started_at": "2026-04-27T11:35:12.179275594-05:00",
-      "completed_at": "2026-04-27T11:35:12.179373249-05:00",
+      "duration": 111601,
+      "started_at": "2026-04-27T12:04:16.575601395-05:00",
+      "completed_at": "2026-04-27T12:04:16.575712986-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 90802,
+          "duration": 95000,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:16 GMT"
             },
             "body": {
               "capabilities": {
@@ -157,7 +157,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 871,
+          "duration": 3267,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -169,7 +169,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:16 GMT"
             },
             "body": {
               "capabilities": {
@@ -200,27 +200,27 @@
       ]
     },
     {
-      "id": "4f1f67eb-d49f-4270-abdd-580b66f88585",
+      "id": "0b40d3c8-cf0f-4a5b-abe8-79e58ee63694",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-optional-fields",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
       "status": "pass",
-      "duration": 81354,
-      "started_at": "2026-04-27T11:35:12.17937394-05:00",
-      "completed_at": "2026-04-27T11:35:12.179455284-05:00",
+      "duration": 74320,
+      "started_at": "2026-04-27T12:04:16.575715401-05:00",
+      "completed_at": "2026-04-27T12:04:16.575789711-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 76574,
+          "duration": 65173,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:16 GMT"
             },
             "body": {
               "capabilities": {
@@ -252,7 +252,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 811,
+          "duration": 681,
           "expected": {
             "body": {
               "capabilities": "*",
@@ -266,7 +266,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:16 GMT"
             },
             "body": {
               "capabilities": {
@@ -297,27 +297,27 @@
       ]
     },
     {
-      "id": "e983c61b-785d-4a4e-8240-ffc07d34dffc",
+      "id": "ce413d44-1663-45ee-947f-df024f2fa3e6",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-skills",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
       "status": "pass",
-      "duration": 98426,
-      "started_at": "2026-04-27T11:35:12.179458089-05:00",
-      "completed_at": "2026-04-27T11:35:12.179556505-05:00",
+      "duration": 61596,
+      "started_at": "2026-04-27T12:04:16.575790983-05:00",
+      "completed_at": "2026-04-27T12:04:16.57585259-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 88748,
+          "duration": 56526,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:16 GMT"
             },
             "body": {
               "capabilities": {
@@ -349,7 +349,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 692,
+          "duration": 652,
           "expected": {
             "body": {
               "skills": "*"
@@ -361,7 +361,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:16 GMT"
             },
             "body": {
               "capabilities": {
@@ -392,45 +392,60 @@
       ]
     },
     {
-      "id": "c0fd8caf-b1b1-44d5-9fed-b41476a2b3ff",
+      "id": "65303ca6-7b28-4ed9-b95e-1f9fe46ce78f",
       "spec_id": "a2a-v1",
       "test_case_id": "send-message-basic",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 138031,
-      "started_at": "2026-04-27T11:35:12.179558869-05:00",
-      "completed_at": "2026-04-27T11:35:12.17969692-05:00",
+      "status": "pass",
+      "duration": 6921341791,
+      "started_at": "2026-04-27T12:04:16.575853902-05:00",
+      "completed_at": "2026-04-27T12:04:23.497195703-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 122842,
+          "duration": 6921330069,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "1034",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:23 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"cf886667-1579-4844-b2fe-1963a42b76a8\",\"contextId\":\"823983a9-dd0e-49d5-a69a-d6ba3527c2a5\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:23Z\"},\"artifacts\":[{\"artifactId\":\"62d0ade6-833d-48f9-8251-9064353bd039\",\"parts\":[{\"kind\":\"text\",\"text\":\"I'm an AI coding assistant that runs in your terminal. I can:\\n\\n- **Read, write, and edit** code across your project\\n- **Search** codebases, grep for patterns, find references\\n- **Run** shell commands, tests, builds, linters\\n- **Debug** errors, trace issues, fix failing tests\\n- **Refactor** code, rename symbols, restructure files\\n- **Research** topics via web search or fetching docs\\n- **Interact** with GitHub, Linear, Slack, and other integrations\\n\\nI have full context on your **Streamlate** project (simultaneous audio translation infrastructure with Rust server/ABC, React web clients, WebRTC transport). Ask me to build features, fix bugs, write tests, review code, or anything else — I'll just do it.\"}]}]}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "62d0ade6-833d-48f9-8251-9064353bd039",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "I'm an AI coding assistant that runs in your terminal. I can:\n\n- **Read, write, and edit** code across your project\n- **Search** codebases, grep for patterns, find references\n- **Run** shell commands, tests, builds, linters\n- **Debug** errors, trace issues, fix failing tests\n- **Refactor** code, rename symbols, restructure files\n- **Research** topics via web search or fetching docs\n- **Interact** with GitHub, Linear, Slack, and other integrations\n\nI have full context on your **Streamlate** project (simultaneous audio translation infrastructure with Rust server/ABC, React web clients, WebRTC transport). Ask me to build features, fix bugs, write tests, review code, or anything else — I'll just do it."
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "823983a9-dd0e-49d5-a69a-d6ba3527c2a5",
+                "id": "cf886667-1579-4844-b2fe-1963a42b76a8",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:23Z"
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 6713,
+          "status": "pass",
+          "duration": 4598,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -445,66 +460,94 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "1034",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:23 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"cf886667-1579-4844-b2fe-1963a42b76a8\",\"contextId\":\"823983a9-dd0e-49d5-a69a-d6ba3527c2a5\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:23Z\"},\"artifacts\":[{\"artifactId\":\"62d0ade6-833d-48f9-8251-9064353bd039\",\"parts\":[{\"kind\":\"text\",\"text\":\"I'm an AI coding assistant that runs in your terminal. I can:\\n\\n- **Read, write, and edit** code across your project\\n- **Search** codebases, grep for patterns, find references\\n- **Run** shell commands, tests, builds, linters\\n- **Debug** errors, trace issues, fix failing tests\\n- **Refactor** code, rename symbols, restructure files\\n- **Research** topics via web search or fetching docs\\n- **Interact** with GitHub, Linear, Slack, and other integrations\\n\\nI have full context on your **Streamlate** project (simultaneous audio translation infrastructure with Rust server/ABC, React web clients, WebRTC transport). Ask me to build features, fix bugs, write tests, review code, or anything else — I'll just do it.\"}]}]}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "62d0ade6-833d-48f9-8251-9064353bd039",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "I'm an AI coding assistant that runs in your terminal. I can:\n\n- **Read, write, and edit** code across your project\n- **Search** codebases, grep for patterns, find references\n- **Run** shell commands, tests, builds, linters\n- **Debug** errors, trace issues, fix failing tests\n- **Refactor** code, rename symbols, restructure files\n- **Research** topics via web search or fetching docs\n- **Interact** with GitHub, Linear, Slack, and other integrations\n\nI have full context on your **Streamlate** project (simultaneous audio translation infrastructure with Rust server/ABC, React web clients, WebRTC transport). Ask me to build features, fix bugs, write tests, review code, or anything else — I'll just do it."
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "823983a9-dd0e-49d5-a69a-d6ba3527c2a5",
+                "id": "cf886667-1579-4844-b2fe-1963a42b76a8",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:23Z"
+                }
+              }
             }
-          },
-          "error": "JSON-RPC match failed: missing key at result"
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     },
     {
-      "id": "72fa2f0e-72fa-421c-91e8-f9373713e8e7",
+      "id": "0eed16ae-8dce-46ef-aced-e329a1a828fe",
       "spec_id": "a2a-v1",
       "test_case_id": "send-message-creates-task",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 69591,
-      "started_at": "2026-04-27T11:35:12.179697852-05:00",
-      "completed_at": "2026-04-27T11:35:12.179767433-05:00",
+      "status": "pass",
+      "duration": 2470653611,
+      "started_at": "2026-04-27T12:04:23.497200893-05:00",
+      "completed_at": "2026-04-27T12:04:25.967854504-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 63340,
+          "duration": 2470630727,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "339",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"7eb9ea92-848a-4f2c-8dfc-11c860f94081\",\"contextId\":\"6a1933b8-dfea-4796-b2e9-97f606f72dc6\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:25Z\"},\"artifacts\":[{\"artifactId\":\"d88242cd-7ae3-42d7-9416-dd7e0c551cde\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nWhat do you need done?\"}]}]}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "d88242cd-7ae3-42d7-9416-dd7e0c551cde",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "\nWhat do you need done?"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "6a1933b8-dfea-4796-b2e9-97f606f72dc6",
+                "id": "7eb9ea92-848a-4f2c-8dfc-11c860f94081",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:25Z"
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 2244,
+          "status": "pass",
+          "duration": 4769,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -520,66 +563,94 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "339",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"7eb9ea92-848a-4f2c-8dfc-11c860f94081\",\"contextId\":\"6a1933b8-dfea-4796-b2e9-97f606f72dc6\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:25Z\"},\"artifacts\":[{\"artifactId\":\"d88242cd-7ae3-42d7-9416-dd7e0c551cde\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nWhat do you need done?\"}]}]}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "d88242cd-7ae3-42d7-9416-dd7e0c551cde",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "\nWhat do you need done?"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "6a1933b8-dfea-4796-b2e9-97f606f72dc6",
+                "id": "7eb9ea92-848a-4f2c-8dfc-11c860f94081",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:25Z"
+                }
+              }
             }
-          },
-          "error": "JSON-RPC match failed: missing key at result"
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     },
     {
-      "id": "954e0a84-abca-4591-a135-cf4b72e32b03",
+      "id": "79a12b21-b643-4bb3-952b-656c24dee79a",
       "spec_id": "a2a-v1",
       "test_case_id": "get-task",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
       "status": "fail",
-      "duration": 70604,
-      "started_at": "2026-04-27T11:35:12.179767974-05:00",
-      "completed_at": "2026-04-27T11:35:12.179838578-05:00",
+      "duration": 3553382374,
+      "started_at": "2026-04-27T12:04:25.967858271-05:00",
+      "completed_at": "2026-04-27T12:04:29.521240645-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 64552,
+          "duration": 3553212863,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "546",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:29 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"72044a99-de16-496b-8935-cd3ef5a4838d\",\"contextId\":\"0f563244-d4b9-4100-be30-ff08c13b05fd\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:29Z\"},\"artifacts\":[{\"artifactId\":\"8a731515-2f96-48b9-8572-9d73e9524eea\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nCould you clarify what you mean? Are you asking me to:\\n\\n1. **Create a todo item** in this conversation's task tracker\\n2. **Create a task/issue** in an external system (GitHub, Linear, etc.)\\n\\nAnd what should the task contain?\"}]}]}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "8a731515-2f96-48b9-8572-9d73e9524eea",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "\nCould you clarify what you mean? Are you asking me to:\n\n1. **Create a todo item** in this conversation's task tracker\n2. **Create a task/issue** in an external system (GitHub, Linear, etc.)\n\nAnd what should the task contain?"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "0f563244-d4b9-4100-be30-ff08c13b05fd",
+                "id": "72044a99-de16-496b-8935-cd3ef5a4838d",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:29Z"
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1553,
+          "status": "pass",
+          "duration": 4619,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -590,18 +661,91 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "546",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:29 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"72044a99-de16-496b-8935-cd3ef5a4838d\",\"contextId\":\"0f563244-d4b9-4100-be30-ff08c13b05fd\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:29Z\"},\"artifacts\":[{\"artifactId\":\"8a731515-2f96-48b9-8572-9d73e9524eea\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nCould you clarify what you mean? Are you asking me to:\\n\\n1. **Create a todo item** in this conversation's task tracker\\n2. **Create a task/issue** in an external system (GitHub, Linear, etc.)\\n\\nAnd what should the task contain?\"}]}]}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "8a731515-2f96-48b9-8572-9d73e9524eea",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "\nCould you clarify what you mean? Are you asking me to:\n\n1. **Create a todo item** in this conversation's task tracker\n2. **Create a task/issue** in an external system (GitHub, Linear, etc.)\n\nAnd what should the task contain?"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "0f563244-d4b9-4100-be30-ff08c13b05fd",
+                "id": "72044a99-de16-496b-8935-cd3ef5a4838d",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:29Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 141738,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "86",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 17:04:29 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"Task not found\",\"data\":\"\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
+                "code": -32001,
+                "data": "",
+                "message": "Task not found"
               },
-              "id": 1,
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "fail",
+          "duration": 5851,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*",
+              "status": {
+                "state": "*"
+              }
+            }
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "86",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 17:04:29 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"Task not found\",\"data\":\"\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": "",
+                "message": "Task not found"
+              },
+              "id": 2,
               "jsonrpc": "2.0"
             }
           },
@@ -611,34 +755,34 @@
       "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "086da7b9-cb9b-4379-9f87-32e96e40594d",
+      "id": "fd9249ad-d316-459e-8784-08dc362de197",
       "spec_id": "a2a-v1",
       "test_case_id": "get-task-not-found",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
       "status": "pass",
-      "duration": 69331,
-      "started_at": "2026-04-27T11:35:12.17983952-05:00",
-      "completed_at": "2026-04-27T11:35:12.179908841-05:00",
+      "duration": 107503,
+      "started_at": "2026-04-27T12:04:29.521243761-05:00",
+      "completed_at": "2026-04-27T12:04:29.521351254-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 62408,
+          "duration": 91042,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "97",
+              "content-length": "86",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:29 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"tasks/get\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"Task not found\",\"data\":\"\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32601,
-                "data": "tasks/get",
-                "message": "Method not found"
+                "code": -32001,
+                "data": "",
+                "message": "Task not found"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -649,7 +793,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 751,
+          "duration": 1603,
           "expected": {
             "error": {
               "code": "*",
@@ -661,16 +805,16 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "97",
+              "content-length": "86",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:29 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"tasks/get\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"Task not found\",\"data\":\"\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32601,
-                "data": "tasks/get",
-                "message": "Method not found"
+                "code": -32001,
+                "data": "",
+                "message": "Task not found"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -680,45 +824,60 @@
       ]
     },
     {
-      "id": "6ac51021-ad51-4206-8e5a-5cb52e6ba570",
+      "id": "ddae5f53-ef63-462c-9dbc-2a04dbcd5856",
       "spec_id": "a2a-v1",
       "test_case_id": "cancel-task",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 49975,
-      "started_at": "2026-04-27T11:35:12.179909301-05:00",
-      "completed_at": "2026-04-27T11:35:12.179959266-05:00",
+      "status": "pass",
+      "duration": 1191001829,
+      "started_at": "2026-04-27T12:04:29.521352216-05:00",
+      "completed_at": "2026-04-27T12:04:30.712354035-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 45967,
+          "duration": 1190816589,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "344",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:30 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"c47a0014-2781-4e18-ab31-fa6e7c5014cb\",\"contextId\":\"5fe143fb-c1b1-4891-ab8b-45c0012a924e\",\"status\":{\"state\":\"failed\",\"timestamp\":\"2026-04-27T17:04:30Z\",\"message\":{\"kind\":\"\",\"messageId\":\"\",\"role\":\"agent\",\"parts\":[{\"kind\":\"text\",\"text\":\"unable to open database file: out of memory (14)\"}]}}}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "contextId": "5fe143fb-c1b1-4891-ab8b-45c0012a924e",
+                "id": "c47a0014-2781-4e18-ab31-fa6e7c5014cb",
+                "kind": "task",
+                "status": {
+                  "message": {
+                    "kind": "",
+                    "messageId": "",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "unable to open database file: out of memory (14)"
+                      }
+                    ],
+                    "role": "agent"
+                  },
+                  "state": "failed",
+                  "timestamp": "2026-04-27T17:04:30Z"
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 822,
+          "status": "pass",
+          "duration": 4659,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -732,66 +891,146 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "344",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:30 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"c47a0014-2781-4e18-ab31-fa6e7c5014cb\",\"contextId\":\"5fe143fb-c1b1-4891-ab8b-45c0012a924e\",\"status\":{\"state\":\"failed\",\"timestamp\":\"2026-04-27T17:04:30Z\",\"message\":{\"kind\":\"\",\"messageId\":\"\",\"role\":\"agent\",\"parts\":[{\"kind\":\"text\",\"text\":\"unable to open database file: out of memory (14)\"}]}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "contextId": "5fe143fb-c1b1-4891-ab8b-45c0012a924e",
+                "id": "c47a0014-2781-4e18-ab31-fa6e7c5014cb",
+                "kind": "task",
+                "status": {
+                  "message": {
+                    "kind": "",
+                    "messageId": "",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "unable to open database file: out of memory (14)"
+                      }
+                    ],
+                    "role": "agent"
+                  },
+                  "state": "failed",
+                  "timestamp": "2026-04-27T17:04:30Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 171815,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "86",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 17:04:30 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"Task not found\",\"data\":\"\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
+                "code": -32001,
+                "data": "",
+                "message": "Task not found"
               },
-              "id": 1,
+              "id": 2,
               "jsonrpc": "2.0"
             }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1283,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0"
           },
-          "error": "JSON-RPC match failed: missing key at result"
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "86",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 17:04:30 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"Task not found\",\"data\":\"\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": "",
+                "message": "Task not found"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     },
     {
-      "id": "50ee2f73-d85c-4e1c-856c-aa2188a33333",
+      "id": "66ce4ff8-3435-4fe8-bb77-6be14a04e67e",
       "spec_id": "a2a-v1",
       "test_case_id": "message-text-part",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 89770,
-      "started_at": "2026-04-27T11:35:12.179960388-05:00",
-      "completed_at": "2026-04-27T11:35:12.180050158-05:00",
+      "status": "pass",
+      "duration": 1118895873,
+      "started_at": "2026-04-27T12:04:30.712359986-05:00",
+      "completed_at": "2026-04-27T12:04:31.831255869-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 84740,
+          "duration": 1118877759,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "344",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"52b9b52c-4551-427d-b7ea-8c272dfb652b\",\"contextId\":\"f5054128-510f-43d3-96c7-85d798561ad7\",\"status\":{\"state\":\"failed\",\"timestamp\":\"2026-04-27T17:04:31Z\",\"message\":{\"kind\":\"\",\"messageId\":\"\",\"role\":\"agent\",\"parts\":[{\"kind\":\"text\",\"text\":\"unable to open database file: out of memory (14)\"}]}}}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "contextId": "f5054128-510f-43d3-96c7-85d798561ad7",
+                "id": "52b9b52c-4551-427d-b7ea-8c272dfb652b",
+                "kind": "task",
+                "status": {
+                  "message": {
+                    "kind": "",
+                    "messageId": "",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "unable to open database file: out of memory (14)"
+                      }
+                    ],
+                    "role": "agent"
+                  },
+                  "state": "failed",
+                  "timestamp": "2026-04-27T17:04:31Z"
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1402,
+          "status": "pass",
+          "duration": 4018,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -802,66 +1041,94 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "344",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:31 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"52b9b52c-4551-427d-b7ea-8c272dfb652b\",\"contextId\":\"f5054128-510f-43d3-96c7-85d798561ad7\",\"status\":{\"state\":\"failed\",\"timestamp\":\"2026-04-27T17:04:31Z\",\"message\":{\"kind\":\"\",\"messageId\":\"\",\"role\":\"agent\",\"parts\":[{\"kind\":\"text\",\"text\":\"unable to open database file: out of memory (14)\"}]}}}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "contextId": "f5054128-510f-43d3-96c7-85d798561ad7",
+                "id": "52b9b52c-4551-427d-b7ea-8c272dfb652b",
+                "kind": "task",
+                "status": {
+                  "message": {
+                    "kind": "",
+                    "messageId": "",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "unable to open database file: out of memory (14)"
+                      }
+                    ],
+                    "role": "agent"
+                  },
+                  "state": "failed",
+                  "timestamp": "2026-04-27T17:04:31Z"
+                }
+              }
             }
-          },
-          "error": "JSON-RPC match failed: missing key at result"
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     },
     {
-      "id": "c1f54562-b3d9-40c6-aafa-e7a70df8f534",
+      "id": "b30374ec-246a-4102-8eb0-37758f43da93",
       "spec_id": "a2a-v1",
       "test_case_id": "message-with-context",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 81434,
-      "started_at": "2026-04-27T11:35:12.180050969-05:00",
-      "completed_at": "2026-04-27T11:35:12.180132393-05:00",
+      "status": "pass",
+      "duration": 4347696880,
+      "started_at": "2026-04-27T12:04:31.831259917-05:00",
+      "completed_at": "2026-04-27T12:04:36.178956787-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 75352,
+          "duration": 2347442053,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "321",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:34 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"1eb4595b-d7e1-4110-86c9-b737456da079\",\"contextId\":\"1f270c3e-c75f-4005-bddc-6444c389536f\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:34Z\"},\"artifacts\":[{\"artifactId\":\"b6b3cc90-16ea-45ac-a22a-49e75c4e6909\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello.\"}]}]}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "b6b3cc90-16ea-45ac-a22a-49e75c4e6909",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello."
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "1f270c3e-c75f-4005-bddc-6444c389536f",
+                "id": "1eb4595b-d7e1-4110-86c9-b737456da079",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:34Z"
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1192,
+          "status": "pass",
+          "duration": 5781,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -873,66 +1140,254 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "321",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:34 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"1eb4595b-d7e1-4110-86c9-b737456da079\",\"contextId\":\"1f270c3e-c75f-4005-bddc-6444c389536f\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:34Z\"},\"artifacts\":[{\"artifactId\":\"b6b3cc90-16ea-45ac-a22a-49e75c4e6909\",\"parts\":[{\"kind\":\"text\",\"text\":\"Hello.\"}]}]}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "b6b3cc90-16ea-45ac-a22a-49e75c4e6909",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "Hello."
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "1f270c3e-c75f-4005-bddc-6444c389536f",
+                "id": "1eb4595b-d7e1-4110-86c9-b737456da079",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:34Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 2000228417,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "346",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 17:04:36 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"kind\":\"task\",\"id\":\"101b3a91-051b-421f-add0-d538e3f1940b\",\"contextId\":\"643130b7-9179-4d32-8a7f-6d853da7a748\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:36Z\"},\"artifacts\":[{\"artifactId\":\"1f5e8672-b51e-4b62-8287-3496c2e03aea\",\"parts\":[{\"kind\":\"text\",\"text\":\"What would you like to work on?\"}]}]}}\n",
+            "jsonrpc_resp": {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "1f5e8672-b51e-4b62-8287-3496c2e03aea",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "What would you like to work on?"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "643130b7-9179-4d32-8a7f-6d853da7a748",
+                "id": "101b3a91-051b-421f-add0-d538e3f1940b",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:36Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 3667,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0",
+            "result": {
+              "id": "*"
             }
           },
-          "error": "JSON-RPC match failed: missing key at result"
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "346",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 17:04:36 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"kind\":\"task\",\"id\":\"101b3a91-051b-421f-add0-d538e3f1940b\",\"contextId\":\"643130b7-9179-4d32-8a7f-6d853da7a748\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:36Z\"},\"artifacts\":[{\"artifactId\":\"1f5e8672-b51e-4b62-8287-3496c2e03aea\",\"parts\":[{\"kind\":\"text\",\"text\":\"What would you like to work on?\"}]}]}}\n",
+            "jsonrpc_resp": {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "1f5e8672-b51e-4b62-8287-3496c2e03aea",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "What would you like to work on?"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "643130b7-9179-4d32-8a7f-6d853da7a748",
+                "id": "101b3a91-051b-421f-add0-d538e3f1940b",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:36Z"
+                }
+              }
+            }
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     },
     {
-      "id": "f1f24725-a467-48f7-baa0-e7d52381fb0a",
+      "id": "0bf0a12c-6d6c-4997-bbb1-03c5c469ebe4",
       "spec_id": "a2a-v1",
       "test_case_id": "streaming-send",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 61086,
-      "started_at": "2026-04-27T11:35:12.180132924-05:00",
-      "completed_at": "2026-04-27T11:35:12.180194019-05:00",
+      "status": "pass",
+      "duration": 2659082180,
+      "started_at": "2026-04-27T12:04:36.178960875-05:00",
+      "completed_at": "2026-04-27T12:04:38.838043055-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 56377,
+          "duration": 2659060108,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "102",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 17:04:36 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/stream\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/stream",
-                "message": "Method not found"
+            "sse_events": [
+              {
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "status-update",
+                "status": {
+                  "state": "submitted",
+                  "timestamp": "2026-04-27T17:04:36Z"
+                },
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
               },
-              "id": 1,
-              "jsonrpc": "2.0"
+              {
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "status-update",
+                "status": {
+                  "state": "working",
+                  "timestamp": "2026-04-27T17:04:36Z"
+                },
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              },
+              {
+                "artifact": {
+                  "artifactId": "36371c9d-9ccd-4093-90d3-7392725ac51c",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "What"
+                    }
+                  ]
+                },
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "artifact-update",
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "a7e1e301-5520-4d97-876d-a971075b2142",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " would you like me"
+                    }
+                  ]
+                },
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "artifact-update",
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "6c18a5d1-7911-4818-9af7-89c92f684034",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " to help with"
+                    }
+                  ]
+                },
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "artifact-update",
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "8ac4c22f-7fc5-4522-8b97-fc3e20345878",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "?"
+                    }
+                  ]
+                },
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "artifact-update",
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              },
+              {
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "final": true,
+                "kind": "status-update",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:38Z"
+                },
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              }
+            ],
+            "parsed": {
+              "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+              "final": true,
+              "kind": "status-update",
+              "status": {
+                "state": "completed",
+                "timestamp": "2026-04-27T17:04:38Z"
+              },
+              "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1513,
+          "status": "pass",
+          "duration": 6081,
           "expected": {
             "headers": {
               "content-type": "text/event-stream"
@@ -942,116 +1397,1435 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "102",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 17:04:36 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/stream\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/stream",
-                "message": "Method not found"
+            "sse_events": [
+              {
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "status-update",
+                "status": {
+                  "state": "submitted",
+                  "timestamp": "2026-04-27T17:04:36Z"
+                },
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
               },
-              "id": 1,
-              "jsonrpc": "2.0"
+              {
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "status-update",
+                "status": {
+                  "state": "working",
+                  "timestamp": "2026-04-27T17:04:36Z"
+                },
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              },
+              {
+                "artifact": {
+                  "artifactId": "36371c9d-9ccd-4093-90d3-7392725ac51c",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "What"
+                    }
+                  ]
+                },
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "artifact-update",
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "a7e1e301-5520-4d97-876d-a971075b2142",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " would you like me"
+                    }
+                  ]
+                },
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "artifact-update",
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "6c18a5d1-7911-4818-9af7-89c92f684034",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " to help with"
+                    }
+                  ]
+                },
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "artifact-update",
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "8ac4c22f-7fc5-4522-8b97-fc3e20345878",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "?"
+                    }
+                  ]
+                },
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "kind": "artifact-update",
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              },
+              {
+                "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+                "final": true,
+                "kind": "status-update",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:38Z"
+                },
+                "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
+              }
+            ],
+            "parsed": {
+              "contextId": "770e739a-a892-4b67-8e52-ad210b06e23e",
+              "final": true,
+              "kind": "status-update",
+              "status": {
+                "state": "completed",
+                "timestamp": "2026-04-27T17:04:38Z"
+              },
+              "taskId": "e1a8efc4-aba6-4c9b-9202-27e05aaf0c12"
             }
-          },
-          "error": "header content-type: expected \"text/event-stream\", got \"application/json\""
+          }
         }
-      ],
-      "error_message": "header content-type: expected \"text/event-stream\", got \"application/json\""
+      ]
     },
     {
-      "id": "cfafee13-4c24-465f-a273-432cc79fe32e",
+      "id": "736170e5-3e5b-4452-9d81-846b7629945a",
       "spec_id": "a2a-v1",
       "test_case_id": "streaming-events",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 80702,
-      "started_at": "2026-04-27T11:35:12.180194661-05:00",
-      "completed_at": "2026-04-27T11:35:12.180275363-05:00",
+      "status": "pass",
+      "duration": 4477881271,
+      "started_at": "2026-04-27T12:04:38.838047153-05:00",
+      "completed_at": "2026-04-27T12:04:43.315928414-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 76595,
+          "duration": 4477861834,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "102",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 17:04:38 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/stream\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/stream",
-                "message": "Method not found"
+            "sse_events": [
+              {
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "status-update",
+                "status": {
+                  "state": "submitted",
+                  "timestamp": "2026-04-27T17:04:38Z"
+                },
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
               },
-              "id": 1,
-              "jsonrpc": "2.0"
+              {
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "status-update",
+                "status": {
+                  "state": "working",
+                  "timestamp": "2026-04-27T17:04:38Z"
+                },
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "artifactId": "1dd78f43-5e48-40e3-a0ac-89ee5368b54e",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "\nCould"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "4291351d-bdd8-4b6c-ad1f-9185485f858c",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " you clar"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "9b29f454-b1f0-4517-b6b1-279e1a839146",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "ify what you mean"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "4fbf6324-3550-4c8a-9fff-eea9ffdbf1c9",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "?"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "a6120259-a803-4dab-8ee3-33e6fb597f5d",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " A"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "5aa5706c-383f-40d6-99da-9fa9cbc0a4b2",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " few"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "24050912-86ef-477b-b36c-aa941d733ae7",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " possible"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "18e80fac-eb69-4348-8efb-8fb07330a266",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " interpretations:\n\n1. **You"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "f9bf0075-f5c8-4f31-841a-ae19e975feae",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " want me to perform"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "fcb8aab4-0880-4044-9a57-a66b16c78a63",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " a"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "49ac5d1c-0572-44ac-b5d5-d2a4c0425313",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " task while"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "1070426a-6e56-4abe-84a4-eb50bde3b566",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " streaming"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "2749d007-ed21-4ae0-bb17-47f71e97225d",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " status updates** —"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "c578460f-fa84-4f3d-9e7f-7dd5f5928474",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " if"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "3b83a935-f16e-475b-8f2a-cef88bf0dcc9",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " so, what"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "e556f6ce-650a-4204-8cd4-b68948c1698a",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " task?"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "30d1618e-48d4-4923-9f18-b8d5a08835e7",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "\n2. **You want to"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "12c03dff-a716-4e64-950e-4d61161789e1",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " implement"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "4e160bf2-0849-4e7c-9a5a-adcfffdc128f",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " a \""
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "a61f1949-7b65-4437-911e-695b6054ac97",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "stream"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "de081556-b877-4f29-bba9-47e2577345fa",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " task"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "ced5cfff-0f8b-4eaf-85bc-0d838fb363fc",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " with"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "94c8c8a8-fa39-457f-b6e2-661aec034fe4",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " status updates\""
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "13f72b1b-b6ce-4c28-b389-3cb67e93b1f6",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " feature** in"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "b2badb7c-5fb8-400e-9ad7-be53fd5032b8",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " the"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "ea062fc5-3f60-433e-b24a-8327b5e210c2",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " Streamlate c"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "75a0407c-c80e-44b4-a7e7-cc3f362f3f57",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "odebase —"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "ef7bea47-2290-4377-8b3b-27c208273f01",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " if so, which"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "ef3f8f78-932b-4ca0-946c-b9002e831e70",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " component"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "baa8e9d1-56ed-4e30-96d0-252b12fb321c",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " and"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "6bd905eb-dd43-470a-b2eb-5b70a769581a",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " what kind"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "60330a81-f391-4aac-84de-59b920cf7d52",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " of task/"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "b5845efc-4883-43d7-a2b5-64337a40cb4a",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "status"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "82431f50-2407-4860-bad6-93a9e758463d",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "?\n3. **Something"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "effd86cf-618d-48a7-946c-e3ce6c91ebbc",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " else entirely"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "fa598c13-f2f5-4004-a581-43c36cff6bef",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "**"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "d2f7956c-6872-47f8-add3-41b1c208745c",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "\n\nWhat"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "a58ece94-5fdb-493e-9fab-f6a891511cb5",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " would"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "abacf0fc-007e-4ddc-bff8-e3df4032af8c",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " you like?"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "final": true,
+                "kind": "status-update",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:43Z"
+                },
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              }
+            ],
+            "parsed": {
+              "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+              "final": true,
+              "kind": "status-update",
+              "status": {
+                "state": "completed",
+                "timestamp": "2026-04-27T17:04:43Z"
+              },
+              "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 321,
+          "status": "pass",
+          "duration": 3677,
           "expected": {
             "sse_event": {
-              "id": "*"
+              "status": {
+                "state": "*"
+              },
+              "taskId": "*"
             }
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "102",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 17:04:38 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/stream\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/stream",
-                "message": "Method not found"
+            "sse_events": [
+              {
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "status-update",
+                "status": {
+                  "state": "submitted",
+                  "timestamp": "2026-04-27T17:04:38Z"
+                },
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
               },
-              "id": 1,
-              "jsonrpc": "2.0"
+              {
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "status-update",
+                "status": {
+                  "state": "working",
+                  "timestamp": "2026-04-27T17:04:38Z"
+                },
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "artifactId": "1dd78f43-5e48-40e3-a0ac-89ee5368b54e",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "\nCould"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "4291351d-bdd8-4b6c-ad1f-9185485f858c",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " you clar"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "9b29f454-b1f0-4517-b6b1-279e1a839146",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "ify what you mean"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "4fbf6324-3550-4c8a-9fff-eea9ffdbf1c9",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "?"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "a6120259-a803-4dab-8ee3-33e6fb597f5d",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " A"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "5aa5706c-383f-40d6-99da-9fa9cbc0a4b2",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " few"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "24050912-86ef-477b-b36c-aa941d733ae7",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " possible"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "18e80fac-eb69-4348-8efb-8fb07330a266",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " interpretations:\n\n1. **You"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "f9bf0075-f5c8-4f31-841a-ae19e975feae",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " want me to perform"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "fcb8aab4-0880-4044-9a57-a66b16c78a63",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " a"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "49ac5d1c-0572-44ac-b5d5-d2a4c0425313",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " task while"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "1070426a-6e56-4abe-84a4-eb50bde3b566",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " streaming"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "2749d007-ed21-4ae0-bb17-47f71e97225d",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " status updates** —"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "c578460f-fa84-4f3d-9e7f-7dd5f5928474",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " if"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "3b83a935-f16e-475b-8f2a-cef88bf0dcc9",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " so, what"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "e556f6ce-650a-4204-8cd4-b68948c1698a",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " task?"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "30d1618e-48d4-4923-9f18-b8d5a08835e7",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "\n2. **You want to"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "12c03dff-a716-4e64-950e-4d61161789e1",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " implement"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "4e160bf2-0849-4e7c-9a5a-adcfffdc128f",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " a \""
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "a61f1949-7b65-4437-911e-695b6054ac97",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "stream"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "de081556-b877-4f29-bba9-47e2577345fa",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " task"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "ced5cfff-0f8b-4eaf-85bc-0d838fb363fc",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " with"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "94c8c8a8-fa39-457f-b6e2-661aec034fe4",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " status updates\""
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "13f72b1b-b6ce-4c28-b389-3cb67e93b1f6",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " feature** in"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "b2badb7c-5fb8-400e-9ad7-be53fd5032b8",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " the"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "ea062fc5-3f60-433e-b24a-8327b5e210c2",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " Streamlate c"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "75a0407c-c80e-44b4-a7e7-cc3f362f3f57",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "odebase —"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "ef7bea47-2290-4377-8b3b-27c208273f01",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " if so, which"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "ef3f8f78-932b-4ca0-946c-b9002e831e70",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " component"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "baa8e9d1-56ed-4e30-96d0-252b12fb321c",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " and"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "6bd905eb-dd43-470a-b2eb-5b70a769581a",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " what kind"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "60330a81-f391-4aac-84de-59b920cf7d52",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " of task/"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "b5845efc-4883-43d7-a2b5-64337a40cb4a",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "status"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "82431f50-2407-4860-bad6-93a9e758463d",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "?\n3. **Something"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "effd86cf-618d-48a7-946c-e3ce6c91ebbc",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " else entirely"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "fa598c13-f2f5-4004-a581-43c36cff6bef",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "**"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "d2f7956c-6872-47f8-add3-41b1c208745c",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": "\n\nWhat"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "a58ece94-5fdb-493e-9fab-f6a891511cb5",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " would"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "artifact": {
+                  "append": true,
+                  "artifactId": "abacf0fc-007e-4ddc-bff8-e3df4032af8c",
+                  "parts": [
+                    {
+                      "kind": "text",
+                      "text": " you like?"
+                    }
+                  ]
+                },
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "kind": "artifact-update",
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              },
+              {
+                "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+                "final": true,
+                "kind": "status-update",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:43Z"
+                },
+                "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
+              }
+            ],
+            "parsed": {
+              "contextId": "1c74149c-5386-415f-b90d-81e7fe719069",
+              "final": true,
+              "kind": "status-update",
+              "status": {
+                "state": "completed",
+                "timestamp": "2026-04-27T17:04:43Z"
+              },
+              "taskId": "6b29891d-5fb6-4767-b707-d9663d1e9834"
             }
-          },
-          "error": "expected SSE events but got none"
+          }
         }
-      ],
-      "error_message": "expected SSE events but got none"
+      ]
     },
     {
-      "id": "4e063603-ba67-4500-8348-c8779a3acfa8",
+      "id": "440d80db-69c3-478b-bff9-e23641509d36",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-parse-error",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
       "status": "pass",
-      "duration": 65945,
-      "started_at": "2026-04-27T11:35:12.180275864-05:00",
-      "completed_at": "2026-04-27T11:35:12.180341819-05:00",
+      "duration": 192143,
+      "started_at": "2026-04-27T12:04:43.315931791-05:00",
+      "completed_at": "2026-04-27T12:04:43.316123944-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 61536,
+          "duration": 173388,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "150",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:43 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Parse error\",\"data\":\"invalid character 'i' looking for beginning of object key string\"}}\n",
             "jsonrpc_resp": {
@@ -1069,7 +2843,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1112,
+          "duration": 1874,
           "expected": {
             "error": {
               "code": -32700,
@@ -1082,7 +2856,7 @@
             "headers": {
               "content-length": "150",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:43 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Parse error\",\"data\":\"invalid character 'i' looking for beginning of object key string\"}}\n",
             "jsonrpc_resp": {
@@ -1099,27 +2873,27 @@
       ]
     },
     {
-      "id": "c3be36a1-d9f2-44d4-9c78-5dfd9b37edca",
+      "id": "f4f984f2-14c4-4758-856a-0d1b3b4cea84",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-invalid-request",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
       "status": "pass",
-      "duration": 61015,
-      "started_at": "2026-04-27T11:35:12.18034251-05:00",
-      "completed_at": "2026-04-27T11:35:12.180403535-05:00",
+      "duration": 108525,
+      "started_at": "2026-04-27T12:04:43.316124655-05:00",
+      "completed_at": "2026-04-27T12:04:43.31623319-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 55836,
+          "duration": 101873,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "110",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:43 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"jsonrpc must be \\\"2.0\\\"\"}}\n",
             "jsonrpc_resp": {
@@ -1137,7 +2911,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 681,
+          "duration": 2315,
           "expected": {
             "error": {
               "code": -32600,
@@ -1150,7 +2924,7 @@
             "headers": {
               "content-length": "110",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:43 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"jsonrpc must be \\\"2.0\\\"\"}}\n",
             "jsonrpc_resp": {
@@ -1167,27 +2941,27 @@
       ]
     },
     {
-      "id": "d761d34e-37e2-4b6c-aa48-d246dbc2f8da",
+      "id": "1ff1b94c-48c2-4c85-8ede-92e35dd438c3",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-method-not-found",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
       "status": "pass",
-      "duration": 48091,
-      "started_at": "2026-04-27T11:35:12.180404046-05:00",
-      "completed_at": "2026-04-27T11:35:12.180452137-05:00",
+      "duration": 91472,
+      "started_at": "2026-04-27T12:04:43.316235505-05:00",
+      "completed_at": "2026-04-27T12:04:43.316326967-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 43883,
+          "duration": 83698,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "105",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:43 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"NonExistentMethod\"}}\n",
             "jsonrpc_resp": {
@@ -1205,7 +2979,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1012,
+          "duration": 1583,
           "expected": {
             "error": {
               "code": -32601,
@@ -1219,7 +2993,7 @@
             "headers": {
               "content-length": "105",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:43 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"NonExistentMethod\"}}\n",
             "jsonrpc_resp": {
@@ -1236,34 +3010,34 @@
       ]
     },
     {
-      "id": "4e01586a-1aa4-4573-8de8-76caab07f314",
+      "id": "3c73d912-15d5-494c-9ed3-8a847761d9ae",
       "spec_id": "a2a-v1",
       "test_case_id": "missing-required-params",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
       "status": "fail",
-      "duration": 66575,
-      "started_at": "2026-04-27T11:35:12.180452778-05:00",
-      "completed_at": "2026-04-27T11:35:12.180519354-05:00",
+      "duration": 247237,
+      "started_at": "2026-04-27T12:04:43.316329512-05:00",
+      "completed_at": "2026-04-27T12:04:43.316576759-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 59372,
+          "duration": 234874,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "174",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:43 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"create run: status 400: {\\\"code\\\":400,\\\"message\\\":\\\"input must contain text content\\\"}\\n\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
+                "code": -32603,
+                "data": "create run: status 400: {\"code\":400,\"message\":\"input must contain text content\"}\n",
+                "message": "Internal error"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -1274,7 +3048,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 3547,
+          "duration": 6422,
           "expected": {
             "error": {
               "code": -32602,
@@ -1286,66 +3060,81 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "174",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:43 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"create run: status 400: {\\\"code\\\":400,\\\"message\\\":\\\"input must contain text content\\\"}\\n\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
+                "code": -32603,
+                "data": "create run: status 400: {\"code\":400,\"message\":\"input must contain text content\"}\n",
+                "message": "Internal error"
               },
               "id": 1,
               "jsonrpc": "2.0"
             }
           },
-          "error": "JSON-RPC match failed: mismatch at error.code: expected -32602 (int), got -32601 (float64)"
+          "error": "JSON-RPC match failed: mismatch at error.code: expected -32602 (int), got -32603 (float64)"
         }
       ],
-      "error_message": "JSON-RPC match failed: mismatch at error.code: expected -32602 (int), got -32601 (float64)"
+      "error_message": "JSON-RPC match failed: mismatch at error.code: expected -32602 (int), got -32603 (float64)"
     },
     {
-      "id": "f16ded63-30c0-4c04-a0bc-21df8cd7886f",
+      "id": "40b2c1fd-9cdd-43f9-82fd-989437decde9",
       "spec_id": "a2a-v1",
       "test_case_id": "missing-message-id",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
-      "status": "pass",
-      "duration": 71445,
-      "started_at": "2026-04-27T11:35:12.180520997-05:00",
-      "completed_at": "2026-04-27T11:35:12.180592442-05:00",
+      "status": "fail",
+      "duration": 993928898,
+      "started_at": "2026-04-27T12:04:43.316578423-05:00",
+      "completed_at": "2026-04-27T12:04:44.310507331-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 65654,
+          "duration": 993915563,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "344",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:44 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"a6058de7-f31f-42d6-9d20-7006cf26e289\",\"contextId\":\"06878554-0b86-4694-b9f8-44b497085ae0\",\"status\":{\"state\":\"failed\",\"timestamp\":\"2026-04-27T17:04:44Z\",\"message\":{\"kind\":\"\",\"messageId\":\"\",\"role\":\"agent\",\"parts\":[{\"kind\":\"text\",\"text\":\"unable to open database file: out of memory (14)\"}]}}}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "contextId": "06878554-0b86-4694-b9f8-44b497085ae0",
+                "id": "a6058de7-f31f-42d6-9d20-7006cf26e289",
+                "kind": "task",
+                "status": {
+                  "message": {
+                    "kind": "",
+                    "messageId": "",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "unable to open database file: out of memory (14)"
+                      }
+                    ],
+                    "role": "agent"
+                  },
+                  "state": "failed",
+                  "timestamp": "2026-04-27T17:04:44Z"
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "pass",
-          "duration": 962,
+          "status": "fail",
+          "duration": 5831,
           "expected": {
             "error": {
               "code": "*",
@@ -1357,64 +3146,96 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "344",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:44 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"a6058de7-f31f-42d6-9d20-7006cf26e289\",\"contextId\":\"06878554-0b86-4694-b9f8-44b497085ae0\",\"status\":{\"state\":\"failed\",\"timestamp\":\"2026-04-27T17:04:44Z\",\"message\":{\"kind\":\"\",\"messageId\":\"\",\"role\":\"agent\",\"parts\":[{\"kind\":\"text\",\"text\":\"unable to open database file: out of memory (14)\"}]}}}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "contextId": "06878554-0b86-4694-b9f8-44b497085ae0",
+                "id": "a6058de7-f31f-42d6-9d20-7006cf26e289",
+                "kind": "task",
+                "status": {
+                  "message": {
+                    "kind": "",
+                    "messageId": "",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "unable to open database file: out of memory (14)"
+                      }
+                    ],
+                    "role": "agent"
+                  },
+                  "state": "failed",
+                  "timestamp": "2026-04-27T17:04:44Z"
+                }
+              }
             }
-          }
+          },
+          "error": "JSON-RPC match failed: missing key at error"
         }
-      ]
+      ],
+      "error_message": "JSON-RPC match failed: missing key at error"
     },
     {
-      "id": "5e04215d-d798-4006-ac8f-b33a7eaf07ac",
+      "id": "be4c6641-e558-4783-8307-b46258b148cc",
       "spec_id": "a2a-v1",
       "test_case_id": "push-notification-not-supported",
-      "runtime": "crush-a2a",
+      "runtime": "crush-a2a-v2",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 80782,
-      "started_at": "2026-04-27T11:35:12.180593154-05:00",
-      "completed_at": "2026-04-27T11:35:12.180673926-05:00",
+      "status": "pass",
+      "duration": 4223812529,
+      "started_at": "2026-04-27T12:04:44.310510808-05:00",
+      "completed_at": "2026-04-27T12:04:48.534323337-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 75583,
+          "duration": 4223652527,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "606",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:48 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"a3f78f36-1886-43c3-93e1-5ac3798daf41\",\"contextId\":\"9e40f3d0-6aec-4f6f-a405-29077b9bfd11\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:48Z\"},\"artifacts\":[{\"artifactId\":\"07bf2e7b-c628-4649-86e0-ee5b42e96255\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nCould you clarify what you mean? I see two possible interpretations:\\n\\n1. **A todo list task** — just a tracking item for \\\"push notification testing\\\"\\n2. **An actual implementation** — writing test code for push notifications in the Streamlate codebase\\n\\nWhich do you have in mind?\"}]}]}}\n",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32601,
-                "data": "message/send",
-                "message": "Method not found"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "07bf2e7b-c628-4649-86e0-ee5b42e96255",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "\nCould you clarify what you mean? I see two possible interpretations:\n\n1. **A todo list task** — just a tracking item for \"push notification testing\"\n2. **An actual implementation** — writing test code for push notifications in the Streamlate codebase\n\nWhich do you have in mind?"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "9e40f3d0-6aec-4f6f-a405-29077b9bfd11",
+                "id": "a3f78f36-1886-43c3-93e1-5ac3798daf41",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:48Z"
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1072,
+          "status": "pass",
+          "duration": 4459,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
@@ -1425,34 +3246,99 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "100",
+              "content-length": "606",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 16:35:12 GMT"
+              "date": "Mon, 27 Apr 2026 17:04:48 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"message/send\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"kind\":\"task\",\"id\":\"a3f78f36-1886-43c3-93e1-5ac3798daf41\",\"contextId\":\"9e40f3d0-6aec-4f6f-a405-29077b9bfd11\",\"status\":{\"state\":\"completed\",\"timestamp\":\"2026-04-27T17:04:48Z\"},\"artifacts\":[{\"artifactId\":\"07bf2e7b-c628-4649-86e0-ee5b42e96255\",\"parts\":[{\"kind\":\"text\",\"text\":\"\\nCould you clarify what you mean? I see two possible interpretations:\\n\\n1. **A todo list task** — just a tracking item for \\\"push notification testing\\\"\\n2. **An actual implementation** — writing test code for push notifications in the Streamlate codebase\\n\\nWhich do you have in mind?\"}]}]}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "artifacts": [
+                  {
+                    "artifactId": "07bf2e7b-c628-4649-86e0-ee5b42e96255",
+                    "parts": [
+                      {
+                        "kind": "text",
+                        "text": "\nCould you clarify what you mean? I see two possible interpretations:\n\n1. **A todo list task** — just a tracking item for \"push notification testing\"\n2. **An actual implementation** — writing test code for push notifications in the Streamlate codebase\n\nWhich do you have in mind?"
+                      }
+                    ]
+                  }
+                ],
+                "contextId": "9e40f3d0-6aec-4f6f-a405-29077b9bfd11",
+                "id": "a3f78f36-1886-43c3-93e1-5ac3798daf41",
+                "kind": "task",
+                "status": {
+                  "state": "completed",
+                  "timestamp": "2026-04-27T17:04:48Z"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 137059,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "120",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 17:04:48 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"CreateTaskPushNotificationConfig\"}}\n",
             "jsonrpc_resp": {
               "error": {
                 "code": -32601,
-                "data": "message/send",
+                "data": "CreateTaskPushNotificationConfig",
                 "message": "Method not found"
               },
-              "id": 1,
+              "id": 2,
               "jsonrpc": "2.0"
             }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1863,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0"
           },
-          "error": "JSON-RPC match failed: missing key at result"
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "120",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 17:04:48 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"CreateTaskPushNotificationConfig\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": "CreateTaskPushNotificationConfig",
+                "message": "Method not found"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     }
   ],
   "summary": {
     "total": 19,
-    "passed": 9,
-    "failed": 10,
+    "passed": 16,
+    "failed": 3,
     "errors": 0,
     "skipped": 0,
     "timeouts": 0,
-    "compliance": 47.368421052631575
+    "compliance": 84.21052631578947
   }
 }

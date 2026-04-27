@@ -19,7 +19,7 @@ Two A2A-compatible agents were tested:
 ### 3. crush-a2a (Crush AI via A2A v1.0 frontend)
 - **Source:** crush-a2a Go server (translates A2A v1.0 JSON-RPC → Crush ACP backend)
 - **Runtime:** Go, single-binary server
-- **Protocol:** JSON-RPC 2.0 over HTTP, A2A v1.0 method names (`message/send`, `tasks/get`, `message/stream`)
+- **Protocol:** JSON-RPC 2.0 over HTTP, A2A v1.0 method names (`SendMessage`, `GetTask`, `CancelTask`, `SendStreamingMessage`)
 - **Port:** localhost:8200
 
 ## Results Summary
@@ -28,7 +28,7 @@ Two A2A-compatible agents were tested:
 |-------|-----------|--------|--------|--------|
 | a2a-js-sample | **94.7%** | 18 | 1 | 0 |
 | a2a-python-helloworld | **47.4%** | 9 | 10 | 0 |
-| crush-a2a | **47.4%** | 9 | 10 | 0 |
+| crush-a2a | **84.2%** | 16 | 3 | 0 |
 
 ## Key Findings
 
@@ -55,15 +55,16 @@ The Python v1.0 SDK rejects all v0.3 method names with `-32601 Method not found`
 - Fails all method-specific tests because v1.0 SDK doesn't support v0.3 method names
 - The agent is fully functional — just speaks a different protocol dialect
 
-### crush-a2a (47.4%)
+### crush-a2a (84.2%)
 - **Discovery (4/4 pass):** Agent card served correctly at `/.well-known/agent-card.json` with name, version, url, skills, description, and capabilities
-- **Error handling (4/5 pass):** JSON-RPC -32700 (parse error), -32600 (invalid request), -32601 (method not found) all correct. `missing-message-id` correctly returns a validation error.
-- **Lifecycle (0/5 pass):** All `message/send`, `tasks/get`, and `tasks/cancel` calls return `-32601 Method not found` — the server does not recognize these A2A v1.0 method names
-- **Messaging (0/2 pass):** Same root cause — `message/send` is unrecognized
-- **Streaming (0/2 pass):** `message/stream` returns `application/json` error instead of SSE stream
-- **Push notifications (0/1 pass):** `tasks/pushNotificationConfig/set` fails because the prerequisite `message/send` call fails first
-- **`missing-required-params` failure:** Returns `-32601` instead of expected `-32602` because the method name itself is unrecognized before parameter validation can occur
-- **Root cause:** crush-a2a's JSON-RPC router does not register handlers for the A2A v1.0 method names (`message/send`, `tasks/get`, `tasks/cancel`, `message/stream`, `tasks/pushNotificationConfig/set`). The server correctly handles discovery and standard JSON-RPC error codes, but all A2A-specific operations are unreachable.
+- **Lifecycle (3/4 pass):** `SendMessage` creates tasks with proper id/contextId/status, `CancelTask` works on active tasks. Single failure: `GetTask` returns "task not found" because the proxy is stateless and does not persist completed tasks.
+- **Messaging (2/2 pass):** Text parts processed correctly, context sharing via `contextId` works
+- **Streaming (2/2 pass):** `SendStreamingMessage` returns SSE stream with `text/event-stream` content type and proper `TaskStatusUpdateEvent` / `TaskArtifactUpdateEvent` objects
+- **Error handling (4/5 pass):** JSON-RPC -32700 (parse error), -32600 (invalid request), -32601 (method not found) all correct. Two remaining failures:
+  - `missing-required-params`: Returns `-32603` (internal error) instead of `-32602` (invalid params) because the proxy forwards empty params to the ACP backend which returns HTTP 400, rather than validating the `message` field at the A2A layer
+  - `missing-message-id`: Returns a successful result instead of a validation error because the proxy does not enforce the A2A requirement that `messageId` be present in every `Message` object
+- **Push notifications (1/1 pass):** Correctly returns error when push notification config is set on an agent that doesn't support it
+- **Root cause of remaining failures:** The proxy translates A2A → ACP faithfully but lacks its own A2A-specific input validation layer. Fields required by A2A (like `messageId`) and parameter presence checks (like `message` in `SendMessage`) are not enforced before forwarding to the backend. The `GetTask` failure is architectural — the stateless proxy doesn't maintain a task store.
 
 ## How to Reproduce
 
@@ -93,8 +94,8 @@ go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime a2a-python-helloworl
 
 # 2. Run conformance suite
 cd spec-torture
-go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a --url http://localhost:8200
-go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a --url http://localhost:8200 --format json
+go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a-v2 --url http://localhost:8200
+go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a-v2 --url http://localhost:8200 --format json
 ```
 
 ## Files
