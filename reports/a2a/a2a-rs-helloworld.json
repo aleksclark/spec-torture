@@ -1,34 +1,34 @@
 {
-  "id": "7fed8bc9-b296-4454-88da-37e74e56d5ca",
+  "id": "67e60aef-3228-4bee-be6b-c62fa7afcb9e",
   "spec_id": "a2a-v1",
   "runtime": "a2a-rs-helloworld",
   "runtime_version": "",
-  "started_at": "2026-04-27T15:08:07.999450716-05:00",
-  "completed_at": "2026-04-27T15:08:08.004268672-05:00",
+  "started_at": "2026-04-27T16:18:25.555424772-05:00",
+  "completed_at": "2026-04-27T16:18:25.643313789-05:00",
   "results": [
     {
-      "id": "7c4d73bb-3223-4cde-a3c7-61f1c2334822",
+      "id": "6163df7c-edf8-4547-adff-d42674a2f415",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-well-known",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 1051199,
-      "started_at": "2026-04-27T15:08:07.999501813-05:00",
-      "completed_at": "2026-04-27T15:08:08.000553012-05:00",
+      "status": "pass",
+      "duration": 994872,
+      "started_at": "2026-04-27T16:18:25.555474446-05:00",
+      "completed_at": "2026-04-27T16:18:25.556469258-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 1036712,
+          "duration": 981978,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "body": {
               "capabilities": {
@@ -77,13 +77,13 @@
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 5851,
+          "status": "pass",
+          "duration": 1964,
           "expected": {
             "body": {
               "name": "*",
               "skills": "*",
-              "url": "*",
+              "supportedInterfaces": "*",
               "version": "*"
             },
             "http_status": 200
@@ -94,142 +94,7 @@
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
-            },
-            "body": {
-              "capabilities": {
-                "pushNotifications": false,
-                "streaming": true
-              },
-              "defaultInputModes": [
-                "text/plain"
-              ],
-              "defaultOutputModes": [
-                "text/plain"
-              ],
-              "description": "A simple echo agent that returns the input message.",
-              "name": "Hello World Agent",
-              "provider": {
-                "organization": "A2A Rust SDK",
-                "url": "https://github.com/a2aproject/a2a-rs"
-              },
-              "skills": [
-                {
-                  "description": "Echoes back the user's message.",
-                  "id": "echo",
-                  "name": "Echo",
-                  "tags": [
-                    "echo"
-                  ]
-                }
-              ],
-              "supportedInterfaces": [
-                {
-                  "protocolBinding": "JSONRPC",
-                  "protocolVersion": "1.0",
-                  "url": "http://localhost:8202/jsonrpc"
-                },
-                {
-                  "protocolBinding": "HTTP+JSON",
-                  "protocolVersion": "1.0",
-                  "url": "http://localhost:8202/rest"
-                }
-              ],
-              "version": "1.0"
-            },
-            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
-          },
-          "error": "body match failed: missing key at url"
-        }
-      ],
-      "error_message": "body match failed: missing key at url"
-    },
-    {
-      "id": "65733808-9d8c-4afd-8069-27524985405f",
-      "spec_id": "a2a-v1",
-      "test_case_id": "agent-card-content-type",
-      "runtime": "a2a-rs-helloworld",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 224615,
-      "started_at": "2026-04-27T15:08:08.000554915-05:00",
-      "completed_at": "2026-04-27T15:08:08.00077953-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 210248,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "access-control-allow-origin": "*",
-              "content-length": "641",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
-            },
-            "body": {
-              "capabilities": {
-                "pushNotifications": false,
-                "streaming": true
-              },
-              "defaultInputModes": [
-                "text/plain"
-              ],
-              "defaultOutputModes": [
-                "text/plain"
-              ],
-              "description": "A simple echo agent that returns the input message.",
-              "name": "Hello World Agent",
-              "provider": {
-                "organization": "A2A Rust SDK",
-                "url": "https://github.com/a2aproject/a2a-rs"
-              },
-              "skills": [
-                {
-                  "description": "Echoes back the user's message.",
-                  "id": "echo",
-                  "name": "Echo",
-                  "tags": [
-                    "echo"
-                  ]
-                }
-              ],
-              "supportedInterfaces": [
-                {
-                  "protocolBinding": "JSONRPC",
-                  "protocolVersion": "1.0",
-                  "url": "http://localhost:8202/jsonrpc"
-                },
-                {
-                  "protocolBinding": "HTTP+JSON",
-                  "protocolVersion": "1.0",
-                  "url": "http://localhost:8202/rest"
-                }
-              ],
-              "version": "1.0"
-            },
-            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 1042,
-          "expected": {
-            "headers": {
-              "content-type": "application/json"
-            },
-            "http_status": 200
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "access-control-allow-origin": "*",
-              "content-length": "641",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "body": {
               "capabilities": {
@@ -278,28 +143,28 @@
       ]
     },
     {
-      "id": "29cc1bea-509d-4c70-8256-9add73129429",
+      "id": "b1fca217-34df-4e94-b4c2-534426719d6f",
       "spec_id": "a2a-v1",
-      "test_case_id": "agent-card-optional-fields",
+      "test_case_id": "agent-card-content-type",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 143662,
-      "started_at": "2026-04-27T15:08:08.000781374-05:00",
-      "completed_at": "2026-04-27T15:08:08.000925045-05:00",
+      "duration": 186673,
+      "started_at": "2026-04-27T16:18:25.556472865-05:00",
+      "completed_at": "2026-04-27T16:18:25.556659608-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 136268,
+          "duration": 172346,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "body": {
               "capabilities": {
@@ -349,7 +214,140 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 841,
+          "duration": 1152,
+          "expected": {
+            "headers": {
+              "content-type": "application/json"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "feb810a9-94e9-4b83-bbf3-71ecde8b969d",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-optional-fields",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 133813,
+      "started_at": "2026-04-27T16:18:25.556661041-05:00",
+      "completed_at": "2026-04-27T16:18:25.556794904-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 128613,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 491,
           "expected": {
             "body": {
               "capabilities": "*",
@@ -364,7 +362,7 @@
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "body": {
               "capabilities": {
@@ -413,28 +411,28 @@
       ]
     },
     {
-      "id": "c83737ac-9d0b-42ee-963d-266568fdeb8c",
+      "id": "04895625-6db2-474a-9c3f-c27ab74ce638",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-skills",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 130307,
-      "started_at": "2026-04-27T15:08:08.000928211-05:00",
-      "completed_at": "2026-04-27T15:08:08.001058508-05:00",
+      "duration": 136889,
+      "started_at": "2026-04-27T16:18:25.556795866-05:00",
+      "completed_at": "2026-04-27T16:18:25.556932765-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 125407,
+          "duration": 132591,
           "actual": {
             "http_status": 200,
             "headers": {
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "body": {
               "capabilities": {
@@ -484,7 +482,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 621,
+          "duration": 661,
           "expected": {
             "body": {
               "skills": "*"
@@ -497,7 +495,7 @@
               "access-control-allow-origin": "*",
               "content-length": "641",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "body": {
               "capabilities": {
@@ -546,240 +544,507 @@
       ]
     },
     {
-      "id": "b2836257-5a54-4fbf-b2e5-ac9177004a11",
+      "id": "80c8e3d1-e321-47a1-8c7b-0d055228250c",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-interfaces",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 150504,
+      "started_at": "2026-04-27T16:18:25.556934068-05:00",
+      "completed_at": "2026-04-27T16:18:25.557084512-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 142520,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 481,
+          "expected": {
+            "body": {
+              "capabilities": "*",
+              "defaultInputModes": "*",
+              "defaultOutputModes": "*",
+              "supportedInterfaces": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "641",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "A simple echo agent that returns the input message.",
+              "name": "Hello World Agent",
+              "provider": {
+                "organization": "A2A Rust SDK",
+                "url": "https://github.com/a2aproject/a2a-rs"
+              },
+              "skills": [
+                {
+                  "description": "Echoes back the user's message.",
+                  "id": "echo",
+                  "name": "Echo",
+                  "tags": [
+                    "echo"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/jsonrpc"
+                },
+                {
+                  "protocolBinding": "HTTP+JSON",
+                  "protocolVersion": "1.0",
+                  "url": "http://localhost:8202/rest"
+                }
+              ],
+              "version": "1.0"
+            },
+            "raw_body": "{\"name\":\"Hello World Agent\",\"description\":\"A simple echo agent that returns the input message.\",\"version\":\"1.0\",\"supportedInterfaces\":[{\"url\":\"http://localhost:8202/jsonrpc\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"},{\"url\":\"http://localhost:8202/rest\",\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true,\"pushNotifications\":false},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Echoes back the user's message.\",\"tags\":[\"echo\"]}],\"provider\":{\"organization\":\"A2A Rust SDK\",\"url\":\"https://github.com/a2aproject/a2a-rs\"}}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "36ef3512-07a1-424f-b7f8-081af2ce4b8a",
       "spec_id": "a2a-v1",
       "test_case_id": "send-message-basic",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 278266,
-      "started_at": "2026-04-27T15:08:08.001058949-05:00",
-      "completed_at": "2026-04-27T15:08:08.001337215-05:00",
+      "status": "pass",
+      "duration": 508422,
+      "started_at": "2026-04-27T16:18:25.557085564-05:00",
+      "completed_at": "2026-04-27T16:18:25.557593996-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 272856,
+          "duration": 502070,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "464",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f51cdbbab543\",\"id\":\"019dd0ce-c715-72f2-a3d1-f50ad0cd67bc\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f51cdbbab543\",\"messageId\":\"019dd0ce-c715-72f2-a3d1-f52961e74cb0\",\"parts\":[{\"text\":\"Echo: Hello, what can you do?\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c715-72f2-a3d1-f50ad0cd67bc\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.557416551+00:00\"}}}}",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c715-72f2-a3d1-f51cdbbab543",
+                  "id": "019dd0ce-c715-72f2-a3d1-f50ad0cd67bc",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c715-72f2-a3d1-f51cdbbab543",
+                      "messageId": "019dd0ce-c715-72f2-a3d1-f52961e74cb0",
+                      "parts": [
+                        {
+                          "text": "Echo: Hello, what can you do?"
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c715-72f2-a3d1-f50ad0cd67bc"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.557416551+00:00"
+                  }
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1623,
+          "status": "pass",
+          "duration": 1723,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "contextId": "*",
-              "id": "*",
-              "status": {
-                "state": "*"
-              }
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "464",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f51cdbbab543\",\"id\":\"019dd0ce-c715-72f2-a3d1-f50ad0cd67bc\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f51cdbbab543\",\"messageId\":\"019dd0ce-c715-72f2-a3d1-f52961e74cb0\",\"parts\":[{\"text\":\"Echo: Hello, what can you do?\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c715-72f2-a3d1-f50ad0cd67bc\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.557416551+00:00\"}}}}",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c715-72f2-a3d1-f51cdbbab543",
+                  "id": "019dd0ce-c715-72f2-a3d1-f50ad0cd67bc",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c715-72f2-a3d1-f51cdbbab543",
+                      "messageId": "019dd0ce-c715-72f2-a3d1-f52961e74cb0",
+                      "parts": [
+                        {
+                          "text": "Echo: Hello, what can you do?"
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c715-72f2-a3d1-f50ad0cd67bc"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.557416551+00:00"
+                  }
+                }
+              }
             }
-          },
-          "error": "JSON-RPC match failed: missing key at result"
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     },
     {
-      "id": "b293a2d6-a5ea-4eb4-8ff8-edccfb2d04ab",
+      "id": "f1b113ba-1857-4668-9c4c-44d0795285c7",
       "spec_id": "a2a-v1",
-      "test_case_id": "send-message-creates-task",
+      "test_case_id": "send-message-response-shape",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 188907,
-      "started_at": "2026-04-27T15:08:08.001338588-05:00",
-      "completed_at": "2026-04-27T15:08:08.001527235-05:00",
+      "status": "pass",
+      "duration": 363508,
+      "started_at": "2026-04-27T16:18:25.557594898-05:00",
+      "completed_at": "2026-04-27T16:18:25.557958406-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 182555,
+          "duration": 357136,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "459",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f54e9165e08c\",\"id\":\"019dd0ce-c715-72f2-a3d1-f53e480f3a4b\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f54e9165e08c\",\"messageId\":\"019dd0ce-c715-72f2-a3d1-f55cc0bdbff6\",\"parts\":[{\"text\":\"Echo: Tell me something.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c715-72f2-a3d1-f53e480f3a4b\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.557836024+00:00\"}}}}",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c715-72f2-a3d1-f54e9165e08c",
+                  "id": "019dd0ce-c715-72f2-a3d1-f53e480f3a4b",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c715-72f2-a3d1-f54e9165e08c",
+                      "messageId": "019dd0ce-c715-72f2-a3d1-f55cc0bdbff6",
+                      "parts": [
+                        {
+                          "text": "Echo: Tell me something."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c715-72f2-a3d1-f53e480f3a4b"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.557836024+00:00"
+                  }
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1192,
+          "status": "pass",
+          "duration": 682,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "contextId": "*",
-              "id": "*",
-              "kind": "task",
-              "status": {
-                "state": "*"
-              }
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "459",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f54e9165e08c\",\"id\":\"019dd0ce-c715-72f2-a3d1-f53e480f3a4b\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c715-72f2-a3d1-f54e9165e08c\",\"messageId\":\"019dd0ce-c715-72f2-a3d1-f55cc0bdbff6\",\"parts\":[{\"text\":\"Echo: Tell me something.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c715-72f2-a3d1-f53e480f3a4b\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.557836024+00:00\"}}}}",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c715-72f2-a3d1-f54e9165e08c",
+                  "id": "019dd0ce-c715-72f2-a3d1-f53e480f3a4b",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c715-72f2-a3d1-f54e9165e08c",
+                      "messageId": "019dd0ce-c715-72f2-a3d1-f55cc0bdbff6",
+                      "parts": [
+                        {
+                          "text": "Echo: Tell me something."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c715-72f2-a3d1-f53e480f3a4b"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.557836024+00:00"
+                  }
+                }
+              }
             }
-          },
-          "error": "JSON-RPC match failed: missing key at result"
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     },
     {
-      "id": "eb0a4f55-af12-4027-b796-0021dcc1e95e",
+      "id": "fd464139-c410-45ca-b534-556870235077",
       "spec_id": "a2a-v1",
       "test_case_id": "get-task",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 167186,
-      "started_at": "2026-04-27T15:08:08.001528087-05:00",
-      "completed_at": "2026-04-27T15:08:08.001695263-05:00",
+      "status": "pass",
+      "duration": 698221,
+      "started_at": "2026-04-27T16:18:25.557959217-05:00",
+      "completed_at": "2026-04-27T16:18:25.558657428-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 161946,
+          "duration": 468196,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "476",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d0f4efd2de21\",\"id\":\"019dd0ce-c716-7a81-92f4-d0e2cb414546\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d0f4efd2de21\",\"messageId\":\"019dd0ce-c716-7a81-92f4-d1065e125727\",\"parts\":[{\"text\":\"Echo: Create a task so I can retrieve it.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c716-7a81-92f4-d0e2cb414546\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.558221544+00:00\"}}}}",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c716-7a81-92f4-d0f4efd2de21",
+                  "id": "019dd0ce-c716-7a81-92f4-d0e2cb414546",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c716-7a81-92f4-d0f4efd2de21",
+                      "messageId": "019dd0ce-c716-7a81-92f4-d1065e125727",
+                      "parts": [
+                        {
+                          "text": "Echo: Create a task so I can retrieve it."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c716-7a81-92f4-d0e2cb414546"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.558221544+00:00"
+                  }
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1483,
+          "status": "pass",
+          "duration": 1613,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "id": "*"
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "476",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d0f4efd2de21\",\"id\":\"019dd0ce-c716-7a81-92f4-d0e2cb414546\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d0f4efd2de21\",\"messageId\":\"019dd0ce-c716-7a81-92f4-d1065e125727\",\"parts\":[{\"text\":\"Echo: Create a task so I can retrieve it.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c716-7a81-92f4-d0e2cb414546\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.558221544+00:00\"}}}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c716-7a81-92f4-d0f4efd2de21",
+                  "id": "019dd0ce-c716-7a81-92f4-d0e2cb414546",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c716-7a81-92f4-d0f4efd2de21",
+                      "messageId": "019dd0ce-c716-7a81-92f4-d1065e125727",
+                      "parts": [
+                        {
+                          "text": "Echo: Create a task so I can retrieve it."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c716-7a81-92f4-d0e2cb414546"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.558221544+00:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 222601,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "82",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found: \u003cnil\u003e\"}}",
             "jsonrpc_resp": {
               "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+                "code": -32001,
+                "message": "task not found: \u003cnil\u003e"
               },
-              "id": 1,
+              "id": 2,
               "jsonrpc": "2.0"
             }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 942,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0"
           },
-          "error": "JSON-RPC match failed: missing key at result"
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "82",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found: \u003cnil\u003e\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "message": "task not found: \u003cnil\u003e"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     },
     {
-      "id": "3864f943-dcee-43e5-be3e-591917727908",
+      "id": "62b97a2a-a167-4aec-942a-8aeced373eab",
       "spec_id": "a2a-v1",
       "test_case_id": "get-task-not-found",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 190931,
-      "started_at": "2026-04-27T15:08:08.001695904-05:00",
-      "completed_at": "2026-04-27T15:08:08.001886845-05:00",
+      "duration": 163649,
+      "started_at": "2026-04-27T16:18:25.55865824-05:00",
+      "completed_at": "2026-04-27T16:18:25.558821879-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 185150,
+          "duration": 157127,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "105",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found: nonexistent-task-id-00000000\"}}",
             "jsonrpc_resp": {
@@ -796,7 +1061,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1162,
+          "duration": 911,
           "expected": {
             "error": {
               "code": "*",
@@ -810,7 +1075,7 @@
             "headers": {
               "content-length": "105",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found: nonexistent-task-id-00000000\"}}",
             "jsonrpc_resp": {
@@ -826,252 +1091,614 @@
       ]
     },
     {
-      "id": "a1df8c6d-1dac-445c-927e-bf70c36f4169",
+      "id": "f90e77f4-14b4-4844-bc0e-6c885b784dcd",
       "spec_id": "a2a-v1",
       "test_case_id": "cancel-task",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 162227,
-      "started_at": "2026-04-27T15:08:08.001887467-05:00",
-      "completed_at": "2026-04-27T15:08:08.002049683-05:00",
+      "status": "pass",
+      "duration": 472885,
+      "started_at": "2026-04-27T16:18:25.558823302-05:00",
+      "completed_at": "2026-04-27T16:18:25.559296187-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 157478,
+          "duration": 317681,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "472",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d12c90584f54\",\"id\":\"019dd0ce-c716-7a81-92f4-d1184ba6dcd3\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d12c90584f54\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8d469bfc8326\",\"parts\":[{\"text\":\"Echo: Start a task that I can cancel.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c716-7a81-92f4-d1184ba6dcd3\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559013161+00:00\"}}}}",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c716-7a81-92f4-d12c90584f54",
+                  "id": "019dd0ce-c716-7a81-92f4-d1184ba6dcd3",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c716-7a81-92f4-d12c90584f54",
+                      "messageId": "019dd0ce-c717-72a2-b5d4-8d469bfc8326",
+                      "parts": [
+                        {
+                          "text": "Echo: Start a task that I can cancel."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c716-7a81-92f4-d1184ba6dcd3"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.559013161+00:00"
+                  }
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1112,
+          "status": "pass",
+          "duration": 751,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "id": "*",
-              "status": {
-                "state": "*"
-              }
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "472",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d12c90584f54\",\"id\":\"019dd0ce-c716-7a81-92f4-d1184ba6dcd3\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c716-7a81-92f4-d12c90584f54\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8d469bfc8326\",\"parts\":[{\"text\":\"Echo: Start a task that I can cancel.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c716-7a81-92f4-d1184ba6dcd3\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559013161+00:00\"}}}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c716-7a81-92f4-d12c90584f54",
+                  "id": "019dd0ce-c716-7a81-92f4-d1184ba6dcd3",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c716-7a81-92f4-d12c90584f54",
+                      "messageId": "019dd0ce-c717-72a2-b5d4-8d469bfc8326",
+                      "parts": [
+                        {
+                          "text": "Echo: Start a task that I can cancel."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c716-7a81-92f4-d1184ba6dcd3"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.559013161+00:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 149372,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "82",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found: \u003cnil\u003e\"}}",
             "jsonrpc_resp": {
               "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+                "code": -32001,
+                "message": "task not found: \u003cnil\u003e"
               },
-              "id": 1,
+              "id": 2,
               "jsonrpc": "2.0"
             }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 732,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0"
           },
-          "error": "JSON-RPC match failed: missing key at result"
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "82",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found: \u003cnil\u003e\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "message": "task not found: \u003cnil\u003e"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     },
     {
-      "id": "bc5aa5d6-d66d-4740-92ab-b234cbc6e406",
+      "id": "401fd226-1484-4bb6-ac2c-31deb814ae83",
       "spec_id": "a2a-v1",
       "test_case_id": "message-text-part",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 165123,
-      "started_at": "2026-04-27T15:08:08.002053761-05:00",
-      "completed_at": "2026-04-27T15:08:08.002218844-05:00",
+      "status": "pass",
+      "duration": 286101,
+      "started_at": "2026-04-27T16:18:25.559297099-05:00",
+      "completed_at": "2026-04-27T16:18:25.55958317-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 158079,
+          "duration": 279559,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "470",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d6888457bdb\",\"id\":\"019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d6888457bdb\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8d7b9071f957\",\"parts\":[{\"text\":\"Echo: This is a plain text message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559462271+00:00\"}}}}",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c717-72a2-b5d4-8d6888457bdb",
+                  "id": "019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c717-72a2-b5d4-8d6888457bdb",
+                      "messageId": "019dd0ce-c717-72a2-b5d4-8d7b9071f957",
+                      "parts": [
+                        {
+                          "text": "Echo: This is a plain text message."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.559462271+00:00"
+                  }
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1673,
+          "status": "pass",
+          "duration": 762,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "id": "*"
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "470",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d6888457bdb\",\"id\":\"019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d6888457bdb\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8d7b9071f957\",\"parts\":[{\"text\":\"Echo: This is a plain text message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559462271+00:00\"}}}}",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c717-72a2-b5d4-8d6888457bdb",
+                  "id": "019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c717-72a2-b5d4-8d6888457bdb",
+                      "messageId": "019dd0ce-c717-72a2-b5d4-8d7b9071f957",
+                      "parts": [
+                        {
+                          "text": "Echo: This is a plain text message."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c717-72a2-b5d4-8d5d8f7ae8be"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.559462271+00:00"
+                  }
+                }
+              }
             }
-          },
-          "error": "JSON-RPC match failed: missing key at result"
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     },
     {
-      "id": "25aaea91-bef6-49e4-9498-b54834265252",
+      "id": "b778b477-c243-492e-ad64-b66daf627297",
       "spec_id": "a2a-v1",
       "test_case_id": "message-with-context",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 175572,
-      "started_at": "2026-04-27T15:08:08.002219515-05:00",
-      "completed_at": "2026-04-27T15:08:08.002395097-05:00",
+      "status": "pass",
+      "duration": 665299,
+      "started_at": "2026-04-27T16:18:25.559583631-05:00",
+      "completed_at": "2026-04-27T16:18:25.560248919-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 170693,
+          "duration": 302251,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "465",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d9f53f40539\",\"id\":\"019dd0ce-c717-72a2-b5d4-8d81ceecce7d\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d9f53f40539\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8da616b1bd22\",\"parts\":[{\"text\":\"Echo: Hello from context test.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c717-72a2-b5d4-8d81ceecce7d\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559770053+00:00\"}}}}",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c717-72a2-b5d4-8d9f53f40539",
+                  "id": "019dd0ce-c717-72a2-b5d4-8d81ceecce7d",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c717-72a2-b5d4-8d9f53f40539",
+                      "messageId": "019dd0ce-c717-72a2-b5d4-8da616b1bd22",
+                      "parts": [
+                        {
+                          "text": "Echo: Hello from context test."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c717-72a2-b5d4-8d81ceecce7d"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.559770053+00:00"
+                  }
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1162,
+          "status": "pass",
+          "duration": 742,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "contextId": "*",
-              "id": "*"
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "465",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d9f53f40539\",\"id\":\"019dd0ce-c717-72a2-b5d4-8d81ceecce7d\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c717-72a2-b5d4-8d9f53f40539\",\"messageId\":\"019dd0ce-c717-72a2-b5d4-8da616b1bd22\",\"parts\":[{\"text\":\"Echo: Hello from context test.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c717-72a2-b5d4-8d81ceecce7d\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.559770053+00:00\"}}}}",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c717-72a2-b5d4-8d9f53f40539",
+                  "id": "019dd0ce-c717-72a2-b5d4-8d81ceecce7d",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c717-72a2-b5d4-8d9f53f40539",
+                      "messageId": "019dd0ce-c717-72a2-b5d4-8da616b1bd22",
+                      "parts": [
+                        {
+                          "text": "Echo: Hello from context test."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c717-72a2-b5d4-8d81ceecce7d"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.559770053+00:00"
+                  }
+                }
+              }
             }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 357576,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "397",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"task\":{\"contextId\":\"\u003cnil\u003e\",\"id\":\"019dd0ce-c718-7920-ad22-166ed977260a\",\"status\":{\"message\":{\"contextId\":\"\u003cnil\u003e\",\"messageId\":\"019dd0ce-c718-7920-ad22-1671bb38546e\",\"parts\":[{\"text\":\"Echo: Follow up message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c718-7920-ad22-166ed977260a\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.560124815+00:00\"}}}}",
+            "jsonrpc_resp": {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "\u003cnil\u003e",
+                  "id": "019dd0ce-c718-7920-ad22-166ed977260a",
+                  "status": {
+                    "message": {
+                      "contextId": "\u003cnil\u003e",
+                      "messageId": "019dd0ce-c718-7920-ad22-1671bb38546e",
+                      "parts": [
+                        {
+                          "text": "Echo: Follow up message."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c718-7920-ad22-166ed977260a"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.560124815+00:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 901,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0",
+            "result": "*"
           },
-          "error": "JSON-RPC match failed: missing key at result"
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "397",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"task\":{\"contextId\":\"\u003cnil\u003e\",\"id\":\"019dd0ce-c718-7920-ad22-166ed977260a\",\"status\":{\"message\":{\"contextId\":\"\u003cnil\u003e\",\"messageId\":\"019dd0ce-c718-7920-ad22-1671bb38546e\",\"parts\":[{\"text\":\"Echo: Follow up message.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c718-7920-ad22-166ed977260a\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.560124815+00:00\"}}}}",
+            "jsonrpc_resp": {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "\u003cnil\u003e",
+                  "id": "019dd0ce-c718-7920-ad22-166ed977260a",
+                  "status": {
+                    "message": {
+                      "contextId": "\u003cnil\u003e",
+                      "messageId": "019dd0ce-c718-7920-ad22-1671bb38546e",
+                      "parts": [
+                        {
+                          "text": "Echo: Follow up message."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c718-7920-ad22-166ed977260a"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.560124815+00:00"
+                  }
+                }
+              }
+            }
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     },
     {
-      "id": "167a1fc2-b22b-4c15-9dd2-a0fc9602805c",
+      "id": "1ed9a4d8-09d3-4288-bcca-c49b89607fb7",
+      "spec_id": "a2a-v1",
+      "test_case_id": "optional-message-id",
+      "runtime": "a2a-rs-helloworld",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 276172,
+      "started_at": "2026-04-27T16:18:25.560249591-05:00",
+      "completed_at": "2026-04-27T16:18:25.560525763-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 270932,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "464",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c718-7920-ad22-169d853eaa06\",\"id\":\"019dd0ce-c718-7920-ad22-1687c718bb86\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c718-7920-ad22-169d853eaa06\",\"messageId\":\"019dd0ce-c718-7920-ad22-16a07d1cd46f\",\"parts\":[{\"text\":\"Echo: No message ID provided.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c718-7920-ad22-1687c718bb86\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.560406237+00:00\"}}}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c718-7920-ad22-169d853eaa06",
+                  "id": "019dd0ce-c718-7920-ad22-1687c718bb86",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c718-7920-ad22-169d853eaa06",
+                      "messageId": "019dd0ce-c718-7920-ad22-16a07d1cd46f",
+                      "parts": [
+                        {
+                          "text": "Echo: No message ID provided."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c718-7920-ad22-1687c718bb86"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.560406237+00:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 731,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "464",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c718-7920-ad22-169d853eaa06\",\"id\":\"019dd0ce-c718-7920-ad22-1687c718bb86\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c718-7920-ad22-169d853eaa06\",\"messageId\":\"019dd0ce-c718-7920-ad22-16a07d1cd46f\",\"parts\":[{\"text\":\"Echo: No message ID provided.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c718-7920-ad22-1687c718bb86\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.560406237+00:00\"}}}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c718-7920-ad22-169d853eaa06",
+                  "id": "019dd0ce-c718-7920-ad22-1687c718bb86",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c718-7920-ad22-169d853eaa06",
+                      "messageId": "019dd0ce-c718-7920-ad22-16a07d1cd46f",
+                      "parts": [
+                        {
+                          "text": "Echo: No message ID provided."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c718-7920-ad22-1687c718bb86"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.560406237+00:00"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "164c892e-579b-4c30-8663-88319200021c",
       "spec_id": "a2a-v1",
       "test_case_id": "streaming-send",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 279890,
-      "started_at": "2026-04-27T15:08:08.002395648-05:00",
-      "completed_at": "2026-04-27T15:08:08.002675548-05:00",
+      "status": "pass",
+      "duration": 40590598,
+      "started_at": "2026-04-27T16:18:25.560526214-05:00",
+      "completed_at": "2026-04-27T16:18:25.601116812-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 252237,
+          "duration": 40584776,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "cache-control": "no-cache",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "task": {
+                    "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
+                    "id": "019dd0ce-c718-7920-ad22-16bc3918b215",
+                    "status": {
+                      "message": {
+                        "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
+                        "messageId": "019dd0ce-c718-7920-ad22-16d93f06297b",
+                        "parts": [
+                          {
+                            "text": "Echo: Stream your response to me."
+                          }
+                        ],
+                        "role": "ROLE_AGENT",
+                        "taskId": "019dd0ce-c718-7920-ad22-16bc3918b215"
+                      },
+                      "state": "TASK_STATE_COMPLETED",
+                      "timestamp": "2026-04-27T21:18:25.560687159+00:00"
+                    }
+                  }
+                }
+              }
+            ],
+            "parsed": {
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
+                  "id": "019dd0ce-c718-7920-ad22-16bc3918b215",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
+                      "messageId": "019dd0ce-c718-7920-ad22-16d93f06297b",
+                      "parts": [
+                        {
+                          "text": "Echo: Stream your response to me."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c718-7920-ad22-16bc3918b215"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.560687159+00:00"
+                  }
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 16391,
+          "status": "pass",
+          "duration": 2184,
           "expected": {
             "headers": {
               "content-type": "text/event-stream"
@@ -1081,56 +1708,140 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "cache-control": "no-cache",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "task": {
+                    "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
+                    "id": "019dd0ce-c718-7920-ad22-16bc3918b215",
+                    "status": {
+                      "message": {
+                        "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
+                        "messageId": "019dd0ce-c718-7920-ad22-16d93f06297b",
+                        "parts": [
+                          {
+                            "text": "Echo: Stream your response to me."
+                          }
+                        ],
+                        "role": "ROLE_AGENT",
+                        "taskId": "019dd0ce-c718-7920-ad22-16bc3918b215"
+                      },
+                      "state": "TASK_STATE_COMPLETED",
+                      "timestamp": "2026-04-27T21:18:25.560687159+00:00"
+                    }
+                  }
+                }
+              }
+            ],
+            "parsed": {
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
+                  "id": "019dd0ce-c718-7920-ad22-16bc3918b215",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c718-7920-ad22-16c7d1141f58",
+                      "messageId": "019dd0ce-c718-7920-ad22-16d93f06297b",
+                      "parts": [
+                        {
+                          "text": "Echo: Stream your response to me."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c718-7920-ad22-16bc3918b215"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.560687159+00:00"
+                  }
+                }
+              }
             }
-          },
-          "error": "header content-type: expected \"text/event-stream\", got \"application/json\""
+          }
         }
-      ],
-      "error_message": "header content-type: expected \"text/event-stream\", got \"application/json\""
+      ]
     },
     {
-      "id": "207657aa-b7e5-4cc9-8e8e-58c4ab2a2161",
+      "id": "e7c0bc1f-fb77-4569-9361-61d1493280e7",
       "spec_id": "a2a-v1",
       "test_case_id": "streaming-events",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "fail",
-      "duration": 211279,
-      "started_at": "2026-04-27T15:08:08.00267658-05:00",
-      "completed_at": "2026-04-27T15:08:08.002887809-05:00",
+      "duration": 40947614,
+      "started_at": "2026-04-27T16:18:25.601118224-05:00",
+      "completed_at": "2026-04-27T16:18:25.642065848-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 199457,
+          "duration": 40938316,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "cache-control": "no-cache",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "task": {
+                    "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
+                    "id": "019dd0ce-c741-7841-b856-51b5151c8813",
+                    "status": {
+                      "message": {
+                        "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
+                        "messageId": "019dd0ce-c741-7841-b856-51d8cde705c2",
+                        "parts": [
+                          {
+                            "text": "Echo: Stream a response with status updates."
+                          }
+                        ],
+                        "role": "ROLE_AGENT",
+                        "taskId": "019dd0ce-c741-7841-b856-51b5151c8813"
+                      },
+                      "state": "TASK_STATE_COMPLETED",
+                      "timestamp": "2026-04-27T21:18:25.601335285+00:00"
+                    }
+                  }
+                }
+              }
+            ],
+            "parsed": {
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
+                  "id": "019dd0ce-c741-7841-b856-51b5151c8813",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
+                      "messageId": "019dd0ce-c741-7841-b856-51d8cde705c2",
+                      "parts": [
+                        {
+                          "text": "Echo: Stream a response with status updates."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c741-7841-b856-51b5151c8813"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.601335285+00:00"
+                  }
+                }
+              }
             }
           }
         },
@@ -1138,59 +1849,97 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 701,
+          "duration": 781,
           "expected": {
-            "sse_event": {
-              "status": {
-                "state": "*"
-              },
-              "taskId": "*"
-            }
+            "sse_event": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "cache-control": "no-cache",
+              "content-type": "text/event-stream",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "task": {
+                    "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
+                    "id": "019dd0ce-c741-7841-b856-51b5151c8813",
+                    "status": {
+                      "message": {
+                        "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
+                        "messageId": "019dd0ce-c741-7841-b856-51d8cde705c2",
+                        "parts": [
+                          {
+                            "text": "Echo: Stream a response with status updates."
+                          }
+                        ],
+                        "role": "ROLE_AGENT",
+                        "taskId": "019dd0ce-c741-7841-b856-51b5151c8813"
+                      },
+                      "state": "TASK_STATE_COMPLETED",
+                      "timestamp": "2026-04-27T21:18:25.601335285+00:00"
+                    }
+                  }
+                }
+              }
+            ],
+            "parsed": {
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
+                  "id": "019dd0ce-c741-7841-b856-51b5151c8813",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c741-7841-b856-51c8f1982058",
+                      "messageId": "019dd0ce-c741-7841-b856-51d8cde705c2",
+                      "parts": [
+                        {
+                          "text": "Echo: Stream a response with status updates."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c741-7841-b856-51b5151c8813"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.601335285+00:00"
+                  }
+                }
+              }
             }
           },
-          "error": "expected SSE events but got none"
+          "error": "expected sse_event must be a map"
         }
       ],
-      "error_message": "expected SSE events but got none"
+      "error_message": "expected sse_event must be a map"
     },
     {
-      "id": "918a9b03-3f12-4feb-8d80-d8e6a3a0fce9",
+      "id": "9dec7bfe-1a3e-455d-bf57-77cb05b3e481",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-parse-error",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "fail",
-      "duration": 176294,
-      "started_at": "2026-04-27T15:08:08.002888891-05:00",
-      "completed_at": "2026-04-27T15:08:08.003065235-05:00",
+      "duration": 185321,
+      "started_at": "2026-04-27T16:18:25.64206729-05:00",
+      "completed_at": "2026-04-27T16:18:25.642252611-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 170813,
+          "duration": 178197,
           "actual": {
             "http_status": 400,
             "headers": {
               "content-length": "81",
               "content-type": "text/plain; charset=utf-8",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "raw_body": "Failed to parse the request body as JSON: key must be a string at line 1 column 2"
           }
@@ -1199,7 +1948,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 912,
+          "duration": 751,
           "expected": {
             "error": {
               "code": -32700,
@@ -1212,7 +1961,7 @@
             "headers": {
               "content-length": "81",
               "content-type": "text/plain; charset=utf-8",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "raw_body": "Failed to parse the request body as JSON: key must be a string at line 1 column 2"
           },
@@ -1222,27 +1971,27 @@
       "error_message": "expected JSON-RPC response but got none"
     },
     {
-      "id": "2f806fcc-9e69-4016-84cf-914fcf87f6c4",
+      "id": "e85194bc-23e1-4a44-887d-5bd3b9f6df2e",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-invalid-request",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "fail",
-      "duration": 146117,
-      "started_at": "2026-04-27T15:08:08.003065816-05:00",
-      "completed_at": "2026-04-27T15:08:08.003211943-05:00",
+      "duration": 162488,
+      "started_at": "2026-04-27T16:18:25.642253873-05:00",
+      "completed_at": "2026-04-27T16:18:25.642416431-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 140075,
+          "duration": 153170,
           "actual": {
             "http_status": 422,
             "headers": {
               "content-length": "101",
               "content-type": "text/plain; charset=utf-8",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "raw_body": "Failed to deserialize the JSON body into the target type: missing field `jsonrpc` at line 1 column 48"
           }
@@ -1251,7 +2000,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 751,
+          "duration": 521,
           "expected": {
             "error": {
               "code": -32600,
@@ -1264,7 +2013,7 @@
             "headers": {
               "content-length": "101",
               "content-type": "text/plain; charset=utf-8",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "raw_body": "Failed to deserialize the JSON body into the target type: missing field `jsonrpc` at line 1 column 48"
           },
@@ -1274,27 +2023,27 @@
       "error_message": "expected JSON-RPC response but got none"
     },
     {
-      "id": "b201a423-d940-42e4-978e-3ef0de0b98fd",
+      "id": "4d2209f3-c69c-4dc3-a7fb-802a9a119844",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-method-not-found",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "pass",
-      "duration": 154713,
-      "started_at": "2026-04-27T15:08:08.003213105-05:00",
-      "completed_at": "2026-04-27T15:08:08.003367818-05:00",
+      "duration": 156877,
+      "started_at": "2026-04-27T16:18:25.642419276-05:00",
+      "completed_at": "2026-04-27T16:18:25.642576143-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 146928,
+          "duration": 149813,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "96",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found: NonExistentMethod\"}}",
             "jsonrpc_resp": {
@@ -1311,7 +2060,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1242,
+          "duration": 1042,
           "expected": {
             "error": {
               "code": -32601,
@@ -1325,7 +2074,7 @@
             "headers": {
               "content-length": "96",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found: NonExistentMethod\"}}",
             "jsonrpc_resp": {
@@ -1341,50 +2090,50 @@
       ]
     },
     {
-      "id": "a182ac6c-e752-4494-a561-592d474047d8",
+      "id": "b809136c-ea58-41eb-95da-49fa557ee71e",
       "spec_id": "a2a-v1",
       "test_case_id": "missing-required-params",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
       "status": "fail",
-      "duration": 490508,
-      "started_at": "2026-04-27T15:08:08.003368429-05:00",
-      "completed_at": "2026-04-27T15:08:08.003858947-05:00",
+      "duration": 263719,
+      "started_at": "2026-04-27T16:18:25.642576714-05:00",
+      "completed_at": "2026-04-27T16:18:25.642840433-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 484737,
+          "duration": 258129,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "441",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd08e-6c43-73a1-aacc-1b6a72d19eae\",\"id\":\"019dd08e-6c43-73a1-aacc-1b520e09fdef\",\"status\":{\"message\":{\"contextId\":\"019dd08e-6c43-73a1-aacc-1b6a72d19eae\",\"messageId\":\"019dd08e-6c43-73a1-aacc-1b7951bd4148\",\"parts\":[{\"text\":\"Echo: \"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd08e-6c43-73a1-aacc-1b520e09fdef\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T20:08:08.003584898+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1c89867e13f\",\"id\":\"019dd0ce-c76a-7373-b633-c1b9e9c0241c\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1c89867e13f\",\"messageId\":\"019dd0ce-c76a-7373-b633-c1d5538b056e\",\"parts\":[{\"text\":\"Echo: \"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c76a-7373-b633-c1b9e9c0241c\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.642716478+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd08e-6c43-73a1-aacc-1b6a72d19eae",
-                  "id": "019dd08e-6c43-73a1-aacc-1b520e09fdef",
+                  "contextId": "019dd0ce-c76a-7373-b633-c1c89867e13f",
+                  "id": "019dd0ce-c76a-7373-b633-c1b9e9c0241c",
                   "status": {
                     "message": {
-                      "contextId": "019dd08e-6c43-73a1-aacc-1b6a72d19eae",
-                      "messageId": "019dd08e-6c43-73a1-aacc-1b7951bd4148",
+                      "contextId": "019dd0ce-c76a-7373-b633-c1c89867e13f",
+                      "messageId": "019dd0ce-c76a-7373-b633-c1d5538b056e",
                       "parts": [
                         {
                           "text": "Echo: "
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd08e-6c43-73a1-aacc-1b520e09fdef"
+                      "taskId": "019dd0ce-c76a-7373-b633-c1b9e9c0241c"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T20:08:08.003584898+00:00"
+                    "timestamp": "2026-04-27T21:18:25.642716478+00:00"
                   }
                 }
               }
@@ -1395,7 +2144,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 1824,
+          "duration": 1924,
           "expected": {
             "error": {
               "code": -32602,
@@ -1409,30 +2158,30 @@
             "headers": {
               "content-length": "441",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd08e-6c43-73a1-aacc-1b6a72d19eae\",\"id\":\"019dd08e-6c43-73a1-aacc-1b520e09fdef\",\"status\":{\"message\":{\"contextId\":\"019dd08e-6c43-73a1-aacc-1b6a72d19eae\",\"messageId\":\"019dd08e-6c43-73a1-aacc-1b7951bd4148\",\"parts\":[{\"text\":\"Echo: \"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd08e-6c43-73a1-aacc-1b520e09fdef\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T20:08:08.003584898+00:00\"}}}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1c89867e13f\",\"id\":\"019dd0ce-c76a-7373-b633-c1b9e9c0241c\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1c89867e13f\",\"messageId\":\"019dd0ce-c76a-7373-b633-c1d5538b056e\",\"parts\":[{\"text\":\"Echo: \"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c76a-7373-b633-c1b9e9c0241c\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.642716478+00:00\"}}}}",
             "jsonrpc_resp": {
               "id": 1,
               "jsonrpc": "2.0",
               "result": {
                 "task": {
-                  "contextId": "019dd08e-6c43-73a1-aacc-1b6a72d19eae",
-                  "id": "019dd08e-6c43-73a1-aacc-1b520e09fdef",
+                  "contextId": "019dd0ce-c76a-7373-b633-c1c89867e13f",
+                  "id": "019dd0ce-c76a-7373-b633-c1b9e9c0241c",
                   "status": {
                     "message": {
-                      "contextId": "019dd08e-6c43-73a1-aacc-1b6a72d19eae",
-                      "messageId": "019dd08e-6c43-73a1-aacc-1b7951bd4148",
+                      "contextId": "019dd0ce-c76a-7373-b633-c1c89867e13f",
+                      "messageId": "019dd0ce-c76a-7373-b633-c1d5538b056e",
                       "parts": [
                         {
                           "text": "Echo: "
                         }
                       ],
                       "role": "ROLE_AGENT",
-                      "taskId": "019dd08e-6c43-73a1-aacc-1b520e09fdef"
+                      "taskId": "019dd0ce-c76a-7373-b633-c1b9e9c0241c"
                     },
                     "state": "TASK_STATE_COMPLETED",
-                    "timestamp": "2026-04-27T20:08:08.003584898+00:00"
+                    "timestamp": "2026-04-27T21:18:25.642716478+00:00"
                   }
                 }
               }
@@ -1444,149 +2193,165 @@
       "error_message": "JSON-RPC match failed: missing key at error"
     },
     {
-      "id": "13f4b764-b5ec-4e59-9df2-2b63fe168d91",
-      "spec_id": "a2a-v1",
-      "test_case_id": "optional-message-id",
-      "runtime": "a2a-rs-helloworld",
-      "runtime_version": "",
-      "status": "fail",
-      "duration": 193146,
-      "started_at": "2026-04-27T15:08:08.003861782-05:00",
-      "completed_at": "2026-04-27T15:08:08.004054928-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 185852,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "211",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
-              "id": 1,
-              "jsonrpc": "2.0"
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "fail",
-          "duration": 1532,
-          "expected": {
-            "id": 1,
-            "jsonrpc": "2.0",
-            "result": {
-              "kind": "*"
-            }
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "211",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
-              "id": 1,
-              "jsonrpc": "2.0"
-            }
-          },
-          "error": "JSON-RPC match failed: missing key at result"
-        }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
-    },
-    {
-      "id": "19c26753-a4cc-4a4f-b004-6ece3eca9750",
+      "id": "8f97f0d5-bb85-45d6-aee8-27249913e295",
       "spec_id": "a2a-v1",
       "test_case_id": "push-notification-not-supported",
       "runtime": "a2a-rs-helloworld",
       "runtime_version": "",
-      "status": "fail",
-      "duration": 212311,
-      "started_at": "2026-04-27T15:08:08.00405597-05:00",
-      "completed_at": "2026-04-27T15:08:08.004268281-05:00",
+      "status": "pass",
+      "duration": 472334,
+      "started_at": "2026-04-27T16:18:25.642841074-05:00",
+      "completed_at": "2026-04-27T16:18:25.643313398-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 203075,
+          "duration": 290890,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "456",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1f9bd89077e\",\"id\":\"019dd0ce-c76a-7373-b633-c1ee3f6382b5\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1f9bd89077e\",\"messageId\":\"019dd0ce-c76b-7cf2-8f1c-f6e8bb4e5ccc\",\"parts\":[{\"text\":\"Echo: Perform a task.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c76a-7373-b633-c1ee3f6382b5\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.643006697+00:00\"}}}}",
             "jsonrpc_resp": {
-              "error": {
-                "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
-              },
               "id": 1,
-              "jsonrpc": "2.0"
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c76a-7373-b633-c1f9bd89077e",
+                  "id": "019dd0ce-c76a-7373-b633-c1ee3f6382b5",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c76a-7373-b633-c1f9bd89077e",
+                      "messageId": "019dd0ce-c76b-7cf2-8f1c-f6e8bb4e5ccc",
+                      "parts": [
+                        {
+                          "text": "Echo: Perform a task."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c76a-7373-b633-c1ee3f6382b5"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.643006697+00:00"
+                  }
+                }
+              }
             }
           }
         },
         {
           "step_index": 1,
           "action": "expect",
-          "status": "fail",
-          "duration": 1713,
+          "status": "pass",
+          "duration": 852,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "id": "*"
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "211",
+              "content-length": "456",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:08:08 GMT"
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`\"}}",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1f9bd89077e\",\"id\":\"019dd0ce-c76a-7373-b633-c1ee3f6382b5\",\"status\":{\"message\":{\"contextId\":\"019dd0ce-c76a-7373-b633-c1f9bd89077e\",\"messageId\":\"019dd0ce-c76b-7cf2-8f1c-f6e8bb4e5ccc\",\"parts\":[{\"text\":\"Echo: Perform a task.\"}],\"role\":\"ROLE_AGENT\",\"taskId\":\"019dd0ce-c76a-7373-b633-c1ee3f6382b5\"},\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-27T21:18:25.643006697+00:00\"}}}}",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "contextId": "019dd0ce-c76a-7373-b633-c1f9bd89077e",
+                  "id": "019dd0ce-c76a-7373-b633-c1ee3f6382b5",
+                  "status": {
+                    "message": {
+                      "contextId": "019dd0ce-c76a-7373-b633-c1f9bd89077e",
+                      "messageId": "019dd0ce-c76b-7cf2-8f1c-f6e8bb4e5ccc",
+                      "parts": [
+                        {
+                          "text": "Echo: Perform a task."
+                        }
+                      ],
+                      "role": "ROLE_AGENT",
+                      "taskId": "019dd0ce-c76a-7373-b633-c1ee3f6382b5"
+                    },
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-27T21:18:25.643006697+00:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 174250,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "272",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `pushNotificationConfig`, expected one of `tenant`, `id`, `task_id`, `taskId`, `url`, `token`, `authentication`; nested request parse failed: missing field `config`\"}}",
             "jsonrpc_resp": {
               "error": {
                 "code": -32700,
-                "message": "invalid params: ProtoJSON error: unknown field `kind`, expected one of `metadata`, `filename`, `media_type`, `mediaType`, `text`, `raw`, `url`, `data`"
+                "message": "invalid params: ProtoJSON error: unknown field `pushNotificationConfig`, expected one of `tenant`, `id`, `task_id`, `taskId`, `url`, `token`, `authentication`; nested request parse failed: missing field `config`"
               },
-              "id": 1,
+              "id": 2,
               "jsonrpc": "2.0"
             }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1343,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 2,
+            "jsonrpc": "2.0"
           },
-          "error": "JSON-RPC match failed: missing key at result"
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "272",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:18:25 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32700,\"message\":\"invalid params: ProtoJSON error: unknown field `pushNotificationConfig`, expected one of `tenant`, `id`, `task_id`, `taskId`, `url`, `token`, `authentication`; nested request parse failed: missing field `config`\"}}",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "message": "invalid params: ProtoJSON error: unknown field `pushNotificationConfig`, expected one of `tenant`, `id`, `task_id`, `taskId`, `url`, `token`, `authentication`; nested request parse failed: missing field `config`"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
         }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
+      ]
     }
   ],
   "summary": {
-    "total": 19,
-    "passed": 5,
-    "failed": 14,
+    "total": 20,
+    "passed": 16,
+    "failed": 4,
     "errors": 0,
     "skipped": 0,
     "timeouts": 0,
-    "compliance": 26.31578947368421
+    "compliance": 80
   }
 }

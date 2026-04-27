@@ -1,33 +1,33 @@
 {
-  "id": "0c9e65ce-bad3-4218-ad1a-a5803cb8d0bd",
+  "id": "7032a8a7-5132-489b-8299-ac270bab1089",
   "spec_id": "a2a-v1",
   "runtime": "crush-a2a",
   "runtime_version": "",
-  "started_at": "2026-04-27T15:09:31.904890182-05:00",
-  "completed_at": "2026-04-27T15:09:31.929978695-05:00",
+  "started_at": "2026-04-27T16:17:20.442516266-05:00",
+  "completed_at": "2026-04-27T16:17:20.44472717-05:00",
   "results": [
     {
-      "id": "157c3977-7fe2-4b53-879d-e2931d698a22",
+      "id": "dc051c94-78dd-4af8-8e4a-454fec38bb93",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-well-known",
       "runtime": "crush-a2a",
       "runtime_version": "",
-      "status": "pass",
-      "duration": 634260,
-      "started_at": "2026-04-27T15:09:31.904942601-05:00",
-      "completed_at": "2026-04-27T15:09:31.905576861-05:00",
+      "status": "fail",
+      "duration": 704713,
+      "started_at": "2026-04-27T16:17:20.442590387-05:00",
+      "completed_at": "2026-04-27T16:17:20.44329508-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 623149,
+          "duration": 685958,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "body": {
               "capabilities": {
@@ -58,13 +58,13 @@
         {
           "step_index": 1,
           "action": "expect",
-          "status": "pass",
-          "duration": 1413,
+          "status": "fail",
+          "duration": 6662,
           "expected": {
             "body": {
               "name": "*",
               "skills": "*",
-              "url": "*",
+              "supportedInterfaces": "*",
               "version": "*"
             },
             "http_status": 200
@@ -74,7 +74,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "body": {
               "capabilities": {
@@ -100,32 +100,34 @@
               "version": "1.0.0"
             },
             "raw_body": "{\"name\":\"crush\",\"version\":\"1.0.0\",\"url\":\"http://localhost:8200\",\"description\":\"Crush AI assistant exposed via A2A v1.0 protocol\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":false},\"skills\":[{\"id\":\"general\",\"name\":\"General Assistant\",\"description\":\"General-purpose AI assistant powered by Crush\",\"tags\":[\"general\",\"coding\",\"assistant\"]}]}\n"
-          }
+          },
+          "error": "body match failed: missing key at supportedInterfaces"
         }
-      ]
+      ],
+      "error_message": "body match failed: missing key at supportedInterfaces"
     },
     {
-      "id": "c0bb877f-7528-43b5-8ee1-6969528f9d52",
+      "id": "40e347e3-87e0-490c-9c08-9fd1934a7526",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-content-type",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 116921,
-      "started_at": "2026-04-27T15:09:31.90558153-05:00",
-      "completed_at": "2026-04-27T15:09:31.905698561-05:00",
+      "duration": 110709,
+      "started_at": "2026-04-27T16:17:20.443297565-05:00",
+      "completed_at": "2026-04-27T16:17:20.443408274-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 100250,
+          "duration": 96473,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "body": {
               "capabilities": {
@@ -157,7 +159,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1132,
+          "duration": 1212,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -169,7 +171,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "body": {
               "capabilities": {
@@ -200,27 +202,27 @@
       ]
     },
     {
-      "id": "181abd70-0776-4760-867f-b8e4ef4da6de",
+      "id": "0fc785cb-1e5d-454a-8cd3-492bfbd74b11",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-optional-fields",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 78479,
-      "started_at": "2026-04-27T15:09:31.905700845-05:00",
-      "completed_at": "2026-04-27T15:09:31.905779334-05:00",
+      "duration": 79079,
+      "started_at": "2026-04-27T16:17:20.443410929-05:00",
+      "completed_at": "2026-04-27T16:17:20.443490269-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 71906,
+          "duration": 72608,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "body": {
               "capabilities": {
@@ -252,7 +254,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 892,
+          "duration": 641,
           "expected": {
             "body": {
               "capabilities": "*",
@@ -266,7 +268,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "body": {
               "capabilities": {
@@ -297,27 +299,27 @@
       ]
     },
     {
-      "id": "fd254b52-9bee-4e5d-bfbd-1c12bb82512f",
+      "id": "17a02f8c-6a4e-4c24-891a-fd5ad740bc28",
       "spec_id": "a2a-v1",
       "test_case_id": "agent-card-skills",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 54352,
-      "started_at": "2026-04-27T15:09:31.905784434-05:00",
-      "completed_at": "2026-04-27T15:09:31.905838786-05:00",
+      "duration": 77437,
+      "started_at": "2026-04-27T16:17:20.443491852-05:00",
+      "completed_at": "2026-04-27T16:17:20.443569279-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 47570,
+          "duration": 70583,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "body": {
               "capabilities": {
@@ -349,7 +351,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 851,
+          "duration": 812,
           "expected": {
             "body": {
               "skills": "*"
@@ -361,7 +363,7 @@
             "headers": {
               "content-length": "378",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "body": {
               "capabilities": {
@@ -392,34 +394,134 @@
       ]
     },
     {
-      "id": "b0cd0caa-84e5-424a-8535-4fd6ea5cf52b",
+      "id": "5754f16e-7ef2-45a3-a39f-4f459ac32814",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-interfaces",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 70624,
+      "started_at": "2026-04-27T16:17:20.443572515-05:00",
+      "completed_at": "2026-04-27T16:17:20.443643149-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 59392,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "378",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": false,
+                "streaming": true
+              },
+              "description": "Crush AI assistant exposed via A2A v1.0 protocol",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "General-purpose AI assistant powered by Crush",
+                  "id": "general",
+                  "name": "General Assistant",
+                  "tags": [
+                    "general",
+                    "coding",
+                    "assistant"
+                  ]
+                }
+              ],
+              "url": "http://localhost:8200",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"crush\",\"version\":\"1.0.0\",\"url\":\"http://localhost:8200\",\"description\":\"Crush AI assistant exposed via A2A v1.0 protocol\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":false},\"skills\":[{\"id\":\"general\",\"name\":\"General Assistant\",\"description\":\"General-purpose AI assistant powered by Crush\",\"tags\":[\"general\",\"coding\",\"assistant\"]}]}\n"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1022,
+          "expected": {
+            "body": {
+              "capabilities": "*",
+              "defaultInputModes": "*",
+              "defaultOutputModes": "*",
+              "supportedInterfaces": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "378",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "pushNotifications": false,
+                "stateTransitionHistory": false,
+                "streaming": true
+              },
+              "description": "Crush AI assistant exposed via A2A v1.0 protocol",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "General-purpose AI assistant powered by Crush",
+                  "id": "general",
+                  "name": "General Assistant",
+                  "tags": [
+                    "general",
+                    "coding",
+                    "assistant"
+                  ]
+                }
+              ],
+              "url": "http://localhost:8200",
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"name\":\"crush\",\"version\":\"1.0.0\",\"url\":\"http://localhost:8200\",\"description\":\"Crush AI assistant exposed via A2A v1.0 protocol\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"stateTransitionHistory\":false},\"skills\":[{\"id\":\"general\",\"name\":\"General Assistant\",\"description\":\"General-purpose AI assistant powered by Crush\",\"tags\":[\"general\",\"coding\",\"assistant\"]}]}\n"
+          },
+          "error": "body match failed: missing key at supportedInterfaces"
+        }
+      ],
+      "error_message": "body match failed: missing key at supportedInterfaces"
+    },
+    {
+      "id": "d5b860e3-ce1e-4e79-b7f9-5d5559361b29",
       "spec_id": "a2a-v1",
       "test_case_id": "send-message-basic",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "fail",
-      "duration": 2467899,
-      "started_at": "2026-04-27T15:09:31.905839267-05:00",
-      "completed_at": "2026-04-27T15:09:31.908307176-05:00",
+      "duration": 105108,
+      "started_at": "2026-04-27T16:17:20.44364416-05:00",
+      "completed_at": "2026-04-27T16:17:20.443749269-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 2461416,
+          "duration": 99940,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -430,31 +532,25 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 2715,
+          "duration": 1202,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "contextId": "*",
-              "id": "*",
-              "status": {
-                "state": "*"
-              }
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -466,34 +562,34 @@
       "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "9266b907-1c74-4313-8bd8-9c843dd7466c",
+      "id": "151deb14-9b67-45a6-a58e-6629a7a463e2",
       "spec_id": "a2a-v1",
-      "test_case_id": "send-message-creates-task",
+      "test_case_id": "send-message-response-shape",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "fail",
-      "duration": 2074916,
-      "started_at": "2026-04-27T15:09:31.908308248-05:00",
-      "completed_at": "2026-04-27T15:09:31.910383224-05:00",
+      "duration": 61476,
+      "started_at": "2026-04-27T16:17:20.44374985-05:00",
+      "completed_at": "2026-04-27T16:17:20.443811287-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 2065638,
+          "duration": 56667,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -504,32 +600,25 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 3176,
+          "duration": 1483,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "contextId": "*",
-              "id": "*",
-              "kind": "task",
-              "status": {
-                "state": "*"
-              }
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -541,34 +630,34 @@
       "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "b1d2f589-a3c3-41ff-bd61-99045b4e0ce2",
+      "id": "c3fd7efd-0934-47c3-881b-3255daa73807",
       "spec_id": "a2a-v1",
       "test_case_id": "get-task",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "fail",
-      "duration": 2410650,
-      "started_at": "2026-04-27T15:09:31.910384797-05:00",
-      "completed_at": "2026-04-27T15:09:31.912795507-05:00",
+      "duration": 51788,
+      "started_at": "2026-04-27T16:17:20.443811828-05:00",
+      "completed_at": "2026-04-27T16:17:20.443863626-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 2398618,
+          "duration": 47229,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -579,27 +668,25 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 2284,
+          "duration": 1422,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "id": "*"
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -611,27 +698,27 @@
       "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "4ed4b68c-2a03-4e33-8d92-3fa0679d2df0",
+      "id": "452c3363-8054-4507-9fa1-eef0ba97a893",
       "spec_id": "a2a-v1",
       "test_case_id": "get-task-not-found",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 111632,
-      "started_at": "2026-04-27T15:09:31.91279706-05:00",
-      "completed_at": "2026-04-27T15:09:31.912908742-05:00",
+      "duration": 84831,
+      "started_at": "2026-04-27T16:17:20.443864377-05:00",
+      "completed_at": "2026-04-27T16:17:20.443949218-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 99207,
+          "duration": 79781,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "114",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"Task not found\",\"data\":\"nonexistent-task-id-00000000\"}}\n",
             "jsonrpc_resp": {
@@ -649,7 +736,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1242,
+          "duration": 1423,
           "expected": {
             "error": {
               "code": "*",
@@ -663,7 +750,7 @@
             "headers": {
               "content-length": "114",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"Task not found\",\"data\":\"nonexistent-task-id-00000000\"}}\n",
             "jsonrpc_resp": {
@@ -680,34 +767,34 @@
       ]
     },
     {
-      "id": "1b0a03a0-2da2-4087-a4a5-5fc1883a9d4e",
+      "id": "eb09da8f-5bc5-4cbe-a7e6-50834fe603df",
       "spec_id": "a2a-v1",
       "test_case_id": "cancel-task",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "fail",
-      "duration": 2245168,
-      "started_at": "2026-04-27T15:09:31.912909573-05:00",
-      "completed_at": "2026-04-27T15:09:31.915154781-05:00",
+      "duration": 93857,
+      "started_at": "2026-04-27T16:17:20.443950801-05:00",
+      "completed_at": "2026-04-27T16:17:20.444044718-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 2237824,
+          "duration": 86343,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -718,30 +805,25 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 2033,
+          "duration": 2795,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "id": "*",
-              "status": {
-                "state": "*"
-              }
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -753,34 +835,34 @@
       "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "6097cfa6-865c-4aa2-8b69-1901aca47f06",
+      "id": "1beb67f9-93c6-407d-adc6-655c67569dd5",
       "spec_id": "a2a-v1",
       "test_case_id": "message-text-part",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "fail",
-      "duration": 2784468,
-      "started_at": "2026-04-27T15:09:31.915161113-05:00",
-      "completed_at": "2026-04-27T15:09:31.917945631-05:00",
+      "duration": 88688,
+      "started_at": "2026-04-27T16:17:20.44404541-05:00",
+      "completed_at": "2026-04-27T16:17:20.444134158-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 2775671,
+          "duration": 80642,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -791,27 +873,25 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 2695,
+          "duration": 1823,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "id": "*"
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -823,34 +903,34 @@
       "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "6cf66862-81de-4245-adad-7d163d2ec303",
+      "id": "e5b8e0ec-547e-428f-8f71-5c31bdbfa528",
       "spec_id": "a2a-v1",
       "test_case_id": "message-with-context",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "fail",
-      "duration": 2166308,
-      "started_at": "2026-04-27T15:09:31.917947334-05:00",
-      "completed_at": "2026-04-27T15:09:31.920113642-05:00",
+      "duration": 72577,
+      "started_at": "2026-04-27T16:17:20.44413521-05:00",
+      "completed_at": "2026-04-27T16:17:20.444207787-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 2156950,
+          "duration": 66185,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -861,28 +941,25 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 2405,
+          "duration": 1313,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "contextId": "*",
-              "id": "*"
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -894,34 +971,34 @@
       "error_message": "JSON-RPC match failed: missing key at result"
     },
     {
-      "id": "26c90b75-babb-44b5-82fa-aa56949359ff",
+      "id": "0886b35b-6c70-4484-b44f-087f7353d255",
       "spec_id": "a2a-v1",
-      "test_case_id": "streaming-send",
+      "test_case_id": "optional-message-id",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "fail",
-      "duration": 2244246,
-      "started_at": "2026-04-27T15:09:31.920114975-05:00",
-      "completed_at": "2026-04-27T15:09:31.922359291-05:00",
+      "duration": 54804,
+      "started_at": "2026-04-27T16:17:20.444208338-05:00",
+      "completed_at": "2026-04-27T16:17:20.444263212-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 2231582,
+          "duration": 49764,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -932,7 +1009,75 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 2615,
+          "duration": 1223,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "98",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          },
+          "error": "JSON-RPC match failed: missing key at result"
+        }
+      ],
+      "error_message": "JSON-RPC match failed: missing key at result"
+    },
+    {
+      "id": "88f7f5ed-cfce-460f-9bbb-ba4a458cd95d",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-send",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "fail",
+      "duration": 84740,
+      "started_at": "2026-04-27T16:17:20.444263793-05:00",
+      "completed_at": "2026-04-27T16:17:20.444348483-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 79119,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "98",
+              "content-type": "application/json",
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1593,
           "expected": {
             "headers": {
               "content-type": "text/event-stream"
@@ -942,16 +1087,16 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -963,34 +1108,34 @@
       "error_message": "header content-type: expected \"text/event-stream\", got \"application/json\""
     },
     {
-      "id": "5aed0fe7-4469-4065-9281-92198ae11f97",
+      "id": "63374606-38ac-4757-b128-33b8e469ed95",
       "spec_id": "a2a-v1",
       "test_case_id": "streaming-events",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "fail",
-      "duration": 2135901,
-      "started_at": "2026-04-27T15:09:31.922360262-05:00",
-      "completed_at": "2026-04-27T15:09:31.924496173-05:00",
+      "duration": 58671,
+      "started_at": "2026-04-27T16:17:20.444349124-05:00",
+      "completed_at": "2026-04-27T16:17:20.444407785-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 2129158,
+          "duration": 54633,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -1001,60 +1146,55 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 942,
+          "duration": 401,
           "expected": {
-            "sse_event": {
-              "status": {
-                "state": "*"
-              },
-              "taskId": "*"
-            }
+            "sse_event": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
             }
           },
-          "error": "expected SSE events but got none"
+          "error": "expected sse_event must be a map"
         }
       ],
-      "error_message": "expected SSE events but got none"
+      "error_message": "expected sse_event must be a map"
     },
     {
-      "id": "1a6b1564-3720-424f-9a44-8c2b9f3da5cf",
+      "id": "bf22e65a-aee9-4102-8afd-195c4d597909",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-parse-error",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 93196,
-      "started_at": "2026-04-27T15:09:31.924497426-05:00",
-      "completed_at": "2026-04-27T15:09:31.924590672-05:00",
+      "duration": 52749,
+      "started_at": "2026-04-27T16:17:20.444408447-05:00",
+      "completed_at": "2026-04-27T16:17:20.444461196-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 85722,
+          "duration": 47640,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "150",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Parse error\",\"data\":\"invalid character 'i' looking for beginning of object key string\"}}\n",
             "jsonrpc_resp": {
@@ -1072,7 +1212,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1172,
+          "duration": 1112,
           "expected": {
             "error": {
               "code": -32700,
@@ -1085,7 +1225,7 @@
             "headers": {
               "content-length": "150",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"Parse error\",\"data\":\"invalid character 'i' looking for beginning of object key string\"}}\n",
             "jsonrpc_resp": {
@@ -1102,27 +1242,27 @@
       ]
     },
     {
-      "id": "697523c2-a0c8-4e8f-aa73-9651f211c2dc",
+      "id": "52ef9865-b7f0-4bfd-944b-6bbc63fff914",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-invalid-request",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 53652,
-      "started_at": "2026-04-27T15:09:31.924591243-05:00",
-      "completed_at": "2026-04-27T15:09:31.924644955-05:00",
+      "duration": 53751,
+      "started_at": "2026-04-27T16:17:20.444461757-05:00",
+      "completed_at": "2026-04-27T16:17:20.444515499-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 48752,
+          "duration": 49032,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "110",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"jsonrpc must be \\\"2.0\\\"\"}}\n",
             "jsonrpc_resp": {
@@ -1140,7 +1280,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 781,
+          "duration": 801,
           "expected": {
             "error": {
               "code": -32600,
@@ -1153,7 +1293,7 @@
             "headers": {
               "content-length": "110",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"Invalid Request\",\"data\":\"jsonrpc must be \\\"2.0\\\"\"}}\n",
             "jsonrpc_resp": {
@@ -1170,27 +1310,27 @@
       ]
     },
     {
-      "id": "c79e2392-c160-4068-b97f-74ef3a5368b5",
+      "id": "8d0a3443-9376-4803-a82b-903222b9dfe9",
       "spec_id": "a2a-v1",
       "test_case_id": "jsonrpc-method-not-found",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 62408,
-      "started_at": "2026-04-27T15:09:31.924645476-05:00",
-      "completed_at": "2026-04-27T15:09:31.924707874-05:00",
+      "duration": 79581,
+      "started_at": "2026-04-27T16:17:20.444516982-05:00",
+      "completed_at": "2026-04-27T16:17:20.444596623-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 58501,
+          "duration": 74311,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "105",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"NonExistentMethod\"}}\n",
             "jsonrpc_resp": {
@@ -1208,7 +1348,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 772,
+          "duration": 1082,
           "expected": {
             "error": {
               "code": -32601,
@@ -1222,7 +1362,7 @@
             "headers": {
               "content-length": "105",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"Method not found\",\"data\":\"NonExistentMethod\"}}\n",
             "jsonrpc_resp": {
@@ -1239,27 +1379,27 @@
       ]
     },
     {
-      "id": "2e67134d-7dda-4238-98b8-aea1b5ff4e3f",
+      "id": "fb0f65df-c279-45bc-91a7-ef0a572b0917",
       "spec_id": "a2a-v1",
       "test_case_id": "missing-required-params",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "pass",
-      "duration": 73769,
-      "started_at": "2026-04-27T15:09:31.924708415-05:00",
-      "completed_at": "2026-04-27T15:09:31.924782184-05:00",
+      "duration": 68880,
+      "started_at": "2026-04-27T16:17:20.444597264-05:00",
+      "completed_at": "2026-04-27T16:17:20.444666154-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 69361,
+          "duration": 64001,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
@@ -1277,7 +1417,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 781,
+          "duration": 932,
           "expected": {
             "error": {
               "code": -32602,
@@ -1291,7 +1431,7 @@
             "headers": {
               "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
             "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
@@ -1308,104 +1448,34 @@
       ]
     },
     {
-      "id": "c7708edc-e723-4ead-a02f-3261d1be886a",
-      "spec_id": "a2a-v1",
-      "test_case_id": "optional-message-id",
-      "runtime": "crush-a2a",
-      "runtime_version": "",
-      "status": "fail",
-      "duration": 2221523,
-      "started_at": "2026-04-27T15:09:31.924785851-05:00",
-      "completed_at": "2026-04-27T15:09:31.927007374-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 2215982,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "217",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
-              },
-              "id": 1,
-              "jsonrpc": "2.0"
-            }
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "fail",
-          "duration": 2134,
-          "expected": {
-            "id": 1,
-            "jsonrpc": "2.0",
-            "result": {
-              "kind": "*"
-            }
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "217",
-              "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
-            },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
-            "jsonrpc_resp": {
-              "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
-              },
-              "id": 1,
-              "jsonrpc": "2.0"
-            }
-          },
-          "error": "JSON-RPC match failed: missing key at result"
-        }
-      ],
-      "error_message": "JSON-RPC match failed: missing key at result"
-    },
-    {
-      "id": "083f52e3-379d-4975-afca-9c3a96d1568b",
+      "id": "bc04f9d0-092d-4dfd-9327-614ac46fef80",
       "spec_id": "a2a-v1",
       "test_case_id": "push-notification-not-supported",
       "runtime": "crush-a2a",
       "runtime_version": "",
       "status": "fail",
-      "duration": 2969618,
-      "started_at": "2026-04-27T15:09:31.927008466-05:00",
-      "completed_at": "2026-04-27T15:09:31.929978074-05:00",
+      "duration": 60244,
+      "started_at": "2026-04-27T16:17:20.444666675-05:00",
+      "completed_at": "2026-04-27T16:17:20.444726929-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 2954860,
+          "duration": 55665,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -1416,27 +1486,25 @@
           "step_index": 1,
           "action": "expect",
           "status": "fail",
-          "duration": 2144,
+          "duration": 1342,
           "expected": {
             "id": 1,
             "jsonrpc": "2.0",
-            "result": {
-              "id": "*"
-            }
+            "result": "*"
           },
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "217",
+              "content-length": "98",
               "content-type": "application/json",
-              "date": "Mon, 27 Apr 2026 20:09:31 GMT"
+              "date": "Mon, 27 Apr 2026 21:17:20 GMT"
             },
-            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32603,\"message\":\"Internal error\",\"data\":\"crush API 500: failed to create data directory: failed to create data directory: \\\".crush\\\" mkdir .crush: no such file or directory\"}}\n",
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"Invalid params\",\"data\":\"empty prompt\"}}\n",
             "jsonrpc_resp": {
               "error": {
-                "code": -32603,
-                "data": "crush API 500: failed to create data directory: failed to create data directory: \".crush\" mkdir .crush: no such file or directory",
-                "message": "Internal error"
+                "code": -32602,
+                "data": "empty prompt",
+                "message": "Invalid params"
               },
               "id": 1,
               "jsonrpc": "2.0"
@@ -1449,12 +1517,12 @@
     }
   ],
   "summary": {
-    "total": 19,
-    "passed": 9,
-    "failed": 10,
+    "total": 20,
+    "passed": 8,
+    "failed": 12,
     "errors": 0,
     "skipped": 0,
     "timeouts": 0,
-    "compliance": 47.368421052631575
+    "compliance": 40
   }
 }
