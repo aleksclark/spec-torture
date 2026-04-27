@@ -2,11 +2,11 @@ id: a2a-v1
 name: Agent-to-Agent Protocol
 version: 1.0.0
 description: >
-  Conformance tests for the Agent-to-Agent (A2A) protocol.
+  Conformance tests for the Agent-to-Agent (A2A) v1.0 protocol.
   Tests JSON-RPC 2.0 over HTTP POST transport, covering agent discovery,
   task lifecycle, messaging, streaming, error handling, and push notifications.
-  Compatible with both v0.3 (JSON) and v1.0 (protobuf) style implementations.
-source_url: https://google.github.io/A2A
+  Uses A2A v1.0 method names (SendMessage, GetTask, etc.).
+source_url: https://google.github.io/A2A/latest/
 transport: jsonrpc-http
 
 test_cases:
@@ -124,7 +124,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "message/send"
+          method: "SendMessage"
           params:
             message:
               messageId: "test-msg-001"
@@ -157,7 +157,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "message/send"
+          method: "SendMessage"
           params:
             message:
               messageId: "test-msg-002"
@@ -192,7 +192,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "message/send"
+          method: "SendMessage"
           params:
             message:
               messageId: "test-msg-003"
@@ -210,7 +210,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 2
-          method: "tasks/get"
+          method: "GetTask"
           params:
             id: "$prev.result.id"
       - action: expect
@@ -239,7 +239,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "tasks/get"
+          method: "GetTask"
           params:
             id: "nonexistent-task-id-00000000"
       - action: expect
@@ -266,7 +266,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "message/send"
+          method: "SendMessage"
           params:
             message:
               messageId: "test-msg-cancel"
@@ -286,7 +286,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 2
-          method: "tasks/cancel"
+          method: "CancelTask"
           params:
             id: "$prev.result.id"
       - action: expect
@@ -312,7 +312,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "message/send"
+          method: "SendMessage"
           params:
             message:
               messageId: "test-text-001"
@@ -343,7 +343,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "message/send"
+          method: "SendMessage"
           params:
             message:
               messageId: "test-ctx-001"
@@ -362,7 +362,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 2
-          method: "message/send"
+          method: "SendMessage"
           params:
             message:
               messageId: "test-ctx-002"
@@ -396,7 +396,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "message/stream"
+          method: "SendStreamingMessage"
           params:
             message:
               messageId: "test-stream-001"
@@ -425,7 +425,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "message/stream"
+          method: "SendStreamingMessage"
           params:
             message:
               messageId: "test-stream-002"
@@ -478,7 +478,7 @@ test_cases:
     steps:
       - action: send
         payload:
-          raw_body: '{"id": 1, "method": "message/send", "params": {}}'
+          raw_body: '{"id": 1, "method": "SendMessage", "params": {}}'
           content_type: "application/json"
       - action: expect
         expect:
@@ -529,7 +529,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "message/send"
+          method: "SendMessage"
           params: {}
       - action: expect
         expect:
@@ -554,7 +554,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "message/send"
+          method: "SendMessage"
           params:
             message:
               role: "user"
@@ -587,7 +587,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 1
-          method: "message/send"
+          method: "SendMessage"
           params:
             message:
               messageId: "test-push-001"
@@ -605,7 +605,7 @@ test_cases:
         payload:
           jsonrpc: "2.0"
           id: 2
-          method: "tasks/pushNotificationConfig/set"
+          method: "CreateTaskPushNotificationConfig"
           params:
             id: "$prev.result.id"
             pushNotificationConfig:
