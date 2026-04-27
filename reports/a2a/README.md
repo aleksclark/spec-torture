@@ -2,7 +2,7 @@
 
 ## Test Agents
 
-Two A2A-compatible agents were tested:
+Three A2A-compatible agents were tested:
 
 ### 1. a2a-js-sample (A2A-JS SDK v0.3 format)
 - **Source:** [a2aproject/a2a-js](https://github.com/a2aproject/a2a-js) `src/samples/agents/sample-agent`
@@ -16,9 +16,9 @@ Two A2A-compatible agents were tested:
 - **Protocol:** JSON-RPC 2.0 over HTTP, A2A v1.0 method names (`SendMessage`, `GetTask`) with protobuf-style JSON
 - **Port:** localhost:9999
 
-### 3. crush-a2a (Crush AI via A2A v1.0 frontend)
-- **Source:** crush-a2a Go server (translates A2A v1.0 JSON-RPC → Crush ACP backend)
-- **Runtime:** Go, single-binary server
+### 3. crush-a2a-native (Crush AI via native protocol + A2A v1.0 frontend)
+- **Source:** crush-a2a Go server (translates A2A v1.0 JSON-RPC → Crush's native unix socket protocol)
+- **Runtime:** Go, single-binary server backed by Crush native server
 - **Protocol:** JSON-RPC 2.0 over HTTP, A2A v1.0 method names (`SendMessage`, `GetTask`, `CancelTask`, `SendStreamingMessage`)
 - **Port:** localhost:8200
 
@@ -28,7 +28,7 @@ Two A2A-compatible agents were tested:
 |-------|-----------|--------|--------|--------|
 | a2a-js-sample | **94.7%** | 18 | 1 | 0 |
 | a2a-python-helloworld | **47.4%** | 9 | 10 | 0 |
-| crush-a2a | **84.2%** | 16 | 3 | 0 |
+| crush-a2a-native | **89.5%** | 17 | 2 | 0 |
 
 ## Key Findings
 
@@ -55,16 +55,18 @@ The Python v1.0 SDK rejects all v0.3 method names with `-32601 Method not found`
 - Fails all method-specific tests because v1.0 SDK doesn't support v0.3 method names
 - The agent is fully functional — just speaks a different protocol dialect
 
-### crush-a2a (84.2%)
+### crush-a2a-native (89.5%)
 - **Discovery (4/4 pass):** Agent card served correctly at `/.well-known/agent-card.json` with name, version, url, skills, description, and capabilities
-- **Lifecycle (3/4 pass):** `SendMessage` creates tasks with proper id/contextId/status, `CancelTask` works on active tasks. Single failure: `GetTask` returns "task not found" because the proxy is stateless and does not persist completed tasks.
+- **Lifecycle (3/4 pass):** `SendMessage` creates tasks with proper id/contextId/status, `CancelTask` works on active tasks. Single failure: `GetTask` returns an error instead of the task result because the proxy is stateless and does not persist completed tasks after returning the final response.
 - **Messaging (2/2 pass):** Text parts processed correctly, context sharing via `contextId` works
-- **Streaming (2/2 pass):** `SendStreamingMessage` returns SSE stream with `text/event-stream` content type and proper `TaskStatusUpdateEvent` / `TaskArtifactUpdateEvent` objects
-- **Error handling (4/5 pass):** JSON-RPC -32700 (parse error), -32600 (invalid request), -32601 (method not found) all correct. Two remaining failures:
-  - `missing-required-params`: Returns `-32603` (internal error) instead of `-32602` (invalid params) because the proxy forwards empty params to the ACP backend which returns HTTP 400, rather than validating the `message` field at the A2A layer
+- **Streaming (2/2 pass):** `SendStreamingMessage` returns SSE stream with `text/event-stream` content type and proper task status/artifact update events
+- **Error handling (5/5 pass for standard JSON-RPC, 1/1 fail for A2A validation):** JSON-RPC -32700 (parse error), -32600 (invalid request), -32601 (method not found), and -32602 (invalid params for missing `message` field) all correct. Single remaining failure:
   - `missing-message-id`: Returns a successful result instead of a validation error because the proxy does not enforce the A2A requirement that `messageId` be present in every `Message` object
 - **Push notifications (1/1 pass):** Correctly returns error when push notification config is set on an agent that doesn't support it
-- **Root cause of remaining failures:** The proxy translates A2A → ACP faithfully but lacks its own A2A-specific input validation layer. Fields required by A2A (like `messageId`) and parameter presence checks (like `message` in `SendMessage`) are not enforced before forwarding to the backend. The `GetTask` failure is architectural — the stateless proxy doesn't maintain a task store.
+- **Improvement over previous run (v2):** Compliance rose from 84.2% to 89.5%. The native protocol backend now correctly returns -32602 for missing required params (previously returned -32603). Timeout issues in multi-step tests were resolved by increasing test timeouts to accommodate real LLM response times.
+- **Root cause of remaining failures:**
+  1. `get-task`: Architectural — the stateless proxy does not maintain a task store, so `GetTask` cannot retrieve previously completed tasks
+  2. `missing-message-id`: The proxy does not validate that `messageId` is present in `Message` objects before forwarding to the native backend
 
 ## How to Reproduce
 
@@ -86,20 +88,20 @@ go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime a2a-js-sample --url 
 go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime a2a-python-helloworld --url http://127.0.0.1:9999
 ```
 
-## How to Reproduce crush-a2a
+## How to Reproduce crush-a2a-native
 
 ```bash
-# 1. Start crush-a2a (must be running on port 8200)
-# (assumes crush-a2a binary is already built and serving)
+# 1. Start crush-a2a backed by Crush's native protocol server
+# (assumes crush-a2a binary is running on port 8200, connected to Crush via unix socket)
 
 # 2. Run conformance suite
 cd spec-torture
-go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a-v2 --url http://localhost:8200
-go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a-v2 --url http://localhost:8200 --format json
+go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a-native --url http://localhost:8200
+go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a-native --url http://localhost:8200 --format json
 ```
 
 ## Files
 
 - `a2a-js-sample.md` / `.json` — Full results for the JS sample agent
 - `a2a-python-helloworld.md` / `.json` — Full results for the Python helloworld agent
-- `crush-a2a.md` / `.json` — Full results for the crush-a2a agent
+- `crush-a2a.md` / `.json` — Full results for crush-a2a (native protocol backend)

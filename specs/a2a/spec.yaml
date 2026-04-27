@@ -183,7 +183,7 @@ test_cases:
       status and metadata.
     severity: required
     category: lifecycle
-    timeout: 15s
+    timeout: 60s
     tags:
       - lifecycle
       - task
@@ -257,7 +257,7 @@ test_cases:
       or returns an appropriate error if not supported.
     severity: recommended
     category: lifecycle
-    timeout: 15s
+    timeout: 60s
     tags:
       - lifecycle
       - task
@@ -334,7 +334,7 @@ test_cases:
       same conversational context by the agent.
     severity: required
     category: messaging
-    timeout: 15s
+    timeout: 60s
     tags:
       - messaging
       - context
@@ -581,7 +581,7 @@ test_cases:
       a push config returns an appropriate error.
     severity: optional
     category: push-notifications
-    timeout: 15s
+    timeout: 60s
     tags:
       - push-notifications
     steps:
