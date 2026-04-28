@@ -670,9 +670,9 @@ test_cases:
               role: "ROLE_USER"
               parts:
                 - text_part:
-                    text: "Route to an agent with coding skills."
+                    text: "Route to an agent with matching skills."
             routing:
-              tags: ["coding"]
+              tags: ["echo"]
       - action: expect
         expect:
           http_status: 200
