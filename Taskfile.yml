@@ -23,6 +23,7 @@ tasks:
     cmds:
       - ./bin/spec-torture validate specs/a2a/spec.yaml
       - ./bin/spec-torture validate specs/acp/spec.yaml
+      - ./bin/spec-torture validate specs/arp/spec-http.yaml
 
   # ---------------------------------------------------------------------------
   # A2A agent torture tasks
@@ -46,6 +47,16 @@ tasks:
     cmds:
       - agents/a2a-rs/run.sh {{.SPEC}} {{.REPORTS}} ./bin/spec-torture
 
+  # ---------------------------------------------------------------------------
+  # ARP agent torture tasks
+  # ---------------------------------------------------------------------------
+
+  torture:awesometree:
+    desc: Run ARP HTTP suite against live awesometree-daemon
+    deps: [build]
+    cmds:
+      - agents/awesometree/run.sh specs/arp/spec-http.yaml reports/arp ./bin/spec-torture
+
   torture:all:
     desc: Run A2A v1.0 suite against all agents
     deps: [build]
@@ -53,6 +64,7 @@ tasks:
       - task: torture:crush-a2a
       - task: torture:a2a-go
       - task: torture:a2a-rs
+      - task: torture:awesometree
 
   clean:
     desc: Remove build artifacts and cloned agent sources
