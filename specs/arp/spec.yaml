@@ -1,0 +1,3102 @@
+id: arp-v0.3
+name: Agent Registry Protocol
+version: 0.3.0
+description: >
+  Conformance tests for the Agent Registry Protocol (ARP) v0.3.
+  ARP is an MCP server that manages the full lifecycle of AI agents within
+  workspaces and provides a unified registry for A2A agent discovery and
+  communication. Tests cover the MCP tool interface (project, workspace, agent
+  lifecycle, messaging), the A2A proxy/registry HTTP endpoints, proxy routing
+  behavior, token-based auth with scoped permissions, and session isolation.
+  Normative source: arp-spec/ (overview.md, tools-*.md, identity-and-scopes.md).
+  Transport: MCP tools for lifecycle/messaging, HTTP+JSON for A2A proxy endpoints.
+source_url: https://github.com/nicholasgasior/spec-torture
+transport: mcp-and-http
+
+test_cases:
+  # ===========================================================================
+  # Category: mcp-project
+  # ===========================================================================
+  - id: project-list-returns-array
+    name: project/list Returns Array
+    description: >
+      project/list with no arguments returns an array of Project objects.
+      Each Project has at minimum a name and repo field.
+    severity: required
+    category: mcp-project
+    timeout: 10s
+    tags:
+      - mcp-project
+      - project
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_is_array: true
+
+  - id: project-register-creates-project
+    name: project/register Creates a Project
+    description: >
+      project/register with name and repo creates a new project.
+      The returned Project object contains the provided name and repo.
+    severity: required
+    category: mcp-project
+    timeout: 10s
+    tags:
+      - mcp-project
+      - project
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-project-001"
+            repo: "/tmp/test-repo-001"
+      - action: expect
+        expect:
+          result:
+            name: "test-project-001"
+            repo: "/tmp/test-repo-001"
+
+  - id: project-register-with-agents
+    name: project/register With Agent Templates
+    description: >
+      project/register with an agents array registers agent templates.
+      Each AgentTemplate has at minimum a name and command field.
+    severity: required
+    category: mcp-project
+    timeout: 10s
+    tags:
+      - mcp-project
+      - project
+      - agent-template
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-project-tmpl"
+            repo: "/tmp/test-repo-tmpl"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+                a2a:
+                  name: "Test Agent"
+                  description: "A test agent template"
+                  skills:
+                    - id: "test"
+                      name: "Test"
+                      description: "Test skill"
+                      tags: ["testing"]
+      - action: expect
+        expect:
+          result:
+            name: "test-project-tmpl"
+            agents: "*"
+
+  - id: project-register-appears-in-list
+    name: Registered Project Appears in project/list
+    description: >
+      After project/register, the newly registered project appears in
+      the project/list results.
+    severity: required
+    category: mcp-project
+    timeout: 10s
+    tags:
+      - mcp-project
+      - project
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-project-list"
+            repo: "/tmp/test-repo-list"
+      - action: expect
+        expect:
+          result:
+            name: "test-project-list"
+      - action: mcp_tool_call
+        payload:
+          tool: "project/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_contains:
+            name: "test-project-list"
+
+  - id: project-unregister-removes
+    name: project/unregister Removes a Project
+    description: >
+      project/unregister removes a previously registered project.
+      After unregistering, the project no longer appears in project/list.
+    severity: required
+    category: mcp-project
+    timeout: 10s
+    tags:
+      - mcp-project
+      - project
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-project-unreg"
+            repo: "/tmp/test-repo-unreg"
+      - action: expect
+        expect:
+          result:
+            name: "test-project-unreg"
+      - action: mcp_tool_call
+        payload:
+          tool: "project/unregister"
+          arguments:
+            name: "test-project-unreg"
+      - action: expect
+        expect:
+          result: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "project/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_not_contains:
+            name: "test-project-unreg"
+
+  - id: project-register-duplicate-error
+    name: project/register Duplicate Name Errors
+    description: >
+      Registering a project with a name that already exists returns an error.
+      The server must not silently overwrite an existing project.
+    severity: required
+    category: mcp-project
+    timeout: 10s
+    tags:
+      - mcp-project
+      - project
+      - errors
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-project-dup"
+            repo: "/tmp/test-repo-dup"
+      - action: expect
+        expect:
+          result:
+            name: "test-project-dup"
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-project-dup"
+            repo: "/tmp/test-repo-dup-2"
+      - action: expect
+        expect:
+          error: "*"
+
+  - id: project-unregister-nonexistent-error
+    name: project/unregister Nonexistent Project Errors
+    description: >
+      Unregistering a project name that does not exist returns an error.
+    severity: required
+    category: mcp-project
+    timeout: 10s
+    tags:
+      - mcp-project
+      - project
+      - errors
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/unregister"
+          arguments:
+            name: "nonexistent-project-00000"
+      - action: expect
+        expect:
+          error: "*"
+
+  - id: project-unregister-with-active-workspaces-error
+    name: project/unregister With Active Workspaces Errors
+    description: >
+      Unregistering a project that has active workspaces with running agents
+      returns an error. The project must remain registered until workspaces
+      are destroyed or agents stopped.
+    severity: recommended
+    category: mcp-project
+    timeout: 30s
+    tags:
+      - mcp-project
+      - project
+      - workspace
+      - errors
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-project-active"
+            repo: "/tmp/test-repo-active"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-project-active"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "ws-active"
+            project: "test-project-active"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "project/unregister"
+          arguments:
+            name: "test-project-active"
+      - action: expect
+        expect:
+          error: "*"
+
+  # ===========================================================================
+  # Category: mcp-workspace
+  # ===========================================================================
+  - id: workspace-create-returns-active
+    name: workspace/create Returns Active Workspace
+    description: >
+      workspace/create returns a Workspace object with status "active" and
+      an empty agents array when no auto_agents are specified.
+    severity: required
+    category: mcp-workspace
+    timeout: 30s
+    tags:
+      - mcp-workspace
+      - workspace
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-ws-project"
+            repo: "/tmp/test-ws-repo"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-ws-create"
+            project: "test-ws-project"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-create"
+            project: "test-ws-project"
+            status: "active"
+            agents: []
+
+  - id: workspace-create-has-dir
+    name: workspace/create Returns Directory Path
+    description: >
+      The created Workspace object includes a dir field with an absolute
+      path to the workspace directory.
+    severity: required
+    category: mcp-workspace
+    timeout: 30s
+    tags:
+      - mcp-workspace
+      - workspace
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-ws-dir-project"
+            repo: "/tmp/test-ws-dir-repo"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-dir-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-ws-dir"
+            project: "test-ws-dir-project"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-dir"
+            dir: "*"
+            created_at: "*"
+
+  - id: workspace-list-returns-array
+    name: workspace/list Returns Array
+    description: >
+      workspace/list with no arguments returns an array of Workspace objects.
+    severity: required
+    category: mcp-workspace
+    timeout: 10s
+    tags:
+      - mcp-workspace
+      - workspace
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_is_array: true
+
+  - id: workspace-list-filter-by-project
+    name: workspace/list Filters by Project
+    description: >
+      workspace/list with project filter returns only workspaces belonging
+      to the specified project.
+    severity: required
+    category: mcp-workspace
+    timeout: 30s
+    tags:
+      - mcp-workspace
+      - workspace
+      - filtering
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-ws-filter-a"
+            repo: "/tmp/test-ws-filter-a"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-filter-a"
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-ws-filter-b"
+            repo: "/tmp/test-ws-filter-b"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-filter-b"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "ws-filter-a"
+            project: "test-ws-filter-a"
+      - action: expect
+        expect:
+          result:
+            project: "test-ws-filter-a"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "ws-filter-b"
+            project: "test-ws-filter-b"
+      - action: expect
+        expect:
+          result:
+            project: "test-ws-filter-b"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/list"
+          arguments:
+            project: "test-ws-filter-a"
+      - action: expect
+        expect:
+          result_all_match:
+            project: "test-ws-filter-a"
+
+  - id: workspace-list-filter-by-status
+    name: workspace/list Filters by Status
+    description: >
+      workspace/list with status filter returns only workspaces matching
+      the specified status (active or inactive).
+    severity: required
+    category: mcp-workspace
+    timeout: 10s
+    tags:
+      - mcp-workspace
+      - workspace
+      - filtering
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/list"
+          arguments:
+            status: "active"
+      - action: expect
+        expect:
+          result_all_match:
+            status: "active"
+
+  - id: workspace-get-returns-full
+    name: workspace/get Returns Full Workspace
+    description: >
+      workspace/get returns a full Workspace object including agents array
+      with resolved agent details.
+    severity: required
+    category: mcp-workspace
+    timeout: 30s
+    tags:
+      - mcp-workspace
+      - workspace
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-ws-get-project"
+            repo: "/tmp/test-ws-get-repo"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-get-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-ws-get"
+            project: "test-ws-get-project"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-get"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/get"
+          arguments:
+            name: "test-ws-get"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-get"
+            project: "test-ws-get-project"
+            status: "active"
+            agents: "*"
+            dir: "*"
+            created_at: "*"
+
+  - id: workspace-get-nonexistent-error
+    name: workspace/get Nonexistent Workspace Errors
+    description: >
+      workspace/get with a name that does not exist returns an error.
+    severity: required
+    category: mcp-workspace
+    timeout: 10s
+    tags:
+      - mcp-workspace
+      - workspace
+      - errors
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/get"
+          arguments:
+            name: "nonexistent-workspace-00000"
+      - action: expect
+        expect:
+          error: "*"
+
+  - id: workspace-destroy-stops-agents
+    name: workspace/destroy Stops Agents and Cleans Up
+    description: >
+      workspace/destroy stops all agents in the workspace, removes the
+      workspace from state, and (by default) removes the git worktree
+      directory. After destroy, the workspace no longer appears in
+      workspace/list.
+    severity: required
+    category: mcp-workspace
+    timeout: 60s
+    tags:
+      - mcp-workspace
+      - workspace
+      - lifecycle
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-ws-destroy-project"
+            repo: "/tmp/test-ws-destroy-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-destroy-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-ws-destroy"
+            project: "test-ws-destroy-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/destroy"
+          arguments:
+            name: "test-ws-destroy"
+      - action: expect
+        expect:
+          result: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_not_contains:
+            name: "test-ws-destroy"
+
+  - id: workspace-create-auto-agents
+    name: workspace/create With auto_agents Spawns Agents
+    description: >
+      workspace/create with auto_agents parameter spawns the listed agent
+      templates automatically. The returned Workspace includes those agents
+      in the agents array.
+    severity: recommended
+    category: mcp-workspace
+    timeout: 60s
+    tags:
+      - mcp-workspace
+      - workspace
+      - agent
+      - auto-spawn
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-ws-auto-project"
+            repo: "/tmp/test-ws-auto-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-auto-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-ws-auto"
+            project: "test-ws-auto-project"
+            auto_agents: ["test-agent"]
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-auto"
+            status: "active"
+            agents: "*"
+
+  - id: workspace-destroy-keep-worktree
+    name: workspace/destroy With keep_worktree Preserves Directory
+    description: >
+      workspace/destroy with keep_worktree=true removes the workspace
+      from ARP state and stops agents but preserves the git worktree
+      directory on disk.
+    severity: optional
+    category: mcp-workspace
+    timeout: 60s
+    tags:
+      - mcp-workspace
+      - workspace
+      - lifecycle
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-ws-keep-project"
+            repo: "/tmp/test-ws-keep-repo"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-keep-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-ws-keep"
+            project: "test-ws-keep-project"
+      - action: expect
+        expect:
+          result:
+            name: "test-ws-keep"
+            dir: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/destroy"
+          arguments:
+            name: "test-ws-keep"
+            keep_worktree: true
+      - action: expect
+        expect:
+          result: "*"
+
+  # ===========================================================================
+  # Category: mcp-agent-lifecycle
+  # ===========================================================================
+  - id: agent-spawn-returns-instance
+    name: agent/spawn Returns AgentInstance
+    description: >
+      agent/spawn returns an AgentInstance object containing id, template,
+      workspace, status, port, direct_url, and proxy_url fields.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 60s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - spawn
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-spawn-project"
+            repo: "/tmp/test-spawn-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-spawn-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-spawn-ws"
+            project: "test-spawn-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-spawn-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            template: "test-agent"
+            workspace: "test-spawn-ws"
+            status: "*"
+            port: "*"
+            direct_url: "*"
+            proxy_url: "*"
+
+  - id: agent-spawn-with-name-override
+    name: agent/spawn With Name Override
+    description: >
+      agent/spawn with a name parameter uses the provided instance name
+      instead of the template name.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 60s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - spawn
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-spawn-name-project"
+            repo: "/tmp/test-spawn-name-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-spawn-name-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-spawn-name-ws"
+            project: "test-spawn-name-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-spawn-name-ws"
+            template: "test-agent"
+            name: "my-custom-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            template: "test-agent"
+
+  - id: agent-spawn-with-prompt
+    name: agent/spawn With Prompt Sends A2A SendMessage
+    description: >
+      agent/spawn with a prompt parameter sends an A2A SendMessageRequest
+      containing a Message with role ROLE_USER and a single TextPart after
+      the agent reaches ready status.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 120s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - spawn
+      - a2a
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-spawn-prompt-project"
+            repo: "/tmp/test-spawn-prompt-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-spawn-prompt-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-spawn-prompt-ws"
+            project: "test-spawn-prompt-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-spawn-prompt-ws"
+            template: "test-agent"
+            prompt: "Hello, initialize yourself."
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            status: "*"
+
+  - id: agent-spawn-with-scope-narrowing
+    name: agent/spawn With Scope Narrows Child Token
+    description: >
+      agent/spawn with a scope parameter issues a child token to the
+      spawned agent with a narrower project scope than the caller's token.
+      The scope must be a subset of the caller's scope.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 60s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - spawn
+      - auth
+      - scopes
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-scope-project"
+            repo: "/tmp/test-scope-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-scope-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-scope-ws"
+            project: "test-scope-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-scope-ws"
+            template: "test-agent"
+            scope: ["test-scope-project"]
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            token_id: "*"
+
+  - id: agent-spawn-with-permission
+    name: agent/spawn With Permission Sets Child Permission Level
+    description: >
+      agent/spawn with a permission parameter sets the child agent's
+      permission level. The permission can only be equal to or lower
+      than the caller's permission (never higher).
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 60s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - spawn
+      - auth
+      - permissions
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-perm-project"
+            repo: "/tmp/test-perm-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-perm-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-perm-ws"
+            project: "test-perm-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-perm-ws"
+            template: "test-agent"
+            permission: "session"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            token_id: "*"
+
+  - id: agent-list-returns-array
+    name: agent/list Returns Array of Instances
+    description: >
+      agent/list returns an array of AgentInstance objects. Each instance
+      includes id, template, workspace, status, port, direct_url, and
+      proxy_url.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 10s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - listing
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_is_array: true
+
+  - id: agent-list-filter-by-workspace
+    name: agent/list Filters by Workspace
+    description: >
+      agent/list with workspace filter returns only agents in the
+      specified workspace.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 60s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - listing
+      - filtering
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-list-ws-project"
+            repo: "/tmp/test-list-ws-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-list-ws-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-list-ws-a"
+            project: "test-list-ws-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-list-ws-a"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/list"
+          arguments:
+            workspace: "test-list-ws-a"
+      - action: expect
+        expect:
+          result_all_match:
+            workspace: "test-list-ws-a"
+
+  - id: agent-list-filter-by-status
+    name: agent/list Filters by Status
+    description: >
+      agent/list with status filter returns only agents matching the
+      specified ARP agent status (starting, ready, busy, error, stopping,
+      stopped).
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 10s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - listing
+      - filtering
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/list"
+          arguments:
+            status: "ready"
+      - action: expect
+        expect:
+          result_all_match:
+            status: "ready"
+
+  - id: agent-list-filter-by-template
+    name: agent/list Filters by Template
+    description: >
+      agent/list with template filter returns only agents spawned from the
+      specified template name.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 10s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - listing
+      - filtering
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/list"
+          arguments:
+            template: "test-agent"
+      - action: expect
+        expect:
+          result_all_match:
+            template: "test-agent"
+
+  - id: agent-status-returns-full
+    name: agent/status Returns Full AgentInstance with AgentCard
+    description: >
+      agent/status returns an AgentInstance with the full resolved
+      AgentCard including ARP lifecycle metadata in metadata.arp.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 60s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - status
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-status-project"
+            repo: "/tmp/test-status-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+                a2a:
+                  name: "Test Agent"
+                  description: "A test agent"
+      - action: expect
+        expect:
+          result:
+            name: "test-status-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-status-ws"
+            project: "test-status-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-status-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/status"
+          arguments:
+            agent_id: "$prev.result.id"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            template: "test-agent"
+            status: "*"
+            port: "*"
+            direct_url: "*"
+            proxy_url: "*"
+            a2a_agent_card: "*"
+
+  - id: agent-status-nonexistent-error
+    name: agent/status Nonexistent Agent Errors
+    description: >
+      agent/status with a nonexistent agent_id returns an error.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 10s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - status
+      - errors
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/status"
+          arguments:
+            agent_id: "nonexistent-agent-00000"
+      - action: expect
+        expect:
+          error: "*"
+
+  - id: agent-stop-terminates
+    name: agent/stop Cancels Working Tasks Then SIGTERM
+    description: >
+      agent/stop cancels any A2A tasks in WORKING state via CancelTask,
+      sends SIGTERM, waits grace period, then SIGKILL if needed. After
+      stop, the agent status transitions to stopped.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 60s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - stop
+      - lifecycle
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-stop-project"
+            repo: "/tmp/test-stop-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-stop-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-stop-ws"
+            project: "test-stop-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-stop-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/stop"
+          arguments:
+            agent_id: "$prev.result.id"
+      - action: expect
+        expect:
+          result: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/status"
+          arguments:
+            agent_id: "$prev.result.id"
+      - action: expect
+        expect:
+          result:
+            status: "stopped"
+
+  - id: agent-stop-with-grace-period
+    name: agent/stop Respects Custom Grace Period
+    description: >
+      agent/stop with a custom grace_period_ms waits the specified
+      duration before force-killing the agent process.
+    severity: recommended
+    category: mcp-agent-lifecycle
+    timeout: 30s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - stop
+      - lifecycle
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-stop-grace-project"
+            repo: "/tmp/test-stop-grace-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-stop-grace-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-stop-grace-ws"
+            project: "test-stop-grace-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-stop-grace-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/stop"
+          arguments:
+            agent_id: "$prev.result.id"
+            grace_period_ms: 10000
+      - action: expect
+        expect:
+          result: "*"
+
+  - id: agent-restart-preserves-template
+    name: agent/restart Preserves Template and May Assign New Port
+    description: >
+      agent/restart stops and re-spawns the agent with the same template,
+      name, workspace, and env. A new port may be allocated. The proxy_url
+      remains stable; direct_url may change.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 120s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - restart
+      - lifecycle
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-restart-project"
+            repo: "/tmp/test-restart-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-restart-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-restart-ws"
+            project: "test-restart-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-restart-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            template: "test-agent"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/restart"
+          arguments:
+            agent_id: "$prev.result.id"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            template: "test-agent"
+            workspace: "test-restart-ws"
+
+  - id: agent-multiple-coexist
+    name: Multiple Agents Coexist in One Workspace
+    description: >
+      Multiple agents can be spawned in the same workspace, each getting
+      a unique id, port, direct_url, and proxy_url. They share the
+      workspace filesystem but have independent A2A sessions.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 120s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - spawn
+      - multi-agent
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-multi-project"
+            repo: "/tmp/test-multi-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-multi-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-multi-ws"
+            project: "test-multi-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-multi-ws"
+            template: "test-agent"
+            name: "agent-alpha"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            port: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-multi-ws"
+            template: "test-agent"
+            name: "agent-beta"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            port: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/get"
+          arguments:
+            name: "test-multi-ws"
+      - action: expect
+        expect:
+          result:
+            agents: "*"
+
+  - id: agent-spawn-invalid-template-error
+    name: agent/spawn With Invalid Template Errors
+    description: >
+      agent/spawn with a template name that does not exist in the project
+      returns an error.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 10s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - spawn
+      - errors
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-spawn-badtmpl-project"
+            repo: "/tmp/test-spawn-badtmpl-repo"
+      - action: expect
+        expect:
+          result:
+            name: "test-spawn-badtmpl-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-spawn-badtmpl-ws"
+            project: "test-spawn-badtmpl-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-spawn-badtmpl-ws"
+            template: "nonexistent-template"
+      - action: expect
+        expect:
+          error: "*"
+
+  - id: agent-spawn-invalid-workspace-error
+    name: agent/spawn With Invalid Workspace Errors
+    description: >
+      agent/spawn with a workspace name that does not exist returns an error.
+    severity: required
+    category: mcp-agent-lifecycle
+    timeout: 10s
+    tags:
+      - mcp-agent-lifecycle
+      - agent
+      - spawn
+      - errors
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "nonexistent-workspace-00000"
+            template: "test-agent"
+      - action: expect
+        expect:
+          error: "*"
+
+  # ===========================================================================
+  # Category: mcp-agent-messaging
+  # ===========================================================================
+  - id: agent-message-sends-text
+    name: agent/message Sends SendMessageRequest with TextPart
+    description: >
+      agent/message constructs an A2A SendMessageRequest with a ROLE_USER
+      Message containing a single TextPart and sends it to the agent.
+      Returns the A2A SendMessageResponse (either a Task or a Message).
+    severity: required
+    category: mcp-agent-messaging
+    timeout: 120s
+    tags:
+      - mcp-agent-messaging
+      - agent
+      - a2a
+      - messaging
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-msg-project"
+            repo: "/tmp/test-msg-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-msg-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-msg-ws"
+            project: "test-msg-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-msg-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/message"
+          arguments:
+            agent_id: "$prev.result.id"
+            message: "Hello, agent."
+      - action: expect
+        expect:
+          result: "*"
+
+  - id: agent-message-with-context-id
+    name: agent/message With context_id Continues Conversation
+    description: >
+      agent/message with a context_id parameter continues an existing
+      A2A conversation. The context_id is set on the Message.context_id
+      field in the SendMessageRequest.
+    severity: required
+    category: mcp-agent-messaging
+    timeout: 120s
+    tags:
+      - mcp-agent-messaging
+      - agent
+      - a2a
+      - context
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-ctx-project"
+            repo: "/tmp/test-ctx-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-ctx-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-ctx-ws"
+            project: "test-ctx-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-ctx-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/message"
+          arguments:
+            agent_id: "$prev.result.id"
+            message: "Start a conversation."
+      - action: expect
+        expect:
+          result: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/message"
+          arguments:
+            agent_id: "$prev.result.id"
+            message: "Continue the conversation."
+            context_id: "$prev.result.contextId"
+      - action: expect
+        expect:
+          result: "*"
+
+  - id: agent-message-blocking-true
+    name: agent/message With blocking=true Waits for Response
+    description: >
+      agent/message with blocking=true (the default) waits for the agent
+      to produce a SendMessageResponse before returning. The result
+      contains the complete response.
+    severity: required
+    category: mcp-agent-messaging
+    timeout: 120s
+    tags:
+      - mcp-agent-messaging
+      - agent
+      - a2a
+      - blocking
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-block-project"
+            repo: "/tmp/test-block-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-block-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-block-ws"
+            project: "test-block-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-block-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/message"
+          arguments:
+            agent_id: "$prev.result.id"
+            message: "Respond synchronously."
+            blocking: true
+      - action: expect
+        expect:
+          result: "*"
+
+  - id: agent-message-blocking-false
+    name: agent/message With blocking=false Returns Immediately
+    description: >
+      agent/message with blocking=false returns immediately after sending
+      the message without waiting for the agent's response.
+    severity: recommended
+    category: mcp-agent-messaging
+    timeout: 60s
+    tags:
+      - mcp-agent-messaging
+      - agent
+      - a2a
+      - blocking
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-noblock-project"
+            repo: "/tmp/test-noblock-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-noblock-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-noblock-ws"
+            project: "test-noblock-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-noblock-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/message"
+          arguments:
+            agent_id: "$prev.result.id"
+            message: "Fire and forget."
+            blocking: false
+      - action: expect
+        expect:
+          result: "*"
+
+  - id: agent-task-returns-task
+    name: agent/task Returns Task with ID and Status
+    description: >
+      agent/task sends a SendMessageRequest and returns an A2A Task
+      object with id, context_id, and status (typically SUBMITTED or
+      WORKING). If the agent's SendMessageResponse contains a Message
+      instead of a Task, ARP wraps it in a synthetic completed Task.
+    severity: required
+    category: mcp-agent-messaging
+    timeout: 120s
+    tags:
+      - mcp-agent-messaging
+      - agent
+      - a2a
+      - task
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-task-project"
+            repo: "/tmp/test-task-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-task-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-task-ws"
+            project: "test-task-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-task-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/task"
+          arguments:
+            agent_id: "$prev.result.id"
+            message: "Perform a long-running task."
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            status: "*"
+
+  - id: agent-task-status-returns-state
+    name: agent/task_status Returns TaskState and Artifacts
+    description: >
+      agent/task_status calls GetTask on the agent's direct A2A endpoint
+      and returns a Task with status.state (a TaskState enum), artifacts
+      array, and recent message history.
+    severity: required
+    category: mcp-agent-messaging
+    timeout: 120s
+    tags:
+      - mcp-agent-messaging
+      - agent
+      - a2a
+      - task
+      - status
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-taskstatus-project"
+            repo: "/tmp/test-taskstatus-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-taskstatus-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-taskstatus-ws"
+            project: "test-taskstatus-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-taskstatus-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/task"
+          arguments:
+            agent_id: "$prev.result.id"
+            message: "Do something trackable."
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/task_status"
+          arguments:
+            agent_id: "$prev.result.agent_id"
+            task_id: "$prev.result.id"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            status: "*"
+
+  - id: agent-task-status-history-length
+    name: agent/task_status With history_length Limits Messages
+    description: >
+      agent/task_status with history_length parameter limits the number
+      of recent messages returned in the Task's history array.
+    severity: recommended
+    category: mcp-agent-messaging
+    timeout: 120s
+    tags:
+      - mcp-agent-messaging
+      - agent
+      - a2a
+      - task
+      - history
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-hist-project"
+            repo: "/tmp/test-hist-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-hist-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-hist-ws"
+            project: "test-hist-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-hist-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/task"
+          arguments:
+            agent_id: "$prev.result.id"
+            message: "Track this task."
+      - action: expect
+        expect:
+          result:
+            id: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/task_status"
+          arguments:
+            agent_id: "$prev.result.agent_id"
+            task_id: "$prev.result.id"
+            history_length: 2
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            status: "*"
+
+  - id: agent-message-nonexistent-agent-error
+    name: agent/message To Nonexistent Agent Errors
+    description: >
+      agent/message with a nonexistent agent_id returns an error.
+    severity: required
+    category: mcp-agent-messaging
+    timeout: 10s
+    tags:
+      - mcp-agent-messaging
+      - agent
+      - errors
+    steps:
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/message"
+          arguments:
+            agent_id: "nonexistent-agent-00000"
+            message: "Hello?"
+      - action: expect
+        expect:
+          error: "*"
+
+  # ===========================================================================
+  # Category: a2a-proxy
+  # ===========================================================================
+  - id: proxy-list-agents
+    name: GET /a2a/agents Lists All Ready AgentCards
+    description: >
+      GET /a2a/agents returns an array of A2A AgentCard objects for all
+      agents with status ready (or busy). Each AgentCard includes name,
+      version, supportedInterfaces, and skills.
+    severity: required
+    category: a2a-proxy
+    timeout: 30s
+    tags:
+      - a2a-proxy
+      - discovery
+      - agent-card
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/a2a/agents"
+      - action: expect
+        expect:
+          http_status: 200
+          body_is_array: true
+
+  - id: proxy-agent-card-well-known
+    name: GET /a2a/agents/{id}/.well-known/agent-card.json Returns Enriched AgentCard
+    description: >
+      GET /a2a/agents/{agent_id}/.well-known/agent-card.json returns the
+      agent's A2A AgentCard enriched with metadata.arp containing agent_id,
+      workspace, project, template, status, direct_url, and started_at.
+    severity: required
+    category: a2a-proxy
+    timeout: 30s
+    tags:
+      - a2a-proxy
+      - discovery
+      - agent-card
+      - enrichment
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/a2a/agents/{agent_id}/.well-known/agent-card.json"
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            name: "*"
+            supportedInterfaces: "*"
+            metadata:
+              arp:
+                agent_id: "*"
+                workspace: "*"
+                status: "*"
+                direct_url: "*"
+
+  - id: proxy-agent-card-interface-url
+    name: Enriched AgentCard supportedInterfaces[0].url Points to Proxy
+    description: >
+      The enriched AgentCard served through the proxy has
+      supportedInterfaces[0].url pointing to the proxied endpoint
+      (http://host:port/a2a/agents/{id}), not the agent's direct URL.
+    severity: required
+    category: a2a-proxy
+    timeout: 30s
+    tags:
+      - a2a-proxy
+      - agent-card
+      - enrichment
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/a2a/agents/{agent_id}/.well-known/agent-card.json"
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            supportedInterfaces: "*"
+            metadata:
+              arp:
+                direct_url: "*"
+
+  - id: proxy-send-message
+    name: POST /a2a/agents/{id}/message:send Proxies SendMessage
+    description: >
+      POST /a2a/agents/{agent_id}/message:send proxies an A2A
+      SendMessageRequest to the target agent and returns the
+      SendMessageResponse (either a Task or a Message).
+    severity: required
+    category: a2a-proxy
+    timeout: 60s
+    tags:
+      - a2a-proxy
+      - messaging
+      - a2a
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/agents/{agent_id}/message:send"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Hello via proxy."
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+
+  - id: proxy-send-streaming-message
+    name: POST /a2a/agents/{id}/message:stream Proxies SSE
+    description: >
+      POST /a2a/agents/{agent_id}/message:stream proxies an A2A
+      SendStreamingMessage request and returns a Server-Sent Events
+      (SSE) stream of StreamResponse events.
+    severity: optional
+    category: a2a-proxy
+    timeout: 60s
+    tags:
+      - a2a-proxy
+      - streaming
+      - a2a
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/agents/{agent_id}/message:stream"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Stream via proxy."
+      - action: expect
+        expect:
+          http_status: 200
+          headers:
+            content-type: "text/event-stream"
+
+  - id: proxy-get-task
+    name: GET /a2a/agents/{id}/tasks/{tid} Proxies GetTask
+    description: >
+      GET /a2a/agents/{agent_id}/tasks/{task_id} proxies an A2A GetTask
+      request to the target agent and returns the Task object.
+    severity: required
+    category: a2a-proxy
+    timeout: 30s
+    tags:
+      - a2a-proxy
+      - task
+      - a2a
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/agents/{agent_id}/message:send"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Create a task for proxy GetTask test."
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+      - action: send
+        payload:
+          http_method: GET
+          path: "/a2a/agents/{agent_id}/tasks/$prev.body.task.id"
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            id: "*"
+            status: "*"
+
+  - id: proxy-cancel-task
+    name: POST /a2a/agents/{id}/tasks/{tid}:cancel Proxies CancelTask
+    description: >
+      POST /a2a/agents/{agent_id}/tasks/{task_id}:cancel proxies an A2A
+      CancelTask request to the target agent.
+    severity: recommended
+    category: a2a-proxy
+    timeout: 60s
+    tags:
+      - a2a-proxy
+      - task
+      - a2a
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/agents/{agent_id}/message:send"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Create a task to cancel via proxy."
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/agents/{agent_id}/tasks/$prev.body.task.id:cancel"
+      - action: expect
+        expect:
+          http_status: 200
+
+  - id: proxy-nonexistent-agent-404
+    name: Proxy Requests to Nonexistent Agent Return 404
+    description: >
+      A2A proxy requests targeting a nonexistent agent_id return HTTP 404.
+    severity: required
+    category: a2a-proxy
+    timeout: 10s
+    tags:
+      - a2a-proxy
+      - errors
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/a2a/agents/nonexistent-agent-00000/.well-known/agent-card.json"
+      - action: expect
+        expect:
+          http_status: 404
+
+  - id: proxy-enriched-card-metadata-arp
+    name: Enriched AgentCard Has metadata.arp Fields
+    description: >
+      The enriched AgentCard served through the proxy includes
+      metadata.arp with agent_id, workspace, project, template, status,
+      direct_url, and started_at fields.
+    severity: required
+    category: a2a-proxy
+    timeout: 30s
+    tags:
+      - a2a-proxy
+      - agent-card
+      - enrichment
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/a2a/agents/{agent_id}/.well-known/agent-card.json"
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            metadata:
+              arp:
+                agent_id: "*"
+                workspace: "*"
+                project: "*"
+                template: "*"
+                status: "*"
+                direct_url: "*"
+                started_at: "*"
+
+  # ===========================================================================
+  # Category: a2a-proxy-routing
+  # ===========================================================================
+  - id: proxy-route-by-agent-id
+    name: Route by agent_id (Exact Match)
+    description: >
+      The ARP proxy resolves agents by agent_id as the first priority.
+      A request to /a2a/agents/{agent_id}/message:send with a valid
+      agent_id is routed to the correct agent.
+    severity: required
+    category: a2a-proxy-routing
+    timeout: 30s
+    tags:
+      - a2a-proxy-routing
+      - routing
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/agents/{agent_id}/message:send"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Route by exact agent_id."
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+
+  - id: proxy-route-by-name
+    name: Route by AgentCard.name
+    description: >
+      The ARP proxy resolves agents by AgentCard.name as the second
+      priority. A request using the agent's name in the path is routed
+      to the matching agent.
+    severity: required
+    category: a2a-proxy-routing
+    timeout: 30s
+    tags:
+      - a2a-proxy-routing
+      - routing
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/agents/{agent_name}/message:send"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Route by agent name."
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+
+  - id: proxy-route-by-workspace-name
+    name: Route by workspace/instance_name Composite
+    description: >
+      The ARP proxy resolves agents by {workspace}/{instance_name}
+      composite key as the third priority.
+    severity: required
+    category: a2a-proxy-routing
+    timeout: 30s
+    tags:
+      - a2a-proxy-routing
+      - routing
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/agents/{workspace}/{instance_name}/message:send"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Route by workspace/name composite."
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+
+  - id: proxy-route-by-skill-tags
+    name: Route by AgentSkill.tags via POST /a2a/route/message:send
+    description: >
+      POST /a2a/route/message:send routes a SendMessage request to an
+      agent whose AgentCard.skills[].tags match the request's routing
+      criteria. Prefers agents with status ready.
+    severity: recommended
+    category: a2a-proxy-routing
+    timeout: 30s
+    tags:
+      - a2a-proxy-routing
+      - routing
+      - skills
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/route/message:send"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Route to an agent with coding skills."
+            routing:
+              tags: ["coding"]
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+
+  - id: proxy-route-prefers-ready
+    name: Proxy Prefers Ready Agents Over Busy
+    description: >
+      When multiple agents match a routing request, the proxy prefers
+      agents with status ready over those with status busy.
+    severity: recommended
+    category: a2a-proxy-routing
+    timeout: 60s
+    tags:
+      - a2a-proxy-routing
+      - routing
+      - load-balancing
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/route/message:send"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Route to any available agent."
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+
+  - id: proxy-route-no-match-error
+    name: Route With No Matching Agent Returns Error
+    description: >
+      POST /a2a/route/message:send with routing criteria that match no
+      agent returns an appropriate error.
+    severity: required
+    category: a2a-proxy-routing
+    timeout: 10s
+    tags:
+      - a2a-proxy-routing
+      - routing
+      - errors
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/route/message:send"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Route to nonexistent capability."
+            routing:
+              tags: ["nonexistent-capability-00000"]
+      - action: expect
+        expect:
+          http_status: 404
+
+  # ===========================================================================
+  # Category: auth-tokens
+  # ===========================================================================
+  - id: token-create-requires-admin
+    name: token/create Requires Admin Permission
+    description: >
+      token/create is only available to callers with admin permission.
+      A caller with project or session permission receives an error.
+    severity: required
+    category: auth-tokens
+    timeout: 10s
+    tags:
+      - auth-tokens
+      - auth
+      - permissions
+    steps:
+      - action: mcp_tool_call
+        auth:
+          permission: "session"
+        payload:
+          tool: "token/create"
+          arguments:
+            subject: "test-user"
+            scope: "*"
+            permission: "session"
+      - action: expect
+        expect:
+          error: "*"
+
+  - id: token-create-with-admin
+    name: token/create Succeeds With Admin Permission
+    description: >
+      token/create with admin permission creates a new ARP token with
+      the specified subject, scope, and permission.
+    severity: required
+    category: auth-tokens
+    timeout: 10s
+    tags:
+      - auth-tokens
+      - auth
+      - permissions
+    steps:
+      - action: mcp_tool_call
+        auth:
+          permission: "admin"
+        payload:
+          tool: "token/create"
+          arguments:
+            subject: "test-user"
+            scope: "*"
+            permission: "project"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            subject: "test-user"
+            scope: "*"
+            permission: "project"
+
+  - id: session-scoped-sees-own-agents
+    name: Session-Scoped Token Only Sees Own-Session Agents
+    description: >
+      A token with session permission can only see agents that were
+      spawned in the same session (same session_id). agent/list returns
+      only own-session agents.
+    severity: required
+    category: auth-tokens
+    timeout: 60s
+    tags:
+      - auth-tokens
+      - auth
+      - session
+      - scoping
+    steps:
+      - action: mcp_tool_call
+        auth:
+          permission: "session"
+          scope: ["test-auth-project"]
+        payload:
+          tool: "agent/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_all_match:
+            session_id: "$auth.session_id"
+
+  - id: project-scoped-sees-all-in-project
+    name: Project-Scoped Token Sees All Agents in Scoped Projects
+    description: >
+      A token with project permission can see all agents in its scoped
+      projects, regardless of session_id.
+    severity: required
+    category: auth-tokens
+    timeout: 60s
+    tags:
+      - auth-tokens
+      - auth
+      - project
+      - scoping
+    steps:
+      - action: mcp_tool_call
+        auth:
+          permission: "project"
+          scope: ["test-auth-project"]
+        payload:
+          tool: "agent/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_is_array: true
+
+  - id: project-scoped-cannot-see-unscoped
+    name: Project-Scoped Token Cannot See Agents in Unscoped Projects
+    description: >
+      A token scoped to project A cannot see or interact with agents
+      in project B. workspace/list filtered to the unscoped project
+      returns empty results or an error.
+    severity: required
+    category: auth-tokens
+    timeout: 10s
+    tags:
+      - auth-tokens
+      - auth
+      - scoping
+      - errors
+    steps:
+      - action: mcp_tool_call
+        auth:
+          permission: "project"
+          scope: ["project-a"]
+        payload:
+          tool: "workspace/list"
+          arguments:
+            project: "project-b"
+      - action: expect
+        expect:
+          result_is_array: true
+          result_count: 0
+
+  - id: scope-narrowing-on-spawn
+    name: Scope Narrowing on agent/spawn (Child ⊆ Parent)
+    description: >
+      When agent/spawn includes a scope parameter, the child agent's
+      token scope must be a subset of the caller's scope. Attempting
+      to widen scope beyond the caller's scope returns an error.
+    severity: required
+    category: auth-tokens
+    timeout: 60s
+    tags:
+      - auth-tokens
+      - auth
+      - scoping
+      - spawn
+    steps:
+      - action: mcp_tool_call
+        auth:
+          permission: "project"
+          scope: ["project-a"]
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "project-a"
+            repo: "/tmp/project-a"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result: "*"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-scope-narrow-ws"
+            project: "project-a"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        auth:
+          permission: "project"
+          scope: ["project-a"]
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-scope-narrow-ws"
+            template: "test-agent"
+            scope: ["project-a", "project-b"]
+      - action: expect
+        expect:
+          error: "*"
+
+  - id: permission-cannot-escalate
+    name: Permission Can Only Lower (No Escalation)
+    description: >
+      A caller with project permission cannot spawn an agent with admin
+      permission. The permission field on agent/spawn can only be equal
+      to or lower than the caller's permission level.
+    severity: required
+    category: auth-tokens
+    timeout: 60s
+    tags:
+      - auth-tokens
+      - auth
+      - permissions
+      - spawn
+    steps:
+      - action: mcp_tool_call
+        auth:
+          permission: "project"
+          scope: ["test-escalate-project"]
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-escalate-project"
+            repo: "/tmp/test-escalate-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          error: "*"
+
+  - id: localhost-admin-when-enabled
+    name: Localhost Connections Get Admin When localhost_admin=true
+    description: >
+      When the ARP server is configured with localhost_admin=true,
+      connections from localhost are treated as admin with scope "*".
+      This allows local users full control without explicit tokens.
+    severity: recommended
+    category: auth-tokens
+    timeout: 10s
+    tags:
+      - auth-tokens
+      - auth
+      - localhost
+    steps:
+      - action: mcp_tool_call
+        auth:
+          source: "localhost"
+        payload:
+          tool: "project/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_is_array: true
+
+  - id: token-create-with-expiry
+    name: token/create With Expiry
+    description: >
+      token/create with expires_in_seconds creates a token that expires
+      after the specified duration. The returned token includes
+      expires_at field.
+    severity: optional
+    category: auth-tokens
+    timeout: 10s
+    tags:
+      - auth-tokens
+      - auth
+      - expiry
+    steps:
+      - action: mcp_tool_call
+        auth:
+          permission: "admin"
+        payload:
+          tool: "token/create"
+          arguments:
+            subject: "test-expiry-user"
+            scope: "*"
+            permission: "session"
+            expires_in_seconds: 3600
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            expires_at: "*"
+
+  # ===========================================================================
+  # Category: auth-session-isolation
+  # ===========================================================================
+  - id: session-isolation-separate-tokens
+    name: Two Session-Scoped Tokens Cannot See Each Other's Agents
+    description: >
+      Two different session-scoped tokens, each having spawned agents,
+      cannot see each other's agents via agent/list. Each token's
+      agent/list returns only its own session's agents.
+    severity: required
+    category: auth-session-isolation
+    timeout: 120s
+    tags:
+      - auth-session-isolation
+      - auth
+      - session
+      - isolation
+    steps:
+      - action: mcp_tool_call
+        auth:
+          token: "session-token-a"
+          permission: "session"
+          scope: ["test-isolation-project"]
+        payload:
+          tool: "agent/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_all_match:
+            session_id: "$auth.session_id"
+      - action: mcp_tool_call
+        auth:
+          token: "session-token-b"
+          permission: "session"
+          scope: ["test-isolation-project"]
+        payload:
+          tool: "agent/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_all_match:
+            session_id: "$auth.session_id"
+
+  - id: session-agent-list-only-own
+    name: Session-Scoped agent/list Only Returns Own-Session Agents
+    description: >
+      A session-scoped token calling agent/list sees only agents that
+      share its session_id, even when other agents exist in the same
+      workspace belonging to different sessions.
+    severity: required
+    category: auth-session-isolation
+    timeout: 60s
+    tags:
+      - auth-session-isolation
+      - auth
+      - session
+    steps:
+      - action: mcp_tool_call
+        auth:
+          permission: "session"
+          scope: ["test-isolation-project"]
+        payload:
+          tool: "agent/list"
+          arguments: {}
+      - action: expect
+        expect:
+          result_all_match:
+            session_id: "$auth.session_id"
+
+  - id: session-stop-foreign-agent-403
+    name: Session-Scoped agent/stop on Foreign-Session Agent Returns 403
+    description: >
+      A session-scoped token attempting to stop an agent belonging to
+      a different session receives a permission error (403 equivalent).
+    severity: required
+    category: auth-session-isolation
+    timeout: 30s
+    tags:
+      - auth-session-isolation
+      - auth
+      - session
+      - errors
+    steps:
+      - action: mcp_tool_call
+        auth:
+          token: "session-token-a"
+          permission: "session"
+        payload:
+          tool: "agent/stop"
+          arguments:
+            agent_id: "{foreign_session_agent_id}"
+      - action: expect
+        expect:
+          error: "*"
+
+  - id: session-propagates-through-spawn-chain
+    name: Session Propagates Through Spawn Chain
+    description: >
+      When an agent spawns a child agent, the child inherits the parent's
+      session_id. A grandchild agent (spawned by the child) also inherits
+      the same session_id, creating a session tree.
+    severity: required
+    category: auth-session-isolation
+    timeout: 120s
+    tags:
+      - auth-session-isolation
+      - auth
+      - session
+      - spawn-chain
+    steps:
+      - action: mcp_tool_call
+        auth:
+          permission: "project"
+          scope: ["test-chain-project"]
+        payload:
+          tool: "project/register"
+          arguments:
+            name: "test-chain-project"
+            repo: "/tmp/test-chain-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          result:
+            name: "test-chain-project"
+      - action: mcp_tool_call
+        payload:
+          tool: "workspace/create"
+          arguments:
+            name: "test-chain-ws"
+            project: "test-chain-project"
+      - action: expect
+        expect:
+          result:
+            status: "active"
+      - action: mcp_tool_call
+        payload:
+          tool: "agent/spawn"
+          arguments:
+            workspace: "test-chain-ws"
+            template: "test-agent"
+            name: "parent-agent"
+      - action: expect
+        expect:
+          result:
+            id: "*"
+            session_id: "*"
+
+  - id: session-proxy-enforces-boundary
+    name: Proxied A2A With Session Token Enforces Session Boundary
+    description: >
+      When accessing the A2A proxy with a session-scoped bearer token,
+      only agents within the token's session are accessible. Requests to
+      agents outside the session return 403.
+    severity: required
+    category: auth-session-isolation
+    timeout: 30s
+    tags:
+      - auth-session-isolation
+      - auth
+      - session
+      - a2a-proxy
+    steps:
+      - action: send
+        auth:
+          token: "session-token-a"
+          permission: "session"
+        payload:
+          http_method: POST
+          path: "/a2a/agents/{foreign_session_agent_id}/message:send"
+          headers:
+            content-type: "application/json"
+            authorization: "Bearer {session_token_a}"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Try to message foreign session agent."
+      - action: expect
+        expect:
+          http_status: 403
+
+  # ===========================================================================
+  # Category: direct-vs-proxy
+  # ===========================================================================
+  - id: direct-serves-a2a-without-arp-auth
+    name: Direct URL Serves Standard A2A Without ARP Auth
+    description: >
+      The agent's direct URL (agent port) serves standard A2A v1.0
+      endpoints. No ARP token or authorization header is required for
+      direct access — ARP scoping does not apply to the direct path.
+    severity: required
+    category: direct-vs-proxy
+    timeout: 30s
+    tags:
+      - direct-vs-proxy
+      - a2a
+      - direct-access
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/.well-known/agent-card.json"
+          target: "direct"
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            name: "*"
+            supportedInterfaces: "*"
+
+  - id: direct-send-message-no-auth
+    name: Direct SendMessage Works Without ARP Token
+    description: >
+      POST /message:send on the agent's direct URL works without any
+      ARP authorization. The agent processes the request using standard
+      A2A v1.0 semantics.
+    severity: required
+    category: direct-vs-proxy
+    timeout: 60s
+    tags:
+      - direct-vs-proxy
+      - a2a
+      - direct-access
+      - messaging
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/message:send"
+          target: "direct"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Direct message without ARP auth."
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+
+  - id: proxy-enforces-token-scope
+    name: Proxy URL Enforces Token Scope
+    description: >
+      The proxied A2A endpoint (/a2a/agents/{id}/...) enforces ARP
+      token scope. A request with an invalid or missing token is
+      rejected with an appropriate HTTP error (401 or 403).
+    severity: required
+    category: direct-vs-proxy
+    timeout: 10s
+    tags:
+      - direct-vs-proxy
+      - a2a-proxy
+      - auth
+      - scoping
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/agents/{agent_id}/message:send"
+          headers:
+            content-type: "application/json"
+            authorization: "Bearer invalid-token-00000"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Should be rejected."
+      - action: expect
+        expect:
+          http_status_one_of: [401, 403]
+
+  - id: proxy-card-has-direct-url
+    name: Proxy AgentCard Has metadata.arp.direct_url
+    description: >
+      The AgentCard served through the proxy includes
+      metadata.arp.direct_url giving clients the option to bypass
+      the proxy and connect directly to the agent's A2A endpoint.
+    severity: required
+    category: direct-vs-proxy
+    timeout: 30s
+    tags:
+      - direct-vs-proxy
+      - agent-card
+      - enrichment
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/a2a/agents/{agent_id}/.well-known/agent-card.json"
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            metadata:
+              arp:
+                direct_url: "*"
+
+  - id: direct-bypasses-arp-scoping
+    name: Direct Access Bypasses ARP Scoping (By Design)
+    description: >
+      Direct access to an agent's port bypasses ARP scope enforcement
+      entirely. This is by design — ARP scopes protect the management
+      plane (proxied path and MCP tools), not the data plane (direct
+      agent-to-agent communication).
+    severity: required
+    category: direct-vs-proxy
+    timeout: 60s
+    tags:
+      - direct-vs-proxy
+      - a2a
+      - direct-access
+      - security
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/message:send"
+          target: "direct"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Direct access ignores ARP scoping."
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+
+  - id: proxy-requires-auth-header
+    name: Proxy Requires Authorization Header
+    description: >
+      The proxied A2A endpoint requires a valid Authorization header
+      with a bearer token. Requests without the header are rejected.
+    severity: required
+    category: direct-vs-proxy
+    timeout: 10s
+    tags:
+      - direct-vs-proxy
+      - a2a-proxy
+      - auth
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/agents/{agent_id}/message:send"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "No auth header."
+      - action: expect
+        expect:
+          http_status_one_of: [401, 403]
+
+  - id: direct-get-task-no-auth
+    name: Direct GetTask Works Without ARP Token
+    description: >
+      GET /tasks/{id} on the agent's direct URL works without ARP
+      authorization, serving standard A2A v1.0 task retrieval.
+    severity: required
+    category: direct-vs-proxy
+    timeout: 30s
+    tags:
+      - direct-vs-proxy
+      - a2a
+      - direct-access
+      - task
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/message:send"
+          target: "direct"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text_part:
+                    text: "Create task for direct GetTask test."
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+      - action: send
+        payload:
+          http_method: GET
+          path: "/tasks/$prev.body.task.id"
+          target: "direct"
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            id: "*"
+            status: "*"
