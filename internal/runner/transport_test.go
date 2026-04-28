@@ -1,6 +1,8 @@
 package runner
 
 import (
+	"log/slog"
+	"strings"
 	"testing"
 )
 
@@ -161,5 +163,83 @@ func TestInterpolateVars_NilPrev(t *testing.T) {
 	out := interpolateVars(payload, nil)
 	if out["x"] != "$prev.foo" {
 		t.Fatalf("expected unchanged, got %v", out["x"])
+	}
+}
+
+func newTestEvaluator() *Evaluator {
+	return NewEvaluator(slog.Default())
+}
+
+func TestMatchExpect_BodyWildcard_MapResponse(t *testing.T) {
+	eval := newTestEvaluator()
+	resp := &TransportResponse{
+		Body: map[string]any{"id": "123"},
+	}
+	expect := map[string]any{"body": "*"}
+	if err := matchExpect(eval, resp, expect); err != nil {
+		t.Fatalf("body wildcard should match map response: %v", err)
+	}
+}
+
+func TestMatchExpect_BodyWildcard_ArrayResponse(t *testing.T) {
+	eval := newTestEvaluator()
+	resp := &TransportResponse{
+		BodyArray: []any{"a", "b"},
+	}
+	expect := map[string]any{"body": "*"}
+	if err := matchExpect(eval, resp, expect); err != nil {
+		t.Fatalf("body wildcard should match array response: %v", err)
+	}
+}
+
+func TestMatchExpect_BodyWildcard_RawBodyResponse(t *testing.T) {
+	eval := newTestEvaluator()
+	resp := &TransportResponse{
+		RawBody: "hello",
+	}
+	expect := map[string]any{"body": "*"}
+	if err := matchExpect(eval, resp, expect); err != nil {
+		t.Fatalf("body wildcard should match raw body response: %v", err)
+	}
+}
+
+func TestMatchExpect_BodyWildcard_NoBody(t *testing.T) {
+	eval := newTestEvaluator()
+	resp := &TransportResponse{}
+	expect := map[string]any{"body": "*"}
+	err := matchExpect(eval, resp, expect)
+	if err == nil {
+		t.Fatal("body wildcard should fail when response has no body")
+	}
+	if !strings.Contains(err.Error(), "expected body but response has no body") {
+		t.Fatalf("unexpected error message: %v", err)
+	}
+}
+
+func TestMatchExpect_BodyMap_StillWorks(t *testing.T) {
+	eval := newTestEvaluator()
+	resp := &TransportResponse{
+		Body: map[string]any{"id": "123", "name": "test"},
+	}
+	expect := map[string]any{
+		"body": map[string]any{"id": "123"},
+	}
+	if err := matchExpect(eval, resp, expect); err != nil {
+		t.Fatalf("body map matching should still work: %v", err)
+	}
+}
+
+func TestMatchExpect_BodyInvalidType(t *testing.T) {
+	eval := newTestEvaluator()
+	resp := &TransportResponse{
+		Body: map[string]any{"id": "123"},
+	}
+	expect := map[string]any{"body": 42}
+	err := matchExpect(eval, resp, expect)
+	if err == nil {
+		t.Fatal("body with invalid type should fail")
+	}
+	if !strings.Contains(err.Error(), "expected body must be a map") {
+		t.Fatalf("unexpected error message: %v", err)
 	}
 }

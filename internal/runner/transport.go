@@ -151,15 +151,23 @@ func matchExpect(eval *Evaluator, resp *TransportResponse, expect map[string]any
 
 	// Check body (partial match against response body)
 	if expBody, ok := expect["body"]; ok {
-		expMap, ok := expBody.(map[string]any)
-		if !ok {
-			return fmt.Errorf("expected body must be a map")
-		}
-		if resp.Body == nil {
-			return fmt.Errorf("response has no body to match against")
-		}
-		if err := eval.Match(expMap, resp.Body); err != nil {
-			return fmt.Errorf("body match failed: %w", err)
+		// Wildcard: body: "*" means just check that a body exists
+		if expStr, ok := expBody.(string); ok && expStr == "*" {
+			if resp.Body == nil && resp.BodyArray == nil && resp.RawBody == "" {
+				return fmt.Errorf("expected body but response has no body")
+			}
+			// Wildcard matches — body exists, skip detailed matching
+		} else {
+			expMap, ok := expBody.(map[string]any)
+			if !ok {
+				return fmt.Errorf("expected body must be a map or \"*\" wildcard")
+			}
+			if resp.Body == nil {
+				return fmt.Errorf("response has no body to match against")
+			}
+			if err := eval.Match(expMap, resp.Body); err != nil {
+				return fmt.Errorf("body match failed: %w", err)
+			}
 		}
 	}
 
