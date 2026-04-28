@@ -359,13 +359,13 @@ test_cases:
       - action: send
         payload:
           http_method: GET
-          path: "/api/workspaces/arp-impl"
+          path: "/api/workspaces/arp-test"
       - action: expect
         expect:
           http_status: 200
           body:
-            name: "arp-impl"
-            project: "awesometree"
+            name: "arp-test"
+            project: "test-project"
             active: true
 
   - id: api-workspaces-get-nonexistent

@@ -1,0 +1,38 @@
+# ARP Docker Test Compose
+#
+# Runs the ARP server (awesometree) alongside a mock echo agent for
+# spec-torture compliance testing.
+#
+# Usage:
+#   docker compose -f test/docker-compose.arp.yml up --build
+#
+# Prerequisites:
+#   - The awesometree-arp-test image must be built separately
+#     (e.g., from the awesometree repo's test/ directory).
+#   - See agents/echo-agent/README.md for state.json changes needed.
+
+services:
+  awesometree-arp:
+    image: awesometree-arp-test
+    ports:
+      - "8080:8080"
+    networks:
+      - arp-test
+    depends_on:
+      echo-agent:
+        condition: service_started
+
+  echo-agent:
+    build:
+      context: ../agents/echo-agent
+      dockerfile: Dockerfile
+    ports:
+      - "9200:9200"
+    environment:
+      - ECHO_AGENT_URL=http://echo-agent:9200
+    networks:
+      - arp-test
+
+networks:
+  arp-test:
+    driver: bridge
