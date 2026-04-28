@@ -112,6 +112,11 @@ func (t *HTTPTransport) Send(ctx context.Context, step *schema.Step) (*Transport
 	var jsonBody map[string]any
 	if err := json.Unmarshal(body, &jsonBody); err == nil {
 		tr.Body = jsonBody
+	} else {
+		var jsonArray []any
+		if err := json.Unmarshal(body, &jsonArray); err == nil {
+			tr.BodyArray = jsonArray
+		}
 	}
 
 	t.lastResp = tr
@@ -186,6 +191,11 @@ func (t *HTTPTransport) executePollingSend(ctx context.Context, method, url stri
 		var jsonBody map[string]any
 		if err := json.Unmarshal(body, &jsonBody); err == nil {
 			tr.Body = jsonBody
+		} else {
+			var jsonArray []any
+			if err := json.Unmarshal(body, &jsonArray); err == nil {
+				tr.BodyArray = jsonArray
+			}
 		}
 
 		lastResp = tr
