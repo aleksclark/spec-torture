@@ -2,33 +2,27 @@
 
 ## Test Agents
 
-Five A2A-compatible agents tested against the A2A v1.0 spec suite (19 tests):
+Four A2A-compatible agents tested against the A2A v1.0 spec suite (19 tests):
 
-### 1. crush-a2a (Crush native protocol + A2A v1.0 frontend)
-- **Source:** crush-a2a Go server (translates A2A v1.0 JSON-RPC → Crush's native unix socket protocol)
-- **Runtime:** Go, single-binary server backed by Crush native server
-- **Protocol:** JSON-RPC 2.0 over HTTP, A2A v1.0 method names (`SendMessage`, `GetTask`, `CancelTask`, `SendStreamingMessage`)
-- **Port:** localhost:8200
-
-### 2. a2a-go-helloworld (a2a-go SDK v2.x)
+### 1. a2a-go-helloworld (a2a-go SDK v2.x)
 - **Source:** [a2aproject/a2a-go](https://github.com/a2aproject/a2a-go) `examples/helloworld/server/jsonrpc`
 - **Runtime:** Go, using `a2a-go/v2` SDK
 - **Protocol:** JSON-RPC 2.0 over HTTP at `/invoke`, A2A v1.0 PascalCase method names
 - **Port:** localhost:8201
 
-### 3. a2a-rs-helloworld (a2a-rs SDK)
+### 2. a2a-rs-helloworld (a2a-rs SDK)
 - **Source:** [a2aproject/a2a-rs](https://github.com/a2aproject/a2a-rs) `examples/helloworld`
 - **Runtime:** Rust + Axum + Tokio, using `a2a` and `a2a-server` crates
 - **Protocol:** JSON-RPC 2.0 over HTTP at `/jsonrpc`, A2A v1.0 PascalCase method names
 - **Port:** localhost:8202
 
-### 4. a2a-python-helloworld (A2A Python SDK v1.0.1)
+### 3. a2a-python-helloworld (A2A Python SDK v1.0.1)
 - **Source:** [a2aproject/a2a-samples](https://github.com/a2aproject/a2a-samples) `samples/python/agents/helloworld`
 - **Runtime:** Python + Starlette/Uvicorn, using `a2a-sdk==1.0.1`
 - **Protocol:** JSON-RPC 2.0 over HTTP. Agent card reports `protocolVersion: "0.3"` despite using v1.0 SDK. Method routing uses v0.3 style internally.
 - **Port:** localhost:9999
 
-### 5. a2a-js-sample (A2A-JS SDK v0.3.13)
+### 4. a2a-js-sample (A2A-JS SDK v0.3.13)
 - **Source:** [a2aproject/a2a-js](https://github.com/a2aproject/a2a-js) `src/samples/agents/sample-agent`
 - **Runtime:** Node.js + Express, using `@a2a-js/sdk@0.3.13`
 - **Protocol:** JSON-RPC 2.0 over HTTP, A2A v0.3 method names (`message/send`, `tasks/get`, `message/stream`)
@@ -38,21 +32,12 @@ Five A2A-compatible agents tested against the A2A v1.0 spec suite (19 tests):
 
 | Agent | SDK Version | Compliance | Passed | Failed | Errors | Notes |
 |-------|------------|-----------|--------|--------|--------|-------|
-| crush-a2a | Crush native | **47.4%** | 9/19 | 10 | 0 | Protocol layer correct; lifecycle tests fail due to Crush backend unavailable |
 | a2a-go-helloworld | a2a-go v2.x | **47.4%** | 9/19 | 10 | 0 | Good v1.0 method support; response envelope differs from spec expectations |
 | a2a-rs-helloworld | a2a-rs (Rust) | **26.3%** | 5/19 | 14 | 0 | Rejects `kind` field in parts; HTTP errors for malformed JSON instead of JSON-RPC errors |
 | a2a-python-helloworld | a2a-sdk v1.0.1 | **42.1%** | 8/19 | 11 | 0 | Discovery and JSON-RPC error handling pass; v0.3 method names only |
 | a2a-js-sample | @a2a-js/sdk v0.3.13 | **42.1%** | 8/19 | 11 | 0 | Same v0.3-only failure pattern as Python |
 
 ## Detailed Results
-
-### crush-a2a — 47.4% Compliance (9/19)
-
-**Passes (9):** All 4 discovery tests, get-task-not-found, and all 4 JSON-RPC error handling tests (parse-error, invalid-request, method-not-found, missing-required-params).
-
-**Fails (10):** All lifecycle, messaging, streaming, and push notification tests return `-32603 Internal error` because the Crush backend server was not reachable — the workspace directory's `.crush` directory couldn't be created. This is a deployment/infrastructure issue, not a protocol compliance bug. The A2A protocol layer (method routing, error codes, discovery) is correctly implemented.
-
-**Note:** In a previous test run with a properly configured Crush backend, crush-a2a achieved 100% compliance (19/19). The failures here are entirely due to the missing backend, not protocol issues.
 
 ### a2a-go-helloworld — 47.4% Compliance (9/19)
 
@@ -126,16 +111,16 @@ Five A2A-compatible agents tested against the A2A v1.0 spec suite (19 tests):
 
 ### Protocol Version Adoption
 
-| Feature | crush-a2a | Go SDK v2 | Rust SDK | Python SDK v1.0.1 | JS SDK v0.3.13 |
-|---------|-----------|-----------|----------|-------------------|----------------|
-| v1.0 PascalCase methods | ✅ | ✅ | ✅ | ❌ (v0.3 only) | ❌ (v0.3 only) |
-| `supportedInterfaces` in agent card | ✅ (+ `url`) | ✅ (no `url`) | ✅ (no `url`) | ✅ (+ `url`) | ✅ (+ `url`) |
-| Task wrapper in response | ✅ | ❌ (Message only) | ✅ (as `result.task`) | N/A | N/A |
-| JSON-RPC error for malformed input | ✅ | ✅ | ❌ (HTTP errors) | ✅ | ✅ |
-| SSE streaming support | ❌ (backend needed) | ✅ | ❌ (field error) | ❌ | ❌ |
-| `kind` field in message parts | ✅ | ✅ | ❌ (rejects) | N/A | N/A |
+| Feature | Go SDK v2 | Rust SDK | Python SDK v1.0.1 | JS SDK v0.3.13 |
+|---------|-----------|----------|-------------------|----------------|
+| v1.0 PascalCase methods | ✅ | ✅ | ❌ (v0.3 only) | ❌ (v0.3 only) |
+| `supportedInterfaces` in agent card | ✅ (no `url`) | ✅ (no `url`) | ✅ (+ `url`) | ✅ (+ `url`) |
+| Task wrapper in response | ❌ (Message only) | ✅ (as `result.task`) | N/A | N/A |
+| JSON-RPC error for malformed input | ✅ | ❌ (HTTP errors) | ✅ | ✅ |
+| SSE streaming support | ✅ | ❌ (field error) | ❌ | ❌ |
+| `kind` field in message parts | ✅ | ❌ (rejects) | N/A | N/A |
 
-### What Passes Across All Five Runtimes
+### What Passes Across All Four Runtimes
 
 - **Agent card content-type and optional fields** — all serve valid agent cards via GET at `/.well-known/agent-card.json`
 - **Agent card skills** — all include at least one skill with `id` and `name`
@@ -143,20 +128,18 @@ Five A2A-compatible agents tested against the A2A v1.0 spec suite (19 tests):
 
 ### Response Envelope Differences (v1.0 SDKs)
 
-The three v1.0-capable runtimes return different response structures for `SendMessage`:
+The two v1.0-capable runtimes return different response structures for `SendMessage`:
 
 ```
-crush-a2a:   result: { id, contextId, status: { state, message: { ... } } }  (Task object)
 a2a-go v2:   result: { message: { messageId, parts, role: "ROLE_AGENT" } }   (Message only)
 a2a-rs:      result: { task: { id, contextId, status: { message: { ... } } } } (Task in wrapper)
 ```
 
-None of the three agree on the response structure, highlighting that the v1.0 specification's response format is interpreted differently by each SDK.
+The two don't agree on the response structure, highlighting that the v1.0 specification's response format is interpreted differently by each SDK.
 
 ### Error Handling Spectrum
 
 For malformed JSON input (`{invalid json`):
-- crush-a2a: `-32700` JSON-RPC error ✅
 - Go SDK: `-32700` JSON-RPC error ✅
 - Rust SDK: HTTP 400 plaintext ❌
 - Python SDK: `-32700` JSON-RPC error ✅
@@ -165,29 +148,25 @@ For malformed JSON input (`{invalid json`):
 ## How to Reproduce
 
 ```bash
-# 1. crush-a2a (requires running Crush backend)
-crush-a2a -port 8200 &
-go run ./cmd/spec-torture run specs/a2a/spec.yaml --runtime crush-a2a --url http://localhost:8200
-
-# 2. a2a-go helloworld (JSON-RPC at /invoke)
+# 1. a2a-go helloworld (JSON-RPC at /invoke)
 cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-go.git
 cd a2a-go && go run ./examples/helloworld/server/jsonrpc --port 8201 &
 go run ./cmd/spec-torture run specs/a2a/spec.yaml \
   --runtime a2a-go-helloworld --url http://localhost:8201 --rpc-path /invoke
 
-# 3. a2a-rs helloworld (JSON-RPC at /jsonrpc, default port 3000)
+# 2. a2a-rs helloworld (JSON-RPC at /jsonrpc, default port 3000)
 cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-rs.git
 cd a2a-rs && cargo run -p helloworld &
 go run ./cmd/spec-torture run specs/a2a/spec.yaml \
   --runtime a2a-rs-helloworld --url http://localhost:3000 --rpc-path /jsonrpc
 
-# 4. Python helloworld
+# 3. Python helloworld
 cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-samples.git
 cd a2a-samples/samples/python/agents/helloworld && uv run . &
 go run ./cmd/spec-torture run specs/a2a/spec.yaml \
   --runtime a2a-python-helloworld --url http://localhost:9999
 
-# 5. JS sample agent
+# 4. JS sample agent
 cd /tmp && git clone --depth 1 https://github.com/a2aproject/a2a-js.git
 cd a2a-js && npm install && npm run build
 PORT=41241 npx tsx src/samples/agents/sample-agent/index.ts &
@@ -197,7 +176,6 @@ go run ./cmd/spec-torture run specs/a2a/spec.yaml \
 
 ## Files
 
-- `crush-a2a.md` / `.json` — crush-a2a results (9/19, 47.4%)
 - `a2a-go-helloworld.md` / `.json` — Go SDK v2 helloworld results (9/19, 47.4%)
 - `a2a-rs-helloworld.md` / `.json` — Rust SDK helloworld results (5/19, 26.3%)
 - `a2a-python-helloworld.md` / `.json` — Python SDK v1.0.1 helloworld results (8/19, 42.1%)

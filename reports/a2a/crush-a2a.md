@@ -1,9 +1,9 @@
-# Test Run: bfd84cff-c648-479a-9180-f41877e56fcd
+# Test Run: 7ac0f074-e00a-4bf4-8164-3edaeb8c2e0c
 
 **Spec:** a2a-v1  
 **Runtime:** crush-a2a   
-**Started:** 2026-04-27 16:48:06  
-**Completed:** 2026-04-27 16:49:37  
+**Started:** 2026-04-29 11:55:50  
+**Completed:** 2026-04-29 11:56:30  
 
 ## Summary
 
@@ -21,23 +21,23 @@
 
 | Test Case | Status | Duration | Error |
 |-----------|--------|----------|-------|
-| agent-card-well-known | PASS pass | 422.87µs |  |
-| agent-card-content-type | PASS pass | 78.849µs |  |
-| agent-card-optional-fields | PASS pass | 71.505µs |  |
-| agent-card-skills | PASS pass | 58.2µs |  |
-| agent-card-interfaces | PASS pass | 49.824µs |  |
-| send-message-basic | PASS pass | 9.196000097s |  |
-| send-message-response-shape | PASS pass | 3.049369638s |  |
-| get-task | PASS pass | 26.421862599s |  |
-| get-task-not-found | PASS pass | 110.388µs |  |
-| cancel-task | PASS pass | 7.925227981s |  |
-| message-text-part | PASS pass | 2.141282857s |  |
-| message-with-context | PASS pass | 3.969982941s |  |
-| optional-message-id | PASS pass | 2.104247677s |  |
-| streaming-send | PASS pass | 18.363482433s |  |
-| streaming-events | PASS pass | 15.544025901s |  |
-| jsonrpc-parse-error | PASS pass | 570.547µs |  |
-| jsonrpc-invalid-request | PASS pass | 110.729µs |  |
-| jsonrpc-method-not-found | PASS pass | 393.142µs |  |
-| missing-required-params | PASS pass | 110.709µs |  |
-| push-notification-not-supported | PASS pass | 1.832651809s |  |
+| agent-card-well-known | PASS pass | 529.571µs |  |
+| agent-card-content-type | PASS pass | 107.533µs |  |
+| agent-card-optional-fields | PASS pass | 101.352µs |  |
+| agent-card-skills | PASS pass | 81.734µs |  |
+| agent-card-interfaces | PASS pass | 59.953µs |  |
+| send-message-basic | PASS pass | 6.345565489s |  |
+| send-message-response-shape | PASS pass | 3.214382752s |  |
+| get-task | PASS pass | 4.162036754s |  |
+| get-task-not-found | PASS pass | 159.1µs |  |
+| cancel-task | PASS pass | 5.625890131s |  |
+| message-text-part | PASS pass | 1.46982119s |  |
+| message-with-context | PASS pass | 3.347628323s |  |
+| missing-message-id | PASS pass | 228.281µs |  |
+| streaming-send | PASS pass | 3.377406109s |  |
+| streaming-events | PASS pass | 10.009511967s |  |
+| jsonrpc-parse-error | PASS pass | 585.116µs |  |
+| jsonrpc-invalid-request | PASS pass | 126.259µs |  |
+| jsonrpc-method-not-found | PASS pass | 102.504µs |  |
+| missing-required-params | PASS pass | 79.811µs |  |
+| push-notification-not-supported | PASS pass | 1.504294419s |  |

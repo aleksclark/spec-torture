@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/aleksclark/spec-torture/internal/clientrunner"
 	"github.com/aleksclark/spec-torture/internal/report"
 	"github.com/aleksclark/spec-torture/internal/runner"
 	"github.com/aleksclark/spec-torture/internal/schema"
@@ -33,6 +34,7 @@ func main() {
 	root.PersistentFlags().StringVar(&dbPath, "db", "spec-torture.db", "path to SQLite database")
 
 	root.AddCommand(runCmd())
+	root.AddCommand(runClientCmd())
 	root.AddCommand(listCmd())
 	root.AddCommand(reportCmd())
 	root.AddCommand(validateCmd())
@@ -216,6 +218,62 @@ func validateCmd() *cobra.Command {
 			return fmt.Errorf("validation failed")
 		},
 	}
+}
+
+func runClientCmd() *cobra.Command {
+	var (
+		runtimeName string
+		crushBin    string
+		crushHome   string
+		tags        []string
+		format      string
+	)
+
+	cmd := &cobra.Command{
+		Use:   "run-client",
+		Short: "Run A2A client conformance tests against a client implementation",
+		Long:  "Starts a mock A2A server, drives the client under test to interact with it, and evaluates protocol conformance.",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			st, err := openStore()
+			if err != nil {
+				return fmt.Errorf("opening store: %w", err)
+			}
+			defer st.Close()
+
+			var driver clientrunner.ClientDriver
+			driver = clientrunner.NewCrushDriver(crushBin, crushHome)
+
+			tests := clientrunner.A2AClientTests()
+
+			r, err := clientrunner.New(logger, driver, tests)
+			if err != nil {
+				return fmt.Errorf("creating client runner: %w", err)
+			}
+			defer r.Close()
+
+			run := r.Run(cmd.Context(), "a2a-v1-client", runtimeName, tags)
+
+			if err := st.SaveTestRun(run); err != nil {
+				return fmt.Errorf("saving results: %w", err)
+			}
+
+			f := report.FormatMarkdown
+			if format == "json" {
+				f = report.FormatJSON
+			}
+
+			return report.Write(os.Stdout, run, f)
+		},
+	}
+
+	cmd.Flags().StringVar(&runtimeName, "runtime", "", "runtime identifier (e.g., 'crush-a2a-client')")
+	cmd.Flags().StringVar(&crushBin, "crush-bin", "/tmp/crush-a2a/crush", "path to the crush binary")
+	cmd.Flags().StringVar(&crushHome, "crush-home", "/tmp/crush-a2a-client-home", "home directory for crush (isolated config)")
+	cmd.Flags().StringSliceVar(&tags, "tags", nil, "filter test cases by tags")
+	cmd.Flags().StringVar(&format, "format", "markdown", "output format (markdown, json)")
+	_ = cmd.MarkFlagRequired("runtime")
+
+	return cmd
 }
 
 func loadSpec(path string) (*schema.Spec, error) {

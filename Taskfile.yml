@@ -6,9 +6,10 @@ vars:
 
 tasks:
   build:
-    desc: Build spec-torture binary
+    desc: Build spec-torture and a2a-mock binaries
     cmds:
       - go build -o bin/spec-torture ./cmd/spec-torture
+      - go build -o bin/a2a-mock ./cmd/a2a-mock
     sources:
       - cmd/**/*.go
       - internal/**/*.go
@@ -16,6 +17,7 @@ tasks:
       - go.sum
     generates:
       - bin/spec-torture
+      - bin/a2a-mock
 
   validate:
     desc: Validate all spec files
@@ -29,12 +31,6 @@ tasks:
   # A2A agent torture tasks
   # ---------------------------------------------------------------------------
 
-  torture:crush-a2a:
-    desc: Run A2A v1.0 suite against crush-a2a (Crush native protocol)
-    deps: [build]
-    cmds:
-      - agents/crush-a2a/run.sh {{.SPEC}} {{.REPORTS}} ./bin/spec-torture
-
   torture:a2a-go:
     desc: Run A2A v1.0 suite against the official Go SDK helloworld agent
     deps: [build]
@@ -46,6 +42,12 @@ tasks:
     deps: [build]
     cmds:
       - agents/a2a-rs/run.sh {{.SPEC}} {{.REPORTS}} ./bin/spec-torture
+
+  torture:crush-a2a:
+    desc: Run A2A v1.0 suite against crush-a2a (Crush with A2A plugin)
+    deps: [build]
+    cmds:
+      - agents/crush-a2a/run.sh {{.SPEC}} {{.REPORTS}} ./bin/spec-torture
 
   # ---------------------------------------------------------------------------
   # ARP agent torture tasks
@@ -61,15 +63,40 @@ tasks:
     desc: Run A2A v1.0 suite against all agents
     deps: [build]
     cmds:
-      - task: torture:crush-a2a
       - task: torture:a2a-go
       - task: torture:a2a-rs
+      - task: torture:crush-a2a
       - task: torture:awesometree
+
+  # ---------------------------------------------------------------------------
+  # A2A client torture tasks
+  # ---------------------------------------------------------------------------
+
+  torture:crush-a2a-client:
+    desc: Run A2A v1.0 client conformance suite against crush-a2a
+    deps: [build]
+    cmds:
+      - agents/crush-a2a-client/run.sh {{.REPORTS}} ./bin/spec-torture
+
+  torture:hermes-client:
+    desc: Run A2A + ARP client conformance suite against hermes-agent
+    deps: [build]
+    cmds:
+      - agents/hermes/run.sh {{.REPORTS}} ./bin/a2a-mock
+
+  torture:clients:
+    desc: Run A2A v1.0 client suite against all clients
+    deps: [build]
+    cmds:
+      - task: torture:crush-a2a-client
+      - task: torture:hermes-client
 
   clean:
     desc: Remove build artifacts and cloned agent sources
     cmds:
       - rm -rf bin/
-      - rm -rf agents/crush-a2a/.build
       - rm -rf agents/a2a-go/.build
       - rm -rf agents/a2a-rs/.build
+      - rm -rf agents/crush-a2a/.crush-home
+      - rm -rf agents/crush-a2a-client/.crush-home
+      - rm -rf agents/hermes/.build
