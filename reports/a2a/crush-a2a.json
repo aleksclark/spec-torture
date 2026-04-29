@@ -1,0 +1,4442 @@
+{
+  "id": "05f548c4-f3fc-4b75-866b-1b911c621aa0",
+  "spec_id": "a2a-v1",
+  "runtime": "crush-a2a",
+  "runtime_version": "",
+  "started_at": "2026-04-29T11:56:35.200509196-05:00",
+  "completed_at": "2026-04-29T11:57:14.868835703-05:00",
+  "results": [
+    {
+      "id": "7fa79056-33bb-4bb4-8b6c-8364b115a669",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-well-known",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 635882,
+      "started_at": "2026-04-29T11:56:35.200558349-05:00",
+      "completed_at": "2026-04-29T11:56:35.201194241-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 625232,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "695",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:35 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Crush AI coding assistant exposed as an A2A agent",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "Write, review, debug, and refactor code across languages",
+                  "examples": [
+                    "Write a function that...",
+                    "Review this code for bugs"
+                  ],
+                  "id": "code",
+                  "name": "Code Assistant",
+                  "tags": [
+                    "coding",
+                    "development"
+                  ]
+                },
+                {
+                  "description": "Execute tools like file editing, search, shell commands, and web fetching",
+                  "id": "tools",
+                  "name": "Tool Execution",
+                  "tags": [
+                    "tools",
+                    "automation"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8200/"
+                }
+              ],
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8200/\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"Crush AI coding assistant exposed as an A2A agent\",\"name\":\"crush\",\"skills\":[{\"description\":\"Write, review, debug, and refactor code across languages\",\"examples\":[\"Write a function that...\",\"Review this code for bugs\"],\"id\":\"code\",\"name\":\"Code Assistant\",\"tags\":[\"coding\",\"development\"]},{\"description\":\"Execute tools like file editing, search, shell commands, and web fetching\",\"id\":\"tools\",\"name\":\"Tool Execution\",\"tags\":[\"tools\",\"automation\"]}],\"version\":\"1.0.0\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1272,
+          "expected": {
+            "body": {
+              "name": "*",
+              "skills": "*",
+              "supportedInterfaces": "*",
+              "version": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "695",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:35 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Crush AI coding assistant exposed as an A2A agent",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "Write, review, debug, and refactor code across languages",
+                  "examples": [
+                    "Write a function that...",
+                    "Review this code for bugs"
+                  ],
+                  "id": "code",
+                  "name": "Code Assistant",
+                  "tags": [
+                    "coding",
+                    "development"
+                  ]
+                },
+                {
+                  "description": "Execute tools like file editing, search, shell commands, and web fetching",
+                  "id": "tools",
+                  "name": "Tool Execution",
+                  "tags": [
+                    "tools",
+                    "automation"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8200/"
+                }
+              ],
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8200/\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"Crush AI coding assistant exposed as an A2A agent\",\"name\":\"crush\",\"skills\":[{\"description\":\"Write, review, debug, and refactor code across languages\",\"examples\":[\"Write a function that...\",\"Review this code for bugs\"],\"id\":\"code\",\"name\":\"Code Assistant\",\"tags\":[\"coding\",\"development\"]},{\"description\":\"Execute tools like file editing, search, shell commands, and web fetching\",\"id\":\"tools\",\"name\":\"Tool Execution\",\"tags\":[\"tools\",\"automation\"]}],\"version\":\"1.0.0\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ad503c4d-54af-40c0-9bd6-6c7b1f8088de",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-content-type",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 145194,
+      "started_at": "2026-04-29T11:56:35.201197026-05:00",
+      "completed_at": "2026-04-29T11:56:35.20134219-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 126880,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "695",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:35 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Crush AI coding assistant exposed as an A2A agent",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "Write, review, debug, and refactor code across languages",
+                  "examples": [
+                    "Write a function that...",
+                    "Review this code for bugs"
+                  ],
+                  "id": "code",
+                  "name": "Code Assistant",
+                  "tags": [
+                    "coding",
+                    "development"
+                  ]
+                },
+                {
+                  "description": "Execute tools like file editing, search, shell commands, and web fetching",
+                  "id": "tools",
+                  "name": "Tool Execution",
+                  "tags": [
+                    "tools",
+                    "automation"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8200/"
+                }
+              ],
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8200/\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"Crush AI coding assistant exposed as an A2A agent\",\"name\":\"crush\",\"skills\":[{\"description\":\"Write, review, debug, and refactor code across languages\",\"examples\":[\"Write a function that...\",\"Review this code for bugs\"],\"id\":\"code\",\"name\":\"Code Assistant\",\"tags\":[\"coding\",\"development\"]},{\"description\":\"Execute tools like file editing, search, shell commands, and web fetching\",\"id\":\"tools\",\"name\":\"Tool Execution\",\"tags\":[\"tools\",\"automation\"]}],\"version\":\"1.0.0\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1924,
+          "expected": {
+            "headers": {
+              "content-type": "application/json"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "695",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:35 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Crush AI coding assistant exposed as an A2A agent",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "Write, review, debug, and refactor code across languages",
+                  "examples": [
+                    "Write a function that...",
+                    "Review this code for bugs"
+                  ],
+                  "id": "code",
+                  "name": "Code Assistant",
+                  "tags": [
+                    "coding",
+                    "development"
+                  ]
+                },
+                {
+                  "description": "Execute tools like file editing, search, shell commands, and web fetching",
+                  "id": "tools",
+                  "name": "Tool Execution",
+                  "tags": [
+                    "tools",
+                    "automation"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8200/"
+                }
+              ],
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8200/\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"Crush AI coding assistant exposed as an A2A agent\",\"name\":\"crush\",\"skills\":[{\"description\":\"Write, review, debug, and refactor code across languages\",\"examples\":[\"Write a function that...\",\"Review this code for bugs\"],\"id\":\"code\",\"name\":\"Code Assistant\",\"tags\":[\"coding\",\"development\"]},{\"description\":\"Execute tools like file editing, search, shell commands, and web fetching\",\"id\":\"tools\",\"name\":\"Tool Execution\",\"tags\":[\"tools\",\"automation\"]}],\"version\":\"1.0.0\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "25d3ac84-6f45-4772-b4c8-944bec1f53c0",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-optional-fields",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 135546,
+      "started_at": "2026-04-29T11:56:35.201345517-05:00",
+      "completed_at": "2026-04-29T11:56:35.201481073-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 117512,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "695",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:35 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Crush AI coding assistant exposed as an A2A agent",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "Write, review, debug, and refactor code across languages",
+                  "examples": [
+                    "Write a function that...",
+                    "Review this code for bugs"
+                  ],
+                  "id": "code",
+                  "name": "Code Assistant",
+                  "tags": [
+                    "coding",
+                    "development"
+                  ]
+                },
+                {
+                  "description": "Execute tools like file editing, search, shell commands, and web fetching",
+                  "id": "tools",
+                  "name": "Tool Execution",
+                  "tags": [
+                    "tools",
+                    "automation"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8200/"
+                }
+              ],
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8200/\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"Crush AI coding assistant exposed as an A2A agent\",\"name\":\"crush\",\"skills\":[{\"description\":\"Write, review, debug, and refactor code across languages\",\"examples\":[\"Write a function that...\",\"Review this code for bugs\"],\"id\":\"code\",\"name\":\"Code Assistant\",\"tags\":[\"coding\",\"development\"]},{\"description\":\"Execute tools like file editing, search, shell commands, and web fetching\",\"id\":\"tools\",\"name\":\"Tool Execution\",\"tags\":[\"tools\",\"automation\"]}],\"version\":\"1.0.0\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 632,
+          "expected": {
+            "body": {
+              "capabilities": "*",
+              "description": "*",
+              "name": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "695",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:35 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Crush AI coding assistant exposed as an A2A agent",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "Write, review, debug, and refactor code across languages",
+                  "examples": [
+                    "Write a function that...",
+                    "Review this code for bugs"
+                  ],
+                  "id": "code",
+                  "name": "Code Assistant",
+                  "tags": [
+                    "coding",
+                    "development"
+                  ]
+                },
+                {
+                  "description": "Execute tools like file editing, search, shell commands, and web fetching",
+                  "id": "tools",
+                  "name": "Tool Execution",
+                  "tags": [
+                    "tools",
+                    "automation"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8200/"
+                }
+              ],
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8200/\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"Crush AI coding assistant exposed as an A2A agent\",\"name\":\"crush\",\"skills\":[{\"description\":\"Write, review, debug, and refactor code across languages\",\"examples\":[\"Write a function that...\",\"Review this code for bugs\"],\"id\":\"code\",\"name\":\"Code Assistant\",\"tags\":[\"coding\",\"development\"]},{\"description\":\"Execute tools like file editing, search, shell commands, and web fetching\",\"id\":\"tools\",\"name\":\"Tool Execution\",\"tags\":[\"tools\",\"automation\"]}],\"version\":\"1.0.0\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dceee8ea-aa05-4c9f-9462-06bba7952e80",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-skills",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 82336,
+      "started_at": "2026-04-29T11:56:35.201483898-05:00",
+      "completed_at": "2026-04-29T11:56:35.201566234-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 73169,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "695",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:35 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Crush AI coding assistant exposed as an A2A agent",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "Write, review, debug, and refactor code across languages",
+                  "examples": [
+                    "Write a function that...",
+                    "Review this code for bugs"
+                  ],
+                  "id": "code",
+                  "name": "Code Assistant",
+                  "tags": [
+                    "coding",
+                    "development"
+                  ]
+                },
+                {
+                  "description": "Execute tools like file editing, search, shell commands, and web fetching",
+                  "id": "tools",
+                  "name": "Tool Execution",
+                  "tags": [
+                    "tools",
+                    "automation"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8200/"
+                }
+              ],
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8200/\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"Crush AI coding assistant exposed as an A2A agent\",\"name\":\"crush\",\"skills\":[{\"description\":\"Write, review, debug, and refactor code across languages\",\"examples\":[\"Write a function that...\",\"Review this code for bugs\"],\"id\":\"code\",\"name\":\"Code Assistant\",\"tags\":[\"coding\",\"development\"]},{\"description\":\"Execute tools like file editing, search, shell commands, and web fetching\",\"id\":\"tools\",\"name\":\"Tool Execution\",\"tags\":[\"tools\",\"automation\"]}],\"version\":\"1.0.0\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 421,
+          "expected": {
+            "body": {
+              "skills": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "695",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:35 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Crush AI coding assistant exposed as an A2A agent",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "Write, review, debug, and refactor code across languages",
+                  "examples": [
+                    "Write a function that...",
+                    "Review this code for bugs"
+                  ],
+                  "id": "code",
+                  "name": "Code Assistant",
+                  "tags": [
+                    "coding",
+                    "development"
+                  ]
+                },
+                {
+                  "description": "Execute tools like file editing, search, shell commands, and web fetching",
+                  "id": "tools",
+                  "name": "Tool Execution",
+                  "tags": [
+                    "tools",
+                    "automation"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8200/"
+                }
+              ],
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8200/\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"Crush AI coding assistant exposed as an A2A agent\",\"name\":\"crush\",\"skills\":[{\"description\":\"Write, review, debug, and refactor code across languages\",\"examples\":[\"Write a function that...\",\"Review this code for bugs\"],\"id\":\"code\",\"name\":\"Code Assistant\",\"tags\":[\"coding\",\"development\"]},{\"description\":\"Execute tools like file editing, search, shell commands, and web fetching\",\"id\":\"tools\",\"name\":\"Tool Execution\",\"tags\":[\"tools\",\"automation\"]}],\"version\":\"1.0.0\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "041f52a1-5e96-4fb5-ba24-4abf851c76f3",
+      "spec_id": "a2a-v1",
+      "test_case_id": "agent-card-interfaces",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 78779,
+      "started_at": "2026-04-29T11:56:35.201566875-05:00",
+      "completed_at": "2026-04-29T11:56:35.201646075-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 72006,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "695",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:35 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Crush AI coding assistant exposed as an A2A agent",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "Write, review, debug, and refactor code across languages",
+                  "examples": [
+                    "Write a function that...",
+                    "Review this code for bugs"
+                  ],
+                  "id": "code",
+                  "name": "Code Assistant",
+                  "tags": [
+                    "coding",
+                    "development"
+                  ]
+                },
+                {
+                  "description": "Execute tools like file editing, search, shell commands, and web fetching",
+                  "id": "tools",
+                  "name": "Tool Execution",
+                  "tags": [
+                    "tools",
+                    "automation"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8200/"
+                }
+              ],
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8200/\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"Crush AI coding assistant exposed as an A2A agent\",\"name\":\"crush\",\"skills\":[{\"description\":\"Write, review, debug, and refactor code across languages\",\"examples\":[\"Write a function that...\",\"Review this code for bugs\"],\"id\":\"code\",\"name\":\"Code Assistant\",\"tags\":[\"coding\",\"development\"]},{\"description\":\"Execute tools like file editing, search, shell commands, and web fetching\",\"id\":\"tools\",\"name\":\"Tool Execution\",\"tags\":[\"tools\",\"automation\"]}],\"version\":\"1.0.0\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 500,
+          "expected": {
+            "body": {
+              "capabilities": "*",
+              "defaultInputModes": "*",
+              "defaultOutputModes": "*",
+              "supportedInterfaces": "*"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "access-control-allow-origin": "*",
+              "content-length": "695",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:35 GMT"
+            },
+            "body": {
+              "capabilities": {
+                "streaming": true
+              },
+              "defaultInputModes": [
+                "text/plain"
+              ],
+              "defaultOutputModes": [
+                "text/plain"
+              ],
+              "description": "Crush AI coding assistant exposed as an A2A agent",
+              "name": "crush",
+              "skills": [
+                {
+                  "description": "Write, review, debug, and refactor code across languages",
+                  "examples": [
+                    "Write a function that...",
+                    "Review this code for bugs"
+                  ],
+                  "id": "code",
+                  "name": "Code Assistant",
+                  "tags": [
+                    "coding",
+                    "development"
+                  ]
+                },
+                {
+                  "description": "Execute tools like file editing, search, shell commands, and web fetching",
+                  "id": "tools",
+                  "name": "Tool Execution",
+                  "tags": [
+                    "tools",
+                    "automation"
+                  ]
+                }
+              ],
+              "supportedInterfaces": [
+                {
+                  "protocolBinding": "JSONRPC",
+                  "protocolVersion": "1.0",
+                  "url": "http://127.0.0.1:8200/"
+                }
+              ],
+              "version": "1.0.0"
+            },
+            "raw_body": "{\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:8200/\",\"protocolBinding\":\"JSONRPC\",\"protocolVersion\":\"1.0\"}],\"capabilities\":{\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"Crush AI coding assistant exposed as an A2A agent\",\"name\":\"crush\",\"skills\":[{\"description\":\"Write, review, debug, and refactor code across languages\",\"examples\":[\"Write a function that...\",\"Review this code for bugs\"],\"id\":\"code\",\"name\":\"Code Assistant\",\"tags\":[\"coding\",\"development\"]},{\"description\":\"Execute tools like file editing, search, shell commands, and web fetching\",\"id\":\"tools\",\"name\":\"Tool Execution\",\"tags\":[\"tools\",\"automation\"]}],\"version\":\"1.0.0\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e331536a-0b27-4c37-8186-943ae42ebe82",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-basic",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 6592640204,
+      "started_at": "2026-04-29T11:56:35.201647127-05:00",
+      "completed_at": "2026-04-29T11:56:41.794287331-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 6592630956,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:41 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2b-c681-7ba0-924a-9ea8840d666e\",\"artifacts\":[{\"artifactId\":\"019dda2b-e02f-71d1-9d67-2aa81aa2bd3f\",\"parts\":[{\"text\":\"I'm\"},{\"text\":\" Crush, an AI assistant that\"},{\"text\":\" runs\"},{\"text\":\" in\"},{\"text\":\" the CLI\"},{\"text\":\". Here\"},{\"text\":\"'s what I can help with\"},{\"text\":\":\\n\\n**\"},{\"text\":\"Code\"},{\"text\":\" \\u0026\"},{\"text\":\" Development\"},{\"text\":\"**\\n- Read\"},{\"text\":\",\"},{\"text\":\" write, edit\"},{\"text\":\",\"},{\"text\":\" and ref\"},{\"text\":\"actor code in\"},{\"text\":\" any\"},{\"text\":\" language\"},{\"text\":\"\\n- Debug\"},{\"text\":\" errors\"},{\"text\":\",\"},{\"text\":\" fix\"},{\"text\":\" tests\"},{\"text\":\", add\"},{\"text\":\" features\"},{\"text\":\"\\n- Search\"},{\"text\":\" cod\"},{\"text\":\"ebases and\"},{\"text\":\" navigate\"},{\"text\":\" large\"},{\"text\":\" projects\"},{\"text\":\"\\n\\n**File\"},{\"text\":\" \\u0026 System\"},{\"text\":\" Operations\"},{\"text\":\"**\\n- Create,\"},{\"text\":\" edit\"},{\"text\":\", move\"},{\"text\":\", and\"},{\"text\":\" organize\"},{\"text\":\" files\\n- Run\"},{\"text\":\" shell\"},{\"text\":\" commands and scripts\\n- Manage\"},{\"text\":\" git\"},{\"text\":\" workflows\"},{\"text\":\" (\"},{\"text\":\"commits\"},{\"text\":\", PR\"},{\"text\":\"s, d\"},{\"text\":\"iffs)\"},{\"text\":\"\\n\\n**Research\"},{\"text\":\" \\u0026 Web\"},{\"text\":\"**\"},{\"text\":\"\\n- Fetch\"},{\"text\":\" and\"},{\"text\":\" summar\"},{\"text\":\"ize web\"},{\"text\":\" pages\"},{\"text\":\"\\n- Search for documentation\"},{\"text\":\" and examples\"},{\"text\":\"\\n- Browse\"},{\"text\":\" interactive\"},{\"text\":\" sites\"},{\"text\":\"\\n\\n**Data\"},{\"text\":\" \\u0026 Config\"},{\"text\":\"**\\n- Query\"},{\"text\":\" and\"},{\"text\":\" transform\"},{\"text\":\" JSON\"},{\"text\":\"\\n- Edit\"},{\"text\":\" config\"},{\"text\":\" files\\n- Work with APIs\"},{\"text\":\"\\n\\n**AI\"},{\"text\":\" Agents\"},{\"text\":\"**\\n- Delegate\"},{\"text\":\" to\"},{\"text\":\" specialized\"},{\"text\":\" sub\"},{\"text\":\"-agents\\n- Connect\"},{\"text\":\" to remote\"},{\"text\":\" A\"},{\"text\":\"2\"},{\"text\":\"A\"},{\"text\":\" agents\"},{\"text\":\"\\n\\nWhat\"},{\"text\":\" are\"},{\"text\":\" you working on?\"}]}],\"contextId\":\"019dda2b-c681-7c30-9971-5dccc8dc7520\",\"history\":[{\"messageId\":\"test-msg-001\",\"parts\":[{\"text\":\"Hello, what can you do?\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:41.781287868-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2b-e02f-71d1-9d67-2aa81aa2bd3f",
+                      "parts": [
+                        {
+                          "text": "I'm"
+                        },
+                        {
+                          "text": " Crush, an AI assistant that"
+                        },
+                        {
+                          "text": " runs"
+                        },
+                        {
+                          "text": " in"
+                        },
+                        {
+                          "text": " the CLI"
+                        },
+                        {
+                          "text": ". Here"
+                        },
+                        {
+                          "text": "'s what I can help with"
+                        },
+                        {
+                          "text": ":\n\n**"
+                        },
+                        {
+                          "text": "Code"
+                        },
+                        {
+                          "text": " \u0026"
+                        },
+                        {
+                          "text": " Development"
+                        },
+                        {
+                          "text": "**\n- Read"
+                        },
+                        {
+                          "text": ","
+                        },
+                        {
+                          "text": " write, edit"
+                        },
+                        {
+                          "text": ","
+                        },
+                        {
+                          "text": " and ref"
+                        },
+                        {
+                          "text": "actor code in"
+                        },
+                        {
+                          "text": " any"
+                        },
+                        {
+                          "text": " language"
+                        },
+                        {
+                          "text": "\n- Debug"
+                        },
+                        {
+                          "text": " errors"
+                        },
+                        {
+                          "text": ","
+                        },
+                        {
+                          "text": " fix"
+                        },
+                        {
+                          "text": " tests"
+                        },
+                        {
+                          "text": ", add"
+                        },
+                        {
+                          "text": " features"
+                        },
+                        {
+                          "text": "\n- Search"
+                        },
+                        {
+                          "text": " cod"
+                        },
+                        {
+                          "text": "ebases and"
+                        },
+                        {
+                          "text": " navigate"
+                        },
+                        {
+                          "text": " large"
+                        },
+                        {
+                          "text": " projects"
+                        },
+                        {
+                          "text": "\n\n**File"
+                        },
+                        {
+                          "text": " \u0026 System"
+                        },
+                        {
+                          "text": " Operations"
+                        },
+                        {
+                          "text": "**\n- Create,"
+                        },
+                        {
+                          "text": " edit"
+                        },
+                        {
+                          "text": ", move"
+                        },
+                        {
+                          "text": ", and"
+                        },
+                        {
+                          "text": " organize"
+                        },
+                        {
+                          "text": " files\n- Run"
+                        },
+                        {
+                          "text": " shell"
+                        },
+                        {
+                          "text": " commands and scripts\n- Manage"
+                        },
+                        {
+                          "text": " git"
+                        },
+                        {
+                          "text": " workflows"
+                        },
+                        {
+                          "text": " ("
+                        },
+                        {
+                          "text": "commits"
+                        },
+                        {
+                          "text": ", PR"
+                        },
+                        {
+                          "text": "s, d"
+                        },
+                        {
+                          "text": "iffs)"
+                        },
+                        {
+                          "text": "\n\n**Research"
+                        },
+                        {
+                          "text": " \u0026 Web"
+                        },
+                        {
+                          "text": "**"
+                        },
+                        {
+                          "text": "\n- Fetch"
+                        },
+                        {
+                          "text": " and"
+                        },
+                        {
+                          "text": " summar"
+                        },
+                        {
+                          "text": "ize web"
+                        },
+                        {
+                          "text": " pages"
+                        },
+                        {
+                          "text": "\n- Search for documentation"
+                        },
+                        {
+                          "text": " and examples"
+                        },
+                        {
+                          "text": "\n- Browse"
+                        },
+                        {
+                          "text": " interactive"
+                        },
+                        {
+                          "text": " sites"
+                        },
+                        {
+                          "text": "\n\n**Data"
+                        },
+                        {
+                          "text": " \u0026 Config"
+                        },
+                        {
+                          "text": "**\n- Query"
+                        },
+                        {
+                          "text": " and"
+                        },
+                        {
+                          "text": " transform"
+                        },
+                        {
+                          "text": " JSON"
+                        },
+                        {
+                          "text": "\n- Edit"
+                        },
+                        {
+                          "text": " config"
+                        },
+                        {
+                          "text": " files\n- Work with APIs"
+                        },
+                        {
+                          "text": "\n\n**AI"
+                        },
+                        {
+                          "text": " Agents"
+                        },
+                        {
+                          "text": "**\n- Delegate"
+                        },
+                        {
+                          "text": " to"
+                        },
+                        {
+                          "text": " specialized"
+                        },
+                        {
+                          "text": " sub"
+                        },
+                        {
+                          "text": "-agents\n- Connect"
+                        },
+                        {
+                          "text": " to remote"
+                        },
+                        {
+                          "text": " A"
+                        },
+                        {
+                          "text": "2"
+                        },
+                        {
+                          "text": "A"
+                        },
+                        {
+                          "text": " agents"
+                        },
+                        {
+                          "text": "\n\nWhat"
+                        },
+                        {
+                          "text": " are"
+                        },
+                        {
+                          "text": " you working on?"
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2b-c681-7c30-9971-5dccc8dc7520",
+                  "history": [
+                    {
+                      "messageId": "test-msg-001",
+                      "parts": [
+                        {
+                          "text": "Hello, what can you do?"
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2b-c681-7ba0-924a-9ea8840d666e",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:41.781287868-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4138,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:41 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2b-c681-7ba0-924a-9ea8840d666e\",\"artifacts\":[{\"artifactId\":\"019dda2b-e02f-71d1-9d67-2aa81aa2bd3f\",\"parts\":[{\"text\":\"I'm\"},{\"text\":\" Crush, an AI assistant that\"},{\"text\":\" runs\"},{\"text\":\" in\"},{\"text\":\" the CLI\"},{\"text\":\". Here\"},{\"text\":\"'s what I can help with\"},{\"text\":\":\\n\\n**\"},{\"text\":\"Code\"},{\"text\":\" \\u0026\"},{\"text\":\" Development\"},{\"text\":\"**\\n- Read\"},{\"text\":\",\"},{\"text\":\" write, edit\"},{\"text\":\",\"},{\"text\":\" and ref\"},{\"text\":\"actor code in\"},{\"text\":\" any\"},{\"text\":\" language\"},{\"text\":\"\\n- Debug\"},{\"text\":\" errors\"},{\"text\":\",\"},{\"text\":\" fix\"},{\"text\":\" tests\"},{\"text\":\", add\"},{\"text\":\" features\"},{\"text\":\"\\n- Search\"},{\"text\":\" cod\"},{\"text\":\"ebases and\"},{\"text\":\" navigate\"},{\"text\":\" large\"},{\"text\":\" projects\"},{\"text\":\"\\n\\n**File\"},{\"text\":\" \\u0026 System\"},{\"text\":\" Operations\"},{\"text\":\"**\\n- Create,\"},{\"text\":\" edit\"},{\"text\":\", move\"},{\"text\":\", and\"},{\"text\":\" organize\"},{\"text\":\" files\\n- Run\"},{\"text\":\" shell\"},{\"text\":\" commands and scripts\\n- Manage\"},{\"text\":\" git\"},{\"text\":\" workflows\"},{\"text\":\" (\"},{\"text\":\"commits\"},{\"text\":\", PR\"},{\"text\":\"s, d\"},{\"text\":\"iffs)\"},{\"text\":\"\\n\\n**Research\"},{\"text\":\" \\u0026 Web\"},{\"text\":\"**\"},{\"text\":\"\\n- Fetch\"},{\"text\":\" and\"},{\"text\":\" summar\"},{\"text\":\"ize web\"},{\"text\":\" pages\"},{\"text\":\"\\n- Search for documentation\"},{\"text\":\" and examples\"},{\"text\":\"\\n- Browse\"},{\"text\":\" interactive\"},{\"text\":\" sites\"},{\"text\":\"\\n\\n**Data\"},{\"text\":\" \\u0026 Config\"},{\"text\":\"**\\n- Query\"},{\"text\":\" and\"},{\"text\":\" transform\"},{\"text\":\" JSON\"},{\"text\":\"\\n- Edit\"},{\"text\":\" config\"},{\"text\":\" files\\n- Work with APIs\"},{\"text\":\"\\n\\n**AI\"},{\"text\":\" Agents\"},{\"text\":\"**\\n- Delegate\"},{\"text\":\" to\"},{\"text\":\" specialized\"},{\"text\":\" sub\"},{\"text\":\"-agents\\n- Connect\"},{\"text\":\" to remote\"},{\"text\":\" A\"},{\"text\":\"2\"},{\"text\":\"A\"},{\"text\":\" agents\"},{\"text\":\"\\n\\nWhat\"},{\"text\":\" are\"},{\"text\":\" you working on?\"}]}],\"contextId\":\"019dda2b-c681-7c30-9971-5dccc8dc7520\",\"history\":[{\"messageId\":\"test-msg-001\",\"parts\":[{\"text\":\"Hello, what can you do?\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:41.781287868-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2b-e02f-71d1-9d67-2aa81aa2bd3f",
+                      "parts": [
+                        {
+                          "text": "I'm"
+                        },
+                        {
+                          "text": " Crush, an AI assistant that"
+                        },
+                        {
+                          "text": " runs"
+                        },
+                        {
+                          "text": " in"
+                        },
+                        {
+                          "text": " the CLI"
+                        },
+                        {
+                          "text": ". Here"
+                        },
+                        {
+                          "text": "'s what I can help with"
+                        },
+                        {
+                          "text": ":\n\n**"
+                        },
+                        {
+                          "text": "Code"
+                        },
+                        {
+                          "text": " \u0026"
+                        },
+                        {
+                          "text": " Development"
+                        },
+                        {
+                          "text": "**\n- Read"
+                        },
+                        {
+                          "text": ","
+                        },
+                        {
+                          "text": " write, edit"
+                        },
+                        {
+                          "text": ","
+                        },
+                        {
+                          "text": " and ref"
+                        },
+                        {
+                          "text": "actor code in"
+                        },
+                        {
+                          "text": " any"
+                        },
+                        {
+                          "text": " language"
+                        },
+                        {
+                          "text": "\n- Debug"
+                        },
+                        {
+                          "text": " errors"
+                        },
+                        {
+                          "text": ","
+                        },
+                        {
+                          "text": " fix"
+                        },
+                        {
+                          "text": " tests"
+                        },
+                        {
+                          "text": ", add"
+                        },
+                        {
+                          "text": " features"
+                        },
+                        {
+                          "text": "\n- Search"
+                        },
+                        {
+                          "text": " cod"
+                        },
+                        {
+                          "text": "ebases and"
+                        },
+                        {
+                          "text": " navigate"
+                        },
+                        {
+                          "text": " large"
+                        },
+                        {
+                          "text": " projects"
+                        },
+                        {
+                          "text": "\n\n**File"
+                        },
+                        {
+                          "text": " \u0026 System"
+                        },
+                        {
+                          "text": " Operations"
+                        },
+                        {
+                          "text": "**\n- Create,"
+                        },
+                        {
+                          "text": " edit"
+                        },
+                        {
+                          "text": ", move"
+                        },
+                        {
+                          "text": ", and"
+                        },
+                        {
+                          "text": " organize"
+                        },
+                        {
+                          "text": " files\n- Run"
+                        },
+                        {
+                          "text": " shell"
+                        },
+                        {
+                          "text": " commands and scripts\n- Manage"
+                        },
+                        {
+                          "text": " git"
+                        },
+                        {
+                          "text": " workflows"
+                        },
+                        {
+                          "text": " ("
+                        },
+                        {
+                          "text": "commits"
+                        },
+                        {
+                          "text": ", PR"
+                        },
+                        {
+                          "text": "s, d"
+                        },
+                        {
+                          "text": "iffs)"
+                        },
+                        {
+                          "text": "\n\n**Research"
+                        },
+                        {
+                          "text": " \u0026 Web"
+                        },
+                        {
+                          "text": "**"
+                        },
+                        {
+                          "text": "\n- Fetch"
+                        },
+                        {
+                          "text": " and"
+                        },
+                        {
+                          "text": " summar"
+                        },
+                        {
+                          "text": "ize web"
+                        },
+                        {
+                          "text": " pages"
+                        },
+                        {
+                          "text": "\n- Search for documentation"
+                        },
+                        {
+                          "text": " and examples"
+                        },
+                        {
+                          "text": "\n- Browse"
+                        },
+                        {
+                          "text": " interactive"
+                        },
+                        {
+                          "text": " sites"
+                        },
+                        {
+                          "text": "\n\n**Data"
+                        },
+                        {
+                          "text": " \u0026 Config"
+                        },
+                        {
+                          "text": "**\n- Query"
+                        },
+                        {
+                          "text": " and"
+                        },
+                        {
+                          "text": " transform"
+                        },
+                        {
+                          "text": " JSON"
+                        },
+                        {
+                          "text": "\n- Edit"
+                        },
+                        {
+                          "text": " config"
+                        },
+                        {
+                          "text": " files\n- Work with APIs"
+                        },
+                        {
+                          "text": "\n\n**AI"
+                        },
+                        {
+                          "text": " Agents"
+                        },
+                        {
+                          "text": "**\n- Delegate"
+                        },
+                        {
+                          "text": " to"
+                        },
+                        {
+                          "text": " specialized"
+                        },
+                        {
+                          "text": " sub"
+                        },
+                        {
+                          "text": "-agents\n- Connect"
+                        },
+                        {
+                          "text": " to remote"
+                        },
+                        {
+                          "text": " A"
+                        },
+                        {
+                          "text": "2"
+                        },
+                        {
+                          "text": "A"
+                        },
+                        {
+                          "text": " agents"
+                        },
+                        {
+                          "text": "\n\nWhat"
+                        },
+                        {
+                          "text": " are"
+                        },
+                        {
+                          "text": " you working on?"
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2b-c681-7c30-9971-5dccc8dc7520",
+                  "history": [
+                    {
+                      "messageId": "test-msg-001",
+                      "parts": [
+                        {
+                          "text": "Hello, what can you do?"
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2b-c681-7ba0-924a-9ea8840d666e",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:41.781287868-05:00"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "42bfcc7c-8e0e-42e6-920f-2d65ba55fce7",
+      "spec_id": "a2a-v1",
+      "test_case_id": "send-message-response-shape",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 2450952560,
+      "started_at": "2026-04-29T11:56:41.794290617-05:00",
+      "completed_at": "2026-04-29T11:56:44.245243177-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 2450917003,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "832",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:44 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2b-e042-7671-a240-e6b261f73183\",\"artifacts\":[{\"artifactId\":\"019dda2b-e9d1-75cf-b97f-1cc5bb4dd411\",\"parts\":[{\"text\":\"The\"},{\"text\":\" fastest\"},{\"text\":\" thing\"},{\"text\":\" in\"},{\"text\":\" the universe\"},{\"text\":\" is light\"},{\"text\":\" —\"},{\"text\":\" but\"},{\"text\":\" information\"},{\"text\":\" can\"},{\"text\":\" travel\"},{\"text\":\" faster in\"},{\"text\":\" quantum\"},{\"text\":\" ent\"},{\"text\":\"anglement,\"},{\"text\":\" just\"},{\"text\":\" not in a\"},{\"text\":\" way\"},{\"text\":\" that lets\"},{\"text\":\" you\"},{\"text\":\" send\"},{\"text\":\" a message.\"}]}],\"contextId\":\"019dda2b-e042-76bd-b6c9-f01f4c6c4096\",\"history\":[{\"messageId\":\"test-msg-shape-001\",\"parts\":[{\"text\":\"Tell me something.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:44.24345653-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2b-e9d1-75cf-b97f-1cc5bb4dd411",
+                      "parts": [
+                        {
+                          "text": "The"
+                        },
+                        {
+                          "text": " fastest"
+                        },
+                        {
+                          "text": " thing"
+                        },
+                        {
+                          "text": " in"
+                        },
+                        {
+                          "text": " the universe"
+                        },
+                        {
+                          "text": " is light"
+                        },
+                        {
+                          "text": " —"
+                        },
+                        {
+                          "text": " but"
+                        },
+                        {
+                          "text": " information"
+                        },
+                        {
+                          "text": " can"
+                        },
+                        {
+                          "text": " travel"
+                        },
+                        {
+                          "text": " faster in"
+                        },
+                        {
+                          "text": " quantum"
+                        },
+                        {
+                          "text": " ent"
+                        },
+                        {
+                          "text": "anglement,"
+                        },
+                        {
+                          "text": " just"
+                        },
+                        {
+                          "text": " not in a"
+                        },
+                        {
+                          "text": " way"
+                        },
+                        {
+                          "text": " that lets"
+                        },
+                        {
+                          "text": " you"
+                        },
+                        {
+                          "text": " send"
+                        },
+                        {
+                          "text": " a message."
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2b-e042-76bd-b6c9-f01f4c6c4096",
+                  "history": [
+                    {
+                      "messageId": "test-msg-shape-001",
+                      "parts": [
+                        {
+                          "text": "Tell me something."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2b-e042-7671-a240-e6b261f73183",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:44.24345653-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4679,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "832",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:44 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2b-e042-7671-a240-e6b261f73183\",\"artifacts\":[{\"artifactId\":\"019dda2b-e9d1-75cf-b97f-1cc5bb4dd411\",\"parts\":[{\"text\":\"The\"},{\"text\":\" fastest\"},{\"text\":\" thing\"},{\"text\":\" in\"},{\"text\":\" the universe\"},{\"text\":\" is light\"},{\"text\":\" —\"},{\"text\":\" but\"},{\"text\":\" information\"},{\"text\":\" can\"},{\"text\":\" travel\"},{\"text\":\" faster in\"},{\"text\":\" quantum\"},{\"text\":\" ent\"},{\"text\":\"anglement,\"},{\"text\":\" just\"},{\"text\":\" not in a\"},{\"text\":\" way\"},{\"text\":\" that lets\"},{\"text\":\" you\"},{\"text\":\" send\"},{\"text\":\" a message.\"}]}],\"contextId\":\"019dda2b-e042-76bd-b6c9-f01f4c6c4096\",\"history\":[{\"messageId\":\"test-msg-shape-001\",\"parts\":[{\"text\":\"Tell me something.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:44.24345653-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2b-e9d1-75cf-b97f-1cc5bb4dd411",
+                      "parts": [
+                        {
+                          "text": "The"
+                        },
+                        {
+                          "text": " fastest"
+                        },
+                        {
+                          "text": " thing"
+                        },
+                        {
+                          "text": " in"
+                        },
+                        {
+                          "text": " the universe"
+                        },
+                        {
+                          "text": " is light"
+                        },
+                        {
+                          "text": " —"
+                        },
+                        {
+                          "text": " but"
+                        },
+                        {
+                          "text": " information"
+                        },
+                        {
+                          "text": " can"
+                        },
+                        {
+                          "text": " travel"
+                        },
+                        {
+                          "text": " faster in"
+                        },
+                        {
+                          "text": " quantum"
+                        },
+                        {
+                          "text": " ent"
+                        },
+                        {
+                          "text": "anglement,"
+                        },
+                        {
+                          "text": " just"
+                        },
+                        {
+                          "text": " not in a"
+                        },
+                        {
+                          "text": " way"
+                        },
+                        {
+                          "text": " that lets"
+                        },
+                        {
+                          "text": " you"
+                        },
+                        {
+                          "text": " send"
+                        },
+                        {
+                          "text": " a message."
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2b-e042-76bd-b6c9-f01f4c6c4096",
+                  "history": [
+                    {
+                      "messageId": "test-msg-shape-001",
+                      "parts": [
+                        {
+                          "text": "Tell me something."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2b-e042-7671-a240-e6b261f73183",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:44.24345653-05:00"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "7b256f22-677d-4c0c-8d59-e123bf025b82",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 5064721243,
+      "started_at": "2026-04-29T11:56:44.245247736-05:00",
+      "completed_at": "2026-04-29T11:56:49.309968989-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 5064518921,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "497",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:49 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2b-e9d5-7623-8438-a74e63cb8fa1\",\"artifacts\":[{\"artifactId\":\"019dda2b-fd9c-7890-830b-5dceb13ed549\",\"parts\":[{\"text\":\"Done\"},{\"text\":\" —\"},{\"text\":\" task\"},{\"text\":\" created.\"}]}],\"contextId\":\"019dda2b-e9d5-7676-9529-aebe428fc86d\",\"history\":[{\"messageId\":\"test-msg-003\",\"parts\":[{\"text\":\"Create a task so I can retrieve it.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:49.309406055-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2b-fd9c-7890-830b-5dceb13ed549",
+                      "parts": [
+                        {
+                          "text": "Done"
+                        },
+                        {
+                          "text": " —"
+                        },
+                        {
+                          "text": " task"
+                        },
+                        {
+                          "text": " created."
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2b-e9d5-7676-9529-aebe428fc86d",
+                  "history": [
+                    {
+                      "messageId": "test-msg-003",
+                      "parts": [
+                        {
+                          "text": "Create a task so I can retrieve it."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2b-e9d5-7623-8438-a74e63cb8fa1",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:49.309406055-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 3476,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "497",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:49 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2b-e9d5-7623-8438-a74e63cb8fa1\",\"artifacts\":[{\"artifactId\":\"019dda2b-fd9c-7890-830b-5dceb13ed549\",\"parts\":[{\"text\":\"Done\"},{\"text\":\" —\"},{\"text\":\" task\"},{\"text\":\" created.\"}]}],\"contextId\":\"019dda2b-e9d5-7676-9529-aebe428fc86d\",\"history\":[{\"messageId\":\"test-msg-003\",\"parts\":[{\"text\":\"Create a task so I can retrieve it.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:49.309406055-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2b-fd9c-7890-830b-5dceb13ed549",
+                      "parts": [
+                        {
+                          "text": "Done"
+                        },
+                        {
+                          "text": " —"
+                        },
+                        {
+                          "text": " task"
+                        },
+                        {
+                          "text": " created."
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2b-e9d5-7676-9529-aebe428fc86d",
+                  "history": [
+                    {
+                      "messageId": "test-msg-003",
+                      "parts": [
+                        {
+                          "text": "Create a task so I can retrieve it."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2b-e9d5-7623-8438-a74e63cb8fa1",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:49.309406055-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 162698,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "130",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:49 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to get task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1643,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "130",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:49 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to get task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "7711b5de-8236-45e8-96f3-ce5c38c46dea",
+      "spec_id": "a2a-v1",
+      "test_case_id": "get-task-not-found",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 143391,
+      "started_at": "2026-04-29T11:56:49.309972706-05:00",
+      "completed_at": "2026-04-29T11:56:49.310116087-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 117763,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "130",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:49 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to get task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1743,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "130",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:49 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to get task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to get task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "27b123a8-903f-496c-bf03-3807b15c8410",
+      "spec_id": "a2a-v1",
+      "test_case_id": "cancel-task",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 6514196849,
+      "started_at": "2026-04-29T11:56:49.310118151-05:00",
+      "completed_at": "2026-04-29T11:56:55.824315-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 6513937629,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "633",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:55 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2b-fd9e-7303-8f66-a0c53cb78f72\",\"artifacts\":[{\"artifactId\":\"019dda2c-170d-7e4a-bacc-1ab86f5d8141\",\"parts\":[{\"text\":\"Background\"},{\"text\":\" task\"},{\"text\":\" started (\"},{\"text\":\"shell\"},{\"text\":\" ID: `\"},{\"text\":\"00B`). Say\"},{\"text\":\" the\"},{\"text\":\" word\"},{\"text\":\" and\"},{\"text\":\" I'll cancel\"},{\"text\":\" it.\"}]}],\"contextId\":\"019dda2b-fd9e-733f-9d21-ec5d62083001\",\"history\":[{\"messageId\":\"test-msg-cancel\",\"parts\":[{\"text\":\"Start a task that I can cancel.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:55.823073794-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2c-170d-7e4a-bacc-1ab86f5d8141",
+                      "parts": [
+                        {
+                          "text": "Background"
+                        },
+                        {
+                          "text": " task"
+                        },
+                        {
+                          "text": " started ("
+                        },
+                        {
+                          "text": "shell"
+                        },
+                        {
+                          "text": " ID: `"
+                        },
+                        {
+                          "text": "00B`). Say"
+                        },
+                        {
+                          "text": " the"
+                        },
+                        {
+                          "text": " word"
+                        },
+                        {
+                          "text": " and"
+                        },
+                        {
+                          "text": " I'll cancel"
+                        },
+                        {
+                          "text": " it."
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2b-fd9e-733f-9d21-ec5d62083001",
+                  "history": [
+                    {
+                      "messageId": "test-msg-cancel",
+                      "parts": [
+                        {
+                          "text": "Start a task that I can cancel."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2b-fd9e-7303-8f66-a0c53cb78f72",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:55.823073794-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4057,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "633",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:55 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2b-fd9e-7303-8f66-a0c53cb78f72\",\"artifacts\":[{\"artifactId\":\"019dda2c-170d-7e4a-bacc-1ab86f5d8141\",\"parts\":[{\"text\":\"Background\"},{\"text\":\" task\"},{\"text\":\" started (\"},{\"text\":\"shell\"},{\"text\":\" ID: `\"},{\"text\":\"00B`). Say\"},{\"text\":\" the\"},{\"text\":\" word\"},{\"text\":\" and\"},{\"text\":\" I'll cancel\"},{\"text\":\" it.\"}]}],\"contextId\":\"019dda2b-fd9e-733f-9d21-ec5d62083001\",\"history\":[{\"messageId\":\"test-msg-cancel\",\"parts\":[{\"text\":\"Start a task that I can cancel.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:55.823073794-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2c-170d-7e4a-bacc-1ab86f5d8141",
+                      "parts": [
+                        {
+                          "text": "Background"
+                        },
+                        {
+                          "text": " task"
+                        },
+                        {
+                          "text": " started ("
+                        },
+                        {
+                          "text": "shell"
+                        },
+                        {
+                          "text": " ID: `"
+                        },
+                        {
+                          "text": "00B`). Say"
+                        },
+                        {
+                          "text": " the"
+                        },
+                        {
+                          "text": " word"
+                        },
+                        {
+                          "text": " and"
+                        },
+                        {
+                          "text": " I'll cancel"
+                        },
+                        {
+                          "text": " it."
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2b-fd9e-733f-9d21-ec5d62083001",
+                  "history": [
+                    {
+                      "messageId": "test-msg-cancel",
+                      "parts": [
+                        {
+                          "text": "Start a task that I can cancel."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2b-fd9e-7303-8f66-a0c53cb78f72",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:55.823073794-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 237188,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "194",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:55 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to cancel: cancelation failed: canceler setup failed: failed to load a task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to cancel: cancelation failed: canceler setup failed: failed to load a task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1112,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "194",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:55 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32001,\"message\":\"task not found\",\"data\":{\"error\":\"failed to cancel: cancelation failed: canceler setup failed: failed to load a task: task not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32001,
+                "data": {
+                  "error": "failed to cancel: cancelation failed: canceler setup failed: failed to load a task: task not found"
+                },
+                "message": "task not found"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "171446ca-21b1-4062-9881-d07b49d7df8d",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-text-part",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1538783265,
+      "started_at": "2026-04-29T11:56:55.824319118-05:00",
+      "completed_at": "2026-04-29T11:56:57.363102443-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1538750473,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "465",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:57 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2c-1710-7674-90b7-e2e4a3d1e868\",\"artifacts\":[{\"artifactId\":\"019dda2c-1d11-7eb5-b57a-4bb995c3f8b4\",\"parts\":[{\"text\":\"How\"},{\"text\":\" can I help you?\"}]}],\"contextId\":\"019dda2c-1710-76b8-a130-ba8737bf14bd\",\"history\":[{\"messageId\":\"test-text-001\",\"parts\":[{\"text\":\"This is a plain text message.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:57.362681507-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2c-1d11-7eb5-b57a-4bb995c3f8b4",
+                      "parts": [
+                        {
+                          "text": "How"
+                        },
+                        {
+                          "text": " can I help you?"
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2c-1710-76b8-a130-ba8737bf14bd",
+                  "history": [
+                    {
+                      "messageId": "test-text-001",
+                      "parts": [
+                        {
+                          "text": "This is a plain text message."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2c-1710-7674-90b7-e2e4a3d1e868",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:57.362681507-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 3977,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "465",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:57 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2c-1710-7674-90b7-e2e4a3d1e868\",\"artifacts\":[{\"artifactId\":\"019dda2c-1d11-7eb5-b57a-4bb995c3f8b4\",\"parts\":[{\"text\":\"How\"},{\"text\":\" can I help you?\"}]}],\"contextId\":\"019dda2c-1710-76b8-a130-ba8737bf14bd\",\"history\":[{\"messageId\":\"test-text-001\",\"parts\":[{\"text\":\"This is a plain text message.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:57.362681507-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2c-1d11-7eb5-b57a-4bb995c3f8b4",
+                      "parts": [
+                        {
+                          "text": "How"
+                        },
+                        {
+                          "text": " can I help you?"
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2c-1710-76b8-a130-ba8737bf14bd",
+                  "history": [
+                    {
+                      "messageId": "test-text-001",
+                      "parts": [
+                        {
+                          "text": "This is a plain text message."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2c-1710-7674-90b7-e2e4a3d1e868",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:57.362681507-05:00"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "0d372d17-e867-4cc6-bdf2-dd7c302e5592",
+      "spec_id": "a2a-v1",
+      "test_case_id": "message-with-context",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 3931895555,
+      "started_at": "2026-04-29T11:56:57.363106791-05:00",
+      "completed_at": "2026-04-29T11:57:01.295002346-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1704124623,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "478",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:59 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2c-1d13-73f9-b037-6a0f8fbf3ccb\",\"artifacts\":[{\"artifactId\":\"019dda2c-23ba-7066-9230-18d9817096c7\",\"parts\":[{\"text\":\"Hello\"},{\"text\":\"! How\"},{\"text\":\" can I help you?\"}]}],\"contextId\":\"019dda2c-1d13-7466-8537-6275556e7524\",\"history\":[{\"messageId\":\"test-ctx-001\",\"parts\":[{\"text\":\"Hello from context test.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:59.066813665-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2c-23ba-7066-9230-18d9817096c7",
+                      "parts": [
+                        {
+                          "text": "Hello"
+                        },
+                        {
+                          "text": "! How"
+                        },
+                        {
+                          "text": " can I help you?"
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2c-1d13-7466-8537-6275556e7524",
+                  "history": [
+                    {
+                      "messageId": "test-ctx-001",
+                      "parts": [
+                        {
+                          "text": "Hello from context test."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2c-1d13-73f9-b037-6a0f8fbf3ccb",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:59.066813665-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4248,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "478",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:56:59 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2c-1d13-73f9-b037-6a0f8fbf3ccb\",\"artifacts\":[{\"artifactId\":\"019dda2c-23ba-7066-9230-18d9817096c7\",\"parts\":[{\"text\":\"Hello\"},{\"text\":\"! How\"},{\"text\":\" can I help you?\"}]}],\"contextId\":\"019dda2c-1d13-7466-8537-6275556e7524\",\"history\":[{\"messageId\":\"test-ctx-001\",\"parts\":[{\"text\":\"Hello from context test.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:56:59.066813665-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2c-23ba-7066-9230-18d9817096c7",
+                      "parts": [
+                        {
+                          "text": "Hello"
+                        },
+                        {
+                          "text": "! How"
+                        },
+                        {
+                          "text": " can I help you?"
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2c-1d13-7466-8537-6275556e7524",
+                  "history": [
+                    {
+                      "messageId": "test-ctx-001",
+                      "parts": [
+                        {
+                          "text": "Hello from context test."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2c-1d13-73f9-b037-6a0f8fbf3ccb",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:56:59.066813665-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 2227729733,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "570",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:01 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"task\":{\"id\":\"019dda2c-23bb-7675-9234-2c2e9b61d2d1\",\"artifacts\":[{\"artifactId\":\"019dda2c-2c6d-75ee-8e3b-b819b777dede\",\"parts\":[{\"text\":\"I\"},{\"text\":\" have\"},{\"text\":\" no prior\"},{\"text\":\" context.\"},{\"text\":\" Please\"},{\"text\":\" describe\"},{\"text\":\" what you need\"},{\"text\":\".\"}]}],\"contextId\":\"\\u003cnil\\u003e\",\"history\":[{\"messageId\":\"test-ctx-002\",\"contextId\":\"\\u003cnil\\u003e\",\"parts\":[{\"text\":\"Follow up message.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:57:01.294490168-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2c-2c6d-75ee-8e3b-b819b777dede",
+                      "parts": [
+                        {
+                          "text": "I"
+                        },
+                        {
+                          "text": " have"
+                        },
+                        {
+                          "text": " no prior"
+                        },
+                        {
+                          "text": " context."
+                        },
+                        {
+                          "text": " Please"
+                        },
+                        {
+                          "text": " describe"
+                        },
+                        {
+                          "text": " what you need"
+                        },
+                        {
+                          "text": "."
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "\u003cnil\u003e",
+                  "history": [
+                    {
+                      "contextId": "\u003cnil\u003e",
+                      "messageId": "test-ctx-002",
+                      "parts": [
+                        {
+                          "text": "Follow up message."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2c-23bb-7675-9234-2c2e9b61d2d1",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:57:01.294490168-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 3727,
+          "expected": {
+            "id": 2,
+            "jsonrpc": "2.0",
+            "result": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "570",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:01 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"task\":{\"id\":\"019dda2c-23bb-7675-9234-2c2e9b61d2d1\",\"artifacts\":[{\"artifactId\":\"019dda2c-2c6d-75ee-8e3b-b819b777dede\",\"parts\":[{\"text\":\"I\"},{\"text\":\" have\"},{\"text\":\" no prior\"},{\"text\":\" context.\"},{\"text\":\" Please\"},{\"text\":\" describe\"},{\"text\":\" what you need\"},{\"text\":\".\"}]}],\"contextId\":\"\\u003cnil\\u003e\",\"history\":[{\"messageId\":\"test-ctx-002\",\"contextId\":\"\\u003cnil\\u003e\",\"parts\":[{\"text\":\"Follow up message.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:57:01.294490168-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 2,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2c-2c6d-75ee-8e3b-b819b777dede",
+                      "parts": [
+                        {
+                          "text": "I"
+                        },
+                        {
+                          "text": " have"
+                        },
+                        {
+                          "text": " no prior"
+                        },
+                        {
+                          "text": " context."
+                        },
+                        {
+                          "text": " Please"
+                        },
+                        {
+                          "text": " describe"
+                        },
+                        {
+                          "text": " what you need"
+                        },
+                        {
+                          "text": "."
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "\u003cnil\u003e",
+                  "history": [
+                    {
+                      "contextId": "\u003cnil\u003e",
+                      "messageId": "test-ctx-002",
+                      "parts": [
+                        {
+                          "text": "Follow up message."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2c-23bb-7675-9234-2c2e9b61d2d1",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:57:01.294490168-05:00"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "83d0355f-3763-43bb-9ef7-fd8ab3d84749",
+      "spec_id": "a2a-v1",
+      "test_case_id": "missing-message-id",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 257507,
+      "started_at": "2026-04-29T11:57:01.295005201-05:00",
+      "completed_at": "2026-04-29T11:57:01.295262718-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 213704,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "134",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:01 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message ID is required: invalid params\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "data": {
+                  "error": "message ID is required: invalid params"
+                },
+                "message": "invalid params"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1452,
+          "expected": {
+            "error": {
+              "code": -32602,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "134",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:01 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message ID is required: invalid params\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "data": {
+                  "error": "message ID is required: invalid params"
+                },
+                "message": "invalid params"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "4b826a1b-201e-4c8e-92f2-bc5ec7743a69",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-send",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1982725350,
+      "started_at": "2026-04-29T11:57:01.29526369-05:00",
+      "completed_at": "2026-04-29T11:57:03.27798904-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1982710352,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Wed, 29 Apr 2026 16:57:01 GMT",
+              "x-accel-buffering": "no"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "task": {
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "history": [
+                      {
+                        "messageId": "test-stream-001",
+                        "parts": [
+                          {
+                            "text": "Stream your response to me."
+                          }
+                        ],
+                        "role": "ROLE_USER"
+                      }
+                    ],
+                    "id": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d",
+                    "status": {
+                      "state": "TASK_STATE_SUBMITTED"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "statusUpdate": {
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "status": {
+                      "state": "TASK_STATE_WORKING",
+                      "timestamp": "2026-04-29T11:57:01.295386963-05:00"
+                    },
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": "Each"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " word"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " arrives"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " one"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " by"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " one —"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " that"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": "'s streaming"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": ". You"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": "'re seeing"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " it"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " now"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": "."
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "statusUpdate": {
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "status": {
+                      "state": "TASK_STATE_COMPLETED",
+                      "timestamp": "2026-04-29T11:57:03.27691-05:00"
+                    },
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "statusUpdate": {
+                  "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:57:03.27691-05:00"
+                  },
+                  "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4880,
+          "expected": {
+            "headers": {
+              "content-type": "text/event-stream"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Wed, 29 Apr 2026 16:57:01 GMT",
+              "x-accel-buffering": "no"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "task": {
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "history": [
+                      {
+                        "messageId": "test-stream-001",
+                        "parts": [
+                          {
+                            "text": "Stream your response to me."
+                          }
+                        ],
+                        "role": "ROLE_USER"
+                      }
+                    ],
+                    "id": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d",
+                    "status": {
+                      "state": "TASK_STATE_SUBMITTED"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "statusUpdate": {
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "status": {
+                      "state": "TASK_STATE_WORKING",
+                      "timestamp": "2026-04-29T11:57:01.295386963-05:00"
+                    },
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": "Each"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " word"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " arrives"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " one"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " by"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " one —"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " that"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": "'s streaming"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": ". You"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": "'re seeing"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " it"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": " now"
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "artifactUpdate": {
+                    "append": true,
+                    "artifact": {
+                      "artifactId": "019dda2c-342b-794d-9f36-fa1169ad32dd",
+                      "parts": [
+                        {
+                          "text": "."
+                        }
+                      ]
+                    },
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "statusUpdate": {
+                    "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                    "status": {
+                      "state": "TASK_STATE_COMPLETED",
+                      "timestamp": "2026-04-29T11:57:03.27691-05:00"
+                    },
+                    "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                  }
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "statusUpdate": {
+                  "contextId": "019dda2c-2c6f-758b-b8a2-d3bcc703363a",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:57:03.27691-05:00"
+                  },
+                  "taskId": "019dda2c-2c6f-7555-ab5a-da4c2b88a52d"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "f4941403-2af4-4089-9277-89b636f9bd8d",
+      "spec_id": "a2a-v1",
+      "test_case_id": "streaming-events",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 10009923306,
+      "started_at": "2026-04-29T11:57:03.277993058-05:00",
+      "completed_at": "2026-04-29T11:57:13.287916364-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 10009883110,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Wed, 29 Apr 2026 16:57:03 GMT",
+              "x-accel-buffering": "no"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "task": {
+                    "contextId": "019dda2c-342e-72ec-89ed-69f034f24dcc",
+                    "history": [
+                      {
+                        "messageId": "test-stream-002",
+                        "parts": [
+                          {
+                            "text": "Stream a response with status updates."
+                          }
+                        ],
+                        "role": "ROLE_USER"
+                      }
+                    ],
+                    "id": "019dda2c-342e-72a6-b404-8e95161beafe",
+                    "status": {
+                      "state": "TASK_STATE_SUBMITTED"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "statusUpdate": {
+                    "contextId": "019dda2c-342e-72ec-89ed-69f034f24dcc",
+                    "status": {
+                      "state": "TASK_STATE_WORKING",
+                      "timestamp": "2026-04-29T11:57:03.278218955-05:00"
+                    },
+                    "taskId": "019dda2c-342e-72a6-b404-8e95161beafe"
+                  }
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "statusUpdate": {
+                  "contextId": "019dda2c-342e-72ec-89ed-69f034f24dcc",
+                  "status": {
+                    "state": "TASK_STATE_WORKING",
+                    "timestamp": "2026-04-29T11:57:03.278218955-05:00"
+                  },
+                  "taskId": "019dda2c-342e-72a6-b404-8e95161beafe"
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 3096,
+          "expected": {
+            "sse_event": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "cache-control": "no-cache",
+              "connection": "keep-alive",
+              "content-type": "text/event-stream",
+              "date": "Wed, 29 Apr 2026 16:57:03 GMT",
+              "x-accel-buffering": "no"
+            },
+            "sse_events": [
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "task": {
+                    "contextId": "019dda2c-342e-72ec-89ed-69f034f24dcc",
+                    "history": [
+                      {
+                        "messageId": "test-stream-002",
+                        "parts": [
+                          {
+                            "text": "Stream a response with status updates."
+                          }
+                        ],
+                        "role": "ROLE_USER"
+                      }
+                    ],
+                    "id": "019dda2c-342e-72a6-b404-8e95161beafe",
+                    "status": {
+                      "state": "TASK_STATE_SUBMITTED"
+                    }
+                  }
+                }
+              },
+              {
+                "id": 1,
+                "jsonrpc": "2.0",
+                "result": {
+                  "statusUpdate": {
+                    "contextId": "019dda2c-342e-72ec-89ed-69f034f24dcc",
+                    "status": {
+                      "state": "TASK_STATE_WORKING",
+                      "timestamp": "2026-04-29T11:57:03.278218955-05:00"
+                    },
+                    "taskId": "019dda2c-342e-72a6-b404-8e95161beafe"
+                  }
+                }
+              }
+            ],
+            "parsed": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "statusUpdate": {
+                  "contextId": "019dda2c-342e-72ec-89ed-69f034f24dcc",
+                  "status": {
+                    "state": "TASK_STATE_WORKING",
+                    "timestamp": "2026-04-29T11:57:03.278218955-05:00"
+                  },
+                  "taskId": "019dda2c-342e-72a6-b404-8e95161beafe"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "abef7a68-1a8c-40ef-a6da-7edec29cd75b",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-parse-error",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 587541,
+      "started_at": "2026-04-29T11:57:13.287922536-05:00",
+      "completed_at": "2026-04-29T11:57:13.288510147-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 539870,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "173",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:13 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"parse error\",\"data\":{\"error\":\"parse error: invalid character 'i' looking for beginning of object key string\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "data": {
+                  "error": "parse error: invalid character 'i' looking for beginning of object key string"
+                },
+                "message": "parse error"
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 2364,
+          "expected": {
+            "error": {
+              "code": -32700,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "173",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:13 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32700,\"message\":\"parse error\",\"data\":{\"error\":\"parse error: invalid character 'i' looking for beginning of object key string\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32700,
+                "data": {
+                  "error": "parse error: invalid character 'i' looking for beginning of object key string"
+                },
+                "message": "parse error"
+              },
+              "id": null,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "e70eafcd-1e5c-4a31-81e0-0085735e53a8",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-invalid-request",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 120949,
+      "started_at": "2026-04-29T11:57:13.288511379-05:00",
+      "completed_at": "2026-04-29T11:57:13.288632388-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 108555,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "112",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:13 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"invalid request\",\"data\":{\"error\":\"invalid request\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "data": {
+                  "error": "invalid request"
+                },
+                "message": "invalid request"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1674,
+          "expected": {
+            "error": {
+              "code": -32600,
+              "message": "*"
+            },
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "112",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:13 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32600,\"message\":\"invalid request\",\"data\":{\"error\":\"invalid request\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32600,
+                "data": {
+                  "error": "invalid request"
+                },
+                "message": "invalid request"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "832703e8-2ef7-4218-bbe8-64ce7220aa22",
+      "spec_id": "a2a-v1",
+      "test_case_id": "jsonrpc-method-not-found",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 109377,
+      "started_at": "2026-04-29T11:57:13.288635093-05:00",
+      "completed_at": "2026-04-29T11:57:13.28874453-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 92064,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "114",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:13 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found\",\"data\":{\"error\":\"method not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": {
+                  "error": "method not found"
+                },
+                "message": "method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1522,
+          "expected": {
+            "error": {
+              "code": -32601,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "114",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:13 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32601,\"message\":\"method not found\",\"data\":{\"error\":\"method not found\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32601,
+                "data": {
+                  "error": "method not found"
+                },
+                "message": "method not found"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "3925847a-6e10-4c23-a093-64ae9e1cb140",
+      "spec_id": "a2a-v1",
+      "test_case_id": "missing-required-params",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 87976,
+      "started_at": "2026-04-29T11:57:13.288745562-05:00",
+      "completed_at": "2026-04-29T11:57:13.288833528-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 75593,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "131",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:13 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message is required: invalid params\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "data": {
+                  "error": "message is required: invalid params"
+                },
+                "message": "invalid params"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1122,
+          "expected": {
+            "error": {
+              "code": -32602,
+              "message": "*"
+            },
+            "id": 1,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "131",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:13 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\",\"data\":{\"error\":\"message is required: invalid params\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32602,
+                "data": {
+                  "error": "message is required: invalid params"
+                },
+                "message": "invalid params"
+              },
+              "id": 1,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "a6b08f67-b600-463e-81e4-b84f9b61bf0e",
+      "spec_id": "a2a-v1",
+      "test_case_id": "push-notification-not-supported",
+      "runtime": "crush-a2a",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 1580000341,
+      "started_at": "2026-04-29T11:57:13.288834159-05:00",
+      "completed_at": "2026-04-29T11:57:14.86883449-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 1579786187,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:14 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2c-5b48-7ddc-8f87-58917e37b105\",\"artifacts\":[{\"artifactId\":\"019dda2c-5ef6-7401-8e9b-62f2e2a32e3f\",\"parts\":[{\"text\":\"Crush\"},{\"text\":\" streams\"},{\"text\":\" responses\"},{\"text\":\" token\"},{\"text\":\"-\"},{\"text\":\"by-token as\"},{\"text\":\" the\"},{\"text\":\" model\"},{\"text\":\" generates\"},{\"text\":\" them —\"},{\"text\":\" that's the default\"},{\"text\":\" behavior. There\"},{\"text\":\"'s no\"},{\"text\":\" special\"},{\"text\":\" API\"},{\"text\":\" call\"},{\"text\":\" needed\"},{\"text\":\";\"},{\"text\":\" the\"},{\"text\":\" response you\"},{\"text\":\"'re\"},{\"text\":\" reading\"},{\"text\":\" right\"},{\"text\":\" now is being\"},{\"text\":\" stre\"},{\"text\":\"amed.\"},{\"text\":\"\\n\\nIf\"},{\"text\":\" you're\"},{\"text\":\" asking\"},{\"text\":\" about\"},{\"text\":\" **\"},{\"text\":\"status\"},{\"text\":\" updates\"},{\"text\":\" within\"},{\"text\":\" a task\"},{\"text\":\"** (e.g., progress\"},{\"text\":\" during\"},{\"text\":\" a long operation\"},{\"text\":\"), here\"},{\"text\":\"'s how that\"},{\"text\":\" works:\\n\\n-\"},{\"text\":\" Crush sends\"},{\"text\":\" brief\"},{\"text\":\" progress\"},{\"text\":\" text\"},{\"text\":\" mid\"},{\"text\":\"-response\"},{\"text\":\" (under\"},{\"text\":\" 10\"},{\"text\":\" \"},{\"text\":\"words\"},{\"text\":\")\"},{\"text\":\" while\"},{\"text\":\" continuing\"},{\"text\":\" to\"},{\"text\":\" work\"},{\"text\":\"\\n- Tool\"},{\"text\":\" calls and\"},{\"text\":\" their\"},{\"text\":\" results appear\"},{\"text\":\" as they\"},{\"text\":\" happen\"},{\"text\":\"\\n- The final\"},{\"text\":\" answer\"},{\"text\":\" arrives\"},{\"text\":\" after\"},{\"text\":\" all work is done\\n\\nIf\"},{\"text\":\" you meant\"},{\"text\":\" something else —\"},{\"text\":\" like\"},{\"text\":\" building\"},{\"text\":\" a streaming\"},{\"text\":\" HTTP\"},{\"text\":\" endpoint\"},{\"text\":\",\"},{\"text\":\" a\"},{\"text\":\" CLI\"},{\"text\":\" progress\"},{\"text\":\" bar\"},{\"text\":\", or streaming\"},{\"text\":\" from\"},{\"text\":\" an\"},{\"text\":\" L\"},{\"text\":\"LM API\"},{\"text\":\" — let me know what\"},{\"text\":\" you're\"},{\"text\":\" trying\"},{\"text\":\" to build\"},{\"text\":\".\"},{\"text\":\"I need\"},{\"text\":\" more\"},{\"text\":\" context to help you. What task would\"},{\"text\":\" you like me to perform\"},{\"text\":\"?\"}]}],\"contextId\":\"019dda2c-5b48-7e41-9b64-0ed420d1f0f2\",\"history\":[{\"messageId\":\"test-push-001\",\"parts\":[{\"text\":\"Perform a task.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:57:14.867374851-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2c-5ef6-7401-8e9b-62f2e2a32e3f",
+                      "parts": [
+                        {
+                          "text": "Crush"
+                        },
+                        {
+                          "text": " streams"
+                        },
+                        {
+                          "text": " responses"
+                        },
+                        {
+                          "text": " token"
+                        },
+                        {
+                          "text": "-"
+                        },
+                        {
+                          "text": "by-token as"
+                        },
+                        {
+                          "text": " the"
+                        },
+                        {
+                          "text": " model"
+                        },
+                        {
+                          "text": " generates"
+                        },
+                        {
+                          "text": " them —"
+                        },
+                        {
+                          "text": " that's the default"
+                        },
+                        {
+                          "text": " behavior. There"
+                        },
+                        {
+                          "text": "'s no"
+                        },
+                        {
+                          "text": " special"
+                        },
+                        {
+                          "text": " API"
+                        },
+                        {
+                          "text": " call"
+                        },
+                        {
+                          "text": " needed"
+                        },
+                        {
+                          "text": ";"
+                        },
+                        {
+                          "text": " the"
+                        },
+                        {
+                          "text": " response you"
+                        },
+                        {
+                          "text": "'re"
+                        },
+                        {
+                          "text": " reading"
+                        },
+                        {
+                          "text": " right"
+                        },
+                        {
+                          "text": " now is being"
+                        },
+                        {
+                          "text": " stre"
+                        },
+                        {
+                          "text": "amed."
+                        },
+                        {
+                          "text": "\n\nIf"
+                        },
+                        {
+                          "text": " you're"
+                        },
+                        {
+                          "text": " asking"
+                        },
+                        {
+                          "text": " about"
+                        },
+                        {
+                          "text": " **"
+                        },
+                        {
+                          "text": "status"
+                        },
+                        {
+                          "text": " updates"
+                        },
+                        {
+                          "text": " within"
+                        },
+                        {
+                          "text": " a task"
+                        },
+                        {
+                          "text": "** (e.g., progress"
+                        },
+                        {
+                          "text": " during"
+                        },
+                        {
+                          "text": " a long operation"
+                        },
+                        {
+                          "text": "), here"
+                        },
+                        {
+                          "text": "'s how that"
+                        },
+                        {
+                          "text": " works:\n\n-"
+                        },
+                        {
+                          "text": " Crush sends"
+                        },
+                        {
+                          "text": " brief"
+                        },
+                        {
+                          "text": " progress"
+                        },
+                        {
+                          "text": " text"
+                        },
+                        {
+                          "text": " mid"
+                        },
+                        {
+                          "text": "-response"
+                        },
+                        {
+                          "text": " (under"
+                        },
+                        {
+                          "text": " 10"
+                        },
+                        {
+                          "text": " "
+                        },
+                        {
+                          "text": "words"
+                        },
+                        {
+                          "text": ")"
+                        },
+                        {
+                          "text": " while"
+                        },
+                        {
+                          "text": " continuing"
+                        },
+                        {
+                          "text": " to"
+                        },
+                        {
+                          "text": " work"
+                        },
+                        {
+                          "text": "\n- Tool"
+                        },
+                        {
+                          "text": " calls and"
+                        },
+                        {
+                          "text": " their"
+                        },
+                        {
+                          "text": " results appear"
+                        },
+                        {
+                          "text": " as they"
+                        },
+                        {
+                          "text": " happen"
+                        },
+                        {
+                          "text": "\n- The final"
+                        },
+                        {
+                          "text": " answer"
+                        },
+                        {
+                          "text": " arrives"
+                        },
+                        {
+                          "text": " after"
+                        },
+                        {
+                          "text": " all work is done\n\nIf"
+                        },
+                        {
+                          "text": " you meant"
+                        },
+                        {
+                          "text": " something else —"
+                        },
+                        {
+                          "text": " like"
+                        },
+                        {
+                          "text": " building"
+                        },
+                        {
+                          "text": " a streaming"
+                        },
+                        {
+                          "text": " HTTP"
+                        },
+                        {
+                          "text": " endpoint"
+                        },
+                        {
+                          "text": ","
+                        },
+                        {
+                          "text": " a"
+                        },
+                        {
+                          "text": " CLI"
+                        },
+                        {
+                          "text": " progress"
+                        },
+                        {
+                          "text": " bar"
+                        },
+                        {
+                          "text": ", or streaming"
+                        },
+                        {
+                          "text": " from"
+                        },
+                        {
+                          "text": " an"
+                        },
+                        {
+                          "text": " L"
+                        },
+                        {
+                          "text": "LM API"
+                        },
+                        {
+                          "text": " — let me know what"
+                        },
+                        {
+                          "text": " you're"
+                        },
+                        {
+                          "text": " trying"
+                        },
+                        {
+                          "text": " to build"
+                        },
+                        {
+                          "text": "."
+                        },
+                        {
+                          "text": "I need"
+                        },
+                        {
+                          "text": " more"
+                        },
+                        {
+                          "text": " context to help you. What task would"
+                        },
+                        {
+                          "text": " you like me to perform"
+                        },
+                        {
+                          "text": "?"
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2c-5b48-7e41-9b64-0ed420d1f0f2",
+                  "history": [
+                    {
+                      "messageId": "test-push-001",
+                      "parts": [
+                        {
+                          "text": "Perform a task."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2c-5b48-7ddc-8f87-58917e37b105",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:57:14.867374851-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 4559,
+          "expected": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": "*"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:14 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"019dda2c-5b48-7ddc-8f87-58917e37b105\",\"artifacts\":[{\"artifactId\":\"019dda2c-5ef6-7401-8e9b-62f2e2a32e3f\",\"parts\":[{\"text\":\"Crush\"},{\"text\":\" streams\"},{\"text\":\" responses\"},{\"text\":\" token\"},{\"text\":\"-\"},{\"text\":\"by-token as\"},{\"text\":\" the\"},{\"text\":\" model\"},{\"text\":\" generates\"},{\"text\":\" them —\"},{\"text\":\" that's the default\"},{\"text\":\" behavior. There\"},{\"text\":\"'s no\"},{\"text\":\" special\"},{\"text\":\" API\"},{\"text\":\" call\"},{\"text\":\" needed\"},{\"text\":\";\"},{\"text\":\" the\"},{\"text\":\" response you\"},{\"text\":\"'re\"},{\"text\":\" reading\"},{\"text\":\" right\"},{\"text\":\" now is being\"},{\"text\":\" stre\"},{\"text\":\"amed.\"},{\"text\":\"\\n\\nIf\"},{\"text\":\" you're\"},{\"text\":\" asking\"},{\"text\":\" about\"},{\"text\":\" **\"},{\"text\":\"status\"},{\"text\":\" updates\"},{\"text\":\" within\"},{\"text\":\" a task\"},{\"text\":\"** (e.g., progress\"},{\"text\":\" during\"},{\"text\":\" a long operation\"},{\"text\":\"), here\"},{\"text\":\"'s how that\"},{\"text\":\" works:\\n\\n-\"},{\"text\":\" Crush sends\"},{\"text\":\" brief\"},{\"text\":\" progress\"},{\"text\":\" text\"},{\"text\":\" mid\"},{\"text\":\"-response\"},{\"text\":\" (under\"},{\"text\":\" 10\"},{\"text\":\" \"},{\"text\":\"words\"},{\"text\":\")\"},{\"text\":\" while\"},{\"text\":\" continuing\"},{\"text\":\" to\"},{\"text\":\" work\"},{\"text\":\"\\n- Tool\"},{\"text\":\" calls and\"},{\"text\":\" their\"},{\"text\":\" results appear\"},{\"text\":\" as they\"},{\"text\":\" happen\"},{\"text\":\"\\n- The final\"},{\"text\":\" answer\"},{\"text\":\" arrives\"},{\"text\":\" after\"},{\"text\":\" all work is done\\n\\nIf\"},{\"text\":\" you meant\"},{\"text\":\" something else —\"},{\"text\":\" like\"},{\"text\":\" building\"},{\"text\":\" a streaming\"},{\"text\":\" HTTP\"},{\"text\":\" endpoint\"},{\"text\":\",\"},{\"text\":\" a\"},{\"text\":\" CLI\"},{\"text\":\" progress\"},{\"text\":\" bar\"},{\"text\":\", or streaming\"},{\"text\":\" from\"},{\"text\":\" an\"},{\"text\":\" L\"},{\"text\":\"LM API\"},{\"text\":\" — let me know what\"},{\"text\":\" you're\"},{\"text\":\" trying\"},{\"text\":\" to build\"},{\"text\":\".\"},{\"text\":\"I need\"},{\"text\":\" more\"},{\"text\":\" context to help you. What task would\"},{\"text\":\" you like me to perform\"},{\"text\":\"?\"}]}],\"contextId\":\"019dda2c-5b48-7e41-9b64-0ed420d1f0f2\",\"history\":[{\"messageId\":\"test-push-001\",\"parts\":[{\"text\":\"Perform a task.\"}],\"role\":\"ROLE_USER\"}],\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-04-29T11:57:14.867374851-05:00\"}}}}\n",
+            "jsonrpc_resp": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "result": {
+                "task": {
+                  "artifacts": [
+                    {
+                      "artifactId": "019dda2c-5ef6-7401-8e9b-62f2e2a32e3f",
+                      "parts": [
+                        {
+                          "text": "Crush"
+                        },
+                        {
+                          "text": " streams"
+                        },
+                        {
+                          "text": " responses"
+                        },
+                        {
+                          "text": " token"
+                        },
+                        {
+                          "text": "-"
+                        },
+                        {
+                          "text": "by-token as"
+                        },
+                        {
+                          "text": " the"
+                        },
+                        {
+                          "text": " model"
+                        },
+                        {
+                          "text": " generates"
+                        },
+                        {
+                          "text": " them —"
+                        },
+                        {
+                          "text": " that's the default"
+                        },
+                        {
+                          "text": " behavior. There"
+                        },
+                        {
+                          "text": "'s no"
+                        },
+                        {
+                          "text": " special"
+                        },
+                        {
+                          "text": " API"
+                        },
+                        {
+                          "text": " call"
+                        },
+                        {
+                          "text": " needed"
+                        },
+                        {
+                          "text": ";"
+                        },
+                        {
+                          "text": " the"
+                        },
+                        {
+                          "text": " response you"
+                        },
+                        {
+                          "text": "'re"
+                        },
+                        {
+                          "text": " reading"
+                        },
+                        {
+                          "text": " right"
+                        },
+                        {
+                          "text": " now is being"
+                        },
+                        {
+                          "text": " stre"
+                        },
+                        {
+                          "text": "amed."
+                        },
+                        {
+                          "text": "\n\nIf"
+                        },
+                        {
+                          "text": " you're"
+                        },
+                        {
+                          "text": " asking"
+                        },
+                        {
+                          "text": " about"
+                        },
+                        {
+                          "text": " **"
+                        },
+                        {
+                          "text": "status"
+                        },
+                        {
+                          "text": " updates"
+                        },
+                        {
+                          "text": " within"
+                        },
+                        {
+                          "text": " a task"
+                        },
+                        {
+                          "text": "** (e.g., progress"
+                        },
+                        {
+                          "text": " during"
+                        },
+                        {
+                          "text": " a long operation"
+                        },
+                        {
+                          "text": "), here"
+                        },
+                        {
+                          "text": "'s how that"
+                        },
+                        {
+                          "text": " works:\n\n-"
+                        },
+                        {
+                          "text": " Crush sends"
+                        },
+                        {
+                          "text": " brief"
+                        },
+                        {
+                          "text": " progress"
+                        },
+                        {
+                          "text": " text"
+                        },
+                        {
+                          "text": " mid"
+                        },
+                        {
+                          "text": "-response"
+                        },
+                        {
+                          "text": " (under"
+                        },
+                        {
+                          "text": " 10"
+                        },
+                        {
+                          "text": " "
+                        },
+                        {
+                          "text": "words"
+                        },
+                        {
+                          "text": ")"
+                        },
+                        {
+                          "text": " while"
+                        },
+                        {
+                          "text": " continuing"
+                        },
+                        {
+                          "text": " to"
+                        },
+                        {
+                          "text": " work"
+                        },
+                        {
+                          "text": "\n- Tool"
+                        },
+                        {
+                          "text": " calls and"
+                        },
+                        {
+                          "text": " their"
+                        },
+                        {
+                          "text": " results appear"
+                        },
+                        {
+                          "text": " as they"
+                        },
+                        {
+                          "text": " happen"
+                        },
+                        {
+                          "text": "\n- The final"
+                        },
+                        {
+                          "text": " answer"
+                        },
+                        {
+                          "text": " arrives"
+                        },
+                        {
+                          "text": " after"
+                        },
+                        {
+                          "text": " all work is done\n\nIf"
+                        },
+                        {
+                          "text": " you meant"
+                        },
+                        {
+                          "text": " something else —"
+                        },
+                        {
+                          "text": " like"
+                        },
+                        {
+                          "text": " building"
+                        },
+                        {
+                          "text": " a streaming"
+                        },
+                        {
+                          "text": " HTTP"
+                        },
+                        {
+                          "text": " endpoint"
+                        },
+                        {
+                          "text": ","
+                        },
+                        {
+                          "text": " a"
+                        },
+                        {
+                          "text": " CLI"
+                        },
+                        {
+                          "text": " progress"
+                        },
+                        {
+                          "text": " bar"
+                        },
+                        {
+                          "text": ", or streaming"
+                        },
+                        {
+                          "text": " from"
+                        },
+                        {
+                          "text": " an"
+                        },
+                        {
+                          "text": " L"
+                        },
+                        {
+                          "text": "LM API"
+                        },
+                        {
+                          "text": " — let me know what"
+                        },
+                        {
+                          "text": " you're"
+                        },
+                        {
+                          "text": " trying"
+                        },
+                        {
+                          "text": " to build"
+                        },
+                        {
+                          "text": "."
+                        },
+                        {
+                          "text": "I need"
+                        },
+                        {
+                          "text": " more"
+                        },
+                        {
+                          "text": " context to help you. What task would"
+                        },
+                        {
+                          "text": " you like me to perform"
+                        },
+                        {
+                          "text": "?"
+                        }
+                      ]
+                    }
+                  ],
+                  "contextId": "019dda2c-5b48-7e41-9b64-0ed420d1f0f2",
+                  "history": [
+                    {
+                      "messageId": "test-push-001",
+                      "parts": [
+                        {
+                          "text": "Perform a task."
+                        }
+                      ],
+                      "role": "ROLE_USER"
+                    }
+                  ],
+                  "id": "019dda2c-5b48-7ddc-8f87-58917e37b105",
+                  "status": {
+                    "state": "TASK_STATE_COMPLETED",
+                    "timestamp": "2026-04-29T11:57:14.867374851-05:00"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "step_index": 2,
+          "action": "send",
+          "status": "pass",
+          "duration": 197614,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "144",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:14 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32003,\"message\":\"push notification not supported\",\"data\":{\"error\":\"push notification not supported\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32003,
+                "data": {
+                  "error": "push notification not supported"
+                },
+                "message": "push notification not supported"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        },
+        {
+          "step_index": 3,
+          "action": "expect",
+          "status": "pass",
+          "duration": 2284,
+          "expected": {
+            "error": {
+              "code": "*",
+              "message": "*"
+            },
+            "id": 2,
+            "jsonrpc": "2.0"
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "144",
+              "content-type": "application/json",
+              "date": "Wed, 29 Apr 2026 16:57:14 GMT"
+            },
+            "raw_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"error\":{\"code\":-32003,\"message\":\"push notification not supported\",\"data\":{\"error\":\"push notification not supported\"}}}\n",
+            "jsonrpc_resp": {
+              "error": {
+                "code": -32003,
+                "data": {
+                  "error": "push notification not supported"
+                },
+                "message": "push notification not supported"
+              },
+              "id": 2,
+              "jsonrpc": "2.0"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total": 20,
+    "passed": 20,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "timeouts": 0,
+    "compliance": 100
+  }
+}

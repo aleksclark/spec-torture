@@ -1,0 +1,201 @@
+{
+  "runtime": "hermes-agent",
+  "summary": {
+    "total": 21,
+    "passed": 21,
+    "failed": 0,
+    "errors": 0,
+    "compliance": 100.0
+  },
+  "results": [
+    {
+      "id": "hermes-a2a-discovery",
+      "name": "A2A Discover Fetches Agent Card via GET",
+      "severity": "required",
+      "category": "discovery",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 37.4668890144676
+    },
+    {
+      "id": "hermes-a2a-send-envelope",
+      "name": "SendMessage Uses JSON-RPC 2.0 Envelope",
+      "severity": "required",
+      "category": "messaging",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.929727874696255
+    },
+    {
+      "id": "hermes-a2a-send-method",
+      "name": "SendMessage Uses v1.0 PascalCase Method",
+      "severity": "required",
+      "category": "messaging",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.330174997448921
+    },
+    {
+      "id": "hermes-a2a-send-content-type",
+      "name": "SendMessage Content-Type application/json",
+      "severity": "required",
+      "category": "messaging",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.478224087506533
+    },
+    {
+      "id": "hermes-a2a-send-message-id",
+      "name": "SendMessage Includes messageId",
+      "severity": "required",
+      "category": "messaging",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 6.208905950188637
+    },
+    {
+      "id": "hermes-a2a-send-role",
+      "name": "SendMessage Includes Role",
+      "severity": "required",
+      "category": "messaging",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.07832907512784
+    },
+    {
+      "id": "hermes-a2a-send-parts",
+      "name": "SendMessage Parts Have Content",
+      "severity": "required",
+      "category": "messaging",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.052469972521067
+    },
+    {
+      "id": "hermes-a2a-send-http-post",
+      "name": "SendMessage Uses HTTP POST",
+      "severity": "required",
+      "category": "messaging",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.108414985239506
+    },
+    {
+      "id": "hermes-a2a-get-task",
+      "name": "GetTask Correct Envelope and Params",
+      "severity": "required",
+      "category": "lifecycle",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.002935951575637
+    },
+    {
+      "id": "hermes-a2a-cancel-task",
+      "name": "CancelTask Uses Correct Method",
+      "severity": "required",
+      "category": "lifecycle",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.335934994742274
+    },
+    {
+      "id": "hermes-a2a-context-propagation",
+      "name": "SendMessage Propagates contextId",
+      "severity": "recommended",
+      "category": "messaging",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.763023229315877
+    },
+    {
+      "id": "hermes-a2a-error-handling",
+      "name": "Client Handles JSON-RPC Errors Gracefully",
+      "severity": "required",
+      "category": "response-handling",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 6.399426143616438
+    },
+    {
+      "id": "hermes-arp-list-agents",
+      "name": "arp_list_agents GETs /a2a/agents",
+      "severity": "required",
+      "category": "a2a-proxy",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.364789929240942
+    },
+    {
+      "id": "hermes-arp-get-agent-card",
+      "name": "arp_get_agent_card GETs Correct Path",
+      "severity": "required",
+      "category": "a2a-proxy",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 3.994740080088377
+    },
+    {
+      "id": "hermes-arp-send-message-path",
+      "name": "arp_send_message POSTs to /a2a/agents/{id}/message:send",
+      "severity": "required",
+      "category": "a2a-proxy",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.071596078574657
+    },
+    {
+      "id": "hermes-arp-send-message-body",
+      "name": "arp_send_message Body Has role and parts",
+      "severity": "required",
+      "category": "a2a-proxy",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 3.998868865892291
+    },
+    {
+      "id": "hermes-arp-send-content-type",
+      "name": "arp_send_message Content-Type application/json",
+      "severity": "required",
+      "category": "a2a-proxy",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.599343985319138
+    },
+    {
+      "id": "hermes-arp-route-path",
+      "name": "arp_route_message POSTs to /a2a/route/message:send",
+      "severity": "required",
+      "category": "a2a-proxy-routing",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.002033965662122
+    },
+    {
+      "id": "hermes-arp-route-tags",
+      "name": "arp_route_message Includes routing.tags",
+      "severity": "required",
+      "category": "a2a-proxy-routing",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 7.069602841511369
+    },
+    {
+      "id": "hermes-arp-route-context",
+      "name": "arp_route_message Propagates contextId",
+      "severity": "recommended",
+      "category": "a2a-proxy-routing",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.046618938446045
+    },
+    {
+      "id": "hermes-arp-list-workspaces",
+      "name": "arp_list_workspaces GETs /api/workspaces",
+      "severity": "required",
+      "category": "api-workspaces",
+      "status": "pass",
+      "error": "",
+      "duration_ms": 4.007244948297739
+    }
+  ]
+}

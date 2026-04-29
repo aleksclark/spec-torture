@@ -386,18 +386,18 @@ test_cases:
           id: 2
           result: "*"
 
-  - id: optional-message-id
-    name: SendMessage Without MessageId Succeeds
+  - id: missing-message-id
+    name: SendMessage Without MessageId Returns Error
     description: >
-      SendMessage without messageId succeeds. While messageId is marked
-      REQUIRED in the proto, implementations should generate one if omitted
-      for robustness.
-    severity: recommended
+      SendMessage without messageId returns a JSON-RPC error. The v1.0 proto
+      marks message_id as REQUIRED (google.api.field_behavior), so omitting
+      it is an invalid request.
+    severity: required
     category: messaging
     timeout: 60s
     tags:
       - messaging
-      - lifecycle
+      - errors
     steps:
       - action: send
         payload:
@@ -413,7 +413,9 @@ test_cases:
         expect:
           jsonrpc: "2.0"
           id: 1
-          result: "*"
+          error:
+            code: -32602
+            message: "*"
 
   # ---------------------------------------------------------------------------
   # Category: streaming
