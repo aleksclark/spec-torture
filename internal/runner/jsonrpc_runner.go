@@ -106,6 +106,11 @@ func (t *JSONRPCTransport) sendHTTP(ctx context.Context, payload map[string]any)
 	var jsonBody map[string]any
 	if err := json.Unmarshal(body, &jsonBody); err == nil {
 		tr.Body = jsonBody
+	} else {
+		var jsonArray []any
+		if err := json.Unmarshal(body, &jsonArray); err == nil {
+			tr.BodyArray = jsonArray
+		}
 	}
 
 	t.lastResp = tr
@@ -153,6 +158,11 @@ func (t *JSONRPCTransport) sendRaw(ctx context.Context, payload map[string]any) 
 			tr.JSONRPCResp = jsonResp
 		} else {
 			tr.Body = jsonResp
+		}
+	} else {
+		var jsonArray []any
+		if err := json.Unmarshal(body, &jsonArray); err == nil {
+			tr.BodyArray = jsonArray
 		}
 	}
 
@@ -233,6 +243,11 @@ func (t *JSONRPCTransport) sendJSONRPC(ctx context.Context, payload map[string]a
 		} else {
 			tr.Body = jsonResp
 		}
+	} else {
+		var jsonArray []any
+		if err := json.Unmarshal(body, &jsonArray); err == nil {
+			tr.BodyArray = jsonArray
+		}
 	}
 
 	t.lastResp = tr
@@ -302,6 +317,11 @@ func (t *JSONRPCTransport) sendJSONRPCStreaming(ctx context.Context, payload map
 				tr.JSONRPCResp = jsonResp
 			} else {
 				tr.Body = jsonResp
+			}
+		} else {
+			var jsonArray []any
+			if err := json.Unmarshal(body, &jsonArray); err == nil {
+				tr.BodyArray = jsonArray
 			}
 		}
 	}

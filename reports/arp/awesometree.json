@@ -1,0 +1,1111 @@
+{
+  "id": "28ee5234-882d-42cf-b84a-486f68df32ef",
+  "spec_id": "arp-http-v0.3",
+  "runtime": "awesometree",
+  "runtime_version": "0.1.0",
+  "started_at": "2026-04-28T10:51:51.464977422-05:00",
+  "completed_at": "2026-04-28T10:51:51.466965679-05:00",
+  "results": [
+    {
+      "id": "a83267e4-3bf4-491d-90bc-e0e5c56d2559",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-list-agents",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 604462,
+      "started_at": "2026-04-28T10:51:51.465028659-05:00",
+      "completed_at": "2026-04-28T10:51:51.465633121-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 595695,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1954,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    },
+    {
+      "id": "4241a0c3-185f-4d65-844d-bdd4b47d8944",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-list-agents-content-type",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 75673,
+      "started_at": "2026-04-28T10:51:51.465635836-05:00",
+      "completed_at": "2026-04-28T10:51:51.465711529-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 64051,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 1473,
+          "expected": {
+            "headers": {
+              "content-type": "application/json"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    },
+    {
+      "id": "0a6d5c1c-324f-484b-9353-4713a34413d8",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-discover-endpoint",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 55395,
+      "started_at": "2026-04-28T10:51:51.465712501-05:00",
+      "completed_at": "2026-04-28T10:51:51.465767886-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 47550,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 681,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    },
+    {
+      "id": "5dee1ac7-dd07-47bc-9ae1-3df44aca965d",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-nonexistent-agent-404",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 49003,
+      "started_at": "2026-04-28T10:51:51.465769599-05:00",
+      "completed_at": "2026-04-28T10:51:51.465818591-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 42991,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 250,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "ce0137df-d327-4c8a-a1e0-40fda9aeab2f",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-nonexistent-agent-message-404",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 61035,
+      "started_at": "2026-04-28T10:51:51.465819193-05:00",
+      "completed_at": "2026-04-28T10:51:51.465880228-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 56597,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 251,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "8e9025f6-f986-49cc-aac5-28fbbdcfedf2",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-nonexistent-agent-task-404",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 40116,
+      "started_at": "2026-04-28T10:51:51.465880999-05:00",
+      "completed_at": "2026-04-28T10:51:51.465921105-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 35938,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 230,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "8258422c-1633-4c5c-8d97-d92c126e25f6",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-nonexistent-agent-cancel-404",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 45997,
+      "started_at": "2026-04-28T10:51:51.465921756-05:00",
+      "completed_at": "2026-04-28T10:51:51.465967753-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 41188,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 160,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "d02369ab-bde9-4640-b37c-34122dd8bfe7",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-nonexistent-agent-stream-404",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 34716,
+      "started_at": "2026-04-28T10:51:51.465968124-05:00",
+      "completed_at": "2026-04-28T10:51:51.46600283-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 31550,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 160,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "de06fe58-d58e-49ee-bb67-424273b81f98",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-route-no-match-error",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 43522,
+      "started_at": "2026-04-28T10:51:51.466003291-05:00",
+      "completed_at": "2026-04-28T10:51:51.466046813-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 40186,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 161,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "82176d2d-eb79-4d5e-88c2-4e221193a2e9",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-route-endpoint-exists",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 37882,
+      "started_at": "2026-04-28T10:51:51.466047464-05:00",
+      "completed_at": "2026-04-28T10:51:51.466085346-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 31790,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 120,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "a3975f5e-4a65-45f0-9041-495ac3a55726",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-enforces-token-scope",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 32993,
+      "started_at": "2026-04-28T10:51:51.466085696-05:00",
+      "completed_at": "2026-04-28T10:51:51.466118699-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 29706,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 190,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "be039fe6-ecce-41f4-880d-6f0eed9261ea",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-no-auth-header-behavior",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 30268,
+      "started_at": "2026-04-28T10:51:51.466119129-05:00",
+      "completed_at": "2026-04-28T10:51:51.466149397-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 26069,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 501,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    },
+    {
+      "id": "bb77c6bb-8d1a-4bf3-8f8f-6b4e75995f6f",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "api-workspaces-list",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 231568,
+      "started_at": "2026-04-28T10:51:51.466149807-05:00",
+      "completed_at": "2026-04-28T10:51:51.466381375-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 227820,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "11161",
+              "content-type": "application/json",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            },
+            "raw_body": "[{\"name\":\"a2a\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":29,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/a2a\",\"acp_port\":9119,\"acp_url\":\"http://127.0.0.1:9119\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"a2a-agents\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":37,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/a2a-agents\",\"acp_port\":9127,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"acp-hardening\",\"project\":\"crush-mod\",\"active\":true,\"tag_index\":33,\"dir\":\"/home/aleks/work/projects/crush-modules/worktrees/acp-hardening\",\"acp_port\":9123,\"acp_url\":\"http://127.0.0.1:9123\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"add-project-cleanup\",\"project\":\"awesometree\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"add-server-restart\",\"project\":\"translate\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/crashing-flow\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":36,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-crashing-flow\",\"acp_port\":9126,\"acp_url\":\"http://127.0.0.1:9126\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/flow-context\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/freecad\",\"project\":\"switchboard\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/plugin-marketplace\",\"project\":\"switchboard\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/prisma-migration-reflection-flow\",\"project\":\"curri\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"arp-impl\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":39,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/arp-impl\",\"acp_port\":9129,\"acp_url\":\"http://127.0.0.1:9129\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-plan\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":40,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/arp-plan\",\"acp_port\":9130,\"acp_url\":\"http://127.0.0.1:9130\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-spec\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":38,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/arp-spec\",\"acp_port\":9128,\"acp_url\":\"http://127.0.0.1:9128\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-test\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":41,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/arp-test\",\"acp_port\":9131,\"acp_url\":\"http://127.0.0.1:9131\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"box-startup\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":23,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/box-startup\",\"acp_port\":9113,\"acp_url\":\"http://127.0.0.1:9113\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"fix-health-server\",\"project\":\"streamlate\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"fix-p1\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":25,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/fix-p1\",\"acp_port\":9115,\"acp_url\":\"http://127.0.0.1:9115\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"fix-p2\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":26,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/fix-p2\",\"acp_port\":9116,\"acp_url\":\"http://127.0.0.1:9116\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"fix-p3\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":28,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/fix-p3\",\"acp_port\":9118,\"acp_url\":\"http://127.0.0.1:9118\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"fix-p4\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":31,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/fix-p4\",\"acp_port\":9121,\"acp_url\":\"http://127.0.0.1:9121\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"fix-p5\",\"project\":\"crosstalk\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"fix-p6\",\"project\":\"crosstalk\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"fix-p7\",\"project\":\"crosstalk\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"fix-p8\",\"project\":\"crosstalk\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"kustomize-consolidation\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-durable-consumer\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-phase1-dedup\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"phase-9\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":11,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/phase-9\",\"acp_port\":9101,\"acp_url\":\"http://127.0.0.1:9101\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"post-fix\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":21,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/post-fix\",\"acp_port\":9111,\"acp_url\":\"http://127.0.0.1:9111\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"prisma-merge-queue\",\"project\":\"curri\",\"active\":true,\"tag_index\":35,\"dir\":\"/home/aleks/work/projects/curri/worktrees/prisma-merge-queue\",\"acp_port\":9125,\"acp_url\":\"http://127.0.0.1:9125\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"research-prosody-tokenization\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-training-pipelines\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-tts-conditioning\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"review-p1\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":10,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p1\",\"acp_port\":9100,\"acp_url\":\"http://127.0.0.1:9100\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p2\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":13,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p2\",\"acp_port\":9103,\"acp_url\":\"http://127.0.0.1:9103\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p3\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":16,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p3\",\"acp_port\":9106,\"acp_url\":\"http://127.0.0.1:9106\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p4\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":17,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p4\",\"acp_port\":9107,\"acp_url\":\"http://127.0.0.1:9107\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p5\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":18,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p5\",\"acp_port\":9108,\"acp_url\":\"http://127.0.0.1:9108\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p6\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":19,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p6\",\"acp_port\":9109,\"acp_url\":\"http://127.0.0.1:9109\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p7\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":20,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p7\",\"acp_port\":9110,\"acp_url\":\"http://127.0.0.1:9110\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p8\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":22,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p8\",\"acp_port\":9112,\"acp_url\":\"http://127.0.0.1:9112\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p9\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":24,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p9\",\"acp_port\":9114,\"acp_url\":\"http://127.0.0.1:9114\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"rwx-ci\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-deploy\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"shared-api-types\",\"project\":\"streamlate\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"snowpipe-output\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"stateless-overmind\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":34,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/stateless-overmind\",\"acp_port\":9124,\"acp_url\":\"http://127.0.0.1:9124\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"str0m-migrate\",\"project\":\"streamlate\",\"active\":true,\"tag_index\":15,\"dir\":\"/home/aleks/work/projects/streamlate/worktrees/str0m-migrate\",\"acp_port\":9105,\"acp_url\":\"http://127.0.0.1:9105\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"translation-review\",\"project\":\"streamlate\",\"active\":true,\"tag_index\":14,\"dir\":\"/home/aleks/work/projects/streamlate/worktrees/translation-review\",\"acp_port\":9104,\"acp_url\":\"http://127.0.0.1:9104\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"verify-p1\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":12,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/verify-p1\",\"acp_port\":9102,\"acp_url\":\"http://127.0.0.1:9102\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"verify-p2\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":27,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/verify-p2\",\"acp_port\":9117,\"acp_url\":\"http://127.0.0.1:9117\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"verify-p3\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":30,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/verify-p3\",\"acp_port\":9120,\"acp_url\":\"http://127.0.0.1:9120\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"verify-p4\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":32,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/verify-p4\",\"acp_port\":9122,\"acp_url\":\"http://127.0.0.1:9122\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"verify-p5\",\"project\":\"crosstalk\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"webrtc-health\",\"project\":\"streamlate\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null}]"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 722,
+          "expected": {
+            "headers": {
+              "content-type": "application/json"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "11161",
+              "content-type": "application/json",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            },
+            "raw_body": "[{\"name\":\"a2a\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":29,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/a2a\",\"acp_port\":9119,\"acp_url\":\"http://127.0.0.1:9119\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"a2a-agents\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":37,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/a2a-agents\",\"acp_port\":9127,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"acp-hardening\",\"project\":\"crush-mod\",\"active\":true,\"tag_index\":33,\"dir\":\"/home/aleks/work/projects/crush-modules/worktrees/acp-hardening\",\"acp_port\":9123,\"acp_url\":\"http://127.0.0.1:9123\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"add-project-cleanup\",\"project\":\"awesometree\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"add-server-restart\",\"project\":\"translate\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/crashing-flow\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":36,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-crashing-flow\",\"acp_port\":9126,\"acp_url\":\"http://127.0.0.1:9126\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/flow-context\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/freecad\",\"project\":\"switchboard\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/plugin-marketplace\",\"project\":\"switchboard\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/prisma-migration-reflection-flow\",\"project\":\"curri\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"arp-impl\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":39,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/arp-impl\",\"acp_port\":9129,\"acp_url\":\"http://127.0.0.1:9129\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-plan\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":40,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/arp-plan\",\"acp_port\":9130,\"acp_url\":\"http://127.0.0.1:9130\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-spec\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":38,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/arp-spec\",\"acp_port\":9128,\"acp_url\":\"http://127.0.0.1:9128\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-test\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":41,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/arp-test\",\"acp_port\":9131,\"acp_url\":\"http://127.0.0.1:9131\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"box-startup\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":23,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/box-startup\",\"acp_port\":9113,\"acp_url\":\"http://127.0.0.1:9113\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"fix-health-server\",\"project\":\"streamlate\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"fix-p1\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":25,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/fix-p1\",\"acp_port\":9115,\"acp_url\":\"http://127.0.0.1:9115\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"fix-p2\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":26,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/fix-p2\",\"acp_port\":9116,\"acp_url\":\"http://127.0.0.1:9116\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"fix-p3\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":28,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/fix-p3\",\"acp_port\":9118,\"acp_url\":\"http://127.0.0.1:9118\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"fix-p4\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":31,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/fix-p4\",\"acp_port\":9121,\"acp_url\":\"http://127.0.0.1:9121\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"fix-p5\",\"project\":\"crosstalk\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"fix-p6\",\"project\":\"crosstalk\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"fix-p7\",\"project\":\"crosstalk\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"fix-p8\",\"project\":\"crosstalk\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"kustomize-consolidation\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-durable-consumer\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-phase1-dedup\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"phase-9\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":11,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/phase-9\",\"acp_port\":9101,\"acp_url\":\"http://127.0.0.1:9101\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"post-fix\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":21,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/post-fix\",\"acp_port\":9111,\"acp_url\":\"http://127.0.0.1:9111\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"prisma-merge-queue\",\"project\":\"curri\",\"active\":true,\"tag_index\":35,\"dir\":\"/home/aleks/work/projects/curri/worktrees/prisma-merge-queue\",\"acp_port\":9125,\"acp_url\":\"http://127.0.0.1:9125\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"research-prosody-tokenization\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-training-pipelines\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-tts-conditioning\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"review-p1\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":10,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p1\",\"acp_port\":9100,\"acp_url\":\"http://127.0.0.1:9100\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p2\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":13,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p2\",\"acp_port\":9103,\"acp_url\":\"http://127.0.0.1:9103\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p3\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":16,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p3\",\"acp_port\":9106,\"acp_url\":\"http://127.0.0.1:9106\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p4\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":17,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p4\",\"acp_port\":9107,\"acp_url\":\"http://127.0.0.1:9107\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p5\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":18,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p5\",\"acp_port\":9108,\"acp_url\":\"http://127.0.0.1:9108\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p6\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":19,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p6\",\"acp_port\":9109,\"acp_url\":\"http://127.0.0.1:9109\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p7\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":20,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p7\",\"acp_port\":9110,\"acp_url\":\"http://127.0.0.1:9110\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p8\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":22,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p8\",\"acp_port\":9112,\"acp_url\":\"http://127.0.0.1:9112\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"review-p9\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":24,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/review-p9\",\"acp_port\":9114,\"acp_url\":\"http://127.0.0.1:9114\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"rwx-ci\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-deploy\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"shared-api-types\",\"project\":\"streamlate\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"snowpipe-output\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"stateless-overmind\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":34,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/stateless-overmind\",\"acp_port\":9124,\"acp_url\":\"http://127.0.0.1:9124\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"str0m-migrate\",\"project\":\"streamlate\",\"active\":true,\"tag_index\":15,\"dir\":\"/home/aleks/work/projects/streamlate/worktrees/str0m-migrate\",\"acp_port\":9105,\"acp_url\":\"http://127.0.0.1:9105\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"translation-review\",\"project\":\"streamlate\",\"active\":true,\"tag_index\":14,\"dir\":\"/home/aleks/work/projects/streamlate/worktrees/translation-review\",\"acp_port\":9104,\"acp_url\":\"http://127.0.0.1:9104\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"verify-p1\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":12,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/verify-p1\",\"acp_port\":9102,\"acp_url\":\"http://127.0.0.1:9102\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"verify-p2\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":27,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/verify-p2\",\"acp_port\":9117,\"acp_url\":\"http://127.0.0.1:9117\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"verify-p3\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":30,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/verify-p3\",\"acp_port\":9120,\"acp_url\":\"http://127.0.0.1:9120\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"verify-p4\",\"project\":\"crosstalk\",\"active\":true,\"tag_index\":32,\"dir\":\"/home/aleks/work/projects/crosstalk/worktrees/verify-p4\",\"acp_port\":9122,\"acp_url\":\"http://127.0.0.1:9122\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"verify-p5\",\"project\":\"crosstalk\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"webrtc-health\",\"project\":\"streamlate\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null}]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3b94a48b-f014-4ccb-9afc-6a7fd1ebdb31",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "api-workspaces-get-single",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 77807,
+      "started_at": "2026-04-28T10:51:51.466381766-05:00",
+      "completed_at": "2026-04-28T10:51:51.466459573-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 72797,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "232",
+              "content-type": "application/json",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            },
+            "body": {
+              "acp_port": 9129,
+              "acp_session_id": null,
+              "acp_status": "running",
+              "acp_url": "http://127.0.0.1:9129",
+              "active": true,
+              "dir": "/home/aleks/work/projects/awesometree/worktrees/arp-impl",
+              "name": "arp-impl",
+              "project": "awesometree",
+              "tag_index": 39
+            },
+            "raw_body": "{\"name\":\"arp-impl\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":39,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/arp-impl\",\"acp_port\":9129,\"acp_url\":\"http://127.0.0.1:9129\",\"acp_session_id\":null,\"acp_status\":\"running\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 1614,
+          "expected": {
+            "body": {
+              "active": true,
+              "name": "arp-impl",
+              "project": "awesometree"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "232",
+              "content-type": "application/json",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            },
+            "body": {
+              "acp_port": 9129,
+              "acp_session_id": null,
+              "acp_status": "running",
+              "acp_url": "http://127.0.0.1:9129",
+              "active": true,
+              "dir": "/home/aleks/work/projects/awesometree/worktrees/arp-impl",
+              "name": "arp-impl",
+              "project": "awesometree",
+              "tag_index": 39
+            },
+            "raw_body": "{\"name\":\"arp-impl\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":39,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/arp-impl\",\"acp_port\":9129,\"acp_url\":\"http://127.0.0.1:9129\",\"acp_session_id\":null,\"acp_status\":\"running\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fb0de227-e765-4c3c-b539-25cd904fadb2",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "api-workspaces-get-nonexistent",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 61496,
+      "started_at": "2026-04-28T10:51:51.466460174-05:00",
+      "completed_at": "2026-04-28T10:51:51.46652161-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 57969,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "60",
+              "content-type": "application/json",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            },
+            "body": {
+              "error": "workspace not found: nonexistent-workspace-00000"
+            },
+            "raw_body": "{\"error\":\"workspace not found: nonexistent-workspace-00000\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 141,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "60",
+              "content-type": "application/json",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            },
+            "body": {
+              "error": "workspace not found: nonexistent-workspace-00000"
+            },
+            "raw_body": "{\"error\":\"workspace not found: nonexistent-workspace-00000\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "24b93004-81d1-4dd1-bd35-e011ac43c638",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "api-projects-list",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "pass",
+      "duration": 192954,
+      "started_at": "2026-04-28T10:51:51.466522041-05:00",
+      "completed_at": "2026-04-28T10:51:51.466715005-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 189398,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "1528",
+              "content-type": "application/json",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            },
+            "raw_body": "[{\"name\":\"awesometree\",\"repo\":\"/home/aleks/work/projects/awesometree/repo\",\"branch\":\"master\"},{\"name\":\"blockyard\",\"repo\":\"/home/aleks/work/projects/blockyard/repo\",\"branch\":\"master\"},{\"name\":\"crosstalk\",\"repo\":\"/home/aleks/work/projects/crosstalk/repo\",\"branch\":\"master\"},{\"name\":\"crush\",\"repo\":\"/home/aleks/work/projects/crush/repo\",\"branch\":\"main\"},{\"name\":\"crush-a2a\",\"repo\":\"/home/aleks/work/projects/crush-a2a/repo\",\"branch\":\"master\"},{\"name\":\"crush-mod\",\"repo\":\"/home/aleks/work/projects/crush-modules/repo\",\"branch\":\"master\"},{\"name\":\"curri\",\"repo\":\"/home/aleks/work/projects/curri/repo\",\"branch\":\"master\"},{\"name\":\"curri-agents\",\"repo\":\"/home/aleks/work/projects/curri-agents/repo\",\"branch\":\"master\"},{\"name\":\"curri-data\",\"repo\":\"/home/aleks/work/projects/data/repo\",\"branch\":\"main\"},{\"name\":\"home\",\"repo\":\"/home/aleks/work/projects/home_assist/repo\",\"branch\":\"master\"},{\"name\":\"infra\",\"repo\":\"/home/aleks/work/projects/infra/repo\",\"branch\":\"master\"},{\"name\":\"spec-torture\",\"repo\":\"/home/aleks/work/projects/spec-torture/repo\",\"branch\":\"master\"},{\"name\":\"streamlate\",\"repo\":\"/home/aleks/work/projects/streamlate/repo\",\"branch\":\"master\"},{\"name\":\"switchboard\",\"repo\":\"/home/aleks/work/projects/switchboard/repo\",\"branch\":\"main\"},{\"name\":\"switchboard-plugins\",\"repo\":\"/home/aleks/work/projects/switchboard_plugins/repo\",\"branch\":\"master\"},{\"name\":\"telegraf\",\"repo\":\"/home/aleks/work/projects/telegraf/repo\",\"branch\":\"master\"},{\"name\":\"translate\",\"repo\":\"/home/aleks/work/projects/sermon_translate/repo\",\"branch\":\"master\"}]"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 401,
+          "expected": {
+            "headers": {
+              "content-type": "application/json"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "1528",
+              "content-type": "application/json",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            },
+            "raw_body": "[{\"name\":\"awesometree\",\"repo\":\"/home/aleks/work/projects/awesometree/repo\",\"branch\":\"master\"},{\"name\":\"blockyard\",\"repo\":\"/home/aleks/work/projects/blockyard/repo\",\"branch\":\"master\"},{\"name\":\"crosstalk\",\"repo\":\"/home/aleks/work/projects/crosstalk/repo\",\"branch\":\"master\"},{\"name\":\"crush\",\"repo\":\"/home/aleks/work/projects/crush/repo\",\"branch\":\"main\"},{\"name\":\"crush-a2a\",\"repo\":\"/home/aleks/work/projects/crush-a2a/repo\",\"branch\":\"master\"},{\"name\":\"crush-mod\",\"repo\":\"/home/aleks/work/projects/crush-modules/repo\",\"branch\":\"master\"},{\"name\":\"curri\",\"repo\":\"/home/aleks/work/projects/curri/repo\",\"branch\":\"master\"},{\"name\":\"curri-agents\",\"repo\":\"/home/aleks/work/projects/curri-agents/repo\",\"branch\":\"master\"},{\"name\":\"curri-data\",\"repo\":\"/home/aleks/work/projects/data/repo\",\"branch\":\"main\"},{\"name\":\"home\",\"repo\":\"/home/aleks/work/projects/home_assist/repo\",\"branch\":\"master\"},{\"name\":\"infra\",\"repo\":\"/home/aleks/work/projects/infra/repo\",\"branch\":\"master\"},{\"name\":\"spec-torture\",\"repo\":\"/home/aleks/work/projects/spec-torture/repo\",\"branch\":\"master\"},{\"name\":\"streamlate\",\"repo\":\"/home/aleks/work/projects/streamlate/repo\",\"branch\":\"master\"},{\"name\":\"switchboard\",\"repo\":\"/home/aleks/work/projects/switchboard/repo\",\"branch\":\"main\"},{\"name\":\"switchboard-plugins\",\"repo\":\"/home/aleks/work/projects/switchboard_plugins/repo\",\"branch\":\"master\"},{\"name\":\"telegraf\",\"repo\":\"/home/aleks/work/projects/telegraf/repo\",\"branch\":\"master\"},{\"name\":\"translate\",\"repo\":\"/home/aleks/work/projects/sermon_translate/repo\",\"branch\":\"master\"}]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "8fbcb6d8-b733-4e7b-a0e8-83afc3c14b32",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-agent-card-well-known-chained",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 30989,
+      "started_at": "2026-04-28T10:51:51.466715356-05:00",
+      "completed_at": "2026-04-28T10:51:51.466746355-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 27662,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 491,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    },
+    {
+      "id": "869bac3a-4404-4705-b318-cace47e5c9f8",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-enriched-card-metadata-arp-chained",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 24827,
+      "started_at": "2026-04-28T10:51:51.466747186-05:00",
+      "completed_at": "2026-04-28T10:51:51.466772083-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 21641,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 311,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    },
+    {
+      "id": "99e612b8-e233-47bb-bab2-37324337bb13",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-agent-card-interface-url-chained",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 28594,
+      "started_at": "2026-04-28T10:51:51.466772424-05:00",
+      "completed_at": "2026-04-28T10:51:51.466800998-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 25197,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 602,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    },
+    {
+      "id": "03986c8e-6850-4a3d-b0cd-31c5e2b8b6c5",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-send-message-chained",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 35136,
+      "started_at": "2026-04-28T10:51:51.466801449-05:00",
+      "completed_at": "2026-04-28T10:51:51.466836585-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 31730,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 361,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    },
+    {
+      "id": "8e257076-691f-4d41-a344-2f37651bb278",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-send-streaming-message-chained",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 30387,
+      "started_at": "2026-04-28T10:51:51.466837046-05:00",
+      "completed_at": "2026-04-28T10:51:51.466867423-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 26961,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 280,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    },
+    {
+      "id": "e0294cbd-bd11-4635-900c-8a85f9ca39dc",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-card-has-direct-url-chained",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 28253,
+      "started_at": "2026-04-28T10:51:51.466867724-05:00",
+      "completed_at": "2026-04-28T10:51:51.466895977-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 25067,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 371,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    },
+    {
+      "id": "d59eb7a5-9cca-437c-b4b7-1d554b419409",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-route-by-skill-tags",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 34535,
+      "started_at": "2026-04-28T10:51:51.466896378-05:00",
+      "completed_at": "2026-04-28T10:51:51.466930913-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 31279,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 300,
+          "expected": {
+            "body": "*",
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    },
+    {
+      "id": "8ef19b18-e2d9-4e8d-aa0e-d4b5e0a037a6",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-route-prefers-ready",
+      "runtime": "awesometree",
+      "runtime_version": "0.1.0",
+      "status": "fail",
+      "duration": 34175,
+      "started_at": "2026-04-28T10:51:51.466931334-05:00",
+      "completed_at": "2026-04-28T10:51:51.466965519-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 31089,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "fail",
+          "duration": 330,
+          "expected": {
+            "body": "*",
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "0",
+              "date": "Tue, 28 Apr 2026 15:51:51 GMT"
+            }
+          },
+          "error": "expected HTTP status 200, got 404"
+        }
+      ],
+      "error_message": "expected HTTP status 200, got 404"
+    }
+  ],
+  "summary": {
+    "total": 24,
+    "passed": 12,
+    "failed": 12,
+    "errors": 0,
+    "skipped": 0,
+    "timeouts": 0,
+    "compliance": 50
+  }
+}

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"regexp"
+	"strconv"
 	"strings"
 
 	"github.com/aleksclark/spec-torture/internal/schema"
@@ -15,6 +16,7 @@ type TransportResponse struct {
 	HTTPStatus  int                    `json:"http_status,omitempty"`
 	Headers     map[string]string      `json:"headers,omitempty"`
 	Body        map[string]any         `json:"body,omitempty"`
+	BodyArray   []any                  `json:"body_array,omitempty"`
 	RawBody     string                 `json:"raw_body,omitempty"`
 	SSEEvents   []map[string]any       `json:"sse_events,omitempty"`
 	JSONRPCResp map[string]any         `json:"jsonrpc_resp,omitempty"`
@@ -52,6 +54,9 @@ func mergeResponseData(resp *TransportResponse) map[string]any {
 	}
 	if resp.Body != nil {
 		return resp.Body
+	}
+	if resp.BodyArray != nil {
+		return map[string]any{"body": resp.BodyArray}
 	}
 	// Try to get from SSE events (last event)
 	if len(resp.SSEEvents) > 0 {
@@ -99,6 +104,12 @@ func resolveJSONPath(data map[string]any, path string) any {
 		switch m := current.(type) {
 		case map[string]any:
 			current = m[part]
+		case []any:
+			idx, err := strconv.Atoi(part)
+			if err != nil || idx < 0 || idx >= len(m) {
+				return nil
+			}
+			current = m[idx]
 		default:
 			return nil
 		}
@@ -140,15 +151,23 @@ func matchExpect(eval *Evaluator, resp *TransportResponse, expect map[string]any
 
 	// Check body (partial match against response body)
 	if expBody, ok := expect["body"]; ok {
-		expMap, ok := expBody.(map[string]any)
-		if !ok {
-			return fmt.Errorf("expected body must be a map")
-		}
-		if resp.Body == nil {
-			return fmt.Errorf("response has no body to match against")
-		}
-		if err := eval.Match(expMap, resp.Body); err != nil {
-			return fmt.Errorf("body match failed: %w", err)
+		// Wildcard: body: "*" means just check that a body exists
+		if expStr, ok := expBody.(string); ok && expStr == "*" {
+			if resp.Body == nil && resp.BodyArray == nil && resp.RawBody == "" {
+				return fmt.Errorf("expected body but response has no body")
+			}
+			// Wildcard matches — body exists, skip detailed matching
+		} else {
+			expMap, ok := expBody.(map[string]any)
+			if !ok {
+				return fmt.Errorf("expected body must be a map or \"*\" wildcard")
+			}
+			if resp.Body == nil {
+				return fmt.Errorf("response has no body to match against")
+			}
+			if err := eval.Match(expMap, resp.Body); err != nil {
+				return fmt.Errorf("body match failed: %w", err)
+			}
 		}
 	}
 
