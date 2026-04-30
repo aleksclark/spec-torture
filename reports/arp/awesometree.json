@@ -1,33 +1,33 @@
 {
-  "id": "f09f27fb-4795-4863-a5ed-0a77b99f294e",
+  "id": "431032ad-65d5-4a5d-9a27-ff9f4b1ef3c3",
   "spec_id": "arp-http-v0.3",
   "runtime": "awesometree",
-  "runtime_version": "0.1.0",
-  "started_at": "2026-04-29T15:02:43.696783661-05:00",
-  "completed_at": "2026-04-29T15:02:43.6998027-05:00",
+  "runtime_version": "0.2.0",
+  "started_at": "2026-04-30T15:59:38.127543605-05:00",
+  "completed_at": "2026-04-30T15:59:38.130371431-05:00",
   "results": [
     {
-      "id": "7baa35c4-ccbd-426f-8333-93fd843b1268",
+      "id": "f9dda519-c89f-41f7-97c7-df53fa584db9",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "openapi-spec-endpoint",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 828694,
-      "started_at": "2026-04-29T15:02:43.696861669-05:00",
-      "completed_at": "2026-04-29T15:02:43.697690373-05:00",
+      "duration": 888737,
+      "started_at": "2026-04-30T15:59:38.127602927-05:00",
+      "completed_at": "2026-04-30T15:59:38.128491664-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 817043,
+          "duration": 878748,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "17874",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "components": {
@@ -805,7 +805,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 2385,
+          "duration": 2635,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -817,7 +817,7 @@
             "headers": {
               "content-length": "17874",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "components": {
@@ -1594,27 +1594,27 @@
       ]
     },
     {
-      "id": "7e4704b2-1b4f-4e0e-a085-02b843e07bcb",
+      "id": "88049d1e-3fb1-4bfe-96db-52f186236409",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "api-workspaces-list",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 195138,
-      "started_at": "2026-04-29T15:02:43.697692006-05:00",
-      "completed_at": "2026-04-29T15:02:43.697887134-05:00",
+      "duration": 247226,
+      "started_at": "2026-04-30T15:59:38.12849485-05:00",
+      "completed_at": "2026-04-30T15:59:38.128742086-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 182444,
+          "duration": 225475,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "4640",
+              "content-length": "4883",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body_array": [
               {
@@ -1693,6 +1693,17 @@
                 "name": "aleks/flow-context",
                 "project": "curri-agents",
                 "tag_index": 0
+              },
+              {
+                "acp_port": 9109,
+                "acp_session_id": null,
+                "acp_status": "running",
+                "acp_url": "http://127.0.0.1:9109",
+                "active": true,
+                "dir": "/home/aleks/work/projects/curri-agents/worktrees/aleks-rotate",
+                "name": "aleks/rotate",
+                "project": "curri-agents",
+                "tag_index": 19
               },
               {
                 "acp_port": 9108,
@@ -1871,14 +1882,14 @@
                 "tag_index": 12
               }
             ],
-            "raw_body": "[{\"name\":\"a2a-agents\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":37,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/a2a-agents\",\"acp_port\":9127,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"a2a-mode\",\"project\":\"crush-mod\",\"active\":true,\"tag_index\":11,\"dir\":\"/home/aleks/work/projects/crush-modules/worktrees/a2a-mode\",\"acp_port\":9101,\"acp_url\":\"http://127.0.0.1:9101\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"a2a-rollout\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":14,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/a2a-rollout\",\"acp_port\":9104,\"acp_url\":\"http://127.0.0.1:9104\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"add-a2a\",\"project\":\"hermes-agent\",\"active\":true,\"tag_index\":15,\"dir\":\"/home/aleks/work/projects/hermes-agent/worktrees/add-a2a\",\"acp_port\":9105,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"add-project-cleanup\",\"project\":\"awesometree\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/a2a-migration\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":13,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-a2a-migration\",\"acp_port\":9103,\"acp_url\":\"http://127.0.0.1:9103\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/flow-context\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/staging-deploy-killed\",\"project\":\"curri\",\"active\":true,\"tag_index\":18,\"dir\":\"/home/aleks/work/projects/curri/worktrees/aleks-staging-deploy-killed\",\"acp_port\":9108,\"acp_url\":\"http://127.0.0.1:9108\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-a2a\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":16,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/arp-a2a\",\"acp_port\":9106,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"arp-test\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":17,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/arp-test\",\"acp_port\":9107,\"acp_url\":\"http://127.0.0.1:9107\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"cleanup\",\"project\":\"home\",\"active\":true,\"tag_index\":10,\"dir\":\"/home/aleks/work/projects/home_assist/worktrees/cleanup\",\"acp_port\":9100,\"acp_url\":\"http://127.0.0.1:9100\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"kustomize-consolidation\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-durable-consumer\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-phase1-dedup\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"prisma-merge-queue\",\"project\":\"curri\",\"active\":true,\"tag_index\":35,\"dir\":\"/home/aleks/work/projects/curri/worktrees/prisma-merge-queue\",\"acp_port\":9125,\"acp_url\":\"http://127.0.0.1:9125\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"research-prosody-tokenization\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-training-pipelines\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-tts-conditioning\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-ci\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-deploy\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"snowpipe-output\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"stateless-overmind\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":34,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/stateless-overmind\",\"acp_port\":9124,\"acp_url\":\"http://127.0.0.1:9124\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"test-crush-a2a\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":12,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/test-crush-a2a\",\"acp_port\":9102,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"}]"
+            "raw_body": "[{\"name\":\"a2a-agents\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":37,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/a2a-agents\",\"acp_port\":9127,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"a2a-mode\",\"project\":\"crush-mod\",\"active\":true,\"tag_index\":11,\"dir\":\"/home/aleks/work/projects/crush-modules/worktrees/a2a-mode\",\"acp_port\":9101,\"acp_url\":\"http://127.0.0.1:9101\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"a2a-rollout\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":14,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/a2a-rollout\",\"acp_port\":9104,\"acp_url\":\"http://127.0.0.1:9104\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"add-a2a\",\"project\":\"hermes-agent\",\"active\":true,\"tag_index\":15,\"dir\":\"/home/aleks/work/projects/hermes-agent/worktrees/add-a2a\",\"acp_port\":9105,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"add-project-cleanup\",\"project\":\"awesometree\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/a2a-migration\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":13,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-a2a-migration\",\"acp_port\":9103,\"acp_url\":\"http://127.0.0.1:9103\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/flow-context\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/rotate\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":19,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-rotate\",\"acp_port\":9109,\"acp_url\":\"http://127.0.0.1:9109\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/staging-deploy-killed\",\"project\":\"curri\",\"active\":true,\"tag_index\":18,\"dir\":\"/home/aleks/work/projects/curri/worktrees/aleks-staging-deploy-killed\",\"acp_port\":9108,\"acp_url\":\"http://127.0.0.1:9108\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-a2a\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":16,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/arp-a2a\",\"acp_port\":9106,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"arp-test\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":17,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/arp-test\",\"acp_port\":9107,\"acp_url\":\"http://127.0.0.1:9107\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"cleanup\",\"project\":\"home\",\"active\":true,\"tag_index\":10,\"dir\":\"/home/aleks/work/projects/home_assist/worktrees/cleanup\",\"acp_port\":9100,\"acp_url\":\"http://127.0.0.1:9100\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"kustomize-consolidation\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-durable-consumer\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-phase1-dedup\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"prisma-merge-queue\",\"project\":\"curri\",\"active\":true,\"tag_index\":35,\"dir\":\"/home/aleks/work/projects/curri/worktrees/prisma-merge-queue\",\"acp_port\":9125,\"acp_url\":\"http://127.0.0.1:9125\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"research-prosody-tokenization\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-training-pipelines\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-tts-conditioning\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-ci\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-deploy\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"snowpipe-output\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"stateless-overmind\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":34,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/stateless-overmind\",\"acp_port\":9124,\"acp_url\":\"http://127.0.0.1:9124\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"test-crush-a2a\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":12,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/test-crush-a2a\",\"acp_port\":9102,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"}]"
           }
         },
         {
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1302,
+          "duration": 741,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -1888,9 +1899,9 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "4640",
+              "content-length": "4883",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body_array": [
               {
@@ -1969,6 +1980,17 @@
                 "name": "aleks/flow-context",
                 "project": "curri-agents",
                 "tag_index": 0
+              },
+              {
+                "acp_port": 9109,
+                "acp_session_id": null,
+                "acp_status": "running",
+                "acp_url": "http://127.0.0.1:9109",
+                "active": true,
+                "dir": "/home/aleks/work/projects/curri-agents/worktrees/aleks-rotate",
+                "name": "aleks/rotate",
+                "project": "curri-agents",
+                "tag_index": 19
               },
               {
                 "acp_port": 9108,
@@ -2147,33 +2169,33 @@
                 "tag_index": 12
               }
             ],
-            "raw_body": "[{\"name\":\"a2a-agents\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":37,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/a2a-agents\",\"acp_port\":9127,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"a2a-mode\",\"project\":\"crush-mod\",\"active\":true,\"tag_index\":11,\"dir\":\"/home/aleks/work/projects/crush-modules/worktrees/a2a-mode\",\"acp_port\":9101,\"acp_url\":\"http://127.0.0.1:9101\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"a2a-rollout\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":14,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/a2a-rollout\",\"acp_port\":9104,\"acp_url\":\"http://127.0.0.1:9104\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"add-a2a\",\"project\":\"hermes-agent\",\"active\":true,\"tag_index\":15,\"dir\":\"/home/aleks/work/projects/hermes-agent/worktrees/add-a2a\",\"acp_port\":9105,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"add-project-cleanup\",\"project\":\"awesometree\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/a2a-migration\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":13,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-a2a-migration\",\"acp_port\":9103,\"acp_url\":\"http://127.0.0.1:9103\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/flow-context\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/staging-deploy-killed\",\"project\":\"curri\",\"active\":true,\"tag_index\":18,\"dir\":\"/home/aleks/work/projects/curri/worktrees/aleks-staging-deploy-killed\",\"acp_port\":9108,\"acp_url\":\"http://127.0.0.1:9108\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-a2a\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":16,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/arp-a2a\",\"acp_port\":9106,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"arp-test\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":17,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/arp-test\",\"acp_port\":9107,\"acp_url\":\"http://127.0.0.1:9107\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"cleanup\",\"project\":\"home\",\"active\":true,\"tag_index\":10,\"dir\":\"/home/aleks/work/projects/home_assist/worktrees/cleanup\",\"acp_port\":9100,\"acp_url\":\"http://127.0.0.1:9100\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"kustomize-consolidation\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-durable-consumer\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-phase1-dedup\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"prisma-merge-queue\",\"project\":\"curri\",\"active\":true,\"tag_index\":35,\"dir\":\"/home/aleks/work/projects/curri/worktrees/prisma-merge-queue\",\"acp_port\":9125,\"acp_url\":\"http://127.0.0.1:9125\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"research-prosody-tokenization\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-training-pipelines\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-tts-conditioning\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-ci\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-deploy\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"snowpipe-output\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"stateless-overmind\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":34,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/stateless-overmind\",\"acp_port\":9124,\"acp_url\":\"http://127.0.0.1:9124\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"test-crush-a2a\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":12,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/test-crush-a2a\",\"acp_port\":9102,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"}]"
+            "raw_body": "[{\"name\":\"a2a-agents\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":37,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/a2a-agents\",\"acp_port\":9127,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"a2a-mode\",\"project\":\"crush-mod\",\"active\":true,\"tag_index\":11,\"dir\":\"/home/aleks/work/projects/crush-modules/worktrees/a2a-mode\",\"acp_port\":9101,\"acp_url\":\"http://127.0.0.1:9101\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"a2a-rollout\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":14,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/a2a-rollout\",\"acp_port\":9104,\"acp_url\":\"http://127.0.0.1:9104\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"add-a2a\",\"project\":\"hermes-agent\",\"active\":true,\"tag_index\":15,\"dir\":\"/home/aleks/work/projects/hermes-agent/worktrees/add-a2a\",\"acp_port\":9105,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"add-project-cleanup\",\"project\":\"awesometree\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/a2a-migration\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":13,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-a2a-migration\",\"acp_port\":9103,\"acp_url\":\"http://127.0.0.1:9103\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/flow-context\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/rotate\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":19,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-rotate\",\"acp_port\":9109,\"acp_url\":\"http://127.0.0.1:9109\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/staging-deploy-killed\",\"project\":\"curri\",\"active\":true,\"tag_index\":18,\"dir\":\"/home/aleks/work/projects/curri/worktrees/aleks-staging-deploy-killed\",\"acp_port\":9108,\"acp_url\":\"http://127.0.0.1:9108\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-a2a\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":16,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/arp-a2a\",\"acp_port\":9106,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"arp-test\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":17,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/arp-test\",\"acp_port\":9107,\"acp_url\":\"http://127.0.0.1:9107\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"cleanup\",\"project\":\"home\",\"active\":true,\"tag_index\":10,\"dir\":\"/home/aleks/work/projects/home_assist/worktrees/cleanup\",\"acp_port\":9100,\"acp_url\":\"http://127.0.0.1:9100\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"kustomize-consolidation\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-durable-consumer\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-phase1-dedup\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"prisma-merge-queue\",\"project\":\"curri\",\"active\":true,\"tag_index\":35,\"dir\":\"/home/aleks/work/projects/curri/worktrees/prisma-merge-queue\",\"acp_port\":9125,\"acp_url\":\"http://127.0.0.1:9125\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"research-prosody-tokenization\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-training-pipelines\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-tts-conditioning\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-ci\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-deploy\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"snowpipe-output\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"stateless-overmind\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":34,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/stateless-overmind\",\"acp_port\":9124,\"acp_url\":\"http://127.0.0.1:9124\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"test-crush-a2a\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":12,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/test-crush-a2a\",\"acp_port\":9102,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"}]"
           }
         }
       ]
     },
     {
-      "id": "2d1123b3-75cc-4302-a367-2ace845e37b4",
+      "id": "df8e0f18-e1d7-41dd-b398-e57d5e0afc14",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "api-workspaces-list-content-type",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 155063,
-      "started_at": "2026-04-29T15:02:43.697888557-05:00",
-      "completed_at": "2026-04-29T15:02:43.69804361-05:00",
+      "duration": 140475,
+      "started_at": "2026-04-30T15:59:38.128743429-05:00",
+      "completed_at": "2026-04-30T15:59:38.128884024-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 145915,
+          "duration": 134474,
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "4640",
+              "content-length": "4883",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body_array": [
               {
@@ -2252,6 +2274,17 @@
                 "name": "aleks/flow-context",
                 "project": "curri-agents",
                 "tag_index": 0
+              },
+              {
+                "acp_port": 9109,
+                "acp_session_id": null,
+                "acp_status": "running",
+                "acp_url": "http://127.0.0.1:9109",
+                "active": true,
+                "dir": "/home/aleks/work/projects/curri-agents/worktrees/aleks-rotate",
+                "name": "aleks/rotate",
+                "project": "curri-agents",
+                "tag_index": 19
               },
               {
                 "acp_port": 9108,
@@ -2430,14 +2463,14 @@
                 "tag_index": 12
               }
             ],
-            "raw_body": "[{\"name\":\"a2a-agents\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":37,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/a2a-agents\",\"acp_port\":9127,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"a2a-mode\",\"project\":\"crush-mod\",\"active\":true,\"tag_index\":11,\"dir\":\"/home/aleks/work/projects/crush-modules/worktrees/a2a-mode\",\"acp_port\":9101,\"acp_url\":\"http://127.0.0.1:9101\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"a2a-rollout\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":14,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/a2a-rollout\",\"acp_port\":9104,\"acp_url\":\"http://127.0.0.1:9104\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"add-a2a\",\"project\":\"hermes-agent\",\"active\":true,\"tag_index\":15,\"dir\":\"/home/aleks/work/projects/hermes-agent/worktrees/add-a2a\",\"acp_port\":9105,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"add-project-cleanup\",\"project\":\"awesometree\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/a2a-migration\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":13,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-a2a-migration\",\"acp_port\":9103,\"acp_url\":\"http://127.0.0.1:9103\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/flow-context\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/staging-deploy-killed\",\"project\":\"curri\",\"active\":true,\"tag_index\":18,\"dir\":\"/home/aleks/work/projects/curri/worktrees/aleks-staging-deploy-killed\",\"acp_port\":9108,\"acp_url\":\"http://127.0.0.1:9108\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-a2a\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":16,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/arp-a2a\",\"acp_port\":9106,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"arp-test\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":17,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/arp-test\",\"acp_port\":9107,\"acp_url\":\"http://127.0.0.1:9107\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"cleanup\",\"project\":\"home\",\"active\":true,\"tag_index\":10,\"dir\":\"/home/aleks/work/projects/home_assist/worktrees/cleanup\",\"acp_port\":9100,\"acp_url\":\"http://127.0.0.1:9100\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"kustomize-consolidation\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-durable-consumer\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-phase1-dedup\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"prisma-merge-queue\",\"project\":\"curri\",\"active\":true,\"tag_index\":35,\"dir\":\"/home/aleks/work/projects/curri/worktrees/prisma-merge-queue\",\"acp_port\":9125,\"acp_url\":\"http://127.0.0.1:9125\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"research-prosody-tokenization\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-training-pipelines\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-tts-conditioning\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-ci\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-deploy\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"snowpipe-output\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"stateless-overmind\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":34,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/stateless-overmind\",\"acp_port\":9124,\"acp_url\":\"http://127.0.0.1:9124\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"test-crush-a2a\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":12,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/test-crush-a2a\",\"acp_port\":9102,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"}]"
+            "raw_body": "[{\"name\":\"a2a-agents\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":37,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/a2a-agents\",\"acp_port\":9127,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"a2a-mode\",\"project\":\"crush-mod\",\"active\":true,\"tag_index\":11,\"dir\":\"/home/aleks/work/projects/crush-modules/worktrees/a2a-mode\",\"acp_port\":9101,\"acp_url\":\"http://127.0.0.1:9101\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"a2a-rollout\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":14,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/a2a-rollout\",\"acp_port\":9104,\"acp_url\":\"http://127.0.0.1:9104\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"add-a2a\",\"project\":\"hermes-agent\",\"active\":true,\"tag_index\":15,\"dir\":\"/home/aleks/work/projects/hermes-agent/worktrees/add-a2a\",\"acp_port\":9105,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"add-project-cleanup\",\"project\":\"awesometree\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/a2a-migration\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":13,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-a2a-migration\",\"acp_port\":9103,\"acp_url\":\"http://127.0.0.1:9103\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/flow-context\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/rotate\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":19,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-rotate\",\"acp_port\":9109,\"acp_url\":\"http://127.0.0.1:9109\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/staging-deploy-killed\",\"project\":\"curri\",\"active\":true,\"tag_index\":18,\"dir\":\"/home/aleks/work/projects/curri/worktrees/aleks-staging-deploy-killed\",\"acp_port\":9108,\"acp_url\":\"http://127.0.0.1:9108\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-a2a\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":16,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/arp-a2a\",\"acp_port\":9106,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"arp-test\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":17,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/arp-test\",\"acp_port\":9107,\"acp_url\":\"http://127.0.0.1:9107\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"cleanup\",\"project\":\"home\",\"active\":true,\"tag_index\":10,\"dir\":\"/home/aleks/work/projects/home_assist/worktrees/cleanup\",\"acp_port\":9100,\"acp_url\":\"http://127.0.0.1:9100\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"kustomize-consolidation\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-durable-consumer\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-phase1-dedup\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"prisma-merge-queue\",\"project\":\"curri\",\"active\":true,\"tag_index\":35,\"dir\":\"/home/aleks/work/projects/curri/worktrees/prisma-merge-queue\",\"acp_port\":9125,\"acp_url\":\"http://127.0.0.1:9125\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"research-prosody-tokenization\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-training-pipelines\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-tts-conditioning\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-ci\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-deploy\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"snowpipe-output\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"stateless-overmind\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":34,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/stateless-overmind\",\"acp_port\":9124,\"acp_url\":\"http://127.0.0.1:9124\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"test-crush-a2a\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":12,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/test-crush-a2a\",\"acp_port\":9102,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"}]"
           }
         },
         {
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1052,
+          "duration": 862,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -2447,9 +2480,9 @@
           "actual": {
             "http_status": 200,
             "headers": {
-              "content-length": "4640",
+              "content-length": "4883",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body_array": [
               {
@@ -2528,6 +2561,17 @@
                 "name": "aleks/flow-context",
                 "project": "curri-agents",
                 "tag_index": 0
+              },
+              {
+                "acp_port": 9109,
+                "acp_session_id": null,
+                "acp_status": "running",
+                "acp_url": "http://127.0.0.1:9109",
+                "active": true,
+                "dir": "/home/aleks/work/projects/curri-agents/worktrees/aleks-rotate",
+                "name": "aleks/rotate",
+                "project": "curri-agents",
+                "tag_index": 19
               },
               {
                 "acp_port": 9108,
@@ -2706,33 +2750,33 @@
                 "tag_index": 12
               }
             ],
-            "raw_body": "[{\"name\":\"a2a-agents\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":37,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/a2a-agents\",\"acp_port\":9127,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"a2a-mode\",\"project\":\"crush-mod\",\"active\":true,\"tag_index\":11,\"dir\":\"/home/aleks/work/projects/crush-modules/worktrees/a2a-mode\",\"acp_port\":9101,\"acp_url\":\"http://127.0.0.1:9101\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"a2a-rollout\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":14,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/a2a-rollout\",\"acp_port\":9104,\"acp_url\":\"http://127.0.0.1:9104\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"add-a2a\",\"project\":\"hermes-agent\",\"active\":true,\"tag_index\":15,\"dir\":\"/home/aleks/work/projects/hermes-agent/worktrees/add-a2a\",\"acp_port\":9105,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"add-project-cleanup\",\"project\":\"awesometree\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/a2a-migration\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":13,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-a2a-migration\",\"acp_port\":9103,\"acp_url\":\"http://127.0.0.1:9103\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/flow-context\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/staging-deploy-killed\",\"project\":\"curri\",\"active\":true,\"tag_index\":18,\"dir\":\"/home/aleks/work/projects/curri/worktrees/aleks-staging-deploy-killed\",\"acp_port\":9108,\"acp_url\":\"http://127.0.0.1:9108\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-a2a\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":16,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/arp-a2a\",\"acp_port\":9106,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"arp-test\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":17,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/arp-test\",\"acp_port\":9107,\"acp_url\":\"http://127.0.0.1:9107\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"cleanup\",\"project\":\"home\",\"active\":true,\"tag_index\":10,\"dir\":\"/home/aleks/work/projects/home_assist/worktrees/cleanup\",\"acp_port\":9100,\"acp_url\":\"http://127.0.0.1:9100\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"kustomize-consolidation\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-durable-consumer\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-phase1-dedup\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"prisma-merge-queue\",\"project\":\"curri\",\"active\":true,\"tag_index\":35,\"dir\":\"/home/aleks/work/projects/curri/worktrees/prisma-merge-queue\",\"acp_port\":9125,\"acp_url\":\"http://127.0.0.1:9125\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"research-prosody-tokenization\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-training-pipelines\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-tts-conditioning\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-ci\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-deploy\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"snowpipe-output\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"stateless-overmind\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":34,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/stateless-overmind\",\"acp_port\":9124,\"acp_url\":\"http://127.0.0.1:9124\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"test-crush-a2a\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":12,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/test-crush-a2a\",\"acp_port\":9102,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"}]"
+            "raw_body": "[{\"name\":\"a2a-agents\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":37,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/a2a-agents\",\"acp_port\":9127,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"a2a-mode\",\"project\":\"crush-mod\",\"active\":true,\"tag_index\":11,\"dir\":\"/home/aleks/work/projects/crush-modules/worktrees/a2a-mode\",\"acp_port\":9101,\"acp_url\":\"http://127.0.0.1:9101\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"a2a-rollout\",\"project\":\"awesometree\",\"active\":true,\"tag_index\":14,\"dir\":\"/home/aleks/work/projects/awesometree/worktrees/a2a-rollout\",\"acp_port\":9104,\"acp_url\":\"http://127.0.0.1:9104\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"add-a2a\",\"project\":\"hermes-agent\",\"active\":true,\"tag_index\":15,\"dir\":\"/home/aleks/work/projects/hermes-agent/worktrees/add-a2a\",\"acp_port\":9105,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"add-project-cleanup\",\"project\":\"awesometree\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/a2a-migration\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":13,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-a2a-migration\",\"acp_port\":9103,\"acp_url\":\"http://127.0.0.1:9103\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/flow-context\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"aleks/rotate\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":19,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/aleks-rotate\",\"acp_port\":9109,\"acp_url\":\"http://127.0.0.1:9109\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"aleks/staging-deploy-killed\",\"project\":\"curri\",\"active\":true,\"tag_index\":18,\"dir\":\"/home/aleks/work/projects/curri/worktrees/aleks-staging-deploy-killed\",\"acp_port\":9108,\"acp_url\":\"http://127.0.0.1:9108\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"arp-a2a\",\"project\":\"switchboard-plugins\",\"active\":true,\"tag_index\":16,\"dir\":\"/home/aleks/work/projects/switchboard_plugins/worktrees/arp-a2a\",\"acp_port\":9106,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"},{\"name\":\"arp-test\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":17,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/arp-test\",\"acp_port\":9107,\"acp_url\":\"http://127.0.0.1:9107\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"cleanup\",\"project\":\"home\",\"active\":true,\"tag_index\":10,\"dir\":\"/home/aleks/work/projects/home_assist/worktrees/cleanup\",\"acp_port\":9100,\"acp_url\":\"http://127.0.0.1:9100\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"kustomize-consolidation\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-durable-consumer\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"nats-phase1-dedup\",\"project\":\"curri-agents\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"prisma-merge-queue\",\"project\":\"curri\",\"active\":true,\"tag_index\":35,\"dir\":\"/home/aleks/work/projects/curri/worktrees/prisma-merge-queue\",\"acp_port\":9125,\"acp_url\":\"http://127.0.0.1:9125\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"research-prosody-tokenization\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-training-pipelines\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"research-tts-conditioning\",\"project\":\"audiobook\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-ci\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"rwx-deploy\",\"project\":\"curri-data\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"snowpipe-output\",\"project\":\"telegraf\",\"active\":false,\"tag_index\":0,\"dir\":\"\",\"acp_port\":null,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":null},{\"name\":\"stateless-overmind\",\"project\":\"curri-agents\",\"active\":true,\"tag_index\":34,\"dir\":\"/home/aleks/work/projects/curri-agents/worktrees/stateless-overmind\",\"acp_port\":9124,\"acp_url\":\"http://127.0.0.1:9124\",\"acp_session_id\":null,\"acp_status\":\"running\"},{\"name\":\"test-crush-a2a\",\"project\":\"spec-torture\",\"active\":true,\"tag_index\":12,\"dir\":\"/home/aleks/work/projects/spec-torture/worktrees/test-crush-a2a\",\"acp_port\":9102,\"acp_url\":null,\"acp_session_id\":null,\"acp_status\":\"stopped\"}]"
           }
         }
       ]
     },
     {
-      "id": "11531f32-72b8-4638-9c42-f2024f9fcd0c",
+      "id": "4baeae4e-9818-4d62-a239-618288cb091c",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "api-workspaces-get-nonexistent",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 72707,
-      "started_at": "2026-04-29T15:02:43.698045714-05:00",
-      "completed_at": "2026-04-29T15:02:43.698118481-05:00",
+      "duration": 79190,
+      "started_at": "2026-04-30T15:59:38.128885557-05:00",
+      "completed_at": "2026-04-30T15:59:38.128964737-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 62568,
+          "duration": 72787,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "60",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "workspace not found: nonexistent-workspace-00000"
@@ -2753,7 +2797,7 @@
             "headers": {
               "content-length": "60",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "workspace not found: nonexistent-workspace-00000"
@@ -2764,27 +2808,27 @@
       ]
     },
     {
-      "id": "ccde8f28-11cc-4295-9311-1f4aa54555dd",
+      "id": "85de4dcd-58da-4280-98cd-1d16e7e7bd76",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "api-projects-list",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 285509,
-      "started_at": "2026-04-29T15:02:43.698118992-05:00",
-      "completed_at": "2026-04-29T15:02:43.698404511-05:00",
+      "duration": 263397,
+      "started_at": "2026-04-30T15:59:38.12896656-05:00",
+      "completed_at": "2026-04-30T15:59:38.129230057-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 276262,
+          "duration": 254250,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "1621",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body_array": [
               {
@@ -2885,7 +2929,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 3467,
+          "duration": 1242,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -2897,7 +2941,7 @@
             "headers": {
               "content-length": "1621",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body_array": [
               {
@@ -2997,27 +3041,27 @@
       ]
     },
     {
-      "id": "766bda08-ae82-4874-b513-6286785680dc",
+      "id": "e187e3f8-7388-4ea3-b53a-22e34ce0d8c4",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "api-projects-get-nonexistent",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 56005,
-      "started_at": "2026-04-29T15:02:43.698405924-05:00",
-      "completed_at": "2026-04-29T15:02:43.698461939-05:00",
+      "duration": 66235,
+      "started_at": "2026-04-30T15:59:38.12923136-05:00",
+      "completed_at": "2026-04-30T15:59:38.129297605-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 48512,
+          "duration": 55836,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "56",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "project not found: nonexistent-project-00000"
@@ -3029,7 +3073,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 491,
+          "duration": 341,
           "expected": {
             "http_status": 404
           },
@@ -3038,7 +3082,7 @@
             "headers": {
               "content-length": "56",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "project not found: nonexistent-project-00000"
@@ -3049,27 +3093,27 @@
       ]
     },
     {
-      "id": "d4895e0c-7bf2-49db-8805-e2f2c161680f",
+      "id": "3d4d36b6-77a1-47e6-8721-60f11e9bb752",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-list-agents",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 55615,
-      "started_at": "2026-04-29T15:02:43.69846252-05:00",
-      "completed_at": "2026-04-29T15:02:43.698518145-05:00",
+      "duration": 64311,
+      "started_at": "2026-04-30T15:59:38.129298236-05:00",
+      "completed_at": "2026-04-30T15:59:38.129362547-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 49694,
+          "duration": 58270,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3078,7 +3122,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 972,
+          "duration": 1002,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -3090,7 +3134,7 @@
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3098,27 +3142,27 @@
       ]
     },
     {
-      "id": "3d62dcc9-39b7-4d87-a2c9-7b620909a6a0",
+      "id": "b04f14ba-d6c9-4dce-a8c3-92798b840a75",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-discover-endpoint",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 71536,
-      "started_at": "2026-04-29T15:02:43.698518656-05:00",
-      "completed_at": "2026-04-29T15:02:43.698590191-05:00",
+      "duration": 60034,
+      "started_at": "2026-04-30T15:59:38.129363148-05:00",
+      "completed_at": "2026-04-30T15:59:38.129423192-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 66185,
+          "duration": 55104,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3127,7 +3171,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 310,
+          "duration": 320,
           "expected": {
             "http_status": 200
           },
@@ -3136,7 +3180,7 @@
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3144,27 +3188,27 @@
       ]
     },
     {
-      "id": "eb281396-ec8b-41a5-999e-9718d764fff8",
+      "id": "86d1e228-c8e6-4ce6-83db-297cdde1298d",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-discover-filter-workspace",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 64762,
-      "started_at": "2026-04-29T15:02:43.698590552-05:00",
-      "completed_at": "2026-04-29T15:02:43.698655324-05:00",
+      "duration": 55444,
+      "started_at": "2026-04-30T15:59:38.129423743-05:00",
+      "completed_at": "2026-04-30T15:59:38.129479187-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 59974,
+          "duration": 49754,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3173,7 +3217,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 681,
+          "duration": 230,
           "expected": {
             "http_status": 200
           },
@@ -3182,7 +3226,7 @@
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3190,27 +3234,27 @@
       ]
     },
     {
-      "id": "d737190b-16ad-47f8-a35f-782bdc18db73",
+      "id": "44e71853-3986-4da1-89bc-91a5c9227ad6",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-discover-filter-capability",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 101852,
-      "started_at": "2026-04-29T15:02:43.698657599-05:00",
-      "completed_at": "2026-04-29T15:02:43.6987591-05:00",
+      "duration": 50064,
+      "started_at": "2026-04-30T15:59:38.129479798-05:00",
+      "completed_at": "2026-04-30T15:59:38.129529863-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 93066,
+          "duration": 45416,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3219,7 +3263,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 421,
+          "duration": 341,
           "expected": {
             "http_status": 200
           },
@@ -3228,7 +3272,7 @@
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3236,27 +3280,27 @@
       ]
     },
     {
-      "id": "87275824-a618-4058-99d3-1de87c6e6e52",
+      "id": "4b4f52a1-71cf-4670-8737-736927b45688",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-nonexistent-agent-card-404",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 83627,
-      "started_at": "2026-04-29T15:02:43.698761264-05:00",
-      "completed_at": "2026-04-29T15:02:43.698844952-05:00",
+      "duration": 53130,
+      "started_at": "2026-04-30T15:59:38.129530725-05:00",
+      "completed_at": "2026-04-30T15:59:38.129583865-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 76575,
+          "duration": 47951,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -3268,7 +3312,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 541,
+          "duration": 311,
           "expected": {
             "http_status": 404
           },
@@ -3277,7 +3321,7 @@
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -3288,27 +3332,27 @@
       ]
     },
     {
-      "id": "8b14f9d4-521e-4709-8a86-de57c45d6b9e",
+      "id": "0e95da69-d980-4209-9f0d-e8373ffbd1e7",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-nonexistent-agent-message-404",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 93777,
-      "started_at": "2026-04-29T15:02:43.698845924-05:00",
-      "completed_at": "2026-04-29T15:02:43.698939701-05:00",
+      "duration": 77816,
+      "started_at": "2026-04-30T15:59:38.129584216-05:00",
+      "completed_at": "2026-04-30T15:59:38.129662032-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 85642,
+          "duration": 73589,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -3320,7 +3364,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 310,
+          "duration": 200,
           "expected": {
             "http_status": 404
           },
@@ -3329,7 +3373,7 @@
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -3340,27 +3384,27 @@
       ]
     },
     {
-      "id": "b9f598e9-b7f9-4d98-be19-044efc162dc4",
+      "id": "55e3b86f-de1a-4268-852a-7b709b686353",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-nonexistent-agent-task-404",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 59513,
-      "started_at": "2026-04-29T15:02:43.698940683-05:00",
-      "completed_at": "2026-04-29T15:02:43.699000196-05:00",
+      "duration": 49574,
+      "started_at": "2026-04-30T15:59:38.129662463-05:00",
+      "completed_at": "2026-04-30T15:59:38.129712027-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 54022,
+          "duration": 44794,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -3372,7 +3416,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 440,
+          "duration": 151,
           "expected": {
             "http_status": 404
           },
@@ -3381,7 +3425,7 @@
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -3392,27 +3436,27 @@
       ]
     },
     {
-      "id": "9ccec380-a309-4395-8273-adf2511facaf",
+      "id": "e86da83c-eb98-46e7-9bae-bebcdfdc6f83",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-nonexistent-agent-cancel-404",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 91322,
-      "started_at": "2026-04-29T15:02:43.699000947-05:00",
-      "completed_at": "2026-04-29T15:02:43.699092329-05:00",
+      "duration": 46438,
+      "started_at": "2026-04-30T15:59:38.129712327-05:00",
+      "completed_at": "2026-04-30T15:59:38.129758755-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 84429,
+          "duration": 42210,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -3424,7 +3468,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 441,
+          "duration": 281,
           "expected": {
             "http_status": 404
           },
@@ -3433,7 +3477,7 @@
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -3444,27 +3488,27 @@
       ]
     },
     {
-      "id": "4b2173d4-c8df-4276-a7a8-eb64003469b1",
+      "id": "ff880f3e-f4d1-4538-bc1a-e6941b9a4336",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-nonexistent-agent-stream-404",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 66585,
-      "started_at": "2026-04-29T15:02:43.699092971-05:00",
-      "completed_at": "2026-04-29T15:02:43.699159616-05:00",
+      "duration": 54893,
+      "started_at": "2026-04-30T15:59:38.129759206-05:00",
+      "completed_at": "2026-04-30T15:59:38.129814109-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 59363,
+          "duration": 49793,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -3485,7 +3529,7 @@
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -3496,27 +3540,27 @@
       ]
     },
     {
-      "id": "8b29f3ae-01c1-462f-bdb3-e99c57b20e52",
+      "id": "faca03b0-cf5b-4a15-a789-7c1d550cd05b",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-route-endpoint-accepts-post",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 77056,
-      "started_at": "2026-04-29T15:02:43.699160077-05:00",
-      "completed_at": "2026-04-29T15:02:43.699237143-05:00",
+      "duration": 75944,
+      "started_at": "2026-04-30T15:59:38.12981456-05:00",
+      "completed_at": "2026-04-30T15:59:38.129890544-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 72166,
+          "duration": 71164,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "no agent found matching tags: [\"test\"]"
@@ -3528,7 +3572,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 441,
+          "duration": 300,
           "expected": {
             "http_status": 404
           },
@@ -3537,7 +3581,7 @@
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "no agent found matching tags: [\"test\"]"
@@ -3548,27 +3592,27 @@
       ]
     },
     {
-      "id": "e0060312-9cb0-4e42-bdef-9b8a44f5cc8a",
+      "id": "4e49e007-ce73-4893-b440-4bf8755f9cdc",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-route-no-match-404",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "pass",
-      "duration": 89920,
-      "started_at": "2026-04-29T15:02:43.699237904-05:00",
-      "completed_at": "2026-04-29T15:02:43.699327894-05:00",
+      "duration": 56186,
+      "started_at": "2026-04-30T15:59:38.129891155-05:00",
+      "completed_at": "2026-04-30T15:59:38.129947351-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 83066,
+          "duration": 51407,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "76",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "no agent found matching tags: [\"nonexistent-capability-00000\"]"
@@ -3580,7 +3624,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 441,
+          "duration": 241,
           "expected": {
             "http_status": 404
           },
@@ -3589,7 +3633,7 @@
             "headers": {
               "content-length": "76",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "no agent found matching tags: [\"nonexistent-capability-00000\"]"
@@ -3600,27 +3644,27 @@
       ]
     },
     {
-      "id": "5e92d422-6e22-479b-a103-7a90c5e0d00f",
+      "id": "fd70de34-303c-4838-991f-f1b1ebd33fb4",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-list-then-card",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "fail",
-      "duration": 109266,
-      "started_at": "2026-04-29T15:02:43.699329156-05:00",
-      "completed_at": "2026-04-29T15:02:43.699438423-05:00",
+      "duration": 112192,
+      "started_at": "2026-04-30T15:59:38.129949134-05:00",
+      "completed_at": "2026-04-30T15:59:38.130061396-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 48662,
+          "duration": 46197,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3629,7 +3673,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 361,
+          "duration": 291,
           "expected": {
             "http_status": 200
           },
@@ -3638,7 +3682,7 @@
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3647,13 +3691,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 52008,
+          "duration": 60735,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "34",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: \u003cnil\u003e"
@@ -3665,7 +3709,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "fail",
-          "duration": 1243,
+          "duration": 932,
           "expected": {
             "body": {
               "metadata": {
@@ -3689,7 +3733,7 @@
             "headers": {
               "content-length": "34",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: \u003cnil\u003e"
@@ -3702,27 +3746,27 @@
       "error_message": "expected HTTP status 200, got 404"
     },
     {
-      "id": "886f6904-f36b-43cc-81a3-26e42ab2313e",
+      "id": "521a2298-2f5b-4385-b17a-f54b79aa8f31",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-card-interface-points-to-proxy",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "fail",
-      "duration": 112552,
-      "started_at": "2026-04-29T15:02:43.699439004-05:00",
-      "completed_at": "2026-04-29T15:02:43.699551616-05:00",
+      "duration": 101992,
+      "started_at": "2026-04-30T15:59:38.130062298-05:00",
+      "completed_at": "2026-04-30T15:59:38.13016439-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 48872,
+          "duration": 42821,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3731,7 +3775,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 381,
+          "duration": 291,
           "expected": {
             "http_status": 200
           },
@@ -3740,7 +3784,7 @@
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3749,13 +3793,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 56917,
+          "duration": 50295,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "34",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: \u003cnil\u003e"
@@ -3767,7 +3811,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "fail",
-          "duration": 861,
+          "duration": 801,
           "expected": {
             "body": {
               "metadata": {
@@ -3784,7 +3828,7 @@
             "headers": {
               "content-length": "34",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: \u003cnil\u003e"
@@ -3797,27 +3841,27 @@
       "error_message": "expected HTTP status 200, got 404"
     },
     {
-      "id": "3e4bf70c-1ac0-4c87-85cc-f80f9750be6c",
+      "id": "f3a1de7b-751e-4933-ad1e-94a8f29645ba",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-send-message",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "fail",
-      "duration": 109768,
-      "started_at": "2026-04-29T15:02:43.699552127-05:00",
-      "completed_at": "2026-04-29T15:02:43.699661955-05:00",
+      "duration": 98195,
+      "started_at": "2026-04-30T15:59:38.130165062-05:00",
+      "completed_at": "2026-04-30T15:59:38.130263257-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 42741,
+          "duration": 40938,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3826,7 +3870,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 311,
+          "duration": 340,
           "expected": {
             "http_status": 200
           },
@@ -3835,7 +3879,7 @@
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3844,13 +3888,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 58500,
+          "duration": 50926,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "34",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: \u003cnil\u003e"
@@ -3862,7 +3906,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "fail",
-          "duration": 882,
+          "duration": 802,
           "expected": {
             "body": "*",
             "http_status": 200
@@ -3872,7 +3916,7 @@
             "headers": {
               "content-length": "34",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "agent not found: \u003cnil\u003e"
@@ -3885,27 +3929,27 @@
       "error_message": "expected HTTP status 200, got 404"
     },
     {
-      "id": "c63a07c8-c705-4b9c-83a6-0b246a977977",
+      "id": "adb04700-c6c6-4155-b57b-6ac9475147d2",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-route-by-skill-tags",
       "runtime": "awesometree",
-      "runtime_version": "0.1.0",
+      "runtime_version": "0.2.0",
       "status": "fail",
-      "duration": 139714,
-      "started_at": "2026-04-29T15:02:43.699662766-05:00",
-      "completed_at": "2026-04-29T15:02:43.69980248-05:00",
+      "duration": 107132,
+      "started_at": "2026-04-30T15:59:38.130263938-05:00",
+      "completed_at": "2026-04-30T15:59:38.130371231-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 51938,
+          "duration": 46598,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3914,7 +3958,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 300,
+          "duration": 310,
           "expected": {
             "http_status": 200
           },
@@ -3923,7 +3967,7 @@
             "headers": {
               "content-length": "2",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "raw_body": "[]"
           }
@@ -3932,13 +3976,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 78167,
+          "duration": 53050,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "44",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "no agent found matching tags: []"
@@ -3950,7 +3994,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "fail",
-          "duration": 661,
+          "duration": 451,
           "expected": {
             "body": "*",
             "http_status": 200
@@ -3960,7 +4004,7 @@
             "headers": {
               "content-length": "44",
               "content-type": "application/json",
-              "date": "Wed, 29 Apr 2026 20:02:43 GMT"
+              "date": "Thu, 30 Apr 2026 20:59:38 GMT"
             },
             "body": {
               "error": "no agent found matching tags: []"
