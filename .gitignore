@@ -21,3 +21,4 @@ agents/*/.build/
 # Test run logs
 reports/**/*.log
 .task/
+proto/google/
