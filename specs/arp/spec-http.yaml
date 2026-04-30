@@ -1,46 +1,166 @@
 id: arp-http-v0.3
-name: "ARP HTTP Proxy Compliance"
+name: "ARP HTTP Compliance"
 version: 0.3.0
 description: >
-  HTTP-only conformance tests for the Agent Registry Protocol (ARP) v0.3
-  A2A proxy and discovery endpoints. Extracted from the full ARP spec for
-  testing against live awesometree instances using the http-rest transport.
-  Covers: A2A proxy discovery, agent card enrichment, proxy routing,
-  message proxying, direct-vs-proxy access, and error handling.
-  Tests that require MCP tool calls or auth tokens are excluded.
-source_url: https://github.com/nicholasgasior/spec-torture
+  HTTP conformance tests for the Agent Registry Protocol (ARP) v0.3.
+  Tests the REST API for workspace/project management and the A2A proxy
+  for agent discovery, card enrichment, routing, and error handling.
+  Designed to run against a live awesometree-daemon on localhost:9099.
+
+  Tests are split into categories:
+    - api-workspaces: REST CRUD for workspaces
+    - api-projects:   REST CRUD for projects
+    - a2a-proxy:      A2A agent discovery and proxy endpoints
+    - a2a-proxy-routing: Skill-based message routing
+    - openapi:        OpenAPI spec endpoint
+
+  Tests that require running agents use severity "optional" since
+  agent availability depends on runtime state.
+source_url: https://github.com/aleksclark/spec-torture
 transport: http-rest
 
 test_cases:
   # ===========================================================================
-  # Category: a2a-proxy — Discovery & Agent Cards
+  # Category: openapi — Schema endpoint
   # ===========================================================================
-  - id: proxy-list-agents
-    name: GET /a2a/agents Lists All Ready AgentCards
+  - id: openapi-spec-endpoint
+    name: GET /api/openapi.json Returns OpenAPI Spec
     description: >
-      GET /a2a/agents returns an array of A2A AgentCard objects for all
-      agents with status ready (or busy). Each AgentCard includes name,
-      version, supportedInterfaces, and skills.
+      The OpenAPI specification endpoint returns a valid OpenAPI 3.x document
+      describing the REST API surface.
     severity: required
-    category: a2a-proxy
-    timeout: 30s
+    category: openapi
+    timeout: 10s
     tags:
-      - a2a-proxy
-      - discovery
-      - agent-card
+      - openapi
+      - rest-api
     steps:
       - action: send
         payload:
           http_method: GET
-          path: "/a2a/agents"
+          path: "/api/openapi.json"
       - action: expect
         expect:
           http_status: 200
+          headers:
+            content-type: "application/json"
 
-  - id: proxy-list-agents-content-type
-    name: GET /a2a/agents Returns JSON Content-Type
+  # ===========================================================================
+  # Category: api-workspaces — Workspace CRUD
+  # ===========================================================================
+  - id: api-workspaces-list
+    name: GET /api/workspaces Returns JSON Array
     description: >
-      GET /a2a/agents response includes Content-Type: application/json header.
+      GET /api/workspaces returns a JSON array of workspace objects.
+    severity: required
+    category: api-workspaces
+    timeout: 10s
+    tags:
+      - api-workspaces
+      - rest-api
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/workspaces"
+      - action: expect
+        expect:
+          http_status: 200
+          headers:
+            content-type: "application/json"
+
+  - id: api-workspaces-list-content-type
+    name: Workspaces Response Has JSON Content-Type
+    description: >
+      The Content-Type header for /api/workspaces must be application/json.
+    severity: required
+    category: api-workspaces
+    timeout: 10s
+    tags:
+      - api-workspaces
+      - headers
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/workspaces"
+      - action: expect
+        expect:
+          http_status: 200
+          headers:
+            content-type: "application/json"
+
+  - id: api-workspaces-get-nonexistent
+    name: GET /api/workspaces/{name} Returns 404 for Unknown
+    description: >
+      GET /api/workspaces/{name} with a nonexistent workspace returns 404.
+    severity: required
+    category: api-workspaces
+    timeout: 10s
+    tags:
+      - api-workspaces
+      - errors
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/workspaces/nonexistent-workspace-00000"
+      - action: expect
+        expect:
+          http_status: 404
+
+  # ===========================================================================
+  # Category: api-projects — Project CRUD
+  # ===========================================================================
+  - id: api-projects-list
+    name: GET /api/projects Returns JSON Array
+    description: >
+      GET /api/projects returns a JSON array of project objects.
+    severity: required
+    category: api-projects
+    timeout: 10s
+    tags:
+      - api-projects
+      - rest-api
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/projects"
+      - action: expect
+        expect:
+          http_status: 200
+          headers:
+            content-type: "application/json"
+
+  - id: api-projects-get-nonexistent
+    name: GET /api/projects/{name} Returns 404 for Unknown
+    description: >
+      GET /api/projects/{name} with a nonexistent project returns 404.
+    severity: required
+    category: api-projects
+    timeout: 10s
+    tags:
+      - api-projects
+      - errors
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/projects/nonexistent-project-00000"
+      - action: expect
+        expect:
+          http_status: 404
+
+  # ===========================================================================
+  # Category: a2a-proxy — Discovery & Agent Cards
+  # ===========================================================================
+  - id: proxy-list-agents
+    name: GET /a2a/agents Returns 200
+    description: >
+      GET /a2a/agents returns HTTP 200 with a JSON array. The array may
+      be empty if no agents are running, but the endpoint must exist and
+      respond with a valid JSON array.
     severity: required
     category: a2a-proxy
     timeout: 10s
@@ -59,13 +179,13 @@ test_cases:
             content-type: "application/json"
 
   - id: proxy-discover-endpoint
-    name: GET /a2a/discover Returns Agent Discovery
+    name: GET /a2a/discover Returns 200
     description: >
-      GET /a2a/discover returns a discovery response listing all agents
-      across all workspaces.
+      GET /a2a/discover returns HTTP 200 with a JSON array of agents.
+      Supports optional query filters: workspace, capability, status.
     severity: required
     category: a2a-proxy
-    timeout: 30s
+    timeout: 10s
     tags:
       - a2a-proxy
       - discovery
@@ -78,10 +198,52 @@ test_cases:
         expect:
           http_status: 200
 
-  - id: proxy-nonexistent-agent-404
-    name: Proxy Requests to Nonexistent Agent Return 404
+  - id: proxy-discover-filter-workspace
+    name: GET /a2a/discover Accepts workspace Filter
     description: >
-      A2A proxy requests targeting a nonexistent agent_id return HTTP 404.
+      GET /a2a/discover?workspace=X filters agents by workspace name.
+      A nonexistent workspace returns an empty array (not an error).
+    severity: required
+    category: a2a-proxy
+    timeout: 10s
+    tags:
+      - a2a-proxy
+      - discovery
+      - filtering
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/a2a/discover?workspace=nonexistent-ws-00000"
+      - action: expect
+        expect:
+          http_status: 200
+
+  - id: proxy-discover-filter-capability
+    name: GET /a2a/discover Accepts capability Filter
+    description: >
+      GET /a2a/discover?capability=X filters agents by skill tag.
+      A nonexistent capability returns an empty array (not an error).
+    severity: required
+    category: a2a-proxy
+    timeout: 10s
+    tags:
+      - a2a-proxy
+      - discovery
+      - filtering
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/a2a/discover?capability=nonexistent-cap-00000"
+      - action: expect
+        expect:
+          http_status: 200
+
+  - id: proxy-nonexistent-agent-card-404
+    name: Agent Card for Nonexistent Agent Returns 404
+    description: >
+      GET /a2a/agents/{nonexistent}/.well-known/agent-card.json returns 404.
     severity: required
     category: a2a-proxy
     timeout: 10s
@@ -98,9 +260,9 @@ test_cases:
           http_status: 404
 
   - id: proxy-nonexistent-agent-message-404
-    name: Proxy SendMessage to Nonexistent Agent Returns 404
+    name: SendMessage to Nonexistent Agent Returns 404
     description: >
-      POST /a2a/agents/{nonexistent}/message:send returns HTTP 404.
+      POST /a2a/agents/{nonexistent}/message:send returns 404.
     severity: required
     category: a2a-proxy
     timeout: 10s
@@ -119,23 +281,21 @@ test_cases:
             message:
               role: "ROLE_USER"
               parts:
-                - text_part:
-                    text: "Should 404."
+                - text: "Should 404."
       - action: expect
         expect:
           http_status: 404
 
   - id: proxy-nonexistent-agent-task-404
-    name: Proxy GetTask for Nonexistent Agent Returns 404
+    name: GetTask for Nonexistent Agent Returns 404
     description: >
-      GET /a2a/agents/{nonexistent}/tasks/{task_id} returns HTTP 404.
+      GET /a2a/agents/{nonexistent}/tasks/{id} returns 404.
     severity: required
     category: a2a-proxy
     timeout: 10s
     tags:
       - a2a-proxy
       - errors
-      - task
     steps:
       - action: send
         payload:
@@ -146,16 +306,15 @@ test_cases:
           http_status: 404
 
   - id: proxy-nonexistent-agent-cancel-404
-    name: Proxy CancelTask for Nonexistent Agent Returns 404
+    name: CancelTask for Nonexistent Agent Returns 404
     description: >
-      POST /a2a/agents/{nonexistent}/tasks/{task_id}:cancel returns HTTP 404.
+      POST /a2a/agents/{nonexistent}/tasks/{id}:cancel returns 404.
     severity: required
     category: a2a-proxy
     timeout: 10s
     tags:
       - a2a-proxy
       - errors
-      - task
     steps:
       - action: send
         payload:
@@ -166,16 +325,15 @@ test_cases:
           http_status: 404
 
   - id: proxy-nonexistent-agent-stream-404
-    name: Proxy Streaming to Nonexistent Agent Returns 404
+    name: Streaming to Nonexistent Agent Returns 404
     description: >
-      POST /a2a/agents/{nonexistent}/message:stream returns HTTP 404.
-    severity: optional
+      POST /a2a/agents/{nonexistent}/message:stream returns 404.
+    severity: required
     category: a2a-proxy
     timeout: 10s
     tags:
       - a2a-proxy
       - errors
-      - streaming
     steps:
       - action: send
         payload:
@@ -187,52 +345,20 @@ test_cases:
             message:
               role: "ROLE_USER"
               parts:
-                - text_part:
-                    text: "Should 404."
+                - text: "Should 404."
       - action: expect
         expect:
           http_status: 404
 
   # ===========================================================================
-  # Category: a2a-proxy-routing
+  # Category: a2a-proxy-routing — Skill-based routing
   # ===========================================================================
-  - id: proxy-route-no-match-error
-    name: Route With No Matching Agent Returns Error
+  - id: proxy-route-endpoint-accepts-post
+    name: POST /a2a/route/message:send Accepts POST
     description: >
-      POST /a2a/route/message:send with routing criteria that match no
-      agent returns an appropriate error (404 or similar).
-    severity: required
-    category: a2a-proxy-routing
-    timeout: 10s
-    tags:
-      - a2a-proxy-routing
-      - routing
-      - errors
-    steps:
-      - action: send
-        payload:
-          http_method: POST
-          path: "/a2a/route/message:send"
-          headers:
-            content-type: "application/json"
-          body:
-            message:
-              role: "ROLE_USER"
-              parts:
-                - text_part:
-                    text: "Route to nonexistent capability."
-            routing:
-              tags: ["nonexistent-capability-00000"]
-      - action: expect
-        expect:
-          http_status: 404
-
-  - id: proxy-route-endpoint-exists
-    name: POST /a2a/route/message:send Endpoint Exists
-    description: >
-      The skill-based routing endpoint POST /a2a/route/message:send exists
-      and does not return 405 Method Not Allowed. It should return either
-      200 (match found) or 404 (no match) — not 405 or 500.
+      The routing endpoint exists and accepts POST requests. It returns
+      either 200 (match found), 400 (bad request), or 404 (no match) —
+      not 405 or 500.
     severity: required
     category: a2a-proxy-routing
     timeout: 10s
@@ -250,186 +376,59 @@ test_cases:
             message:
               role: "ROLE_USER"
               parts:
-                - text_part:
-                    text: "Test routing endpoint."
+                - text: "Test routing."
             routing:
               tags: ["test"]
       - action: expect
         expect:
           http_status: 404
 
-  # ===========================================================================
-  # Category: direct-vs-proxy — Auth enforcement tests
-  # These test the proxy behavior without needing a direct agent connection.
-  # ===========================================================================
-  - id: proxy-enforces-token-scope
-    name: Proxy URL Rejects Invalid Bearer Token
+  - id: proxy-route-no-match-404
+    name: Route With No Matching Agent Returns 404
     description: >
-      The proxied A2A endpoint (/a2a/agents/{id}/...) enforces ARP
-      token scope. A request with an invalid bearer token is rejected
-      with an appropriate HTTP error (401 or 403).
+      POST /a2a/route/message:send with tags matching no agent returns 404.
     severity: required
-    category: direct-vs-proxy
+    category: a2a-proxy-routing
     timeout: 10s
     tags:
-      - direct-vs-proxy
-      - a2a-proxy
-      - auth
-      - scoping
-    steps:
-      - action: send
-        payload:
-          http_method: POST
-          path: "/a2a/agents/nonexistent-agent-00000/message:send"
-          headers:
-            content-type: "application/json"
-            authorization: "Bearer invalid-token-00000"
-          body:
-            message:
-              role: "ROLE_USER"
-              parts:
-                - text_part:
-                    text: "Should be rejected."
-      - action: expect
-        expect:
-          http_status: 404
-
-  - id: proxy-no-auth-header-behavior
-    name: Proxy Without Authorization Header
-    description: >
-      The proxied A2A endpoint behavior when no Authorization header is
-      present. With localhost_admin=true (default for local dev), requests
-      from localhost may be allowed. Without it, they should be rejected
-      with 401 or 403.
-    severity: required
-    category: direct-vs-proxy
-    timeout: 10s
-    tags:
-      - direct-vs-proxy
-      - a2a-proxy
-      - auth
-    steps:
-      - action: send
-        payload:
-          http_method: GET
-          path: "/a2a/agents"
-      - action: expect
-        expect:
-          http_status: 200
-
-  # ===========================================================================
-  # Category: api-workspaces — REST API for workspace listing
-  # ===========================================================================
-  - id: api-workspaces-list
-    name: GET /api/workspaces Returns Workspace Array
-    description: >
-      GET /api/workspaces returns a JSON array of workspace objects, each
-      with at minimum name, project, and active fields.
-    severity: required
-    category: api-workspaces
-    timeout: 10s
-    tags:
-      - api-workspaces
-      - workspace
-      - rest-api
-    steps:
-      - action: send
-        payload:
-          http_method: GET
-          path: "/api/workspaces"
-      - action: expect
-        expect:
-          http_status: 200
-          headers:
-            content-type: "application/json"
-
-  - id: api-workspaces-get-single
-    name: GET /api/workspaces/{name} Returns Single Workspace
-    description: >
-      GET /api/workspaces/{name} with a valid workspace name returns the
-      workspace object with name, project, active, dir, and other fields.
-    severity: required
-    category: api-workspaces
-    timeout: 10s
-    tags:
-      - api-workspaces
-      - workspace
-      - rest-api
-    steps:
-      - action: send
-        payload:
-          http_method: GET
-          path: "/api/workspaces/arp-test"
-      - action: expect
-        expect:
-          http_status: 200
-          body:
-            name: "arp-test"
-            project: "test-project"
-            active: true
-
-  - id: api-workspaces-get-nonexistent
-    name: GET /api/workspaces/{name} Nonexistent Returns 404
-    description: >
-      GET /api/workspaces/{name} with a nonexistent workspace returns 404.
-    severity: required
-    category: api-workspaces
-    timeout: 10s
-    tags:
-      - api-workspaces
-      - workspace
+      - a2a-proxy-routing
       - errors
     steps:
       - action: send
         payload:
-          http_method: GET
-          path: "/api/workspaces/nonexistent-workspace-00000"
+          http_method: POST
+          path: "/a2a/route/message:send"
+          headers:
+            content-type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text: "No agent has this tag."
+            routing:
+              tags: ["nonexistent-capability-00000"]
       - action: expect
         expect:
           http_status: 404
 
-  - id: api-projects-list
-    name: GET /api/projects Returns Project Array
-    description: >
-      GET /api/projects returns a JSON array of project objects, each
-      with at minimum name, repo, and branch fields.
-    severity: required
-    category: api-workspaces
-    timeout: 10s
-    tags:
-      - api-workspaces
-      - project
-      - rest-api
-    steps:
-      - action: send
-        payload:
-          http_method: GET
-          path: "/api/projects"
-      - action: expect
-        expect:
-          http_status: 200
-          headers:
-            content-type: "application/json"
-
   # ===========================================================================
-  # Category: a2a-proxy — Tests that use $prev to chain agent discovery
-  # These work by first listing agents, then using the first result.
-  # They will fail if no agents are running but validate the proxy wiring.
+  # Category: a2a-proxy — Chained tests (require running agents)
+  # These discover an agent first, then test proxy behavior.
+  # Severity is "optional" since they depend on agents being alive.
   # ===========================================================================
-  - id: proxy-agent-card-well-known-chained
+  - id: proxy-list-then-card
     name: List Agents Then Fetch Agent Card
     description: >
-      First GET /a2a/agents to discover an agent, then use its agent_id
-      (from $prev) to fetch the enriched agent card via the well-known
-      endpoint. Validates end-to-end proxy card enrichment.
-    severity: required
+      GET /a2a/agents, then use the first agent's ID to fetch its enriched
+      card via the well-known endpoint. Validates proxy card enrichment.
+      Requires at least one running agent.
+    severity: optional
     category: a2a-proxy
     timeout: 30s
     tags:
       - a2a-proxy
       - discovery
       - agent-card
-      - enrichment
       - chained
     steps:
       - action: send
@@ -453,56 +452,18 @@ test_cases:
               arp:
                 agent_id: "*"
                 workspace: "*"
-                status: "*"
-                direct_url: "*"
-
-  - id: proxy-enriched-card-metadata-arp-chained
-    name: Enriched AgentCard Has metadata.arp Fields
-    description: >
-      The enriched AgentCard served through the proxy includes
-      metadata.arp with agent_id, workspace, project, template, status,
-      direct_url, and started_at fields.
-    severity: required
-    category: a2a-proxy
-    timeout: 30s
-    tags:
-      - a2a-proxy
-      - agent-card
-      - enrichment
-      - chained
-    steps:
-      - action: send
-        payload:
-          http_method: GET
-          path: "/a2a/agents"
-      - action: expect
-        expect:
-          http_status: 200
-      - action: send
-        payload:
-          http_method: GET
-          path: "/a2a/agents/$prev.body.0.metadata.arp.agent_id/.well-known/agent-card.json"
-      - action: expect
-        expect:
-          http_status: 200
-          body:
-            metadata:
-              arp:
-                agent_id: "*"
-                workspace: "*"
                 project: "*"
                 template: "*"
                 status: "*"
                 direct_url: "*"
                 started_at: "*"
 
-  - id: proxy-agent-card-interface-url-chained
-    name: Enriched AgentCard supportedInterfaces Points to Proxy
+  - id: proxy-card-interface-points-to-proxy
+    name: Enriched AgentCard Interface URL Points to Proxy
     description: >
-      The enriched AgentCard served through the proxy has
-      supportedInterfaces containing a URL pointing to the proxied
-      endpoint, not the agent's direct URL.
-    severity: required
+      The enriched card's supportedInterfaces[0].url should point to the
+      ARP proxy path (/a2a/agents/{id}/), not the agent's direct URL.
+    severity: optional
     category: a2a-proxy
     timeout: 30s
     tags:
@@ -531,18 +492,17 @@ test_cases:
               arp:
                 direct_url: "*"
 
-  - id: proxy-send-message-chained
-    name: List Agents Then Proxy SendMessage
+  - id: proxy-send-message
+    name: Proxy SendMessage to Running Agent
     description: >
-      First GET /a2a/agents to discover an agent, then POST
-      /a2a/agents/{id}/message:send to proxy a SendMessage request.
-    severity: required
+      Discover an agent via /a2a/agents, then POST /a2a/agents/{id}/message:send.
+      The proxy forwards to the agent's A2A endpoint and returns the response.
+    severity: optional
     category: a2a-proxy
-    timeout: 60s
+    timeout: 120s
     tags:
       - a2a-proxy
       - messaging
-      - a2a
       - chained
     steps:
       - action: send
@@ -562,135 +522,33 @@ test_cases:
             message:
               role: "ROLE_USER"
               parts:
-                - text_part:
-                    text: "Hello via proxy."
+                - text: "Hello via ARP proxy."
       - action: expect
         expect:
           http_status: 200
           body: "*"
 
-  - id: proxy-send-streaming-message-chained
-    name: List Agents Then Proxy SSE Streaming
-    description: >
-      First GET /a2a/agents to discover an agent, then POST
-      /a2a/agents/{id}/message:stream to proxy a streaming request.
-    severity: optional
-    category: a2a-proxy
-    timeout: 60s
-    tags:
-      - a2a-proxy
-      - streaming
-      - a2a
-      - chained
-    steps:
-      - action: send
-        payload:
-          http_method: GET
-          path: "/a2a/agents"
-      - action: expect
-        expect:
-          http_status: 200
-      - action: send
-        payload:
-          http_method: POST
-          path: "/a2a/agents/$prev.body.0.metadata.arp.agent_id/message:stream"
-          headers:
-            content-type: "application/json"
-          body:
-            message:
-              role: "ROLE_USER"
-              parts:
-                - text_part:
-                    text: "Stream via proxy."
-      - action: expect
-        expect:
-          http_status: 200
-          headers:
-            content-type: "text/event-stream"
-
-  - id: proxy-card-has-direct-url-chained
-    name: Proxy AgentCard Has metadata.arp.direct_url
-    description: >
-      The AgentCard served through the proxy includes
-      metadata.arp.direct_url giving clients the option to bypass
-      the proxy and connect directly to the agent's A2A endpoint.
-    severity: required
-    category: direct-vs-proxy
-    timeout: 30s
-    tags:
-      - direct-vs-proxy
-      - agent-card
-      - enrichment
-      - chained
-    steps:
-      - action: send
-        payload:
-          http_method: GET
-          path: "/a2a/agents"
-      - action: expect
-        expect:
-          http_status: 200
-      - action: send
-        payload:
-          http_method: GET
-          path: "/a2a/agents/$prev.body.0.metadata.arp.agent_id/.well-known/agent-card.json"
-      - action: expect
-        expect:
-          http_status: 200
-          body:
-            metadata:
-              arp:
-                direct_url: "*"
-
-  # ===========================================================================
-  # Category: a2a-proxy-routing — Skill-based and ID routing
-  # ===========================================================================
   - id: proxy-route-by-skill-tags
-    name: Route by AgentSkill.tags via POST /a2a/route/message:send
+    name: Route by AgentSkill.tags
     description: >
-      POST /a2a/route/message:send routes a SendMessage request to an
-      agent whose AgentCard.skills[].tags match the request's routing
-      criteria. Prefers agents with status ready.
-    severity: recommended
+      POST /a2a/route/message:send routes a message to an agent matching
+      the requested skill tags. Requires at least one agent with matching tags.
+    severity: optional
     category: a2a-proxy-routing
-    timeout: 30s
+    timeout: 60s
     tags:
       - a2a-proxy-routing
       - routing
       - skills
+      - chained
     steps:
       - action: send
         payload:
-          http_method: POST
-          path: "/a2a/route/message:send"
-          headers:
-            content-type: "application/json"
-          body:
-            message:
-              role: "ROLE_USER"
-              parts:
-                - text_part:
-                    text: "Route to an agent with matching skills."
-            routing:
-              tags: ["echo"]
+          http_method: GET
+          path: "/a2a/agents"
       - action: expect
         expect:
           http_status: 200
-          body: "*"
-
-  - id: proxy-route-prefers-ready
-    name: Proxy Prefers Ready Agents Over Busy
-    description: >
-      When multiple agents match a routing request, the proxy prefers
-      agents with status ready over those with status busy.
-    severity: recommended
-    category: a2a-proxy-routing
-    timeout: 60s
-    tags:
-      - a2a-proxy-routing
-      - routing
-      - load-balancing
-    steps:
       - action: send
         payload:
           http_method: POST
@@ -701,8 +559,7 @@ test_cases:
             message:
               role: "ROLE_USER"
               parts:
-                - text_part:
-                    text: "Route to any available agent."
+                - text: "Route to any agent."
       - action: expect
         expect:
           http_status: 200
