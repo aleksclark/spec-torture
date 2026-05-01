@@ -10,6 +10,7 @@ const (
 	TransportJSONRPCHTTP  Transport = "jsonrpc-http"
 	TransportHTTPREST     Transport = "http-rest"
 	TransportGRPC         Transport = "grpc"
+	TransportMCPAndHTTP   Transport = "mcp-and-http"
 )
 
 // Spec defines a protocol or API contract to test against.
@@ -45,11 +46,12 @@ func (s *Spec) Validate() []error {
 		TransportJSONRPCHTTP:  true,
 		TransportHTTPREST:     true,
 		TransportGRPC:         true,
+		TransportMCPAndHTTP:   true,
 	}
 	if s.Transport != "" && !validTransports[s.Transport] {
 		errs = append(errs, &ValidationError{
 			Field:   "transport",
-			Message: "must be one of: jsonrpc-stdio, jsonrpc-http, http-rest, grpc",
+			Message: "must be one of: jsonrpc-stdio, jsonrpc-http, http-rest, grpc, mcp-and-http",
 		})
 	}
 

@@ -205,7 +205,8 @@ func (t *HTTPTransport) executePollingSend(ctx context.Context, method, url stri
 		if tr.Body != nil {
 			if status, ok := tr.Body["status"]; ok {
 				statusStr := fmt.Sprintf("%v", status)
-				if statusStr == "completed" || statusStr == "failed" || statusStr == "cancelled" {
+				if statusStr == "completed" || statusStr == "failed" || statusStr == "cancelled" ||
+					statusStr == "ready" || statusStr == "stopped" || statusStr == "error" {
 					return tr, nil
 				}
 			}

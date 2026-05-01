@@ -1,0 +1,586 @@
+id: arp-e2e-lifecycle-v0.3
+name: "ARP E2E Agent Lifecycle"
+version: 0.3.0
+description: >
+  End-to-end agent lifecycle tests for the Agent Registry Protocol (ARP) v0.3.
+  These tests exercise the full agent lifecycle via HTTP REST:
+    1. Register a project with agent templates
+    2. Create a workspace
+    3. Spawn an agent in the workspace
+    4. Poll agent status until ready
+    5. Send a message via A2A proxy and verify response
+    6. Stop the agent and verify stopped status
+    7. Destroy the workspace
+    8. Unregister the project
+
+  Designed to run against a live ARP daemon or mock server.
+  Transport: http-rest (MCP tool calls are translated to REST by the runner).
+source_url: https://github.com/aleksclark/spec-torture
+transport: http-rest
+
+test_cases:
+  # ===========================================================================
+  # E2E-01: Full Agent Lifecycle — spawn, message, stop, destroy
+  # ===========================================================================
+  - id: e2e-full-agent-lifecycle
+    name: "Full Agent Lifecycle: Register → Spawn → Message → Stop → Destroy"
+    description: >
+      Exercises the complete agent lifecycle from project registration through
+      agent spawning, readiness polling, A2A messaging, graceful shutdown, and
+      workspace cleanup. This is the canonical E2E smoke test.
+    severity: required
+    category: e2e-lifecycle
+    timeout: 120s
+    tags:
+      - e2e
+      - lifecycle
+      - agent
+      - workspace
+      - project
+    steps:
+      # Step 1: Register project with an echo-agent template
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/projects"
+          headers:
+            Content-Type: "application/json"
+          body:
+            name: "e2e-lifecycle-project"
+            repo: "/tmp/e2e-lifecycle-repo"
+            agents:
+              - name: "echo-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+                a2a:
+                  name: "Echo Agent"
+                  description: "An echo agent for E2E testing"
+                  skills:
+                    - id: "echo"
+                      name: "Echo"
+                      description: "Echoes back input"
+                      tags: ["echo", "test"]
+      - action: expect
+        expect:
+          http_status: 201
+          body:
+            name: "e2e-lifecycle-project"
+
+      # Step 2: Create a workspace
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/workspaces"
+          headers:
+            Content-Type: "application/json"
+          body:
+            name: "e2e-lifecycle-ws"
+            project: "e2e-lifecycle-project"
+      - action: expect
+        expect:
+          http_status: 201
+          body:
+            name: "e2e-lifecycle-ws"
+            project: "e2e-lifecycle-project"
+            status: "active"
+
+      # Step 3: Spawn an agent
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/agents"
+          headers:
+            Content-Type: "application/json"
+          body:
+            workspace: "e2e-lifecycle-ws"
+            template: "echo-agent"
+      - action: expect
+        expect:
+          http_status: 201
+          body:
+            id: "*"
+            template: "echo-agent"
+            workspace: "e2e-lifecycle-ws"
+            port: "*"
+            direct_url: "*"
+            proxy_url: "*"
+
+      # Step 4: Poll agent status until ready
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/agents/$prev.id"
+          poll:
+            interval: "500ms"
+            max_attempts: 10
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            id: "*"
+            status: "ready"
+
+      # Step 5: Send a message via A2A proxy
+      - action: send
+        payload:
+          http_method: POST
+          path: "/a2a/agents/$prev.id/message:send"
+          headers:
+            Content-Type: "application/json"
+          body:
+            message:
+              role: "ROLE_USER"
+              parts:
+                - text: "Hello from E2E lifecycle test"
+      - action: expect
+        expect:
+          http_status: 200
+          body: "*"
+
+      # Step 6: Re-fetch agent status to restore $prev to agent data
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/agents"
+      - action: expect
+        expect:
+          http_status: 200
+
+      # Step 7: Stop the agent (use first agent from listing)
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/agents/$prev.body.0.id/stop"
+          headers:
+            Content-Type: "application/json"
+          body: {}
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            status: "stopped"
+
+      # Step 8: Verify agent shows as stopped
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/agents/$prev.id"
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            status: "stopped"
+
+      # Step 8: Destroy the workspace
+      - action: send
+        payload:
+          http_method: DELETE
+          path: "/api/workspaces/e2e-lifecycle-ws"
+      - action: expect
+        expect:
+          http_status: 200
+
+      # Step 9: Verify workspace is gone
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/workspaces/e2e-lifecycle-ws"
+      - action: expect
+        expect:
+          http_status: 404
+
+      # Step 10: Unregister the project
+      - action: send
+        payload:
+          http_method: DELETE
+          path: "/api/projects/e2e-lifecycle-project"
+      - action: expect
+        expect:
+          http_status: 200
+
+  # ===========================================================================
+  # E2E-02: Project Registration and Listing
+  # ===========================================================================
+  - id: e2e-project-crud
+    name: "Project CRUD: Register, List, Get, Delete"
+    description: >
+      Tests project registration, listing, retrieval by name, and deletion.
+      Verifies that deleted projects no longer appear in listings.
+    severity: required
+    category: e2e-project
+    timeout: 30s
+    tags:
+      - e2e
+      - project
+      - crud
+    steps:
+      # Register a project
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/projects"
+          headers:
+            Content-Type: "application/json"
+          body:
+            name: "e2e-crud-project"
+            repo: "/tmp/e2e-crud-repo"
+      - action: expect
+        expect:
+          http_status: 201
+          body:
+            name: "e2e-crud-project"
+            repo: "/tmp/e2e-crud-repo"
+
+      # List should include it
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/projects"
+      - action: expect
+        expect:
+          http_status: 200
+
+      # Get by name
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/projects/e2e-crud-project"
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            name: "e2e-crud-project"
+
+      # Delete
+      - action: send
+        payload:
+          http_method: DELETE
+          path: "/api/projects/e2e-crud-project"
+      - action: expect
+        expect:
+          http_status: 200
+
+      # Get should return 404
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/projects/e2e-crud-project"
+      - action: expect
+        expect:
+          http_status: 404
+
+  # ===========================================================================
+  # E2E-03: Workspace With Auto-Agents
+  # ===========================================================================
+  - id: e2e-workspace-auto-agents
+    name: "Workspace Creation With auto_agents Spawns Agents"
+    description: >
+      Tests creating a workspace with auto_agents parameter, which should
+      automatically spawn the listed agent templates.
+    severity: required
+    category: e2e-lifecycle
+    timeout: 60s
+    tags:
+      - e2e
+      - workspace
+      - agent
+      - auto-spawn
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/projects"
+          headers:
+            Content-Type: "application/json"
+          body:
+            name: "e2e-auto-project"
+            repo: "/tmp/e2e-auto-repo"
+            agents:
+              - name: "auto-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          http_status: 201
+
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/workspaces"
+          headers:
+            Content-Type: "application/json"
+          body:
+            name: "e2e-auto-ws"
+            project: "e2e-auto-project"
+            auto_agents: ["auto-agent"]
+      - action: expect
+        expect:
+          http_status: 201
+          body:
+            name: "e2e-auto-ws"
+            status: "active"
+            agents: "*"
+
+      # Cleanup
+      - action: send
+        payload:
+          http_method: DELETE
+          path: "/api/workspaces/e2e-auto-ws"
+      - action: expect
+        expect:
+          http_status: 200
+
+      - action: send
+        payload:
+          http_method: DELETE
+          path: "/api/projects/e2e-auto-project"
+      - action: expect
+        expect:
+          http_status: 200
+
+  # ===========================================================================
+  # E2E-04: Agent Spawn With Name Override
+  # ===========================================================================
+  - id: e2e-agent-spawn-named
+    name: "Agent Spawn With Custom Name"
+    description: >
+      Tests spawning an agent with a custom name override. The spawned agent
+      should have the custom name in its instance data.
+    severity: required
+    category: e2e-lifecycle
+    timeout: 60s
+    tags:
+      - e2e
+      - agent
+      - spawn
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/projects"
+          headers:
+            Content-Type: "application/json"
+          body:
+            name: "e2e-named-project"
+            repo: "/tmp/e2e-named-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          http_status: 201
+
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/workspaces"
+          headers:
+            Content-Type: "application/json"
+          body:
+            name: "e2e-named-ws"
+            project: "e2e-named-project"
+      - action: expect
+        expect:
+          http_status: 201
+
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/agents"
+          headers:
+            Content-Type: "application/json"
+          body:
+            workspace: "e2e-named-ws"
+            template: "test-agent"
+            name: "my-custom-agent"
+      - action: expect
+        expect:
+          http_status: 201
+          body:
+            id: "*"
+            template: "test-agent"
+            name: "my-custom-agent"
+
+      # Cleanup
+      - action: send
+        payload:
+          http_method: DELETE
+          path: "/api/workspaces/e2e-named-ws"
+      - action: expect
+        expect:
+          http_status: 200
+
+      - action: send
+        payload:
+          http_method: DELETE
+          path: "/api/projects/e2e-named-project"
+      - action: expect
+        expect:
+          http_status: 200
+
+  # ===========================================================================
+  # E2E-05: Duplicate Project Registration Fails
+  # ===========================================================================
+  - id: e2e-project-duplicate-error
+    name: "Duplicate Project Registration Returns Error"
+    description: >
+      Registering a project with a name that already exists returns 409 Conflict.
+    severity: required
+    category: e2e-project
+    timeout: 10s
+    tags:
+      - e2e
+      - project
+      - errors
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/projects"
+          headers:
+            Content-Type: "application/json"
+          body:
+            name: "e2e-dup-project"
+            repo: "/tmp/e2e-dup-repo"
+      - action: expect
+        expect:
+          http_status: 201
+
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/projects"
+          headers:
+            Content-Type: "application/json"
+          body:
+            name: "e2e-dup-project"
+            repo: "/tmp/e2e-dup-repo-2"
+      - action: expect
+        expect:
+          http_status: 409
+
+      # Cleanup
+      - action: send
+        payload:
+          http_method: DELETE
+          path: "/api/projects/e2e-dup-project"
+      - action: expect
+        expect:
+          http_status: 200
+
+  # ===========================================================================
+  # E2E-06: Nonexistent Agent Status Returns 404
+  # ===========================================================================
+  - id: e2e-agent-status-nonexistent
+    name: "Agent Status for Nonexistent Agent Returns 404"
+    description: >
+      GET /api/agents/{nonexistent} returns 404.
+    severity: required
+    category: e2e-lifecycle
+    timeout: 10s
+    tags:
+      - e2e
+      - agent
+      - errors
+    steps:
+      - action: send
+        payload:
+          http_method: GET
+          path: "/api/agents/nonexistent-agent-00000"
+      - action: expect
+        expect:
+          http_status: 404
+
+  # ===========================================================================
+  # E2E-07: Agent Restart Preserves Template
+  # ===========================================================================
+  - id: e2e-agent-restart
+    name: "Agent Restart Preserves Template, May Assign New Port"
+    description: >
+      Restarting an agent preserves the template but may allocate a new port.
+    severity: required
+    category: e2e-lifecycle
+    timeout: 60s
+    tags:
+      - e2e
+      - agent
+      - restart
+      - lifecycle
+    steps:
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/projects"
+          headers:
+            Content-Type: "application/json"
+          body:
+            name: "e2e-restart-project"
+            repo: "/tmp/e2e-restart-repo"
+            agents:
+              - name: "test-agent"
+                command: "echo serve"
+                port_env: "A2A_PORT"
+      - action: expect
+        expect:
+          http_status: 201
+
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/workspaces"
+          headers:
+            Content-Type: "application/json"
+          body:
+            name: "e2e-restart-ws"
+            project: "e2e-restart-project"
+      - action: expect
+        expect:
+          http_status: 201
+
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/agents"
+          headers:
+            Content-Type: "application/json"
+          body:
+            workspace: "e2e-restart-ws"
+            template: "test-agent"
+      - action: expect
+        expect:
+          http_status: 201
+          body:
+            id: "*"
+            template: "test-agent"
+
+      # Restart the agent
+      - action: send
+        payload:
+          http_method: POST
+          path: "/api/agents/$prev.id/restart"
+          headers:
+            Content-Type: "application/json"
+          body: {}
+      - action: expect
+        expect:
+          http_status: 200
+          body:
+            template: "test-agent"
+
+      # Cleanup
+      - action: send
+        payload:
+          http_method: DELETE
+          path: "/api/workspaces/e2e-restart-ws"
+      - action: expect
+        expect:
+          http_status: 200
+
+      - action: send
+        payload:
+          http_method: DELETE
+          path: "/api/projects/e2e-restart-project"
+      - action: expect
+        expect:
+          http_status: 200

@@ -210,33 +210,3 @@ func (s *Server) handleARPRoute(w http.ResponseWriter, r *http.Request) {
 		},
 	})
 }
-
-// handleARPWorkspaces handles GET /api/workspaces
-func (s *Server) handleARPWorkspaces(w http.ResponseWriter, r *http.Request) {
-	s.record(Request{
-		Timestamp:  time.Now(),
-		Path:       r.URL.Path,
-		HTTPMethod: r.Method,
-		Headers:    r.Header,
-	})
-
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode([]map[string]any{
-		{"name": "test-workspace", "project": "test-project", "active": true, "dir": "/tmp/test"},
-	})
-}
-
-// handleARPProjects handles GET /api/projects
-func (s *Server) handleARPProjects(w http.ResponseWriter, r *http.Request) {
-	s.record(Request{
-		Timestamp:  time.Now(),
-		Path:       r.URL.Path,
-		HTTPMethod: r.Method,
-		Headers:    r.Header,
-	})
-
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode([]map[string]any{
-		{"name": "test-project", "repo": "https://github.com/test/test", "branch": "main"},
-	})
-}

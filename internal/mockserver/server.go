@@ -62,6 +62,9 @@ type Server struct {
 	port     int
 	card     AgentCard
 
+	// ARP lifecycle state for E2E testing
+	arp *arpState
+
 	// Handler overrides — keyed by JSON-RPC method name.
 	// If set, the handler function returns the JSON-RPC result (or error) to send.
 	handlers map[string]func(req Request) (any, *JSONRPCError)
@@ -122,12 +125,12 @@ func New() (*Server, error) {
 	mux.HandleFunc("/.well-known/agent-card.json", s.handleAgentCard)
 	mux.HandleFunc("/_inspect/requests", s.handleInspectRequests)
 	mux.HandleFunc("/_inspect/reset", s.handleInspectReset)
-	// ARP REST endpoints
+	// ARP lifecycle handlers (stateful CRUD for E2E testing)
+	s.registerARPLifecycleHandlers(mux)
+	// ARP proxy endpoints (stateless mocks)
 	mux.HandleFunc("/a2a/agents", s.handleARPAgents)
 	mux.HandleFunc("/a2a/discover", s.handleARPDiscover)
 	mux.HandleFunc("/a2a/route/", s.handleARPRoute)
-	mux.HandleFunc("/api/workspaces", s.handleARPWorkspaces)
-	mux.HandleFunc("/api/projects", s.handleARPProjects)
 	// Catch-all: JSON-RPC or ARP agent-specific paths
 	mux.HandleFunc("/", s.handleCatchAll)
 

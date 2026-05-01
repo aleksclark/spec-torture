@@ -18,11 +18,12 @@ const (
 type Action string
 
 const (
-	ActionSend   Action = "send"
-	ActionExpect Action = "expect"
-	ActionWait   Action = "wait"
-	ActionAssert Action = "assert"
-	ActionExec   Action = "exec"
+	ActionSend        Action = "send"
+	ActionExpect      Action = "expect"
+	ActionWait        Action = "wait"
+	ActionAssert      Action = "assert"
+	ActionExec        Action = "exec"
+	ActionMCPToolCall Action = "mcp_tool_call"
 )
 
 // Step is an individual action within a test case.
@@ -84,17 +85,18 @@ func (tc *TestCase) Validate() []error {
 	}
 
 	validActions := map[Action]bool{
-		ActionSend:   true,
-		ActionExpect: true,
-		ActionWait:   true,
-		ActionAssert: true,
-		ActionExec:   true,
+		ActionSend:        true,
+		ActionExpect:      true,
+		ActionWait:        true,
+		ActionAssert:      true,
+		ActionExec:        true,
+		ActionMCPToolCall: true,
 	}
 	for i, step := range tc.Steps {
 		if !validActions[step.Action] {
 			errs = append(errs, &ValidationError{
 				Field:   fmt.Sprintf("test_case[%s].steps[%d].action", tc.ID, i),
-				Message: "must be one of: send, expect, wait, assert, exec",
+				Message: "must be one of: send, expect, wait, assert, exec, mcp_tool_call",
 			})
 		}
 	}

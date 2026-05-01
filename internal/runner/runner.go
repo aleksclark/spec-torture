@@ -230,7 +230,7 @@ func (r *Runner) createTransport(transport schema.Transport, baseURL, rpcPath st
 	switch transport {
 	case schema.TransportJSONRPCHTTP:
 		return NewJSONRPCTransport(baseURL, rpcPath, r.logger)
-	case schema.TransportHTTPREST:
+	case schema.TransportHTTPREST, schema.TransportMCPAndHTTP:
 		return NewHTTPTransport(baseURL, r.logger)
 	default:
 		return nil
@@ -303,6 +303,19 @@ func (r *Runner) executeStepWithTransport(ctx context.Context, transport Transpo
 			} else {
 				sr.Status = schema.StatusPass
 			}
+		}
+
+	case schema.ActionMCPToolCall:
+		// Translate mcp_tool_call into an HTTP REST call.
+		// Tool names like "project/register" map to POST /api/{resource} endpoints.
+		httpStep := translateMCPToolCall(step, transport)
+		resp, err := transport.Send(ctx, httpStep)
+		if err != nil {
+			sr.Status = schema.StatusError
+			sr.Error = fmt.Sprintf("mcp_tool_call send failed: %v", err)
+		} else {
+			sr.Status = schema.StatusPass
+			sr.Actual = resp
 		}
 
 	case schema.ActionExec:
