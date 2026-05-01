@@ -16,6 +16,9 @@ ENV PROTOC=/usr/bin/protoc
 # Gate the text_input module behind the gui feature to fix headless builds
 RUN sed -i 's/^pub mod text_input;/#[cfg(feature = "gui")]\npub mod text_input;/' src/lib.rs
 
+# Patch arp-test-server to also start the gRPC server
+RUN sed -i 's|server::run(port).await;|let grpc_port: u16 = std::env::var("ARP_GRPC_PORT").ok().and_then(\|s\| s.parse().ok()).unwrap_or(9098); tokio::spawn(server::run_grpc(grpc_port)); server::run(port).await;|' src/bin/arp_test_server.rs
+
 RUN cargo build --release --no-default-features --features headless --bin arp-test-server
 
 FROM debian:bookworm-slim

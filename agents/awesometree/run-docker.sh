@@ -3,8 +3,7 @@
 # Run the full ARP compliance suite in Docker.
 #
 # Starts awesometree + echo-agent + crush-agent (with real bedrock credentials),
-# then runs the HTTP test suite against the containerized stack.
-# gRPC tests run separately via run-grpc.sh against the live daemon.
+# then runs HTTP and gRPC test suites against the containerized stack.
 #
 # Usage: run-docker.sh <reports-dir> <spec-torture-binary>
 #
@@ -21,7 +20,9 @@ DIR="$(cd "$(dirname "$0")" && pwd)"
 SPEC="$DIR/../../specs/arp/spec-http.yaml"
 RUNTIME="awesometree-docker"
 CRUSH_BIN="${CRUSH_A2A_BIN:-/tmp/crush-a2a/crush}"
+GRPCURL="${GRPCURL:-/tmp/grpcurl/grpcurl}"
 HTTP_PORT=19099
+GRPC_PORT=19098
 
 # ── 1. Preflight ─────────────────────────────────────────────────────
 if [ -z "${AWS_BEARER_TOKEN_BEDROCK:-}" ]; then
@@ -99,9 +100,21 @@ mkdir -p "$REPORTS"
 HTTP_SCORE=$(grep 'Compliance' "$REPORTS/$RUNTIME.md" | grep -o '[0-9]*\.[0-9]*%' || echo "?")
 echo "✓ HTTP: $HTTP_SCORE"
 
-# ── 4. Report ────────────────────────────────────────────────────────
+# ── 4. Run gRPC suite ────────────────────────────────────────────────
 echo ""
-echo "Reports: $REPORTS/$RUNTIME.md"
+echo "▸ Running ARP gRPC suite..."
+if [ -x "$GRPCURL" ]; then
+    GRPCURL="$GRPCURL" bash "$DIR/run-grpc.sh" "localhost:$GRPC_PORT" \
+        > "$REPORTS/$RUNTIME-grpc.md" 2>&1 || true
+    GRPC_SCORE=$(grep 'Compliance' "$REPORTS/$RUNTIME-grpc.md" | grep -o '[0-9]*\.[0-9]*%' || echo "?")
+    echo "✓ gRPC: $GRPC_SCORE"
+else
+    echo "⚠ grpcurl not found at $GRPCURL, skipping gRPC tests"
+fi
+
+# ── 5. Report ────────────────────────────────────────────────────────
+echo ""
+echo "Reports: $REPORTS/$RUNTIME.md, $REPORTS/$RUNTIME-grpc.md"
 
 # ── 6. Cleanup ───────────────────────────────────────────────────────
 echo ""

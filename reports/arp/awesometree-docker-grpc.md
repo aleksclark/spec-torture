@@ -1,36 +1,36 @@
 # ARP gRPC Compliance: localhost:19098
 
 ## ProjectService
-  FAIL  project-list                                            required  Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  project-list-response                                   required  expected output to contain 'projects'
+  PASS  project-list                                            required
+  PASS  project-list-response                                   required
 
 ## WorkspaceService
-  FAIL  workspace-list                                          required  Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  workspace-list-filter-project                           required  Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  workspace-get-nonexistent                               required  expected NotFound, got: 
-  FAIL  workspace-destroy-nonexistent                           required  expected NotFound, got: 
+  PASS  workspace-list                                          required
+  PASS  workspace-list-filter-project                           required
+  PASS  workspace-get-nonexistent                               required
+  PASS  workspace-destroy-nonexistent                           required
 
 ## AgentService
-  FAIL  agent-list                                              required  Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  agent-list-filter-workspace                             required  Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  agent-list-filter-status                                required  Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  agent-get-nonexistent                                   required  expected NotFound, got: 
-  FAIL  agent-stop-nonexistent                                  required  expected NotFound, got: 
-  FAIL  agent-restart-nonexistent                               required  expected NotFound, got: 
-  FAIL  agent-message-nonexistent                               required  expected NotFound, got: 
-  FAIL  agent-task-status-nonexistent                           required  expected NotFound, got: 
-  FAIL  agent-spawn-missing-workspace                           required  expected InvalidArgument, got: 
-  FAIL  agent-spawn-missing-template                            required  expected InvalidArgument, got: 
+  PASS  agent-list                                              required
+  PASS  agent-list-filter-workspace                             required
+  PASS  agent-list-filter-status                                required
+  PASS  agent-get-nonexistent                                   required
+  PASS  agent-stop-nonexistent                                  required
+  PASS  agent-restart-nonexistent                               required
+  PASS  agent-message-nonexistent                               required
+  PASS  agent-task-status-nonexistent                           required
+  PASS  agent-spawn-missing-workspace                           required
+  PASS  agent-spawn-missing-template                            required
 
 ## DiscoveryService
-  FAIL  discover-agents                                         required  Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  discover-local-scope                                    required  Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  discover-capability-filter                              required  Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  watch-agent-nonexistent                                 required  expected NotFound, got: 
+  PASS  discover-agents                                         required
+  PASS  discover-local-scope                                    required
+  PASS  discover-capability-filter                              required
+  PASS  watch-agent-nonexistent                                 required
 
 ## TokenService
-  FAIL  token-create                                            required  Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  token-create-has-bearer                                 required  expected output to contain 'bearerToken'
+  PASS  token-create                                            required
+  PASS  token-create-has-bearer                                 required
   FAIL  token-create-missing-subject                            required  expected InvalidArgument, got: 
   FAIL  token-create-missing-scope                              required  expected InvalidArgument, got: 
 
@@ -39,33 +39,11 @@
 | Metric | Count |
 |--------|-------|
 | Total | 24 |
-| Passed | 0 |
-| Failed | 24 |
-| **Compliance** | **0.0%** |
+| Passed | 22 |
+| Failed | 2 |
+| **Compliance** | **91.7%** |
 
 ## Failures
 
-  FAIL  project-list: Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  project-list-response: expected output to contain 'projects'
-  FAIL  workspace-list: Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  workspace-list-filter-project: Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  workspace-get-nonexistent: expected NotFound, got: 
-  FAIL  workspace-destroy-nonexistent: expected NotFound, got: 
-  FAIL  agent-list: Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  agent-list-filter-workspace: Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  agent-list-filter-status: Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  agent-get-nonexistent: expected NotFound, got: 
-  FAIL  agent-stop-nonexistent: expected NotFound, got: 
-  FAIL  agent-restart-nonexistent: expected NotFound, got: 
-  FAIL  agent-message-nonexistent: expected NotFound, got: 
-  FAIL  agent-task-status-nonexistent: expected NotFound, got: 
-  FAIL  agent-spawn-missing-workspace: expected InvalidArgument, got: 
-  FAIL  agent-spawn-missing-template: expected InvalidArgument, got: 
-  FAIL  discover-agents: Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  discover-local-scope: Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  discover-capability-filter: Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  watch-agent-nonexistent: expected NotFound, got: 
-  FAIL  token-create: Failed to dial target host "localhost:19098": context deadline exceeded
-  FAIL  token-create-has-bearer: expected output to contain 'bearerToken'
   FAIL  token-create-missing-subject: expected InvalidArgument, got: 
   FAIL  token-create-missing-scope: expected InvalidArgument, got: 
