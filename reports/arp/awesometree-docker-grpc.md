@@ -28,6 +28,32 @@
   PASS  discover-capability-filter                              required
   PASS  watch-agent-nonexistent                                 required
 
+## Lifecycle (echo-agent)
+## Requires running echo-agent-001 in arp-test workspace
+  PASS  lifecycle-get-echo-agent                                required
+  PASS  lifecycle-echo-agent-status-ready                       required
+  PASS  lifecycle-echo-agent-has-template                       required
+  PASS  lifecycle-echo-agent-has-workspace                      required
+  PASS  lifecycle-echo-agent-has-port                           required
+  PASS  lifecycle-list-shows-echo                               required
+  PASS  lifecycle-list-filter-ready                             required
+  PASS  lifecycle-list-filter-workspace                         required
+  PASS  lifecycle-send-message-echo-error-propagation           required
+  PASS  lifecycle-discover-finds-echo                           required
+  PASS  lifecycle-discover-by-echo-capability                   required
+  PASS  lifecycle-discover-no-match                             required
+  PASS  lifecycle-workspace-has-agents                          required
+  PASS  lifecycle-workspace-is-active                           required
+
+## Lifecycle (crush-agent)
+## Requires running crush-agent-001 in arp-test workspace
+  PASS  lifecycle-crush-agent-ready                             required
+  PASS  lifecycle-send-message-crush                            required
+  PASS  lifecycle-crush-message-has-result                      required
+  PASS  lifecycle-crush-message-blocking                        required
+  PASS  lifecycle-discover-finds-crush                          required
+  PASS  lifecycle-discover-by-crush-capability                  required
+
 ## TokenService
   PASS  token-create                                            required
   PASS  token-create-has-bearer                                 required
@@ -38,10 +64,10 @@
 
 | Metric | Count |
 |--------|-------|
-| Total | 24 |
-| Passed | 22 |
+| Total | 44 |
+| Passed | 42 |
 | Failed | 2 |
-| **Compliance** | **91.7%** |
+| **Compliance** | **95.5%** |
 
 ## Failures
 
