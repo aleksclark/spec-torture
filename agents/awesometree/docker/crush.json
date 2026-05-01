@@ -1,0 +1,13 @@
+{
+  "providers": {
+    "bedrock": {}
+  },
+  "options": {
+    "plugins": {
+      "a2a-server": {
+        "port": 8200
+      }
+    },
+    "disabled_plugins": ["otlp", "agent-status", "periodic-prompts", "tempotown"]
+  }
+}

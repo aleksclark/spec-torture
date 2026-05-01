@@ -1,0 +1,20 @@
+FROM debian:bookworm-slim
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends ca-certificates libssl3 wget && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY crush /usr/local/bin/crush
+RUN chmod +x /usr/local/bin/crush
+
+RUN useradd -m -s /bin/bash agent
+USER agent
+WORKDIR /home/agent
+
+RUN mkdir -p /home/agent/.config/crush /home/agent/.crush
+COPY crush.json /home/agent/.config/crush/crush.json
+
+ENV HOME=/home/agent
+EXPOSE 8200
+
+ENTRYPOINT ["crush", "serve", "--cwd", "/home/agent"]

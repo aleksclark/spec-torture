@@ -1,0 +1,32 @@
+FROM rust:1-bookworm AS builder
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends protobuf-compiler libprotobuf-dev libssl-dev pkg-config && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /build
+COPY Cargo.toml Cargo.lock build.rs ./
+COPY core/ core/
+COPY src/ src/
+COPY proto/ proto/
+
+RUN mkdir -p proto/google && cp -r /usr/include/google/protobuf proto/google/protobuf
+ENV PROTOC=/usr/bin/protoc
+
+# Gate the text_input module behind the gui feature to fix headless builds
+RUN sed -i 's/^pub mod text_input;/#[cfg(feature = "gui")]\npub mod text_input;/' src/lib.rs
+
+RUN cargo build --release --no-default-features --features headless --bin arp-test-server
+
+FROM debian:bookworm-slim
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends ca-certificates libssl3 wget && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY --from=builder /build/target/release/arp-test-server /usr/local/bin/arp-test-server
+
+ENV ARP_PORT=9099
+EXPOSE 9099 9098
+
+ENTRYPOINT ["arp-test-server"]
