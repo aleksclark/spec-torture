@@ -30,6 +30,7 @@ services:
       dockerfile: ${ARP_DOCKERFILE:-/home/aleks/work/projects/spec-torture/worktrees/test-crush-a2a/agents/awesometree/docker/Dockerfile.arp-server}
     ports:
       - "19099:9099"
+      - "19098:9098"
     environment:
       - ARP_PORT=9099
       - ARP_GRPC_PORT=9098
