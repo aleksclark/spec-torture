@@ -1,33 +1,33 @@
 {
-  "id": "00cccb9e-145b-4390-bf88-3adfc77c03bf",
+  "id": "9b260cf2-f42e-4d30-ab29-d493bb7b6fe5",
   "spec_id": "arp-http-v0.3",
   "runtime": "awesometree-docker",
   "runtime_version": "",
-  "started_at": "2026-05-01T16:44:56.54460835-05:00",
-  "completed_at": "2026-05-01T16:44:56.548362796-05:00",
+  "started_at": "2026-05-01T17:40:31.322439388-05:00",
+  "completed_at": "2026-05-01T17:40:31.326478338-05:00",
   "results": [
     {
-      "id": "ea01983b-f889-4eda-9915-e6642145db30",
+      "id": "5a90632e-8eb3-4b17-a87e-2fbcf1031b18",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "openapi-spec-endpoint",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 888950,
-      "started_at": "2026-05-01T16:44:56.544671089-05:00",
-      "completed_at": "2026-05-01T16:44:56.545560029-05:00",
+      "duration": 857562,
+      "started_at": "2026-05-01T17:40:31.322484784-05:00",
+      "completed_at": "2026-05-01T17:40:31.323342336-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 876346,
+          "duration": 841532,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "17899",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "components": {
@@ -805,7 +805,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 4208,
+          "duration": 6693,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -817,7 +817,7 @@
             "headers": {
               "content-length": "17899",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "components": {
@@ -1594,27 +1594,27 @@
       ]
     },
     {
-      "id": "bb27fffb-0d0d-4759-ba39-92f2fee56cd3",
+      "id": "7dca5072-1ac3-4497-ac70-afd9fccd382b",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "api-workspaces-list",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 160423,
-      "started_at": "2026-05-01T16:44:56.545563165-05:00",
-      "completed_at": "2026-05-01T16:44:56.545723588-05:00",
+      "duration": 182385,
+      "started_at": "2026-05-01T17:40:31.323344761-05:00",
+      "completed_at": "2026-05-01T17:40:31.323527156-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 143762,
+          "duration": 159301,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "165",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -1636,7 +1636,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1082,
+          "duration": 1342,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -1648,7 +1648,7 @@
             "headers": {
               "content-length": "165",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -1669,27 +1669,27 @@
       ]
     },
     {
-      "id": "26d4a7b7-dcb7-42ac-8145-60ed3a589444",
+      "id": "cbd1c5f3-62f9-4f67-ac80-dc7b928d6cc1",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "api-workspaces-list-content-type",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 105069,
-      "started_at": "2026-05-01T16:44:56.545725281-05:00",
-      "completed_at": "2026-05-01T16:44:56.54583034-05:00",
+      "duration": 123914,
+      "started_at": "2026-05-01T17:40:31.323529781-05:00",
+      "completed_at": "2026-05-01T17:40:31.323653705-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 96292,
+          "duration": 113224,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "165",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -1711,7 +1711,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1031,
+          "duration": 772,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -1723,7 +1723,7 @@
             "headers": {
               "content-length": "165",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -1744,27 +1744,27 @@
       ]
     },
     {
-      "id": "9739b128-cf03-4703-bf27-0380d5a35b52",
+      "id": "282631a7-1035-4816-b31a-a2629b5f3620",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "api-workspaces-get-nonexistent",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 105159,
-      "started_at": "2026-05-01T16:44:56.545833365-05:00",
-      "completed_at": "2026-05-01T16:44:56.545938524-05:00",
+      "duration": 97124,
+      "started_at": "2026-05-01T17:40:31.32365635-05:00",
+      "completed_at": "2026-05-01T17:40:31.323753484-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 97595,
+          "duration": 91212,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "60",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "workspace not found: nonexistent-workspace-00000"
@@ -1776,7 +1776,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 511,
+          "duration": 361,
           "expected": {
             "http_status": 404
           },
@@ -1785,7 +1785,7 @@
             "headers": {
               "content-length": "60",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "workspace not found: nonexistent-workspace-00000"
@@ -1796,27 +1796,27 @@
       ]
     },
     {
-      "id": "dfeec766-4326-48c3-8c1e-2c1a0bf2821e",
+      "id": "61191588-58f0-4444-bac3-9f3b3715729c",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "api-projects-list",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 115960,
-      "started_at": "2026-05-01T16:44:56.545939606-05:00",
-      "completed_at": "2026-05-01T16:44:56.546055616-05:00",
+      "duration": 109667,
+      "started_at": "2026-05-01T17:40:31.323754876-05:00",
+      "completed_at": "2026-05-01T17:40:31.323864624-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 106381,
+          "duration": 102394,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "61",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -1832,7 +1832,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 1172,
+          "duration": 1303,
           "expected": {
             "headers": {
               "content-type": "application/json"
@@ -1844,7 +1844,7 @@
             "headers": {
               "content-length": "61",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -1859,32 +1859,775 @@
       ]
     },
     {
-      "id": "67661b31-f401-4455-ac4b-830704d84c12",
+      "id": "d0f0370e-c19b-4cd2-aa1b-9a54b2e18e3d",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "api-projects-get-nonexistent",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 101201,
-      "started_at": "2026-05-01T16:44:56.546060996-05:00",
-      "completed_at": "2026-05-01T16:44:56.546162157-05:00",
+      "duration": 74832,
+      "started_at": "2026-05-01T17:40:31.323869864-05:00",
+      "completed_at": "2026-05-01T17:40:31.323944685-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 89900,
+          "duration": 66596,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "56",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "project not found: nonexistent-project-00000"
             },
             "raw_body": "{\"error\":\"project not found: nonexistent-project-00000\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 390,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "56",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "body": {
+              "error": "project not found: nonexistent-project-00000"
+            },
+            "raw_body": "{\"error\":\"project not found: nonexistent-project-00000\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "88c2eaef-5ef0-4cca-97d2-19a2351d1afa",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-list-agents",
+      "runtime": "awesometree-docker",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 139734,
+      "started_at": "2026-05-01T17:40:31.323945277-05:00",
+      "completed_at": "2026-05-01T17:40:31.324085011-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 133533,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "1560",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "body_array": [
+              {
+                "capabilities": {
+                  "pushNotifications": false,
+                  "streaming": true
+                },
+                "defaultInputModes": [
+                  "text/plain"
+                ],
+                "defaultOutputModes": [
+                  "text/plain"
+                ],
+                "description": "echo agent (echo-agent)",
+                "metadata": {
+                  "arp": {
+                    "agent_id": "echo-agent-001",
+                    "direct_url": "http://localhost:9200",
+                    "project": "test-project",
+                    "started_at": "2026-04-28T10:00:00Z",
+                    "status": "ready",
+                    "template": "echo",
+                    "workspace": "arp-test"
+                  }
+                },
+                "name": "echo-agent",
+                "securityRequirements": [],
+                "securitySchemes": {},
+                "skills": [
+                  {
+                    "description": "General agent capabilities",
+                    "examples": [],
+                    "id": "general",
+                    "inputModes": [],
+                    "name": "General",
+                    "outputModes": [],
+                    "securityRequirements": [],
+                    "tags": [
+                      "echo"
+                    ]
+                  }
+                ],
+                "supportedInterfaces": [
+                  {
+                    "protocolBinding": "HTTP+JSON",
+                    "protocolVersion": "1.0",
+                    "url": "http://localhost:9099/a2a/agents/echo-agent-001"
+                  }
+                ],
+                "version": "1.0.0"
+              },
+              {
+                "capabilities": {
+                  "pushNotifications": false,
+                  "streaming": true
+                },
+                "defaultInputModes": [
+                  "text/plain"
+                ],
+                "defaultOutputModes": [
+                  "text/plain"
+                ],
+                "description": "crush agent (crush-agent)",
+                "metadata": {
+                  "arp": {
+                    "agent_id": "crush-agent-001",
+                    "direct_url": "http://localhost:8200",
+                    "project": "test-project",
+                    "started_at": "2026-04-28T10:00:00Z",
+                    "status": "ready",
+                    "template": "crush",
+                    "workspace": "arp-test"
+                  }
+                },
+                "name": "crush-agent",
+                "securityRequirements": [],
+                "securitySchemes": {},
+                "skills": [
+                  {
+                    "description": "General agent capabilities",
+                    "examples": [],
+                    "id": "general",
+                    "inputModes": [],
+                    "name": "General",
+                    "outputModes": [],
+                    "securityRequirements": [],
+                    "tags": [
+                      "crush"
+                    ]
+                  }
+                ],
+                "supportedInterfaces": [
+                  {
+                    "protocolBinding": "HTTP+JSON",
+                    "protocolVersion": "1.0",
+                    "url": "http://localhost:9099/a2a/agents/crush-agent-001"
+                  }
+                ],
+                "version": "1.0.0"
+              }
+            ],
+            "raw_body": "[{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"echo agent (echo-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"echo-agent-001\",\"direct_url\":\"http://localhost:9200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"echo\",\"workspace\":\"arp-test\"}},\"name\":\"echo-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"echo\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/echo-agent-001\"}],\"version\":\"1.0.0\"},{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"crush agent (crush-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"crush-agent-001\",\"direct_url\":\"http://localhost:8200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"crush\",\"workspace\":\"arp-test\"}},\"name\":\"crush-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"crush\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/crush-agent-001\"}],\"version\":\"1.0.0\"}]"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 862,
+          "expected": {
+            "headers": {
+              "content-type": "application/json"
+            },
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "1560",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "body_array": [
+              {
+                "capabilities": {
+                  "pushNotifications": false,
+                  "streaming": true
+                },
+                "defaultInputModes": [
+                  "text/plain"
+                ],
+                "defaultOutputModes": [
+                  "text/plain"
+                ],
+                "description": "echo agent (echo-agent)",
+                "metadata": {
+                  "arp": {
+                    "agent_id": "echo-agent-001",
+                    "direct_url": "http://localhost:9200",
+                    "project": "test-project",
+                    "started_at": "2026-04-28T10:00:00Z",
+                    "status": "ready",
+                    "template": "echo",
+                    "workspace": "arp-test"
+                  }
+                },
+                "name": "echo-agent",
+                "securityRequirements": [],
+                "securitySchemes": {},
+                "skills": [
+                  {
+                    "description": "General agent capabilities",
+                    "examples": [],
+                    "id": "general",
+                    "inputModes": [],
+                    "name": "General",
+                    "outputModes": [],
+                    "securityRequirements": [],
+                    "tags": [
+                      "echo"
+                    ]
+                  }
+                ],
+                "supportedInterfaces": [
+                  {
+                    "protocolBinding": "HTTP+JSON",
+                    "protocolVersion": "1.0",
+                    "url": "http://localhost:9099/a2a/agents/echo-agent-001"
+                  }
+                ],
+                "version": "1.0.0"
+              },
+              {
+                "capabilities": {
+                  "pushNotifications": false,
+                  "streaming": true
+                },
+                "defaultInputModes": [
+                  "text/plain"
+                ],
+                "defaultOutputModes": [
+                  "text/plain"
+                ],
+                "description": "crush agent (crush-agent)",
+                "metadata": {
+                  "arp": {
+                    "agent_id": "crush-agent-001",
+                    "direct_url": "http://localhost:8200",
+                    "project": "test-project",
+                    "started_at": "2026-04-28T10:00:00Z",
+                    "status": "ready",
+                    "template": "crush",
+                    "workspace": "arp-test"
+                  }
+                },
+                "name": "crush-agent",
+                "securityRequirements": [],
+                "securitySchemes": {},
+                "skills": [
+                  {
+                    "description": "General agent capabilities",
+                    "examples": [],
+                    "id": "general",
+                    "inputModes": [],
+                    "name": "General",
+                    "outputModes": [],
+                    "securityRequirements": [],
+                    "tags": [
+                      "crush"
+                    ]
+                  }
+                ],
+                "supportedInterfaces": [
+                  {
+                    "protocolBinding": "HTTP+JSON",
+                    "protocolVersion": "1.0",
+                    "url": "http://localhost:9099/a2a/agents/crush-agent-001"
+                  }
+                ],
+                "version": "1.0.0"
+              }
+            ],
+            "raw_body": "[{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"echo agent (echo-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"echo-agent-001\",\"direct_url\":\"http://localhost:9200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"echo\",\"workspace\":\"arp-test\"}},\"name\":\"echo-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"echo\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/echo-agent-001\"}],\"version\":\"1.0.0\"},{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"crush agent (crush-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"crush-agent-001\",\"direct_url\":\"http://localhost:8200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"crush\",\"workspace\":\"arp-test\"}},\"name\":\"crush-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"crush\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/crush-agent-001\"}],\"version\":\"1.0.0\"}]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bc20095b-99a6-4204-9884-4af2751dd4e5",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-discover-endpoint",
+      "runtime": "awesometree-docker",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 154402,
+      "started_at": "2026-05-01T17:40:31.324085512-05:00",
+      "completed_at": "2026-05-01T17:40:31.324239924-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 146387,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "1560",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "body_array": [
+              {
+                "capabilities": {
+                  "pushNotifications": false,
+                  "streaming": true
+                },
+                "defaultInputModes": [
+                  "text/plain"
+                ],
+                "defaultOutputModes": [
+                  "text/plain"
+                ],
+                "description": "echo agent (echo-agent)",
+                "metadata": {
+                  "arp": {
+                    "agent_id": "echo-agent-001",
+                    "direct_url": "http://localhost:9200",
+                    "project": "test-project",
+                    "started_at": "2026-04-28T10:00:00Z",
+                    "status": "ready",
+                    "template": "echo",
+                    "workspace": "arp-test"
+                  }
+                },
+                "name": "echo-agent",
+                "securityRequirements": [],
+                "securitySchemes": {},
+                "skills": [
+                  {
+                    "description": "General agent capabilities",
+                    "examples": [],
+                    "id": "general",
+                    "inputModes": [],
+                    "name": "General",
+                    "outputModes": [],
+                    "securityRequirements": [],
+                    "tags": [
+                      "echo"
+                    ]
+                  }
+                ],
+                "supportedInterfaces": [
+                  {
+                    "protocolBinding": "HTTP+JSON",
+                    "protocolVersion": "1.0",
+                    "url": "http://localhost:9099/a2a/agents/echo-agent-001"
+                  }
+                ],
+                "version": "1.0.0"
+              },
+              {
+                "capabilities": {
+                  "pushNotifications": false,
+                  "streaming": true
+                },
+                "defaultInputModes": [
+                  "text/plain"
+                ],
+                "defaultOutputModes": [
+                  "text/plain"
+                ],
+                "description": "crush agent (crush-agent)",
+                "metadata": {
+                  "arp": {
+                    "agent_id": "crush-agent-001",
+                    "direct_url": "http://localhost:8200",
+                    "project": "test-project",
+                    "started_at": "2026-04-28T10:00:00Z",
+                    "status": "ready",
+                    "template": "crush",
+                    "workspace": "arp-test"
+                  }
+                },
+                "name": "crush-agent",
+                "securityRequirements": [],
+                "securitySchemes": {},
+                "skills": [
+                  {
+                    "description": "General agent capabilities",
+                    "examples": [],
+                    "id": "general",
+                    "inputModes": [],
+                    "name": "General",
+                    "outputModes": [],
+                    "securityRequirements": [],
+                    "tags": [
+                      "crush"
+                    ]
+                  }
+                ],
+                "supportedInterfaces": [
+                  {
+                    "protocolBinding": "HTTP+JSON",
+                    "protocolVersion": "1.0",
+                    "url": "http://localhost:9099/a2a/agents/crush-agent-001"
+                  }
+                ],
+                "version": "1.0.0"
+              }
+            ],
+            "raw_body": "[{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"echo agent (echo-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"echo-agent-001\",\"direct_url\":\"http://localhost:9200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"echo\",\"workspace\":\"arp-test\"}},\"name\":\"echo-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"echo\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/echo-agent-001\"}],\"version\":\"1.0.0\"},{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"crush agent (crush-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"crush-agent-001\",\"direct_url\":\"http://localhost:8200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"crush\",\"workspace\":\"arp-test\"}},\"name\":\"crush-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"crush\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/crush-agent-001\"}],\"version\":\"1.0.0\"}]"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 461,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "1560",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "body_array": [
+              {
+                "capabilities": {
+                  "pushNotifications": false,
+                  "streaming": true
+                },
+                "defaultInputModes": [
+                  "text/plain"
+                ],
+                "defaultOutputModes": [
+                  "text/plain"
+                ],
+                "description": "echo agent (echo-agent)",
+                "metadata": {
+                  "arp": {
+                    "agent_id": "echo-agent-001",
+                    "direct_url": "http://localhost:9200",
+                    "project": "test-project",
+                    "started_at": "2026-04-28T10:00:00Z",
+                    "status": "ready",
+                    "template": "echo",
+                    "workspace": "arp-test"
+                  }
+                },
+                "name": "echo-agent",
+                "securityRequirements": [],
+                "securitySchemes": {},
+                "skills": [
+                  {
+                    "description": "General agent capabilities",
+                    "examples": [],
+                    "id": "general",
+                    "inputModes": [],
+                    "name": "General",
+                    "outputModes": [],
+                    "securityRequirements": [],
+                    "tags": [
+                      "echo"
+                    ]
+                  }
+                ],
+                "supportedInterfaces": [
+                  {
+                    "protocolBinding": "HTTP+JSON",
+                    "protocolVersion": "1.0",
+                    "url": "http://localhost:9099/a2a/agents/echo-agent-001"
+                  }
+                ],
+                "version": "1.0.0"
+              },
+              {
+                "capabilities": {
+                  "pushNotifications": false,
+                  "streaming": true
+                },
+                "defaultInputModes": [
+                  "text/plain"
+                ],
+                "defaultOutputModes": [
+                  "text/plain"
+                ],
+                "description": "crush agent (crush-agent)",
+                "metadata": {
+                  "arp": {
+                    "agent_id": "crush-agent-001",
+                    "direct_url": "http://localhost:8200",
+                    "project": "test-project",
+                    "started_at": "2026-04-28T10:00:00Z",
+                    "status": "ready",
+                    "template": "crush",
+                    "workspace": "arp-test"
+                  }
+                },
+                "name": "crush-agent",
+                "securityRequirements": [],
+                "securitySchemes": {},
+                "skills": [
+                  {
+                    "description": "General agent capabilities",
+                    "examples": [],
+                    "id": "general",
+                    "inputModes": [],
+                    "name": "General",
+                    "outputModes": [],
+                    "securityRequirements": [],
+                    "tags": [
+                      "crush"
+                    ]
+                  }
+                ],
+                "supportedInterfaces": [
+                  {
+                    "protocolBinding": "HTTP+JSON",
+                    "protocolVersion": "1.0",
+                    "url": "http://localhost:9099/a2a/agents/crush-agent-001"
+                  }
+                ],
+                "version": "1.0.0"
+              }
+            ],
+            "raw_body": "[{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"echo agent (echo-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"echo-agent-001\",\"direct_url\":\"http://localhost:9200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"echo\",\"workspace\":\"arp-test\"}},\"name\":\"echo-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"echo\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/echo-agent-001\"}],\"version\":\"1.0.0\"},{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"crush agent (crush-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"crush-agent-001\",\"direct_url\":\"http://localhost:8200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"crush\",\"workspace\":\"arp-test\"}},\"name\":\"crush-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"crush\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/crush-agent-001\"}],\"version\":\"1.0.0\"}]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d8beddfc-0917-464f-972b-d22a83ebc388",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-discover-filter-workspace",
+      "runtime": "awesometree-docker",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 89289,
+      "started_at": "2026-05-01T17:40:31.324240705-05:00",
+      "completed_at": "2026-05-01T17:40:31.324330004-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 82556,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "2",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "raw_body": "[]"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 471,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "2",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "raw_body": "[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e5c92b50-d49f-460d-be4a-147b8f6e1259",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-discover-filter-capability",
+      "runtime": "awesometree-docker",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 94579,
+      "started_at": "2026-05-01T17:40:31.324335144-05:00",
+      "completed_at": "2026-05-01T17:40:31.324429673-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 86604,
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "2",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "raw_body": "[]"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 551,
+          "expected": {
+            "http_status": 200
+          },
+          "actual": {
+            "http_status": 200,
+            "headers": {
+              "content-length": "2",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "raw_body": "[]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bd00e132-f027-4da8-b86f-557b0588983e",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-nonexistent-agent-card-404",
+      "runtime": "awesometree-docker",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 91383,
+      "started_at": "2026-05-01T17:40:31.324430675-05:00",
+      "completed_at": "2026-05-01T17:40:31.324522058-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 83748,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "52",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "body": {
+              "error": "agent not found: nonexistent-agent-00000"
+            },
+            "raw_body": "{\"error\":\"agent not found: nonexistent-agent-00000\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 420,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "52",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "body": {
+              "error": "agent not found: nonexistent-agent-00000"
+            },
+            "raw_body": "{\"error\":\"agent not found: nonexistent-agent-00000\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "a7bc4a9e-8807-4a1c-8bf3-0b9b2d69fecd",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-nonexistent-agent-message-404",
+      "runtime": "awesometree-docker",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 161265,
+      "started_at": "2026-05-01T17:40:31.324522629-05:00",
+      "completed_at": "2026-05-01T17:40:31.324683964-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 151566,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "52",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "body": {
+              "error": "agent not found: nonexistent-agent-00000"
+            },
+            "raw_body": "{\"error\":\"agent not found: nonexistent-agent-00000\"}"
+          }
+        },
+        {
+          "step_index": 1,
+          "action": "expect",
+          "status": "pass",
+          "duration": 430,
+          "expected": {
+            "http_status": 404
+          },
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "52",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "body": {
+              "error": "agent not found: nonexistent-agent-00000"
+            },
+            "raw_body": "{\"error\":\"agent not found: nonexistent-agent-00000\"}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "da1e72a4-acf2-4347-b0a8-0773a23b048d",
+      "spec_id": "arp-http-v0.3",
+      "test_case_id": "proxy-nonexistent-agent-task-404",
+      "runtime": "awesometree-docker",
+      "runtime_version": "",
+      "status": "pass",
+      "duration": 123344,
+      "started_at": "2026-05-01T17:40:31.324684695-05:00",
+      "completed_at": "2026-05-01T17:40:31.324808039-05:00",
+      "steps": [
+        {
+          "step_index": 0,
+          "action": "send",
+          "status": "pass",
+          "duration": 112042,
+          "actual": {
+            "http_status": 404,
+            "headers": {
+              "content-length": "52",
+              "content-type": "application/json",
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
+            },
+            "body": {
+              "error": "agent not found: nonexistent-agent-00000"
+            },
+            "raw_body": "{\"error\":\"agent not found: nonexistent-agent-00000\"}"
           }
         },
         {
@@ -1898,648 +2641,9 @@
           "actual": {
             "http_status": 404,
             "headers": {
-              "content-length": "56",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "body": {
-              "error": "project not found: nonexistent-project-00000"
-            },
-            "raw_body": "{\"error\":\"project not found: nonexistent-project-00000\"}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "73cb9d95-9d28-4477-baff-61fc2164f06b",
-      "spec_id": "arp-http-v0.3",
-      "test_case_id": "proxy-list-agents",
-      "runtime": "awesometree-docker",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 149632,
-      "started_at": "2026-05-01T16:44:56.546163009-05:00",
-      "completed_at": "2026-05-01T16:44:56.546312671-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 142850,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "1560",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "body_array": [
-              {
-                "capabilities": {
-                  "pushNotifications": false,
-                  "streaming": true
-                },
-                "defaultInputModes": [
-                  "text/plain"
-                ],
-                "defaultOutputModes": [
-                  "text/plain"
-                ],
-                "description": "echo agent (echo-agent)",
-                "metadata": {
-                  "arp": {
-                    "agent_id": "echo-agent-001",
-                    "direct_url": "http://localhost:9200",
-                    "project": "test-project",
-                    "started_at": "2026-04-28T10:00:00Z",
-                    "status": "ready",
-                    "template": "echo",
-                    "workspace": "arp-test"
-                  }
-                },
-                "name": "echo-agent",
-                "securityRequirements": [],
-                "securitySchemes": {},
-                "skills": [
-                  {
-                    "description": "General agent capabilities",
-                    "examples": [],
-                    "id": "general",
-                    "inputModes": [],
-                    "name": "General",
-                    "outputModes": [],
-                    "securityRequirements": [],
-                    "tags": [
-                      "echo"
-                    ]
-                  }
-                ],
-                "supportedInterfaces": [
-                  {
-                    "protocolBinding": "HTTP+JSON",
-                    "protocolVersion": "1.0",
-                    "url": "http://localhost:9099/a2a/agents/echo-agent-001"
-                  }
-                ],
-                "version": "1.0.0"
-              },
-              {
-                "capabilities": {
-                  "pushNotifications": false,
-                  "streaming": true
-                },
-                "defaultInputModes": [
-                  "text/plain"
-                ],
-                "defaultOutputModes": [
-                  "text/plain"
-                ],
-                "description": "crush agent (crush-agent)",
-                "metadata": {
-                  "arp": {
-                    "agent_id": "crush-agent-001",
-                    "direct_url": "http://localhost:8200",
-                    "project": "test-project",
-                    "started_at": "2026-04-28T10:00:00Z",
-                    "status": "ready",
-                    "template": "crush",
-                    "workspace": "arp-test"
-                  }
-                },
-                "name": "crush-agent",
-                "securityRequirements": [],
-                "securitySchemes": {},
-                "skills": [
-                  {
-                    "description": "General agent capabilities",
-                    "examples": [],
-                    "id": "general",
-                    "inputModes": [],
-                    "name": "General",
-                    "outputModes": [],
-                    "securityRequirements": [],
-                    "tags": [
-                      "crush"
-                    ]
-                  }
-                ],
-                "supportedInterfaces": [
-                  {
-                    "protocolBinding": "HTTP+JSON",
-                    "protocolVersion": "1.0",
-                    "url": "http://localhost:9099/a2a/agents/crush-agent-001"
-                  }
-                ],
-                "version": "1.0.0"
-              }
-            ],
-            "raw_body": "[{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"echo agent (echo-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"echo-agent-001\",\"direct_url\":\"http://localhost:9200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"echo\",\"workspace\":\"arp-test\"}},\"name\":\"echo-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"echo\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/echo-agent-001\"}],\"version\":\"1.0.0\"},{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"crush agent (crush-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"crush-agent-001\",\"direct_url\":\"http://localhost:8200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"crush\",\"workspace\":\"arp-test\"}},\"name\":\"crush-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"crush\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/crush-agent-001\"}],\"version\":\"1.0.0\"}]"
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 1092,
-          "expected": {
-            "headers": {
-              "content-type": "application/json"
-            },
-            "http_status": 200
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "1560",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "body_array": [
-              {
-                "capabilities": {
-                  "pushNotifications": false,
-                  "streaming": true
-                },
-                "defaultInputModes": [
-                  "text/plain"
-                ],
-                "defaultOutputModes": [
-                  "text/plain"
-                ],
-                "description": "echo agent (echo-agent)",
-                "metadata": {
-                  "arp": {
-                    "agent_id": "echo-agent-001",
-                    "direct_url": "http://localhost:9200",
-                    "project": "test-project",
-                    "started_at": "2026-04-28T10:00:00Z",
-                    "status": "ready",
-                    "template": "echo",
-                    "workspace": "arp-test"
-                  }
-                },
-                "name": "echo-agent",
-                "securityRequirements": [],
-                "securitySchemes": {},
-                "skills": [
-                  {
-                    "description": "General agent capabilities",
-                    "examples": [],
-                    "id": "general",
-                    "inputModes": [],
-                    "name": "General",
-                    "outputModes": [],
-                    "securityRequirements": [],
-                    "tags": [
-                      "echo"
-                    ]
-                  }
-                ],
-                "supportedInterfaces": [
-                  {
-                    "protocolBinding": "HTTP+JSON",
-                    "protocolVersion": "1.0",
-                    "url": "http://localhost:9099/a2a/agents/echo-agent-001"
-                  }
-                ],
-                "version": "1.0.0"
-              },
-              {
-                "capabilities": {
-                  "pushNotifications": false,
-                  "streaming": true
-                },
-                "defaultInputModes": [
-                  "text/plain"
-                ],
-                "defaultOutputModes": [
-                  "text/plain"
-                ],
-                "description": "crush agent (crush-agent)",
-                "metadata": {
-                  "arp": {
-                    "agent_id": "crush-agent-001",
-                    "direct_url": "http://localhost:8200",
-                    "project": "test-project",
-                    "started_at": "2026-04-28T10:00:00Z",
-                    "status": "ready",
-                    "template": "crush",
-                    "workspace": "arp-test"
-                  }
-                },
-                "name": "crush-agent",
-                "securityRequirements": [],
-                "securitySchemes": {},
-                "skills": [
-                  {
-                    "description": "General agent capabilities",
-                    "examples": [],
-                    "id": "general",
-                    "inputModes": [],
-                    "name": "General",
-                    "outputModes": [],
-                    "securityRequirements": [],
-                    "tags": [
-                      "crush"
-                    ]
-                  }
-                ],
-                "supportedInterfaces": [
-                  {
-                    "protocolBinding": "HTTP+JSON",
-                    "protocolVersion": "1.0",
-                    "url": "http://localhost:9099/a2a/agents/crush-agent-001"
-                  }
-                ],
-                "version": "1.0.0"
-              }
-            ],
-            "raw_body": "[{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"echo agent (echo-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"echo-agent-001\",\"direct_url\":\"http://localhost:9200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"echo\",\"workspace\":\"arp-test\"}},\"name\":\"echo-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"echo\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/echo-agent-001\"}],\"version\":\"1.0.0\"},{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"crush agent (crush-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"crush-agent-001\",\"direct_url\":\"http://localhost:8200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"crush\",\"workspace\":\"arp-test\"}},\"name\":\"crush-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"crush\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/crush-agent-001\"}],\"version\":\"1.0.0\"}]"
-          }
-        }
-      ]
-    },
-    {
-      "id": "f6473690-a777-481c-bd10-7fde3b917c69",
-      "spec_id": "arp-http-v0.3",
-      "test_case_id": "proxy-discover-endpoint",
-      "runtime": "awesometree-docker",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 134113,
-      "started_at": "2026-05-01T16:44:56.546313423-05:00",
-      "completed_at": "2026-05-01T16:44:56.546447536-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 127020,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "1560",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "body_array": [
-              {
-                "capabilities": {
-                  "pushNotifications": false,
-                  "streaming": true
-                },
-                "defaultInputModes": [
-                  "text/plain"
-                ],
-                "defaultOutputModes": [
-                  "text/plain"
-                ],
-                "description": "echo agent (echo-agent)",
-                "metadata": {
-                  "arp": {
-                    "agent_id": "echo-agent-001",
-                    "direct_url": "http://localhost:9200",
-                    "project": "test-project",
-                    "started_at": "2026-04-28T10:00:00Z",
-                    "status": "ready",
-                    "template": "echo",
-                    "workspace": "arp-test"
-                  }
-                },
-                "name": "echo-agent",
-                "securityRequirements": [],
-                "securitySchemes": {},
-                "skills": [
-                  {
-                    "description": "General agent capabilities",
-                    "examples": [],
-                    "id": "general",
-                    "inputModes": [],
-                    "name": "General",
-                    "outputModes": [],
-                    "securityRequirements": [],
-                    "tags": [
-                      "echo"
-                    ]
-                  }
-                ],
-                "supportedInterfaces": [
-                  {
-                    "protocolBinding": "HTTP+JSON",
-                    "protocolVersion": "1.0",
-                    "url": "http://localhost:9099/a2a/agents/echo-agent-001"
-                  }
-                ],
-                "version": "1.0.0"
-              },
-              {
-                "capabilities": {
-                  "pushNotifications": false,
-                  "streaming": true
-                },
-                "defaultInputModes": [
-                  "text/plain"
-                ],
-                "defaultOutputModes": [
-                  "text/plain"
-                ],
-                "description": "crush agent (crush-agent)",
-                "metadata": {
-                  "arp": {
-                    "agent_id": "crush-agent-001",
-                    "direct_url": "http://localhost:8200",
-                    "project": "test-project",
-                    "started_at": "2026-04-28T10:00:00Z",
-                    "status": "ready",
-                    "template": "crush",
-                    "workspace": "arp-test"
-                  }
-                },
-                "name": "crush-agent",
-                "securityRequirements": [],
-                "securitySchemes": {},
-                "skills": [
-                  {
-                    "description": "General agent capabilities",
-                    "examples": [],
-                    "id": "general",
-                    "inputModes": [],
-                    "name": "General",
-                    "outputModes": [],
-                    "securityRequirements": [],
-                    "tags": [
-                      "crush"
-                    ]
-                  }
-                ],
-                "supportedInterfaces": [
-                  {
-                    "protocolBinding": "HTTP+JSON",
-                    "protocolVersion": "1.0",
-                    "url": "http://localhost:9099/a2a/agents/crush-agent-001"
-                  }
-                ],
-                "version": "1.0.0"
-              }
-            ],
-            "raw_body": "[{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"echo agent (echo-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"echo-agent-001\",\"direct_url\":\"http://localhost:9200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"echo\",\"workspace\":\"arp-test\"}},\"name\":\"echo-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"echo\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/echo-agent-001\"}],\"version\":\"1.0.0\"},{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"crush agent (crush-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"crush-agent-001\",\"direct_url\":\"http://localhost:8200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"crush\",\"workspace\":\"arp-test\"}},\"name\":\"crush-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"crush\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/crush-agent-001\"}],\"version\":\"1.0.0\"}]"
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 491,
-          "expected": {
-            "http_status": 200
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "1560",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "body_array": [
-              {
-                "capabilities": {
-                  "pushNotifications": false,
-                  "streaming": true
-                },
-                "defaultInputModes": [
-                  "text/plain"
-                ],
-                "defaultOutputModes": [
-                  "text/plain"
-                ],
-                "description": "echo agent (echo-agent)",
-                "metadata": {
-                  "arp": {
-                    "agent_id": "echo-agent-001",
-                    "direct_url": "http://localhost:9200",
-                    "project": "test-project",
-                    "started_at": "2026-04-28T10:00:00Z",
-                    "status": "ready",
-                    "template": "echo",
-                    "workspace": "arp-test"
-                  }
-                },
-                "name": "echo-agent",
-                "securityRequirements": [],
-                "securitySchemes": {},
-                "skills": [
-                  {
-                    "description": "General agent capabilities",
-                    "examples": [],
-                    "id": "general",
-                    "inputModes": [],
-                    "name": "General",
-                    "outputModes": [],
-                    "securityRequirements": [],
-                    "tags": [
-                      "echo"
-                    ]
-                  }
-                ],
-                "supportedInterfaces": [
-                  {
-                    "protocolBinding": "HTTP+JSON",
-                    "protocolVersion": "1.0",
-                    "url": "http://localhost:9099/a2a/agents/echo-agent-001"
-                  }
-                ],
-                "version": "1.0.0"
-              },
-              {
-                "capabilities": {
-                  "pushNotifications": false,
-                  "streaming": true
-                },
-                "defaultInputModes": [
-                  "text/plain"
-                ],
-                "defaultOutputModes": [
-                  "text/plain"
-                ],
-                "description": "crush agent (crush-agent)",
-                "metadata": {
-                  "arp": {
-                    "agent_id": "crush-agent-001",
-                    "direct_url": "http://localhost:8200",
-                    "project": "test-project",
-                    "started_at": "2026-04-28T10:00:00Z",
-                    "status": "ready",
-                    "template": "crush",
-                    "workspace": "arp-test"
-                  }
-                },
-                "name": "crush-agent",
-                "securityRequirements": [],
-                "securitySchemes": {},
-                "skills": [
-                  {
-                    "description": "General agent capabilities",
-                    "examples": [],
-                    "id": "general",
-                    "inputModes": [],
-                    "name": "General",
-                    "outputModes": [],
-                    "securityRequirements": [],
-                    "tags": [
-                      "crush"
-                    ]
-                  }
-                ],
-                "supportedInterfaces": [
-                  {
-                    "protocolBinding": "HTTP+JSON",
-                    "protocolVersion": "1.0",
-                    "url": "http://localhost:9099/a2a/agents/crush-agent-001"
-                  }
-                ],
-                "version": "1.0.0"
-              }
-            ],
-            "raw_body": "[{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"echo agent (echo-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"echo-agent-001\",\"direct_url\":\"http://localhost:9200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"echo\",\"workspace\":\"arp-test\"}},\"name\":\"echo-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"echo\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/echo-agent-001\"}],\"version\":\"1.0.0\"},{\"capabilities\":{\"pushNotifications\":false,\"streaming\":true},\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"description\":\"crush agent (crush-agent)\",\"metadata\":{\"arp\":{\"agent_id\":\"crush-agent-001\",\"direct_url\":\"http://localhost:8200\",\"project\":\"test-project\",\"started_at\":\"2026-04-28T10:00:00Z\",\"status\":\"ready\",\"template\":\"crush\",\"workspace\":\"arp-test\"}},\"name\":\"crush-agent\",\"securityRequirements\":[],\"securitySchemes\":{},\"skills\":[{\"description\":\"General agent capabilities\",\"examples\":[],\"id\":\"general\",\"inputModes\":[],\"name\":\"General\",\"outputModes\":[],\"securityRequirements\":[],\"tags\":[\"crush\"]}],\"supportedInterfaces\":[{\"protocolBinding\":\"HTTP+JSON\",\"protocolVersion\":\"1.0\",\"url\":\"http://localhost:9099/a2a/agents/crush-agent-001\"}],\"version\":\"1.0.0\"}]"
-          }
-        }
-      ]
-    },
-    {
-      "id": "6433d9bf-601f-4efa-ad12-bcbad80ea19b",
-      "spec_id": "arp-http-v0.3",
-      "test_case_id": "proxy-discover-filter-workspace",
-      "runtime": "awesometree-docker",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 82797,
-      "started_at": "2026-05-01T16:44:56.546448468-05:00",
-      "completed_at": "2026-05-01T16:44:56.546531315-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 74410,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "2",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "raw_body": "[]"
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 430,
-          "expected": {
-            "http_status": 200
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "2",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "raw_body": "[]"
-          }
-        }
-      ]
-    },
-    {
-      "id": "7f628946-2d28-4d5e-808b-edf1d7996b7d",
-      "spec_id": "arp-http-v0.3",
-      "test_case_id": "proxy-discover-filter-capability",
-      "runtime": "awesometree-docker",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 94098,
-      "started_at": "2026-05-01T16:44:56.546536424-05:00",
-      "completed_at": "2026-05-01T16:44:56.546630432-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 86714,
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "2",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "raw_body": "[]"
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 361,
-          "expected": {
-            "http_status": 200
-          },
-          "actual": {
-            "http_status": 200,
-            "headers": {
-              "content-length": "2",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "raw_body": "[]"
-          }
-        }
-      ]
-    },
-    {
-      "id": "a7f4567a-da31-446a-b7f1-691e3968ea09",
-      "spec_id": "arp-http-v0.3",
-      "test_case_id": "proxy-nonexistent-agent-card-404",
-      "runtime": "awesometree-docker",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 81414,
-      "started_at": "2026-05-01T16:44:56.546631123-05:00",
-      "completed_at": "2026-05-01T16:44:56.546712547-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 75924,
-          "actual": {
-            "http_status": 404,
-            "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "body": {
-              "error": "agent not found: nonexistent-agent-00000"
-            },
-            "raw_body": "{\"error\":\"agent not found: nonexistent-agent-00000\"}"
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 391,
-          "expected": {
-            "http_status": 404
-          },
-          "actual": {
-            "http_status": 404,
-            "headers": {
-              "content-length": "52",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -2550,131 +2654,27 @@
       ]
     },
     {
-      "id": "a3b9d3d2-78fb-4cdd-84b7-35b0478ca1a2",
-      "spec_id": "arp-http-v0.3",
-      "test_case_id": "proxy-nonexistent-agent-message-404",
-      "runtime": "awesometree-docker",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 104167,
-      "started_at": "2026-05-01T16:44:56.546713319-05:00",
-      "completed_at": "2026-05-01T16:44:56.546817546-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 98446,
-          "actual": {
-            "http_status": 404,
-            "headers": {
-              "content-length": "52",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "body": {
-              "error": "agent not found: nonexistent-agent-00000"
-            },
-            "raw_body": "{\"error\":\"agent not found: nonexistent-agent-00000\"}"
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 440,
-          "expected": {
-            "http_status": 404
-          },
-          "actual": {
-            "http_status": 404,
-            "headers": {
-              "content-length": "52",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "body": {
-              "error": "agent not found: nonexistent-agent-00000"
-            },
-            "raw_body": "{\"error\":\"agent not found: nonexistent-agent-00000\"}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "cd359790-2749-4edb-917c-724d3d4349d4",
-      "spec_id": "arp-http-v0.3",
-      "test_case_id": "proxy-nonexistent-agent-task-404",
-      "runtime": "awesometree-docker",
-      "runtime_version": "",
-      "status": "pass",
-      "duration": 90251,
-      "started_at": "2026-05-01T16:44:56.546818387-05:00",
-      "completed_at": "2026-05-01T16:44:56.546908708-05:00",
-      "steps": [
-        {
-          "step_index": 0,
-          "action": "send",
-          "status": "pass",
-          "duration": 83638,
-          "actual": {
-            "http_status": 404,
-            "headers": {
-              "content-length": "52",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "body": {
-              "error": "agent not found: nonexistent-agent-00000"
-            },
-            "raw_body": "{\"error\":\"agent not found: nonexistent-agent-00000\"}"
-          }
-        },
-        {
-          "step_index": 1,
-          "action": "expect",
-          "status": "pass",
-          "duration": 381,
-          "expected": {
-            "http_status": 404
-          },
-          "actual": {
-            "http_status": 404,
-            "headers": {
-              "content-length": "52",
-              "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
-            },
-            "body": {
-              "error": "agent not found: nonexistent-agent-00000"
-            },
-            "raw_body": "{\"error\":\"agent not found: nonexistent-agent-00000\"}"
-          }
-        }
-      ]
-    },
-    {
-      "id": "104f05f9-ef05-4bec-b32f-e161aff42d35",
+      "id": "99eb1dba-afb9-4f5f-ab0c-a4f1933e1ea2",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-nonexistent-agent-cancel-404",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 66927,
-      "started_at": "2026-05-01T16:44:56.546909289-05:00",
-      "completed_at": "2026-05-01T16:44:56.546976266-05:00",
+      "duration": 94730,
+      "started_at": "2026-05-01T17:40:31.32480895-05:00",
+      "completed_at": "2026-05-01T17:40:31.32490368-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 61787,
+          "duration": 87185,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -2686,7 +2686,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 300,
+          "duration": 531,
           "expected": {
             "http_status": 404
           },
@@ -2695,7 +2695,7 @@
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -2706,27 +2706,27 @@
       ]
     },
     {
-      "id": "01a0ab90-a943-45d6-bc76-1527a2282c8a",
+      "id": "01c0f71e-a825-4ff8-9eb4-78deaa9fbde6",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-nonexistent-agent-stream-404",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 81514,
-      "started_at": "2026-05-01T16:44:56.546977197-05:00",
-      "completed_at": "2026-05-01T16:44:56.547058701-05:00",
+      "duration": 104177,
+      "started_at": "2026-05-01T17:40:31.324904762-05:00",
+      "completed_at": "2026-05-01T17:40:31.325008939-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 76624,
+          "duration": 94699,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -2738,7 +2738,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 240,
+          "duration": 1132,
           "expected": {
             "http_status": 404
           },
@@ -2747,7 +2747,7 @@
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "agent not found: nonexistent-agent-00000"
@@ -2758,27 +2758,27 @@
       ]
     },
     {
-      "id": "cf593ccd-c235-4b5c-9551-656931220c77",
+      "id": "c682a080-79a4-441b-ac08-68c3f735a3fb",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-route-endpoint-accepts-post",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 93987,
-      "started_at": "2026-05-01T16:44:56.547059292-05:00",
-      "completed_at": "2026-05-01T16:44:56.54715333-05:00",
+      "duration": 124295,
+      "started_at": "2026-05-01T17:40:31.32500963-05:00",
+      "completed_at": "2026-05-01T17:40:31.325133935-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 86293,
+          "duration": 115608,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "no agent found matching tags: [\"test\"]"
@@ -2790,7 +2790,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 310,
+          "duration": 531,
           "expected": {
             "http_status": 404
           },
@@ -2799,7 +2799,7 @@
             "headers": {
               "content-length": "52",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "no agent found matching tags: [\"test\"]"
@@ -2810,27 +2810,27 @@
       ]
     },
     {
-      "id": "033380a9-2915-4cde-ad43-db0405cb745b",
+      "id": "9d1333bd-d413-4ec6-89bd-48eb98bfef42",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-route-no-match-404",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 94699,
-      "started_at": "2026-05-01T16:44:56.547153911-05:00",
-      "completed_at": "2026-05-01T16:44:56.54724867-05:00",
+      "duration": 101983,
+      "started_at": "2026-05-01T17:40:31.325134797-05:00",
+      "completed_at": "2026-05-01T17:40:31.32523677-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 89619,
+          "duration": 94959,
           "actual": {
             "http_status": 404,
             "headers": {
               "content-length": "76",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "no agent found matching tags: [\"nonexistent-capability-00000\"]"
@@ -2842,7 +2842,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 451,
+          "duration": 350,
           "expected": {
             "http_status": 404
           },
@@ -2851,7 +2851,7 @@
             "headers": {
               "content-length": "76",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "error": "no agent found matching tags: [\"nonexistent-capability-00000\"]"
@@ -2862,27 +2862,27 @@
       ]
     },
     {
-      "id": "674af656-25c7-4300-b8e0-b27cded8881f",
+      "id": "4de760a3-4a5a-4415-b768-5df9e881e7f2",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-list-then-card",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 210137,
-      "started_at": "2026-05-01T16:44:56.547252628-05:00",
-      "completed_at": "2026-05-01T16:44:56.547462755-05:00",
+      "duration": 227661,
+      "started_at": "2026-05-01T17:40:31.325240166-05:00",
+      "completed_at": "2026-05-01T17:40:31.325467827-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 106120,
+          "duration": 115057,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "1560",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -2991,7 +2991,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 331,
+          "duration": 330,
           "expected": {
             "http_status": 200
           },
@@ -3000,7 +3000,7 @@
             "headers": {
               "content-length": "1560",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -3109,13 +3109,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 95060,
+          "duration": 101522,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "775",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -3173,7 +3173,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "pass",
-          "duration": 1793,
+          "duration": 2144,
           "expected": {
             "body": {
               "metadata": {
@@ -3197,7 +3197,7 @@
             "headers": {
               "content-length": "775",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -3254,27 +3254,27 @@
       ]
     },
     {
-      "id": "0799fa8f-c268-4bc0-82af-4e9d9e6f4de0",
+      "id": "a83a594c-7223-4123-9f38-eb7b3257cc3a",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-card-interface-points-to-proxy",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 220668,
-      "started_at": "2026-05-01T16:44:56.547463496-05:00",
-      "completed_at": "2026-05-01T16:44:56.547684163-05:00",
+      "duration": 219536,
+      "started_at": "2026-05-01T17:40:31.325469199-05:00",
+      "completed_at": "2026-05-01T17:40:31.325688725-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 112553,
+          "duration": 120227,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "1560",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -3383,7 +3383,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 440,
+          "duration": 411,
           "expected": {
             "http_status": 200
           },
@@ -3392,7 +3392,7 @@
             "headers": {
               "content-length": "1560",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -3501,13 +3501,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 100750,
+          "duration": 90452,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "775",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -3565,7 +3565,7 @@
           "step_index": 3,
           "action": "expect",
           "status": "pass",
-          "duration": 1001,
+          "duration": 831,
           "expected": {
             "body": {
               "metadata": {
@@ -3582,7 +3582,7 @@
             "headers": {
               "content-length": "775",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "capabilities": {
@@ -3639,27 +3639,27 @@
       ]
     },
     {
-      "id": "35a53847-d5fc-4081-bf00-98080e0fe935",
+      "id": "21ab23b5-bdc8-45ae-8b28-0e033486ff14",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-send-message",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 369829,
-      "started_at": "2026-05-01T16:44:56.547684725-05:00",
-      "completed_at": "2026-05-01T16:44:56.548054544-05:00",
+      "duration": 468696,
+      "started_at": "2026-05-01T17:40:31.325689356-05:00",
+      "completed_at": "2026-05-01T17:40:31.326158052-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 120097,
+          "duration": 115438,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "1560",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -3768,7 +3768,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 370,
+          "duration": 480,
           "expected": {
             "http_status": 200
           },
@@ -3777,7 +3777,7 @@
             "headers": {
               "content-length": "1560",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -3886,13 +3886,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 243690,
+          "duration": 346425,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "132",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "artifacts": [
@@ -3906,17 +3906,17 @@
                   ]
                 }
               ],
-              "id": "echo-task-1777671896547956618",
+              "id": "echo-task-1777675231326051871",
               "status": "completed"
             },
-            "raw_body": "{\"artifacts\":[{\"parts\":[{\"text_part\":{\"text\":\"echo: (no text_part)\"}}]}],\"id\":\"echo-task-1777671896547956618\",\"status\":\"completed\"}\n"
+            "raw_body": "{\"artifacts\":[{\"parts\":[{\"text_part\":{\"text\":\"echo: (no text_part)\"}}]}],\"id\":\"echo-task-1777675231326051871\",\"status\":\"completed\"}\n"
           }
         },
         {
           "step_index": 3,
           "action": "expect",
           "status": "pass",
-          "duration": 340,
+          "duration": 431,
           "expected": {
             "body": "*",
             "http_status": 200
@@ -3926,7 +3926,7 @@
             "headers": {
               "content-length": "132",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "artifacts": [
@@ -3940,36 +3940,36 @@
                   ]
                 }
               ],
-              "id": "echo-task-1777671896547956618",
+              "id": "echo-task-1777675231326051871",
               "status": "completed"
             },
-            "raw_body": "{\"artifacts\":[{\"parts\":[{\"text_part\":{\"text\":\"echo: (no text_part)\"}}]}],\"id\":\"echo-task-1777671896547956618\",\"status\":\"completed\"}\n"
+            "raw_body": "{\"artifacts\":[{\"parts\":[{\"text_part\":{\"text\":\"echo: (no text_part)\"}}]}],\"id\":\"echo-task-1777675231326051871\",\"status\":\"completed\"}\n"
           }
         }
       ]
     },
     {
-      "id": "f7fe836d-ced5-4051-92e0-0726344acedb",
+      "id": "f68cc7fe-a4f8-4f81-a265-30b80eb07977",
       "spec_id": "arp-http-v0.3",
       "test_case_id": "proxy-route-by-skill-tags",
       "runtime": "awesometree-docker",
       "runtime_version": "",
       "status": "pass",
-      "duration": 305648,
-      "started_at": "2026-05-01T16:44:56.548056768-05:00",
-      "completed_at": "2026-05-01T16:44:56.548362486-05:00",
+      "duration": 318041,
+      "started_at": "2026-05-01T17:40:31.326159936-05:00",
+      "completed_at": "2026-05-01T17:40:31.326477967-05:00",
       "steps": [
         {
           "step_index": 0,
           "action": "send",
           "status": "pass",
-          "duration": 120167,
+          "duration": 121951,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "1560",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -4078,7 +4078,7 @@
           "step_index": 1,
           "action": "expect",
           "status": "pass",
-          "duration": 491,
+          "duration": 481,
           "expected": {
             "http_status": 200
           },
@@ -4087,7 +4087,7 @@
             "headers": {
               "content-length": "1560",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body_array": [
               {
@@ -4196,13 +4196,13 @@
           "step_index": 2,
           "action": "send",
           "status": "pass",
-          "duration": 175221,
+          "duration": 187164,
           "actual": {
             "http_status": 200,
             "headers": {
               "content-length": "130",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "artifacts": [
@@ -4216,10 +4216,10 @@
                   ]
                 }
               ],
-              "id": "echo-task-1777671896548292854",
+              "id": "echo-task-1777675231326400822",
               "status": "completed"
             },
-            "raw_body": "{\"artifacts\":[{\"parts\":[{\"text_part\":{\"text\":\"echo: (no message)\"}}]}],\"id\":\"echo-task-1777671896548292854\",\"status\":\"completed\"}\n"
+            "raw_body": "{\"artifacts\":[{\"parts\":[{\"text_part\":{\"text\":\"echo: (no message)\"}}]}],\"id\":\"echo-task-1777675231326400822\",\"status\":\"completed\"}\n"
           }
         },
         {
@@ -4236,7 +4236,7 @@
             "headers": {
               "content-length": "130",
               "content-type": "application/json",
-              "date": "Fri, 01 May 2026 21:44:56 GMT"
+              "date": "Fri, 01 May 2026 22:40:31 GMT"
             },
             "body": {
               "artifacts": [
@@ -4250,10 +4250,10 @@
                   ]
                 }
               ],
-              "id": "echo-task-1777671896548292854",
+              "id": "echo-task-1777675231326400822",
               "status": "completed"
             },
-            "raw_body": "{\"artifacts\":[{\"parts\":[{\"text_part\":{\"text\":\"echo: (no message)\"}}]}],\"id\":\"echo-task-1777671896548292854\",\"status\":\"completed\"}\n"
+            "raw_body": "{\"artifacts\":[{\"parts\":[{\"text_part\":{\"text\":\"echo: (no message)\"}}]}],\"id\":\"echo-task-1777675231326400822\",\"status\":\"completed\"}\n"
           }
         }
       ]

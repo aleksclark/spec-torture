@@ -86,6 +86,28 @@ test_contains() {
     return 1
 }
 
+# Test: output does NOT contain a string
+test_not_contains() {
+    local needle="$1" method="$2"
+    shift 2
+    local output
+    output=$(grpc_call "$method" "$@" 2>&1)
+    if echo "$output" | grep -q "$needle"; then
+        echo "output should not contain '$needle'"
+        return 1
+    fi
+    return 0
+}
+
+# Test: capture output and extract a JSON field
+grpc_field() {
+    local method="$1" field="$2"
+    shift 2
+    local output
+    output=$(grpc_call "$method" "$@" 2>&1) || return 1
+    echo "$output" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d$(echo "$field" | sed 's/\./][\"/' | sed 's/^/[\"/' | sed 's/$/\"]/'))" 2>/dev/null
+}
+
 echo "# ARP gRPC Compliance: $ADDR"
 echo ""
 
@@ -187,6 +209,106 @@ run_test "discover-capability-filter" \
 run_test "watch-agent-nonexistent" \
     "WatchAgent returns NotFound for unknown" required \
     test_status NotFound arp.v1.DiscoveryService/WatchAgent -d '{"agentId":"nonexistent-00000"}'
+
+# =========================================================================
+echo ""
+echo "## Lifecycle (echo-agent)"
+echo "## Requires running echo-agent-001 in arp-test workspace"
+# =========================================================================
+
+# -- Agent status for a known agent --
+run_test "lifecycle-get-echo-agent" \
+    "GetAgentStatus returns echo-agent-001" required \
+    test_ok arp.v1.AgentService/GetAgentStatus -d '{"agentId":"echo-agent-001"}'
+
+run_test "lifecycle-echo-agent-status-ready" \
+    "echo-agent-001 status is AGENT_STATUS_READY" required \
+    test_contains "AGENT_STATUS_READY" arp.v1.AgentService/GetAgentStatus -d '{"agentId":"echo-agent-001"}'
+
+run_test "lifecycle-echo-agent-has-template" \
+    "echo-agent-001 response has template field" required \
+    test_contains "template" arp.v1.AgentService/GetAgentStatus -d '{"agentId":"echo-agent-001"}'
+
+run_test "lifecycle-echo-agent-has-workspace" \
+    "echo-agent-001 response has workspace field" required \
+    test_contains "workspace" arp.v1.AgentService/GetAgentStatus -d '{"agentId":"echo-agent-001"}'
+
+run_test "lifecycle-echo-agent-has-port" \
+    "echo-agent-001 response has port field" required \
+    test_contains "port" arp.v1.AgentService/GetAgentStatus -d '{"agentId":"echo-agent-001"}'
+
+# -- ListAgents shows the echo agent --
+run_test "lifecycle-list-shows-echo" \
+    "ListAgents includes echo-agent-001" required \
+    test_contains "echo-agent-001" arp.v1.AgentService/ListAgents
+
+run_test "lifecycle-list-filter-ready" \
+    "ListAgents status=READY includes echo-agent" required \
+    test_contains "echo-agent" arp.v1.AgentService/ListAgents -d '{"status":"AGENT_STATUS_READY"}'
+
+run_test "lifecycle-list-filter-workspace" \
+    "ListAgents workspace=arp-test includes echo-agent" required \
+    test_contains "echo-agent" arp.v1.AgentService/ListAgents -d '{"workspace":"arp-test"}'
+
+# -- Send a message via gRPC to echo-agent (proxied through ARP) --
+# NOTE: echo-agent speaks HTTP+JSON, not JSON-RPC. The gRPC proxy sends
+# JSON-RPC to agents, so this correctly returns Internal (404 from agent).
+# This validates the proxy error propagation path.
+run_test "lifecycle-send-message-echo-error-propagation" \
+    "SendAgentMessage to HTTP+JSON agent returns Internal (not crash)" required \
+    test_status Internal arp.v1.AgentService/SendAgentMessage -d '{"agentId":"echo-agent-001","message":"hello from grpc test"}'
+
+# -- Discovery finds the echo agent --
+run_test "lifecycle-discover-finds-echo" \
+    "DiscoverAgents includes echo-agent" required \
+    test_contains "echo-agent" arp.v1.DiscoveryService/DiscoverAgents
+
+run_test "lifecycle-discover-by-echo-capability" \
+    "DiscoverAgents capability=echo finds echo-agent" required \
+    test_contains "echo-agent" arp.v1.DiscoveryService/DiscoverAgents -d '{"capability":"echo"}'
+
+run_test "lifecycle-discover-no-match" \
+    "DiscoverAgents capability=nonexistent excludes echo-agent" required \
+    test_not_contains "echo-agent" arp.v1.DiscoveryService/DiscoverAgents -d '{"capability":"nonexistent-00000"}'
+
+# -- GetWorkspace shows agents --
+run_test "lifecycle-workspace-has-agents" \
+    "GetWorkspace arp-test includes agents" required \
+    test_contains "agents" arp.v1.WorkspaceService/GetWorkspace -d '{"name":"arp-test"}'
+
+run_test "lifecycle-workspace-is-active" \
+    "GetWorkspace arp-test status is ACTIVE" required \
+    test_contains "WORKSPACE_STATUS_ACTIVE" arp.v1.WorkspaceService/GetWorkspace -d '{"name":"arp-test"}'
+
+# =========================================================================
+echo ""
+echo "## Lifecycle (crush-agent)"
+echo "## Requires running crush-agent-001 in arp-test workspace"
+# =========================================================================
+
+run_test "lifecycle-crush-agent-ready" \
+    "GetAgentStatus crush-agent-001 is READY" required \
+    test_contains "AGENT_STATUS_READY" arp.v1.AgentService/GetAgentStatus -d '{"agentId":"crush-agent-001"}'
+
+run_test "lifecycle-send-message-crush" \
+    "SendAgentMessage to crush-agent-001 returns OK" required \
+    test_ok arp.v1.AgentService/SendAgentMessage -d '{"agentId":"crush-agent-001","message":"say hello in one word"}'
+
+run_test "lifecycle-crush-message-has-result" \
+    "SendAgentMessage response has task or message" required \
+    test_contains "task\|message" arp.v1.AgentService/SendAgentMessage -d '{"agentId":"crush-agent-001","message":"say hi"}'
+
+run_test "lifecycle-crush-message-blocking" \
+    "SendAgentMessage blocking=true to crush returns OK" required \
+    test_ok arp.v1.AgentService/SendAgentMessage -d '{"agentId":"crush-agent-001","message":"say ok","blocking":true}'
+
+run_test "lifecycle-discover-finds-crush" \
+    "DiscoverAgents includes crush-agent" required \
+    test_contains "crush-agent" arp.v1.DiscoveryService/DiscoverAgents
+
+run_test "lifecycle-discover-by-crush-capability" \
+    "DiscoverAgents capability=crush finds crush-agent" required \
+    test_contains "crush-agent" arp.v1.DiscoveryService/DiscoverAgents -d '{"capability":"crush"}'
 
 # =========================================================================
 echo ""
