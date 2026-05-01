@@ -59,6 +59,12 @@ tasks:
     cmds:
       - agents/awesometree/run.sh specs/arp/spec-http.yaml reports/arp ./bin/spec-torture
 
+  torture:awesometree-docker:
+    desc: Run full ARP suite (HTTP + gRPC) in Docker with real agents
+    deps: [build]
+    cmds:
+      - agents/awesometree/run-docker.sh reports/arp ./bin/spec-torture
+
   torture:all:
     desc: Run A2A v1.0 suite against all agents
     deps: [build]

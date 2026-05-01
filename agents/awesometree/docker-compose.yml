@@ -1,0 +1,57 @@
+services:
+  echo-agent:
+    build:
+      context: ${AWESOMETREE_ROOT:-/home/aleks/work/projects/awesometree/repo}/test/echo-agent
+      dockerfile: Dockerfile
+    environment:
+      - ECHO_AGENT_URL=http://echo-agent:9200
+      - ECHO_AGENT_ADDR=:9200
+    networks:
+      - arp-test
+
+  crush-agent:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.crush-agent
+    environment:
+      - AWS_BEARER_TOKEN_BEDROCK=${AWS_BEARER_TOKEN_BEDROCK}
+    networks:
+      - arp-test
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://localhost:8200/.well-known/agent-card.json || exit 1"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+
+  arp-server:
+    build:
+      context: ${AWESOMETREE_ROOT:-/home/aleks/work/projects/awesometree/repo}
+      dockerfile: ${ARP_DOCKERFILE:-/home/aleks/work/projects/spec-torture/worktrees/test-crush-a2a/agents/awesometree/docker/Dockerfile.arp-server}
+    ports:
+      - "19099:9099"
+    environment:
+      - ARP_PORT=9099
+      - ARP_GRPC_PORT=9098
+      - ARP_DISABLE_AUTH=1
+      - HOME=/home/testuser
+    volumes:
+      - ./docker/fixtures/state.json:/home/testuser/.config/awesometree/state.json:ro
+      - ./docker/fixtures/test-project.project.json:/home/testuser/.config/project-interop/projects/test-project.project.json:ro
+    depends_on:
+      echo-agent:
+        condition: service_started
+      crush-agent:
+        condition: service_healthy
+    networks:
+      - arp-test
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://localhost:9099/a2a/agents || exit 1"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+      start_period: 3s
+
+networks:
+  arp-test:
+    driver: bridge
