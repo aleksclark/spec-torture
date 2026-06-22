@@ -1,6 +1,6 @@
 ---
 title: "ARP — Discovery, Routing & Patterns"
-version: 0.4.0
+version: 0.5.0
 created: 2026-04-06
 updated: 2026-05-01
 status: draft
@@ -157,48 +157,42 @@ enum WorkspaceEventType {
 - Subsequent events sent as agents are spawned, change status, or stop
 - `WORKSPACE_DESTROYED` sent when the workspace is destroyed; stream closes after this event
 
-## HTTP Transcoding for A2A Registry Endpoints
+## HTTP Registry Endpoint
 
-The proxied A2A registry endpoints are exposed as HTTP transcoding bindings. These are **not** part of the gRPC `DiscoveryService` — they are standard A2A HTTP endpoints served by the ARP server's HTTP layer alongside the gRPC-Web transcoded endpoints:
+The registry is also reachable over plain HTTP as the transcoding of `DiscoverAgents` — a **read-only discovery** surface, not a proxy:
 
 ```
-Registry endpoints (ARP-specific):
-  GET  /a2a/agents                          List all AgentCards for ready agents
-  POST /a2a/route/message:send              Route SendMessage by skill/capability match
-  GET  /a2a/discover                        Filtered discovery (by capability, workspace, status)
+GET /v1/discover                  Filtered discovery (gRPC transcoding of DiscoverAgents)
+GET /a2a/agents                   List enriched AgentCards for ready agents (alias)
 ```
 
-These endpoints return A2A-native JSON payloads (not gRPC-transcoded). See [Proxied Access](overview.md#proxied-access-via-arp-server) for full details.
+These return A2A `AgentCard` JSON (with `metadata.arp.direct_url`). A client uses them to *find* an agent, then sends A2A messages **directly to that agent's `direct_url`**.
+
+Skill-based message **routing** (e.g. `POST /a2a/route/message:send`) and any A2A message forwarding are deliberately **not** part of `DiscoveryService` — they require ARP to sit in the message path. That capability lives in the optional [A2A gateway profile](profile-a2a-gateway.md).
 
 ## Multi-Agent Workspace Patterns
 
-These patterns show how the gRPC services compose to solve real workflows. All examples use `grpcurl` for illustration; any gRPC client works.
+These patterns show how the gRPC services compose. The rule throughout: **ARP for lifecycle, discovery, and watching; A2A (at each agent's `direct_url`) for messages and tasks.** `grpcurl` shows the ARP calls; `curl` shows the A2A calls.
 
 ### Pattern 1: Coder + Reviewer
 
 Two agents in one workspace — one writes code, the other reviews it.
 
 ```bash
-# Create workspace
-grpcurl -d '{"name": "feat-auth", "project": "myapp"}' \
+# Lifecycle via ARP
+grpcurl -d '{"name":"feat-auth","project":"myapp"}' \
   localhost:9099 arp.v1.WorkspaceService/CreateWorkspace
+CODER=$(grpcurl -d '{"workspace":"feat-auth","template":"crush","name":"coder"}' \
+  localhost:9099 arp.v1.AgentService/SpawnAgent | jq -r .directUrl)
+REVIEWER=$(grpcurl -d '{"workspace":"feat-auth","template":"crush","name":"reviewer"}' \
+  localhost:9099 arp.v1.AgentService/SpawnAgent | jq -r .directUrl)
 
-# Spawn agents
-grpcurl -d '{"workspace": "feat-auth", "template": "crush", "name": "coder"}' \
-  localhost:9099 arp.v1.AgentService/SpawnAgent
-
-grpcurl -d '{"workspace": "feat-auth", "template": "crush", "name": "reviewer"}' \
-  localhost:9099 arp.v1.AgentService/SpawnAgent
-
-# Send task to coder
-grpcurl -d '{"agent_id": "coder-xxx", "message": "Implement OAuth2 login flow"}' \
-  localhost:9099 arp.v1.AgentService/SendAgentMessage
-
-# ... poll via GetAgentTaskStatus until Task.status.state == TASK_STATE_COMPLETED ...
-
-# Send review task
-grpcurl -d '{"agent_id": "reviewer-xxx", "message": "Review the changes in this workspace"}' \
-  localhost:9099 arp.v1.AgentService/SendAgentMessage
+# Messaging via A2A — straight to each agent
+curl -X POST "$CODER/message:send" -H 'Content-Type: application/json' \
+  -d '{"message":{"role":"ROLE_USER","parts":[{"text_part":{"text":"Implement OAuth2 login flow"}}]}}'
+# ... poll GET "$CODER/tasks/{id}" until status.state is terminal ...
+curl -X POST "$REVIEWER/message:send" -H 'Content-Type: application/json' \
+  -d '{"message":{"role":"ROLE_USER","parts":[{"text_part":{"text":"Review the changes in this workspace"}}]}}'
 ```
 
 ### Pattern 2: Parallel Implementation
@@ -206,101 +200,64 @@ grpcurl -d '{"agent_id": "reviewer-xxx", "message": "Review the changes in this 
 Multiple agents work on different parts of a codebase simultaneously.
 
 ```bash
-# Create workspace
-grpcurl -d '{"name": "refactor", "project": "myapp"}' \
+grpcurl -d '{"name":"refactor","project":"myapp"}' \
   localhost:9099 arp.v1.WorkspaceService/CreateWorkspace
+BACKEND=$(grpcurl -d '{"workspace":"refactor","template":"crush","name":"backend"}' \
+  localhost:9099 arp.v1.AgentService/SpawnAgent | jq -r .directUrl)
+FRONTEND=$(grpcurl -d '{"workspace":"refactor","template":"crush","name":"frontend"}' \
+  localhost:9099 arp.v1.AgentService/SpawnAgent | jq -r .directUrl)
 
-# Spawn parallel workers
-grpcurl -d '{"workspace": "refactor", "template": "crush", "name": "backend"}' \
-  localhost:9099 arp.v1.AgentService/SpawnAgent
-
-grpcurl -d '{"workspace": "refactor", "template": "crush", "name": "frontend"}' \
-  localhost:9099 arp.v1.AgentService/SpawnAgent
-
-# Assign tasks
-grpcurl -d '{"agent_id": "backend-xxx", "message": "Refactor the API layer to use GraphQL"}' \
-  localhost:9099 arp.v1.AgentService/CreateAgentTask
-
-grpcurl -d '{"agent_id": "frontend-xxx", "message": "Update React components for the new GraphQL API"}' \
-  localhost:9099 arp.v1.AgentService/CreateAgentTask
-
-# Poll both via GetAgentTaskStatus until Task.status.state is terminal
-grpcurl -d '{"agent_id": "backend-xxx", "task_id": "..."}' \
-  localhost:9099 arp.v1.AgentService/GetAgentTaskStatus
-
-grpcurl -d '{"agent_id": "frontend-xxx", "task_id": "..."}' \
-  localhost:9099 arp.v1.AgentService/GetAgentTaskStatus
+# Assign tasks via A2A (each returns a Task); poll GET {url}/tasks/{id} to track
+curl -X POST "$BACKEND/message:send"  -H 'Content-Type: application/json' \
+  -d '{"message":{"role":"ROLE_USER","parts":[{"text_part":{"text":"Refactor the API layer to use GraphQL"}}]}}'
+curl -X POST "$FRONTEND/message:send" -H 'Content-Type: application/json' \
+  -d '{"message":{"role":"ROLE_USER","parts":[{"text_part":{"text":"Update React components for the new GraphQL API"}}]}}'
 ```
 
 ### Pattern 3: Supervisor + Workers
 
-A gRPC client (or agent) acts as supervisor, spawning specialist agents dynamically:
+A gRPC client (or agent) acts as supervisor, spawning specialist agents dynamically and watching their lifecycle via ARP while delegating work via A2A:
 
 ```bash
-# Create workspace
-grpcurl -d '{"name": "big-refactor", "project": "myapp"}' \
+grpcurl -d '{"name":"big-refactor","project":"myapp"}' \
   localhost:9099 arp.v1.WorkspaceService/CreateWorkspace
+PLANNER=$(grpcurl -d '{"workspace":"big-refactor","template":"crush","name":"planner"}' \
+  localhost:9099 arp.v1.AgentService/SpawnAgent | jq -r .directUrl)
 
-# Spawn a planning agent first
-grpcurl -d '{"workspace": "big-refactor", "template": "crush", "name": "planner"}' \
+# Plan via A2A
+curl -X POST "$PLANNER/message:send" -H 'Content-Type: application/json' \
+  -d '{"message":{"role":"ROLE_USER","parts":[{"text_part":{"text":"Break this into subtasks: ..."}}]}}'
+
+# Spawn workers via ARP, delegate via A2A
+grpcurl -d '{"workspace":"big-refactor","template":"crush","name":"worker-1"}' \
+  localhost:9099 arp.v1.AgentService/SpawnAgent
+grpcurl -d '{"workspace":"big-refactor","template":"crush","name":"worker-2"}' \
   localhost:9099 arp.v1.AgentService/SpawnAgent
 
-grpcurl -d '{"agent_id": "planner-xxx", "message": "Analyze the codebase and break this into subtasks: ..."}' \
-  localhost:9099 arp.v1.AgentService/SendAgentMessage
-
-# Based on planner's response, spawn worker agents
-grpcurl -d '{"workspace": "big-refactor", "template": "crush", "name": "worker-1"}' \
-  localhost:9099 arp.v1.AgentService/SpawnAgent
-
-grpcurl -d '{"workspace": "big-refactor", "template": "crush", "name": "worker-2"}' \
-  localhost:9099 arp.v1.AgentService/SpawnAgent
-
-# Assign subtasks — each returns a Task for tracking
-grpcurl -d '{"agent_id": "worker-1-xxx", "message": "Subtask 1: ..."}' \
-  localhost:9099 arp.v1.AgentService/CreateAgentTask
-
-grpcurl -d '{"agent_id": "worker-2-xxx", "message": "Subtask 2: ..."}' \
-  localhost:9099 arp.v1.AgentService/CreateAgentTask
-
-# Monitor via WatchAgent (server-streaming)
-grpcurl -d '{"agent_id": "worker-1-xxx"}' \
+# Monitor process lifecycle via ARP (server-streaming); task progress via A2A GetTask
+grpcurl -d '{"agent_id":"worker-1-xxx"}' \
   localhost:9099 arp.v1.DiscoveryService/WatchAgent
 ```
 
-### Pattern 4: External A2A Client (Direct + Proxied)
+### Pattern 4: External A2A Client (discover via ARP, talk via A2A)
 
-An external A2A client discovers and uses agents without gRPC — purely via A2A v1.0 HTTP+JSON endpoints:
+An external client uses ARP only to find agents, then speaks A2A directly:
 
 ```bash
-# Discover agents via ARP registry
+# Discover via ARP registry (HTTP)
 curl http://arp-server:9099/a2a/agents
-# → Array of AgentCard objects (with metadata.arp.direct_url)
+# → Array of AgentCard objects; take supported_interfaces[0].url (== metadata.arp.direct_url)
 
-# Send via proxied A2A (SendMessage through ARP)
-curl -X POST http://arp-server:9099/a2a/agents/coder-abc123/message:send \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": {
-      "role": "ROLE_USER",
-      "parts": [{ "text_part": { "text": "Fix the auth bug" } }]
-    }
-  }'
-# → SendMessageResponse: { "task": { "id": "...", "status": { "state": "TASK_STATE_WORKING" } } }
+# Talk directly to the agent via A2A — no ARP in the path
+curl -X POST http://localhost:9100/message:send -H 'Content-Type: application/json' \
+  -d '{"message":{"role":"ROLE_USER","parts":[{"text_part":{"text":"Fix the auth bug"}}]}}'
+# → SendMessageResponse: { "task": { "id": "task-abc123", "status": { "state": "TASK_STATE_WORKING" } } }
 
-# Or bypass ARP and talk directly (using metadata.arp.direct_url from AgentCard)
-curl -X POST http://localhost:9100/message:send \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": {
-      "role": "ROLE_USER",
-      "parts": [{ "text_part": { "text": "Fix the auth bug" } }]
-    }
-  }'
-
-# Poll task status via GetTask
 curl http://localhost:9100/tasks/task-abc123
 # → Task: { "id": "task-abc123", "status": { "state": "TASK_STATE_COMPLETED" }, "artifacts": [...] }
 ```
+
+> If the deployment fronts agents with the optional [A2A gateway](profile-a2a-gateway.md), the client uses each card's `metadata.arp.proxy_url` (a second `supported_interfaces` entry) instead of `direct_url`; the gateway enforces token scope and forwards to the agent unchanged.
 
 ## gRPC Status Codes
 

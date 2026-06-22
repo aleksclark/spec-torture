@@ -1,0 +1,147 @@
+syntax = "proto3";
+package lf.a2a.v1;
+
+option go_package = "github.com/aleksclark/spec-torture/gen/lf/a2a/v1;a2av1";
+
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+// A2A v1.0 protocol types referenced by the Agent Registry Protocol (ARP).
+//
+// This is the subset of the A2A v1.0 (lf.a2a.v1) data model that ARP exchanges
+// with managed agents: AgentCard (discovery), Message / Part (communication),
+// and Task / Artifact (work tracking). Field names match the A2A v1.0 HTTP+JSON
+// representation so payloads round-trip through protojson without remapping.
+
+// Role identifies the sender of a Message.
+enum Role {
+  ROLE_UNSPECIFIED = 0;
+  ROLE_USER = 1;
+  ROLE_AGENT = 2;
+}
+
+// TaskState enumerates the lifecycle states of a Task.
+enum TaskState {
+  TASK_STATE_UNSPECIFIED = 0;
+  TASK_STATE_SUBMITTED = 1;
+  TASK_STATE_WORKING = 2;
+  TASK_STATE_INPUT_REQUIRED = 3;
+  TASK_STATE_COMPLETED = 4;
+  TASK_STATE_CANCELED = 5;
+  TASK_STATE_FAILED = 6;
+  TASK_STATE_REJECTED = 7;
+  TASK_STATE_AUTH_REQUIRED = 8;
+}
+
+// TextPart carries plain text content.
+message TextPart {
+  string text = 1;
+}
+
+// FilePart carries a file, either by URI reference or inline bytes.
+message FilePart {
+  oneof file {
+    string file_with_uri = 1;
+    bytes file_with_bytes = 2;
+  }
+  string mime_type = 3;
+}
+
+// DataPart carries structured JSON data.
+message DataPart {
+  google.protobuf.Struct data = 1;
+}
+
+// Part is a single piece of content within a Message or Artifact.
+message Part {
+  oneof part {
+    TextPart text_part = 1;
+    FilePart file_part = 2;
+    DataPart data_part = 3;
+  }
+}
+
+// Message is a single communication unit between a user and an agent.
+message Message {
+  string message_id = 1;
+  Role role = 2;
+  repeated Part parts = 3;
+  string task_id = 4;
+  string context_id = 5;
+  repeated string reference_task_ids = 6;
+  google.protobuf.Struct metadata = 7;
+}
+
+// TaskStatus is the current state of a Task plus an optional status message.
+message TaskStatus {
+  TaskState state = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  Message message = 3;
+}
+
+// Artifact is an output produced by a Task.
+message Artifact {
+  string artifact_id = 1;
+  string name = 2;
+  string description = 3;
+  repeated Part parts = 4;
+  google.protobuf.Struct metadata = 5;
+}
+
+// Task is a tracked unit of work performed by an agent.
+message Task {
+  string id = 1;
+  string context_id = 2;
+  TaskStatus status = 3;
+  repeated Message history = 4;
+  repeated Artifact artifacts = 5;
+  google.protobuf.Struct metadata = 6;
+}
+
+// AgentExtension declares an optional protocol extension supported by an agent.
+message AgentExtension {
+  string uri = 1;
+  string description = 2;
+  bool required = 3;
+  google.protobuf.Struct params = 4;
+}
+
+// AgentInterface binds an agent to a transport at a URL.
+message AgentInterface {
+  string url = 1;
+  // Transport protocol: "JSONRPC", "GRPC", or "HTTP_JSON".
+  string transport = 2;
+}
+
+// AgentCapabilities describes optional features an agent supports.
+message AgentCapabilities {
+  bool streaming = 1;
+  bool push_notifications = 2;
+  bool state_transition_history = 3;
+  repeated AgentExtension extensions = 4;
+}
+
+// AgentSkill is a capability the agent offers.
+message AgentSkill {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  repeated string tags = 4;
+  repeated string examples = 5;
+  repeated string input_modes = 6;
+  repeated string output_modes = 7;
+}
+
+// AgentCard is an agent's discovery document.
+message AgentCard {
+  string name = 1;
+  string description = 2;
+  string version = 3;
+  repeated AgentInterface supported_interfaces = 4;
+  AgentCapabilities capabilities = 5;
+  repeated AgentSkill skills = 6;
+  repeated string default_input_modes = 7;
+  repeated string default_output_modes = 8;
+  google.protobuf.Struct security_schemes = 9;
+  google.protobuf.Struct metadata = 10;
+}

@@ -8,6 +8,7 @@ import "google/api/field_behavior.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/struct.proto";
 import "google/protobuf/timestamp.proto";
+import "lf/a2a/v1/a2a.proto";
 
 // WorkspaceService manages workspaces — isolated directories (typically
 // git worktrees) where agents operate.
@@ -109,17 +110,21 @@ message AgentInstance {
   AgentStatus status = 4;
   // Port the agent is listening on.
   int32 port = 5;
-  // Direct URL to the agent's A2A endpoint (bypasses proxy).
+  // Direct URL to the agent's A2A v1.0 endpoint. This is the canonical way to
+  // reach the agent: clients send A2A SendMessage / GetTask here directly.
   string direct_url = 6;
-  // Proxy URL through the ARP server.
+  // Optional gateway URL. Only populated when an A2A gateway is deployed in
+  // front of this agent (see profile-a2a-gateway.md); empty otherwise.
   string proxy_url = 7;
   // OS process ID (0 if remote/container).
   int32 pid = 8;
-  // Current A2A context ID for the agent's session.
-  string context_id = 9;
-  // The agent's A2A AgentCard (if fetched).
-  // Uses google.protobuf.Struct to avoid importing the full A2A proto.
-  google.protobuf.Struct a2a_agent_card = 10;
+  // Field 9 was context_id (an A2A conversation concept). ARP no longer tracks
+  // A2A message/task state; clients manage context_id directly with the agent.
+  reserved 9;
+  reserved "context_id";
+  // The agent's A2A AgentCard (if fetched), enriched with ARP lifecycle
+  // metadata under metadata.arp.
+  lf.a2a.v1.AgentCard a2a_agent_card = 10;
   // Token ID assigned to this agent.
   string token_id = 11;
   // ACP/agent session ID.
@@ -130,7 +135,12 @@ message AgentInstance {
   google.protobuf.Struct metadata = 15;
 }
 
-// AgentStatus tracks the lifecycle of an agent instance.
+// AgentStatus tracks the PROCESS lifecycle of an agent instance — distinct from
+// A2A TaskState, which tracks task execution inside the agent.
+//
+// ARP core sets STARTING, READY, ERROR, STOPPING, and STOPPED. BUSY is reserved
+// for deployments where ARP observes task-level activity (e.g. via the optional
+// A2A gateway); ARP core leaves ready agents in READY.
 enum AgentStatus {
   AGENT_STATUS_UNSPECIFIED = 0;
   AGENT_STATUS_STARTING = 1;

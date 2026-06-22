@@ -1,6 +1,6 @@
 ---
 title: "ARP — Identity Federation & Scopes"
-version: 0.4.0
+version: 0.5.0
 created: 2026-04-28
 updated: 2026-05-01
 status: draft
@@ -186,26 +186,19 @@ Key rules:
 | `SpawnAgent` | ✓ Within scoped projects | ✓ Within scoped projects | ✓ Any project |
 | `ListAgents` | Only own-session agents | All in scoped projects | All |
 | `GetAgentStatus` | Only own-session agents | ✓ Within scoped projects | ✓ Any |
-| `SendAgentMessage` | Only own-session agents | ✓ Within scoped projects | ✓ Any |
-| `CreateAgentTask` | Only own-session agents | ✓ Within scoped projects | ✓ Any |
-| `GetAgentTaskStatus` | Only own-session agents | ✓ Within scoped projects | ✓ Any |
 | `StopAgent` | Only own-session agents | ✓ Within scoped projects | ✓ Any |
 | `RestartAgent` | Only own-session agents | ✓ Within scoped projects | ✓ Any |
 | `DiscoverAgents` | Only own-session agents (local) | All in scoped projects (local) | All (local) |
 | `WatchAgent` | Only own-session agents | ✓ Within scoped projects | ✓ Any |
 | `WatchWorkspace` | Only if workspace has own-session agents | ✓ Within scoped projects | ✓ Any |
-| Proxied A2A | Only own-session agents | ✓ Within scoped projects | ✓ Any |
 
-### Scope Enforcement on Proxied A2A
+Scope enforcement applies to the **gRPC control plane** (the RPCs above). It governs *who can manage and discover which agents* — not who can message them.
 
-When an A2A client sends a request through the proxy (e.g., `POST /a2a/agents/{agent_id}/message:send`), the ARP server:
+### A2A messaging is enforced at the agent, not by ARP
 
-1. Extracts the bearer token from the `Authorization` HTTP header
-2. Resolves the target agent
-3. Checks that the agent's project is within the token's scope
-4. For `SESSION` permission, checks that the agent's `session_id` matches the token's
-5. If authorized, proxies the request to the agent's direct A2A endpoint
-6. If denied, returns HTTP 403 with an A2A-compatible error
+Once a caller has discovered an agent and obtained its `direct_url`, the A2A conversation runs **directly between the client and the agent** — ARP is not in the path and applies no scope check to it. This is by design (see "Why direct access is unscoped" below): ARP secures the **management plane**; the **data plane** is plain A2A, secured by the agent's own A2A `security_schemes` if it needs auth.
+
+If a deployment requires ARP-enforced scope on the A2A data plane (a single authenticated ingress), it adds the optional **[A2A gateway](profile-a2a-gateway.md)**. The gateway extracts the bearer token, resolves the target agent, checks project scope (and `session_id` for `SESSION` tokens), and forwards to the agent's `direct_url` — returning HTTP 403 on denial. That enforcement is specified in the gateway profile, not here, because it is not part of the core gRPC services.
 
 ### gRPC Metadata Convention
 
@@ -325,16 +318,16 @@ message SpawnAgentRequest {
 
 ## Identity Federation
 
-ARP tokens can be issued by external identity providers. The ARP server validates external tokens via:
+ARP tokens can be issued by external identity providers. **This is an optional extension, not part of core conformance** — a conformant ARP server need only implement its own `TokenService` plus the `localhost_admin` convenience below. Two federation mechanisms are defined:
 
-1. **OIDC (OpenID Connect)** — ARP acts as a relying party. External JWT tokens are validated against the provider's JWKS endpoint. Claims map to ARP scope/permission:
+1. **OIDC (OpenID Connect)** — ARP acts as a relying party for its **gRPC control plane**. External JWT tokens are validated against the provider's JWKS endpoint and claims map to ARP scope/permission:
    - `arp:scope` claim → project scope
    - `arp:permission` claim → permission level
    - `sub` claim → subject
 
-2. **A2A Security Schemes** — The A2A `AgentCard.security_schemes` field supports `openIdConnect`, `oauth2`, `apiKey`, and `http` auth. ARP's proxied endpoints honor these when present, and can map external A2A auth to internal ARP tokens.
+2. **A2A Security Schemes** — mapping external A2A auth (the agent's `AgentCard.security_schemes`: `openIdConnect`, `oauth2`, `apiKey`, `http`) to internal ARP tokens applies only when an A2A ingress is present. Because core ARP is not in the A2A data path, this lives with the optional **[A2A gateway profile](profile-a2a-gateway.md)**, where the full federation configuration is specified.
 
-Configuration:
+Configuration sketch (control-plane OIDC):
 
 ```json
 {
@@ -345,10 +338,7 @@ Configuration:
         "provider": "oidc",
         "issuer": "https://auth.example.com",
         "audience": "arp-server",
-        "claim_mapping": {
-          "scope": "arp:scope",
-          "permission": "arp:permission"
-        }
+        "claim_mapping": { "scope": "arp:scope", "permission": "arp:permission" }
       }
     ],
     "localhost_admin": true
@@ -359,6 +349,7 @@ Configuration:
 When `localhost_admin` is true (default), connections from localhost are treated as `ADMIN` with global scope — matching the current awesometree behavior where the local user has full control.
 
 ## Design Rationale
+
 
 **Why three permission levels?** Two isn't enough. Without `SESSION`, every multi-agent system either gives agents full project access (dangerous) or requires manual per-agent ACLs (tedious). `SESSION` is the natural default for autonomous agents — they can manage their own spawned sub-agents but can't interfere with other sessions. `PROJECT` is for lead/supervisor agents that need to coordinate across sessions. `ADMIN` is for human operators and infrastructure.
 

@@ -28,6 +28,40 @@ tasks:
       - ./bin/spec-torture validate specs/arp/spec-http.yaml
 
   # ---------------------------------------------------------------------------
+  # ARP reference implementation (gRPC server + client libraries)
+  # ---------------------------------------------------------------------------
+
+  arp:gen:
+    desc: Regenerate gen/arp/v1 from proto/arp/v1 via buf
+    cmds:
+      - PATH="$(go env GOPATH)/bin:$PATH" buf generate
+
+  arp:build:
+    desc: Build the ARP reference server and conformance tool
+    cmds:
+      - go build -o bin/arp-server ./cmd/arp-server
+      - go build -o bin/arp-conformance ./cmd/arp-conformance
+    sources:
+      - arp/**/*.go
+      - cmd/arp-server/**/*.go
+      - cmd/arp-conformance/**/*.go
+      - gen/**/*.go
+    generates:
+      - bin/arp-server
+      - bin/arp-conformance
+
+  arp:test:
+    desc: Run the in-process ARP gRPC conformance suite
+    cmds:
+      - go test ./arp/...
+
+  torture:arp-reference:
+    desc: Boot the seeded reference ARP server and run both conformance suites
+    cmds:
+      - agents/arp-reference/run.sh reports/arp
+
+
+  # ---------------------------------------------------------------------------
   # A2A agent torture tasks
   # ---------------------------------------------------------------------------
 

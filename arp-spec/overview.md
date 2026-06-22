@@ -1,6 +1,6 @@
 ---
 title: "ARP — Overview"
-version: 0.4.0
+version: 0.5.0
 created: 2026-04-06
 updated: 2026-05-01
 status: draft
@@ -9,7 +9,21 @@ tags: [arp, a2a, grpc, protobuf, agent-lifecycle, multi-agent, awesometree]
 
 # Agent Registry Protocol (ARP) — Overview
 
-A gRPC service that manages the full lifecycle of AI agents within workspaces and provides a unified registry for A2A agent discovery and communication. Fills the gap between the control plane (how you **create, start, stop, and destroy** agent instances) and A2A (how agents **talk to each other**). ARP is the control plane; A2A is the wire protocol.
+A gRPC service that manages the full lifecycle of AI agents within workspaces and provides a unified registry for discovering A2A agents. Fills the gap between the control plane (how you **create, start, stop, and destroy** agent instances) and A2A (how agents **talk to each other**). ARP is the control plane; A2A is the wire protocol.
+
+**One-line value proposition: ARP creates, manages, and helps you discover A2A agents — then gets out of the way. A2A is how you talk to them.**
+
+The boundary is deliberate and sharp:
+
+| Concern | Owned by | How |
+|---------|----------|-----|
+| Create / stop / restart agents | **ARP** | gRPC `AgentService` |
+| Workspaces & projects | **ARP** | gRPC `WorkspaceService`, `ProjectService` |
+| Discover agents, watch lifecycle | **ARP** | gRPC `DiscoveryService` (returns A2A `AgentCard`s) |
+| Scoped auth for the management plane | **ARP** | gRPC `TokenService` + per-RPC enforcement |
+| Send messages, run tasks, stream results | **A2A** | the agent's own A2A endpoint (`direct_url`) |
+
+ARP never relays agent messages. Once an agent is spawned, ARP hands back its `direct_url`; clients send A2A `SendMessage` / `GetTask` to that URL with any A2A client. This keeps ARP small and its boundary with A2A unambiguous. (An optional [A2A gateway profile](profile-a2a-gateway.md) exists for deployments that need a single authenticated ingress — but it is not part of the core gRPC services and not required for conformance.)
 
 ## Problem Statement
 
@@ -18,19 +32,19 @@ The current agent protocol landscape has a lifecycle gap:
 - **A2A** connects agents to each other. Assumes agents already exist — no spawn, no lifecycle.
 - **No standard control plane** exists for agent lifecycle management.
 
-Every team building multi-agent systems reinvents agent lifecycle management. ARP standardizes it as a gRPC service with full protobuf definitions, making agent management available to any gRPC client — CLI tools, orchestrators, dashboards, or other agents. It also exposes managed agents as a standard A2A registry, so any A2A client can discover and communicate with them.
+Every team building multi-agent systems reinvents agent lifecycle management. ARP standardizes it as a gRPC service with full protobuf definitions, making agent management available to any gRPC client — CLI tools, orchestrators, dashboards, or other agents. It also exposes managed agents as a standard A2A registry, so any A2A client can discover them and then communicate with them directly.
 
 ## Design Principles
 
 1. **Workspaces are the unit of isolation.** A workspace is a directory (typically a git worktree) where one or more agents operate. Agents within a workspace share the filesystem but have independent sessions.
 
-2. **A2A is the wire protocol.** Every managed agent speaks A2A v1.0. The ARP server creates agents, and those agents are standard A2A agents — discoverable via `AgentCard`, communicable via `SendMessage` / `SendStreamingMessage`.
+2. **A2A is the wire protocol.** Every managed agent speaks A2A v1.0. The ARP server creates agents, and those agents are standard A2A agents — discoverable via `AgentCard`, communicable via `SendMessage` / `SendStreamingMessage` **directly at the agent**. ARP does not sit in the message path.
 
 3. **gRPC is the control plane.** Agent lifecycle operations (spawn, stop, restart) are gRPC RPCs defined in protobuf. Any gRPC client can manage agents without custom integrations. HTTP/JSON access is available via gRPC-Web transcoding with `google.api.http` annotations on every RPC.
 
-4. **Multi-agent workspaces.** A workspace can host multiple agents (e.g., a coding agent + a review agent + a test agent). Each gets its own port, A2A `context_id` space, and `AgentCard`.
+4. **Multi-agent workspaces.** A workspace can host multiple agents (e.g., a coding agent + a review agent + a test agent). Each gets its own port and `AgentCard`.
 
-5. **Two paths to every agent.** Clients can talk to agents directly via the agent's A2A URL, or proxied through the ARP server. Direct is lower latency; proxied adds routing, discovery, and lifecycle awareness.
+5. **ARP locates, A2A reaches.** ARP tells you *where* an agent is (its `direct_url`, returned by `SpawnAgent` and advertised in the agent's `AgentCard`); A2A is *how* you reach it. Clients connect to the agent's A2A endpoint directly with any A2A client. ARP itself only speaks A2A for discovery (fetching `AgentCard`s) and health checks — never to relay messages or tasks. Deployments that need a single authenticated ingress can put the optional [A2A gateway](profile-a2a-gateway.md) in front of agents, but that is a deployment choice, not part of the core protocol.
 
 6. **Backend-agnostic.** The spec defines the interface, not the implementation. Backends can be local processes, Docker containers, remote VMs, or cloud services.
 
@@ -42,9 +56,11 @@ Every team building multi-agent systems reinvents agent lifecycle management. AR
 |-------|---------|------|------|
 | Project Management | `ProjectService` | `ListProjects`, `RegisterProject`, `UnregisterProject` | [services-project.md](services-project.md) |
 | Workspace Management | `WorkspaceService` | `CreateWorkspace`, `ListWorkspaces`, `GetWorkspace`, `DestroyWorkspace` | [services-workspace.md](services-workspace.md) |
-| Agent Lifecycle | `AgentService` | `SpawnAgent`, `ListAgents`, `GetAgentStatus`, `SendAgentMessage`, `CreateAgentTask`, `GetAgentTaskStatus`, `StopAgent`, `RestartAgent` | [services-agent.md](services-agent.md) |
+| Agent Lifecycle | `AgentService` | `SpawnAgent`, `ListAgents`, `GetAgentStatus`, `StopAgent`, `RestartAgent` | [services-agent.md](services-agent.md) |
 | Discovery & Routing | `DiscoveryService` | `DiscoverAgents`, `WatchAgent`, `WatchWorkspace` | [services-discovery.md](services-discovery.md) |
-| Identity & Scopes | `TokenService` | `CreateToken`; scope enforcement, federation | [identity-and-scopes.md](identity-and-scopes.md) |
+| Identity & Scopes | `TokenService` | `CreateToken`; scope enforcement | [identity-and-scopes.md](identity-and-scopes.md) |
+
+> Messaging and task RPCs are intentionally **absent** from `AgentService`. Sending a message, creating a task, or polling task status is done by speaking A2A directly to the agent's `direct_url` — see [services-agent.md](services-agent.md#talking-to-an-agent-a2a-not-arp). This is the single most important boundary in the spec: **ARP = lifecycle + registry; A2A = messaging.**
 
 ## A2A v1.0 Reference
 
@@ -70,6 +86,8 @@ This spec builds on the A2A v1.0 protocol (`lf.a2a.v1`). Key types and RPCs refe
 
 ### RPCs Used
 
+These are **A2A** RPCs that clients invoke **directly on the agent** (at its `direct_url`), not ARP RPCs. ARP returns the `direct_url`; the client takes it from there. ARP itself only calls the discovery endpoint (`GET /.well-known/agent-card.json`).
+
 | A2A RPC | HTTP Binding | Description |
 |---------|-------------|-------------|
 | `SendMessage` | `POST /message:send` | Send a message, get sync response |
@@ -94,51 +112,61 @@ This spec builds on the A2A v1.0 protocol (`lf.a2a.v1`). Key types and RPCs refe
 │                     gRPC CLIENTS                            │
 │  (CLI tools, orchestrators, dashboards, other agents)       │
 │                                                             │
-│  Lifecycle RPCs:  SpawnAgent, StopAgent, RestartAgent, ...  │
-│  Communication:   SendAgentMessage, CreateAgentTask, ...    │
+│  Lifecycle:  SpawnAgent, StopAgent, RestartAgent, ...       │
+│  Registry:   DiscoverAgents, WatchAgent, WatchWorkspace     │
 └──────────┬─────────────────────────────────────────────────┘
            │ gRPC (H2) or gRPC-Web (HTTP/1.1 transcoding)
            ▼
 ┌────────────────────────────────────────────────────────────┐
 │                    ARP SERVER                                │
-│              (Agent Registry Protocol)                       │
+│              (control plane + A2A registry)                  │
 │                                                             │
 │  ┌─────────────┐  ┌──────────────┐  ┌─────────────────┐   │
 │  │  Workspace   │  │    Agent     │  │   A2A Registry  │   │
-│  │  Manager     │  │  Supervisor  │  │   & Proxy       │   │
+│  │  Manager     │  │  Supervisor  │  │  (AgentCards)   │   │
 │  └──────┬──────┘  └──────┬───────┘  └────────┬────────┘   │
 │         │                │                     │            │
-│         │      ┌─────────▼─────────┐           │            │
-│         │      │  Process Backend  │           │            │
-│         │      │  (local/docker/   │           │            │
-│         │      │   remote/cloud)   │           │            │
+│         │      ┌─────────▼─────────┐           │ fetch      │
+│         │      │  Process Backend  │           │ AgentCard  │
+│         │      │  (local/docker/   │           │ (discovery │
+│         │      │   remote/cloud)   │           │  only)     │
 │         │      └─────────┬─────────┘           │            │
 └─────────┼────────────────┼─────────────────────┼────────────┘
           │                │                     │
-          ▼                ▼                     ▼
-    ┌──────────┐    ┌──────────────┐    ┌────────────────┐
-    │Workspace │    │ Agent        │    │ A2A Endpoints   │
-    │Directory │    │ Processes    │    │                 │
-    │(worktree)│    │              │    │ Direct:         │
-    │          │    │ :9100 crush  │    │   agent:9100    │
-    │          │    │ :9101 claude │    │                 │
-    │          │    │ :9102 review │    │ Proxied:        │
-    └──────────┘    └──────────────┘    │   arp:9099/a2a/ │
-                                        └────────────────┘
+          ▼                ▼                     │
+    ┌──────────┐    ┌──────────────┐             │
+    │Workspace │    │ Agent        │ ◀───────────┘
+    │Directory │    │ Processes    │
+    │(worktree)│    │              │     A2A messaging goes
+    │          │    │ :9100 crush  │ ◀── DIRECT, client→agent
+    │          │    │ :9101 claude │     (never through ARP)
+    │          │    │ :9102 review │
+    └──────────┘    └──────┬───────┘
+                           ▲
+            ┌──────────────┘  client uses direct_url from
+            │  the SpawnAgent response / DiscoverAgents card
+   ┌────────┴────────┐
+   │  A2A CLIENTS    │  SendMessage / GetTask / stream
+   │ (any A2A impl)  │
+   └─────────────────┘
 ```
 
-## Two Interfaces to Agents
+> An optional [A2A gateway](profile-a2a-gateway.md) may be deployed in front of
+> the agents to provide a single authenticated A2A ingress. It is a separate
+> component, not part of the ARP gRPC services, and is omitted here.
 
-Every agent managed by ARP is accessible via two paths. Both speak A2A v1.0.
+## Reaching Agents: ARP Locates, A2A Reaches
 
-### Direct Access
+ARP's job ends at *locating* an agent. Every managed agent is a standard A2A v1.0 server bound to its own port; clients reach it by speaking A2A directly to its `direct_url`.
 
-The agent process binds to its own port and exposes A2A v1.0 HTTP+JSON endpoints directly. Clients connect to the agent's URL without going through the ARP server.
+### Direct access (the only path in core ARP)
+
+`SpawnAgent` / `GetAgentStatus` / `ListAgents` / `DiscoverAgents` all return the agent's `direct_url` (and an enriched `AgentCard` whose first `supported_interfaces` entry is that URL). The client then uses any A2A client:
 
 ```
-Agent URL: http://localhost:{agent_port}
+direct_url: http://localhost:{agent_port}
 
-A2A v1.0 HTTP+JSON Endpoints:
+A2A v1.0 HTTP+JSON endpoints (served by the agent itself, not ARP):
   GET  /.well-known/agent-card.json       AgentCard discovery (RFC 8615)
   POST /message:send                       SendMessage → SendMessageResponse
   POST /message:stream                     SendStreamingMessage → stream StreamResponse
@@ -149,64 +177,30 @@ A2A v1.0 HTTP+JSON Endpoints:
   GET  /extendedAgentCard                  GetExtendedAgentCard → AgentCard
 ```
 
-**When to use direct access:**
-- Lowest latency — no proxy hop
-- Agent-to-agent communication where both agents are local
-- When the client already knows the agent URL (from `SpawnAgent` response or `DiscoverAgents`)
-- Long-lived SSE connections (`SubscribeToTask`, `SendStreamingMessage`)
-
-**Limitations:**
-- Client must know the specific port
-- No lifecycle awareness — if the agent restarts on a new port, direct URLs break
-- No routing by name or skill — client must resolve agent identity itself
-- No aggregated discovery across workspaces
-
-### Proxied Access (via ARP Server)
-
-The ARP server proxies A2A requests to the appropriate agent, routing by agent ID, name, or skill. The proxy adds lifecycle awareness: if an agent is restarting, the proxy can queue or retry.
+Typical flow:
 
 ```
-ARP Server URL: http://localhost:{arp_port}
-
-Proxied A2A endpoints (per-agent, mirrors A2A v1.0 HTTP bindings):
-  GET  /a2a/agents/{agent_id}/.well-known/agent-card.json  AgentCard
-  POST /a2a/agents/{agent_id}/message:send                  SendMessage
-  POST /a2a/agents/{agent_id}/message:stream                SendStreamingMessage
-  GET  /a2a/agents/{agent_id}/tasks/{task_id}               GetTask
-  GET  /a2a/agents/{agent_id}/tasks                         ListTasks
-  POST /a2a/agents/{agent_id}/tasks/{task_id}:cancel        CancelTask
-  GET  /a2a/agents/{agent_id}/tasks/{task_id}:subscribe     SubscribeToTask
-  GET  /a2a/agents/{agent_id}/extendedAgentCard             GetExtendedAgentCard
-
-Registry endpoints (ARP-specific, also exposed via gRPC-Web HTTP transcoding):
-  GET  /a2a/agents                          List all AgentCards for ready agents
-  POST /a2a/route/message:send              Route SendMessage by skill/capability match
-  GET  /a2a/discover                        Filtered discovery (by capability, workspace, status)
+1. ARP:  SpawnAgent(workspace, template)  → AgentInstance{ direct_url }   (gRPC)
+2. A2A:  POST {direct_url}/message:send   → Task                          (direct)
+3. A2A:  GET  {direct_url}/tasks/{id}     → Task (poll to terminal)       (direct)
+4. ARP:  StopAgent(agent_id)                                              (gRPC)
 ```
 
-These HTTP endpoints are defined as `google.api.http` annotations on the gRPC RPCs in the protobuf definitions. See the individual service specs for the full bindings.
+Because ARP isn't in the message path, there is no proxy hop, no duplicated A2A surface, and no ambiguity about which interface "really" talks to the agent. If an agent restarts on a new port, re-read its `direct_url` from ARP (or subscribe via `WatchAgent`).
 
-**When to use proxied access:**
-- External A2A clients discovering agents for the first time
-- Routing by capability/skill rather than specific agent ID
-- Resilience — proxy handles agent restarts, port changes, retries
-- Aggregated view across all workspaces
-- When the ARP server is the only known endpoint (e.g., remote access)
+### Optional: a single ingress via the A2A gateway
 
-### Routing Behavior
+Some deployments want one authenticated entry point in front of agents — e.g. agents on a private network, centralized auth/audit, or routing by skill without the client knowing agent IDs. That is provided by the optional **[A2A gateway profile](profile-a2a-gateway.md)**, a transparent A2A passthrough that enforces ARP token scope at the edge and forwards requests to each agent's `direct_url`. It is:
 
-The ARP proxy resolves agents in this order:
+- **Not** part of the core ARP gRPC services.
+- **Not** required for conformance.
+- A deployment component you add when you need it.
 
-1. **By agent_id** — exact match to a managed agent instance
-2. **By name** — matches against the `AgentCard.name` field
-3. **By workspace/name** — `{workspace}/{instance_name}` composite key
-4. **By skill** — matches `AgentSkill.tags` on the agent's `AgentCard.skills[]`; routes to the first agent with status `AGENT_STATUS_READY` whose skills match
-
-If multiple agents match, the proxy prefers agents with status `AGENT_STATUS_READY` over `AGENT_STATUS_BUSY`.
+When a gateway is present, ARP populates `AgentInstance.proxy_url` and adds the gateway URL as a second `supported_interfaces` entry; otherwise `proxy_url` is empty.
 
 ### Agent Card Enrichment
 
-When serving `AgentCard` through the proxy, the ARP server enriches it with lifecycle metadata in the `metadata` field (a `google.protobuf.Struct` in the A2A proto, a JSON object over HTTP+JSON):
+When ARP returns an agent's `AgentCard` (via `GetAgentStatus`, `ListAgents`, or `DiscoverAgents`), it enriches the card's `metadata` with an `arp` block carrying lifecycle context. The first `supported_interfaces` entry is the agent's **direct** URL:
 
 ```json
 {
@@ -214,16 +208,9 @@ When serving `AgentCard` through the proxy, the ARP server enriches it with life
   "description": "Crush AI coding assistant",
   "version": "1.0.0",
   "supported_interfaces": [
-    {
-      "url": "http://localhost:9099/a2a/agents/coder-abc123",
-      "transport": "HTTP_JSON"
-    }
+    { "url": "http://localhost:9100", "transport": "HTTP_JSON" }
   ],
-  "capabilities": {
-    "streaming": true,
-    "push_notifications": false,
-    "state_transition_history": false
-  },
+  "capabilities": { "streaming": true },
   "skills": [
     {
       "id": "code",
@@ -249,7 +236,7 @@ When serving `AgentCard` through the proxy, the ARP server enriches it with life
 }
 ```
 
-The `supported_interfaces[0].url` in the enriched card points to the **proxied** endpoint. The `metadata.arp.direct_url` gives clients the option to bypass the proxy and connect to the agent's `AgentInterface` directly.
+`supported_interfaces[0].url` and `metadata.arp.direct_url` both point at the agent's own endpoint — that is where clients send A2A traffic. When the optional gateway is deployed, a second interface (the gateway URL) is appended and `metadata.arp.proxy_url` is set; the direct interface remains first.
 
 ## Protobuf Data Model
 
@@ -340,10 +327,10 @@ message AgentInstance {
   string workspace = 3;                               // Parent workspace name
   AgentStatus status = 4;                             // Current lifecycle state
   int32 port = 5;                                     // Assigned port number
-  string direct_url = 6;                              // Direct A2A endpoint
-  string proxy_url = 7;                               // Proxied A2A endpoint via ARP
+  string direct_url = 6;                              // Agent's A2A endpoint — reach the agent here
+  string proxy_url = 7;                               // Optional gateway URL; empty unless a gateway is deployed
   int32 pid = 8;                                      // Process ID (if local backend)
-  string context_id = 9;                              // Current A2A context_id
+  // field 9 reserved (was context_id — an A2A conversation concept ARP no longer tracks)
   lf.a2a.v1.AgentCard a2a_agent_card = 10;            // Resolved A2A AgentCard (with ARP metadata)
   string token_id = 11;                               // ARP token issued to this agent
   string session_id = 12;                             // Session this agent belongs to
@@ -352,12 +339,13 @@ message AgentInstance {
   google.protobuf.Struct metadata = 15;               // Extensible metadata
 }
 
-// ARP lifecycle states — distinct from A2A TaskState which tracks task execution
+// ARP lifecycle states — track the agent PROCESS, distinct from A2A TaskState
+// which tracks task execution inside the agent.
 enum AgentStatus {
   AGENT_STATUS_UNSPECIFIED = 0;
   AGENT_STATUS_STARTING = 1;     // Process launched, waiting for health check
-  AGENT_STATUS_READY = 2;        // Health check passed, accepting A2A SendMessage
-  AGENT_STATUS_BUSY = 3;         // Currently processing (has tasks in WORKING state)
+  AGENT_STATUS_READY = 2;        // Health check passed, reachable for A2A
+  AGENT_STATUS_BUSY = 3;         // Optional: task-level activity observed (gateway deployments)
   AGENT_STATUS_ERROR = 4;        // Health check failed or process crashed
   AGENT_STATUS_STOPPING = 5;     // Graceful shutdown initiated (SIGTERM sent)
   AGENT_STATUS_STOPPED = 6;      // Process terminated
@@ -373,29 +361,22 @@ enum AgentStatus {
           ┌─────────┐
           │starting  │──── health check fails (retries exhausted) ──→ error
           └────┬─────┘                                                  │
-               │ health check passes                                    │
-               ▼                                                  restart│
+               │ health check passes                              restart│
+               ▼                                                         │
           ┌─────────┐                                                   │
-     ┌──→ │  ready   │ ←──────── task reaches terminal state ──┐       │
-     │    └────┬─────┘                                          │       │
-     │         │ A2A SendMessage received                       │       │
-     │         ▼                                                │       │
-     │    ┌─────────┐                                           │       │
-     │    │  busy    │ ──── crash ──→ error ────── restart ─────┘       │
-     │    └────┬─────┘                                                  │
-     │         │     (task → COMPLETED / FAILED / CANCELED)             │
-     │         └────────────────────────────────────────────────────────┘
-     │
-     │    terminate
-     │         │
+     ┌──→ │  ready   │ ──── crash ──→ error ────────── restart ─────────┘
+     │    └────┬─────┘
+     │         │ terminate
      │         ▼
      │    ┌─────────┐         ┌─────────┐
      └──→ │stopping  │ ──────→│ stopped  │
           └─────────┘  grace  └─────────┘
                        period
+
+(optional, gateway only)   ready ⇄ busy   while task-level activity is observed
 ```
 
-Note: ARP `AgentStatus` tracks the **process** lifecycle. A2A `TaskState` tracks **task** execution within the agent. An agent in `AGENT_STATUS_READY` may have completed tasks (`TASK_STATE_COMPLETED`) in its history. An agent transitions to `AGENT_STATUS_BUSY` when it has at least one task in `TASK_STATE_WORKING`.
+Note: ARP `AgentStatus` tracks the **process** lifecycle. A2A `TaskState` tracks **task** execution within the agent — and because core ARP is not in the message path, it does not observe task state. The canonical core lifecycle is `starting → ready → stopping → stopped` (with `error`). `AGENT_STATUS_BUSY` is reserved for deployments where ARP *does* observe task activity (e.g. via the optional [A2A gateway](profile-a2a-gateway.md)); core ARP leaves reachable agents in `AGENT_STATUS_READY`. An agent in `READY` may still have completed or running tasks in its A2A history — query the agent directly to see them.
 
 ## Configuration
 
@@ -461,12 +442,12 @@ ARP generalizes awesometree's workspace and agent supervisor model. An awesometr
 - Use awesometree's `Manager` for workspace creation (git worktrees, WM tags)
 - Extend the agent `Supervisor` to manage multiple agents per workspace (currently one)
 - Expose both the existing REST API and the new gRPC service
-- Serve the A2A registry and proxy endpoints from the existing HTTP server (port 9099)
+- Serve the A2A `AgentCard` registry (discovery) from the existing HTTP server (port 9099)
 - Maintain backward compatibility with the current single-agent-per-workspace model
 
 ### A2A
 
-ARP is both an A2A client (sending `SendMessageRequest` to managed agents) and an A2A server (exposing `AgentCard` registry and proxying A2A RPCs for managed agents). It fills the lifecycle gap that A2A explicitly does not cover: A2A defines how to *talk* to agents; ARP defines how to *create and manage* them. The two are complementary — ARP creates agents that speak standard A2A v1.0.
+ARP is an A2A **registry and discovery** layer plus a lifecycle controller — and a minimal A2A *client* only for reading `AgentCard`s and health-checking agents. It is **not** an A2A server for messaging: it never relays `SendMessage`/`GetTask`. A2A defines how to *talk* to agents; ARP defines how to *create, manage, and find* them. The two are complementary and cleanly separated — ARP creates agents that speak standard A2A v1.0, then points clients at them. (Centralized A2A ingress, when wanted, is the optional [gateway profile](profile-a2a-gateway.md), not the core protocol.)
 
 ### gRPC + HTTP Transcoding
 

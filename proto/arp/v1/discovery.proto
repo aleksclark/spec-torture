@@ -5,8 +5,8 @@ option go_package = "github.com/aleksclark/spec-torture/gen/arp/v1;arpv1";
 
 import "google/api/annotations.proto";
 import "google/api/field_behavior.proto";
-import "google/protobuf/struct.proto";
 import "arp/v1/workspace.proto";
+import "lf/a2a/v1/a2a.proto";
 
 // DiscoveryService provides agent discovery and real-time event streaming.
 service DiscoveryService {
@@ -45,10 +45,8 @@ message DiscoverAgentsRequest {
 }
 
 message DiscoverAgentsResponse {
-  // Enriched AgentCards with ARP metadata.
-  // Uses google.protobuf.Struct to avoid importing the full A2A proto
-  // while preserving the AgentCard schema.
-  repeated google.protobuf.Struct agent_cards = 1;
+  // Enriched AgentCards with ARP metadata under metadata.arp.
+  repeated lf.a2a.v1.AgentCard agent_cards = 1;
 }
 
 // DiscoveryScope controls how broadly to search for agents.
@@ -69,7 +67,7 @@ message AgentEvent {
   AgentEventType event_type = 1;
   AgentInstance agent = 2;
   // Updated AgentCard (present for CARD_UPDATED events).
-  google.protobuf.Struct agent_card = 3;
+  lf.a2a.v1.AgentCard agent_card = 3;
 }
 
 enum AgentEventType {

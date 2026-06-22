@@ -17,7 +17,67 @@ task torture:all              # Run A2A suite against all agents
 task torture:a2a-go           # Run against Go SDK helloworld
 task torture:a2a-rs           # Run against Rust SDK helloworld
 task clean                    # Remove bin/ and all agents/.build/
+
+# ARP reference implementation (gRPC server + client libraries)
+make arp-tools                # Install protoc-gen-go + protoc-gen-go-grpc
+make proto                    # buf generate -> gen/arp/v1 (idempotent)
+make arp                      # Build bin/arp-server + bin/arp-conformance
+make arp-test                 # go test ./arp/... (in-process conformance suite)
+make arp-run                  # Boot seeded server + run both conformance suites
+task arp:gen                  # buf generate (alias)
+task torture:arp-reference    # Seeded server + Go + grpcurl conformance reports
 ```
+
+## ARP Reference Implementation
+
+A complete, spec-conformant Go implementation of the gRPC Agent Registry
+Protocol (ARP v0.5) lives under `arp/`, with generated code in `gen/arp/v1`.
+See `arp/README.md` for full details.
+
+Boundary (the whole point of the spec): **ARP = lifecycle + registry (gRPC);
+A2A = messaging (direct).** `AgentService` is lifecycle-only — `SpawnAgent`,
+`ListAgents`, `GetAgentStatus`, `StopAgent`, `RestartAgent`. There are no
+message/task RPCs; clients reach an agent by sending A2A directly to its
+`direct_url`. Centralized A2A ingress is the optional, non-normative
+`arp-spec/profile-a2a-gateway.md` (sets `proxy_url`), not part of the core.
+
+- `arp/server` — all 5 services (Project/Workspace/Agent/Discovery/Token):
+  in-memory state, token scope/permission/session enforcement, process
+  lifecycle state machine, direct-first AgentCard enrichment, server-streaming
+  watches.
+- `arp/client` — client SDK (bearer-token metadata injection + helpers;
+  `DirectURL()` returns the agent's A2A endpoint).
+- `arp/backend` — `Backend` interface; `ExecBackend` (real processes) and
+  `MockBackend` (in-process A2A agents for tests/seeding).
+- `arp/a2a` — A2A v1.0 HTTP+JSON client used by the server for AgentCard
+  discovery and health checks only (no messaging).
+- `arp/conformance` — executable suite mapping to the spec's normative tables.
+- `cmd/arp-server` — runnable server (gRPC + reflection; `-seed` adds fixtures;
+  `-gateway-url` opts into populating `proxy_url`).
+- `cmd/arp-conformance` — runs the suite, writes a markdown report.
+
+A2A AgentCards are typed `lf.a2a.v1.AgentCard` messages defined in
+`proto/lf/a2a/v1/a2a.proto` — `AgentInstance.a2a_agent_card` and the discovery
+`AgentCard` fields use them (not `google.protobuf.Struct`). The server converts
+an agent's A2A HTTP+JSON card (decoded as maps in `arp/a2a`) into the typed proto
+via `protojson` in `arp/server/a2aconv.go` (DiscardUnknown; protojson accepts
+both camelCase and snake_case field names). The `lf.a2a.v1` Task/Message/Part
+types remain defined as the A2A reference model but are not referenced by core
+ARP RPCs.
+
+Proto codegen uses **buf** (`buf.yaml` + `buf.gen.yaml`, dep `googleapis`).
+`buf.gen.yaml` sets `clean: true`, so `make proto` fully regenerates `gen/`
+(both `gen/arp/v1` and `gen/lf/a2a/v1`). Plugins must be real binaries on PATH
+(the asdf `protoc-gen-go` shim needs a tool version, so codegen fails through
+it); `make arp-tools` installs them into `$(go env GOPATH)/bin`.
+
+Conformance reports: `reports/arp/reference-grpc.md` (Go suite, 69/69) and
+`reports/arp/reference-grpcurl.md` (grpcurl/reflection variant of awesometree's
+`run-grpc.sh`, 40/40 — fixes the 2 `TokenService` validation cases awesometree
+fails). The reference runner is `agents/arp-reference/run.sh`.
+
+Note: in this environment `go` cannot be the leading bash command; use
+`make`/`task` targets (which call `go` internally) or prefix with `timeout`.
 
 ## Architecture
 
