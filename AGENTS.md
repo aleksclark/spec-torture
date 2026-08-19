@@ -209,7 +209,7 @@ Agent runner scripts clone upstream repos into `agents/<name>/.build/`. These ar
 
 ### go.mod Version
 
-The module declares `go 1.25.0` which requires a tip/pre-release Go toolchain. Standard Go 1.24.x will reject this. Ensure your Go version matches.
+The module requires Go 1.26.6. Ensure your Go version matches.
 
 ## Report Output
 
