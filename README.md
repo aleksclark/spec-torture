@@ -173,7 +173,7 @@ reports/                   Committed test run reports
 
 ## Requirements
 
-- Go 1.24+
+- Go 1.26.6
 - Docker (only for stdio-transport specs that run runtimes in containers)
 
 ## License
